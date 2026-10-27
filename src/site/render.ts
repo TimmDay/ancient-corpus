@@ -31,6 +31,15 @@ export function workUrl(work: Work, edition?: Edition): string {
     : `/${work.slug}/`
 }
 
+// Applies a remembered theme before first paint, so a dark page never flashes light.
+const THEME_SCRIPT = `<script>try{const t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch{}</script>`
+
+// Hidden until theme.js runs, since it does nothing without it.
+const THEME_TOGGLE = `<button type="button" class="theme-toggle" aria-label="Switch theme" hidden>
+<svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+<svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+</button>`
+
 type LayoutOptions = {
   title: string
   description: string
@@ -61,12 +70,13 @@ function layout({
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+${THEME_SCRIPT}
 ${head}
-${scripts.map((src) => `<script src="${attr(src)}" defer></script>`).join("\n")}
+${[...scripts, "/assets/theme.js"].map((src) => `<script src="${attr(src)}" defer></script>`).join("\n")}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header"><a class="brand" href="/">${SITE_NAME}</a></header>
+<header class="site-header"><a class="brand" href="/">${SITE_NAME}</a>${THEME_TOGGLE}</header>
 ${body}
 <div class="toast" role="status" aria-live="polite" id="toast"></div>
 </body>

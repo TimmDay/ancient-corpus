@@ -28,13 +28,9 @@ Last updated: 2026-10-27
 - [ ] Work through the rest of `docs/intake/report.md` a few Works at a time
 - [ ] Port `inventory.py` to TypeScript when a new batch of intake archives arrives (it lives in git history at `69ad736`)
 
-## somnus-data-ingestion (its side of the contract)
+## somnus-data-ingestion
 
-- [ ] Rewrite Suetonius Locators to the canonical form: `Life of Augustus, 5` becomes `Augustus 5`; update its `locator_format` to `Life chapter, e.g. Augustus 5`
-- [ ] Rewrite *Historia Augusta* Locators the same way (`Life of Aurelian 25.3` becomes `Aurelian 25.3`) and decide canonical names for the joint Lives (*Three Gordians*, *Two Gallieni*, *Thirty Tyrants*) before that Work is imported
-- [ ] Use en dashes in ranges (`3.1–2`, not `3.1-2`)
-- [ ] Remove the dead `/passages/[id]` page and the `corpus_passages` references in `docs/SCHEMAS.md`
-- [ ] Build citation links as the Edition's `url` plus `#` plus the Locator
+Tracked as issues in that repo: [#84](https://github.com/TimmDay/somnus-data-ingestion/issues/84) canonical Locators, [#85](https://github.com/TimmDay/somnus-data-ingestion/issues/85) dead passages page, [#86](https://github.com/TimmDay/somnus-data-ingestion/issues/86) citation links, [#87](https://github.com/TimmDay/somnus-data-ingestion/issues/87) Dio book numbering.
 
 ## v2 and later
 
