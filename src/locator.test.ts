@@ -157,6 +157,35 @@ describe("resolveLocator", () => {
     })
   })
 
+  it("tells a restarted run of chapters apart by its bracketed name", () => {
+    const dio = indexOf([
+      "80",
+      "80.1",
+      "80.2",
+      "80(Alexander)",
+      "80.1(Alexander)",
+    ])
+    expect(landsOn("80.1", dio)).toEqual({ start: "80.1", exact: true })
+    for (const written of [
+      "80.1(Alexander)",
+      "80.1 (Alexander)",
+      "80.1%20(alexander)",
+    ]) {
+      expect(landsOn(written, dio)).toEqual({
+        start: "80.1(Alexander)",
+        exact: true,
+      })
+    }
+    expect(landsOn("80.1.2(Alexander)", dio)).toEqual({
+      start: "80.1(Alexander)",
+      exact: false,
+    })
+    expect(landsOn("80 (Alexander)", dio)).toEqual({
+      start: "80(Alexander)",
+      exact: true,
+    })
+  })
+
   it("reports Locators that match nothing", () => {
     expect(landsOn("Thirty Tyrants 12", suetonius)).toBe("not-found")
     expect(landsOn("", suetonius)).toBe("not-found")

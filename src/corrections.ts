@@ -158,7 +158,7 @@ export function raiseFlags(passages: Omit<Passage, "flags">[]): Passage[] {
   }
 
   for (const group of byDivision.values()) {
-    const numbers = group.map((p) => Number(p.locator.split(/[\s.]/).at(-1)))
+    const numbers = group.map((p) => lastNumber(p.locator))
     group.forEach((passage, i) => {
       if (passage.flags.some((f) => f.code === "duplicate")) return
       const next = numbers[i + 1]
@@ -172,9 +172,7 @@ export function raiseFlags(passages: Omit<Passage, "flags">[]): Passage[] {
       // A repeated number is the duplicate Flag's to report, not a gap.
       const repeats =
         next !== undefined &&
-        group
-          .slice(0, i + 1)
-          .some((p) => Number(p.locator.split(/[\s.]/).at(-1)) === next)
+        group.slice(0, i + 1).some((p) => lastNumber(p.locator) === next)
       if (next !== undefined && next !== current + 1 && !repeats) {
         passage.flags.push({
           code: "gap",
@@ -240,6 +238,16 @@ export function splitBlocks(
 }
 
 /** Where the visible text `wanted` starts in `html`, ignoring tags, note references and spacing. */
+/** The chapter number a Locator ends with: 5 in `Augustus 5`, 1 in `80.1(Alexander)`. */
+function lastNumber(locator: string): number {
+  return Number(
+    locator
+      .replace(/\(.*\)$/, "")
+      .split(/[\s.]/)
+      .at(-1),
+  )
+}
+
 function htmlPositionOf(html: string, wanted: string): number | undefined {
   let text = ""
   const positions: number[] = []

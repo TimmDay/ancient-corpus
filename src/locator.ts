@@ -44,20 +44,30 @@ export function locatorId(locator: string): string {
  * Splits a Locator as written into comparable tokens: case and diacritics are
  * ignored, a leading "Life of" is dropped (a collection of Lives is cited by the
  * subject's name), and `.`, `,`, `:`, `§`, `-` between tokens all mean the same thing.
+ *
+ * A bracketed name tells apart a run of chapters that starts again within a book
+ * (`80.1(Alexander)`). Its tokens go straight after the book's, so a more precise
+ * `80.1.2(Alexander)` still falls back to `80.1(Alexander)`, not to `80.1`.
  */
 export function locatorTokens(written: string): string[] {
+  const qualifiers: string[] = []
   const plain = written
     .normalize("NFD")
     .replace(/\p{M}/gu, "")
     .toLowerCase()
     .replace(/^\s*(the\s+)?life\s+of\s+(the\s+)?/, "")
+    .replace(/\(([^)]*)\)/g, (_, name: string) => {
+      qualifiers.push(...name.split(/\s+/).filter(Boolean))
+      return " "
+    })
   const tokens = plain.split(/[\s.,:;§]+|(?<=\D)-|-(?=\D)/).filter(Boolean)
   const allNumeric = tokens.every((t) => /^\d+$/.test(t) || isRoman(t))
   // A Roman numeral is only read as a number where it can't be a name: after
   // the first token, or when every token is a number (`IX.9`).
-  return tokens.map((t, i) =>
+  const read = tokens.map((t, i) =>
     (i > 0 || allNumeric) && isRoman(t) ? String(romanValue(t)) : t,
   )
+  return [...read.slice(0, 1), ...qualifiers, ...read.slice(1)]
 }
 
 /** Resolves a Locator as someone wrote it (raw, possibly URL-encoded) against an Edition's index. */

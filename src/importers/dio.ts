@@ -7,7 +7,8 @@
 // "[-N-]" or "[Sidenote:—N—]", years as "[B.C. 69 (a.u. 685)]" or
 // "[Sidenote: A.D. 211 …]"; footnotes are "[N]" in the text and "[Footnote N: …]"
 // after a FOOTNOTES heading. Foster marks chapters only, so a Locator such as
-// 36.4.2 lands on 36.4.
+// 36.4.2 lands on 36.4. Book numbers are Boissevain's, which Foster prints in
+// his headings; for books 77–80 they run one ahead of the older numbering.
 
 import type { CheerioAPI } from "cheerio"
 import type { Element } from "domhandler"
@@ -33,6 +34,12 @@ const BOOK_START = /\(\s*BOOK\s+(\d+)\s*,\s*BO[A-Z]*N\b/i
 const CHAPTER_MARKER =
   /\[\s*-\s*\d+\s*-?\s*\]|\[\s*\d+\s*-\s*\]|\[Sidenote:\s*[—–-]+\s*\d+/
 const SUMMARY_START = /DIO'?S ROMAN HISTORY/i
+/**
+ * Books whose chapter numbers start again part way through, and the name that
+ * tells the second run apart: Boissevain's Book 80 restarts at 1 for Alexander's
+ * reign, so its Locators are `80.1(Alexander)` and the like.
+ */
+const RESTARTED_BOOKS: Record<string, string> = { "80": "Alexander" }
 // One pattern for every marker, so they are handled in the order they appear.
 const MARKER =
   /\[\s*-\s*(\d+)\s*-?\s*\]|\[\s*(\d+)\s*-\s*\]|\[Sidenote:\s*[—–-]+\s*(\d+)\s*[—–-]+\s*\]|\[(?:Sidenote:\s*)?((?:B\.\s?C\.|A\.\s?D\.)[^\]]*)\]|\[(\d+)\]/g
@@ -58,6 +65,8 @@ function readVolume(archive: IntakeArchive, firstNoteId: number) {
   const passages: Draft[] = []
 
   let book: Division | undefined
+  /** Set while reading the second run of a restarted book, e.g. "Alexander". */
+  let qualifier: string | undefined
   let summary: string[] = []
   /** The bare book number under "DIO'S ROMAN HISTORY", for books with no BOISSEVAIN heading (58). */
   let summaryBook: string | undefined
@@ -131,7 +140,9 @@ function readVolume(archive: IntakeArchive, firstNoteId: number) {
       const chapterNumber = chapter ?? slipChapter ?? sidenoteChapter
       if (chapterNumber) {
         current = {
-          locator: `${book.locator}.${Number(chapterNumber)}`,
+          locator: qualifier
+            ? `${book.locator.replace(/\(.*/, "")}.${Number(chapterNumber)}(${qualifier})`
+            : `${book.locator}.${Number(chapterNumber)}`,
           headings: pendingHeadings,
           division: book.locator,
           blocks: [],
@@ -174,7 +185,16 @@ function readVolume(archive: IntakeArchive, firstNoteId: number) {
       heading === divisions.at(-1)?.locator && summaryBook
         ? summaryBook
         : heading
-    book = { locator: number, label: `Book ${number}` }
+    // Volumes are read one at a time, so a restart is always within this one.
+    qualifier = divisions.some((d) => d.locator === number)
+      ? RESTARTED_BOOKS[number]
+      : undefined
+    book = qualifier
+      ? {
+          locator: `${number}(${qualifier})`,
+          label: `Book ${number} (${qualifier})`,
+        }
+      : { locator: number, label: `Book ${number}` }
     if (summary.length) book.summary = summary.join("")
     divisions.push(book)
     state.mode = "text"
