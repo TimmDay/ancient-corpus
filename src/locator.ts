@@ -8,6 +8,8 @@ export type LocatorTarget = {
   locator: string
   /** The HTML id of the element that holds it. */
   id: string
+  /** The page it is on, when an Edition is read a book at a time; otherwise this page. */
+  page?: string
 }
 
 /**

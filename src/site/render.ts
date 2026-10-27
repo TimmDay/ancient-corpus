@@ -89,17 +89,63 @@ ${TO_TOP}
 `
 }
 
-/** The reader page for one Edition of a Work. */
-export function workPage(
+/**
+ * A reader page: the whole Edition, or for an Edition read a book at a time,
+ * the divisions that share one number (Dio's Book 80 and Book 80 (Alexander)).
+ */
+type ReaderPage = { slug: string; divisions: Division[] }
+
+/** The pages an Edition is read on; one, unless it is split by division. */
+export function readerPages(edition: Edition, text: EditionText): ReaderPage[] {
+  if (!edition.pagePerDivision) return [{ slug: "", divisions: text.divisions }]
+  const bySlug = Map.groupBy(text.divisions, (d) => pageSlug(d.locator))
+  return [...bySlug].map(([slug, divisions]) => ({ slug, divisions }))
+}
+
+/** "Book 80" for the page holding Book 80 and Book 80 (Alexander). */
+function pageLabel(page: ReaderPage): string {
+  return (page.divisions[0]?.label ?? page.slug).replace(/\s*\(.*\)$/, "")
+}
+
+/** `80(Alexander)` is read on the same page as `80`. */
+function pageSlug(divisionLocator: string): string {
+  return locatorId(divisionLocator.replace(/\(.*\)$/, ""))
+}
+
+/**
+ * Every page of one Edition of a Work, keyed by its path under the Edition's
+ * URL ("" for the Edition's own page). An Edition split by division gets a
+ * contents page there, which sends a Locator link on to the right book.
+ */
+export function workPages(
   work: Work,
   edition: Edition,
   text: EditionText,
   editions: Edition[],
   /** Unresolved Flags, when rendering an unpublished draft for review. */
   draftFlags = 0,
-): string {
-  const index = locatorIndex(work, text)
+): Map<string, string> {
+  const pages = readerPages(edition, text)
+  const base = workUrl(work, edition)
+  const pageLink = (page: ReaderPage | undefined, rel: string, text: string) =>
+    page ? `<a rel="${rel}" href="${pageUrl(page)}">${text}</a>` : ""
+  const pageUrl = (page: ReaderPage) =>
+    `${base}${page.slug ? `${page.slug}/` : ""}`
+  const pageOf = new Map(
+    pages.flatMap((page) => page.divisions.map((d) => [d.locator, page])),
+  )
   const ids = passageIds(text.passages)
+  const index = locatorIndex(
+    work,
+    text,
+    edition.pagePerDivision
+      ? (division) => {
+          const page = pageOf.get(division)
+          return page ? pageUrl(page) : undefined
+        }
+      : undefined,
+  )
+  const author = work.author === "Unknown" ? "Anonymous" : work.author
   const otherTitles = work.otherTitles.length
     ? `<p class="other-titles">Also known as ${work.otherTitles.map((t) => `<i>${escapeHtml(t)}</i>`).join(", ")}</p>`
     : ""
@@ -113,28 +159,35 @@ export function workPage(
           .join("")}</ul></nav>`
       : ""
 
-  const body = `
+  const render = (
+    page: ReaderPage | undefined,
+    content: string,
+    toc: string,
+  ) => {
+    const isBook = Boolean(page?.slug)
+    const body = `
 <div class="reader">
-<nav class="toc" aria-label="Contents">
+${
+  toc
+    ? `<nav class="toc" aria-label="Contents">
 <details class="toc-panel" open>
 <summary>Contents</summary>
-${tableOfContents(text, ids)}
+${toc}
 </details>
-</nav>
+</nav>`
+    : ""
+}
 <main id="main" tabindex="-1">
 <header class="work-header">
-<p class="author">${escapeHtml(work.author === "Unknown" ? "Anonymous" : work.author)}</p>
-<h1>${escapeHtml(work.title)}</h1>
-${otherTitles}
+<p class="author">${escapeHtml(author)}</p>
+<h1>${isBook ? `<a class="work-title" href="${base}">${escapeHtml(work.title)}</a>` : escapeHtml(work.title)}</h1>
+${isBook ? "" : otherTitles}
 <p class="edition-line">${escapeHtml(editionLine(edition))}. ${escapeHtml(languageName(edition.language))}.</p>
 ${switcher}
 </header>
 ${draftFlags ? `<p class="draft-banner">Draft: ${draftFlags} unresolved Flags. Not published until they are reviewed with <code>pnpm review</code>.</p>` : ""}
 <div class="notice" id="notice" role="status" hidden></div>
-<article class="text" lang="${attr(edition.language)}" aria-label="Text">
-${text.passages.map((p) => passageHtml(p, ids.get(p) ?? "", text.divisions)).join("\n")}
-</article>
-${editorialHtml(text)}
+${content}
 <footer class="attribution">
 <p>Text from ${sourceLinks(edition)}. ${escapeHtml(edition.source.rights)}</p>
 <p>Link to any passage by adding its Locator: <code>${escapeHtml(workUrl(work))}#${escapeHtml(text.passages[0]?.locator ?? "")}</code></p>
@@ -142,14 +195,69 @@ ${editorialHtml(text)}
 </main>
 </div>
 <script type="application/json" id="locator-index">${jsonForScript(index)}</script>`
+    return layout({
+      title: page?.slug
+        ? `${pageLabel(page)} · ${work.title}, ${author}`
+        : `${work.title}, ${author}`,
+      description: `${work.author}, ${work.title}: ${editionLine(edition)}`,
+      canonical: page ? pageUrl(page) : base,
+      body,
+      scripts: ["/assets/reader.js"],
+    })
+  }
 
-  return layout({
-    title: `${work.title}, ${work.author === "Unknown" ? "Anonymous" : work.author}`,
-    description: `${work.author}, ${work.title}: ${editionLine(edition)}`,
-    canonical: workUrl(work, edition),
-    body,
-    scripts: ["/assets/reader.js"],
+  const article = (passages: Passage[]) =>
+    `<article class="text" lang="${attr(edition.language)}" aria-label="Text">
+${passages.map((p) => passageHtml(p, ids.get(p) ?? "", text.divisions)).join("\n")}
+</article>`
+
+  if (!edition.pagePerDivision) {
+    const toc = tableOfContents(text, ids, text.divisions, () => "")
+    return new Map([
+      [
+        "",
+        render(undefined, article(text.passages) + editorialHtml(text), toc),
+      ],
+    ])
+  }
+
+  const result = new Map<string, string>()
+  const contents = `<section class="book-index" aria-label="Books">
+<ol>${pages
+    .map(
+      (page) =>
+        `<li><a href="${pageUrl(page)}">${escapeHtml(pageLabel(page))}</a></li>`,
+    )
+    .join("")}</ol>
+</section>${editorialHtml(text)}`
+  // The book list is the contents here, so there is no sidebar to repeat it.
+  result.set("", render(undefined, contents, ""))
+  pages.forEach((page, i) => {
+    const onPage = new Set(page.divisions.map((d) => d.locator))
+    const [prev, next] = [pages[i - 1], pages[i + 1]]
+    const label = (p: ReaderPage | undefined) =>
+      escapeHtml(p ? pageLabel(p) : "")
+    const pager =
+      pageLink(prev, "prev", `← ${label(prev)}`) +
+      pageLink(next, "next", `${label(next)} →`)
+    result.set(
+      page.slug,
+      render(
+        page,
+        `${article(text.passages.filter((p) => onPage.has(p.division)))}
+<nav class="pager" aria-label="Books">${pager}</nav>`,
+        tableOfContents(
+          text,
+          ids,
+          page.divisions,
+          (d) =>
+            onPage.has(d.locator) ? "" : pageUrl(pageOf.get(d.locator) ?? page),
+          `${base}#editorial`,
+        ),
+      ),
+    )
   })
+  return result
 }
 
 /** One link for a single source; one per volume when the Edition spans several. */
@@ -191,17 +299,24 @@ export function passageIds(passages: Passage[]): Map<Passage, string> {
   )
 }
 
-export function locatorIndex(work: Work, text: EditionText): LocatorIndex {
+export function locatorIndex(
+  work: Work,
+  text: EditionText,
+  /** For an Edition split into pages: the URL of the page holding a division. */
+  pageOf?: (division: string) => string | undefined,
+): LocatorIndex {
   const ids = passageIds(text.passages)
   const divisions = new Map(text.divisions.map((d) => [d.locator, d]))
   const seen = new Set<string>()
   const targets = text.passages.flatMap((p) => {
     const division = !seen.has(p.division) && divisions.get(p.division)
     seen.add(p.division)
-    const passage = { locator: p.locator, id: ids.get(p) ?? "" }
+    const page = pageOf?.(p.division)
+    const at = page ? { page } : {}
+    const passage = { locator: p.locator, id: ids.get(p) ?? "", ...at }
     return division
       ? [
-          { locator: division.locator, id: locatorId(division.locator) },
+          { locator: division.locator, id: locatorId(division.locator), ...at },
           passage,
         ]
       : [passage]
@@ -215,26 +330,43 @@ export function locatorIndex(work: Work, text: EditionText): LocatorIndex {
   return { targets, aliases }
 }
 
-function tableOfContents(text: EditionText, ids: Map<Passage, string>): string {
+/**
+ * The contents: every division, with its sections listed for the divisions on
+ * this page. `href` gives the page a division lives on ("" for this one).
+ */
+function tableOfContents(
+  text: EditionText,
+  ids: Map<Passage, string>,
+  expanded: Division[],
+  href: (division: Division) => string,
+  editorialHref = "#editorial",
+): string {
   const items = text.divisions.map((division) => {
-    const sections = text.passages
-      .filter((p) => p.division === division.locator)
-      .flatMap((p) =>
-        p.headings
-          .filter((h) => h.kind === "section")
-          .map(
-            (h) =>
-              `<li><a href="#${attr(ids.get(p) ?? "")}">${h.html}</a></li>`,
-          ),
-      )
-    return `<li><a href="#${attr(locatorId(division.locator))}" data-division="${attr(locatorId(division.locator))}">${escapeHtml(division.label)}</a>${
+    const id = locatorId(division.locator)
+    const page = href(division)
+    if (page) {
+      return `<li><a href="${attr(page)}${expanded.length ? "" : `#${attr(id)}`}">${escapeHtml(division.label)}</a></li>`
+    }
+    const sections = expanded.includes(division)
+      ? text.passages
+          .filter((p) => p.division === division.locator)
+          .flatMap((p) =>
+            p.headings
+              .filter((h) => h.kind === "section")
+              .map(
+                (h) =>
+                  `<li><a href="#${attr(ids.get(p) ?? "")}">${h.html}</a></li>`,
+              ),
+          )
+      : []
+    return `<li><a href="#${attr(id)}" data-division="${attr(id)}">${escapeHtml(division.label)}</a>${
       sections.length
         ? `<ol class="toc-sections">${sections.join("")}</ol>`
         : ""
     }</li>`
   })
   const editorial = text.editorial.length
-    ? `<li class="toc-editorial"><a href="#editorial">Editorial matter</a></li>`
+    ? `<li class="toc-editorial"><a href="${editorialHref}">Editorial matter</a></li>`
     : ""
   return `<ol class="toc-list">${items.join("")}${editorial}</ol>`
 }
@@ -244,7 +376,12 @@ function passageHtml(
   id: string,
   divisions: Division[],
 ): string {
-  const label = passage.locator.split(/[\s.]/).at(-1) ?? passage.locator
+  // The bracketed name of a restarted run is in the heading above, so the margin shows just the number.
+  const label =
+    passage.locator
+      .replace(/\(.*\)$/, "")
+      .split(/[\s.]/)
+      .at(-1) ?? passage.locator
   const notes = passage.notes.length
     ? `<aside class="notes" aria-label="Notes to ${attr(passage.locator)}" lang="en"><ol>${passage.notes
         .map(

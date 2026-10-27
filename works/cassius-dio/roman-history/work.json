@@ -7,7 +7,7 @@
   "originalLanguage": "grc",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
-  "locatorFormat": "book.chapter.section, e.g. 78.4.2",
+  "locatorFormat": "book.chapter.section, with Boissevain's book numbers, e.g. 79.4.2; a restarted run is named in brackets, e.g. 80.1(Alexander)",
   "slugAliases": [
     "cassius-dio/historia-romana"
   ],
@@ -46,7 +46,8 @@
         ],
         "rights": "Public domain in the USA."
       },
-      "importer": "dio"
+      "importer": "dio",
+      "pagePerDivision": true
     }
   ]
 }

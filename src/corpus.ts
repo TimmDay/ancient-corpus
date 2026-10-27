@@ -37,6 +37,11 @@ export type Edition = {
   source: EditionSource
   /** Which importer under src/importers/ reads the source. */
   importer: string
+  /**
+   * Read a book at a time: one page per division (divisions sharing a number,
+   * like `80` and `80(Alexander)`, share one), for Editions too long for one page.
+   */
+  pagePerDivision?: boolean
 }
 
 export type EditionSource = {

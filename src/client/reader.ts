@@ -33,6 +33,13 @@ function land(initial = false): void {
     return
   }
 
+  // A book-at-a-time Edition: go to the page that holds the Locator.
+  const page = resolution.start.page
+  if (page && page !== location.pathname) {
+    location.replace(`${page}#${hash}`)
+    return
+  }
+
   const targets = resolvedTargets(resolution, index)
   const elements = targets.flatMap((t) => document.getElementById(t.id) ?? [])
   for (const el of elements) el.classList.add("hit")
