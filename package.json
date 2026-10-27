@@ -19,7 +19,8 @@
     "prepare": "husky",
     "ingest": "node scripts/ingest.ts",
     "build": "node scripts/build.ts",
-    "dev": "node scripts/dev.ts"
+    "dev": "node scripts/dev.ts",
+    "review": "node scripts/review.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

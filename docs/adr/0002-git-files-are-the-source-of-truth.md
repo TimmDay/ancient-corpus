@@ -9,4 +9,5 @@ Each Work's manifest and each Edition's normalized Passages are committed files,
 ## Consequences
 
 - Normalized Passages are committed, not gitignored. Raw intake archives stay out of Git; each Edition records its source URL and checksum so they can be fetched again.
+- Importing and Corrections run locally, where the archives are; CI and the deploy only render committed Passages. A change to an importer is not live until its re-imported Passages are committed.
 - A Passage is keyed by Work, Edition and Locator, and that key is what any derived index stores, so a search result is always a link into the reader.

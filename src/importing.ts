@@ -14,9 +14,11 @@ import {
 } from "./corpus.ts"
 import { correctEdition, type Correction } from "./corrections.ts"
 import { importEutropius } from "./importers/eutropius.ts"
+import { importSuetonius } from "./importers/suetonius.ts"
 
 const IMPORTERS: Record<string, (source: EditionSource) => ImportedEdition> = {
   eutropius: importEutropius,
+  suetonius: importSuetonius,
 }
 
 export function correctionsFile(work: Work, edition: Edition): string {

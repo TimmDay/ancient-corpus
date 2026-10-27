@@ -18,7 +18,6 @@
     "suetonius/twelve-caesars"
   ],
   "locatorAliases": {
-    "Julius": "Julius",
     "Divus Julius": "Julius",
     "Caesar": "Julius",
     "Divus Augustus": "Augustus",
@@ -31,5 +30,22 @@
     "Divus Titus": "Titus",
     "Domitianus": "Domitian"
   },
-  "editions": []
+  "editions": [
+    {
+      "slug": "thomson-forester",
+      "preferred": true,
+      "language": "en",
+      "title": "The Lives of the Twelve Caesars",
+      "translator": "Alexander Thomson",
+      "editor": "T. Forester",
+      "source": {
+        "name": "Project Gutenberg #6400",
+        "url": "https://www.gutenberg.org/ebooks/6400",
+        "intakeFile": "Suetonius-TwelveCaesars-complete.zip",
+        "sha256": "14152b1864dc1639caf55b3a2b7dfbd2f765304b22888eefe94cee827eaac7b5",
+        "rights": "Public domain in the USA."
+      },
+      "importer": "suetonius"
+    }
+  ]
 }

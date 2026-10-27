@@ -1,36 +1,49 @@
 # Ancient Corpus
 
-An API-first, reusable corpus of ancient-world texts with stable passage identities, human-readable citations, searchable editions, and citation-linked HTML pages. The RAG chatbot and MCP server are separate clients of the corpus service.
+A public reading reference of ancient texts. Each Work is one static page with its full text and contents, and any other app can link straight to a passage:
 
-## Repository layout
-
-- `apps/corpus-service`: source-of-truth HTTP API, search, metadata, and HTML passage pages.
-- `apps/corpus-mcp`: MCP adapter over the corpus service.
-- `apps/chatbot`: RAG chatbot and user interface.
-- `packages/corpus-schema`: shared corpus records and validation schemas.
-- `packages/shared-types`: shared application and API types.
-- `ingestion/importers`: source-format importers.
-- `ingestion/manifests`: versioned source provenance and checksums.
-- `docs`: architecture and corpus policy documentation.
-- `tests`: cross-application and corpus validation tests.
-
-Large source files, normalized corpora, databases, embeddings, and indexes are deliberately excluded from Git. See `.gitignore` and `docs/architecture.md`.
-
-## Inventory candidate archives
-
-Place unchanged candidate ZIP archives in `data/intake/`, then run:
-
-```sh
-PYTHONDONTWRITEBYTECODE=1 python3 ingestion/inventory.py
+```text
+/eutropius/breviarium#9.9
+/cite?author=Eutropius&title=Breviarium historiae Romanae&loc=9.9
 ```
 
-The command reads archive members in memory without extracting or modifying the intake files. It generates:
+The reader highlights the Passage. A range (`9.9–10`) highlights every Passage in it. A Locator more precise than the Edition marks (`9.9.2`) lands on the enclosing Passage with a note saying so. Names and terms are defined in [GLOSSARY.md](GLOSSARY.md); the decisions behind the design are in [docs/adr](docs/adr).
 
-- `ingestion/manifests/intake-inventory.json`: checksums, archive safety findings, embedded metadata, structural signals, duplicate/series grouping, and triage status.
-- `docs/intake-report.md`: a human-readable summary and recommended importer-validation batch.
+## How it works
 
-Run the tests with:
-
-```sh
-PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
+```text
+data/intake/*.zip          unchanged Gutenberg archives (not committed)
+   │  pnpm ingest           importer + corrections.json → Passages, Flags
+   ▼
+works/<author>/<title>/     committed source of truth
+   work.json                names, slug aliases, Locator aliases, Editions
+   <edition>/passages.jsonl one Passage per line
+   <edition>/edition.json   contents and Editorial matter
+   <edition>/corrections.json
+   │  pnpm build            only reads works/, so CI and Cloudflare can run it
+   ▼
+dist/                       static site for Cloudflare Pages
 ```
+
+An Edition with unresolved Flags is not published. Work through them with `pnpm review`.
+
+## Commands
+
+| Command | What it does |
+|---|---|
+| `pnpm dev` | Build and serve the site at http://localhost:4321 |
+| `pnpm ingest [author/title] [edition]` | Re-import Editions from `data/intake/` |
+| `pnpm review` | Review Flags at http://localhost:4322; each action is saved as a Correction |
+| `pnpm build` | Render `dist/` |
+| `pnpm check` | Lint and typecheck |
+| `pnpm test:run` | Unit tests |
+
+## Adding a Work
+
+1. Put the unchanged archive in `data/intake/`.
+2. Add an Edition to the Work's `work.json` (seeded from somnus; add the Work if it is new), with the archive's SHA-256.
+3. Write an importer in `src/importers/` and register it in `src/importing.ts`.
+4. `pnpm ingest author/title`, then `pnpm review` until no Flags remain.
+5. Commit `works/` and open a PR.
+
+The intake inventory from the first batch of archives is in [docs/intake](docs/intake).
