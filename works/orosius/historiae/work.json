@@ -1,0 +1,17 @@
+{
+  "author": "Orosius",
+  "title": "Historiae adversus Paganos",
+  "otherTitles": [
+    "Seven Books of History against the Pagans"
+  ],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "book.chapter.section, e.g. 7.35.10",
+  "slugAliases": [
+    "orosius/historiae-adversus-paganos",
+    "orosius/seven-books-of-history-against-the-pagans"
+  ],
+  "locatorAliases": {},
+  "editions": []
+}

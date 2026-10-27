@@ -1,0 +1,16 @@
+{
+  "author": "Eusebius",
+  "title": "Historia Ecclesiastica",
+  "otherTitles": [
+    "Church History"
+  ],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "book.chapter, e.g. 7.10",
+  "slugAliases": [
+    "eusebius/church-history"
+  ],
+  "locatorAliases": {},
+  "editions": []
+}

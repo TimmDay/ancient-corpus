@@ -1,0 +1,16 @@
+{
+  "author": "Procopius",
+  "title": "History of the Wars",
+  "otherTitles": [
+    "De Bellis"
+  ],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "book.chapter, e.g. 3.5",
+  "slugAliases": [
+    "procopius/de-bellis"
+  ],
+  "locatorAliases": {},
+  "editions": []
+}

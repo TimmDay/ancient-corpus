@@ -1,0 +1,16 @@
+{
+  "author": "Hydatius",
+  "title": "Chronicon",
+  "otherTitles": [
+    "Continuatio Chronicorum Hieronymianorum"
+  ],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "reign entry, e.g. Theodosius 28",
+  "slugAliases": [
+    "hydatius/continuatio-chronicorum-hieronymianorum"
+  ],
+  "locatorAliases": {},
+  "editions": []
+}

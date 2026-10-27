@@ -1,0 +1,186 @@
+// The Locator contract shared by the build, the reader script, /cite and any
+// future consumer. Everything that turns a Locator someone typed into a place
+// in an Edition goes through here, so every client resolves links the same way.
+
+/** One addressable place in an Edition: a Passage, or a division such as a book or Life. */
+export type LocatorTarget = {
+  /** The canonical Locator, e.g. `9.9` or `Augustus 5`. */
+  locator: string
+  /** The HTML id of the element that holds it. */
+  id: string
+}
+
+/**
+ * What a reader page needs to resolve Locators: every target in document
+ * order, plus the Work's Locator aliases (`gaius` → `caligula`), keyed on
+ * normalized tokens.
+ */
+export type LocatorIndex = {
+  targets: LocatorTarget[]
+  aliases: Record<string, string>
+}
+
+export type Resolution =
+  | {
+      kind: "found"
+      /** The target the link lands on (its start, for a range). */
+      start: LocatorTarget
+      /** The last target of a range, when the link names one that exists. */
+      end?: LocatorTarget
+      /** False when the requested Locator was more precise than the Edition and we fell back. */
+      exact: boolean
+    }
+  | { kind: "not-found" }
+
+const RANGE_SEPARATOR = /\s*[–—-]\s*/
+const ROMAN = /^(m{0,3})(cm|cd|d?c{0,3})(xc|xl|l?x{0,3})(ix|iv|v?i{0,3})$/
+
+/** The HTML id for a canonical Locator: whitespace becomes `-`, everything else is kept. */
+export function locatorId(locator: string): string {
+  return locator.trim().replace(/\s+/g, "-")
+}
+
+/**
+ * Splits a Locator as written into comparable tokens: case and diacritics are
+ * ignored, a leading "Life of" is dropped (a collection of Lives is cited by the
+ * subject's name), and `.`, `,`, `:`, `§`, `-` between tokens all mean the same thing.
+ */
+export function locatorTokens(written: string): string[] {
+  const plain = written
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .toLowerCase()
+    .replace(/^\s*(the\s+)?life\s+of\s+(the\s+)?/, "")
+  const tokens = plain.split(/[\s.,:;§]+|(?<=\D)-|-(?=\D)/).filter(Boolean)
+  const allNumeric = tokens.every((t) => /^\d+$/.test(t) || isRoman(t))
+  // A Roman numeral is only read as a number where it can't be a name: after
+  // the first token, or when every token is a number (`IX.9`).
+  return tokens.map((t, i) =>
+    (i > 0 || allNumeric) && isRoman(t) ? String(romanValue(t)) : t,
+  )
+}
+
+/** Resolves a Locator as someone wrote it (raw, possibly URL-encoded) against an Edition's index. */
+export function resolveLocator(
+  written: string,
+  index: LocatorIndex,
+): Resolution {
+  const decoded = safeDecode(written).trim()
+  if (!decoded) return { kind: "not-found" }
+
+  const byKey = new Map(
+    index.targets.map((t) => [keyOf(locatorTokens(t.locator)), t]),
+  )
+  const [startWritten = "", endWritten] = splitRange(decoded)
+  const startTokens = applyAliases(locatorTokens(startWritten), index.aliases)
+
+  for (let length = startTokens.length; length > 0; length--) {
+    const start = byKey.get(keyOf(startTokens.slice(0, length)))
+    if (!start) continue
+    const exact = length === startTokens.length
+    const end =
+      exact && endWritten
+        ? rangeEnd(startTokens, endWritten, byKey, index)
+        : undefined
+    return end && end !== start
+      ? { kind: "found", start, end, exact }
+      : { kind: "found", start, exact }
+  }
+  return { kind: "not-found" }
+}
+
+/** The targets a resolution covers, in document order, for highlighting. */
+export function resolvedTargets(
+  resolution: Resolution,
+  index: LocatorIndex,
+): LocatorTarget[] {
+  if (resolution.kind !== "found") return []
+  const from = index.targets.indexOf(resolution.start)
+  const to = resolution.end ? index.targets.indexOf(resolution.end) : from
+  return to >= from ? index.targets.slice(from, to + 1) : [resolution.start]
+}
+
+function rangeEnd(
+  startTokens: string[],
+  endWritten: string,
+  byKey: Map<string, LocatorTarget>,
+  index: LocatorIndex,
+): LocatorTarget | undefined {
+  const endTokens = applyAliases(locatorTokens(endWritten), index.aliases)
+  // An abbreviated end (`9.9–10`, `Aurelian 25.2–4`) replaces the trailing
+  // tokens of the start; a full end (`Augustus 5–Augustus 7`) stands alone.
+  const full =
+    endTokens.length >= startTokens.length
+      ? endTokens
+      : [
+          ...startTokens.slice(0, startTokens.length - endTokens.length),
+          ...endTokens,
+        ]
+  for (let length = full.length; length > 0; length--) {
+    const end = byKey.get(keyOf(full.slice(0, length)))
+    if (end) return end
+  }
+  return undefined
+}
+
+function splitRange(written: string): [string, string?] {
+  // Only a dash between two numbers is a range; `Pseudo-Aurelius` is a name.
+  const match = written.match(/^(.*\d)\s*[–—-]\s*([^–—-]*\d.*)$/)
+  if (!match?.[1] || !match[2]) return [written]
+  const [start, end] = [match[1], match[2]]
+  return RANGE_SEPARATOR.test(end) ? [written] : [start, end]
+}
+
+function applyAliases(
+  tokens: string[],
+  aliases: Record<string, string>,
+): string[] {
+  // An alias names a division (`gaius` → `caligula`, `life of the three gordians` → ...),
+  // so try the longest leading run of tokens first.
+  for (let length = tokens.length; length > 0; length--) {
+    const replacement = aliases[keyOf(tokens.slice(0, length))]
+    if (replacement !== undefined)
+      return [...locatorTokens(replacement), ...tokens.slice(length)]
+  }
+  return tokens
+}
+
+/** The lookup key for a normalized alias or Locator. */
+export function aliasKey(written: string): string {
+  return keyOf(locatorTokens(written))
+}
+
+function keyOf(tokens: string[]): string {
+  return tokens.join(".")
+}
+
+function isRoman(token: string): boolean {
+  return token.length > 0 && ROMAN.test(token)
+}
+
+function romanValue(token: string): number {
+  const values: Record<string, number> = {
+    i: 1,
+    v: 5,
+    x: 10,
+    l: 50,
+    c: 100,
+    d: 500,
+    m: 1000,
+  }
+  let total = 0
+  for (let i = 0; i < token.length; i++) {
+    const value = values[token[i] ?? ""] ?? 0
+    const next = values[token[i + 1] ?? ""] ?? 0
+    total += value < next ? -value : value
+  }
+  return total
+}
+
+function safeDecode(written: string): string {
+  try {
+    return decodeURIComponent(written.replace(/^#/, ""))
+  } catch {
+    return written.replace(/^#/, "")
+  }
+}

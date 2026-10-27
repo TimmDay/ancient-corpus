@@ -1,0 +1,16 @@
+{
+  "author": "Zosimus",
+  "title": "Historia Nova",
+  "otherTitles": [
+    "New History"
+  ],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "book.chapter, e.g. 1.61",
+  "slugAliases": [
+    "zosimus/new-history"
+  ],
+  "locatorAliases": {},
+  "editions": []
+}

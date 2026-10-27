@@ -1,0 +1,18 @@
+{
+  "author": "Unknown",
+  "title": "Historia Augusta",
+  "otherTitles": [
+    "Scriptores Historiae Augustae"
+  ],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "Life chapter.section, e.g. Aurelian 25.3",
+  "slugAliases": [
+    "anonymous/scriptores-historiae-augustae",
+    "unknown/historia-augusta",
+    "unknown/scriptores-historiae-augustae"
+  ],
+  "locatorAliases": {},
+  "editions": []
+}

@@ -1,0 +1,16 @@
+{
+  "author": "Cyprian",
+  "title": "Epistulae",
+  "otherTitles": [
+    "Letters"
+  ],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "letter.section, e.g. 80.1",
+  "slugAliases": [
+    "cyprian/letters"
+  ],
+  "locatorAliases": {},
+  "editions": []
+}
