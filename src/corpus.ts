@@ -42,12 +42,13 @@ export type Edition = {
 export type EditionSource = {
   name: string
   url: string
-  /** The unchanged archive in data/intake/ (not committed) and its SHA-256. */
-  intakeFile: string
-  sha256: string
+  /** The unchanged archives in data/intake/ (not committed), in reading order. */
+  archives: IntakeArchive[]
   /** The source's licence or rights statement, kept for attribution. */
   rights: string
 }
+
+export type IntakeArchive = { file: string; sha256: string }
 
 export type Heading = {
   /** `division` opens a book or Life; `section` is a heading inside one; `subtitle` describes the one above it. */
@@ -59,7 +60,7 @@ export type Heading = {
 
 export type Note = { id: string; html: string }
 
-export type FlagCode = "gap" | "long"
+export type FlagCode = "gap" | "long" | "duplicate"
 
 export type Flag = {
   code: FlagCode
@@ -86,7 +87,12 @@ export type Passage = {
 }
 
 /** A division that has its own heading and can be linked to (a book, a Life). */
-export type Division = { locator: string; label: string }
+export type Division = {
+  locator: string
+  label: string
+  /** An editor's or translator's summary of the division (Foster's argument and consuls), shown collapsed. */
+  summary?: string
+}
 
 /** Content of an Edition that is not the Work's text, shown collapsed. */
 export type EditorialSection = {

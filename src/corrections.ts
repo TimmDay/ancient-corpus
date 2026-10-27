@@ -21,7 +21,8 @@ export type Correction =
   /** Moves the quoted text and everything after it in the Passage into Editorial matter. */
   | { op: "toEditorial"; locator: string; at: string; title: string }
   | { op: "replace"; locator: string; find: string; with: string }
-  | { op: "renumber"; locator: string; newLocator: string }
+  /** `at` picks one of several Passages that share a Locator, by text it contains. */
+  | { op: "renumber"; locator: string; newLocator: string; at?: string }
 
 /** Applies Corrections to an importer's output, then raises and settles Flags. */
 export function correctEdition(
@@ -36,12 +37,25 @@ export function correctEdition(
 
   for (const correction of corrections) {
     if (correction.op === "accept") continue
-    const index = passages.findIndex((p) => p.locator === correction.locator)
+    // Where two Passages share a Locator, quoted text says which one is meant.
+    const at =
+      "at" in correction && correction.at ? collapse(correction.at) : undefined
+    const index = passages.findIndex(
+      (p) =>
+        p.locator === correction.locator &&
+        (!at ||
+          collapse(p.text).includes(at) ||
+          p.blocks.some((b) => collapse(plainText(b)).includes(at))),
+    )
     const passage = passages[index]
-    if (!passage)
+    if (!passage) {
+      const exists = passages.some((p) => p.locator === correction.locator)
       throw new Error(
-        `Correction ${describe(correction)}: no Passage ${correction.locator}`,
+        exists
+          ? `Correction ${describe(correction)}: quoted text not found in ${correction.locator}`
+          : `Correction ${describe(correction)}: no Passage ${correction.locator}`,
       )
+    }
 
     switch (correction.op) {
       case "split": {
@@ -132,9 +146,21 @@ export function raiseFlags(passages: Omit<Passage, "flags">[]): Passage[] {
   const result: Passage[] = passages.map((p) => ({ ...p, flags: [] }))
   const byDivision = Map.groupBy(result, (p) => p.division)
 
+  const seen = new Set<string>()
+  for (const passage of result) {
+    if (seen.has(passage.locator)) {
+      passage.flags.push({
+        code: "duplicate",
+        detail: `An earlier Passage already has the Locator ${passage.locator}`,
+      })
+    }
+    seen.add(passage.locator)
+  }
+
   for (const group of byDivision.values()) {
     const numbers = group.map((p) => Number(p.locator.split(/[\s.]/).at(-1)))
     group.forEach((passage, i) => {
+      if (passage.flags.some((f) => f.code === "duplicate")) return
       const next = numbers[i + 1]
       const current = numbers[i] ?? NaN
       if (i === 0 && current !== 1) {
@@ -143,7 +169,13 @@ export function raiseFlags(passages: Omit<Passage, "flags">[]): Passage[] {
           detail: `The division starts at ${current}, not 1`,
         })
       }
-      if (next !== undefined && next !== current + 1) {
+      // A repeated number is the duplicate Flag's to report, not a gap.
+      const repeats =
+        next !== undefined &&
+        group
+          .slice(0, i + 1)
+          .some((p) => Number(p.locator.split(/[\s.]/).at(-1)) === next)
+      if (next !== undefined && next !== current + 1 && !repeats) {
         passage.flags.push({
           code: "gap",
           detail: `The next Passage is numbered ${next}, not ${current + 1}`,

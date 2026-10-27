@@ -13,10 +13,12 @@ import {
   type Work,
 } from "./corpus.ts"
 import { correctEdition, type Correction } from "./corrections.ts"
+import { importDio } from "./importers/dio.ts"
 import { importEutropius } from "./importers/eutropius.ts"
 import { importSuetonius } from "./importers/suetonius.ts"
 
 const IMPORTERS: Record<string, (source: EditionSource) => ImportedEdition> = {
+  dio: importDio,
   eutropius: importEutropius,
   suetonius: importSuetonius,
 }

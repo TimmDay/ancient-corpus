@@ -17,8 +17,11 @@ const TYPES: Record<string, string> = {
   ".svg": "image/svg+xml",
 }
 
-const { published, skipped } = build()
-for (const s of skipped) console.warn(`NOT PUBLISHED: ${s}`)
+// --drafts also shows Editions that still have Flags, with a banner.
+const drafts = process.argv.includes("--drafts")
+const { published, skipped } = build({ drafts })
+for (const s of skipped)
+  console.warn(`${drafts ? "DRAFT" : "NOT PUBLISHED"}: ${s}`)
 
 const rules = readFileSync(path.join(DIST, "_redirects"), "utf8")
   .split("\n")

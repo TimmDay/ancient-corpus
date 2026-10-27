@@ -13,9 +13,12 @@ if (workSlug && !works.length) throw new Error(`No Work ${workSlug}`)
 for (const work of works) {
   for (const edition of work.editions) {
     if (editionSlug && edition.slug !== editionSlug) continue
-    if (!existsSync(path.join(INTAKE_DIR, edition.source.intakeFile))) {
+    const missing = edition.source.archives.filter(
+      (a) => !existsSync(path.join(INTAKE_DIR, a.file)),
+    )
+    if (missing.length) {
       console.warn(
-        `skip ${work.slug}/${edition.slug}: data/intake/${edition.source.intakeFile} is not here`,
+        `skip ${work.slug}/${edition.slug}: not in data/intake/: ${missing.map((a) => a.file).join(", ")}`,
       )
       continue
     }

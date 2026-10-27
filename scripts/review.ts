@@ -70,7 +70,7 @@ function editionPage(work: Work, edition: Edition): string {
     const before = text.passages[i - 1]
     const after = text.passages[i + 1]
     const sameDivision = (p?: Passage) => p?.division === passage.division
-    return `<section class="flagged" data-locator="${attr(passage.locator)}">
+    return `<section class="flagged" data-locator="${attr(passage.locator)}" data-start="${attr(passage.text.slice(0, 60))}">
 <h2>${escapeHtml(passage.locator)}</h2>
 <ul class="flags">${passage.flags
       .filter((f) => !f.accepted)
@@ -84,6 +84,7 @@ ${sameDivision(after) && after ? `<div class="context"><span>${escapeHtml(after.
 <div class="row"><label>New Locator <input name="newLocator" value="${attr(nextLocator(passage.locator))}"></label><button data-op="split">Split at selection</button></div>
 <div class="row"><label>Editorial title <input name="title" value="${attr(`Translator’s essay after ${passage.locator}`)}"></label><button data-op="toEditorial">Move selection onward to Editorial matter</button></div>
 <div class="row"><button data-op="merge">Merge into the Passage before</button></div>
+<div class="row"><label>Renumber this Passage to <input name="renumberTo" value="${attr(nextLocator(passage.locator))}"></label><button data-op="renumber">Renumber</button></div>
 <div class="row">${passage.flags
       .filter((f) => !f.accepted)
       .map(
@@ -253,6 +254,8 @@ document.addEventListener("click", (event) => {
     return send({ correction: { op, locator, flag: button.dataset.flag, reason } });
   }
   if (op === "merge") return send({ correction: { op, locator } });
+  // The opening words pick out this Passage when another shares its Locator.
+  if (op === "renumber") return send({ correction: { op, locator, at: section.dataset.start, newLocator: field("renumberTo") } });
   const at = selectionIn(section);
   if (!at) { status.textContent = "First select the words in " + locator + " where it should be cut."; return; }
   if (op === "split") return send({ correction: { op, locator, at, newLocator: field("newLocator") } });

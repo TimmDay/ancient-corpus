@@ -23,7 +23,11 @@ import type { WorkListing } from "../src/works-index.ts"
 
 const DIST = path.join(REPO_ROOT, "dist")
 
-export function build(): { published: number; skipped: string[] } {
+/** `drafts` also renders Editions with unresolved Flags, bannered, for local review only. */
+export function build({ drafts = false } = {}): {
+  published: number
+  skipped: string[]
+} {
   rmSync(DIST, { recursive: true, force: true })
   mkdirSync(path.join(DIST, "assets"), { recursive: true })
 
@@ -40,17 +44,19 @@ export function build(): { published: number; skipped: string[] } {
         skipped.push(
           `${work.slug}/${edition.slug} (${flags.length} unresolved Flags)`,
         )
-      return flags.length === 0
+      return drafts || flags.length === 0
     })
     const preferred = editions.find((e) => e.preferred) ?? editions[0]
     if (!preferred) continue
 
     for (const edition of editions) {
+      const text = readEditionText(work, edition)
       const html = workPage(
         work,
         edition,
-        readEditionText(work, edition),
+        text,
         editions,
+        unresolvedFlags(text).length,
       )
       write(path.join(work.slug, edition.slug, "index.html"), html)
       if (edition === preferred) write(path.join(work.slug, "index.html"), html)

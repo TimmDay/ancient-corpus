@@ -6,15 +6,27 @@ import path from "node:path"
 import { load, type Cheerio, type CheerioAPI } from "cheerio"
 import type { AnyNode, Element } from "domhandler"
 import { unzipSync } from "fflate"
-import { INTAKE_DIR, type EditionSource } from "../corpus.ts"
+import {
+  INTAKE_DIR,
+  type EditionSource,
+  type IntakeArchive,
+} from "../corpus.ts"
 
-/** Reads the Edition's HTML from its unchanged intake archive, refusing an archive whose checksum moved. */
-export function readIntakeHtml(source: EditionSource): CheerioAPI {
-  const archive = readFileSync(path.join(INTAKE_DIR, source.intakeFile))
+/** The one archive of a single-volume Edition. */
+export function onlyArchive(source: EditionSource): IntakeArchive {
+  const [archive, ...others] = source.archives
+  if (!archive || others.length)
+    throw new Error(`Expected one archive, found ${source.archives.length}`)
+  return archive
+}
+
+/** Reads the HTML from one unchanged intake archive, refusing an archive whose checksum moved. */
+export function readIntakeHtml(intake: IntakeArchive): CheerioAPI {
+  const archive = readFileSync(path.join(INTAKE_DIR, intake.file))
   const sha256 = createHash("sha256").update(archive).digest("hex")
-  if (sha256 !== source.sha256) {
+  if (sha256 !== intake.sha256) {
     throw new Error(
-      `${source.intakeFile}: checksum ${sha256} does not match the manifest's ${source.sha256}`,
+      `${intake.file}: checksum ${sha256} does not match the manifest's ${intake.sha256}`,
     )
   }
   const files = unzipSync(new Uint8Array(archive), {
@@ -23,7 +35,7 @@ export function readIntakeHtml(source: EditionSource): CheerioAPI {
   const [name, ...others] = Object.keys(files)
   if (!name || others.length)
     throw new Error(
-      `${source.intakeFile}: expected one HTML file, found ${Object.keys(files).length}`,
+      `${intake.file}: expected one HTML file, found ${Object.keys(files).length}`,
     )
   return load(new TextDecoder().decode(files[name]))
 }

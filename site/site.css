@@ -348,6 +348,32 @@ h2.division {
   margin-top: 1rem;
 }
 
+.division-summary {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 32rem;
+  margin: 0 auto 2rem;
+}
+
+.division-summary summary {
+  text-align: center;
+  cursor: pointer;
+  min-height: 2.75rem;
+  padding: 0.6rem 0;
+}
+
+.division-summary p {
+  margin: 0.4rem 0;
+}
+
+.division-summary h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  margin: 1rem 0 0.25rem;
+}
+
 .subtitle {
   text-align: center;
   color: var(--muted);
@@ -460,6 +486,13 @@ h2.division.hit {
 }
 
 /* Notices */
+
+.draft-banner {
+  border: 1px dashed var(--hit-edge);
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  color: var(--muted);
+}
 
 .notice {
   background: var(--surface);

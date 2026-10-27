@@ -19,6 +19,7 @@ import type {
 import { notesFor } from "./eutropius.ts"
 import {
   blockHtml,
+  onlyArchive,
   inlineHtml,
   plainText,
   readIntakeHtml,
@@ -46,7 +47,7 @@ const CHAPTER_MARKER = /^([IVXLCDM]+)\.\s+/
 const PAGE_MARKER = /(^|\s)\(\d{1,4}\)(?=[\s<]|$)/g
 
 export function importSuetonius(source: EditionSource): ImportedEdition {
-  const $ = readIntakeHtml(source)
+  const $ = readIntakeHtml(onlyArchive(source))
   const notes = readNotes($)
   const options = {
     noteRef: (el: Element) => {

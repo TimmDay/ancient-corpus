@@ -15,7 +15,14 @@ Last updated: 2026-10-27
 
 ## Next Works
 
-- [ ] Cassius Dio, *Roman History* (Foster, six Gutenberg volumes; volume 1 is Zonaras's epitome plus fragments)
+- [ ] Cassius Dio, *Roman History* (Foster): books 36–60 and 78–80 imported from volumes 2, 3, 4 and 6 (1,231 Passages, 22 Flags, visible with `pnpm dev:drafts`)
+  - [ ] Decide the book numbering for books 78–80, where Foster's numbers run one behind Boissevain's and Boissevain's Book 80 restarts its chapters for Alexander
+  - [ ] Decide how to hold the bracketed epitome versions that repeat chapter numbers (60.32–33, 78.19–20, 80.11–12)
+  - [ ] Review the remaining gap and duplicate Flags (likely transcription slips, e.g. 48.28, 48.40)
+  - [ ] Volume 5 (books 61–77): its own markup, chapter anchors `a61_1` and side notes
+  - [ ] Volume 1 (books 1–35): Zonaras's epitome and fragments, with Boissevain fragment numbers
+  - [ ] Volume 6's "Fragments preserved from books preceding No. 36"
+  - [ ] The finished page will be around 4 MB (1.3 MB compressed); consider splitting Dio into a page per book
 - [ ] Suetonius, *De Grammaticis et Rhetoribus* and *De Poetis*: same Gutenberg volume as the Lives, separate Works
 - [ ] Replace or re-download the corrupt `Procopius-BuildingsOfJustinian-architecture.zip`
 - [ ] Work through the rest of `docs/intake/report.md` a few Works at a time

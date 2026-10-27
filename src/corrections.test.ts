@@ -151,3 +151,28 @@ describe("Corrections", () => {
     ).toThrow(/quoted text not found/)
   })
 })
+
+describe("duplicate Locators", () => {
+  it("flags the later Passage, and a renumber with quoted text picks it out", () => {
+    const imported = edition(
+      passage("Nero 1", "first"),
+      passage("Nero 1", "second"),
+      passage("Nero 3", "third"),
+    )
+    expect(
+      correctEdition(imported, []).passages.map((p) =>
+        p.flags.map((f) => f.code),
+      ),
+    ).toEqual([[], ["duplicate"], []])
+    const fixed = correctEdition(imported, [
+      { op: "renumber", locator: "Nero 1", at: "second", newLocator: "Nero 2" },
+    ])
+    expect(
+      fixed.passages.map((p) => [p.locator, p.text, p.flags.length]),
+    ).toEqual([
+      ["Nero 1", "first", 0],
+      ["Nero 2", "second", 0],
+      ["Nero 3", "third", 0],
+    ])
+  })
+})

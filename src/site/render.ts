@@ -1,6 +1,13 @@
 // HTML for every page the site serves. Pure functions of the corpus files.
 
-import type { Edition, EditionText, Heading, Passage, Work } from "../corpus.ts"
+import type {
+  Division,
+  Edition,
+  EditionText,
+  Heading,
+  Passage,
+  Work,
+} from "../corpus.ts"
 import { escapeHtml } from "../importers/gutenberg.ts"
 import { aliasKey, locatorId, type LocatorIndex } from "../locator.ts"
 
@@ -73,8 +80,11 @@ export function workPage(
   edition: Edition,
   text: EditionText,
   editions: Edition[],
+  /** Unresolved Flags, when rendering an unpublished draft for review. */
+  draftFlags = 0,
 ): string {
   const index = locatorIndex(work, text)
+  const ids = passageIds(text.passages)
   const otherTitles = work.otherTitles.length
     ? `<p class="other-titles">Also known as ${work.otherTitles.map((t) => `<i>${escapeHtml(t)}</i>`).join(", ")}</p>`
     : ""
@@ -93,7 +103,7 @@ export function workPage(
 <nav class="toc" aria-label="Contents">
 <details class="toc-panel" open>
 <summary>Contents</summary>
-${tableOfContents(text)}
+${tableOfContents(text, ids)}
 </details>
 </nav>
 <main id="main" tabindex="-1">
@@ -104,9 +114,10 @@ ${otherTitles}
 <p class="edition-line">${escapeHtml(editionLine(edition))}. ${escapeHtml(languageName(edition.language))}.</p>
 ${switcher}
 </header>
+${draftFlags ? `<p class="draft-banner">Draft: ${draftFlags} unresolved Flags. Not published until they are reviewed with <code>pnpm review</code>.</p>` : ""}
 <div class="notice" id="notice" role="status" hidden></div>
 <article class="text" lang="${attr(edition.language)}" aria-label="Text">
-${text.passages.map(passageHtml).join("\n")}
+${text.passages.map((p) => passageHtml(p, ids.get(p) ?? "", text.divisions)).join("\n")}
 </article>
 ${editorialHtml(text)}
 <footer class="attribution">
@@ -136,13 +147,32 @@ export function editionLine(edition: Edition): string {
   return `${edition.title}${people.length ? `, ${people.join(", ")}` : ""}${year}`
 }
 
+/**
+ * Each Passage's HTML id. Published Editions have unique Locators; a draft may
+ * not yet, so a repeated Locator gets `~2`, `~3` to keep anchors distinct.
+ */
+export function passageIds(passages: Passage[]): Map<Passage, string> {
+  const counts = new Map<string, number>()
+  return new Map(
+    passages.map((p) => {
+      const count = (counts.get(p.locator) ?? 0) + 1
+      counts.set(p.locator, count)
+      return [
+        p,
+        count === 1 ? locatorId(p.locator) : `${locatorId(p.locator)}~${count}`,
+      ]
+    }),
+  )
+}
+
 export function locatorIndex(work: Work, text: EditionText): LocatorIndex {
+  const ids = passageIds(text.passages)
   const divisions = new Map(text.divisions.map((d) => [d.locator, d]))
   const seen = new Set<string>()
   const targets = text.passages.flatMap((p) => {
     const division = !seen.has(p.division) && divisions.get(p.division)
     seen.add(p.division)
-    const passage = { locator: p.locator, id: locatorId(p.locator) }
+    const passage = { locator: p.locator, id: ids.get(p) ?? "" }
     return division
       ? [
           { locator: division.locator, id: locatorId(division.locator) },
@@ -159,7 +189,7 @@ export function locatorIndex(work: Work, text: EditionText): LocatorIndex {
   return { targets, aliases }
 }
 
-function tableOfContents(text: EditionText): string {
+function tableOfContents(text: EditionText, ids: Map<Passage, string>): string {
   const items = text.divisions.map((division) => {
     const sections = text.passages
       .filter((p) => p.division === division.locator)
@@ -168,7 +198,7 @@ function tableOfContents(text: EditionText): string {
           .filter((h) => h.kind === "section")
           .map(
             (h) =>
-              `<li><a href="#${attr(locatorId(p.locator))}">${h.html}</a></li>`,
+              `<li><a href="#${attr(ids.get(p) ?? "")}">${h.html}</a></li>`,
           ),
       )
     return `<li><a href="#${attr(locatorId(division.locator))}" data-division="${attr(locatorId(division.locator))}">${escapeHtml(division.label)}</a>${
@@ -183,8 +213,11 @@ function tableOfContents(text: EditionText): string {
   return `<ol class="toc-list">${items.join("")}${editorial}</ol>`
 }
 
-function passageHtml(passage: Passage): string {
-  const id = locatorId(passage.locator)
+function passageHtml(
+  passage: Passage,
+  id: string,
+  divisions: Division[],
+): string {
   const label = passage.locator.split(/[\s.]/).at(-1) ?? passage.locator
   const notes = passage.notes.length
     ? `<aside class="notes" aria-label="Notes to ${attr(passage.locator)}" lang="en"><ol>${passage.notes
@@ -194,7 +227,7 @@ function passageHtml(passage: Passage): string {
         )
         .join("")}</ol></aside>`
     : ""
-  return `${passage.headings.map((h) => headingHtml(h, passage)).join("\n")}
+  return `${passage.headings.map((h) => headingHtml(h, passage, divisions)).join("\n")}
 <section class="passage" id="${attr(id)}" aria-label="${attr(passage.locator)}">
 <a class="loc" href="#${attr(id)}" title="Copy a link to ${attr(passage.locator)}" aria-label="Copy a link to ${attr(passage.locator)}">${escapeHtml(label)}</a>
 ${passage.blocks.map((b) => `<p>${b}</p>`).join("\n")}
@@ -202,10 +235,21 @@ ${notes}
 </section>`
 }
 
-function headingHtml(heading: Heading, passage: Passage): string {
+function headingHtml(
+  heading: Heading,
+  passage: Passage,
+  divisions: Division[],
+): string {
   const lang = heading.editorial ? ' lang="en"' : ""
   if (heading.kind === "division") {
-    return `<h2 class="division" id="${attr(locatorId(passage.division))}" tabindex="-1"${lang}>${heading.html}</h2>`
+    const summary = divisions.find(
+      (d) => d.locator === passage.division,
+    )?.summary
+    return `<h2 class="division" id="${attr(locatorId(passage.division))}" tabindex="-1"${lang}>${heading.html}</h2>${
+      summary
+        ? `<details class="division-summary" lang="en"><summary>Translator’s summary</summary>${summary}</details>`
+        : ""
+    }`
   }
   if (heading.kind === "subtitle")
     return `<p class="subtitle"${lang}>${heading.html}</p>`
