@@ -1,0 +1,38 @@
+{
+  "name": "ancient-corpus",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A public reading reference of ancient texts, linkable by Work and Locator",
+  "type": "module",
+  "packageManager": "pnpm@12.3.4",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "check": "eslint . --max-warnings 0 && tsc --noEmit",
+    "format:check": "prettier --check . --cache",
+    "format:write": "prettier --write . --cache",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.5",
+    "eslint": "^10.13.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.0",
+    "vitest": "^5.0.5"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,mjs}": [
+      "eslint --max-warnings 0 --no-warn-ignored",
+      "prettier --write"
+    ]
+  }
+}
