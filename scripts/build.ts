@@ -98,7 +98,8 @@ export function build({ drafts = false, outDir = DIST } = {}): {
     outdir: path.join(outDir, "assets"),
     bundle: true,
     minify: true,
-    format: "esm",
+    // Pages load several bundles as classic scripts; each needs its own scope.
+    format: "iife",
     target: "es2022",
     logLevel: "warning",
   })

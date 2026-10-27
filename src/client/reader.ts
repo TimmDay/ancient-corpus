@@ -137,19 +137,25 @@ function followContents(): void {
   const headings = [...document.querySelectorAll<HTMLElement>("h2.division")]
   let marked: HTMLAnchorElement | undefined
   let queued = false
+  /** True while the text scrolls to a place picked from the contents. */
+  let jumping = false
 
-  // Checked on every scroll, so a jump straight past a heading still counts.
-  const update = () => {
-    queued = false
-    const line = window.innerHeight * 0.3
-    const current = headings.findLast(
-      (h) => h.getBoundingClientRect().top < line,
-    )
-    const link = current ? links.get(current.id) : undefined
+  const mark = (link: HTMLAnchorElement | undefined) => {
     if (link === marked) return
     marked?.removeAttribute("aria-current")
     link?.setAttribute("aria-current", "location")
     marked = link
+  }
+
+  // Checked on every scroll, so a jump straight past a heading still counts.
+  const update = () => {
+    queued = false
+    if (jumping) return
+    const line = window.innerHeight * 0.3
+    const current = headings.findLast(
+      (h) => h.getBoundingClientRect().top < line,
+    )
+    mark(current ? links.get(current.id) : undefined)
   }
   window.addEventListener(
     "scroll",
@@ -159,6 +165,29 @@ function followContents(): void {
     },
     { passive: true },
   )
+
+  // A place picked from the contents opens its book there at once, and the
+  // contents hold still while the text scrolls to it, rather than opening and
+  // closing every book it passes.
+  document.querySelector(".toc")?.addEventListener("click", (event) => {
+    const picked = (event.target as Element).closest<HTMLAnchorElement>("a")
+    if (picked?.pathname !== location.pathname) return
+    const book = picked
+      .closest(".toc-list > li")
+      ?.querySelector<HTMLAnchorElement>(":scope > a[data-division]")
+    if (!book) return
+    mark(book)
+    jumping = true
+    const settle = () => {
+      jumping = false
+      clearTimeout(timer)
+      window.removeEventListener("scrollend", settle)
+      update()
+    }
+    // scrollend never fires if the text is already there; the timer covers that.
+    const timer = setTimeout(settle, 2000)
+    window.addEventListener("scrollend", settle)
+  })
   update()
 }
 
