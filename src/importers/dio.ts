@@ -48,8 +48,6 @@ export function importDio(source: EditionSource): ImportedEdition {
     divisions.push(...volume.divisions)
     passages.push(...volume.passages)
   }
-  divisions.sort((a, b) => Number(a.locator) - Number(b.locator))
-  passages.sort((a, b) => compareLocators(a.locator, b.locator))
   return { divisions, passages, editorial: [] }
 }
 
@@ -219,10 +217,4 @@ function readFootnotes($: CheerioAPI, firstId: number) {
     byId.set(id, (match[2] ?? "").trim())
   }
   return { ids, byId, size: ids.size }
-}
-
-function compareLocators(a: string, b: string): number {
-  const [ab = 0, ac = 0] = a.split(".").map(Number)
-  const [bb = 0, bc = 0] = b.split(".").map(Number)
-  return ab - bb || ac - bc
 }

@@ -121,7 +121,7 @@ ${text.passages.map((p) => passageHtml(p, ids.get(p) ?? "", text.divisions)).joi
 </article>
 ${editorialHtml(text)}
 <footer class="attribution">
-<p>Text from <a href="${attr(edition.source.url)}">${escapeHtml(edition.source.name)}</a>. ${escapeHtml(edition.source.rights)}</p>
+<p>Text from ${sourceLinks(edition)}. ${escapeHtml(edition.source.rights)}</p>
 <p>Link to any passage by adding its Locator: <code>${escapeHtml(workUrl(work))}#${escapeHtml(text.passages[0]?.locator ?? "")}</code></p>
 </footer>
 </main>
@@ -135,6 +135,17 @@ ${editorialHtml(text)}
     body,
     scripts: ["/assets/reader.js"],
   })
+}
+
+/** One link for a single source; one per volume when the Edition spans several. */
+function sourceLinks(edition: Edition): string {
+  const volumes = edition.source.archives.filter((a) => a.url)
+  if (volumes.length < 2) {
+    return `<a href="${attr(edition.source.url)}">${escapeHtml(edition.source.name)}</a>`
+  }
+  return `${escapeHtml(edition.source.name)} (${volumes
+    .map((a, i) => `<a href="${attr(a.url ?? "")}">volume ${i + 1}</a>`)
+    .join(", ")})`
 }
 
 /** "Eutropius, edited for school use, ed. J. C. Hazzard (1898)" */

@@ -48,7 +48,12 @@ export type EditionSource = {
   rights: string
 }
 
-export type IntakeArchive = { file: string; sha256: string }
+export type IntakeArchive = {
+  file: string
+  sha256: string
+  /** Where this volume came from, when an Edition spans several. */
+  url?: string
+}
 
 export type Heading = {
   /** `division` opens a book or Life; `section` is a heading inside one; `subtitle` describes the one above it. */

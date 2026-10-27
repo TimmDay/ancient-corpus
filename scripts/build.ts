@@ -24,12 +24,17 @@ import type { WorkListing } from "../src/works-index.ts"
 const DIST = path.join(REPO_ROOT, "dist")
 
 /** `drafts` also renders Editions with unresolved Flags, bannered, for local review only. */
-export function build({ drafts = false } = {}): {
+export function build({ drafts = false, outDir = DIST } = {}): {
   published: number
   skipped: string[]
 } {
-  rmSync(DIST, { recursive: true, force: true })
-  mkdirSync(path.join(DIST, "assets"), { recursive: true })
+  rmSync(outDir, { recursive: true, force: true })
+  mkdirSync(path.join(outDir, "assets"), { recursive: true })
+  const write = (relative: string, content: string) => {
+    const file = path.join(outDir, relative)
+    mkdirSync(path.dirname(file), { recursive: true })
+    writeFileSync(file, content)
+  }
 
   const published: { work: Work; edition: Edition }[] = []
   const listings: WorkListing[] = []
@@ -83,14 +88,14 @@ export function build({ drafts = false } = {}): {
   write("404.html", notFoundPage())
   write("works.json", JSON.stringify(listings))
   write("_redirects", redirects.join("\n") + "\n")
-  cpSync(path.join(REPO_ROOT, "site"), path.join(DIST, "assets"), {
+  cpSync(path.join(REPO_ROOT, "site"), path.join(outDir, "assets"), {
     recursive: true,
   })
   buildSync({
     entryPoints: ["reader", "cite", "home"].map((name) =>
       path.join(REPO_ROOT, "src", "client", `${name}.ts`),
     ),
-    outdir: path.join(DIST, "assets"),
+    outdir: path.join(outDir, "assets"),
     bundle: true,
     minify: true,
     format: "esm",
@@ -98,12 +103,6 @@ export function build({ drafts = false } = {}): {
     logLevel: "warning",
   })
   return { published: published.length, skipped }
-}
-
-function write(relative: string, content: string): void {
-  const file = path.join(DIST, relative)
-  mkdirSync(path.dirname(file), { recursive: true })
-  writeFileSync(file, content)
 }
 
 if (import.meta.main) {
