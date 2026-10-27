@@ -1,0 +1,16 @@
+{
+  "author": "Pliny the Elder",
+  "title": "Natural History",
+  "otherTitles": [
+    "Naturalis Historia"
+  ],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "book.section, e.g. 35.66",
+  "slugAliases": [
+    "pliny-the-elder/naturalis-historia"
+  ],
+  "locatorAliases": {},
+  "editions": []
+}

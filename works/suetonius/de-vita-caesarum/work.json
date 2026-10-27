@@ -1,0 +1,51 @@
+{
+  "author": "Suetonius",
+  "title": "De Vita Caesarum",
+  "otherTitles": [
+    "Twelve Caesars",
+    "The Twelve Caesars",
+    "12 Caesars",
+    "Lives of the Caesars"
+  ],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "Life chapter, e.g. Augustus 5",
+  "slugAliases": [
+    "suetonius/12-caesars",
+    "suetonius/lives-of-the-caesars",
+    "suetonius/the-twelve-caesars",
+    "suetonius/twelve-caesars"
+  ],
+  "locatorAliases": {
+    "Divus Julius": "Julius",
+    "Caesar": "Julius",
+    "Divus Augustus": "Augustus",
+    "Gaius": "Caligula",
+    "Caius": "Caligula",
+    "Gaius Caligula": "Caligula",
+    "Divus Claudius": "Claudius",
+    "Divus Vespasianus": "Vespasian",
+    "Vespasianus": "Vespasian",
+    "Divus Titus": "Titus",
+    "Domitianus": "Domitian"
+  },
+  "editions": [
+    {
+      "slug": "thomson-forester",
+      "preferred": true,
+      "language": "en",
+      "title": "The Lives of the Twelve Caesars",
+      "translator": "Alexander Thomson",
+      "editor": "T. Forester",
+      "source": {
+        "name": "Project Gutenberg #6400",
+        "url": "https://www.gutenberg.org/ebooks/6400",
+        "intakeFile": "Suetonius-TwelveCaesars-complete.zip",
+        "sha256": "14152b1864dc1639caf55b3a2b7dfbd2f765304b22888eefe94cee827eaac7b5",
+        "rights": "Public domain in the USA."
+      },
+      "importer": "suetonius"
+    }
+  ]
+}

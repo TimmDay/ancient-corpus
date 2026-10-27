@@ -1,0 +1,16 @@
+{
+  "author": "Theodoret",
+  "title": "Historia Ecclesiastica",
+  "otherTitles": [
+    "Church History"
+  ],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "book.chapter, e.g. 5.17",
+  "slugAliases": [
+    "theodoret/church-history"
+  ],
+  "locatorAliases": {},
+  "editions": []
+}

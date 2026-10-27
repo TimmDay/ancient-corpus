@@ -1,0 +1,18 @@
+{
+  "author": "Sulpicius Severus",
+  "title": "Chronica",
+  "otherTitles": [
+    "Chronicle",
+    "Sacred History"
+  ],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "book.chapter, e.g. 2.49",
+  "slugAliases": [
+    "sulpicius-severus/chronicle",
+    "sulpicius-severus/sacred-history"
+  ],
+  "locatorAliases": {},
+  "editions": []
+}

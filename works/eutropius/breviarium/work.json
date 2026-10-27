@@ -1,0 +1,33 @@
+{
+  "author": "Eutropius",
+  "title": "Breviarium historiae Romanae",
+  "otherTitles": [
+    "Breviarium"
+  ],
+  "originalLanguage": "la",
+  "writtenYearEarliest": 350,
+  "writtenYearLatest": 399,
+  "locatorFormat": "book.chapter, e.g. 9.13",
+  "slugAliases": [
+    "eutropius/breviarium-historiae-romanae"
+  ],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "hazzard-1898",
+      "preferred": true,
+      "language": "la",
+      "title": "Eutropius, edited for school use",
+      "editor": "J. C. Hazzard",
+      "publicationYear": 1898,
+      "source": {
+        "name": "Project Gutenberg #50808",
+        "url": "https://www.gutenberg.org/ebooks/50808",
+        "intakeFile": "Eutropius-Breviarium.zip",
+        "sha256": "0ae094cb297b1095314f4629c5eea0e2bbc488edd12a80eec995ad7231ecd7be",
+        "rights": "Public domain in the USA."
+      },
+      "importer": "eutropius"
+    }
+  ]
+}

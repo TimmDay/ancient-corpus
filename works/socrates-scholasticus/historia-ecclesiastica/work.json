@@ -1,0 +1,16 @@
+{
+  "author": "Socrates Scholasticus",
+  "title": "Historia Ecclesiastica",
+  "otherTitles": [
+    "Church History"
+  ],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "book.chapter, e.g. 5.14",
+  "slugAliases": [
+    "socrates-scholasticus/church-history"
+  ],
+  "locatorAliases": {},
+  "editions": []
+}
