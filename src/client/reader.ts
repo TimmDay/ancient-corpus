@@ -88,8 +88,9 @@ function showNotice(message: string): void {
   if (!notice) return
   notice.textContent = message
   notice.hidden = false
-  // The notice is sticky; make room so it never covers the Passage it explains.
-  document.documentElement.style.scrollPaddingTop = `${notice.offsetHeight + 24}px`
+  // The notice sticks under the header; make room so neither covers the Passage it explains.
+  const header = document.querySelector<HTMLElement>(".site-header")
+  document.documentElement.style.scrollPaddingTop = `${(header?.offsetHeight ?? 0) + notice.offsetHeight + 32}px`
 }
 
 function hideNotice(): void {

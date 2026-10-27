@@ -92,7 +92,7 @@ export function build({ drafts = false, outDir = DIST } = {}): {
     recursive: true,
   })
   buildSync({
-    entryPoints: ["reader", "cite", "home", "theme"].map((name) =>
+    entryPoints: ["reader", "cite", "home", "site"].map((name) =>
       path.join(REPO_ROOT, "src", "client", `${name}.ts`),
     ),
     outdir: path.join(outDir, "assets"),

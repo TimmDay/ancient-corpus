@@ -34,10 +34,14 @@ export function workUrl(work: Work, edition?: Edition): string {
 // Applies a remembered theme before first paint, so a dark page never flashes light.
 const THEME_SCRIPT = `<script>try{const t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch{}</script>`
 
-// Hidden until theme.js runs, since it does nothing without it.
+// Hidden until site.js runs, since it does nothing without it.
 const THEME_TOGGLE = `<button type="button" class="theme-toggle" aria-label="Switch theme" hidden>
 <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
 <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+</button>`
+
+const TO_TOP = `<button type="button" class="to-top" aria-label="Back to top" title="Back to top" data-away="false" hidden>
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>`
 
 type LayoutOptions = {
@@ -72,12 +76,13 @@ function layout({
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
 ${THEME_SCRIPT}
 ${head}
-${[...scripts, "/assets/theme.js"].map((src) => `<script src="${attr(src)}" defer></script>`).join("\n")}
+${[...scripts, "/assets/site.js"].map((src) => `<script src="${attr(src)}" defer></script>`).join("\n")}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header"><a class="brand" href="/">${SITE_NAME}</a>${THEME_TOGGLE}</header>
+<header class="site-header"><div class="site-header-inner"><a class="brand" href="/">${SITE_NAME}</a>${THEME_TOGGLE}</div></header>
 ${body}
+${TO_TOP}
 <div class="toast" role="status" aria-live="polite" id="toast"></div>
 </body>
 </html>
