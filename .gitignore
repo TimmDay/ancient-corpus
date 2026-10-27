@@ -1,0 +1,46 @@
+# Corpus data and generated artifacts
+/data/
+/corpus-intake/
+/corpus-raw/
+/corpus-normalized/
+/indexes/
+/embeddings/
+
+# Local databases
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# JavaScript / TypeScript
+node_modules/
+dist/
+build/
+.next/
+coverage/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Logs and temporary files
+*.log
+tmp/
+.cache/
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+
