@@ -19,6 +19,7 @@ import type {
 } from "../corpus.ts"
 import {
   blockHtml,
+  onlyArchive,
   inlineHtml,
   plainText,
   readIntakeHtml,
@@ -35,7 +36,7 @@ const EDITORIAL_TITLES: Record<string, string> = {
 }
 
 export function importEutropius(source: EditionSource): ImportedEdition {
-  const $ = readIntakeHtml(source)
+  const $ = readIntakeHtml(onlyArchive(source))
   const footnotes = readFootnotes($)
   const options = {
     noteRef: (el: Element) => footnoteId(el),

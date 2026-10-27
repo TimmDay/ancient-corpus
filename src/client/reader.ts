@@ -46,17 +46,42 @@ function land(initial = false): void {
   first.setAttribute("tabindex", "-1")
   first.focus({ preventScroll: true })
   if (initial) {
-    // Web fonts reflow a long page after it first lays out, so land again once they're in.
-    first.scrollIntoView({ block: "start" })
-    void document.fonts.ready.then(() =>
-      first.scrollIntoView({ block: "start" }),
-    )
+    pinWhileLoading(first)
   } else {
     first.scrollIntoView({
       block: "start",
       behavior: reduceMotion ? "auto" : "smooth",
     })
   }
+}
+
+/**
+ * Web fonts and late layout reflow a long page after it first renders, and
+ * document.fonts.ready can resolve before the fonts have even started. Keep
+ * the target in place as things load, until the reader scrolls themselves.
+ */
+function pinWhileLoading(target: HTMLElement): void {
+  let pinned = true
+  const pin = () => {
+    if (pinned) target.scrollIntoView({ block: "start" })
+  }
+  const release = () => {
+    pinned = false
+  }
+  for (const event of ["wheel", "touchstart", "keydown", "mousedown"]) {
+    window.addEventListener(event, release, { once: true, passive: true })
+  }
+  pin()
+  window.addEventListener("load", pin, { once: true })
+  document.fonts.addEventListener("loadingdone", pin)
+  void document.fonts.ready.then(pin)
+  const observer = new ResizeObserver(pin)
+  observer.observe(document.body)
+  setTimeout(() => {
+    release()
+    observer.disconnect()
+    document.fonts.removeEventListener("loadingdone", pin)
+  }, 4000)
 }
 
 function showNotice(message: string): void {
@@ -109,19 +134,31 @@ function followContents(): void {
     ].map((a) => [a.dataset.division, a]),
   )
   const headings = [...document.querySelectorAll<HTMLElement>("h2.division")]
-  const observer = new IntersectionObserver(
+  let marked: HTMLAnchorElement | undefined
+  let queued = false
+
+  // Checked on every scroll, so a jump straight past a heading still counts.
+  const update = () => {
+    queued = false
+    const line = window.innerHeight * 0.3
+    const current = headings.findLast(
+      (h) => h.getBoundingClientRect().top < line,
+    )
+    const link = current ? links.get(current.id) : undefined
+    if (link === marked) return
+    marked?.removeAttribute("aria-current")
+    link?.setAttribute("aria-current", "location")
+    marked = link
+  }
+  window.addEventListener(
+    "scroll",
     () => {
-      const current = headings
-        .filter((h) => h.getBoundingClientRect().top < window.innerHeight * 0.3)
-        .at(-1)
-      for (const [id, a] of links) {
-        if (id === current?.id) a.setAttribute("aria-current", "location")
-        else a.removeAttribute("aria-current")
-      }
+      if (!queued) requestAnimationFrame(update)
+      queued = true
     },
-    { rootMargin: "0px 0px -70% 0px" },
+    { passive: true },
   )
-  for (const h of headings) observer.observe(h)
+  update()
 }
 
 // On narrow screens the contents start closed so the text comes first.

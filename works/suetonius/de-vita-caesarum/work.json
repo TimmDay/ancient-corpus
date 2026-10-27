@@ -41,8 +41,12 @@
       "source": {
         "name": "Project Gutenberg #6400",
         "url": "https://www.gutenberg.org/ebooks/6400",
-        "intakeFile": "Suetonius-TwelveCaesars-complete.zip",
-        "sha256": "14152b1864dc1639caf55b3a2b7dfbd2f765304b22888eefe94cee827eaac7b5",
+        "archives": [
+          {
+            "file": "Suetonius-TwelveCaesars-complete.zip",
+            "sha256": "14152b1864dc1639caf55b3a2b7dfbd2f765304b22888eefe94cee827eaac7b5"
+          }
+        ],
         "rights": "Public domain in the USA."
       },
       "importer": "suetonius"

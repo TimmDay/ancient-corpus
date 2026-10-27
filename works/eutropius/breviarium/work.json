@@ -23,8 +23,12 @@
       "source": {
         "name": "Project Gutenberg #50808",
         "url": "https://www.gutenberg.org/ebooks/50808",
-        "intakeFile": "Eutropius-Breviarium.zip",
-        "sha256": "0ae094cb297b1095314f4629c5eea0e2bbc488edd12a80eec995ad7231ecd7be",
+        "archives": [
+          {
+            "file": "Eutropius-Breviarium.zip",
+            "sha256": "0ae094cb297b1095314f4629c5eea0e2bbc488edd12a80eec995ad7231ecd7be"
+          }
+        ],
         "rights": "Public domain in the USA."
       },
       "importer": "eutropius"
