@@ -7,6 +7,8 @@
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": -31,
+  "coversYearLatest": 360,
   "locatorFormat": "chapter.section, e.g. 39.2",
   "slugAliases": [
     "aurelius-victor/liber-de-caesaribus"

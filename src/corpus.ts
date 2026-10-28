@@ -18,6 +18,19 @@ export type Work = {
   originalLanguage: string | null
   writtenYearEarliest: number | null
   writtenYearLatest: number | null
+  /**
+   * The Period covered: the years whose events the Work narrates, as distinct
+   * from when it was written. Years before Christ are negative, with no year 0.
+   * Absent for a Work that narrates no history; either end is null where it is
+   * unclear (a chronicle that starts at the Creation).
+   */
+  coversYearEarliest?: number | null
+  coversYearLatest?: number | null
+  /**
+   * The years each division covers, `[division Locator, [earliest, latest]]`,
+   * e.g. `["79", [216, 218]]`. A division left out has no clear years.
+   */
+  divisionSpans?: [string, [number, number]][]
   locatorFormat: string | null
   /** Old or longer slugs that redirect here, e.g. `eutropius/breviarium-historiae-romanae`. */
   slugAliases: string[]

@@ -7,6 +7,8 @@
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": null,
+  "coversYearLatest": 417,
   "locatorFormat": "book.chapter.section, e.g. 7.35.10",
   "slugAliases": [
     "orosius/historiae-adversus-paganos",

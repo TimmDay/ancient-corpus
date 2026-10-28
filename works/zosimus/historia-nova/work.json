@@ -7,6 +7,8 @@
   "originalLanguage": "grc",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": -31,
+  "coversYearLatest": 410,
   "locatorFormat": "book.chapter, e.g. 1.61",
   "slugAliases": [
     "zosimus/new-history"

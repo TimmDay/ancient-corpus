@@ -7,6 +7,8 @@
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": 64,
+  "coversYearLatest": 313,
   "locatorFormat": "chapter.section, e.g. 44.5",
   "slugAliases": [
     "lactantius/on-the-deaths-of-the-persecutors"

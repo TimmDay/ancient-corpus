@@ -5,6 +5,8 @@
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": 379,
+  "coversYearLatest": 534,
   "locatorFormat": "year, e.g. s.a. 455",
   "slugAliases": [],
   "locatorAliases": {},

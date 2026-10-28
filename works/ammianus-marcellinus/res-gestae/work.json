@@ -5,6 +5,8 @@
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": 96,
+  "coversYearLatest": 378,
   "locatorFormat": "book.chapter.section, e.g. 31.13.12",
   "slugAliases": [],
   "locatorAliases": {},

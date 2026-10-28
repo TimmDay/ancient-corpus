@@ -7,6 +7,20 @@
   "originalLanguage": "la",
   "writtenYearEarliest": 350,
   "writtenYearLatest": 399,
+  "coversYearEarliest": -753,
+  "coversYearLatest": 364,
+  "divisionSpans": [
+    ["1", [-753, -390]],
+    ["2", [-389, -241]],
+    ["3", [-241, -201]],
+    ["4", [-200, -105]],
+    ["5", [-105, -81]],
+    ["6", [-78, -44]],
+    ["7", [-44, 96]],
+    ["8", [96, 235]],
+    ["9", [235, 305]],
+    ["10", [305, 364]]
+  ],
   "locatorFormat": "book.chapter, e.g. 9.13",
   "slugAliases": [
     "eutropius/breviarium-historiae-romanae"
