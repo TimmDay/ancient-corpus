@@ -1,0 +1,12 @@
+{
+  "author": "Festus",
+  "title": "Breviarium rerum gestarum populi Romani",
+  "otherTitles": ["Breviarium"],
+  "originalLanguage": "la",
+  "writtenYearEarliest": 369,
+  "writtenYearLatest": 370,
+  "locatorFormat": "chapter, e.g. 22",
+  "slugAliases": ["festus/breviarium-rerum-gestarum-populi-romani"],
+  "locatorAliases": {},
+  "editions": []
+}

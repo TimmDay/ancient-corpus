@@ -2,10 +2,10 @@
   "author": "John Zonaras",
   "title": "Epitome Historiarum",
   "otherTitles": [],
-  "originalLanguage": null,
+  "originalLanguage": "grc",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
-  "locatorFormat": null,
+  "locatorFormat": "book.chapter, e.g. 12.17",
   "slugAliases": [],
   "locatorAliases": {},
   "editions": []
