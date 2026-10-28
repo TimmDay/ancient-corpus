@@ -46,6 +46,12 @@
             "scan": "https://archive.org/details/diosannalsofrome04cass"
           },
           {
+            "file": "Dio-Rome-vol5.zip",
+            "sha256": "6c8541cfde032f2a4110773bab28587f2a83da6fce39cfdb484cf855b4850056",
+            "url": "https://www.gutenberg.org/ebooks/10890",
+            "scan": "https://archive.org/details/diosannalsofrome05cass"
+          },
+          {
             "file": "Dio-Rome-vol6.zip",
             "sha256": "5d2feaa828fe7d64666a1e890883375f9d43547b85cdf98cb17d4af9021c8613",
             "url": "https://www.gutenberg.org/ebooks/12061",

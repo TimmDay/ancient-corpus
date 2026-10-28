@@ -15,12 +15,13 @@ Last updated: 2026-10-27
 
 ## Next Works
 
-- [ ] Cassius Dio, *Roman History* (Foster): books 36–60 and 78–80 imported from volumes 2, 3, 4 and 6 (1,232 Passages, 9 Flags, visible with `pnpm dev:drafts`), read a book at a time
+- [ ] Cassius Dio, *Roman History* (Foster): books 36–80 imported from volumes 2–6 (1,580 Passages, 10 Flags, visible with `pnpm dev:drafts`), read a book at a time
   - [x] Boissevain's book numbers are canonical; Book 80's restarted run for Alexander is `80.1(Alexander)` and so on
   - [x] One page per book (`/cassius-dio/roman-history/44/`); `/cassius-dio/roman-history#44.19` still works and forwards to the book
   - [x] Epitome versions that repeat chapter numbers are `60.32(epitome)` and so on (60.32–33, 78.19–20, 80.11–12)
-  - [ ] Confirm the 9 Suggestions in `pnpm review`: each was checked against the printed scan; 54.33 restores two pages the transcription skipped
-  - [ ] Volume 5 (books 61–77): its own markup, chapter anchors `a61_1` and side notes
+  - [ ] Confirm the 10 Suggestions in `pnpm review`: each was checked against the printed scan; 54.33 restores two pages the transcription skipped
+  - [x] Volume 5 (books 61–77): its own markup, side-note chapter numbers; Book 72 split back out of Gutenberg's 71
+  - [ ] Decide Book 72's order before publishing: Gutenberg sorts it into number order and merges Foster's doubly printed 27/28 fragments and a second "22"; Foster prints 11–13 among 3–10 and 22–33 before 18–21
   - [ ] Volume 1 (books 1–35): Zonaras's epitome and fragments, with Boissevain fragment numbers
   - [ ] Volume 6's "Fragments preserved from books preceding No. 36"
 - [ ] Suetonius, *De Grammaticis et Rhetoribus* and *De Poetis*: same Gutenberg volume as the Lives, separate Works
