@@ -40,6 +40,19 @@ const SUMMARY_START = /DIO'?S ROMAN HISTORY/i
  * reign, so its Locators are `80.1(Alexander)` and the like.
  */
 const RESTARTED_BOOKS: Record<string, string> = { "80": "Alexander" }
+/**
+ * Chapters Foster gives twice, once from the epitome and excerpts out of
+ * sequence, and which printing (1st or 2nd) is that version: it becomes
+ * `60.32(epitome)`, leaving `60.32` for the main text.
+ */
+const EPITOME_REPEATS: Record<string, 1 | 2> = {
+  "60.32": 2, // bracketed, after the main 60.32–33
+  "60.33": 2,
+  "78.19": 1, // printed before the main 78.19–20; 78.20 is bracketed
+  "78.20": 1,
+  "80.11": 1, // printed between 80.8 and 80.9
+  "80.12": 1,
+}
 // One pattern for every marker, so they are handled in the order they appear.
 const MARKER =
   /\[\s*-\s*(\d+)\s*-?\s*\]|\[\s*(\d+)\s*-\s*\]|\[Sidenote:\s*[—–-]+\s*(\d+)\s*[—–-]+\s*\]|\[(?:Sidenote:\s*)?((?:B\.\s?C\.|A\.\s?D\.)[^\]]*)\]|\[(\d+)\]/g
@@ -54,6 +67,13 @@ export function importDio(source: EditionSource): ImportedEdition {
     nextNoteId += volume.notes.size
     divisions.push(...volume.divisions)
     passages.push(...volume.passages)
+  }
+  const printings = new Map<string, number>()
+  for (const passage of passages) {
+    const printing = (printings.get(passage.locator) ?? 0) + 1
+    printings.set(passage.locator, printing)
+    if (EPITOME_REPEATS[passage.locator] === printing)
+      passage.locator = `${passage.locator}(epitome)`
   }
   return { divisions, passages, editorial: [] }
 }

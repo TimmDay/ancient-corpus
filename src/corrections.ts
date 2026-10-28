@@ -157,7 +157,11 @@ export function raiseFlags(passages: Omit<Passage, "flags">[]): Passage[] {
     seen.add(passage.locator)
   }
 
-  for (const group of byDivision.values()) {
+  for (const division of byDivision.values()) {
+    // A run named apart from the division's own, like an epitome's version of
+    // chapters already given (`60.32(epitome)`), sits outside its numbering.
+    const own = qualifierOf(division[0]?.locator ?? "")
+    const group = division.filter((p) => qualifierOf(p.locator) === own)
     const numbers = group.map((p) => lastNumber(p.locator))
     group.forEach((passage, i) => {
       if (passage.flags.some((f) => f.code === "duplicate")) return
@@ -238,6 +242,11 @@ export function splitBlocks(
 }
 
 /** Where the visible text `wanted` starts in `html`, ignoring tags, note references and spacing. */
+/** The bracketed name of a run, `Alexander` in `80.1(Alexander)`, if any. */
+function qualifierOf(locator: string): string | undefined {
+  return /\(([^)]*)\)$/.exec(locator)?.[1]
+}
+
 /** The chapter number a Locator ends with: 5 in `Augustus 5`, 1 in `80.1(Alexander)`. */
 function lastNumber(locator: string): number {
   return Number(
