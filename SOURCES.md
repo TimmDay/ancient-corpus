@@ -19,7 +19,7 @@ Contacts are the sites' own contact pages; find the current address there before
 | Cassius Dio, *Roman History* | Herbert Baldwin Foster (1905–06), vol. 2 | English | [Gutenberg #11607](https://www.gutenberg.org/ebooks/11607) | Public domain | Produced by Ted Garvin, Jayam Subramanian and PG Distributed Proofreaders |
 | | vol. 3 | | [Gutenberg #10162](https://www.gutenberg.org/ebooks/10162) | | Ted Garvin, Jayam Subramanian and PG Distributed Proofreaders |
 | | vol. 4 | | [Gutenberg #10883](https://www.gutenberg.org/ebooks/10883) | | Ted Garvin, Jayam Subramanian and PG Distributed Proofreaders |
-| | vol. 5 (in [#12](https://github.com/TimmDay/ancient-corpus/pull/12)) | | [Gutenberg #10890](https://www.gutenberg.org/ebooks/10890) | | Ted Garvin, Ben Courtney and the Online Distributed Proofreading Team |
+| | vol. 5 | | [Gutenberg #10890](https://www.gutenberg.org/ebooks/10890) | | Ted Garvin, Ben Courtney and the Online Distributed Proofreading Team |
 | | vol. 6 | | [Gutenberg #12061](https://www.gutenberg.org/ebooks/12061) | | Ted Garvin, Jayam Subramanian and PG Distributed Proofreaders |
 
 ## Planned

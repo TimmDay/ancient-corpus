@@ -144,5 +144,20 @@
         "newLocator": "58.27"
       }
     ]
+  },
+  {
+    "locator": "72.3",
+    "flag": "gap",
+    "archive": "Dio-Rome-vol5.zip",
+    "page": 251,
+    "finding": "Foster prints “(BOOK 72, BOISSEVAIN.)” and then “— 3 —”: Boissevain’s Book 72 carries on Book 71’s chapter numbers (71.1–2) instead of starting at 1. Gutenberg drops the heading; the importer puts it back.",
+    "corrections": [
+      {
+        "op": "accept",
+        "locator": "72.3",
+        "flag": "gap",
+        "reason": "Boissevain’s Book 72 continues Book 71’s chapter numbers, starting at 3"
+      }
+    ]
   }
 ]

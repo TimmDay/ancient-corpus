@@ -24,6 +24,10 @@ export type Correction =
   | { op: "replace"; locator: string; find: string; with: string }
   /** `at` picks one of several Passages that share a Locator, by text it contains. */
   | { op: "renumber"; locator: string; newLocator: string; at?: string }
+  /** Moves a Passage to just after the first Passage at `after`, where the source prints it. */
+  | { op: "move"; locator: string; after: string; at?: string }
+  /** Marks the Passage holding the quoted text as where the source resumes the earlier Passage at its Locator. */
+  | { op: "resume"; locator: string; at: string }
 
 /** Applies Corrections to an importer's output, then raises and settles Flags. */
 export function correctEdition(
@@ -121,6 +125,25 @@ export function correctEdition(
       case "renumber":
         passages[index] = { ...passage, locator: correction.newLocator }
         break
+      case "move": {
+        passages.splice(index, 1)
+        const target = passages.findIndex((p) => p.locator === correction.after)
+        if (target === -1)
+          throw new Error(
+            `Correction ${describe(correction)}: no Passage ${correction.after} to move it after`,
+          )
+        passages.splice(target + 1, 0, passage)
+        break
+      }
+      case "resume":
+        if (
+          passages.findIndex((p) => p.locator === correction.locator) === index
+        )
+          throw new Error(
+            `Correction ${describe(correction)}: no earlier part to resume`,
+          )
+        passages[index] = { ...passage, resumes: true }
+        break
     }
   }
 
@@ -149,7 +172,7 @@ export function raiseFlags(passages: Omit<Passage, "flags">[]): Passage[] {
 
   const seen = new Set<string>()
   for (const passage of result) {
-    if (seen.has(passage.locator)) {
+    if (seen.has(passage.locator) && !passage.resumes) {
       passage.flags.push({
         code: "duplicate",
         detail: `An earlier Passage already has the Locator ${passage.locator}`,
@@ -162,11 +185,12 @@ export function raiseFlags(passages: Omit<Passage, "flags">[]): Passage[] {
     // A run named apart from the division's own, like an epitome's version of
     // chapters already given (`60.32(epitome)`), sits outside its numbering.
     const own = qualifierOf(division[0]?.locator ?? "")
-    const group = division.filter((p) => qualifierOf(p.locator) === own)
+    const group = division.filter(
+      (p) => qualifierOf(p.locator) === own && !p.resumes,
+    )
     const numbers = group.map((p) => lastNumber(p.locator))
     group.forEach((passage, i) => {
       if (passage.flags.some((f) => f.code === "duplicate")) return
-      const next = numbers[i + 1]
       const current = numbers[i] ?? NaN
       if (i === 0 && current !== 1) {
         passage.flags.push({
@@ -174,11 +198,14 @@ export function raiseFlags(passages: Omit<Passage, "flags">[]): Passage[] {
           detail: `The division starts at ${current}, not 1`,
         })
       }
-      // A repeated number is the duplicate Flag's to report, not a gap.
+      // A number is missing only if no Passage anywhere in the division has it:
+      // the source may print chapters out of number order.
+      // A repeated number just after is the duplicate Flag's to report.
+      const following = numbers[i + 1]
       const repeats =
-        next !== undefined &&
-        group.slice(0, i + 1).some((p) => lastNumber(p.locator) === next)
-      if (next !== undefined && next !== current + 1 && !repeats) {
+        following !== undefined && numbers.slice(0, i + 1).includes(following)
+      const next = Math.min(...numbers.filter((n) => n > current))
+      if (Number.isFinite(next) && !numbers.includes(current + 1) && !repeats) {
         passage.flags.push({
           code: "gap",
           detail: `The next Passage is numbered ${next}, not ${current + 1}`,
