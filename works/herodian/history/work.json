@@ -7,6 +7,8 @@
   "originalLanguage": "grc",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": 180,
+  "coversYearLatest": 238,
   "locatorFormat": "book.chapter, e.g. 5.2",
   "slugAliases": [
     "herodian/history-of-the-empire-from-the-death-of-marcus",

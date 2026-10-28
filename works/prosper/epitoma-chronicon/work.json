@@ -7,6 +7,8 @@
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": null,
+  "coversYearLatest": 455,
   "locatorFormat": "entry, e.g. 1191",
   "slugAliases": [
     "prosper-of-aquitaine/chronicon",

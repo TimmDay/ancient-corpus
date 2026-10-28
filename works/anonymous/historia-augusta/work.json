@@ -7,6 +7,8 @@
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": 117,
+  "coversYearLatest": 285,
   "locatorFormat": "Life chapter.section, e.g. Aurelian 25.3",
   "slugAliases": [
     "anonymous/scriptores-historiae-augustae",

@@ -8,6 +8,8 @@
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": null,
+  "coversYearLatest": 400,
   "locatorFormat": "book.chapter, e.g. 2.49",
   "slugAliases": [
     "sulpicius-severus/chronicle",

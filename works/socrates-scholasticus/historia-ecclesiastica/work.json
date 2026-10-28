@@ -7,6 +7,8 @@
   "originalLanguage": "grc",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": 305,
+  "coversYearLatest": 439,
   "locatorFormat": "book.chapter, e.g. 5.14",
   "slugAliases": [
     "socrates-scholasticus/church-history"

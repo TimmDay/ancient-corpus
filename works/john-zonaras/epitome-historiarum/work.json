@@ -5,6 +5,8 @@
   "originalLanguage": "grc",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": null,
+  "coversYearLatest": 1118,
   "locatorFormat": "book.chapter, e.g. 12.17",
   "slugAliases": [],
   "locatorAliases": {},
