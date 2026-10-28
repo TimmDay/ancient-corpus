@@ -17,7 +17,7 @@ The position inside a Work, written the way that Work is conventionally cited (e
 _Avoid_: Citation (for this part alone), page, passage reference
 
 **Passage**:
-The text at one Locator that an Edition actually marks: the finest unit a link can land on and highlight.
+The text at one Locator that an Edition actually marks: the finest unit a link can land on and highlight. Passages appear in the order the translator printed them, even where that is not number order. A Passage the translator prints in more than one place, interrupted by other chapters, is still one Passage at one Locator.
 _Avoid_: Chunk, segment, section (as a generic term)
 
 **Editorial matter**:

@@ -358,7 +358,8 @@ function choicesFor(
   )
   const choices: Record<string, Choice> = {}
   for (const group of shared.values()) {
-    if (group.length < 2) continue
+    // Parts of one Passage share its Locator; only different Locators need a choice.
+    if (new Set(group.map((t) => t.locator)).size < 2) continue
     for (const target of group) {
       const division = divisionById.get(target.id)
       const passage =

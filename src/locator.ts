@@ -98,8 +98,9 @@ export function resolveLocator(
   const decoded = safeDecode(written).trim()
   if (!decoded) return { kind: "not-found" }
 
+  // A Passage printed in parts is found at its first part.
   const byKey = new Map(
-    index.targets.map((t) => [keyOf(locatorTokens(t.locator)), t]),
+    index.targets.toReversed().map((t) => [keyOf(locatorTokens(t.locator)), t]),
   )
   const [startWritten = "", endWritten] = splitRange(decoded)
   const startTokens = applyAliases(locatorTokens(startWritten), index.aliases)
@@ -131,7 +132,10 @@ export function resolvedTargets(
 ): LocatorTarget[] {
   if (resolution.kind !== "found") return []
   const from = index.targets.indexOf(resolution.start)
-  const to = resolution.end ? index.targets.indexOf(resolution.end) : from
+  // A single Passage the source prints in parts lights up every part.
+  if (!resolution.end)
+    return index.targets.filter((t) => t.locator === resolution.start.locator)
+  const to = index.targets.indexOf(resolution.end)
   return to >= from ? index.targets.slice(from, to + 1) : [resolution.start]
 }
 
@@ -140,7 +144,9 @@ function twinsOf(target: LocatorTarget, index: LocatorIndex): LocatorTarget[] {
   const bare = (locator: string) =>
     keyOf(locatorTokens(locator.replace(/\([^)]*\)/g, "")))
   const key = bare(target.locator)
-  return index.targets.filter((t) => t !== target && bare(t.locator) === key)
+  return index.targets.filter(
+    (t) => t.locator !== target.locator && bare(t.locator) === key,
+  )
 }
 
 function rangeEnd(

@@ -1,0 +1,49 @@
+[
+  {
+    "op": "split",
+    "locator": "72.3",
+    "at": "When in one battle the Marcomani",
+    "newLocator": "72.3"
+  },
+  {
+    "op": "resume",
+    "locator": "72.3",
+    "at": "When in one battle the Marcomani"
+  },
+  { "op": "move", "locator": "72.11", "after": "72.3" },
+  { "op": "move", "locator": "72.12", "after": "72.11" },
+  { "op": "move", "locator": "72.13", "after": "72.7" },
+  {
+    "op": "split",
+    "locator": "72.14",
+    "at": "When Pertinax in consideration",
+    "newLocator": "72.22"
+  },
+  { "op": "move", "locator": "72.14", "after": "72.13" },
+  { "op": "resume", "locator": "72.22", "at": "Upon the rebellion of Cassius" },
+  {
+    "op": "split",
+    "locator": "72.27",
+    "at": "Marcus Antoninus [was so much grieved",
+    "newLocator": "72.28"
+  },
+  {
+    "op": "split",
+    "locator": "72.28",
+    "at": "Thus was this pretender slain",
+    "newLocator": "72.27"
+  },
+  { "op": "resume", "locator": "72.27", "at": "Thus was this pretender slain" },
+  { "op": "resume", "locator": "72.28", "at": "The same man would not slay" },
+  {
+    "op": "split",
+    "locator": "72.33",
+    "at": "Had he lived longer",
+    "newLocator": "72.33"
+  },
+  { "op": "resume", "locator": "72.33", "at": "Had he lived longer" },
+  { "op": "move", "locator": "72.18", "after": "72.33" },
+  { "op": "move", "locator": "72.19", "after": "72.18" },
+  { "op": "move", "locator": "72.20", "after": "72.19" },
+  { "op": "move", "locator": "72.21", "after": "72.20" }
+]

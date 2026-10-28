@@ -101,6 +101,12 @@ export type Passage = {
   /** Plain text of the blocks, for search and embeddings. */
   text: string
   flags: Flag[]
+  /**
+   * Set on a later part of a Passage the source prints in more than one place,
+   * resuming the Passage at the same Locator after other text (Foster's
+   * bracketed margin numbers). It shares that Passage's Locator.
+   */
+  resumes?: true
 }
 
 /** A division that has its own heading and can be linked to (a book, a Life). */

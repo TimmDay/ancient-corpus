@@ -215,4 +215,23 @@ describe("resolvedTargets", () => {
       resolvedTargets(resolution, eutropius).map((t) => t.locator),
     ).toEqual(["9.9", "9.10", "9.11"])
   })
+
+  it("lands on the first part of a Passage printed in parts, and lights up every part", () => {
+    const dio: LocatorIndex = {
+      targets: [
+        { locator: "72.3", id: "72.3" },
+        { locator: "72.11", id: "72.11" },
+        { locator: "72.3", id: "72.3~2" },
+        { locator: "72.4", id: "72.4" },
+      ],
+      aliases: {},
+    }
+    const resolution = resolveLocator("72.3", dio)
+    expect(resolution).toMatchObject({ kind: "found", start: { id: "72.3" } })
+    expect(resolution.kind === "found" && resolution.alternatives).toBeFalsy()
+    expect(resolvedTargets(resolution, dio).map((t) => t.id)).toEqual([
+      "72.3",
+      "72.3~2",
+    ])
+  })
 })
