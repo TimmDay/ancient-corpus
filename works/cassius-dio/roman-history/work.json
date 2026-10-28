@@ -12,6 +12,10 @@
     "cassius-dio/historia-romana"
   ],
   "locatorAliases": {},
+  "locatorQualifiers": {
+    "Alexander": "From the reign of Severus Alexander, where Boissevain’s Book 80 starts its chapter numbers again",
+    "epitome": "From the epitome and excerpts: a second version Foster prints out of sequence"
+  },
   "editions": [
     {
       "slug": "foster",

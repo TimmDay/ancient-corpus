@@ -20,6 +20,19 @@ export type LocatorTarget = {
 export type LocatorIndex = {
   targets: LocatorTarget[]
   aliases: Record<string, string>
+  /**
+   * For targets that share a Locator but for a bracketed name (`80.1` and
+   * `80.1(Alexander)`), keyed by id: what tells each apart, for asking which
+   * one a link meant.
+   */
+  choices?: Record<string, Choice>
+}
+
+export type Choice = {
+  /** What this one is, e.g. "From the reign of Severus Alexander…". */
+  what: string
+  /** The start of its text. */
+  excerpt: string
 }
 
 export type Resolution =
@@ -31,6 +44,11 @@ export type Resolution =
       end?: LocatorTarget
       /** False when the requested Locator was more precise than the Edition and we fell back. */
       exact: boolean
+      /**
+       * Other targets the link could equally mean, because it left out the
+       * bracketed name that tells them apart (`80.1` for `80.1(Alexander)`).
+       */
+      alternatives?: LocatorTarget[]
     }
   | { kind: "not-found" }
 
@@ -94,9 +112,14 @@ export function resolveLocator(
       exact && endWritten
         ? rangeEnd(startTokens, endWritten, byKey, index)
         : undefined
-    return end && end !== start
-      ? { kind: "found", start, end, exact }
-      : { kind: "found", start, exact }
+    const alternatives = startWritten.includes("(") ? [] : twinsOf(start, index)
+    return {
+      kind: "found",
+      start,
+      ...(end && end !== start ? { end } : {}),
+      exact,
+      ...(alternatives.length ? { alternatives } : {}),
+    }
   }
   return { kind: "not-found" }
 }
@@ -110,6 +133,14 @@ export function resolvedTargets(
   const from = index.targets.indexOf(resolution.start)
   const to = resolution.end ? index.targets.indexOf(resolution.end) : from
   return to >= from ? index.targets.slice(from, to + 1) : [resolution.start]
+}
+
+/** Targets whose Locator differs from this one only by a bracketed name. */
+function twinsOf(target: LocatorTarget, index: LocatorIndex): LocatorTarget[] {
+  const bare = (locator: string) =>
+    keyOf(locatorTokens(locator.replace(/\([^)]*\)/g, "")))
+  const key = bare(target.locator)
+  return index.targets.filter((t) => t !== target && bare(t.locator) === key)
 }
 
 function rangeEnd(

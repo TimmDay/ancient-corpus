@@ -5,6 +5,7 @@ import {
   resolveLocator,
   resolvedTargets,
   type LocatorIndex,
+  type LocatorTarget,
 } from "../locator.ts"
 import { showToast } from "./toast.ts"
 
@@ -12,6 +13,9 @@ const index = JSON.parse(
   document.getElementById("locator-index")?.textContent ?? "{}",
 ) as LocatorIndex
 const notice = document.getElementById("notice")
+const chooser = document.getElementById("chooser")
+/** Remembers, across a page load, which of several passages a reader picked. */
+const CHOSEN_KEY = "chosen-locator"
 const reduceMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches
@@ -19,6 +23,7 @@ const reduceMotion = window.matchMedia(
 function land(initial = false): void {
   for (const el of document.querySelectorAll(".hit")) el.classList.remove("hit")
   hideNotice()
+  if (chooser) chooser.hidden = true
   const hash = location.hash.slice(1)
   if (!hash) return
 
@@ -30,6 +35,16 @@ function land(initial = false): void {
       `“${decode(hash)}” isn’t a Locator in this Edition. Choose a place from the contents.`,
     )
     document.querySelector<HTMLElement>(".toc-panel summary")?.focus()
+    return
+  }
+
+  // A link from elsewhere that could mean more than one passage asks which.
+  if (
+    initial &&
+    resolution.alternatives &&
+    !wasChosen(resolution.start.locator)
+  ) {
+    showChooser(decode(hash), [resolution.start, ...resolution.alternatives])
     return
   }
 
@@ -89,6 +104,71 @@ function pinWhileLoading(target: HTMLElement): void {
     observer.disconnect()
     document.fonts.removeEventListener("loadingdone", pin)
   }, 4000)
+}
+
+function showChooser(written: string, options: LocatorTarget[]): void {
+  if (!chooser) return
+  const heading = document.createElement("h2")
+  heading.id = "chooser-title"
+  heading.tabIndex = -1
+  heading.textContent = `Which ${written}?`
+  const intro = document.createElement("p")
+  intro.textContent = `This Edition has more than one passage that “${written}” could mean.`
+  const list = document.createElement("ul")
+  list.className = "choices"
+  for (const option of options) {
+    const choice = index.choices?.[option.id]
+    const card = document.createElement("a")
+    card.className = "choice"
+    card.href = `${option.page ?? location.pathname}#${option.locator}`
+    card.dataset.locator = option.locator
+    for (const [className, text] of [
+      ["choice-locator", option.locator],
+      ["choice-what", choice?.what ?? ""],
+      ["choice-excerpt", choice?.excerpt ? `“${choice.excerpt}”` : ""],
+    ]) {
+      if (!text) continue
+      const line = document.createElement("span")
+      line.className = className ?? ""
+      line.textContent = text
+      card.append(line)
+    }
+    const item = document.createElement("li")
+    item.append(card)
+    list.append(item)
+  }
+  chooser.replaceChildren(heading, intro, list)
+  chooser.hidden = false
+  window.scrollTo({ top: 0 })
+  heading.focus({ preventScroll: true })
+}
+
+chooser?.addEventListener("click", (event) => {
+  const card = (event.target as Element).closest<HTMLAnchorElement>("a.choice")
+  if (!card) return
+  // On this page a hash that doesn't change fires no hashchange, so land here.
+  if (card.pathname === location.pathname) {
+    event.preventDefault()
+    history.replaceState(null, "", card.hash)
+    land()
+    return
+  }
+  try {
+    sessionStorage.setItem(CHOSEN_KEY, card.dataset.locator ?? "")
+  } catch {
+    // Without storage the next page asks again.
+  }
+})
+
+/** Whether the reader just picked this Locator from the chooser; asks only once. */
+function wasChosen(locator: string): boolean {
+  try {
+    const chosen = sessionStorage.getItem(CHOSEN_KEY)
+    sessionStorage.removeItem(CHOSEN_KEY)
+    return chosen === locator
+  } catch {
+    return false
+  }
 }
 
 function showNotice(message: string): void {

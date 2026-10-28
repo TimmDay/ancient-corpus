@@ -9,7 +9,13 @@ import type {
   Work,
 } from "../corpus.ts"
 import { escapeHtml } from "../importers/gutenberg.ts"
-import { aliasKey, locatorId, type LocatorIndex } from "../locator.ts"
+import {
+  aliasKey,
+  locatorId,
+  type Choice,
+  type LocatorIndex,
+  type LocatorTarget,
+} from "../locator.ts"
 
 export const SITE_NAME = "Ancient Corpus"
 
@@ -187,6 +193,7 @@ ${switcher}
 </header>
 ${draftFlags ? `<p class="draft-banner">Draft: ${draftFlags} unresolved Flags. Not published until they are reviewed with <code>pnpm review</code>.</p>` : ""}
 <div class="notice" id="notice" role="status" hidden></div>
+<section class="chooser" id="chooser" aria-labelledby="chooser-title" hidden></section>
 ${content}
 <footer class="attribution">
 <p>Text from ${sourceLinks(edition)}. ${escapeHtml(edition.source.rights)}</p>
@@ -327,7 +334,58 @@ export function locatorIndex(
       to,
     ]),
   )
-  return { targets, aliases }
+  const choices = choicesFor(work, text, targets)
+  return Object.keys(choices).length
+    ? { targets, aliases, choices }
+    : { targets, aliases }
+}
+
+/**
+ * What tells apart targets that share a Locator but for a bracketed name, so a
+ * link that leaves the name out can ask which one it meant.
+ */
+function choicesFor(
+  work: Work,
+  text: EditionText,
+  targets: LocatorTarget[],
+): Record<string, Choice> {
+  const bare = (locator: string) => aliasKey(locator.replace(/\([^)]*\)/g, ""))
+  const shared = Map.groupBy(targets, (t) => bare(t.locator))
+  const ids = passageIds(text.passages)
+  const passageById = new Map(text.passages.map((p) => [ids.get(p), p]))
+  const divisionById = new Map(
+    text.divisions.map((d) => [locatorId(d.locator), d]),
+  )
+  const choices: Record<string, Choice> = {}
+  for (const group of shared.values()) {
+    if (group.length < 2) continue
+    for (const target of group) {
+      const division = divisionById.get(target.id)
+      const passage =
+        passageById.get(target.id) ??
+        text.passages.find((p) => p.division === division?.locator)
+      const label =
+        division?.label ??
+        text.divisions.find((d) => d.locator === passage?.division)?.label ??
+        ""
+      const name = /\(([^)]*)\)$/.exec(target.locator)?.[1]
+      choices[target.id] = {
+        what: name
+          ? (work.locatorQualifiers?.[name] ?? name)
+          : `The main text of ${label.replace(/\s*\(.*\)$/, "")}`,
+        excerpt: excerptOf(passage?.text ?? ""),
+      }
+    }
+  }
+  return choices
+}
+
+/** The first words of a text, about a sentence's worth. */
+function excerptOf(text: string): string {
+  const words = text.replace(/^[[\s¶]+/, "").split(/\s+/)
+  return words.length > 30
+    ? `${words.slice(0, 30).join(" ")}…`
+    : words.join(" ")
 }
 
 /**

@@ -186,6 +186,21 @@ describe("resolveLocator", () => {
     })
   })
 
+  it("offers the other readings when a link leaves out the bracketed name", () => {
+    const dio = indexOf(["80", "80.1", "80(Alexander)", "80.1(Alexander)"])
+    const alternativesOf = (written: string) => {
+      const resolution = resolveLocator(written, dio)
+      return resolution.kind === "found"
+        ? (resolution.alternatives ?? []).map((t) => t.locator)
+        : []
+    }
+    expect(alternativesOf("80.1")).toEqual(["80.1(Alexander)"])
+    expect(alternativesOf("80.1.2")).toEqual(["80.1(Alexander)"])
+    expect(alternativesOf("80")).toEqual(["80(Alexander)"])
+    expect(alternativesOf("80.1(Alexander)")).toEqual([])
+    expect(alternativesOf("9.9")).toEqual([])
+  })
+
   it("reports Locators that match nothing", () => {
     expect(landsOn("Thirty Tyrants 12", suetonius)).toBe("not-found")
     expect(landsOn("", suetonius)).toBe("not-found")

@@ -23,6 +23,11 @@ export type Work = {
   slugAliases: string[]
   /** Other ways of naming a division, written → canonical, e.g. `Gaius` → `Caligula`. */
   locatorAliases: Record<string, string>
+  /**
+   * What each bracketed name in a Locator means, e.g. `Alexander` in
+   * `80.1(Alexander)`, for asking a reader which passage a link meant.
+   */
+  locatorQualifiers?: Record<string, string>
   editions: Edition[]
 }
 
