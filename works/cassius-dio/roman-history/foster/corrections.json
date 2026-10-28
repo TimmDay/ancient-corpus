@@ -10,17 +10,37 @@
     "locator": "72.3",
     "at": "When in one battle the Marcomani"
   },
-  { "op": "move", "locator": "72.11", "after": "72.3" },
-  { "op": "move", "locator": "72.12", "after": "72.11" },
-  { "op": "move", "locator": "72.13", "after": "72.7" },
+  {
+    "op": "move",
+    "locator": "72.11",
+    "after": "72.3"
+  },
+  {
+    "op": "move",
+    "locator": "72.12",
+    "after": "72.11"
+  },
+  {
+    "op": "move",
+    "locator": "72.13",
+    "after": "72.7"
+  },
   {
     "op": "split",
     "locator": "72.14",
     "at": "When Pertinax in consideration",
     "newLocator": "72.22"
   },
-  { "op": "move", "locator": "72.14", "after": "72.13" },
-  { "op": "resume", "locator": "72.22", "at": "Upon the rebellion of Cassius" },
+  {
+    "op": "move",
+    "locator": "72.14",
+    "after": "72.13"
+  },
+  {
+    "op": "resume",
+    "locator": "72.22",
+    "at": "Upon the rebellion of Cassius"
+  },
   {
     "op": "split",
     "locator": "72.27",
@@ -33,17 +53,314 @@
     "at": "Thus was this pretender slain",
     "newLocator": "72.27"
   },
-  { "op": "resume", "locator": "72.27", "at": "Thus was this pretender slain" },
-  { "op": "resume", "locator": "72.28", "at": "The same man would not slay" },
+  {
+    "op": "resume",
+    "locator": "72.27",
+    "at": "Thus was this pretender slain"
+  },
+  {
+    "op": "resume",
+    "locator": "72.28",
+    "at": "The same man would not slay"
+  },
   {
     "op": "split",
     "locator": "72.33",
     "at": "Had he lived longer",
     "newLocator": "72.33"
   },
-  { "op": "resume", "locator": "72.33", "at": "Had he lived longer" },
-  { "op": "move", "locator": "72.18", "after": "72.33" },
-  { "op": "move", "locator": "72.19", "after": "72.18" },
-  { "op": "move", "locator": "72.20", "after": "72.19" },
-  { "op": "move", "locator": "72.21", "after": "72.20" }
+  {
+    "op": "resume",
+    "locator": "72.33",
+    "at": "Had he lived longer"
+  },
+  {
+    "op": "move",
+    "locator": "72.18",
+    "after": "72.33"
+  },
+  {
+    "op": "move",
+    "locator": "72.19",
+    "after": "72.18"
+  },
+  {
+    "op": "move",
+    "locator": "72.20",
+    "after": "72.19"
+  },
+  {
+    "op": "move",
+    "locator": "72.21",
+    "after": "72.20"
+  },
+  {
+    "op": "split",
+    "locator": "62.23",
+    "at": "[And Junius Torquatus",
+    "newLocator": "62.27"
+  },
+  {
+    "op": "resume",
+    "locator": "62.27",
+    "at": "And why should one be surprised"
+  },
+  {
+    "op": "split",
+    "locator": "63.26",
+    "at": "It is stated that Nero having offered",
+    "newLocator": "63.23"
+  },
+  {
+    "op": "resume",
+    "locator": "63.23",
+    "at": "It is stated that Nero having offered"
+  },
+  {
+    "op": "split",
+    "locator": "63.23",
+    "at": "In general he still behaved",
+    "newLocator": "63.26"
+  },
+  {
+    "op": "resume",
+    "locator": "63.26",
+    "at": "In general he still behaved"
+  },
+  {
+    "op": "renumber",
+    "locator": "64.16",
+    "newLocator": "64.15"
+  },
+  {
+    "op": "split",
+    "locator": "64.10",
+    "at": "Otho declined battle",
+    "newLocator": "64.10"
+  },
+  {
+    "op": "resume",
+    "locator": "64.10",
+    "at": "Otho declined battle"
+  },
+  {
+    "op": "move",
+    "locator": "64.15",
+    "after": "64.10",
+    "at": "Valens was so eager"
+  },
+  {
+    "op": "resume",
+    "locator": "64.15",
+    "at": "At the close of this speech"
+  },
+  {
+    "op": "split",
+    "locator": "65.4",
+    "at": "[The character of Vitellius",
+    "newLocator": "65.4"
+  },
+  {
+    "op": "resume",
+    "locator": "65.4",
+    "at": "[The character of Vitellius"
+  },
+  {
+    "op": "move",
+    "locator": "65.6",
+    "after": "65.4"
+  },
+  {
+    "op": "split",
+    "locator": "66.13",
+    "at": "Mucianus desired to be honored",
+    "newLocator": "66.2"
+  },
+  {
+    "op": "resume",
+    "locator": "66.2",
+    "at": "Mucianus desired to be honored"
+  },
+  {
+    "op": "split",
+    "locator": "66.2",
+    "at": "Mucianus made a great number",
+    "newLocator": "66.13"
+  },
+  {
+    "op": "resume",
+    "locator": "66.13",
+    "at": "Mucianus made a great number"
+  },
+  {
+    "op": "split",
+    "locator": "66.13",
+    "at": "It became strikingly clear",
+    "newLocator": "66.12"
+  },
+  {
+    "op": "resume",
+    "locator": "66.12",
+    "at": "It became strikingly clear"
+  },
+  {
+    "op": "split",
+    "locator": "67.10",
+    "at": "Chariomerus, king of the Cherusci",
+    "newLocator": "67.5"
+  },
+  {
+    "op": "resume",
+    "locator": "67.5",
+    "at": "Chariomerus, king of the Cherusci"
+  },
+  {
+    "op": "split",
+    "locator": "67.12",
+    "at": "In Moesia",
+    "newLocator": "67.5"
+  },
+  {
+    "op": "resume",
+    "locator": "67.5",
+    "at": "In Moesia"
+  },
+  {
+    "op": "split",
+    "locator": "68.5",
+    "at": "[The ambassadors who came from the kings",
+    "newLocator": "68.15"
+  },
+  {
+    "op": "resume",
+    "locator": "68.15",
+    "at": "Upon Trajan's return to Rome"
+  },
+  {
+    "op": "split",
+    "locator": "68.15",
+    "at": "[He had sworn not to commit bloodshed",
+    "newLocator": "68.5"
+  },
+  {
+    "op": "resume",
+    "locator": "68.5",
+    "at": "[He had sworn not to commit bloodshed"
+  },
+  {
+    "op": "split",
+    "locator": "68.5",
+    "at": "When Licinius Sura died",
+    "newLocator": "68.15"
+  },
+  {
+    "op": "resume",
+    "locator": "68.15",
+    "at": "When Licinius Sura died"
+  },
+  {
+    "op": "move",
+    "locator": "68.23",
+    "after": "68.20"
+  },
+  {
+    "op": "split",
+    "locator": "68.23",
+    "at": "the senate voted to him many honors",
+    "newLocator": "68.23"
+  },
+  {
+    "op": "renumber",
+    "locator": "68.23",
+    "at": "When he had captured the whole country",
+    "newLocator": "68.18"
+  },
+  {
+    "op": "resume",
+    "locator": "68.18",
+    "at": "When he had captured the whole country"
+  },
+  {
+    "op": "split",
+    "locator": "68.26",
+    "at": "[Adenystrae was a strong post",
+    "newLocator": "68.22"
+  },
+  {
+    "op": "resume",
+    "locator": "68.22",
+    "at": "[Adenystrae was a strong post"
+  },
+  {
+    "op": "split",
+    "locator": "68.22",
+    "at": "Hereupon they advanced",
+    "newLocator": "68.26"
+  },
+  {
+    "op": "resume",
+    "locator": "68.26",
+    "at": "Hereupon they advanced"
+  },
+  {
+    "op": "split",
+    "locator": "69.19",
+    "at": "Julius (?) Fabius",
+    "newLocator": "69.23"
+  },
+  {
+    "op": "resume",
+    "locator": "69.23",
+    "at": "He had lived sixty-two years"
+  },
+  {
+    "op": "split",
+    "locator": "74.2",
+    "at": "[Public opinion regarding Pertinax",
+    "newLocator": "74.2"
+  },
+  {
+    "op": "resume",
+    "locator": "74.2",
+    "at": "[Public opinion regarding Pertinax"
+  },
+  {
+    "op": "move",
+    "locator": "74.3",
+    "after": "74.2"
+  },
+  {
+    "op": "replace",
+    "locator": "75.5",
+    "find": "\"This did.\" When the",
+    "with": "\"This did.\""
+  },
+  {
+    "op": "replace",
+    "locator": "75.6",
+    "find": "war broke out Niger",
+    "with": "When the war broke out Niger"
+  },
+  {
+    "op": "split",
+    "locator": "75.5",
+    "at": "Now Severus made a campaign",
+    "newLocator": "75.6"
+  },
+  {
+    "op": "split",
+    "locator": "75.6",
+    "at": "[Niger was not in general",
+    "newLocator": "75.7"
+  },
+  {
+    "op": "resume",
+    "locator": "75.6",
+    "at": "When the war broke out Niger"
+  },
+  {
+    "op": "resume",
+    "locator": "75.7",
+    "at": "The next event was a tremendous battle"
+  }
 ]
