@@ -30,22 +30,26 @@
           {
             "file": "Dio-Rome-vol2.zip",
             "sha256": "e143720b1066cd41e80ef7b46f35c33407257848ca36ae2469604e836819a7c7",
-            "url": "https://www.gutenberg.org/ebooks/11607"
+            "url": "https://www.gutenberg.org/ebooks/11607",
+            "scan": "https://archive.org/details/diosannalsofrome02cass"
           },
           {
             "file": "Dio-Rome-vol3.zip",
             "sha256": "b316308c73ade01f28608c74817a0a4b8a4f641ba5bf7fbcdf63cd0d1301b021",
-            "url": "https://www.gutenberg.org/ebooks/10162"
+            "url": "https://www.gutenberg.org/ebooks/10162",
+            "scan": "https://archive.org/details/diosannalsofrome03cass"
           },
           {
             "file": "Dio-Rome-vol4.zip",
             "sha256": "ecd132415e11141d4e15ef80981fd281f4578f013d1f2b7f5ecbfb840b4e8c52",
-            "url": "https://www.gutenberg.org/ebooks/10883"
+            "url": "https://www.gutenberg.org/ebooks/10883",
+            "scan": "https://archive.org/details/diosannalsofrome04cass"
           },
           {
             "file": "Dio-Rome-vol6.zip",
             "sha256": "5d2feaa828fe7d64666a1e890883375f9d43547b85cdf98cb17d4af9021c8613",
-            "url": "https://www.gutenberg.org/ebooks/12061"
+            "url": "https://www.gutenberg.org/ebooks/12061",
+            "scan": "https://archive.org/details/diosannalsofrome06cass"
           }
         ],
         "rights": "Public domain in the USA."

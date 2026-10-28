@@ -4,7 +4,7 @@
 // corrections.json and the regenerated Passage files when you are done.
 // Needs the Edition's archive in data/intake/. Never deployed.
 
-import { readFileSync, writeFileSync } from "node:fs"
+import { existsSync, readFileSync, writeFileSync } from "node:fs"
 import { createServer } from "node:http"
 import path from "node:path"
 import { buildSync } from "esbuild"
@@ -14,12 +14,16 @@ import {
   loadWorks,
   readEditionText,
   unresolvedFlags,
+  editionDir,
   type Edition,
+  type Flag,
+  type FlagCode,
+  type IntakeArchive,
   type Passage,
   type Work,
 } from "../src/corpus.ts"
 import type { Correction } from "../src/corrections.ts"
-import { escapeHtml } from "../src/importers/gutenberg.ts"
+import { escapeHtml, readIntakeHtml } from "../src/importers/gutenberg.ts"
 import { THEME_SCRIPT, THEME_TOGGLE } from "../src/site/render.ts"
 import {
   correctionsFile,
@@ -72,38 +76,67 @@ function indexPage(): string {
   )
 }
 
+/**
+ * An answer to a Flag found by checking the printed volume, waiting for the
+ * owner to confirm it. Kept in suggestions.json beside corrections.json.
+ */
+type Suggestion = {
+  locator: string
+  flag: FlagCode
+  /** What the printed volume shows. */
+  finding: string
+  /** The archive whose printed volume shows it, and the page. */
+  archive: string
+  page: number
+  corrections: Correction[]
+}
+
+function readSuggestions(work: Work, edition: Edition): Suggestion[] {
+  const file = path.join(editionDir(work, edition), "suggestions.json")
+  return existsSync(file)
+    ? (JSON.parse(readFileSync(file, "utf8")) as Suggestion[])
+    : []
+}
+
 function editionPage(work: Work, edition: Edition): string {
   const text = readEditionText(work, edition)
   const flagged = text.passages.filter((p) => p.flags.some((f) => !f.accepted))
   const corrections = readCorrections(work, edition)
+  const suggestions = readSuggestions(work, edition)
   const items = flagged.map((passage) => {
     const i = text.passages.indexOf(passage)
     const before = text.passages[i - 1]
     const after = text.passages[i + 1]
     const sameDivision = (p?: Passage) => p?.division === passage.division
+    const open = passage.flags.filter((f) => !f.accepted)
+    const archive = archiveOf(work, edition, passage)
+    const suggested = open.flatMap((flag) =>
+      suggestions.filter(
+        (s) => s.locator === passage.locator && s.flag === flag.code,
+      ),
+    )
+    const missing = open.map(missingNumber).find(Boolean)
     return `<section class="flagged" data-locator="${attr(passage.locator)}" data-start="${attr(passage.text.slice(0, 60))}">
 <h2>${escapeHtml(passage.locator)}</h2>
-<ul class="flags">${passage.flags
-      .filter((f) => !f.accepted)
-      .map((f) => `<li><b>${f.code}</b>: ${escapeHtml(f.detail)}</li>`)
-      .join("")}</ul>
+${open.map((f) => `<p class="question">${escapeHtml(question(passage, f))}</p>`).join("")}
+<p class="sources">Check against the source: ${sourceLinks(archive, passage, suggested[0]?.page)}</p>
+${suggested.map(suggestionHtml).join("")}
 ${sameDivision(before) && before ? `<div class="context"><span>${escapeHtml(before.locator)} ends:</span>${blockHtml(before.blocks.at(-1) ?? "")}</div>` : ""}
 <div class="passage-text" tabindex="0" aria-label="Text of ${attr(passage.locator)}">${passage.blocks.map((b) => blockHtml(b)).join("")}</div>
 ${sameDivision(after) && after ? `<div class="context"><span>${escapeHtml(after.locator)} begins:</span>${blockHtml(after.blocks[0] ?? "")}</div>` : ""}
-<div class="actions">
-<p class="hint">Select the words where the problem starts, then choose an action.</p>
-<div class="row"><label>New Locator <input name="newLocator" value="${attr(nextLocator(passage.locator))}"></label><button data-op="split">Split at selection</button></div>
-<div class="row"><label>Editorial title <input name="title" value="${attr(`Translator’s essay after ${passage.locator}`)}"></label><button data-op="toEditorial">Move selection onward to Editorial matter</button></div>
-<div class="row"><button data-op="merge">Merge into the Passage before</button></div>
-<div class="row"><label>Renumber this Passage to <input name="renumberTo" value="${attr(nextLocator(passage.locator))}"></label><button data-op="renumber">Renumber</button></div>
-<div class="row">${passage.flags
-      .filter((f) => !f.accepted)
+<details class="actions"${suggested.length ? "" : " open"}><summary>${suggested.length ? "Answer differently" : "Answer from the source"}</summary>
+<p class="hint">For an answer about a place in the text, first select the words there.</p>
+<div class="row"><label>The source starts chapter <input name="newLocator" value="${attr(missing ? replaceLastNumber(passage.locator, missing) : nextLocator(passage.locator))}"></label><button data-op="split">at the words I selected</button></div>
+<div class="row"><label>The source numbers this Passage <input name="renumberTo" value="${attr(passage.locator)}"></label><button data-op="renumber">Renumber to match</button></div>
+<div class="row"><button data-op="merge">The source has no chapter break here: join it to the Passage before</button></div>
+<div class="row"><label>The selected words onward are the translator’s, not the text. Title: <input name="title" value="${attr(`Translator’s essay after ${passage.locator}`)}"></label><button data-op="toEditorial">Move to Editorial matter</button></div>
+<div class="row">${open
       .map(
         (f) =>
-          `<label>Why this ${f.code} Flag is fine <input name="reason-${f.code}" placeholder="e.g. Suetonius’s own long chapter"></label><button data-op="accept" data-flag="${f.code}">Accept</button>`,
+          `<label>The source is the same. Note: <input name="reason-${f.code}" value="${attr(acceptReason(f))}"></label><button data-op="accept" data-flag="${f.code}">Keep it as printed</button>`,
       )
       .join("")}</div>
-</div>
+</details>
 </section>`
   })
   const history = corrections.length
@@ -116,11 +149,128 @@ ${sameDivision(after) && after ? `<div class="context"><span>${escapeHtml(after.
   return page(
     `Review ${work.slug}`,
     `<h1>${escapeHtml(work.author)}, <i>${escapeHtml(work.title)}</i></h1>
-<p>${escapeHtml(edition.slug)}: ${flagged.length ? `${flagged.length} Passages to review.` : "No Flags left. Run <code>pnpm build</code> and commit."}</p>
+<p>${escapeHtml(edition.slug)}: ${flagged.length ? `${flagged.length} Passages to check. Each Flag asks whether the imported text matches the printed source.` : "No Flags left. Run <code>pnpm build</code> and commit."}</p>
 <p class="status" role="status" id="status"></p>
 ${history}
 <div data-work="${attr(work.slug)}" data-edition="${attr(edition.slug)}" id="edition">${items.join("")}</div>`,
   )
+}
+
+/** What a Flag asks of the source. */
+function question(passage: Passage, flag: Flag): string {
+  const missing = missingNumber(flag)
+  switch (flag.code) {
+    case "gap":
+      return /starts at/.test(flag.detail)
+        ? `This division starts at ${passage.locator}. Does the source start it at chapter 1?`
+        : `The numbering skips from ${passage.locator}. Does the source mark chapter ${missing ?? "?"} somewhere in this Passage?`
+    case "duplicate":
+      return `An earlier Passage is also numbered ${passage.locator}. What number does the source give this one?`
+    case "long":
+      return `${passage.locator} is unusually long (${flag.detail}). Is it this long in the source, or are chapter markers missing?`
+  }
+}
+
+function acceptReason(flag: Flag): string {
+  switch (flag.code) {
+    case "gap":
+      return "The source skips this number too"
+    case "duplicate":
+      return "The source repeats this number"
+    case "long":
+      return "The source has it as one long chapter"
+  }
+}
+
+/** The number a gap Flag says is missing: 25 in "numbered 26, not 25". */
+function missingNumber(flag: Flag): number | undefined {
+  const match = flag.code === "gap" ? /, not (\d+)$/.exec(flag.detail) : null
+  return match?.[1] ? Number(match[1]) : undefined
+}
+
+function replaceLastNumber(locator: string, n: number): string {
+  return locator.replace(/\d+[a-z]?(?=(\([^)]*\))?$)/, String(n))
+}
+
+function suggestionHtml(suggestion: Suggestion): string {
+  return `<div class="suggestion" data-corrections="${attr(JSON.stringify(suggestion.corrections))}">
+<p><b>Suggested answer</b> (printed page ${suggestion.page}): ${escapeHtml(suggestion.finding)}</p>
+<ul>${suggestion.corrections.map((c) => `<li>${escapeHtml(describeCorrection(c))}</li>`).join("")}</ul>
+<button data-op="confirm">Confirm: the source says so</button>
+</div>`
+}
+
+function describeCorrection(c: Correction): string {
+  switch (c.op) {
+    case "split":
+      return `Start ${c.newLocator} at “${c.at}”`
+    case "renumber":
+      return `Renumber ${c.locator}${c.at ? ` (“${c.at}…”)` : ""} to ${c.newLocator}`
+    case "merge":
+      return `Join ${c.locator}${c.at ? ` (“${c.at}…”)` : ""} to the Passage before`
+    case "replace":
+      return `In ${c.locator}, replace “${c.find}” with ${c.with.split(/\s+/).length} words from the source`
+    case "toEditorial":
+      return `Move ${c.locator} from “${c.at}” to Editorial matter`
+    case "accept":
+      return `Keep ${c.locator} as printed: ${c.reason}`
+  }
+}
+
+/** Links to the printed scan and the transcription, opened at this Passage where the site allows it. */
+function sourceLinks(
+  archive: IntakeArchive | undefined,
+  passage: Passage,
+  page?: number,
+): string {
+  const words = passage.text.split(/\s+/).slice(0, 6).join(" ")
+  const links: string[] = []
+  if (archive?.scan) {
+    const href = page
+      ? `${archive.scan}/page/${page}/mode/1up`
+      : `${archive.scan}/mode/1up?q=${encodeURIComponent(`"${passage.text.split(/\s+/).slice(0, 4).join(" ")}"`)}`
+    links.push(
+      `<a href="${attr(href)}" target="_blank" rel="noopener">printed page${page ? ` ${page}` : ""} (scan)</a>`,
+    )
+  }
+  const gutenberg = /gutenberg\.org\/ebooks\/(\d+)/.exec(archive?.url ?? "")
+  if (gutenberg?.[1]) {
+    const fragment = encodeURIComponent(words).replace(/-/g, "%2D")
+    links.push(
+      `<a href="https://www.gutenberg.org/cache/epub/${gutenberg[1]}/pg${gutenberg[1]}-images.html#:~:text=${fragment}" target="_blank" rel="noopener">transcription</a>`,
+    )
+  } else if (archive?.url) {
+    links.push(
+      `<a href="${attr(archive.url)}" target="_blank" rel="noopener">transcription</a>`,
+    )
+  }
+  return links.length ? links.join(" · ") : "no source link recorded"
+}
+
+const archiveTexts = new Map<string, string>()
+
+/** The archive whose text holds this Passage, for an Edition that spans several volumes. */
+function archiveOf(
+  work: Work,
+  edition: Edition,
+  passage: Passage,
+): IntakeArchive | undefined {
+  const archives = edition.source.archives
+  if (archives.length < 2) return archives[0]
+  const probe = squash(passage.text.slice(0, 80))
+  return archives.find((archive) => {
+    const key = `${work.slug}/${edition.slug}/${archive.file}`
+    let text = archiveTexts.get(key)
+    if (text === undefined) {
+      text = squash(readIntakeHtml(archive)("body").text())
+      archiveTexts.set(key, text)
+    }
+    return text.includes(probe)
+  })
+}
+
+function squash(text: string): string {
+  return text.replace(/[^\p{L}\p{N}]+/gu, " ").trim()
 }
 
 function blockHtml(block: string): string {
@@ -138,13 +288,13 @@ function attr(value: string): string {
 function applyCorrection(
   work: Work,
   edition: Edition,
-  change: { add?: Correction; undo?: boolean },
+  change: { add?: Correction[]; undo?: boolean },
 ): string {
   const file = correctionsFile(work, edition)
   const previous = readCorrections(work, edition)
   const next = change.undo
     ? previous.slice(0, -1)
-    : [...previous, ...(change.add ? [change.add] : [])]
+    : [...previous, ...(change.add ?? [])]
   writeFileSync(file, JSON.stringify(next, null, 2) + "\n")
   try {
     const text = importEdition(work, edition)
@@ -186,6 +336,7 @@ createServer((request, response) => {
             work: string
             edition: string
             correction?: Correction
+            corrections?: Correction[]
             undo?: boolean
           }
           const { work, edition } = find(body.work, body.edition)
@@ -193,7 +344,9 @@ createServer((request, response) => {
             200,
             "text/plain",
             applyCorrection(work, edition, {
-              add: body.correction,
+              add:
+                body.corrections ??
+                (body.correction ? [body.correction] : undefined),
               undo: body.undo,
             }),
           )
@@ -223,7 +376,11 @@ const REVIEW_CSS = `
 .count { color: var(--accent); margin-left: 0.5rem; }
 .done { color: var(--muted); margin-left: 0.5rem; }
 .flagged { border-top: 2px solid var(--rule); margin-top: 2.5rem; padding-top: 1rem; }
-.flags { color: var(--accent); }
+.question { font-size: 1.15rem; margin: 0.25rem 0; }
+.sources { font-size: 1rem; color: var(--muted); }
+.suggestion { border: 1px solid var(--accent); border-radius: 6px; padding: 0.5rem 1rem; margin: 1rem 0; font-size: 1rem; }
+.suggestion ul { margin: 0.25rem 0 0.75rem; }
+.actions summary { cursor: pointer; color: var(--muted); }
 .context { color: var(--muted); font-size: 1rem; border-left: 3px solid var(--rule); padding-left: 0.75rem; margin: 1rem 0; }
 .context span { font-style: italic; }
 .passage-text { max-height: 32rem; overflow-y: auto; border: 1px solid var(--rule); padding: 0.5rem 1rem; background: var(--surface); }
@@ -258,15 +415,16 @@ document.addEventListener("click", (event) => {
   if (!button) return;
   const op = button.dataset.op;
   if (op === "undo") return send({ undo: true });
+  if (op === "confirm") return send({ corrections: JSON.parse(button.closest(".suggestion").dataset.corrections) });
   const section = button.closest(".flagged");
   const locator = section.dataset.locator;
   const field = (name) => section.querySelector('input[name="' + name + '"]').value.trim();
   if (op === "accept") {
     const reason = field("reason-" + button.dataset.flag);
-    if (!reason) { status.textContent = "Say why the Flag is fine before accepting it."; return; }
+    if (!reason) { status.textContent = "Say what the source shows before keeping it."; return; }
     return send({ correction: { op, locator, flag: button.dataset.flag, reason } });
   }
-  if (op === "merge") return send({ correction: { op, locator } });
+  if (op === "merge") return send({ correction: { op, locator, at: section.dataset.start } });
   // The opening words pick out this Passage when another shares its Locator.
   if (op === "renumber") return send({ correction: { op, locator, at: section.dataset.start, newLocator: field("renumberTo") } });
   const at = selectionIn(section);

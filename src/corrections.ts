@@ -16,10 +16,11 @@ export type Correction =
   | { op: "accept"; locator: string; flag: FlagCode; reason: string }
   /** Starts a new Passage at the quoted text (a chapter marker the importer missed). */
   | { op: "split"; locator: string; at: string; newLocator: string }
-  /** Joins this Passage onto the one before it. */
-  | { op: "merge"; locator: string }
+  /** Joins this Passage onto the one before it. `at` picks one of several that share a Locator. */
+  | { op: "merge"; locator: string; at?: string }
   /** Moves the quoted text and everything after it in the Passage into Editorial matter. */
   | { op: "toEditorial"; locator: string; at: string; title: string }
+  /** Swaps quoted HTML for new; a blank line in `with` starts a new paragraph (text the transcription dropped). */
   | { op: "replace"; locator: string; find: string; with: string }
   /** `at` picks one of several Passages that share a Locator, by text it contains. */
   | { op: "renumber"; locator: string; newLocator: string; at?: string }
@@ -111,8 +112,8 @@ export function correctEdition(
         }
         passages[index] = withBlocks(
           passage,
-          passage.blocks.map((b) =>
-            b.replace(correction.find, correction.with),
+          passage.blocks.flatMap((b) =>
+            b.replace(correction.find, correction.with).split(/\n\s*\n/),
           ),
         )
         break
@@ -247,13 +248,13 @@ function qualifierOf(locator: string): string | undefined {
   return /\(([^)]*)\)$/.exec(locator)?.[1]
 }
 
-/** The chapter number a Locator ends with: 5 in `Augustus 5`, 1 in `80.1(Alexander)`. */
+/** The chapter number a Locator ends with: 5 in `Augustus 5`, 1 in `80.1(Alexander)`, 10 in `55.10a`. */
 function lastNumber(locator: string): number {
-  return Number(
+  return Number.parseInt(
     locator
       .replace(/\(.*\)$/, "")
       .split(/[\s.]/)
-      .at(-1),
+      .at(-1) ?? "",
   )
 }
 

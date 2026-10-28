@@ -25,12 +25,16 @@ Content of an Edition that is not the Work's own text (a translator's introducti
 _Avoid_: Front matter, apparatus, extras
 
 **Flag**:
-A suspicion, raised when an Edition is imported, that a Passage is wrong (it swallowed its neighbour, or ran on into Editorial matter). An Edition with unresolved Flags is not published.
+A suspicion, raised when an Edition is imported, that a Passage does not match the printed source (it swallowed its neighbour, or ran on into Editorial matter). It is settled by checking the source, never by choosing a Locator. An Edition with unresolved Flags is not published.
 _Avoid_: Warning, error, issue
 
 **Correction**:
 A recorded editorial fix to an Edition's imported Passages (a split, a merge, a text fix, or an accepted Flag with its reason). Corrections are reapplied every time the Edition is imported.
 _Avoid_: Patch, override, manual edit
+
+**Suggestion**:
+A proposed answer to a Flag, found by checking the printed source, with the page it was read from and the Corrections it would make. It becomes Corrections only when the owner confirms it.
+_Avoid_: Auto-fix, guess
 
 **Locator alias**:
 Another way of writing a Locator that resolves to the same Passage (e.g. `Life of Augustus 3` for `Augustus 3`).
