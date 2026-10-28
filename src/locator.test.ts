@@ -234,4 +234,30 @@ describe("resolvedTargets", () => {
       "72.3~2",
     ])
   })
+
+  it("covers a range's numbers wherever the source prints them, starting at the start", () => {
+    const dio = indexOf([
+      "72",
+      "72.3",
+      "72.11",
+      "72.12",
+      "72.4",
+      "72.13",
+      "72.14",
+      "72.8",
+      "72.10",
+    ])
+    dio.targets.splice(4, 0, { locator: "72.3", id: "72.3~2" })
+    const ids = (written: string) =>
+      resolvedTargets(resolveLocator(written, dio), dio).map((t) => t.id)
+    expect(ids("72.10–14")).toEqual([
+      "72.10",
+      "72.11",
+      "72.12",
+      "72.13",
+      "72.14",
+    ])
+    expect(ids("72.12–13")).toEqual(["72.12", "72.13"])
+    expect(ids("72.3–4")).toEqual(["72.3", "72.3~2", "72.4"])
+  })
 })

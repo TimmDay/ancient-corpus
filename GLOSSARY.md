@@ -29,7 +29,7 @@ A suspicion, raised when an Edition is imported, that a Passage does not match t
 _Avoid_: Warning, error, issue
 
 **Correction**:
-A recorded editorial fix to an Edition's imported Passages (a split, a merge, a text fix, or an accepted Flag with its reason). Corrections are reapplied every time the Edition is imported.
+A recorded editorial fix to an Edition's imported Passages (a split, a merge, a move to where the source prints it, a text fix, or an accepted Flag with its reason). Corrections are reapplied every time the Edition is imported.
 _Avoid_: Patch, override, manual edit
 
 **Suggestion**:

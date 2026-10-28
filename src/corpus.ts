@@ -102,9 +102,9 @@ export type Passage = {
   text: string
   flags: Flag[]
   /**
-   * Set on a later part of a Passage the source prints in more than one place,
-   * resuming the Passage at the same Locator after other text (Foster's
-   * bracketed margin numbers). It shares that Passage's Locator.
+   * Set on every part after the first of a Passage the source prints in more
+   * than one place, interrupted by other chapters. Each part has the Passage's
+   * Locator.
    */
   resumes?: true
 }

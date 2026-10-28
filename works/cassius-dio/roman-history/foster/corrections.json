@@ -362,5 +362,38 @@
     "op": "resume",
     "locator": "75.7",
     "at": "The next event was a tremendous battle"
+  },
+  {
+    "op": "split",
+    "locator": "64.6",
+    "at": "Moreover, the senate voted him",
+    "newLocator": "64.8"
+  },
+  {
+    "op": "split",
+    "locator": "64.8",
+    "at": "Galba had lived seventy-two",
+    "newLocator": "64.6"
+  },
+  {
+    "op": "resume",
+    "locator": "64.6",
+    "at": "Galba had lived seventy-two"
+  },
+  {
+    "op": "resume",
+    "locator": "64.8",
+    "at": "Just at this time"
+  },
+  {
+    "op": "split",
+    "locator": "79.31",
+    "at": "Then, after collecting as many",
+    "newLocator": "79.34"
+  },
+  {
+    "op": "resume",
+    "locator": "79.34",
+    "at": "Marcianus"
   }
 ]
