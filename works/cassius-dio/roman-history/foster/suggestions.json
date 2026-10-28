@@ -1,0 +1,148 @@
+[
+  {
+    "locator": "42.24",
+    "flag": "gap",
+    "archive": "Dio-Rome-vol2.zip",
+    "page": 329,
+    "finding": "Foster prints “— 25 —” beside “When they got to Campania”. The transcription dropped the marker.",
+    "corrections": [
+      {
+        "op": "split",
+        "locator": "42.24",
+        "at": "When they got to Campania",
+        "newLocator": "42.25"
+      }
+    ]
+  },
+  {
+    "locator": "45.21",
+    "flag": "gap",
+    "archive": "Dio-Rome-vol3.zip",
+    "page": 22,
+    "finding": "Foster prints “— 22 —” beside “And because he partly persuaded”. The transcription dropped the marker.",
+    "corrections": [
+      {
+        "op": "split",
+        "locator": "45.21",
+        "at": "And because he partly persuaded",
+        "newLocator": "45.22"
+      }
+    ]
+  },
+  {
+    "locator": "46.18",
+    "flag": "duplicate",
+    "archive": "Dio-Rome-vol3.zip",
+    "page": 64,
+    "finding": "Foster prints “— 19 —” beside “These particulars I shall leave”. The transcription has 18.",
+    "corrections": [
+      {
+        "op": "renumber",
+        "locator": "46.18",
+        "at": "These particulars I shall leave",
+        "newLocator": "46.19"
+      }
+    ]
+  },
+  {
+    "locator": "48.26",
+    "flag": "gap",
+    "archive": "Dio-Rome-vol3.zip",
+    "page": 186,
+    "finding": "Foster prints “— 27 —” at “Antony kept hearing of these operations”. The transcription has 28, so 28 appears twice.",
+    "corrections": [
+      {
+        "op": "renumber",
+        "locator": "48.28",
+        "at": "Antony kept hearing of these operations",
+        "newLocator": "48.27"
+      }
+    ]
+  },
+  {
+    "locator": "48.28",
+    "flag": "duplicate",
+    "archive": "Dio-Rome-vol3.zip",
+    "page": 186,
+    "finding": "Foster prints “— 27 —” at “Antony kept hearing of these operations”. The transcription has 28 there; the second 28 is right.",
+    "corrections": [
+      {
+        "op": "renumber",
+        "locator": "48.28",
+        "at": "Antony kept hearing of these operations",
+        "newLocator": "48.27"
+      }
+    ]
+  },
+  {
+    "locator": "48.40",
+    "flag": "duplicate",
+    "archive": "Dio-Rome-vol3.zip",
+    "page": 202,
+    "finding": "Foster prints no marker at “About this same time an uprising”: that sentence ends chapter 41. He prints “— 42 —” at “There was another on the part of the Ceretani”. Cary’s Loeb agrees (41.7, 42.1).",
+    "corrections": [
+      {
+        "op": "split",
+        "locator": "48.40",
+        "at": "There was another on the part of the Ceretani",
+        "newLocator": "48.42"
+      },
+      {
+        "op": "merge",
+        "locator": "48.40",
+        "at": "About this same time an uprising"
+      }
+    ]
+  },
+  {
+    "locator": "51.1",
+    "flag": "gap",
+    "archive": "Dio-Rome-vol3.zip",
+    "page": 312,
+    "finding": "Chapter 2 begins at “Caesar now proceeded to teach the cities a lesson”. The scan’s marker is smudged; Cary’s Loeb starts 51.2 at the same sentence.",
+    "corrections": [
+      {
+        "op": "split",
+        "locator": "51.1",
+        "at": "Caesar now proceeded to teach the cities",
+        "newLocator": "51.2"
+      }
+    ]
+  },
+  {
+    "locator": "54.33",
+    "flag": "gap",
+    "archive": "Dio-Rome-vol4.zip",
+    "page": 144,
+    "finding": "The transcription skips printed pages 144 and 145, from “and the” to “their country”: the end of 54.33, all of 54.34 and the start of the Vologaesus story. This restores them from the scan, read by hand, and starts 54.34 at “While Drusus was thus occupied”.",
+    "corrections": [
+      {
+        "op": "replace",
+        "locator": "54.33",
+        "find": "and the their country",
+        "with": "and the winter set in. Also a swarm of bees was seen in his camp. Consequently he proceeded no farther but retired to friendly territory, encountering great dangers all the way. The enemy harassed him by ambuscades, and once they shut him up in a kind of narrow hollow and almost annihilated him. He would have perished utterly, had they not felt contempt for the Romans as surely captured and needing only a finishing stroke, and come close to them in some disorder. This proceeding led to their being worsted, after which they were not so courageous but continued to annoy his army from a distance along the way without coming near. Drusus consequently conceived a scorn of them in return and fortified a stronghold at the point where the Lupia and the Eliso join, as well as another among the Chatti on the bank of the Rhine. For these successes he received triumphal honors, the right to ride into the city on a charger and to enjoy the authority of a proconsul when he should finish his duties as general. The name of imperator was applied by the soldiers to him at this time as it had been to Tiberius earlier, but was not given him by Augustus, although the latter as a result of the achievements of them both became entitled to employ this appellation a greater number of times.\n\nWhile Drusus was thus occupied, the festival belonging to his praetorship was carried out in the most costly manner; and the birthday of Augustus both in the hippodrome and in many other parts of the City was honored with the slaughter of wild beasts. And this, although not required by decree, was done almost every year by some one of those who were temporarily praetors. The Augustalia, which is still celebrated, was given then for the first time according to a vote passed. Tiberius subdued an uprising of the Dalmatians, and later the Pannonians, who had likewise become restless in view of his absence and that of most of the army: he made war upon both of them at once, traveling now to this point and now to that. As a reward he obtained the same honors as Drusus. After this Dalmatia was given into the keeping of Augustus, on the assumption that it would always need martial law both on its own account and because of the nearness of the Pannonians.—These persons were thus engaged.\n\nAt this same period Vologaesus, a Thracian from the Bessi and a priest of Dionysus among his countrymen, attached some persons to his cause by practicing many divinations, and with their support revolted: he conquered and killed Rhascuporis, the son of Cotys, and afterward by means of his reputation for supernatural power he stripped Rhoemetalces, the victim's uncle, of his power without a battle and made him seek refuge in flight. Pursuing him he invaded the Chersonese, where he wrought great havoc. Because of this behavior of his and the damage the Sialetae were doing to Macedonia, Lucius Piso was directed to proceed against them from Pamphylia, of which he was governor. The Bessi, when they heard that he was approaching, rapidly retired before him. He reached their country"
+      },
+      {
+        "op": "split",
+        "locator": "54.33",
+        "at": "While Drusus was thus occupied",
+        "newLocator": "54.34"
+      }
+    ]
+  },
+  {
+    "locator": "58.26",
+    "flag": "gap",
+    "archive": "Dio-Rome-vol4.zip",
+    "page": 332,
+    "finding": "Foster prints “— 27 —” beside “And if Egyptian affairs also touch Roman interests”. The transcription dropped the marker.",
+    "corrections": [
+      {
+        "op": "split",
+        "locator": "58.26",
+        "at": "And if Egyptian affairs also touch",
+        "newLocator": "58.27"
+      }
+    ]
+  }
+]

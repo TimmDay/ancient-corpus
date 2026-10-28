@@ -54,6 +54,20 @@ describe("Flags", () => {
     expect(text.passages.flatMap((p) => p.flags)).toEqual([])
   })
 
+  it("reads a lettered chapter as part of the run, not a gap", () => {
+    const text = correctEdition(
+      edition(
+        { ...passage("55.1", "a"), division: "55" },
+        { ...passage("55.2", "a"), division: "55" },
+        { ...passage("55.3", "b"), division: "55" },
+        { ...passage("55.3a", "c"), division: "55" },
+        { ...passage("55.4", "d"), division: "55" },
+      ),
+      [],
+    )
+    expect(text.passages.flatMap((p) => p.flags)).toEqual([])
+  })
+
   it("settles a Flag with an accept Correction, and refuses one that no longer matches", () => {
     const imported = edition(passage("Julius 1", "a"), passage("Julius 3", "c"))
     const accept: Correction = {
@@ -160,6 +174,22 @@ describe("Corrections", () => {
     ])
   })
 
+  it("restores dropped paragraphs with a replace", () => {
+    const imported = edition(passage("Nero 1", "one and the four"))
+    const text = correctEdition(imported, [
+      {
+        op: "replace",
+        locator: "Nero 1",
+        find: "and the four",
+        with: "and the two.\n\nThree and the four",
+      },
+    ])
+    expect(text.passages[0]?.blocks).toEqual([
+      "one and the two.",
+      "Three and the four",
+    ])
+  })
+
   it("fails loudly when quoted text has gone", () => {
     const imported = edition(passage("Nero 1", "a b"))
     expect(() =>
@@ -191,6 +221,22 @@ describe("duplicate Locators", () => {
       ["Nero 1", "first", 0],
       ["Nero 2", "second", 0],
       ["Nero 3", "third", 0],
+    ])
+  })
+
+  it("merges the one a quote picks out", () => {
+    const imported = edition(
+      passage("Nero 1", "first"),
+      passage("Nero 2", "second"),
+      passage("Nero 1", "stray"),
+      passage("Nero 3", "third"),
+    )
+    expect(
+      locators([{ op: "merge", locator: "Nero 1", at: "stray" }], imported),
+    ).toEqual([
+      ["Nero 1", "first"],
+      ["Nero 2", "second stray"],
+      ["Nero 3", "third"],
     ])
   })
 })

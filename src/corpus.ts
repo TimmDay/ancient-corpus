@@ -63,6 +63,8 @@ export type IntakeArchive = {
   sha256: string
   /** Where this volume came from, when an Edition spans several. */
   url?: string
+  /** A scan of the printed volume, for checking the transcription against. */
+  scan?: string
 }
 
 export type Heading = {

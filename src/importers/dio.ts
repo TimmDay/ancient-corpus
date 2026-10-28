@@ -54,8 +54,9 @@ const EPITOME_REPEATS: Record<string, 1 | 2> = {
   "80.12": 1,
 }
 // One pattern for every marker, so they are handled in the order they appear.
+// A chapter Boissevain added between two others is lettered: "[-10a-(<i>Boissevain</i>)]".
 const MARKER =
-  /\[\s*-\s*(\d+)\s*-?\s*\]|\[\s*(\d+)\s*-\s*\]|\[Sidenote:\s*[—–-]+\s*(\d+)\s*[—–-]+\s*\]|\[(?:Sidenote:\s*)?((?:B\.\s?C\.|A\.\s?D\.)[^\]]*)\]|\[(\d+)\]/g
+  /\[\s*-\s*(\d+[a-z]?)\s*-?\s*(?:\(\s*(?:<i>)?Boissevain(?:<\/i>)?\s*\))?\s*\]|\[\s*(\d+)\s*-\s*\]|\[Sidenote:\s*[—–-]+\s*(\d+)\s*[—–-]+\s*\]|\[(?:Sidenote:\s*)?((?:B\.\s?C\.|A\.\s?D\.)[^\]]*)\]|\[(\d+)\]/g
 
 export function importDio(source: EditionSource): ImportedEdition {
   const divisions: Division[] = []
@@ -161,8 +162,8 @@ function readVolume(archive: IntakeArchive, firstNoteId: number) {
       if (chapterNumber) {
         current = {
           locator: qualifier
-            ? `${book.locator.replace(/\(.*/, "")}.${Number(chapterNumber)}(${qualifier})`
-            : `${book.locator}.${Number(chapterNumber)}`,
+            ? `${book.locator.replace(/\(.*/, "")}.${chapterLocator(chapterNumber)}(${qualifier})`
+            : `${book.locator}.${chapterLocator(chapterNumber)}`,
           headings: pendingHeadings,
           division: book.locator,
           blocks: [],
@@ -241,6 +242,11 @@ function readVolume(archive: IntakeArchive, firstNoteId: number) {
         : `${current.blocks[last]} ${fragment}`
     }
   }
+}
+
+/** "07" → "7", "10a" → "10a". */
+function chapterLocator(marker: string): string {
+  return marker.replace(/^0+(?=\d)/, "")
 }
 
 /** "[Footnote 3: …]" paragraphs, numbered per volume; given ids unique across the Edition. */
