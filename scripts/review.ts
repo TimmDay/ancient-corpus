@@ -214,6 +214,10 @@ function describeCorrection(c: Correction): string {
       return `Move ${c.locator} from “${c.at}” to Editorial matter`
     case "accept":
       return `Keep ${c.locator} as printed: ${c.reason}`
+    case "move":
+      return `Move ${c.locator} to just after ${c.after}, where the source prints it`
+    case "resume":
+      return `Mark “${c.at}…” as where the source resumes ${c.locator}`
   }
 }
 

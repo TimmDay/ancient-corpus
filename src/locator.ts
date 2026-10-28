@@ -98,8 +98,9 @@ export function resolveLocator(
   const decoded = safeDecode(written).trim()
   if (!decoded) return { kind: "not-found" }
 
+  // A Passage printed in parts is found at its first part.
   const byKey = new Map(
-    index.targets.map((t) => [keyOf(locatorTokens(t.locator)), t]),
+    index.targets.toReversed().map((t) => [keyOf(locatorTokens(t.locator)), t]),
   )
   const [startWritten = "", endWritten] = splitRange(decoded)
   const startTokens = applyAliases(locatorTokens(startWritten), index.aliases)
@@ -130,9 +131,55 @@ export function resolvedTargets(
   index: LocatorIndex,
 ): LocatorTarget[] {
   if (resolution.kind !== "found") return []
-  const from = index.targets.indexOf(resolution.start)
-  const to = resolution.end ? index.targets.indexOf(resolution.end) : from
-  return to >= from ? index.targets.slice(from, to + 1) : [resolution.start]
+  const { start, end } = resolution
+  const partsOf = (locator: string) =>
+    index.targets.filter((t) => t.locator === locator)
+  // A single Passage the source prints in parts lights up every part.
+  if (!end) return partsOf(start.locator)
+  // A range within one division covers its numbers wherever the source
+  // prints them, starting with the start so a link lands there.
+  const inRange = numberedBetween(start.locator, end.locator)
+  if (inRange) {
+    return [
+      ...partsOf(start.locator),
+      ...index.targets.filter(
+        (t) => t.locator !== start.locator && inRange(t.locator),
+      ),
+    ]
+  }
+  const from = index.targets.indexOf(start)
+  const to = index.targets.indexOf(end)
+  return to >= from ? index.targets.slice(from, to + 1) : [start]
+}
+
+/**
+ * For two Locators that differ only in their last number (`72.10` and
+ * `72.14`), a test for Locators numbered between them in the same division.
+ */
+function numberedBetween(
+  start: string,
+  end: string,
+): ((locator: string) => boolean) | undefined {
+  const [a, b] = [locatorTokens(start), locatorTokens(end)]
+  const prefix = keyOf(a.slice(0, -1))
+  const [low, high] = [Number(a.at(-1)), Number(b.at(-1))]
+  if (
+    a.length !== b.length ||
+    prefix !== keyOf(b.slice(0, -1)) ||
+    !Number.isInteger(low) ||
+    !Number.isInteger(high)
+  )
+    return undefined
+  return (locator) => {
+    const tokens = locatorTokens(locator)
+    const n = Number(tokens.at(-1))
+    return (
+      tokens.length === a.length &&
+      keyOf(tokens.slice(0, -1)) === prefix &&
+      n >= low &&
+      n <= high
+    )
+  }
 }
 
 /** Targets whose Locator differs from this one only by a bracketed name. */
@@ -140,7 +187,9 @@ function twinsOf(target: LocatorTarget, index: LocatorIndex): LocatorTarget[] {
   const bare = (locator: string) =>
     keyOf(locatorTokens(locator.replace(/\([^)]*\)/g, "")))
   const key = bare(target.locator)
-  return index.targets.filter((t) => t !== target && bare(t.locator) === key)
+  return index.targets.filter(
+    (t) => t.locator !== target.locator && bare(t.locator) === key,
+  )
 }
 
 function rangeEnd(

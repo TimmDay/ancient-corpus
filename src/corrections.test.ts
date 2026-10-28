@@ -240,3 +240,50 @@ describe("duplicate Locators", () => {
     ])
   })
 })
+
+describe("Passages printed out of number order", () => {
+  it("moves a Passage to where the source prints it, and resumes an interrupted one", () => {
+    const imported = edition(
+      passage("Nero 1", "a1", "a2"),
+      passage("Nero 2", "b"),
+      passage("Nero 3", "c"),
+    )
+    const text = correctEdition(imported, [
+      { op: "split", locator: "Nero 1", at: "a2", newLocator: "Nero 1" },
+      { op: "resume", locator: "Nero 1", at: "a2" },
+      { op: "move", locator: "Nero 3", after: "Nero 1" },
+    ])
+    expect(
+      text.passages.map((p) => [p.locator, p.text, p.resumes ?? false]),
+    ).toEqual([
+      ["Nero 1", "a1", false],
+      ["Nero 3", "c", false],
+      ["Nero 1", "a2", true],
+      ["Nero 2", "b", false],
+    ])
+    // Neither the resumed part nor the printed order is a duplicate or a gap.
+    expect(text.passages.flatMap((p) => p.flags)).toEqual([])
+  })
+
+  it("still flags a number missing from the whole division", () => {
+    const text = correctEdition(
+      edition(
+        passage("Nero 1", "a"),
+        passage("Nero 4", "d"),
+        passage("Nero 2", "b"),
+      ),
+      [],
+    )
+    expect(text.passages.flatMap((p) => p.flags)).toEqual([
+      { code: "gap", detail: "The next Passage is numbered 4, not 3" },
+    ])
+  })
+
+  it("refuses to resume a Passage with no earlier part", () => {
+    expect(() =>
+      correctEdition(edition(passage("Nero 1", "a")), [
+        { op: "resume", locator: "Nero 1", at: "a" },
+      ]),
+    ).toThrow(/no earlier part/)
+  })
+})
