@@ -15,6 +15,9 @@ Last updated: 2026-10-27
 
 ## Next Works
 
+Next, the sources for the death of Gordian III, one PR each: [#19](https://github.com/TimmDay/ancient-corpus/issues/19) to [#26](https://github.com/TimmDay/ancient-corpus/issues/26); English Eutropius [#27](https://github.com/TimmDay/ancient-corpus/issues/27). Sources and rights are in [SOURCES.md](SOURCES.md).
+
+
 - [ ] Cassius Dio, *Roman History* (Foster): books 36–60 and 78–80 imported from volumes 2, 3, 4 and 6 (1,232 Passages, 9 Flags, visible with `pnpm dev:drafts`), read a book at a time
   - [x] Boissevain's book numbers are canonical; Book 80's restarted run for Alexander is `80.1(Alexander)` and so on
   - [x] One page per book (`/cassius-dio/roman-history/44/`); `/cassius-dio/roman-history#44.19` still works and forwards to the book
@@ -35,8 +38,7 @@ Tracked as issues in that repo: [#84](https://github.com/TimmDay/somnus-data-ing
 ## v2 and later
 
 - [ ] MCP server for local LLMs ([#2](https://github.com/TimmDay/ancient-corpus/issues/2))
-- [ ] Semantic ("vibe") search: embed Passages into a derived vector index (Firestore is the Google free-tier candidate), keyed by Work, Edition and Locator, returning reader links
-- [ ] RAG chatbot over the corpus, with answers that cite reader links
+- [ ] Asking the corpus questions: hybrid keyword and semantic search over every Edition, answered as Findings with reader links. Plan and later steps in [`docs/v2-vector-search.md`](docs/v2-vector-search.md)
 - [ ] Timelines, place extraction and maps, persona chat (see git history of `RAG_GOALS.md` for the original notes)
 - [ ] Parallel original and translation views when a Work has both Editions
 - [ ] Lemma-aware search for Latin and Greek

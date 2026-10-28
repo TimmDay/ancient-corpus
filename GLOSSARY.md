@@ -9,7 +9,7 @@ A citable text identified by its author and title (e.g. Eutropius, *Breviarium h
 _Avoid_: Book, source, text (for the whole thing)
 
 **Edition**:
-One published form of a Work, in one language: the original text or a particular translation. A Work may have several.
+One published form of a Work, in one language: the original text or a particular translation, including one this project makes itself where no free translation exists. A Work may have several. One is preferred, normally one in the language the Work was written in: a link that names no language lands there, and a link that asks for a language the Work has no Edition in lands there too.
 _Avoid_: Translation, version, copy
 
 **Locator**:
@@ -19,6 +19,22 @@ _Avoid_: Citation (for this part alone), page, passage reference
 **Passage**:
 The text at one Locator that an Edition actually marks: the finest unit a link can land on and highlight.
 _Avoid_: Chunk, segment, section (as a generic term)
+
+**Sentence**:
+A grammatical sentence within a Passage of one Edition, numbered from 1 in the order the Edition prints them. Its number is not canonical: it only lets a link point at part of a Passage in that Edition (`9.2@3`, or a run `9.2@3-7`). A Sentence link is read in whichever Edition the link lands in.
+_Avoid_: Line, clause, verse (for this)
+
+**Finding**:
+A Passage, or Sentences within it, returned for a question, with a note on why it is relevant to that question.
+_Avoid_: Hit, match, result (for this), chunk
+
+**Coverage**:
+The Works that have an Edition in the corpus, and so can be searched. An answer states its Coverage, so a Work not yet in the corpus is not mistaken for silence in the sources.
+_Avoid_: Scope, index (for this)
+
+**Period covered**:
+The span of years whose events a Work narrates, as distinct from when it was written; each of its divisions can have its own (Dio's Book 79 covers 217 to 218).
+_Avoid_: Date, era, timeframe
 
 **Editorial matter**:
 Content of an Edition that is not the Work's own text (a translator's introduction, a commentary, a vocabulary). It has no Locator, so no link lands on it.
