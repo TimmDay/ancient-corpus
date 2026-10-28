@@ -25,6 +25,23 @@ describe("build", () => {
     expect(page).toContain('lang="la"')
   })
 
+  it("reads a long Edition a book at a time, from one link", () => {
+    const draftsDir = mkdtempSync(path.join(tmpdir(), "corpus-drafts-"))
+    build({ drafts: true, outDir: draftsDir })
+    const readDraft = (file: string) =>
+      readFileSync(path.join(draftsDir, file), "utf8")
+    const book = readDraft("cassius-dio/roman-history/44/index.html")
+    expect(book).toContain('<section class="passage" id="44.19"')
+    expect(book).not.toContain('id="45.1"')
+    // The Work's own page knows which book holds every Locator.
+    expect(readDraft("cassius-dio/roman-history/index.html")).toContain(
+      '"locator":"44.19","id":"44.19","page":"/cassius-dio/roman-history/44/"',
+    )
+    expect(readDraft("cassius-dio/roman-history/80/index.html")).toContain(
+      'id="80.1(Alexander)"',
+    )
+  })
+
   it("redirects long slugs, keeping the rest of the path", () => {
     expect(read("_redirects")).toContain(
       "/eutropius/breviarium-historiae-romanae/* /eutropius/breviarium/:splat 301",

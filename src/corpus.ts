@@ -23,6 +23,11 @@ export type Work = {
   slugAliases: string[]
   /** Other ways of naming a division, written → canonical, e.g. `Gaius` → `Caligula`. */
   locatorAliases: Record<string, string>
+  /**
+   * What each bracketed name in a Locator means, e.g. `Alexander` in
+   * `80.1(Alexander)`, for asking a reader which passage a link meant.
+   */
+  locatorQualifiers?: Record<string, string>
   editions: Edition[]
 }
 
@@ -37,6 +42,11 @@ export type Edition = {
   source: EditionSource
   /** Which importer under src/importers/ reads the source. */
   importer: string
+  /**
+   * Read a book at a time: one page per division (divisions sharing a number,
+   * like `80` and `80(Alexander)`, share one), for Editions too long for one page.
+   */
+  pagePerDivision?: boolean
 }
 
 export type EditionSource = {

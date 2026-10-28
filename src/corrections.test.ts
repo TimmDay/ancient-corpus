@@ -36,6 +36,24 @@ describe("Flags", () => {
     ])
   })
 
+  it("numbers a bracketed run on its own: a restarted book counts from 1, an epitome sits outside", () => {
+    const inDivision = (division: string, locator: string) => ({
+      ...passage(locator, "x"),
+      division,
+    })
+    const text = correctEdition(
+      edition(
+        inDivision("80", "80.1"),
+        inDivision("80", "80.11(epitome)"),
+        inDivision("80", "80.2"),
+        inDivision("80(Alexander)", "80.1(Alexander)"),
+        inDivision("80(Alexander)", "80.2(Alexander)"),
+      ),
+      [],
+    )
+    expect(text.passages.flatMap((p) => p.flags)).toEqual([])
+  })
+
   it("settles a Flag with an accept Correction, and refuses one that no longer matches", () => {
     const imported = edition(passage("Julius 1", "a"), passage("Julius 3", "c"))
     const accept: Correction = {
