@@ -15,14 +15,14 @@ Last updated: 2026-10-27
 
 ## Next Works
 
-- [ ] Cassius Dio, *Roman History* (Foster): books 36–60 and 78–80 imported from volumes 2, 3, 4 and 6 (1,231 Passages, 22 Flags, visible with `pnpm dev:drafts`)
-  - [ ] Decide the book numbering for books 78–80, where Foster's numbers run one behind Boissevain's and Boissevain's Book 80 restarts its chapters for Alexander
-  - [ ] Decide how to hold the bracketed epitome versions that repeat chapter numbers (60.32–33, 78.19–20, 80.11–12)
+- [ ] Cassius Dio, *Roman History* (Foster): books 36–60 and 78–80 imported from volumes 2, 3, 4 and 6 (1,231 Passages, 10 Flags, visible with `pnpm dev:drafts`), read a book at a time
+  - [x] Boissevain's book numbers are canonical; Book 80's restarted run for Alexander is `80.1(Alexander)` and so on
+  - [x] One page per book (`/cassius-dio/roman-history/44/`); `/cassius-dio/roman-history#44.19` still works and forwards to the book
+  - [x] Epitome versions that repeat chapter numbers are `60.32(epitome)` and so on (60.32–33, 78.19–20, 80.11–12)
   - [ ] Review the remaining gap and duplicate Flags (likely transcription slips, e.g. 48.28, 48.40)
   - [ ] Volume 5 (books 61–77): its own markup, chapter anchors `a61_1` and side notes
   - [ ] Volume 1 (books 1–35): Zonaras's epitome and fragments, with Boissevain fragment numbers
   - [ ] Volume 6's "Fragments preserved from books preceding No. 36"
-  - [ ] The finished page will be around 4 MB (1.3 MB compressed); consider splitting Dio into a page per book
 - [ ] Suetonius, *De Grammaticis et Rhetoribus* and *De Poetis*: same Gutenberg volume as the Lives, separate Works
 - [ ] Replace or re-download the corrupt `Procopius-BuildingsOfJustinian-architecture.zip`
 - [ ] Work through the rest of `docs/intake/report.md` a few Works at a time
@@ -40,3 +40,4 @@ Tracked as issues in that repo: [#84](https://github.com/TimmDay/somnus-data-ing
 - [ ] Timelines, place extraction and maps, persona chat (see git history of `RAG_GOALS.md` for the original notes)
 - [ ] Parallel original and translation views when a Work has both Editions
 - [ ] Lemma-aware search for Latin and Greek
+- [ ] Owner comments on the text, Google Docs style ([#8](https://github.com/TimmDay/ancient-corpus/issues/8))

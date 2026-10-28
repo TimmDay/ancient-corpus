@@ -8,6 +8,8 @@ export type LocatorTarget = {
   locator: string
   /** The HTML id of the element that holds it. */
   id: string
+  /** The page it is on, when an Edition is read a book at a time; otherwise this page. */
+  page?: string
 }
 
 /**
@@ -18,6 +20,19 @@ export type LocatorTarget = {
 export type LocatorIndex = {
   targets: LocatorTarget[]
   aliases: Record<string, string>
+  /**
+   * For targets that share a Locator but for a bracketed name (`80.1` and
+   * `80.1(Alexander)`), keyed by id: what tells each apart, for asking which
+   * one a link meant.
+   */
+  choices?: Record<string, Choice>
+}
+
+export type Choice = {
+  /** What this one is, e.g. "From the reign of Severus Alexander…". */
+  what: string
+  /** The start of its text. */
+  excerpt: string
 }
 
 export type Resolution =
@@ -29,6 +44,11 @@ export type Resolution =
       end?: LocatorTarget
       /** False when the requested Locator was more precise than the Edition and we fell back. */
       exact: boolean
+      /**
+       * Other targets the link could equally mean, because it left out the
+       * bracketed name that tells them apart (`80.1` for `80.1(Alexander)`).
+       */
+      alternatives?: LocatorTarget[]
     }
   | { kind: "not-found" }
 
@@ -44,20 +64,30 @@ export function locatorId(locator: string): string {
  * Splits a Locator as written into comparable tokens: case and diacritics are
  * ignored, a leading "Life of" is dropped (a collection of Lives is cited by the
  * subject's name), and `.`, `,`, `:`, `§`, `-` between tokens all mean the same thing.
+ *
+ * A bracketed name tells apart a run of chapters that starts again within a book
+ * (`80.1(Alexander)`). Its tokens go straight after the book's, so a more precise
+ * `80.1.2(Alexander)` still falls back to `80.1(Alexander)`, not to `80.1`.
  */
 export function locatorTokens(written: string): string[] {
+  const qualifiers: string[] = []
   const plain = written
     .normalize("NFD")
     .replace(/\p{M}/gu, "")
     .toLowerCase()
     .replace(/^\s*(the\s+)?life\s+of\s+(the\s+)?/, "")
+    .replace(/\(([^)]*)\)/g, (_, name: string) => {
+      qualifiers.push(...name.split(/\s+/).filter(Boolean))
+      return " "
+    })
   const tokens = plain.split(/[\s.,:;§]+|(?<=\D)-|-(?=\D)/).filter(Boolean)
   const allNumeric = tokens.every((t) => /^\d+$/.test(t) || isRoman(t))
   // A Roman numeral is only read as a number where it can't be a name: after
   // the first token, or when every token is a number (`IX.9`).
-  return tokens.map((t, i) =>
+  const read = tokens.map((t, i) =>
     (i > 0 || allNumeric) && isRoman(t) ? String(romanValue(t)) : t,
   )
+  return [...read.slice(0, 1), ...qualifiers, ...read.slice(1)]
 }
 
 /** Resolves a Locator as someone wrote it (raw, possibly URL-encoded) against an Edition's index. */
@@ -82,9 +112,14 @@ export function resolveLocator(
       exact && endWritten
         ? rangeEnd(startTokens, endWritten, byKey, index)
         : undefined
-    return end && end !== start
-      ? { kind: "found", start, end, exact }
-      : { kind: "found", start, exact }
+    const alternatives = startWritten.includes("(") ? [] : twinsOf(start, index)
+    return {
+      kind: "found",
+      start,
+      ...(end && end !== start ? { end } : {}),
+      exact,
+      ...(alternatives.length ? { alternatives } : {}),
+    }
   }
   return { kind: "not-found" }
 }
@@ -98,6 +133,14 @@ export function resolvedTargets(
   const from = index.targets.indexOf(resolution.start)
   const to = resolution.end ? index.targets.indexOf(resolution.end) : from
   return to >= from ? index.targets.slice(from, to + 1) : [resolution.start]
+}
+
+/** Targets whose Locator differs from this one only by a bracketed name. */
+function twinsOf(target: LocatorTarget, index: LocatorIndex): LocatorTarget[] {
+  const bare = (locator: string) =>
+    keyOf(locatorTokens(locator.replace(/\([^)]*\)/g, "")))
+  const key = bare(target.locator)
+  return index.targets.filter((t) => t !== target && bare(t.locator) === key)
 }
 
 function rangeEnd(

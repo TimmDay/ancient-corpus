@@ -7,6 +7,7 @@
 import { readFileSync, writeFileSync } from "node:fs"
 import { createServer } from "node:http"
 import path from "node:path"
+import { buildSync } from "esbuild"
 import {
   REPO_ROOT,
   hasEditionText,
@@ -19,6 +20,7 @@ import {
 } from "../src/corpus.ts"
 import type { Correction } from "../src/corrections.ts"
 import { escapeHtml } from "../src/importers/gutenberg.ts"
+import { THEME_SCRIPT, THEME_TOGGLE } from "../src/site/render.ts"
 import {
   correctionsFile,
   importEdition,
@@ -26,6 +28,15 @@ import {
 } from "../src/importing.ts"
 
 const PORT = Number(process.env.PORT ?? 4322)
+
+/** The reader's theme toggle, bundled once when the server starts. */
+const SITE_JS =
+  buildSync({
+    entryPoints: [path.join(REPO_ROOT, "src", "client", "site.ts")],
+    bundle: true,
+    format: "iife",
+    write: false,
+  }).outputFiles[0]?.text ?? ""
 
 function find(
   workSlug: string,
@@ -42,8 +53,8 @@ function page(title: string, body: string): string {
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${escapeHtml(title)}</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap">
-<link rel="stylesheet" href="/site.css"><style>${REVIEW_CSS}</style></head>
-<body><main class="review" id="main"><p><a href="/">All Editions</a></p>${body}</main><script>${REVIEW_JS}</script></body></html>`
+<link rel="stylesheet" href="/site.css"><style>${REVIEW_CSS}</style>${THEME_SCRIPT}<script src="/site.js" defer></script></head>
+<body><header class="site-header"><div class="site-header-inner"><a class="brand" href="/">Review</a>${THEME_TOGGLE}</div></header><main class="review" id="main"><p><a href="/">All Editions</a></p>${body}</main><script>${REVIEW_JS}</script></body></html>`
 }
 
 function indexPage(): string {
@@ -153,6 +164,8 @@ createServer((request, response) => {
       .end(body)
   try {
     if (url.pathname === "/") return send(200, "text/html", indexPage())
+    if (url.pathname === "/site.js")
+      return send(200, "text/javascript", SITE_JS)
     if (url.pathname === "/site.css")
       return send(
         200,

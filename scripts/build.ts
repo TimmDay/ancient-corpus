@@ -17,7 +17,7 @@ import {
   citePage,
   homePage,
   notFoundPage,
-  workPage,
+  workPages,
 } from "../src/site/render.ts"
 import type { WorkListing } from "../src/works-index.ts"
 
@@ -56,15 +56,18 @@ export function build({ drafts = false, outDir = DIST } = {}): {
 
     for (const edition of editions) {
       const text = readEditionText(work, edition)
-      const html = workPage(
+      const pages = workPages(
         work,
         edition,
         text,
         editions,
         unresolvedFlags(text).length,
       )
-      write(path.join(work.slug, edition.slug, "index.html"), html)
-      if (edition === preferred) write(path.join(work.slug, "index.html"), html)
+      for (const [page, html] of pages) {
+        write(path.join(work.slug, edition.slug, page, "index.html"), html)
+        if (edition === preferred)
+          write(path.join(work.slug, page, "index.html"), html)
+      }
     }
     published.push({ work, edition: preferred })
     listings.push({
@@ -92,13 +95,14 @@ export function build({ drafts = false, outDir = DIST } = {}): {
     recursive: true,
   })
   buildSync({
-    entryPoints: ["reader", "cite", "home", "theme"].map((name) =>
+    entryPoints: ["reader", "cite", "home", "site"].map((name) =>
       path.join(REPO_ROOT, "src", "client", `${name}.ts`),
     ),
     outdir: path.join(outDir, "assets"),
     bundle: true,
     minify: true,
-    format: "esm",
+    // Pages load several bundles as classic scripts; each needs its own scope.
+    format: "iife",
     target: "es2022",
     logLevel: "warning",
   })

@@ -5,6 +5,7 @@ import {
   resolveLocator,
   resolvedTargets,
   type LocatorIndex,
+  type LocatorTarget,
 } from "../locator.ts"
 import { showToast } from "./toast.ts"
 
@@ -12,6 +13,9 @@ const index = JSON.parse(
   document.getElementById("locator-index")?.textContent ?? "{}",
 ) as LocatorIndex
 const notice = document.getElementById("notice")
+const chooser = document.getElementById("chooser")
+/** Remembers, across a page load, which of several passages a reader picked. */
+const CHOSEN_KEY = "chosen-locator"
 const reduceMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches
@@ -19,6 +23,7 @@ const reduceMotion = window.matchMedia(
 function land(initial = false): void {
   for (const el of document.querySelectorAll(".hit")) el.classList.remove("hit")
   hideNotice()
+  if (chooser) chooser.hidden = true
   const hash = location.hash.slice(1)
   if (!hash) return
 
@@ -30,6 +35,23 @@ function land(initial = false): void {
       `“${decode(hash)}” isn’t a Locator in this Edition. Choose a place from the contents.`,
     )
     document.querySelector<HTMLElement>(".toc-panel summary")?.focus()
+    return
+  }
+
+  // A link from elsewhere that could mean more than one passage asks which.
+  if (
+    initial &&
+    resolution.alternatives &&
+    !wasChosen(resolution.start.locator)
+  ) {
+    showChooser(decode(hash), [resolution.start, ...resolution.alternatives])
+    return
+  }
+
+  // A book-at-a-time Edition: go to the page that holds the Locator.
+  const page = resolution.start.page
+  if (page && page !== location.pathname) {
+    location.replace(`${page}#${hash}`)
     return
   }
 
@@ -84,12 +106,78 @@ function pinWhileLoading(target: HTMLElement): void {
   }, 4000)
 }
 
+function showChooser(written: string, options: LocatorTarget[]): void {
+  if (!chooser) return
+  const heading = document.createElement("h2")
+  heading.id = "chooser-title"
+  heading.tabIndex = -1
+  heading.textContent = `Which ${written}?`
+  const intro = document.createElement("p")
+  intro.textContent = `This Edition has more than one passage that “${written}” could mean.`
+  const list = document.createElement("ul")
+  list.className = "choices"
+  for (const option of options) {
+    const choice = index.choices?.[option.id]
+    const card = document.createElement("a")
+    card.className = "choice"
+    card.href = `${option.page ?? location.pathname}#${option.locator}`
+    card.dataset.locator = option.locator
+    for (const [className, text] of [
+      ["choice-locator", option.locator],
+      ["choice-what", choice?.what ?? ""],
+      ["choice-excerpt", choice?.excerpt ? `“${choice.excerpt}”` : ""],
+    ]) {
+      if (!text) continue
+      const line = document.createElement("span")
+      line.className = className ?? ""
+      line.textContent = text
+      card.append(line)
+    }
+    const item = document.createElement("li")
+    item.append(card)
+    list.append(item)
+  }
+  chooser.replaceChildren(heading, intro, list)
+  chooser.hidden = false
+  window.scrollTo({ top: 0 })
+  heading.focus({ preventScroll: true })
+}
+
+chooser?.addEventListener("click", (event) => {
+  const card = (event.target as Element).closest<HTMLAnchorElement>("a.choice")
+  if (!card) return
+  // On this page a hash that doesn't change fires no hashchange, so land here.
+  if (card.pathname === location.pathname) {
+    event.preventDefault()
+    history.replaceState(null, "", card.hash)
+    land()
+    return
+  }
+  try {
+    sessionStorage.setItem(CHOSEN_KEY, card.dataset.locator ?? "")
+  } catch {
+    // Without storage the next page asks again.
+  }
+})
+
+/** Whether the reader just picked this Locator from the chooser; asks only once. */
+function wasChosen(locator: string): boolean {
+  try {
+    const chosen = sessionStorage.getItem(CHOSEN_KEY)
+    sessionStorage.removeItem(CHOSEN_KEY)
+    return chosen === locator
+  } catch {
+    return false
+  }
+}
+
 function showNotice(message: string): void {
   if (!notice) return
   notice.textContent = message
   notice.hidden = false
-  // The notice is sticky; make room so it never covers the Passage it explains.
-  document.documentElement.style.scrollPaddingTop = `${notice.offsetHeight + 24}px`
+  // The notice sticks under the header; make room so neither covers the Passage it explains.
+  const header = document.querySelector<HTMLElement>(".site-header")
+  document.documentElement.style.scrollPaddingTop = `${(header?.offsetHeight ?? 0) + notice.offsetHeight + 32}px`
 }
 
 function hideNotice(): void {
@@ -136,19 +224,25 @@ function followContents(): void {
   const headings = [...document.querySelectorAll<HTMLElement>("h2.division")]
   let marked: HTMLAnchorElement | undefined
   let queued = false
+  /** True while the text scrolls to a place picked from the contents. */
+  let jumping = false
 
-  // Checked on every scroll, so a jump straight past a heading still counts.
-  const update = () => {
-    queued = false
-    const line = window.innerHeight * 0.3
-    const current = headings.findLast(
-      (h) => h.getBoundingClientRect().top < line,
-    )
-    const link = current ? links.get(current.id) : undefined
+  const mark = (link: HTMLAnchorElement | undefined) => {
     if (link === marked) return
     marked?.removeAttribute("aria-current")
     link?.setAttribute("aria-current", "location")
     marked = link
+  }
+
+  // Checked on every scroll, so a jump straight past a heading still counts.
+  const update = () => {
+    queued = false
+    if (jumping) return
+    const line = window.innerHeight * 0.3
+    const current = headings.findLast(
+      (h) => h.getBoundingClientRect().top < line,
+    )
+    mark(current ? links.get(current.id) : undefined)
   }
   window.addEventListener(
     "scroll",
@@ -158,6 +252,29 @@ function followContents(): void {
     },
     { passive: true },
   )
+
+  // A place picked from the contents opens its book there at once, and the
+  // contents hold still while the text scrolls to it, rather than opening and
+  // closing every book it passes.
+  document.querySelector(".toc")?.addEventListener("click", (event) => {
+    const picked = (event.target as Element).closest<HTMLAnchorElement>("a")
+    if (picked?.pathname !== location.pathname) return
+    const book = picked
+      .closest(".toc-list > li")
+      ?.querySelector<HTMLAnchorElement>(":scope > a[data-division]")
+    if (!book) return
+    mark(book)
+    jumping = true
+    const settle = () => {
+      jumping = false
+      clearTimeout(timer)
+      window.removeEventListener("scrollend", settle)
+      update()
+    }
+    // scrollend never fires if the text is already there; the timer covers that.
+    const timer = setTimeout(settle, 2000)
+    window.addEventListener("scrollend", settle)
+  })
   update()
 }
 
