@@ -239,9 +239,11 @@ function followContents(): void {
     queued = false
     if (jumping) return
     const line = window.innerHeight * 0.3
-    const current = headings.findLast(
-      (h) => h.getBoundingClientRect().top < line,
-    )
+    // Above the first heading, the page's first book is the one being read:
+    // on a page per book, that is the book just picked from the contents.
+    const current =
+      headings.findLast((h) => h.getBoundingClientRect().top < line) ??
+      headings[0]
     mark(current ? links.get(current.id) : undefined)
   }
   window.addEventListener(
