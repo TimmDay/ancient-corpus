@@ -927,6 +927,19 @@ h2.division.hit {
   letter-spacing: 0.08em;
 }
 
+.howto-list {
+  padding-left: 1.1rem;
+}
+
+.howto-list li {
+  margin: 0.5rem 0;
+}
+
+/* Long example addresses wrap rather than push the page sideways on a phone. */
+.howto-list code {
+  overflow-wrap: anywhere;
+}
+
 [hidden] {
   display: none !important;
 }
