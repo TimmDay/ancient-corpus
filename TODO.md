@@ -15,6 +15,8 @@ Last updated: 2026-10-27
 
 ## Next Works
 
+- [x] *Historia Augusta* (Magie, Latin and English, from LacusCurtius): 30 Lives, 634 chapters, read a Life at a time
+
 Next, the sources for the death of Gordian III, one PR each: [#19](https://github.com/TimmDay/ancient-corpus/issues/19) to [#26](https://github.com/TimmDay/ancient-corpus/issues/26); English Eutropius [#27](https://github.com/TimmDay/ancient-corpus/issues/27). Sources and rights are in [SOURCES.md](SOURCES.md).
 
 - [ ] Cassius Dio, *Roman History* (Foster): books 36–80 imported from volumes 2–6 (1,608 Passages and parts, 10 Flags, visible with `pnpm dev:drafts`), read a book at a time

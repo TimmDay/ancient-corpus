@@ -7,12 +7,124 @@
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
-  "locatorFormat": "Life chapter.section, e.g. Aurelian 25.3",
+  "locatorFormat": "Life chapter, e.g. Three Gordians 30; a section, e.g. Aurelian 25.3, lands on its chapter",
   "slugAliases": [
     "anonymous/scriptores-historiae-augustae",
     "unknown/historia-augusta",
     "unknown/scriptores-historiae-augustae"
   ],
-  "locatorAliases": {},
-  "editions": []
+  "locatorAliases": {
+    "Hadrianus": "Hadrian",
+    "Hadr": "Hadrian",
+    "Ael": "Aelius",
+    "Aelius Verus": "Aelius",
+    "Pius": "Antoninus Pius",
+    "Ant Pius": "Antoninus Pius",
+    "Marcus": "Marcus Aurelius",
+    "Marc": "Marcus Aurelius",
+    "Marcus Antoninus": "Marcus Aurelius",
+    "Lucius Verus": "Verus",
+    "Avid": "Avidius Cassius",
+    "Avid Cass": "Avidius Cassius",
+    "Comm": "Commodus",
+    "Pert": "Pertinax",
+    "Did Iul": "Didius Julianus",
+    "Didius Iulianus": "Didius Julianus",
+    "Sev": "Septimius Severus",
+    "Severus": "Septimius Severus",
+    "Pesc Nig": "Pescennius Niger",
+    "Pesc": "Pescennius Niger",
+    "Niger": "Pescennius Niger",
+    "Clod Alb": "Clodius Albinus",
+    "Clod": "Clodius Albinus",
+    "Albinus": "Clodius Albinus",
+    "Carac": "Caracalla",
+    "Antoninus Caracalla": "Caracalla",
+    "Macr": "Macrinus",
+    "Opil Macr": "Macrinus",
+    "Opilius Macrinus": "Macrinus",
+    "Diad": "Diadumenianus",
+    "Heliogabalus": "Elagabalus",
+    "Heliog": "Elagabalus",
+    "Elag": "Elagabalus",
+    "Sev Alex": "Severus Alexander",
+    "Alex": "Severus Alexander",
+    "Alexander Severus": "Severus Alexander",
+    "Maximini Duo": "Two Maximini",
+    "Maximin": "Two Maximini",
+    "Max": "Two Maximini",
+    "Gordiani Tres": "Three Gordians",
+    "Gord": "Three Gordians",
+    "Gordians": "Three Gordians",
+    "Maximus et Balbinus": "Maximus and Balbinus",
+    "Max et Balb": "Maximus and Balbinus",
+    "Pupienus and Balbinus": "Maximus and Balbinus",
+    "Valeriani Duo": "Two Valerians",
+    "Valer": "Two Valerians",
+    "Valerians": "Two Valerians",
+    "Gallieni Duo": "Two Gallieni",
+    "Gall": "Two Gallieni",
+    "Gallienus": "Two Gallieni",
+    "Tyranni Triginta": "Thirty Pretenders",
+    "Tyr Trig": "Thirty Pretenders",
+    "Thirty Tyrants": "Thirty Pretenders",
+    "Claud": "Claudius",
+    "Divus Claudius": "Claudius",
+    "Aurel": "Aurelian",
+    "Divus Aurelianus": "Aurelian",
+    "Aurelianus": "Aurelian",
+    "Tac": "Tacitus",
+    "Prob": "Probus",
+    "Quadrigae Tyrannorum": "Four Pretenders",
+    "Quadr Tyr": "Four Pretenders",
+    "Four Tyrants": "Four Pretenders",
+    "Firmus": "Four Pretenders",
+    "Car": "Carus",
+    "Carinus": "Carus",
+    "Numerian": "Carus"
+  },
+  "editions": [
+    {
+      "slug": "magie-latin",
+      "preferred": true,
+      "language": "la",
+      "title": "Scriptores Historiae Augustae",
+      "editor": "David Magie",
+      "publicationYear": 1921,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/home.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-HistoriaAugusta.zip",
+            "sha256": "f8ca61973336cdab03a6cc9308b6b64c4def743aa80864d83f7652444ecb3a42"
+          }
+        ],
+        "rights": "Public domain. Loeb Classical Library, vols. I (1921), II (1924) and III (1932); LacusCurtius: \"Both text and translation are in the public domain\"."
+      },
+      "importer": "lacuscurtius",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "magie",
+      "preferred": false,
+      "language": "en",
+      "title": "Historia Augusta",
+      "translator": "David Magie",
+      "publicationYear": 1921,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/home.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-HistoriaAugusta.zip",
+            "sha256": "f8ca61973336cdab03a6cc9308b6b64c4def743aa80864d83f7652444ecb3a42"
+          }
+        ],
+        "rights": "Public domain. Loeb Classical Library, vols. I (1921), II (1924) and III (1932); LacusCurtius: \"Both text and translation are in the public domain\"."
+      },
+      "importer": "lacuscurtius",
+      "pagePerDivision": true
+    }
+  ]
 }

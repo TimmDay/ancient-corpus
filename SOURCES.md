@@ -21,12 +21,13 @@ Contacts are the sites' own contact pages; find the current address there before
 | | vol. 4 | | [Gutenberg #10883](https://www.gutenberg.org/ebooks/10883) | | Ted Garvin, Jayam Subramanian and PG Distributed Proofreaders |
 | | vol. 5 | | [Gutenberg #10890](https://www.gutenberg.org/ebooks/10890) | | Ted Garvin, Ben Courtney and the Online Distributed Proofreading Team |
 | | vol. 6 | | [Gutenberg #12061](https://www.gutenberg.org/ebooks/12061) | | Ted Garvin, Jayam Subramanian and PG Distributed Proofreaders |
+| *Historia Augusta* | David Magie, Loeb (1921, 1924, 1932): his Latin text | Latin | [LacusCurtius](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/home.html), saved page by page as `LacusCurtius-HistoriaAugusta.zip` | LacusCurtius: "Both text and translation are in the public domain" (only its pages whose URL has exactly one `*`) | Transcribed by Bill Thayer |
+| | David Magie, Loeb: his English translation | English | same | same | Transcribed by Bill Thayer |
 
 ## Planned
 
 | Work | Edition | Language | Source | Rights |
 |---|---|---|---|---|
-| *Historia Augusta* | David Magie, Loeb (1921, 1924, 1932), with the Latin he printed | Latin and English | [LacusCurtius](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/home.html) | LacusCurtius: "Both text and translation are in the public domain". Only its pages whose URL has exactly one `*` are public domain |
 | Eutropius, *Breviarium* | John Selby Watson (Bohn) | English | [tertullian.org](https://tertullian.org/fathers/eutropius_breviarium_0_eintro.htm) | Public domain (19th century); confirm the printing |
 | Zosimus, *Historia Nova* | Anonymous (Green and Chaplin, 1814) | English | tertullian.org | Public domain |
 | Aurelius Victor, *De Caesaribus* | Pichlmayr (1911) | Latin | to find | Public domain |
