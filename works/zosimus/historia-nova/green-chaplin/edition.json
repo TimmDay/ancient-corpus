@@ -1,0 +1,66 @@
+{
+  "divisions": [
+    {
+      "locator": "1",
+      "label": "Book 1"
+    },
+    {
+      "locator": "2",
+      "label": "Book 2"
+    },
+    {
+      "locator": "3",
+      "label": "Book 3"
+    },
+    {
+      "locator": "4",
+      "label": "Book 4"
+    },
+    {
+      "locator": "5",
+      "label": "Book 5"
+    },
+    {
+      "locator": "6",
+      "label": "Book 6"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ed-1",
+      "title": "Note on Book 1",
+      "html": "<p>[Note for the online edition: a gathering of eight leaves has been lost from the Vatican manuscript, being the end of book 1 and the start of book 2. RP].</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-2",
+      "title": "After Book 1: what the translator supplied from other writers",
+      "html": "<p>(The remainder of this book and the beginning of the next are lost, to supply that deficiency in the narrative we have collected from other authors this short account;) \"Probus was succeeded by Carus, who marched against the Persians as far as Ctesiphon, where he received the appellation of the Persian emperor, but soon afterwards died, according to some, of a disease, though others state, that he was killed by lightning. He had two sons, Numerianus a very promising youth, from whom the state might have expected all possible happiness and good, had he not been murdered by Aper; and Carinus, a person abandoned to all kinds of vice, who was killed by Diocletian.\"</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-3",
+      "title": "Note on Book 2",
+      "html": "<p>[Note to the online edition: A gathering of 8 leaves has been lost from the only manuscript at this point, covering the end of book 1 and start of book 2.]</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-4",
+      "title": "Note on Book 5",
+      "html": "<p>[Note to the online text: the printed text pagination moves straight from 134 to 137, although the word 'Barba-rians' is split across the join. Footnote moved to end].</p><p>[Note to the online text: a leaf of the manuscript has been cut out at this point].</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-5",
+      "title": "Note on Book 6",
+      "html": "<p>[Note to the online edition. The 1814 edition continues for another 70 pages with first a</p><p>\"COMPARATIVE VIEW OF ANTIENT AND OF MODERN GEOGRAPHY. In the following Tables, the Countries unknown to the Ancients, or of which the Names are uncertain, are left blank.\"</p><p>and then \"A CHRONOLOGICAL TABLE FOR THE BYZANTINE HISTORIANS\", consisting of a table of dates and events and rulers from 4004 BC to 1453 AD. Zosimus is not mentioned.</p><p>I am unsure what relevance a list of US states in 1814 has to the study of Zosimus, but they occupy a couple of pages! Since scanning these would be more labour than they are worth, I have omitted them.]</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-6",
+      "title": "After Book 6: what the translator supplied from other writers",
+      "html": "<p>SUPPLEMENT.</p><p>THE remainder of this Book is lost. Photius in his Bibliotheca mentions, that the history of Zosimus ended with the taking of Rome by Alaric. Since Zosimus is unfortunately deficient in this point, and a particular narrative of the sacking of Rome is not met with in any other author, the following account is extracted from Baptista Egnatius. [Note: A renaissance writer]</p><p>Alaric had besieged Rome for two years successively, and Honorius, who then lay idly at Ravenna, had neither resolution nor power to relieve it. For being in nothing more unconcerned than in the safety of the city after the death of Stilico, he had appointed no person to command the army, and manage the war against the Goths. This determined the Goths on besieging the city, perceiving that the Roman soldiers were either fled or very negligent of their duty, the Barbarians having long endeavoured in vain, and being unable to take it by assault, were obliged to have recourse to stratagem. They pretended to return into their own country, and selected three hundred young men of great strength and courage, whom they bestowed on the Roman nobility as a present, having previously instructed them to oblige their masters by all possible observance, and on a certain day appointed, about noon, when the nobility were either asleep or otherwise unmindful of business, to meet suddenly at the gate called Porta Avinaria, where having surprised and killed the guards, they should open the gate for those who would be there in waiting. Meanwhile the Goths delayed their return home, under pretence of still wanting something, until the three hundred youths, making a good use of their opportunity, opened the gate to their countrymen. The Goths, on being admitted, immediately began to plunder the city, although they committed more dishonour than mischief to the citizens. It is the opinion of some, that the gate was opened by the contrivance of Proba, a lady of great rank and wealth, who compassionated the people of Rome, who were dying of famine and of several distempers, like sheep. There are two circumstances relative to this occasion worthy of being noticed. The one is, that an edict was made by Alaric, that whoever took refuge in the churches of saints, especially in those of Peter and Paul, should receive no injury; which was accordingly observed with great care. The other was, that when Honorius received intelligence at Ravenna that Rome (Roma) was destroyed, he understood by it a certain strong Gaul, whose name was Roma, and thought it very remarkable that he should so soon be cut off, with whom a little before he had so diverted himself.</p>",
+      "notes": []
+    }
+  ]
+}

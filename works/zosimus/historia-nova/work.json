@@ -9,10 +9,52 @@
   "writtenYearLatest": null,
   "coversYearEarliest": -31,
   "coversYearLatest": 410,
-  "locatorFormat": "book.chapter, e.g. 1.61",
+  "locatorFormat": "book.chapter, e.g. 1.18; a section, e.g. 1.18.2, lands on its chapter",
   "slugAliases": [
     "zosimus/new-history"
   ],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "mendelssohn",
+      "preferred": true,
+      "language": "grc",
+      "title": "Zosimi Historia Nova",
+      "editor": "Ludwig Mendelssohn",
+      "publicationYear": 1887,
+      "source": {
+        "name": "Open Greek and Latin, First1KGreek (Perseus Digital Library)",
+        "url": "https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg4084/tlg001/tlg4084.tlg001.1st1K-grc1.xml",
+        "archives": [
+          {
+            "file": "Zosimus-Mendelssohn-First1KGreek.zip",
+            "sha256": "cb2ee7247b1603dcd3fa1b6f857e0b86e60d9241790cb69a5069c901d6e7314c"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1887) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "importer": "perseus",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "green-chaplin",
+      "preferred": false,
+      "language": "en",
+      "title": "The History of Count Zosimus",
+      "publicationYear": 1814,
+      "source": {
+        "name": "tertullian.org (Roger Pearse)",
+        "url": "https://www.tertullian.org/fathers/zosimus00_intro.htm",
+        "archives": [
+          {
+            "file": "Zosimus-GreenChaplin-tertullian.zip",
+            "sha256": "4a2a3cba350604ad1d01456792f3e1fc72eed1c2d37d962f70e4d1a53d1bfae7"
+          }
+        ],
+        "rights": "Public domain. Anonymous translation (London: Green and Chaplin, 1814); transcribed by Roger Pearse, 2002: \"All material on this page is in the public domain - copy freely.\""
+      },
+      "importer": "tertullian",
+      "pagePerDivision": true
+    }
+  ]
 }

@@ -307,8 +307,15 @@ function htmlPositionOf(html: string, wanted: string): number | undefined {
     }
     i += entity ? entity[0].length : 1
   }
-  const found = text.indexOf(wanted)
-  return found === -1 ? undefined : positions[found]
+  // Like plainText, a space before punctuation doesn't count ("wars ;" is "wars;").
+  const kept = [...text].flatMap((char, i) =>
+    char === " " && /[,.;:!?’”)]/.test(text[i + 1] ?? "") ? [] : [i],
+  )
+  const found = kept
+    .map((i) => text[i])
+    .join("")
+    .indexOf(wanted)
+  return found === -1 ? undefined : positions[kept[found] ?? -1]
 }
 
 /** Cuts HTML at a text position, closing tags left open in the first half and reopening them in the second. */

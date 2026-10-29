@@ -64,11 +64,13 @@ export function sentenceSpans(
   ])
   const spans: { start: number; end: number }[] = []
   let start = 0
-  // A stop, any closing quotes or brackets after it, then a space.
-  const stop = /[.!?]+["'”’)\]]*(?=\s)/g
+  // A stop, any closing quotes or brackets after it, then a space. Greek
+  // asks questions with ";".
+  const stop =
+    language === "grc" ? /[.!?;]+["'”’)\]]*(?=\s)/g : /[.!?]+["'”’)\]]*(?=\s)/g
   for (let match = stop.exec(text); match; match = stop.exec(text)) {
     const end = match.index + match[0].length
-    const before = /(\S+?)[.!?]+["'”’)\]]*$/.exec(text.slice(start, end))?.[1]
+    const before = /(\S+?)[.!?;]+["'”’)\]]*$/.exec(text.slice(start, end))?.[1]
     const word = (before ?? "").toLowerCase().replace(/^[("'“‘[]+/, "")
     // An initial ("C. Caesar"), a listed abbreviation, or a number ("c. xiv.2") does not end a sentence.
     if (/^\p{Lu}$/u.test(before ?? "") || abbreviations.has(word)) continue
