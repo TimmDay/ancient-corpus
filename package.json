@@ -21,6 +21,8 @@
     "build": "node scripts/build.ts",
     "dev": "node scripts/dev.ts",
     "review": "node scripts/review.ts",
+    "index": "node scripts/index.ts",
+    "ask": "node scripts/ask.ts",
     "dev:drafts": "node scripts/dev.ts --drafts"
   },
   "devDependencies": {
