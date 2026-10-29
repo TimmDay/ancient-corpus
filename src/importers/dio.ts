@@ -196,7 +196,9 @@ function readVolume($: CheerioAPI, firstNoteId: number) {
     passage.notes = [...joined.matchAll(/id="r-([^"]+)"/g)].flatMap(
       ([, id = ""]) => {
         const note = notes.byId.get(id)
-        return note === undefined ? [] : [{ id, html: note }]
+        return note === undefined
+          ? []
+          : [{ id, html: note, label: notes.labels.get(id) ?? id }]
       },
     )
     passage.text = plainText(joined)
@@ -341,7 +343,9 @@ export function readSidenoteVolume($: CheerioAPI, firstNoteId: number) {
     passage.notes = [...joined.matchAll(/id="r-([^"]+)"/g)].flatMap(
       ([, id = ""]) => {
         const note = notes.byId.get(id)
-        return note === undefined ? [] : [{ id, html: note }]
+        return note === undefined
+          ? []
+          : [{ id, html: note, label: notes.labels.get(id) ?? id }]
       },
     )
     passage.text = plainText(joined)
@@ -382,6 +386,7 @@ function summaryHtml($: CheerioAPI, $el: ReturnType<CheerioAPI>): string {
 function readLinkedFootnotes($: CheerioAPI, firstId: number) {
   const ids = new Map<string, string>()
   const byId = new Map<string, string>()
+  const labels = new Map<string, string>()
   let next = firstId
   const parts = ($("div.foot").html() ?? "").split(/<a id="foot(\d+)"><\/a>/)
   for (let i = 1; i < parts.length; i += 2) {
@@ -392,12 +397,13 @@ function readLinkedFootnotes($: CheerioAPI, firstId: number) {
     if (ids.has(number)) continue
     const id = String(next++)
     ids.set(number, id)
+    labels.set(id, number)
     byId.set(
       id,
       inlineHtml($, load(`<div>${body}</div>`)("div").contents()).trim(),
     )
   }
-  return { ids, byId, size: ids.size }
+  return { ids, byId, labels, size: ids.size }
 }
 
 /** "07" → "7", "10a" → "10a". */
@@ -409,6 +415,7 @@ function chapterLocator(marker: string): string {
 function readFootnotes($: CheerioAPI, firstId: number) {
   const ids = new Map<string, string>()
   const byId = new Map<string, string>()
+  const labels = new Map<string, string>()
   let next = firstId
   for (const p of $("p").toArray() as Element[]) {
     const html = inlineHtml($, $(p).contents()).trim()
@@ -416,7 +423,8 @@ function readFootnotes($: CheerioAPI, firstId: number) {
     if (!match?.[1] || ids.has(match[1])) continue
     const id = String(next++)
     ids.set(match[1], id)
+    labels.set(id, match[1])
     byId.set(id, (match[2] ?? "").trim())
   }
-  return { ids, byId, size: ids.size }
+  return { ids, byId, labels, size: ids.size }
 }

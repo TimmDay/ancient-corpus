@@ -33,7 +33,9 @@ ${BREAK}${wrap("A second paragraph--with a dash.")}
       "Marcus, the philosopher, ruled well. A second paragraph—with a dash.",
     )
     expect(first?.blocks).toHaveLength(2)
-    expect(first?.notes).toEqual([{ id: "7", html: "A <i>note</i>." }])
+    expect(first?.notes).toEqual([
+      { id: "7", html: "A <i>note</i>.", label: "1" },
+    ])
     expect(third?.headings.map((h) => h.html)).toEqual(["Book 72"])
   })
 })

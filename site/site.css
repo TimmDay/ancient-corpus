@@ -582,6 +582,15 @@ h2.division.hit {
   font-variant-numeric: lining-nums;
   text-decoration: none;
   margin-right: 0.25rem;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+}
+
+/* Bill Thayer's own note on LacusCurtius, kept apart from the Edition's note. */
+.notes .thayer {
+  display: block;
+  margin: 0.2rem 0 0 1rem;
+  font-style: italic;
 }
 
 /* Notices */

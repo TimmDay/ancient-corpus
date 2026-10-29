@@ -445,7 +445,7 @@ function passageHtml(
     ? `<aside class="notes" aria-label="Notes to ${attr(passage.locator)}" lang="en"><ol>${passage.notes
         .map(
           (n) =>
-            `<li id="n-${attr(n.id)}"><a class="note-back" href="#r-${attr(n.id)}" aria-label="Back to the text of note ${attr(n.id)}">${escapeHtml(n.id)}</a> ${n.html}</li>`,
+            `<li id="n-${attr(n.id)}"><a class="note-back" href="#r-${attr(n.id)}" aria-label="Back to the text of note ${attr(n.label ?? n.id)}">${escapeHtml(n.id)}</a> ${n.html}</li>`,
         )
         .join("")}</ol></aside>`
     : ""
