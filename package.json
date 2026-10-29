@@ -21,6 +21,7 @@
     "build": "node scripts/build.ts",
     "dev": "node scripts/dev.ts",
     "review": "node scripts/review.ts",
+    "align-chapters": "node scripts/align-chapters.ts",
     "index": "node scripts/index.ts",
     "ask": "node scripts/ask.ts",
     "ask:check": "node scripts/ask-check.ts",

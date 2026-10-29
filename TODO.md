@@ -16,6 +16,7 @@ Last updated: 2026-10-27
 ## Next Works
 
 - [x] *Historia Augusta* (Magie, Latin and English, from LacusCurtius): 30 Lives, 634 chapters, read a Life at a time
+- [x] Zosimus, *Historia Nova*: Mendelssohn's Greek (First1KGreek, CC BY-SA) and the 1814 English, whose chapters we aligned with the Greek and checked by reading
 
 Next, the sources for the death of Gordian III, one PR each: [#19](https://github.com/TimmDay/ancient-corpus/issues/19) to [#26](https://github.com/TimmDay/ancient-corpus/issues/26); English Eutropius [#27](https://github.com/TimmDay/ancient-corpus/issues/27). Sources and rights are in [SOURCES.md](SOURCES.md).
 

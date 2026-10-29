@@ -16,6 +16,8 @@ import { correctEdition, type Correction } from "./corrections.ts"
 import { importDio } from "./importers/dio.ts"
 import { importEutropius } from "./importers/eutropius.ts"
 import { importLacusCurtius } from "./importers/lacuscurtius.ts"
+import { importPerseus } from "./importers/perseus.ts"
+import { importTertullian } from "./importers/tertullian.ts"
 import { importSuetonius } from "./importers/suetonius.ts"
 import { nameNotes } from "./note-ids.ts"
 
@@ -27,7 +29,9 @@ const IMPORTERS: Record<
   eutropius: importEutropius,
   lacuscurtius: (source, work, edition) =>
     importLacusCurtius(source, work.title, edition.language),
+  perseus: importPerseus,
   suetonius: importSuetonius,
+  tertullian: (source, work) => importTertullian(source, work.title),
 }
 
 export function correctionsFile(work: Work, edition: Edition): string {
@@ -39,6 +43,16 @@ export function readCorrections(work: Work, edition: Edition): Correction[] {
   return existsSync(file)
     ? (JSON.parse(readFileSync(file, "utf8")) as Correction[])
     : []
+}
+
+/** An Edition as its importer reads it, before any Correction, for tools that propose Corrections. */
+export function importUncorrected(work: Work, edition: Edition): EditionText {
+  const importer = IMPORTERS[edition.importer]
+  if (!importer)
+    throw new Error(
+      `${work.slug}/${edition.slug}: no importer called "${edition.importer}"`,
+    )
+  return correctEdition(importer(edition.source, work, edition), [])
 }
 
 export function importEdition(work: Work, edition: Edition): EditionText {

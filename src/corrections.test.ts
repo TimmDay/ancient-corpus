@@ -105,6 +105,27 @@ describe("Corrections", () => {
     expect(text.passages[0]?.flags).toEqual([])
   })
 
+  it("matches quoted text as the plain text reads, without the space a transcription leaves before punctuation", () => {
+    const imported = edition(
+      passage(
+        "2.29",
+        "He was put to death. He engaged in no more wars ; and even so.",
+      ),
+    )
+    const text = correctEdition(imported, [
+      {
+        op: "split",
+        locator: "2.29",
+        at: "He engaged in no more wars; and",
+        newLocator: "2.30",
+      },
+    ])
+    expect(text.passages.map((p) => p.blocks)).toEqual([
+      ["He was put to death."],
+      ["He engaged in no more wars ; and even so."],
+    ])
+  })
+
   it("splits between paragraphs and ignores note numbers when matching", () => {
     const imported = edition(
       passage(

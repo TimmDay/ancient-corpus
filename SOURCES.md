@@ -9,6 +9,7 @@ Contacts are the sites' own contact pages; find the current address there before
 | [Project Gutenberg](https://www.gutenberg.org) | Volunteer-proofread public-domain ebooks | [gutenberg.org/about/contact_information.html](https://www.gutenberg.org/about/contact_information.html) |
 | [LacusCurtius](https://penelope.uchicago.edu/Thayer/E/home.html) | Bill Thayer's transcriptions of Loeb and other public-domain texts, Latin and English | the "contact" link at the foot of each page |
 | [tertullian.org](https://www.tertullian.org) | Roger Pearse's collection of early translations | [tertullian.org](https://www.tertullian.org) (email on the home page) |
+| [Open Greek and Latin](https://www.opengreekandlatin.org) | First1KGreek and other TEI editions, with the Perseus Digital Library | [opengreekandlatin.org](https://www.opengreekandlatin.org) |
 
 ## In the corpus
 
@@ -23,13 +24,14 @@ Contacts are the sites' own contact pages; find the current address there before
 | | vol. 6 | | [Gutenberg #12061](https://www.gutenberg.org/ebooks/12061) | | Ted Garvin, Jayam Subramanian and PG Distributed Proofreaders |
 | *Historia Augusta* | David Magie, Loeb (1921, 1924, 1932): his Latin text | Latin | [LacusCurtius](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/home.html), saved page by page as `LacusCurtius-HistoriaAugusta.zip` | LacusCurtius: "Both text and translation are in the public domain" (only its pages whose URL has exactly one `*`) | Transcribed by Bill Thayer |
 | | David Magie, Loeb: his English translation | English | same | same | Transcribed by Bill Thayer |
+| Zosimus, *Historia Nova* | Ludwig Mendelssohn (Teubner, 1887) | Greek | [First1KGreek](https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg4084/tlg001/tlg4084.tlg001.1st1K-grc1.xml) (Open Greek and Latin, Perseus Digital Library), as `Zosimus-Mendelssohn-First1KGreek.zip` | The 1887 text is public domain; the digital edition is © Trustees of Tufts University under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), so this Edition's text is shared under the same licence, with attribution | Open Greek and Latin and the Perseus Digital Library |
+| | Anonymous (London: Green and Chaplin, 1814) | English | [tertullian.org](https://www.tertullian.org/fathers/zosimus00_intro.htm), as `Zosimus-GreenChaplin-tertullian.zip` | Public domain: "All material on this page is in the public domain - copy freely" | Transcribed by Roger Pearse, 2002. Chapter divisions are ours, aligned with Mendelssohn's Greek and checked by reading |
 
 ## Planned
 
 | Work | Edition | Language | Source | Rights |
 |---|---|---|---|---|
 | Eutropius, *Breviarium* | John Selby Watson (Bohn) | English | [tertullian.org](https://tertullian.org/fathers/eutropius_breviarium_0_eintro.htm) | Public domain (19th century); confirm the printing |
-| Zosimus, *Historia Nova* | Anonymous (Green and Chaplin, 1814) | English | tertullian.org | Public domain |
 | Aurelius Victor, *De Caesaribus* | Pichlmayr (1911) | Latin | to find | Public domain |
 | *Epitome de Caesaribus* | Pichlmayr (1911) | Latin | to find | Public domain |
 | Orosius, *Historiae adversus Paganos* | Zangemeister (1889) | Latin | to find | Public domain |
