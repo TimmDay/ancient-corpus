@@ -23,6 +23,7 @@
     "review": "node scripts/review.ts",
     "index": "node scripts/index.ts",
     "ask": "node scripts/ask.ts",
+    "ask:check": "node scripts/ask-check.ts",
     "dev:drafts": "node scripts/dev.ts --drafts"
   },
   "devDependencies": {

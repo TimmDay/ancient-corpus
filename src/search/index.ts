@@ -22,6 +22,9 @@ import { MODEL, type Embed } from "./ollama.ts"
 export const INDEX_FILE = path.join(REPO_ROOT, "indexes", "corpus.sqlite")
 export const CACHE_FILE = path.join(REPO_ROOT, "indexes", "embeddings.sqlite")
 
+/** Bump when the tables change, so an old index is rebuilt rather than misread. */
+const SCHEMA = 2
+
 /** Words in one embedded piece of a long Passage; pieces overlap so no sentence is only ever cut in half. */
 const PIECE_WORDS = 200
 const OVERLAP_WORDS = 40
@@ -44,14 +47,23 @@ export type IndexedPassage = {
 export function openIndex(file = INDEX_FILE): DatabaseSync {
   if (file !== ":memory:") mkdirSync(path.dirname(file), { recursive: true })
   const db = new DatabaseSync(file)
+  // An index built to an older layout is dropped; pnpm index rebuilds it.
+  if (
+    (db.prepare("pragma user_version").get() as { user_version: number })
+      .user_version !== SCHEMA
+  )
+    db.exec(`
+      drop table if exists passages; drop table if exists passages_fts;
+      drop table if exists pieces; drop table if exists meta;
+      pragma user_version = ${SCHEMA};
+    `)
   db.exec(`
     create table if not exists passages (
       id integer primary key, work text, author text, title text, edition text,
       language text, locator text, division text, url text, draft integer, text text
     );
     create virtual table if not exists passages_fts using fts5(
-      text, content = 'passages', content_rowid = 'id',
-      tokenize = 'unicode61 remove_diacritics 2'
+      place, text, tokenize = 'unicode61 remove_diacritics 2'
     );
     create table if not exists pieces (passage integer, vector blob);
     create table if not exists meta (key text primary key, value text);
@@ -95,6 +107,14 @@ export function readerUrl(
   return `${page}#${encodeURIComponent(locator)}`
 }
 
+/**
+ * Where a Passage is, `Historia Augusta, Caracalla 7`: indexed and embedded with
+ * its text, since a Passage often says only "he" of the man its Life is about.
+ */
+export function placeOf(p: IndexedPassage): string {
+  return `${p.title}, ${p.locator}`
+}
+
 /** The overlapping pieces of a Passage's text that are embedded. */
 export function piecesOf(text: string): string[] {
   const words = text.split(/\s+/).filter(Boolean)
@@ -119,13 +139,13 @@ export async function buildIndex(
   onProgress: (done: number, total: number) => void = () => undefined,
 ): Promise<{ passages: number; pieces: number; embedded: number }> {
   db.exec(
-    "delete from passages; delete from pieces; delete from meta; insert into passages_fts(passages_fts) values('delete-all');",
+    "delete from passages; delete from pieces; delete from meta; delete from passages_fts;",
   )
   const insert = db.prepare(
     "insert into passages (work, author, title, edition, language, locator, division, url, draft, text) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
   )
   const insertFts = db.prepare(
-    "insert into passages_fts (rowid, text) values (?, ?)",
+    "insert into passages_fts (rowid, place, text) values (?, ?, ?)",
   )
   const ids: number[] = []
   db.exec("begin")
@@ -142,7 +162,7 @@ export async function buildIndex(
       p.draft ? 1 : 0,
       p.text,
     )
-    insertFts.run(lastInsertRowid, p.text)
+    insertFts.run(lastInsertRowid, placeOf(p), p.text)
     ids.push(Number(lastInsertRowid))
   }
   db.exec("commit")
@@ -150,11 +170,13 @@ export async function buildIndex(
 
   // Embed what the cache lacks, a batch at a time.
   const pieces = passages.flatMap((p, i) =>
-    piecesOf(p.text).map((text) => ({
-      passage: ids[i] ?? 0,
-      text,
-      hash: hashOf(text),
-    })),
+    piecesOf(p.text)
+      .map((piece) => `${placeOf(p)}: ${piece}`)
+      .map((text) => ({
+        passage: ids[i] ?? 0,
+        text,
+        hash: hashOf(text),
+      })),
   )
   const cached = cache.prepare(
     "select vector from embeddings where hash = ? and model = ?",
