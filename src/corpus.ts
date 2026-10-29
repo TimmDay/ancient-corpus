@@ -88,7 +88,13 @@ export type Heading = {
   editorial: boolean
 }
 
-export type Note = { id: string; html: string }
+export type Note = {
+  /** Unique in the Edition: `<edition>-<division>-<number>`, e.g. `magie-clodius-albinus-1`. */
+  id: string
+  html: string
+  /** The number the Edition prints, shown at the reference in the text. Importers set it where their ids are not the printed number. */
+  label?: string
+}
 
 export type FlagCode = "gap" | "long" | "duplicate"
 

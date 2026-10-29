@@ -15,11 +15,18 @@ import {
 import { correctEdition, type Correction } from "./corrections.ts"
 import { importDio } from "./importers/dio.ts"
 import { importEutropius } from "./importers/eutropius.ts"
+import { importLacusCurtius } from "./importers/lacuscurtius.ts"
 import { importSuetonius } from "./importers/suetonius.ts"
+import { nameNotes } from "./note-ids.ts"
 
-const IMPORTERS: Record<string, (source: EditionSource) => ImportedEdition> = {
+const IMPORTERS: Record<
+  string,
+  (source: EditionSource, work: Work, edition: Edition) => ImportedEdition
+> = {
   dio: importDio,
   eutropius: importEutropius,
+  lacuscurtius: (source, work, edition) =>
+    importLacusCurtius(source, work.title, edition.language),
   suetonius: importSuetonius,
 }
 
@@ -40,9 +47,12 @@ export function importEdition(work: Work, edition: Edition): EditionText {
     throw new Error(
       `${work.slug}/${edition.slug}: no importer called "${edition.importer}"`,
     )
-  const text = correctEdition(
-    importer(edition.source),
-    readCorrections(work, edition),
+  const text = nameNotes(
+    correctEdition(
+      importer(edition.source, work, edition),
+      readCorrections(work, edition),
+    ),
+    edition.slug,
   )
   mkdirSync(editionDir(work, edition), { recursive: true })
   writeEditionText(work, edition, text)

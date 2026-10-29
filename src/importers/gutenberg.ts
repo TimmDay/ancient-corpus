@@ -140,8 +140,8 @@ function nodeHtml(
 }
 
 /** The markup every reference to note `id` gets, so the reader can style and link it the same way everywhere. */
-export function noteRefHtml(id: string): string {
-  return `<sup class="nref"><a href="#n-${id}" id="r-${id}">${escapeHtml(id)}</a></sup>`
+export function noteRefHtml(id: string, label = id): string {
+  return `<sup class="nref"><a href="#n-${id}" id="r-${id}">${escapeHtml(label)}</a></sup>`
 }
 
 export function escapeHtml(text: string): string {

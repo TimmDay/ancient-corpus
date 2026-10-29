@@ -405,6 +405,24 @@ h1 {
   color: var(--ink);
 }
 
+/* The Edition's language, so a reader can tell the original from a translation at a glance. */
+.editions .lang {
+  display: inline-block;
+  margin-right: 0.35rem;
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  vertical-align: 0.12em;
+}
+
+.editions a[aria-current] .lang {
+  background: var(--bg);
+}
+
 /* The text */
 
 .text {
@@ -564,6 +582,15 @@ h2.division.hit {
   font-variant-numeric: lining-nums;
   text-decoration: none;
   margin-right: 0.25rem;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+}
+
+/* Bill Thayer's own note on LacusCurtius, kept apart from the Edition's note. */
+.notes .thayer {
+  display: block;
+  margin: 0.2rem 0 0 1rem;
+  font-style: italic;
 }
 
 /* Notices */

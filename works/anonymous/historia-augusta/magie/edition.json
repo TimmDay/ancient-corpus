@@ -1,0 +1,125 @@
+{
+  "divisions": [
+    {
+      "locator": "Hadrian",
+      "label": "Hadrian"
+    },
+    {
+      "locator": "Aelius",
+      "label": "Aelius"
+    },
+    {
+      "locator": "Antoninus Pius",
+      "label": "Antoninus Pius"
+    },
+    {
+      "locator": "Marcus Aurelius",
+      "label": "Marcus Aurelius"
+    },
+    {
+      "locator": "Verus",
+      "label": "Verus"
+    },
+    {
+      "locator": "Avidius Cassius",
+      "label": "Avidius Cassius"
+    },
+    {
+      "locator": "Commodus",
+      "label": "Commodus"
+    },
+    {
+      "locator": "Pertinax",
+      "label": "Pertinax"
+    },
+    {
+      "locator": "Didius Julianus",
+      "label": "Didius Julianus"
+    },
+    {
+      "locator": "Septimius Severus",
+      "label": "Septimius Severus"
+    },
+    {
+      "locator": "Pescennius Niger",
+      "label": "Pescennius Niger"
+    },
+    {
+      "locator": "Clodius Albinus",
+      "label": "Clodius Albinus"
+    },
+    {
+      "locator": "Caracalla",
+      "label": "Caracalla"
+    },
+    {
+      "locator": "Geta",
+      "label": "Geta"
+    },
+    {
+      "locator": "Macrinus",
+      "label": "Macrinus"
+    },
+    {
+      "locator": "Diadumenianus",
+      "label": "Diadumenianus"
+    },
+    {
+      "locator": "Elagabalus",
+      "label": "Elagabalus"
+    },
+    {
+      "locator": "Severus Alexander",
+      "label": "Severus Alexander"
+    },
+    {
+      "locator": "Two Maximini",
+      "label": "Two Maximini"
+    },
+    {
+      "locator": "Three Gordians",
+      "label": "Three Gordians"
+    },
+    {
+      "locator": "Maximus and Balbinus",
+      "label": "Maximus and Balbinus"
+    },
+    {
+      "locator": "Two Valerians",
+      "label": "Two Valerians"
+    },
+    {
+      "locator": "Two Gallieni",
+      "label": "Two Gallieni"
+    },
+    {
+      "locator": "Thirty Pretenders",
+      "label": "Thirty Pretenders"
+    },
+    {
+      "locator": "Claudius",
+      "label": "Claudius"
+    },
+    {
+      "locator": "Aurelian",
+      "label": "Aurelian"
+    },
+    {
+      "locator": "Tacitus",
+      "label": "Tacitus"
+    },
+    {
+      "locator": "Probus",
+      "label": "Probus"
+    },
+    {
+      "locator": "Four Pretenders",
+      "label": "Four Pretenders"
+    },
+    {
+      "locator": "Carus",
+      "label": "Carus"
+    }
+  ],
+  "editorial": []
+}
