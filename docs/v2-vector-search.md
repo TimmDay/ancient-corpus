@@ -4,7 +4,7 @@ Ask a question such as "what is all the information we have about the death of G
 
 ## Decided
 
-- **The chat is an MCP server first** ([#2](https://github.com/TimmDay/ancient-corpus/issues/2)), run locally from a checkout. Claude Desktop or Claude Code is the chat; the corpus provides `list_works`, `get_passage` and `search`.
+- **The chat is an MCP server first** ([#2](https://github.com/TimmDay/ancient-corpus/issues/2)), run locally from a checkout. Claude Desktop or Claude Code is the chat; the corpus provides `search`, `read_passage` and `list_works` (`scripts/mcp.ts`).
 - **An answer is a list of Findings.** Each Finding is a Passage, or Sentences within it, with a line on why it is relevant. A written summary is available on request and cites only the Findings.
 - **Recall first.** `search` returns a wide set of candidates (keyword, name and semantic matches together); the chat model reads them, drops the irrelevant ones and says how many it dropped. The server makes no LLM calls.
 - **Every Edition is searched**, in any language, with a multilingual embedding model. A Finding is shown in the Work's preferred Edition, with its other Editions linked.
