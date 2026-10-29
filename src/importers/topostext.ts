@@ -110,8 +110,6 @@ function preface(
       )
       .filter(Boolean)
   const text = paragraphs(body)
-    // Its title, which the section already shows.
-    .filter((para) => !/^TRANSLATOR'S PREFACE$/.test(para))
     .map(
       (para) =>
         `<p>${para.replace(/\s*\[\[(\d+)\]\]/g, (_, n: string) => noteRefHtml(n))}</p>`,
