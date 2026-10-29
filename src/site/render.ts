@@ -160,7 +160,7 @@ export function workPages(
       ? `<nav class="editions" aria-label="Editions"><ul>${editions
           .map(
             (e) =>
-              `<li><a href="${workUrl(work, e)}" data-keep-hash${e.slug === edition.slug ? ' aria-current="page"' : ""}><span class="lang">${escapeHtml(languageName(e.language))}</span> ${escapeHtml(editionLine(e))}</a></li>`,
+              `<li><a href="${workUrl(work, e)}" data-lang="${attr(e.language)}" data-keep-hash${e.slug === edition.slug ? ' aria-current="page"' : ""}><span class="lang">${escapeHtml(languageName(e.language))}</span> ${escapeHtml(editionLine(e))}</a></li>`,
           )
           .join("")}</ul></nav>`
       : ""
@@ -531,7 +531,13 @@ ${authors
 <p class="empty" id="empty" hidden>No work matches.</p>
 <section class="howto" aria-labelledby="howto">
 <h2 id="howto">Linking to a passage</h2>
-<p>Add the Locator after <code>#</code>: <code>/eutropius/breviarium#9.9</code>. If you only know the author and title, use <code>/cite?author=Eutropius&amp;title=Breviarium historiae Romanae&amp;loc=9.9</code>.</p>
+<ul class="howto-list">
+<li><b>A passage:</b> add its Locator after <code>#</code>: <code>/eutropius/breviarium#9.9</code>. A range lights up every passage in it: <code>#9.9-10</code>.</li>
+<li><b>A sentence:</b> add <code>@</code> and its number, counting from 1 within the passage: <code>#9.9@2</code>, or several in a row with <code>#9.9@2-4</code>. Sentences are counted in the edition the link opens.</li>
+<li><b>An edition:</b> put the edition's name in the path: <code>/anonymous/historia-augusta/magie/#Hadrian 11</code>. Without one, a link opens the work's preferred edition, usually in the language it was written in.</li>
+<li><b>A language:</b> add <code>?lang=</code> and a language code before the <code>#</code>: <code>/anonymous/historia-augusta/?lang=en#Hadrian 11</code>. If the work has no edition in that language, the link opens the preferred edition.</li>
+<li><b>By author and title:</b> if you don't know a work's address, use <code>/cite?author=Eutropius&amp;title=Breviarium historiae Romanae&amp;loc=9.9</code>.</li>
+</ul>
 </section>
 </main>`
   return layout({

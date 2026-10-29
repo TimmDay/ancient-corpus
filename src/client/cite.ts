@@ -1,4 +1,4 @@
-// /cite?author=…&title=…&loc=…[&edition=…]: finds the Work by any of its names
+// /cite?author=…&title=…&loc=…[&edition=…][&lang=…]: finds the Work by any of its names
 // and sends the reader to the Locator, or to the catalogue when nothing matches.
 
 import { matchWork, type WorkListing } from "../works-index.ts"
@@ -9,6 +9,8 @@ async function resolve(): Promise<void> {
   const title = params.get("title") ?? ""
   const loc = params.get("loc") ?? params.get("locator") ?? ""
   const edition = params.get("edition") ?? ""
+  // The reader opens the Edition in this language, if the Work has one.
+  const lang = params.get("lang")
 
   const works = (await (await fetch("/works.json")).json()) as WorkListing[]
   const work = matchWork(works, author, title)
@@ -23,7 +25,7 @@ async function resolve(): Promise<void> {
       ? `${edition}/`
       : ""
   location.replace(
-    `/${work.slug}/${editionPath}${loc ? `#${encodeURIComponent(loc)}` : ""}`,
+    `/${work.slug}/${editionPath}${lang ? `?lang=${encodeURIComponent(lang)}` : ""}${loc ? `#${encodeURIComponent(loc)}` : ""}`,
   )
 }
 

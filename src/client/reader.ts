@@ -7,6 +7,8 @@ import {
   type LocatorIndex,
   type LocatorTarget,
 } from "../locator.ts"
+import { splitSentenceRef } from "../sentences.ts"
+import { sentenceRanges } from "./sentences.ts"
 import { showToast } from "./toast.ts"
 
 const index = JSON.parse(
@@ -21,13 +23,18 @@ const reduceMotion = window.matchMedia(
 ).matches
 
 function land(initial = false): void {
-  for (const el of document.querySelectorAll(".hit")) el.classList.remove("hit")
+  for (const el of document.querySelectorAll(".hit, .hit-context"))
+    el.classList.remove("hit", "hit-context")
+  CSS.highlights?.delete("sentence")
   hideNotice()
   if (chooser) chooser.hidden = true
+  if (initial && openAskedLanguage()) return
   const hash = location.hash.slice(1)
   if (!hash) return
 
-  const resolution = resolveLocator(hash, index)
+  // `9.2@3-7`: the Passage, then Sentences 3 to 7 within it.
+  const { locator: written, sentences } = splitSentenceRef(decode(hash))
+  const resolution = resolveLocator(written, index)
   if (resolution.kind === "not-found") {
     // Note and Editorial matter anchors are ordinary ids, not Locators.
     if (document.getElementById(hash)) return
@@ -51,15 +58,30 @@ function land(initial = false): void {
   // A book-at-a-time Edition: go to the page that holds the Locator.
   const page = resolution.start.page
   if (page && page !== location.pathname) {
-    location.replace(`${page}#${hash}`)
+    location.replace(`${page}${location.search}#${hash}`)
     return
   }
 
   const targets = resolvedTargets(resolution, index)
   const elements = targets.flatMap((t) => document.getElementById(t.id) ?? [])
-  for (const el of elements) el.classList.add("hit")
   const first = elements[0]
   if (!first) return
+  const found =
+    sentences && resolution.exact && !resolution.end
+      ? sentenceRanges(elements, sentences.from, sentences.to)
+      : undefined
+  const ranges = found?.ranges
+  if (ranges && "Highlight" in window) {
+    // The Sentences stand out; their Passage is marked lightly for context.
+    CSS.highlights.set("sentence", new Highlight(...ranges))
+    for (const el of elements) el.classList.add("hit-context")
+  } else {
+    for (const el of elements) el.classList.add("hit")
+  }
+  if (found && !ranges)
+    showNotice(
+      `Showing all of ${resolution.start.locator}. It has ${found.count} sentences in this Edition, not ${sentences?.to}.`,
+    )
   if (!resolution.exact) {
     showNotice(
       `Showing ${resolution.start.locator}. “${decode(hash)}” isn’t marked separately in this Edition.`,
@@ -67,14 +89,54 @@ function land(initial = false): void {
   }
   first.setAttribute("tabindex", "-1")
   first.focus({ preventScroll: true })
+  const target = ranges?.[0] ?? first
   if (initial) {
-    pinWhileLoading(first)
+    pinWhileLoading(target)
   } else {
-    first.scrollIntoView({
-      block: "start",
-      behavior: reduceMotion ? "auto" : "smooth",
-    })
+    scrollToTop(target, reduceMotion ? "auto" : "smooth")
   }
+}
+
+/** Lines of the Passage left showing above a Sentence a link lands on. */
+const CONTEXT_PX = 64
+
+/** Scrolls an element, or the start of a Sentence, to just under the header. */
+function scrollToTop(
+  target: HTMLElement | Range,
+  behavior: ScrollBehavior,
+): void {
+  if (target instanceof HTMLElement) {
+    target.scrollIntoView({ block: "start", behavior })
+    return
+  }
+  const padding =
+    Number.parseFloat(
+      getComputedStyle(document.documentElement).scrollPaddingTop,
+    ) || 0
+  window.scrollBy({
+    top: target.getBoundingClientRect().top - padding - CONTEXT_PX,
+    behavior,
+  })
+}
+
+/**
+ * `?lang=en`: opens this Work's Edition in that language, if it has one and
+ * this page is another. Returns true when it is leaving the page.
+ */
+function openAskedLanguage(): boolean {
+  const wanted = new URLSearchParams(location.search).get("lang")
+  if (!wanted) return false
+  const editions = [
+    ...document.querySelectorAll<HTMLAnchorElement>(
+      "nav.editions a[data-lang]",
+    ),
+  ]
+  const current = editions.find((a) => a.hasAttribute("aria-current"))
+  if (!current || current.dataset.lang === wanted) return false
+  const match = editions.find((a) => a.dataset.lang === wanted)
+  if (!match) return false
+  location.replace(`${match.pathname}${location.search}${location.hash}`)
+  return true
 }
 
 /**
@@ -82,10 +144,10 @@ function land(initial = false): void {
  * document.fonts.ready can resolve before the fonts have even started. Keep
  * the target in place as things load, until the reader scrolls themselves.
  */
-function pinWhileLoading(target: HTMLElement): void {
+function pinWhileLoading(target: HTMLElement | Range): void {
   let pinned = true
   const pin = () => {
-    if (pinned) target.scrollIntoView({ block: "start" })
+    if (pinned) scrollToTop(target, "auto")
   }
   const release = () => {
     pinned = false
@@ -212,7 +274,8 @@ document.addEventListener("click", (event) => {
   const link = (event.target as Element).closest<HTMLAnchorElement>(
     "a[data-keep-hash]",
   )
-  if (link && location.hash) link.hash = location.hash
+  // A Sentence is counted in one Edition only, so the switch keeps just the Passage.
+  if (link && location.hash) link.hash = location.hash.replace(/@[^#]*$/, "")
 })
 
 function followContents(): void {

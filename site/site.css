@@ -516,6 +516,16 @@ h2.division.hit {
   border-left-color: var(--hit-edge);
 }
 
+/* A link to Sentences: they are highlighted, their Passage only edged. */
+.passage.hit-context {
+  border-left-color: var(--hit-edge);
+}
+
+::highlight(sentence) {
+  background-color: var(--hit);
+  color: var(--ink);
+}
+
 .loc {
   float: left;
   margin: 0.35rem 0.6rem 0 0;
@@ -925,6 +935,19 @@ h2.division.hit {
 .howto h2 {
   font-size: 1.1rem;
   letter-spacing: 0.08em;
+}
+
+.howto-list {
+  padding-left: 1.1rem;
+}
+
+.howto-list li {
+  margin: 0.5rem 0;
+}
+
+/* Long example addresses wrap rather than push the page sideways on a phone. */
+.howto-list code {
+  overflow-wrap: anywhere;
 }
 
 [hidden] {
