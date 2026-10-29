@@ -160,7 +160,7 @@ export function workPages(
       ? `<nav class="editions" aria-label="Editions"><ul>${editions
           .map(
             (e) =>
-              `<li><a href="${workUrl(work, e)}" data-keep-hash${e.slug === edition.slug ? ' aria-current="page"' : ""}><span class="lang">${escapeHtml(languageName(e.language))}</span> ${escapeHtml(editionLine(e))}</a></li>`,
+              `<li><a href="${workUrl(work, e)}" data-lang="${attr(e.language)}" data-keep-hash${e.slug === edition.slug ? ' aria-current="page"' : ""}><span class="lang">${escapeHtml(languageName(e.language))}</span> ${escapeHtml(editionLine(e))}</a></li>`,
           )
           .join("")}</ul></nav>`
       : ""

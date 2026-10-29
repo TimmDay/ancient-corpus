@@ -516,6 +516,16 @@ h2.division.hit {
   border-left-color: var(--hit-edge);
 }
 
+/* A link to Sentences: they are highlighted, their Passage only edged. */
+.passage.hit-context {
+  border-left-color: var(--hit-edge);
+}
+
+::highlight(sentence) {
+  background-color: var(--hit);
+  color: var(--ink);
+}
+
 .loc {
   float: left;
   margin: 0.35rem 0.6rem 0 0;
