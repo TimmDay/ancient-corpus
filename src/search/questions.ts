@@ -15,6 +15,7 @@ const EUTROPIUS = "eutropius/breviarium"
 const SUETONIUS = "suetonius/de-vita-caesarum"
 const DIO = "cassius-dio/roman-history"
 const HA = "anonymous/historia-augusta"
+const ZOSIMUS = "zosimus/historia-nova"
 
 const at = (work: string, ...locators: string[]) =>
   locators.map((locator) => ({ work, locator }))
@@ -26,9 +27,9 @@ export const TEST_QUESTIONS: TestQuestion[] = [
     expected: [
       ...at(EUTROPIUS, "9.2"),
       ...at(HA, "Three Gordians 29", "Three Gordians 30", "Three Gordians 31"),
+      ...at(ZOSIMUS, "1.18", "1.19"),
     ],
     notYetInCorpus: [
-      "Zosimus 1.18–19",
       "Aurelius Victor 27.7–8",
       "Epitome de Caesaribus 27.2",
       "Orosius 7.19.5",
@@ -50,6 +51,7 @@ export const TEST_QUESTIONS: TestQuestion[] = [
         "Two Valerians 4",
         "Two Gallieni 1",
       ),
+      ...at(ZOSIMUS, "1.36"),
     ],
   },
   {
