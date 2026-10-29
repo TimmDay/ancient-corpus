@@ -1,0 +1,225 @@
+{
+  "divisions": [
+    {
+      "locator": "1",
+      "label": "Chapter 1"
+    },
+    {
+      "locator": "2",
+      "label": "Chapter 2"
+    },
+    {
+      "locator": "3",
+      "label": "Chapter 3"
+    },
+    {
+      "locator": "4",
+      "label": "Chapter 4"
+    },
+    {
+      "locator": "5",
+      "label": "Chapter 5"
+    },
+    {
+      "locator": "6",
+      "label": "Chapter 6"
+    },
+    {
+      "locator": "7",
+      "label": "Chapter 7"
+    },
+    {
+      "locator": "8",
+      "label": "Chapter 8"
+    },
+    {
+      "locator": "9",
+      "label": "Chapter 9"
+    },
+    {
+      "locator": "10",
+      "label": "Chapter 10"
+    },
+    {
+      "locator": "11",
+      "label": "Chapter 11"
+    },
+    {
+      "locator": "12",
+      "label": "Chapter 12"
+    },
+    {
+      "locator": "13",
+      "label": "Chapter 13"
+    },
+    {
+      "locator": "14",
+      "label": "Chapter 14"
+    },
+    {
+      "locator": "15",
+      "label": "Chapter 15"
+    },
+    {
+      "locator": "16",
+      "label": "Chapter 16"
+    },
+    {
+      "locator": "17",
+      "label": "Chapter 17"
+    },
+    {
+      "locator": "18",
+      "label": "Chapter 18"
+    },
+    {
+      "locator": "19",
+      "label": "Chapter 19"
+    },
+    {
+      "locator": "20",
+      "label": "Chapter 20"
+    },
+    {
+      "locator": "21",
+      "label": "Chapter 21"
+    },
+    {
+      "locator": "22",
+      "label": "Chapter 22"
+    },
+    {
+      "locator": "23",
+      "label": "Chapter 23"
+    },
+    {
+      "locator": "24",
+      "label": "Chapter 24"
+    },
+    {
+      "locator": "25",
+      "label": "Chapter 25"
+    },
+    {
+      "locator": "26",
+      "label": "Chapter 26"
+    },
+    {
+      "locator": "27",
+      "label": "Chapter 27"
+    },
+    {
+      "locator": "28",
+      "label": "Chapter 28"
+    },
+    {
+      "locator": "29",
+      "label": "Chapter 29"
+    },
+    {
+      "locator": "30",
+      "label": "Chapter 30"
+    },
+    {
+      "locator": "31",
+      "label": "Chapter 31"
+    },
+    {
+      "locator": "32",
+      "label": "Chapter 32"
+    },
+    {
+      "locator": "33",
+      "label": "Chapter 33"
+    },
+    {
+      "locator": "34",
+      "label": "Chapter 34"
+    },
+    {
+      "locator": "35",
+      "label": "Chapter 35"
+    },
+    {
+      "locator": "36",
+      "label": "Chapter 36"
+    },
+    {
+      "locator": "37",
+      "label": "Chapter 37"
+    },
+    {
+      "locator": "38",
+      "label": "Chapter 38"
+    },
+    {
+      "locator": "39",
+      "label": "Chapter 39"
+    },
+    {
+      "locator": "40",
+      "label": "Chapter 40"
+    },
+    {
+      "locator": "41",
+      "label": "Chapter 41"
+    },
+    {
+      "locator": "42",
+      "label": "Chapter 42"
+    },
+    {
+      "locator": "43",
+      "label": "Chapter 43"
+    },
+    {
+      "locator": "44",
+      "label": "Chapter 44"
+    },
+    {
+      "locator": "45",
+      "label": "Chapter 45"
+    },
+    {
+      "locator": "46",
+      "label": "Chapter 46"
+    },
+    {
+      "locator": "47",
+      "label": "Chapter 47"
+    },
+    {
+      "locator": "48",
+      "label": "Chapter 48"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "preface",
+      "title": "Translator's preface",
+      "html": "<p>Some twenty years ago, in the course of research on Eunapius of Sardis, two studies of Timothy Barnes drew me to the Epitome de Caesaribus<sup class=\"nref\"><a href=\"#n-banchich-preface-1\" id=\"r-banchich-preface-1\">1</a></sup> My belief that there then existed no published translation in any modern language convinced me that, should the opportunity arise, the production of such a translation, together with a commentary, would be a worthwhile project.<sup class=\"nref\"><a href=\"#n-banchich-preface-2\" id=\"r-banchich-preface-2\">2</a></sup> A 1988 summer research grant from Canisius College allowed me to complete a rough version based on the Teubner text of Franz Pichlmayr and Roland Gruendel.<sup class=\"nref\"><a href=\"#n-banchich-preface-3\" id=\"r-banchich-preface-3\">3</a></sup> Kristin Ennis, my student assistant checked my translation and supervised the collection of scholarship on the Epitome that was to figure in the projected commentary. But resumption of teaching duties and Ms. Ennis' graduation forced a suspension of work on both translation and commentary, and these factors, plus commitments to other research projects and administrative duties, made it impossible to devote any extended period of time to the Epitome. In light of this, I was happy to learn of Harry Bird's plan to do a translation of and commentary on the Epitome for the series Translated Texts for Historians, in which his volumes on Eutropius and Aurelius Victor have already appeared.<sup class=\"nref\"><a href=\"#n-banchich-preface-4\" id=\"r-banchich-preface-4\">4</a></sup></p><p>My recent association with the electronic encyclopedia De Imperatoribus Romanis has sent me back to the Epitome in the belief that it might be worthwhile to make my translation, equipped with suitable links to De Imperatoribus Romanis, available in electronic from. These links, I thought, would give to those interested access to some of what would have been included in my commentary, while Professor Bird's forthcoming commentary would doubtless fill any remaining void. Michael DiMaio, of De Imperatoribus Romanis, agreed with my view and oversaw the creation of the necessary connections between encyclopedia and translation.</p><p>The translation as it stands now is a thorough revision of the draft completed in 1988. It retains the Teubner textual divisions and also includes in boldface type within boldface brackets -- [ ] -- the pagination of that edition. In addition, it reproduces in boldface the Teubner sigla for various textual difficulties: * for a suspected lacuna, † for a suspected corruption, and &lt; &gt; to enclose editorial additions. Greek works employed in the Epitome have been retained, followed by translations within plain brackets, as, for example, at Epitome 16.5: “a disorder which the Greeks call [apoplexy].” Likewise, plain brackets enclose translations of cognomina. A few Latin words -- deus, dominatio, dominus, imperator, imperium, paterfamilias, potestas, princeps, procurator, and rex -- have been left untranslated, most because, to my mind, they seemed to convey some important nuance too easily lost in translation. For those uninterested in nuance, their English meanings should appear evident. Proper names of individuals and peoples appear in their latinate form except in very few instances - for example, “Constantine” rather than “Constantinus” (which is retained for Constantine's father and for Constantine's son of the same name) and “Alans” rather than “Alani.” “Valentinian” is the emperor from 364-375; “Valentinianus,” his son, emperor from 375-392. My goal has not been to be consistent, but merely consistent enough. Because Professor Bird's work will contain a full bibliography, none is offered here. Thomas M. Banchich</p>",
+      "notes": [
+        {
+          "id": "banchich-preface-1",
+          "html": "The Epitome de Caesaribus and Its Sources,\" Review of Die Epitome de Caesaribus, by Jörg Schlumberger, Classical Philology 71 (1976), pp. 258-268, and The Sources of the Historia Augusta, Collection Latomus 155 (Brussels: Universa, 1978).",
+          "label": "1"
+        },
+        {
+          "id": "banchich-preface-2",
+          "html": "Only after completing the initial draft of my translation did I discover the French version of N. A. Dubois, prepared for the Aurelius Victor volume of the Bibliothèque Latine-Française, 2nd Series (Paris: C L. F. Panckouke, 1846).",
+          "label": "2"
+        },
+        {
+          "id": "banchich-preface-3",
+          "html": "(Leipzig: B. G. Teubner, 1970).",
+          "label": "3"
+        },
+        {
+          "id": "banchich-preface-4",
+          "html": "(Liverpool: Liverpool University Press, 1993 [Eutropius] and 1994 [Aurelius Victor]).",
+          "label": "4"
+        }
+      ]
+    }
+  ]
+}
