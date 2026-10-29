@@ -7,6 +7,8 @@
   "originalLanguage": "grc",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": 306,
+  "coversYearLatest": 337,
   "locatorFormat": "book.chapter, e.g. 1.28",
   "slugAliases": [
     "eusebius/life-of-constantine"

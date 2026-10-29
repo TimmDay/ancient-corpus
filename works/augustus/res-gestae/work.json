@@ -5,6 +5,8 @@
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": -44,
+  "coversYearLatest": 14,
   "locatorFormat": "chapter, e.g. 12",
   "slugAliases": [
     "augustus/res-gestae-divi-augusti"

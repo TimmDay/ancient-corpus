@@ -10,6 +10,22 @@
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
+  "coversYearEarliest": -100,
+  "coversYearLatest": 96,
+  "divisionSpans": [
+    ["Julius", [-100, -44]],
+    ["Augustus", [-63, 14]],
+    ["Tiberius", [-42, 37]],
+    ["Caligula", [12, 41]],
+    ["Claudius", [-10, 54]],
+    ["Nero", [37, 68]],
+    ["Galba", [-3, 69]],
+    ["Otho", [32, 69]],
+    ["Vitellius", [15, 69]],
+    ["Vespasian", [9, 79]],
+    ["Titus", [39, 81]],
+    ["Domitian", [51, 96]]
+  ],
   "locatorFormat": "Life chapter, e.g. Augustus 5",
   "slugAliases": [
     "suetonius/12-caesars",
