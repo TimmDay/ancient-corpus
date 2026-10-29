@@ -44,3 +44,8 @@ tmp/
 .idea/
 .vscode/
 
+
+# Editions not published yet (Edition.unpublished): their text stays on this
+# machine until permission is given. Rebuild it with pnpm ingest.
+/works/pseudo-aurelius-victor/epitome-de-caesaribus/banchich/passages.jsonl
+/works/pseudo-aurelius-victor/epitome-de-caesaribus/banchich/edition.json

@@ -191,6 +191,8 @@ ${isBook ? "" : otherTitles}
 <p class="edition-line">${escapeHtml(editionLine(edition))}. ${escapeHtml(languageName(edition.language))}.</p>
 ${switcher}
 </header>
+${edition.notice ? `<p class="rights-notice">${escapeHtml(edition.notice)}</p>` : ""}
+${edition.unpublished ? `<p class="draft-banner">Not published: ${escapeHtml(edition.unpublished)}</p>` : ""}
 ${draftFlags ? `<p class="draft-banner">Draft: ${draftFlags} unresolved Flags. Not published until they are reviewed with <code>pnpm review</code>.</p>` : ""}
 <div class="notice" id="notice" role="status" hidden></div>
 <section class="chooser" id="chooser" aria-labelledby="chooser-title" hidden></section>

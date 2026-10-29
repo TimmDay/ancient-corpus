@@ -59,8 +59,9 @@ describe("every Edition's Sentence counts", () => {
   it("match the committed snapshot", async () => {
     const counts: Record<string, Record<string, number>> = {}
     for (const work of loadWorks())
-      for (const edition of work.editions.filter((e) =>
-        hasEditionText(work, e),
+      // An unpublished Edition's text is only on the machine that imported it.
+      for (const edition of work.editions.filter(
+        (e) => hasEditionText(work, e) && !e.unpublished,
       )) {
         const byLocator: Record<string, number> = {}
         for (const p of readEditionText(work, edition).passages)

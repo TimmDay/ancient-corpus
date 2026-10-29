@@ -612,6 +612,13 @@ h2.division.hit {
   color: var(--muted);
 }
 
+.rights-notice {
+  border-left: 3px solid var(--rule);
+  padding: 0.4rem 0 0.4rem 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 .notice {
   background: var(--surface);
   border-left: 3px solid var(--hit-edge);
