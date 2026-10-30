@@ -149,6 +149,27 @@ describe("searchCorpus", () => {
     )
   })
 
+  it("counts only Works with text, and names those the index has not caught up with", async () => {
+    const db = openIndex(":memory:")
+    const zosimus = corpus.works.filter((w) => w.slug.startsWith("zosimus/"))
+    await buildIndex(
+      db,
+      [
+        ...corpusPassages(zosimus),
+        // A Work since removed from the corpus.
+        { ...corpusPassages(zosimus)[0]!, work: "gone/work" },
+      ],
+      undefined,
+      openCache(":memory:"),
+    )
+    const result = await searchCorpus(corpus, db, SITE, "Gordianus", {})
+    if (!("candidates" in result)) throw new Error(result.error)
+    expect(result.coverage).toEqual(["zosimus/historia-nova"])
+    expect(result.warning).toMatch(
+      /Not searched, because the index is older than the corpus: .*eutropius\/breviarium.*Run pnpm index\./,
+    )
+  })
+
   it("says when there is no index to search", async () => {
     const result = await searchCorpus(
       corpus,

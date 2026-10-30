@@ -263,16 +263,28 @@ export async function searchCorpus(
     return {
       error: "The search index is empty. Run pnpm index in the checkout.",
     }
+  // The index can lag the files: count only Works with text now, and say which are not indexed yet.
+  const withText = corpus.works
+    .filter((w) => editionsWithText(corpus, w).length)
+    .map((w) => w.slug)
+  const unindexed = withText.filter((w) => !result.coverage.includes(w))
+  const warnings = [
+    ...(result.semantic
+      ? []
+      : [
+          "Keyword search only: Ollama isn't running or the index has no vectors, so Passages that never name the words asked about are missed.",
+        ]),
+    ...(unindexed.length
+      ? [
+          `Not searched, because the index is older than the corpus: ${unindexed.join(", ")}. Run pnpm index.`,
+        ]
+      : []),
+  ]
   return {
     question,
-    coverage: result.coverage,
+    coverage: result.coverage.filter((w) => withText.includes(w)),
     semantic: result.semantic,
-    ...(result.semantic
-      ? {}
-      : {
-          warning:
-            "Keyword search only: Ollama isn't running or the index has no vectors, so Passages that never name the words asked about are missed.",
-        }),
+    ...(warnings.length ? { warning: warnings.join(" ") } : {}),
     candidates,
   }
 }
