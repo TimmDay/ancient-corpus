@@ -25,7 +25,9 @@
     "index": "node scripts/index.ts",
     "ask": "node scripts/ask.ts",
     "ask:check": "node scripts/ask-check.ts",
-    "dev:drafts": "node scripts/dev.ts --drafts"
+    "dev:drafts": "node scripts/dev.ts --drafts",
+    "read": "node scripts/read.ts",
+    "works": "node scripts/works.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

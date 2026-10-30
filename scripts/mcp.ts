@@ -7,6 +7,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js"
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod"
 import {
+  SITE,
   listWorks,
   openCorpus,
   readPassage,
@@ -14,11 +15,6 @@ import {
 } from "../src/mcp/tools.ts"
 import { openIndex } from "../src/search/index.ts"
 import { embedWithOllama, ollamaReady } from "../src/search/ollama.ts"
-
-/** Where reader links point: the published site, or `pnpm dev` by default. */
-const SITE = (
-  process.env.ANCIENT_CORPUS_SITE ?? "http://localhost:4321"
-).replace(/\/$/, "")
 
 const INSTRUCTIONS = `The Ancient Corpus: ancient histories in their original languages and in English, each Passage at a reader link.
 
@@ -57,26 +53,13 @@ server.registerTool(
         .describe("Candidates to return; 30 by default."),
     },
   },
-  async ({ question, limit }) => {
-    const embed = (await ollamaReady()) ? embedWithOllama : undefined
-    const result = await searchCorpus(corpus, db, SITE, question, {
-      embed,
-      limit,
-    })
-    if (!result.coverage.length)
-      return json({
-        error: "The search index is empty. Run pnpm index in the checkout.",
-      })
-    return json(
-      result.semantic
-        ? result
-        : {
-            ...result,
-            warning:
-              "Keyword search only: Ollama isn't running or the index has no vectors, so Passages that never name the words asked about are missed.",
-          },
-    )
-  },
+  async ({ question, limit }) =>
+    json(
+      await searchCorpus(corpus, db, SITE, question, {
+        embed: (await ollamaReady()) ? embedWithOllama : undefined,
+        limit,
+      }),
+    ),
 )
 
 server.registerTool(

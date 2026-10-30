@@ -58,6 +58,8 @@ Search runs on your own machine with no internet connection. The plan is in [doc
 pnpm index                  rebuild indexes/corpus.sqlite from every committed Passage
 pnpm index --keywords-only  the same without Ollama: keyword search only
 pnpm ask "What did Shapur do to Valerian?"   candidate Passages as JSON
+pnpm read "Zosimus" "1.18-1.19" --lang en     a Passage, range or book as JSON
+pnpm works                                    the Works, their years and Editions
 ```
 
 - **[Ollama](https://ollama.com)** runs the embedding model, BGE-M3, locally. An embedding model turns a piece of text into a list of numbers (a vector) so that texts with similar meaning, in any language, get similar vectors. Install it once (`brew install ollama`), start it (`ollama serve`, or open the app), and download the model once (`ollama pull bge-m3`, about 1.2 GB). After that nothing needs the internet. `pnpm index` stops with these instructions if Ollama isn't running.
@@ -87,3 +89,7 @@ pnpm ask "What did Shapur do to Valerian?"   candidate Passages as JSON
 Then ask, for example, "What is all the information we have about the death of Gordian III?". The server gives the chat three tools: `search` (wide candidates, each with its text as numbered Sentences), `read_passage` (a Passage, range or book, in any Edition) and `list_works`. Its instructions ask for the answer as Findings: a link and a line on why each is relevant, which Works were searched, and how many candidates were dropped.
 
 Links point at `pnpm dev` (`http://localhost:4321`) unless `ANCIENT_CORPUS_SITE` is set to the published site's address (add `"env": { "ANCIENT_CORPUS_SITE": "https://…" }` to the config). Run it by hand with `node scripts/mcp.ts`, not `pnpm`, whose banner would corrupt the protocol.
+
+### In pi, through the commands
+
+pi has no MCP support, so it uses the same three tools as commands: `pnpm ask`, `pnpm read` and `pnpm works` print what the MCP tools return. The skill in `.agents/skills/ask-the-corpus/` tells the model how to use them and to answer with Findings; pi loads it on its own when you start it in this checkout. Then ask, for example, "What did Shapur do to Valerian?", or name the skill with `/skill:ask-the-corpus`. Other agents that read `.agents/skills/` get it too.

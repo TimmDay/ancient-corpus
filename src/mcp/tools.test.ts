@@ -135,6 +135,9 @@ describe("searchCorpus", () => {
     const result = await searchCorpus(corpus, db, SITE, "Gordianus Philip", {
       limit: 10,
     })
+    if (!("candidates" in result)) throw new Error(result.error)
+    // Built without vectors, so the search says it used keywords only.
+    expect(result.warning).toMatch(/^Keyword search only/)
     expect(result.coverage).toEqual(["zosimus/historia-nova"])
     const keys = result.candidates.map((c) => `${c.work}#${c.locator}`)
     expect(new Set(keys).size).toBe(keys.length)
@@ -144,5 +147,18 @@ describe("searchCorpus", () => {
     expect(at119?.otherEditions[0]?.url).toMatch(
       new RegExp(`^${SITE}/zosimus/historia-nova/`),
     )
+  })
+
+  it("says when there is no index to search", async () => {
+    const result = await searchCorpus(
+      corpus,
+      openIndex(":memory:"),
+      SITE,
+      "Gordian",
+      {},
+    )
+    expect(result).toEqual({
+      error: "The search index is empty. Run pnpm index in the checkout.",
+    })
   })
 })

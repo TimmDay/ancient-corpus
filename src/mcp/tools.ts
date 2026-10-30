@@ -21,6 +21,11 @@ import { sentenceSpans, splitSentenceRef } from "../sentences.ts"
 import { locatorIndex } from "../site/render.ts"
 import { normalizeName } from "../works-index.ts"
 
+/** Where reader links point: the published site, or `pnpm dev` by default. */
+export const SITE = (
+  process.env.ANCIENT_CORPUS_SITE ?? "http://localhost:4321"
+).replace(/\/$/, "")
+
 /** Passages one `read_passage` call returns at most, for a link to a whole book. */
 const MAX_PASSAGES = 20
 
@@ -254,10 +259,20 @@ export async function searchCorpus(
         },
       ]
     })
+  if (!result.coverage.length)
+    return {
+      error: "The search index is empty. Run pnpm index in the checkout.",
+    }
   return {
     question,
     coverage: result.coverage,
     semantic: result.semantic,
+    ...(result.semantic
+      ? {}
+      : {
+          warning:
+            "Keyword search only: Ollama isn't running or the index has no vectors, so Passages that never name the words asked about are missed.",
+        }),
     candidates,
   }
 }
