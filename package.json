@@ -25,10 +25,13 @@
     "index": "node scripts/index.ts",
     "ask": "node scripts/ask.ts",
     "ask:check": "node scripts/ask-check.ts",
-    "dev:drafts": "node scripts/dev.ts --drafts"
+    "dev:drafts": "node scripts/dev.ts --drafts",
+    "read": "node scripts/read.ts",
+    "works": "node scripts/works.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@modelcontextprotocol/sdk": "1.32.1",
     "@types/node": "^26.6.5",
     "cheerio": "^1.2.0",
     "domhandler": "^5.0.3",
@@ -41,7 +44,8 @@
     "prettier": "^3.9.10",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.72.0",
-    "vitest": "^5.0.5"
+    "vitest": "^5.0.5",
+    "zod": "4.6.7"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,mjs}": [

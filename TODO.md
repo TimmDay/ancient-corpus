@@ -40,7 +40,7 @@ Tracked as issues in that repo: [#84](https://github.com/TimmDay/somnus-data-ing
 
 ## v2 and later
 
-- [ ] MCP server for local LLMs ([#2](https://github.com/TimmDay/ancient-corpus/issues/2))
+- [x] MCP server for local LLMs ([#2](https://github.com/TimmDay/ancient-corpus/issues/2))
 - [ ] Asking the corpus questions: hybrid keyword and semantic search over every Edition, answered as Findings with reader links. Plan and later steps in [`docs/v2-vector-search.md`](docs/v2-vector-search.md)
 - [ ] Timelines, place extraction and maps, persona chat (see git history of `RAG_GOALS.md` for the original notes)
 - [ ] Parallel original and translation views when a Work has both Editions

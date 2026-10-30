@@ -4,7 +4,7 @@ Ask a question such as "what is all the information we have about the death of G
 
 ## Decided
 
-- **The chat is an MCP server first** ([#2](https://github.com/TimmDay/ancient-corpus/issues/2)), run locally from a checkout. Claude Desktop or Claude Code is the chat; the corpus provides `list_works`, `get_passage` and `search`.
+- **The chat is an MCP server first** ([#2](https://github.com/TimmDay/ancient-corpus/issues/2)), run locally from a checkout. Claude Desktop or Claude Code is the chat; the corpus provides `search`, `read_passage` and `list_works` (`scripts/mcp.ts`).
 - **An answer is a list of Findings.** Each Finding is a Passage, or Sentences within it, with a line on why it is relevant. A written summary is available on request and cites only the Findings.
 - **Recall first.** `search` returns a wide set of candidates (keyword, name and semantic matches together); the chat model reads them, drops the irrelevant ones and says how many it dropped. The server makes no LLM calls.
 - **Every Edition is searched**, in any language, with a multilingual embedding model. A Finding is shown in the Work's preferred Edition, with its other Editions linked.
@@ -12,7 +12,7 @@ Ask a question such as "what is all the information we have about the death of G
 - **The index is a local SQLite file**, gitignored and rebuilt from `passages.jsonl`: full text in FTS5 and vectors beside it, so both halves of a hybrid search come from one file. Long Passages are embedded in overlapping pieces of 200 words; a Passage is as close to a question as its closest piece. Vectors are compared in memory, which takes a moment at a few thousand Passages; sqlite-vec can take over if that grows slow. Embeddings are cached by a hash of their text in a second file, so a rebuild only embeds what changed. The index records which model made it.
 - **The embedding model is BGE-M3**: free, open, multilingual, and runs locally.
 - **Names are widened**: a keyword search for any form of a listed name looks for every form (`src/search/names.ts`): Shapur, Sapor, Šābuhr, Σαπώρης.
-- **Search is one module with two front doors**: `pnpm ask "..."` printing JSON (pnpm keeps `search` for itself), for agents that call CLI tools (pi), and the MCP `search` tool.
+- **The tools have two front doors**: the MCP server, and commands printing the same JSON (`pnpm ask`, `pnpm read`, `pnpm works`; pnpm keeps `search` for itself) with a skill, `ask-the-corpus`, for agents without MCP (pi).
 - **Findings can point at Sentences**, not only a whole Passage. A Passage link stays valid; `#9.2@3` lands on Sentence 3 and `#9.2@3-7` highlights Sentences 3 to 7, inside their Passage. Sentence numbers belong to one Edition, are counted on the fly and are not canonical. A snapshot test of every published Passage's Sentence count catches a splitter change that would shift them.
 - **A link can ask for a language.** Without one it lands in the preferred Edition, normally the original language; asking for a language the Work has no Edition in lands there too. Apps that want English ask for it.
 - **Sentences end where the Edition's punctuation says**, with a per-language list of abbreviations ("C.", "cos."). Numbering runs on through the parts of a Passage printed in parts. A wrong split is fixed by a Correction.
