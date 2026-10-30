@@ -44,6 +44,10 @@ export function build({ drafts = false, outDir = DIST } = {}): {
   for (const work of loadWorks()) {
     const editions = work.editions.filter((edition) => {
       if (!hasEditionText(work, edition)) return false
+      if (edition.unpublished) {
+        skipped.push(`${work.slug}/${edition.slug} (${edition.unpublished})`)
+        return drafts
+      }
       const flags = unresolvedFlags(readEditionText(work, edition))
       if (flags.length)
         skipped.push(

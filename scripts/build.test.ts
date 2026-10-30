@@ -1,8 +1,15 @@
-import { mkdtempSync, readFileSync } from "node:fs"
+import { existsSync, mkdtempSync, readFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import path from "node:path"
 import { describe, expect, it } from "vitest"
+import { loadWorks } from "../src/corpus.ts"
 import { build } from "./build.ts"
+
+const unpublished = loadWorks().flatMap((w) =>
+  w.editions
+    .filter((e) => e.unpublished)
+    .map((e) => ({ work: w.slug, edition: e.slug, title: e.title })),
+)
 
 // Builds from the committed works/, exactly as CI and Cloudflare do, into a
 // scratch folder so a running dev server's dist/ is left alone.
@@ -13,9 +20,24 @@ describe("build", () => {
 
   it("publishes Editions with no unresolved Flags and holds back the rest", () => {
     expect(result.published).toBeGreaterThanOrEqual(1)
-    expect(result.skipped.every((s) => s.includes("unresolved Flags"))).toBe(
-      true,
-    )
+    expect(
+      result.skipped
+        .filter(
+          (s) =>
+            !unpublished.some((u) => s.startsWith(`${u.work}/${u.edition}`)),
+        )
+        .every((s) => s.includes("unresolved Flags")),
+    ).toBe(true)
+  })
+
+  it("never publishes an Edition waiting for permission", () => {
+    // Its text is gitignored, so only a machine that imported it has any to leak.
+    for (const { work, edition, title } of unpublished) {
+      expect(existsSync(path.join(outDir, work, edition))).toBe(false)
+      const workPage = path.join(work, "index.html")
+      if (existsSync(path.join(outDir, workPage)))
+        expect(read(workPage)).not.toContain(title)
+    }
   })
 
   it("gives every Passage an anchor and the page its Locator index", () => {

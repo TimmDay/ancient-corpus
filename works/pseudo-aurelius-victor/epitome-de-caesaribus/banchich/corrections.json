@@ -1,0 +1,38 @@
+[
+  {
+    "op": "split",
+    "locator": "4.7",
+    "at": "He allowed Polybius to walk",
+    "newLocator": "4.8"
+  },
+  {
+    "op": "split",
+    "locator": "10.7",
+    "at": "an act by which he offered",
+    "newLocator": "10.8"
+  },
+  {
+    "op": "split",
+    "locator": "15.2",
+    "at": "although his own age will have",
+    "newLocator": "15.3"
+  },
+  {
+    "op": "split",
+    "locator": "17.5",
+    "at": "Finally, his throat crushed",
+    "newLocator": "17.6"
+  },
+  {
+    "op": "split",
+    "locator": "24.4",
+    "at": "His mother, Mammaea, so",
+    "newLocator": "24.5"
+  },
+  {
+    "op": "split",
+    "locator": "45.5",
+    "at": "he was a most elegant painter",
+    "newLocator": "45.6"
+  }
+]

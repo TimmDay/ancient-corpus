@@ -18,6 +18,7 @@ import { importEutropius } from "./importers/eutropius.ts"
 import { importLacusCurtius } from "./importers/lacuscurtius.ts"
 import { importPerseus } from "./importers/perseus.ts"
 import { importTertullian } from "./importers/tertullian.ts"
+import { importToposText } from "./importers/topostext.ts"
 import { importSuetonius } from "./importers/suetonius.ts"
 import { nameNotes } from "./note-ids.ts"
 
@@ -32,6 +33,7 @@ const IMPORTERS: Record<
   perseus: importPerseus,
   suetonius: importSuetonius,
   tertullian: (source, work) => importTertullian(source, work.title),
+  topostext: importToposText,
 }
 
 export function correctionsFile(work: Work, edition: Edition): string {

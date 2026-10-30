@@ -60,6 +60,16 @@ export type Edition = {
    * like `80` and `80(Alexander)`, share one), for Editions too long for one page.
    */
   pagePerDivision?: boolean
+  /**
+   * The rights holder's notice, printed at the top of every page of the
+   * Edition, for a text used by permission or on conditions.
+   */
+  notice?: string
+  /**
+   * Why the Edition is not published yet (permission not given). Its text is
+   * kept out of git and the site; `pnpm dev:drafts` shows it locally.
+   */
+  unpublished?: string
 }
 
 export type EditionSource = {
