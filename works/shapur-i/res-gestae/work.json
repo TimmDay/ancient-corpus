@@ -47,10 +47,10 @@
         "name": "This project",
         "url": "https://github.com/TimmDay/ancient-corpus",
         "archives": [],
-        "rights": "Made by this project; free to reuse with attribution."
+        "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
       },
       "importer": "translation",
-      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 30 October 2026, from Huyse's transcription of the Parthian. It is not a translator's work. Check it against the Parthian, and report errors."
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 30 October 2026, from Huyse's transcription of the Parthian. It is not a translator's work: check it against the Parthian, and report errors. Public domain (CC0): reuse it freely."
     },
     {
       "slug": "nabel",
