@@ -1,0 +1,19 @@
+[
+  {
+    "op": "toEditorial",
+    "locator": "8.221",
+    "at": "ΙΗσΟΥσΧΡΕΙ",
+    "title": "The acrostic of 8.217–250, as Geffcken prints it"
+  },
+  {
+    "op": "toEditorial",
+    "locator": "8.222",
+    "at": "ludicii Signum",
+    "title": "Augustine’s Latin version of the acrostic (De civitate Dei 18.23), printed by Geffcken beside the Greek"
+  },
+  {
+    "op": "renumber",
+    "locator": "8.28",
+    "newLocator": "8.221"
+  }
+]

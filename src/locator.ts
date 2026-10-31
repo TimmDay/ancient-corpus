@@ -26,6 +26,11 @@ export type LocatorIndex = {
    * one a link meant.
    */
   choices?: Record<string, Choice>
+  /**
+   * The Work's Passages are named by their first line (`13.13`), so a Locator
+   * naming a line inside one (`13.15`) lands on the Passage that holds it.
+   */
+  lines?: true
 }
 
 export type Choice = {
@@ -106,11 +111,13 @@ export function resolveLocator(
   const startTokens = applyAliases(locatorTokens(startWritten), index.aliases)
 
   for (let length = startTokens.length; length > 0; length--) {
-    const start = byKey.get(keyOf(startTokens.slice(0, length)))
+    const full = length === startTokens.length
+    const named = byKey.get(keyOf(startTokens.slice(0, length)))
+    const start = named ?? (full ? lineWithin(startTokens, index) : undefined)
     if (!start) continue
-    const exact = length === startTokens.length
+    const exact = full && start === named
     const end =
-      exact && endWritten
+      full && endWritten
         ? rangeEnd(startTokens, endWritten, byKey, index)
         : undefined
     const alternatives = startWritten.includes("(") ? [] : twinsOf(start, index)
@@ -209,10 +216,38 @@ function rangeEnd(
           ...endTokens,
         ]
   for (let length = full.length; length > 0; length--) {
-    const end = byKey.get(keyOf(full.slice(0, length)))
+    const end =
+      byKey.get(keyOf(full.slice(0, length))) ??
+      (length === full.length ? lineWithin(full, index) : undefined)
     if (end) return end
   }
   return undefined
+}
+
+/**
+ * In a Work numbered by lines, the Passage holding the line a Locator names:
+ * the one in the same division whose first line is the latest at or before it.
+ */
+function lineWithin(
+  tokens: string[],
+  index: LocatorIndex,
+): LocatorTarget | undefined {
+  const line = Number(tokens.at(-1))
+  if (!index.lines || !Number.isInteger(line)) return undefined
+  const prefix = keyOf(tokens.slice(0, -1))
+  let best: { target: LocatorTarget; first: number } | undefined
+  for (const target of index.targets) {
+    const own = locatorTokens(target.locator)
+    const first = Number(own.at(-1))
+    if (
+      own.length === tokens.length &&
+      keyOf(own.slice(0, -1)) === prefix &&
+      first <= line &&
+      first > (best?.first ?? -Infinity)
+    )
+      best = { target, first }
+  }
+  return best?.target
 }
 
 function splitRange(written: string): [string, string?] {

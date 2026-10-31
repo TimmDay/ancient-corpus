@@ -1,0 +1,70 @@
+{
+  "divisions": [
+    {
+      "locator": "praef",
+      "label": "Preface"
+    },
+    {
+      "locator": "1",
+      "label": "Book 1"
+    },
+    {
+      "locator": "2",
+      "label": "Book 2"
+    },
+    {
+      "locator": "3",
+      "label": "Book 3"
+    },
+    {
+      "locator": "4",
+      "label": "Book 4"
+    },
+    {
+      "locator": "5",
+      "label": "Book 5"
+    },
+    {
+      "locator": "6",
+      "label": "Book 6"
+    },
+    {
+      "locator": "7",
+      "label": "Book 7"
+    },
+    {
+      "locator": "8",
+      "label": "Book 8"
+    },
+    {
+      "locator": "11",
+      "label": "Book 11"
+    },
+    {
+      "locator": "12",
+      "label": "Book 12"
+    },
+    {
+      "locator": "13",
+      "label": "Book 13"
+    },
+    {
+      "locator": "14",
+      "label": "Book 14"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ed-1",
+      "title": "The acrostic of 8.217–250, as Geffcken prints it",
+      "html": "<p>ΙΗσΟΥσΧΡΕΙ σΤΟσΘΕοΥΥΙΟσΣωΤΗΡ</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-2",
+      "title": "Augustine’s Latin version of the acrostic (De civitate Dei 18.23), printed by Geffcken beside the Greek",
+      "html": "<p>ludicii Signum tellus sudore madescet.<br>E caelo rex adveniet per saecla futurus,<br>Scilicet ut carnem praesens, ut iudicet orbem.<br>Unde Deum cernent incredulus atque fidelis<br>Υ Celsum cum sanctis aevi iam termino in ipso.<br>Sic animae cum carne aderunt, quas iudicat ipse,<br>Cum iacet incultus densis in vepribus orbis,<br>Reicient simulacra viri, cunctam quoque gazam,<br>Exuret terras ignis pontumque polumque<br>Ι Inquirens taetri portas eflfringet Averni.<br>Sanctorum sed enim cunctae lux libera carni<br>Tradetur, sontes aeterna flamma cremabit.<br>Occultos actus retegens tunc quisque loquetur<br>Secreta, atque Deus reserabit pectora luci.<br>Tunc erit et luctus, stridebunt dentibus omnes.<br>Eripitur solis iubar et chorus interit astris.<br>Volvetur caelum, lunaris splendor obibit;<br>Deiciet colles, valles extollet ab imo.<br>Non erit in rebus hominum sublime vel altum.<br>Ι Iam aequantur campis montes et caerula ponti<br>Omnia cessabunt, tellus confracta ’ibit:<br>Sic pariter fontes torrentur fiuminaque igni.<br>Sed tuba tum sonitum tristem demittet ab alto<br>Orbe, gemens facinus miserum variosque labores,<br>Τ j Tartareumque chaos monstrabit terra dehiscens.<br>Et coram hie Domino reges sistentur ad unum.<br>Reccidet e caelo ignisque et sulphuris amnis.</p>",
+      "notes": []
+    }
+  ]
+}

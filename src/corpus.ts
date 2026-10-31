@@ -32,6 +32,11 @@ export type Work = {
    */
   divisionSpans?: [string, [number, number]][]
   locatorFormat: string | null
+  /**
+   * Cited by line (verse): each Passage is named by its first line, `13.13`,
+   * and a Locator naming any line lands on the Passage that holds it.
+   */
+  numberedLines?: boolean
   /** Old or longer slugs that redirect here, e.g. `eutropius/breviarium-historiae-romanae`. */
   slugAliases: string[]
   /** Other ways of naming a division, written → canonical, e.g. `Gaius` → `Caligula`. */

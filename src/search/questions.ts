@@ -17,6 +17,7 @@ const DIO = "cassius-dio/roman-history"
 const HA = "anonymous/historia-augusta"
 const ZOSIMUS = "zosimus/historia-nova"
 const ZONARAS = "john-zonaras/epitome-historiarum"
+const ORACLES = "anonymous/oracula-sibyllina"
 
 const at = (work: string, ...locators: string[]) =>
   locators.map((locator) => ({ work, locator }))
@@ -31,6 +32,8 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       ...at(ZOSIMUS, "1.18", "1.19"),
       // 12.17: thrown by his horse in battle with the Persians; 12.18: Philip's plot.
       ...at(ZONARAS, "12.17", "12.18"),
+      // "Betrayed by his comrade, he shall fall in the ranks."
+      ...at(ORACLES, "13.13"),
     ],
     notYetInCorpus: [
       "Aurelius Victor 27.7–8",

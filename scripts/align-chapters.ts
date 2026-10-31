@@ -85,9 +85,10 @@ for (const passage of text.passages) {
     const at = uniqueOpening(passage.text, span)
     corrections.push({
       op: "split",
-      locator: `${passage.division}.${j + 1}`,
+      // The reference's own Locators: consecutive chapters, or first lines (13.13).
+      locator: book[j]?.locator ?? `${passage.division}.${j + 1}`,
       at,
-      newLocator: `${passage.division}.${j + 2}`,
+      newLocator: book[j + 1]?.locator ?? `${passage.division}.${j + 2}`,
     })
   })
 }

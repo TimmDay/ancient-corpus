@@ -69,6 +69,109 @@ export function importPerseus(source: EditionSource): ImportedEdition {
 }
 
 /**
+ * A poem cited by line (the Sibylline Oracles): books of <p> sense paragraphs,
+ * one verse per line of text or per <l>, with <lb n="5"/> before every fifth.
+ * Each paragraph is a Passage named by its book and first line, `13.13`, its
+ * verses kept as lines. The count follows the edition's own line numbers
+ * wherever they are printed, and says where it had to. A prose book (the
+ * preface) is read the same way but runs its lines together.
+ */
+export function importPerseusLines(source: EditionSource): ImportedEdition {
+  const $ = readTei(onlyArchive(source))
+  const divisions: Division[] = []
+  const passages: Omit<Passage, "flags">[] = []
+
+  for (const book of $('div[subtype="book"]').toArray()) {
+    const n = $(book).attr("n") ?? ""
+    const prose = n === "praef"
+    const label = prose ? "Preface" : `Book ${n}`
+    divisions.push({ locator: n, label })
+    // Paragraphs between \uE002 and \uE003, printed line numbers as \uE001n\uE001.
+    const marked = lines(book.children).replace(
+      /\uE001(\d+)\uE001\s*\uE002/g,
+      "\uE002\uE001$1\uE001",
+    )
+    let line = 0
+    const corrected: string[] = []
+    for (const [, paragraph = ""] of marked.matchAll(
+      /\uE002([^\uE003]*)\uE003/g,
+    )) {
+      const verses: { n: number; html: string }[] = []
+      let printed: number | undefined
+      for (const raw of paragraph.split("\n")) {
+        for (const [, m] of raw.matchAll(/\uE001(\d+)\uE001/g))
+          printed = Number(m)
+        const html = clean(raw.replace(/\uE001\d+\uE001/g, ""))
+        if (!html) continue
+        line += 1
+        if (printed !== undefined && printed !== line) {
+          corrected.push(`${line}→${printed}`)
+          line = printed
+        }
+        printed = undefined
+        verses.push({ n: line, html })
+      }
+      const first = verses[0]
+      if (!first) continue
+      const blocks = [
+        prose
+          ? clean(verses.map((v) => v.html).join(" "))
+          : verses.map((v) => v.html).join("<br>"),
+      ]
+      passages.push({
+        locator: `${n}.${first.n}`,
+        headings: passages.some((p) => p.division === n)
+          ? []
+          : [{ kind: "division", html: label, editorial: false }],
+        division: n,
+        blocks,
+        notes: [],
+        text: plainText(blocks.join(" ").replace(/<br>/g, " ")),
+      })
+    }
+    if (corrected.length)
+      console.warn(
+        `Book ${n}: line count set by the printed numbers at ${corrected.join(", ")}`,
+      )
+  }
+  return { divisions, passages, editorial: [] }
+}
+
+/** A poem's book as text, its paragraphs and printed line numbers marked; notes, page breaks and headings dropped. */
+function lines(nodes: AnyNode[]): string {
+  return nodes
+    .map((node) => {
+      if (node.type === "text") return escapeHtml(node.data)
+      if (node.type !== "tag") return ""
+      const inner = lines(node.children)
+      switch (node.name) {
+        case "note":
+        case "pb":
+        case "head":
+        case "milestone":
+          return ""
+        case "lb":
+          return node.attribs.n ? `\n\uE001${node.attribs.n}\uE001` : "\n"
+        case "l":
+          return `\n${inner}\n`
+        // Books 4 and 5 group their verses by printed page, in <lg>, not by sense.
+        case "p":
+        case "lg":
+          return `\uE002${inner}\uE003`
+        case "gap":
+          return " … "
+        case "add":
+          return `⟨${inner}⟩`
+        case "del":
+          return `[${inner}]`
+        default:
+          return inner
+      }
+    })
+    .join("")
+}
+
+/**
  * Collapses whitespace, joins a word the printer broke across a line
  * ("αἰτιώμε- νον"), and normalizes to NFC, so the polytonic accent forms
  * (oxia, U+1F71…) match the ones a keyboard types (tonos).

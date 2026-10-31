@@ -16,9 +16,9 @@ import { correctEdition, type Correction } from "./corrections.ts"
 import { importDio } from "./importers/dio.ts"
 import { importEutropius } from "./importers/eutropius.ts"
 import { importLacusCurtius } from "./importers/lacuscurtius.ts"
-import { importPerseus } from "./importers/perseus.ts"
+import { importPerseus, importPerseusLines } from "./importers/perseus.ts"
 import { importTertullian } from "./importers/tertullian.ts"
-import { importToposText } from "./importers/topostext.ts"
+import { importToposText, importToposTextLines } from "./importers/topostext.ts"
 import { importSuetonius } from "./importers/suetonius.ts"
 import { nameNotes } from "./note-ids.ts"
 
@@ -31,9 +31,11 @@ const IMPORTERS: Record<
   lacuscurtius: (source, work, edition) =>
     importLacusCurtius(source, work.title, edition.language),
   perseus: importPerseus,
+  "perseus-lines": importPerseusLines,
   suetonius: importSuetonius,
   tertullian: (source, work) => importTertullian(source, work.title),
   topostext: importToposText,
+  "topostext-lines": importToposTextLines,
 }
 
 export function correctionsFile(work: Work, edition: Edition): string {
@@ -54,7 +56,9 @@ export function importUncorrected(work: Work, edition: Edition): EditionText {
     throw new Error(
       `${work.slug}/${edition.slug}: no importer called "${edition.importer}"`,
     )
-  return correctEdition(importer(edition.source, work, edition), [])
+  return correctEdition(importer(edition.source, work, edition), [], {
+    lines: work.numberedLines,
+  })
 }
 
 export function importEdition(work: Work, edition: Edition): EditionText {
@@ -67,6 +71,7 @@ export function importEdition(work: Work, edition: Edition): EditionText {
     correctEdition(
       importer(edition.source, work, edition),
       readCorrections(work, edition),
+      { lines: work.numberedLines },
     ),
     edition.slug,
   )

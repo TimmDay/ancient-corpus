@@ -18,7 +18,7 @@ export type Correction =
   | { op: "split"; locator: string; at: string; newLocator: string }
   /** Joins this Passage onto the one before it. `at` picks one of several that share a Locator. */
   | { op: "merge"; locator: string; at?: string }
-  /** Moves the quoted text and everything after it in the Passage into Editorial matter. */
+  /** Moves the quoted text and everything after it into Editorial matter; quoting its start moves the whole Passage. */
   | { op: "toEditorial"; locator: string; at: string; title: string }
   /** Swaps quoted HTML for new; a blank line in `with` starts a new paragraph (text the transcription dropped). */
   | { op: "replace"; locator: string; find: string; with: string }
@@ -33,6 +33,8 @@ export type Correction =
 export function correctEdition(
   imported: ImportedEdition,
   corrections: Correction[],
+  /** The Work is cited by line, so its Passages' numbers jump (Work.numberedLines). */
+  options: { lines?: boolean } = {},
 ): EditionText {
   const passages: Omit<Passage, "flags">[] = imported.passages.map((p) => ({
     ...p,
@@ -94,8 +96,11 @@ export function correctEdition(
           passage.blocks,
           correction.at,
           correction,
+          true,
         )
-        passages[index] = withBlocks(passage, before)
+        // Moving a whole Passage leaves nothing behind.
+        if (before.length) passages[index] = withBlocks(passage, before)
+        else passages.splice(index, 1)
         const moved = withBlocks(passage, after)
         editorial.push({
           id: `ed-${editorial.length + 1}`,
@@ -147,7 +152,7 @@ export function correctEdition(
     }
   }
 
-  const flagged = raiseFlags(passages)
+  const flagged = raiseFlags(passages, options.lines)
   settleFlags(flagged, corrections)
   return { divisions: imported.divisions, passages: flagged, editorial }
 }
@@ -166,7 +171,11 @@ function withBlocks(
 }
 
 /** Flags a missing or out-of-order number within a division, and a Passage far longer than its neighbours. */
-export function raiseFlags(passages: Omit<Passage, "flags">[]): Passage[] {
+export function raiseFlags(
+  passages: Omit<Passage, "flags">[],
+  /** Passages are named by their first line: numbers jump, but may not go backwards. */
+  lines = false,
+): Passage[] {
   const result: Passage[] = passages.map((p) => ({ ...p, flags: [] }))
   const byDivision = Map.groupBy(result, (p) => p.division)
 
@@ -192,6 +201,15 @@ export function raiseFlags(passages: Omit<Passage, "flags">[]): Passage[] {
     group.forEach((passage, i) => {
       if (passage.flags.some((f) => f.code === "duplicate")) return
       const current = numbers[i] ?? NaN
+      if (lines) {
+        const following = numbers[i + 1]
+        if (following !== undefined && following <= current)
+          passage.flags.push({
+            code: "gap",
+            detail: `The next Passage starts at line ${following}, not after ${current}`,
+          })
+        return
+      }
       if (i === 0 && current !== 1) {
         passage.flags.push({
           code: "gap",
@@ -248,16 +266,21 @@ export function splitBlocks(
   blocks: string[],
   at: string,
   correction: Correction,
+  /** Allow quoting the very start, taking the whole Passage. */
+  whole = false,
 ): [string[], string[]] {
   const wanted = collapse(at)
   for (let i = 0; i < blocks.length; i++) {
     const block = blocks[i] ?? ""
     const position = htmlPositionOf(block, wanted)
     if (position === undefined) continue
-    const [head, tail] = splitHtml(block, position)
+    // A split between verses leaves no line break dangling at either end.
+    const [head, tail] = splitHtml(block, position).map((half) =>
+      half.replace(/^(\s*<br>)+|(<br>\s*)+$/g, ""),
+    ) as [string, string]
     const before = [...blocks.slice(0, i), head].filter((b) => plainText(b))
     const after = [tail, ...blocks.slice(i + 1)].filter((b) => plainText(b))
-    if (!before.length || !after.length) {
+    if ((!before.length && !whole) || !after.length) {
       throw new Error(
         `Correction ${describe(correction)}: the quoted text is at the very start or end`,
       )
@@ -294,6 +317,11 @@ function htmlPositionOf(html: string, wanted: string): number | undefined {
       continue
     }
     if (html[i] === "<") {
+      // A line break in verse reads as a space, as plainText reads it.
+      if (/^<br\s*\/?>/.test(html.slice(i, i + 6)) && !text.endsWith(" ")) {
+        text += " "
+        positions.push(i)
+      }
       i = html.indexOf(">", i) + 1
       continue
     }
