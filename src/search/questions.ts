@@ -16,6 +16,7 @@ const SUETONIUS = "suetonius/de-vita-caesarum"
 const DIO = "cassius-dio/roman-history"
 const HA = "anonymous/historia-augusta"
 const ZOSIMUS = "zosimus/historia-nova"
+const ZONARAS = "john-zonaras/epitome-historiarum"
 
 const at = (work: string, ...locators: string[]) =>
   locators.map((locator) => ({ work, locator }))
@@ -29,13 +30,14 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       ...at(HA, "Three Gordians 29", "Three Gordians 30", "Three Gordians 31"),
       // 1.19: killed by the soldiers for Philip. 3.32: fell in enemy country, a Persian victory.
       ...at(ZOSIMUS, "1.18", "1.19", "3.32"),
+      // 12.17: thrown by his horse in battle with the Persians; 12.18: Philip's plot.
+      ...at(ZONARAS, "12.17", "12.18"),
     ],
     notYetInCorpus: [
       "Aurelius Victor 27.7–8",
       "Epitome de Caesaribus 27.2",
       "Orosius 7.19.5",
       "Ammianus 23.5.7, 23.5.17",
-      "Zonaras 12.17–18",
       "Shapur I, Res Gestae 3–4",
       "Festus 22",
       "Sibylline Oracles 13.13–20",
@@ -55,6 +57,7 @@ export const TEST_QUESTIONS: TestQuestion[] = [
         "Two Gallieni 1",
       ),
       ...at(ZOSIMUS, "1.36"),
+      ...at(ZONARAS, "12.23"),
     ],
   },
   {

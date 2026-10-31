@@ -66,6 +66,8 @@ export function findWorks(works: Work[], written: string): Work[] {
   return works.filter((w) =>
     [
       w.author,
+      // A surname alone: "Zonaras" for John Zonaras.
+      w.author.split(" ").at(-1) ?? "",
       w.title,
       ...w.otherTitles,
       `${w.author} ${w.title}`,

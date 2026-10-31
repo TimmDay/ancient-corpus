@@ -5,6 +5,10 @@
 // `1.18.2` lands on its chapter. The
 // editor's additions (<add>) print in angle brackets ⟨…⟩ and deletions (<del>)
 // in square brackets, as in the printed edition; print page breaks are dropped.
+// An unnumbered <lb/> starts a verse line (an oracle quoted in Zosimus); a
+// numbered one only counts the printed page's lines (Zonaras), so it is a
+// space, and a word hyphenated across it is joined again. The editor's
+// footnotes become the chapter's notes; marginal sigla are dropped.
 
 import { createHash } from "node:crypto"
 import { readFileSync } from "node:fs"
@@ -28,30 +32,53 @@ export function importPerseus(source: EditionSource): ImportedEdition {
 
   for (const book of $('div[subtype="book"]').toArray()) {
     const n = $(book).attr("n") ?? ""
-    divisions.push({ locator: n, label: `Book ${n}` })
+    const label = n === "praef" ? "Preface" : `Book ${n}`
+    divisions.push({ locator: n, label })
     $(book)
       .children('div[subtype="chapter"]')
       .each((i, chapter) => {
+        const locator = `${n}.${$(chapter).attr("n") ?? ""}`
         // A paragraph per section, as the edition's sections fall.
         const blocks = $(chapter)
           .find("p")
           .toArray()
-          .map((p) => inline($, p.children).replace(/\s+/g, " ").trim())
+          .map((p) => clean(inline($, p.children)))
           .filter(Boolean)
+        const notes = $(chapter)
+          .find('note[type="footnote"]')
+          .toArray()
+          .map((note, i) => ({
+            id: `${locator}-${i + 1}`,
+            label: `${$(chapter).attr("n") ?? ""}.${i + 1}`,
+            html: clean(inline($, note.children)),
+          }))
         passages.push({
-          locator: `${n}.${$(chapter).attr("n") ?? ""}`,
+          locator,
           headings:
             i === 0
-              ? [{ kind: "division", html: `Book ${n}`, editorial: false }]
+              ? [{ kind: "division", html: label, editorial: false }]
               : [],
           division: n,
           blocks,
-          notes: [],
+          notes,
           text: plainText(blocks.join(" ")),
         })
       })
   }
   return { divisions, passages, editorial: [] }
+}
+
+/**
+ * Collapses whitespace, joins a word the printer broke across a line
+ * ("αἰτιώμε- νον"), and normalizes to NFC, so the polytonic accent forms
+ * (oxia, U+1F71…) match the ones a keyboard types (tonos).
+ */
+function clean(html: string): string {
+  return html
+    .normalize("NFC")
+    .replace(/\s+/g, " ")
+    .replace(/(\p{L})- (?=\p{Ll})/gu, "$1")
+    .trim()
 }
 
 function inline($: CheerioAPI, nodes: AnyNode[]): string {
@@ -64,7 +91,12 @@ function inline($: CheerioAPI, nodes: AnyNode[]): string {
         case "pb":
           return ""
         case "lb":
-          return "<br>"
+          return node.attribs.n ? " " : "<br>"
+        case "l":
+          return `<br>${inner}`
+        case "note":
+        case "milestone":
+          return ""
         case "gap":
           return " … "
         case "add":
