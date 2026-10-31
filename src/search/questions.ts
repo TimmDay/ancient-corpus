@@ -29,7 +29,8 @@ export const TEST_QUESTIONS: TestQuestion[] = [
     expected: [
       ...at(EUTROPIUS, "9.2"),
       ...at(HA, "Three Gordians 29", "Three Gordians 30", "Three Gordians 31"),
-      ...at(ZOSIMUS, "1.18", "1.19"),
+      // 1.19: killed by the soldiers for Philip. 3.32: fell in enemy country, a Persian victory.
+      ...at(ZOSIMUS, "1.18", "1.19", "3.32"),
       // 12.17: thrown by his horse in battle with the Persians; 12.18: Philip's plot.
       ...at(ZONARAS, "12.17", "12.18"),
       // "Betrayed by his comrade, he shall fall in the ranks."
@@ -42,6 +43,7 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       "Ammianus 23.5.7, 23.5.17",
       "Shapur I, Res Gestae 3–4",
       "Festus 22",
+      "Cedrenus I 450–451",
     ],
   },
   {

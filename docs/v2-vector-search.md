@@ -40,4 +40,4 @@ Kept in the repo, each with the Passages (and Sentences) we expect back, to choo
 | Question | Expected |
 |---|---|
 | What did Shapur do to Valerian? | *Historia Augusta*, *Two Valerians* 1–4 (Latin and English); Eutropius 9.7; Zosimus 1.36; Zonaras 12.23 |
-| What is all the information we have about the death of Gordian III? | Eutropius 9.2; *Historia Augusta*, *Three Gordians* 29–31; Zosimus 1.18–19; Zonaras 12.17–18; *Sibylline Oracles* 13.13–20; as they are imported: Aurelius Victor 27.7–8; *Epitome de Caesaribus* 27.2; Orosius 7.19.5; Ammianus 23.5.7, 23.5.17; Shapur I, *Res Gestae* 3–4; Festus 22 |
+| What is all the information we have about the death of Gordian III? | Eutropius 9.2; *Historia Augusta*, *Three Gordians* 29–31; Zosimus 1.18–19, 3.32; Zonaras 12.17–18; *Sibylline Oracles* 13.13–20; as they are imported: Aurelius Victor 27.7–8; *Epitome de Caesaribus* 27.2; Orosius 7.19.5; Ammianus 23.5.7, 23.5.17; Shapur I, *Res Gestae* 3–4; Festus 22; Cedrenus I 450–451 |
