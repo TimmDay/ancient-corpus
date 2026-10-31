@@ -1,0 +1,20 @@
+{
+  "divisions": [
+    {
+      "locator": "1",
+      "label": "Volume 1"
+    },
+    {
+      "locator": "2",
+      "label": "Volume 2"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ed-1",
+      "title": "Title of the text in volume 2",
+      "html": "<p>ΓΕΜΩΡΓΙΟΥ ΤΟΥ ΚΕΔΡΗΝΟΥ͂</p><p>ΣΥΝΟΨΙΣ ἸΣΤΟΡΙΩΝ.</p>",
+      "notes": []
+    }
+  ]
+}

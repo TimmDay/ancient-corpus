@@ -19,6 +19,7 @@ const ZOSIMUS = "zosimus/historia-nova"
 const SHAPUR = "shapur-i/res-gestae"
 const ZONARAS = "john-zonaras/epitome-historiarum"
 const ORACLES = "anonymous/oracula-sibyllina"
+const CEDRENUS = "george-cedrenus/compendium-historiarum"
 
 const at = (work: string, ...locators: string[]) =>
   locators.map((locator) => ({ work, locator }))
@@ -38,6 +39,8 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       ...at(ORACLES, "13.13"),
       // Shapur's own account: Gordian killed in battle at Misiche.
       ...at(SHAPUR, "6", "7", "8"),
+      // "Falling with his horse in battle and breaking his thigh, he died."
+      ...at(CEDRENUS, "1.451"),
     ],
     notYetInCorpus: [
       "Aurelius Victor 27.7–8",
@@ -45,7 +48,6 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       "Orosius 7.19.5",
       "Ammianus 23.5.7, 23.5.17",
       "Festus 22",
-      "Cedrenus I 450–451",
     ],
   },
   {

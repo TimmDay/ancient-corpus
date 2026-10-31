@@ -1,0 +1,140 @@
+[
+  {
+    "op": "toEditorial",
+    "locator": "1.1",
+    "at": "ΓΕΙΏΡΓΙΟΥ TO",
+    "title": "Title of volume 1, as archive.org's OCR reads it"
+  },
+  {
+    "op": "replace",
+    "locator": "1.3",
+    "find": "A2YNOTIS IZTOPILQON ! APXOMENH AIIO ΚΤΊΣΕΟΣ KOXZMOY",
+    "with": ""
+  },
+  {
+    "op": "replace",
+    "locator": "1.3",
+    "find": "KAI ΜΈΧΡΙ ΤῊΣ BAZIAEIAEZ ÍIZA4AKIOT TOY KOMNHNOT,",
+    "with": ""
+  },
+  {
+    "op": "replace",
+    "locator": "1.3",
+    "find": "ZTAAET'EIZA I14PA KTPOT ΓΕΩΡΓΊΟΥ TOT KEAJPHNOT EX dl1490PQÀ&amp;N BIBAIAN.*)",
+    "with": ""
+  },
+  {
+    "op": "toEditorial",
+    "locator": "2.1",
+    "at": "GEOcGIVS",
+    "title": "Title page of volume 2, as archive.org's OCR reads it"
+  },
+  {
+    "op": "replace",
+    "locator": "1.450",
+    "find": "hie propter",
+    "with": "hic propter"
+  },
+  {
+    "op": "replace",
+    "locator": "1.450",
+    "find": "ingulatus",
+    "with": "iugulatus"
+  },
+  {
+    "op": "replace",
+    "locator": "1.450",
+    "find": "ἃ suis",
+    "with": "a suis"
+  },
+  {
+    "op": "replace",
+    "locator": "1.450",
+    "find": "Hierosolymerum",
+    "with": "Hierosolymorum"
+  },
+  {
+    "op": "replace",
+    "locator": "1.450",
+    "find": "tranamutavit. :",
+    "with": "transmutavit."
+  },
+  {
+    "op": "replace",
+    "locator": "1.450",
+    "find": "poesas",
+    "with": "poenas"
+  },
+  {
+    "op": "replace",
+    "locator": "1.450",
+    "find": "ét Gordianus",
+    "with": "et Gordianus"
+  },
+  {
+    "op": "replace",
+    "locator": "1.450",
+    "find": "antem praefectus",
+    "with": "autem praefectus"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "ea^ tempestate",
+    "with": "ea tempestate"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "pertalerunt",
+    "with": "pertulerunt"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "blennium",
+    "with": "biennium"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "effnsus",
+    "with": "effusus"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "Euzopee",
+    "with": "Europae"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "ubi/et",
+    "with": "ubi et"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "ἃ se Philippopolin",
+    "with": "a se Philippopolin"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "cerporis",
+    "with": "corporis"
+  },
+  {
+    "op": "accept",
+    "locator": "1.3",
+    "flag": "gap",
+    "reason": "Bekker's page 1 is the title and page 2 is blank in this scan; archive.org's OCR has no text of Cedrenus before page 3."
+  },
+  {
+    "op": "accept",
+    "locator": "2.3",
+    "flag": "gap",
+    "reason": "Volume 2's first pages are its title page and the title of the text; Cedrenus's text starts on page 3."
+  }
+]

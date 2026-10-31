@@ -1,0 +1,26 @@
+{
+  "divisions": [
+    {
+      "locator": "1",
+      "label": "Volume 1"
+    },
+    {
+      "locator": "2",
+      "label": "Volume 2"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ed-1",
+      "title": "Title of volume 1, as archive.org's OCR reads it",
+      "html": "<p>ΓΕΙΏΡΓΙΟΥ TOY KEAPHNOY</p><p>ZTNO'TIZ IZTOPI9N.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-2",
+      "title": "Title page of volume 2, as archive.org's OCR reads it",
+      "html": "<p>GEOcGIVS CEFDRENUS IOANNIS SCYILITZAE OPE</p><p>IIMANUEFELE ΒΕΚΚΕΒΟ</p><p>SUPPLFTUS ETEMEMNDATUS.</p><p>ΤΟΜΟΒΒ ALTEXR.</p><p>BONNAE</p><p>IHPFNSIS ED. WEBERI MDCCCXXXIX.</p>",
+      "notes": []
+    }
+  ]
+}

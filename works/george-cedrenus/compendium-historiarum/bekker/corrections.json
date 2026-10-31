@@ -1,0 +1,146 @@
+[
+  {
+    "op": "toEditorial",
+    "locator": "2.2",
+    "at": "ΓΕΜΩΡΓΙΟ",
+    "title": "Title of the text in volume 2"
+  },
+  {
+    "op": "replace",
+    "locator": "1.450",
+    "find": "Maξιμίνου",
+    "with": "Μαξιμίνου"
+  },
+  {
+    "op": "replace",
+    "locator": "1.450",
+    "find": "ὃ ἔπαρχος",
+    "with": "ὁ ἔπαρχος"
+  },
+  {
+    "op": "replace",
+    "locator": "1.450",
+    "find": "Mukiuov",
+    "with": "Μαξίμου"
+  },
+  {
+    "op": "replace",
+    "locator": "1.450",
+    "find": "Βαλβίνου. 20",
+    "with": "Βαλβίνου."
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "Eiyeγείας",
+    "with": "Εὐγενείας"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "ἅγιοε “Ἰαυρέντιος",
+    "with": "ἅγιοι Λαυρέντιος"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "ἐπίσχοπος",
+    "with": "ἐπίσκοπος"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "Ἐαλβῖνον",
+    "with": "Βαλβῖνον"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "μῆνας S,",
+    "with": "μῆνας β΄,"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "πρῶvoc",
+    "with": "πρῶτος"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "πρωτίχτωρας",
+    "with": "προτίκτορας"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "IMerà",
+    "with": "Μετὰ"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "Γορδιανὸς ὃ υἱὸς",
+    "with": "Γορδιανὸς ὁ υἱὸς"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "ὃ αἱρεσιάρχης",
+    "with": "ὁ αἱρεσιάρχης"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "Πάρχος ἔτη y.",
+    "with": "Μάρκος ἔτη η΄."
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "Mágxov",
+    "with": "Μάρκον"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "δύο\"",
+    "with": "δύο·"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "κχαθεύδειν",
+    "with": "καθεύδειν"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "ἄπέθανε.",
+    "with": "ἀπέθανε."
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "Bóorgac",
+    "with": "Βόστρας"
+  },
+  {
+    "op": "replace",
+    "locator": "1.451",
+    "find": "φκοδόμησεν",
+    "with": "ᾠκοδόμησεν"
+  },
+  {
+    "op": "accept",
+    "locator": "1.3",
+    "flag": "gap",
+    "reason": "Bekker's page 1 is the title and page 2 is blank in this scan; archive.org's OCR has no text of Cedrenus before page 3."
+  },
+  {
+    "op": "accept",
+    "locator": "2.3",
+    "flag": "gap",
+    "reason": "Volume 2's first pages are its title page and the title of the text; Cedrenus's text starts on page 3."
+  }
+]

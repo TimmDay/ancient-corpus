@@ -13,6 +13,7 @@ import {
   type Work,
 } from "./corpus.ts"
 import { correctEdition, type Correction } from "./corrections.ts"
+import { importBonn } from "./importers/bonn.ts"
 import { importDio } from "./importers/dio.ts"
 import { importEutropius } from "./importers/eutropius.ts"
 import { importLacusCurtius } from "./importers/lacuscurtius.ts"
@@ -28,6 +29,7 @@ const IMPORTERS: Record<
   string,
   (source: EditionSource, work: Work, edition: Edition) => ImportedEdition
 > = {
+  bonn: (source, _work, edition) => importBonn(source, edition),
   dio: importDio,
   eutropius: importEutropius,
   lacuscurtius: (source, work, edition) =>

@@ -1,0 +1,62 @@
+{
+  "author": "George Cedrenus",
+  "title": "Compendium Historiarum",
+  "otherTitles": [
+    "Synopsis Historion",
+    "Σύνοψις ἱστοριῶν"
+  ],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": null,
+  "coversYearLatest": 1057,
+  "locatorFormat": "volume.page of Bekker's Bonn edition, e.g. 1.451",
+  "slugAliases": [
+    "george-cedrenus/synopsis-historion"
+  ],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "bekker",
+      "preferred": true,
+      "language": "grc",
+      "title": "Georgius Cedrenus, Ioannis Scylitzae ope",
+      "editor": "Immanuel Bekker",
+      "publicationYear": 1838,
+      "source": {
+        "name": "Internet Archive: Google's scans of the Bonn edition, with archive.org's OCR",
+        "url": "https://archive.org/details/georgiuscedrenu01scylgoog",
+        "archives": [
+          {
+            "file": "Cedrenus-Bekker-archiveorg.zip",
+            "sha256": "6d07d24dd1ab176613b5a1b4096ca4648f4da46de0f62e137543c0161cc218ad"
+          }
+        ],
+        "rights": "Public domain (Bonn: Weber, 1838–39). Volume 1 scanned by Google (archive.org georgiuscedrenu01scylgoog), volume 2 from archive.org GeorgiusCedrenusCompendiumHistoriarumTomusAlterGRLT; OCR by archive.org, uncorrected."
+      },
+      "importer": "bonn",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "xylander",
+      "preferred": false,
+      "language": "la",
+      "title": "Latin translation, printed beside the Greek in Bekker's edition",
+      "translator": "Wilhelm Xylander",
+      "publicationYear": 1838,
+      "source": {
+        "name": "Internet Archive: Google's scans of the Bonn edition, with archive.org's OCR",
+        "url": "https://archive.org/details/georgiuscedrenu01scylgoog",
+        "archives": [
+          {
+            "file": "Cedrenus-Bekker-archiveorg.zip",
+            "sha256": "6d07d24dd1ab176613b5a1b4096ca4648f4da46de0f62e137543c0161cc218ad"
+          }
+        ],
+        "rights": "Public domain (Bonn: Weber, 1838–39). Volume 1 scanned by Google (archive.org georgiuscedrenu01scylgoog), volume 2 from archive.org GeorgiusCedrenusCompendiumHistoriarumTomusAlterGRLT; OCR by archive.org, uncorrected."
+      },
+      "importer": "bonn",
+      "pagePerDivision": true
+    }
+  ]
+}
