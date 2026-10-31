@@ -44,6 +44,12 @@ describe("findWorks", () => {
       ])
   })
 
+  it("finds a Work by its author's surname", () => {
+    expect(corpus.findWorks("Zonaras").map((w) => w.slug)).toEqual([
+      "john-zonaras/epitome-historiarum",
+    ])
+  })
+
   it("prefers the Work with text when a title is shared", () => {
     // Festus's Breviarium is planned but has no text yet.
     expect(corpus.findWorks("Breviarium").map((w) => w.slug)).toEqual([

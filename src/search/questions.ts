@@ -17,6 +17,7 @@ const DIO = "cassius-dio/roman-history"
 const HA = "anonymous/historia-augusta"
 const ZOSIMUS = "zosimus/historia-nova"
 const SHAPUR = "shapur-i/res-gestae"
+const ZONARAS = "john-zonaras/epitome-historiarum"
 
 const at = (work: string, ...locators: string[]) =>
   locators.map((locator) => ({ work, locator }))
@@ -30,6 +31,8 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       ...at(HA, "Three Gordians 29", "Three Gordians 30", "Three Gordians 31"),
       // 1.19: killed by the soldiers for Philip. 3.32: fell in enemy country, a Persian victory.
       ...at(ZOSIMUS, "1.18", "1.19", "3.32"),
+      // 12.17: thrown by his horse in battle with the Persians; 12.18: Philip's plot.
+      ...at(ZONARAS, "12.17", "12.18"),
       // Shapur's own account: Gordian killed in battle at Misiche.
       ...at(SHAPUR, "6", "7", "8"),
     ],
@@ -38,7 +41,6 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       "Epitome de Caesaribus 27.2",
       "Orosius 7.19.5",
       "Ammianus 23.5.7, 23.5.17",
-      "Zonaras 12.17–18",
       "Festus 22",
       "Sibylline Oracles 13.13–20",
       "Cedrenus I 450–451",
@@ -57,6 +59,7 @@ export const TEST_QUESTIONS: TestQuestion[] = [
         "Two Gallieni 1",
       ),
       ...at(ZOSIMUS, "1.36"),
+      ...at(ZONARAS, "12.23"),
       ...at(SHAPUR, "18", "22"),
     ],
   },
