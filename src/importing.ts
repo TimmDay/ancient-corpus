@@ -16,9 +16,11 @@ import { correctEdition, type Correction } from "./corrections.ts"
 import { importDio } from "./importers/dio.ts"
 import { importEutropius } from "./importers/eutropius.ts"
 import { importLacusCurtius } from "./importers/lacuscurtius.ts"
+import { importParthianSources } from "./importers/parthiansources.ts"
 import { importPerseus, importPerseusLines } from "./importers/perseus.ts"
 import { importTertullian } from "./importers/tertullian.ts"
 import { importToposText, importToposTextLines } from "./importers/topostext.ts"
+import { importTranslation } from "./importers/translation.ts"
 import { importSuetonius } from "./importers/suetonius.ts"
 import { nameNotes } from "./note-ids.ts"
 
@@ -30,12 +32,15 @@ const IMPORTERS: Record<
   eutropius: importEutropius,
   lacuscurtius: (source, work, edition) =>
     importLacusCurtius(source, work.title, edition.language),
+  parthiansources: (source, _work, edition) =>
+    importParthianSources(source, edition),
   perseus: importPerseus,
   "perseus-lines": importPerseusLines,
   suetonius: importSuetonius,
   tertullian: (source, work) => importTertullian(source, work.title),
   topostext: importToposText,
   "topostext-lines": importToposTextLines,
+  translation: (_source, work, edition) => importTranslation(work, edition),
 }
 
 export function correctionsFile(work: Work, edition: Edition): string {

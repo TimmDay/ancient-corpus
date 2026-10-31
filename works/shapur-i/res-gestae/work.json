@@ -5,15 +5,73 @@
     "ŠKZ"
   ],
   "originalLanguage": "xpr",
-  "writtenYearEarliest": null,
-  "writtenYearLatest": null,
+  "writtenYearEarliest": 260,
+  "writtenYearLatest": 272,
   "coversYearEarliest": 242,
   "coversYearLatest": 260,
-  "locatorFormat": "section, e.g. 9",
+  "locatorFormat": "chapter, as in Huyse's edition (1999), e.g. 7",
   "slugAliases": [
     "shapur-i/res-gestae-divi-saporis",
     "shapur-i/skz"
   ],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "huyse",
+      "preferred": true,
+      "language": "xpr",
+      "title": "Die dreisprachige Inschrift Šābuhrs I. an der Ka‘ba-i Zardušt (ŠKZ), Parthian version, transcription",
+      "editor": "Philip Huyse",
+      "publicationYear": 1999,
+      "source": {
+        "name": "Parthian Sources Online (Jake Nabel)",
+        "url": "https://parthiansources.com/texts/skz/",
+        "archives": [
+          {
+            "file": "Shapur-SKZ-ParthianSourcesOnline.zip",
+            "sha256": "b1486cabfb4aadb3521a195f970ee8adebd3422d8de8c0079b3df0c1a4d1dcb1"
+          }
+        ],
+        "rights": "Huyse's edition (Corpus Inscriptionum Iranicarum, 1999), as given on Parthian Sources Online. A transcription of the ancient inscription, which is in the public domain."
+      },
+      "importer": "parthiansources"
+    },
+    {
+      "slug": "ancient-corpus",
+      "preferred": false,
+      "language": "en",
+      "title": "English translation",
+      "translator": "Ancient Corpus (machine translation)",
+      "publicationYear": 2026,
+      "source": {
+        "name": "This project",
+        "url": "https://github.com/TimmDay/ancient-corpus",
+        "archives": [],
+        "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "importer": "translation",
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 30 October 2026, from Huyse's transcription of the Parthian. It is not a translator's work: check it against the Parthian, and report errors. Public domain (CC0): reuse it freely."
+    },
+    {
+      "slug": "nabel",
+      "preferred": false,
+      "language": "en",
+      "title": "English translation",
+      "translator": "Jake Nabel",
+      "source": {
+        "name": "Parthian Sources Online (Jake Nabel)",
+        "url": "https://parthiansources.com/texts/skz/",
+        "archives": [
+          {
+            "file": "Shapur-SKZ-ParthianSourcesOnline.zip",
+            "sha256": "b1486cabfb4aadb3521a195f970ee8adebd3422d8de8c0079b3df0c1a4d1dcb1"
+          }
+        ],
+        "rights": "© Jake Nabel, Parthian Sources Online. All rights reserved. Used here for local study only, pending his permission."
+      },
+      "importer": "parthiansources",
+      "notice": "Translation: Jake Nabel, Parthian Sources Online (https://parthiansources.com/texts/skz/). All rights reserved.",
+      "unpublished": "waiting for Jake Nabel's permission to publish his translation."
+    }
+  ]
 }
