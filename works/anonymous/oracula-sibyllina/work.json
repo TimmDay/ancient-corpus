@@ -1,0 +1,71 @@
+{
+  "author": "Unknown",
+  "title": "Oracula Sibyllina",
+  "otherTitles": [
+    "Sibylline Oracles"
+  ],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": null,
+  "coversYearLatest": null,
+  "divisionSpans": [
+    [
+      "13",
+      [
+        240,
+        265
+      ]
+    ]
+  ],
+  "locatorFormat": "book.line, e.g. 13.15; a Passage is named by its first line, and any line lands on the Passage that holds it",
+  "numberedLines": true,
+  "slugAliases": [
+    "anonymous/sibylline-oracles"
+  ],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "geffcken",
+      "preferred": true,
+      "language": "grc",
+      "title": "Die Oracula Sibyllina",
+      "editor": "Johannes Geffcken",
+      "publicationYear": 1902,
+      "source": {
+        "name": "Open Greek and Latin, First1KGreek (University of Leipzig)",
+        "url": "https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg1551/tlg001/tlg1551.tlg001.1st1K-grc1.xml",
+        "archives": [
+          {
+            "file": "OraculaSibyllina-Geffcken-First1KGreek.zip",
+            "sha256": "c3a630987f6e2d5d298115d8e7d37e568c3e8b7b6d77651923447dfbbdc80b37"
+          }
+        ],
+        "rights": "Greek text (Geffcken, 1902) public domain; the digital edition is © University of Leipzig, available under CC BY-SA 4.0."
+      },
+      "importer": "perseus-lines",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "terry",
+      "preferred": false,
+      "language": "en",
+      "title": "The Sibylline Oracles, translated from the Greek into English blank verse",
+      "translator": "Milton S. Terry",
+      "publicationYear": 1899,
+      "source": {
+        "name": "ToposText",
+        "url": "https://topostext.org/work/485",
+        "archives": [
+          {
+            "file": "OraculaSibyllina-Terry-ToposText.zip",
+            "sha256": "2a8641c49597e334a1847cad1ae82bf05609b9d6f07ff9c848f916d7401acd11"
+          }
+        ],
+        "rights": "Public domain (New York: Eaton & Mains, 1899). Digitized by Roger Pearse at sacred-texts.com; from ToposText."
+      },
+      "importer": "topostext-lines",
+      "pagePerDivision": true
+    }
+  ]
+}

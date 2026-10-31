@@ -18,6 +18,7 @@ const HA = "anonymous/historia-augusta"
 const ZOSIMUS = "zosimus/historia-nova"
 const SHAPUR = "shapur-i/res-gestae"
 const ZONARAS = "john-zonaras/epitome-historiarum"
+const ORACLES = "anonymous/oracula-sibyllina"
 
 const at = (work: string, ...locators: string[]) =>
   locators.map((locator) => ({ work, locator }))
@@ -33,6 +34,8 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       ...at(ZOSIMUS, "1.18", "1.19", "3.32"),
       // 12.17: thrown by his horse in battle with the Persians; 12.18: Philip's plot.
       ...at(ZONARAS, "12.17", "12.18"),
+      // "Betrayed by his comrade, he shall fall in the ranks."
+      ...at(ORACLES, "13.13"),
       // Shapur's own account: Gordian killed in battle at Misiche.
       ...at(SHAPUR, "6", "7", "8"),
     ],
@@ -42,7 +45,6 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       "Orosius 7.19.5",
       "Ammianus 23.5.7, 23.5.17",
       "Festus 22",
-      "Sibylline Oracles 13.13–20",
       "Cedrenus I 450–451",
     ],
   },

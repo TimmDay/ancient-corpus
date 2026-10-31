@@ -19,6 +19,7 @@ import type {
   Passage,
 } from "../corpus.ts"
 import {
+  blockHtml,
   inlineHtml,
   noteRefHtml,
   onlyArchive,
@@ -64,6 +65,47 @@ export function importToposText(source: EditionSource): ImportedEdition {
     })
   }
   return { divisions, passages, editorial }
+}
+
+/**
+ * A poem cited by line (Terry's Sibylline Oracles): ToposText breaks each book
+ * into paragraphs of 20 verses (`13.20`), one verse per <br>, with the
+ * translator's own line number before every tenth ("30 There shall…"). His
+ * numbers are not the original's, so each book arrives as one Passage at its
+ * first line; split Corrections, aligned with the original's Passages, start
+ * the others. The preface (`p.1`…) is prose.
+ */
+export function importToposTextLines(source: EditionSource): ImportedEdition {
+  const $ = readIntakeHtml(onlyArchive(source))
+  const books = new Map<string, string[]>()
+  for (const p of $("p[id^='urn:cts:']").toArray()) {
+    const at = (p.attribs.id ?? "").split(":").at(-1) ?? ""
+    $(p).children("b").first().remove()
+    const book = at.startsWith("p.") ? "praef" : (at.split(".")[0] ?? "")
+    const verses = blockHtml($, $(p).contents())
+      .split(/<br>/)
+      .map((line) => line.replace(/^\s*\d+\s+/, "").trim())
+      // The book's title, "BOOK XIII.", is the heading.
+      .filter((line) => line && !/^BOOK [IVXL]+\.?$/i.test(line))
+    books.set(book, [...(books.get(book) ?? []), ...verses])
+  }
+  const divisions: Division[] = []
+  const passages: Omit<Passage, "flags">[] = []
+  for (const [book, verses] of books) {
+    const prose = book === "praef"
+    const label = prose ? "Preface" : `Book ${book}`
+    divisions.push({ locator: book, label })
+    const html = verses.join(prose ? " " : "<br>")
+    passages.push({
+      locator: `${book}.1`,
+      headings: [{ kind: "division", html: label, editorial: false }],
+      division: book,
+      blocks: [html],
+      notes: [],
+      text: plainText(html.replace(/<br>/g, " ")),
+    })
+  }
+  return { divisions, passages, editorial: [] }
 }
 
 /**

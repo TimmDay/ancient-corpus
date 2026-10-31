@@ -13,7 +13,7 @@ One published form of a Work, in one language: the original text or a particular
 _Avoid_: Translation, version, copy
 
 **Locator**:
-The position inside a Work, written the way that Work is conventionally cited (e.g. `9.9`, `Augustus 3`, a range `9.9–10`). Each Passage has exactly one canonical Locator; every other spelling is a Locator alias. In a collection of Lives the Locator starts with the subject's name, without "Life of" (`Augustus 5`, `Aurelian 25.3`). Where a book starts its chapter numbers again, the second run is named in brackets after the chapter (`80.1(Alexander)`), and so is a second version of chapters already given (`60.32(epitome)`).
+The position inside a Work, written the way that Work is conventionally cited (e.g. `9.9`, `Augustus 3`, a range `9.9–10`). Each Passage has exactly one canonical Locator; every other spelling is a Locator alias. In a collection of Lives the Locator starts with the subject's name, without "Life of" (`Augustus 5`, `Aurelian 25.3`). Where a book starts its chapter numbers again, the second run is named in brackets after the chapter (`80.1(Alexander)`), and so is a second version of chapters already given (`60.32(epitome)`). A poem cited by line names each Passage by its first line (`13.13`), and a Locator naming any line lands on the Passage that holds it (`13.15`).
 _Avoid_: Citation (for this part alone), page, passage reference
 
 **Passage**:

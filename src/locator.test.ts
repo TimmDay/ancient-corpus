@@ -201,6 +201,52 @@ describe("resolveLocator", () => {
     expect(alternativesOf("9.9")).toEqual([])
   })
 
+  describe("in a Work numbered by lines", () => {
+    // Passages named by their first line, as the Sibylline Oracles are cited.
+    const oracles: LocatorIndex = {
+      ...indexOf(["13", "13.1", "13.13", "13.21", "14", "14.1"]),
+      lines: true,
+    }
+
+    it("lands a line inside a Passage on the Passage that holds it", () => {
+      expect(landsOn("13.15", oracles)).toEqual({
+        start: "13.13",
+        end: undefined,
+        exact: false,
+      })
+      expect(landsOn("13.13", oracles)).toEqual({
+        start: "13.13",
+        end: undefined,
+        exact: true,
+      })
+    })
+
+    it("ends a range on the Passage holding its last line", () => {
+      expect(landsOn("13.13-20", oracles)).toEqual({
+        start: "13.13",
+        end: undefined,
+        exact: true,
+      })
+      expect(landsOn("13.15-25", oracles)).toEqual({
+        start: "13.13",
+        end: "13.21",
+        exact: false,
+      })
+    })
+
+    it("stays within the book a line is in", () => {
+      expect(landsOn("14.0", oracles)).toEqual({
+        start: "14",
+        end: undefined,
+        exact: false,
+      })
+    })
+
+    it("leaves a Work cited by section falling back to its book", () => {
+      expect(landsOn("9.12", eutropius)).toMatchObject({ start: "9" })
+    })
+  })
+
   it("reports Locators that match nothing", () => {
     expect(landsOn("Thirty Tyrants 12", suetonius)).toBe("not-found")
     expect(landsOn("", suetonius)).toBe("not-found")

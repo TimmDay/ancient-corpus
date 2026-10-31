@@ -126,6 +126,34 @@ describe("Corrections", () => {
     ])
   })
 
+  it("matches quoted text across a line break in verse, and leaves no break dangling", () => {
+    const text = correctEdition(
+      edition(
+        passage("13.1", "And fights, homicides,<br>And battles did<br>Arise."),
+      ),
+      [
+        {
+          op: "split",
+          locator: "13.1",
+          at: "homicides, And battles",
+          newLocator: "13.13",
+        },
+      ],
+    )
+    expect(text.passages.map((p) => p.blocks)).toEqual([
+      ["And fights,"],
+      ["homicides,<br>And battles did<br>Arise."],
+    ])
+    const between = correctEdition(
+      edition(passage("13.1", "One verse.<br>Another verse.")),
+      [{ op: "split", locator: "13.1", at: "Another", newLocator: "13.2" }],
+    )
+    expect(between.passages.map((p) => p.blocks)).toEqual([
+      ["One verse."],
+      ["Another verse."],
+    ])
+  })
+
   it("splits between paragraphs and ignores note numbers when matching", () => {
     const imported = edition(
       passage(
@@ -172,6 +200,27 @@ describe("Corrections", () => {
     expect(text.editorial[0]).toMatchObject({
       title: "Translator’s essay on Augustus",
     })
+  })
+
+  it("removes a Passage moved whole into Editorial matter", () => {
+    const text = correctEdition(
+      edition(
+        passage("8.217", "Ἱδρώσει δὲ χθών"),
+        passage("8.222", "Iudicii signum tellus sudore madescet."),
+      ),
+      [
+        {
+          op: "toEditorial",
+          locator: "8.222",
+          at: "Iudicii signum",
+          title: "Augustine’s Latin version",
+        },
+      ],
+    )
+    expect(text.passages.map((p) => p.locator)).toEqual(["8.217"])
+    expect(text.editorial[0]?.html).toBe(
+      "<p>Iudicii signum tellus sudore madescet.</p>",
+    )
   })
 
   it("merges, replaces and renumbers", () => {

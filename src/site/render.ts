@@ -337,9 +337,12 @@ export function locatorIndex(
     ]),
   )
   const choices = choicesFor(work, text, targets)
-  return Object.keys(choices).length
-    ? { targets, aliases, choices }
-    : { targets, aliases }
+  return {
+    targets,
+    aliases,
+    ...(Object.keys(choices).length ? { choices } : {}),
+    ...(work.numberedLines ? { lines: true as const } : {}),
+  }
 }
 
 /**

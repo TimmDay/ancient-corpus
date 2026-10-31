@@ -17,9 +17,9 @@ import { importDio } from "./importers/dio.ts"
 import { importEutropius } from "./importers/eutropius.ts"
 import { importLacusCurtius } from "./importers/lacuscurtius.ts"
 import { importParthianSources } from "./importers/parthiansources.ts"
-import { importPerseus } from "./importers/perseus.ts"
+import { importPerseus, importPerseusLines } from "./importers/perseus.ts"
 import { importTertullian } from "./importers/tertullian.ts"
-import { importToposText } from "./importers/topostext.ts"
+import { importToposText, importToposTextLines } from "./importers/topostext.ts"
 import { importTranslation } from "./importers/translation.ts"
 import { importSuetonius } from "./importers/suetonius.ts"
 import { nameNotes } from "./note-ids.ts"
@@ -35,9 +35,11 @@ const IMPORTERS: Record<
   parthiansources: (source, _work, edition) =>
     importParthianSources(source, edition),
   perseus: importPerseus,
+  "perseus-lines": importPerseusLines,
   suetonius: importSuetonius,
   tertullian: (source, work) => importTertullian(source, work.title),
   topostext: importToposText,
+  "topostext-lines": importToposTextLines,
   translation: (_source, work, edition) => importTranslation(work, edition),
 }
 
@@ -59,7 +61,9 @@ export function importUncorrected(work: Work, edition: Edition): EditionText {
     throw new Error(
       `${work.slug}/${edition.slug}: no importer called "${edition.importer}"`,
     )
-  return correctEdition(importer(edition.source, work, edition), [])
+  return correctEdition(importer(edition.source, work, edition), [], {
+    lines: work.numberedLines,
+  })
 }
 
 export function importEdition(work: Work, edition: Edition): EditionText {
@@ -72,6 +76,7 @@ export function importEdition(work: Work, edition: Edition): EditionText {
     correctEdition(
       importer(edition.source, work, edition),
       readCorrections(work, edition),
+      { lines: work.numberedLines },
     ),
     edition.slug,
   )
