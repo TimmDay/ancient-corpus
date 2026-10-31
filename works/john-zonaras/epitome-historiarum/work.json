@@ -10,5 +10,27 @@
   "locatorFormat": "book.chapter, e.g. 12.17",
   "slugAliases": [],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "dindorf",
+      "preferred": true,
+      "language": "grc",
+      "title": "Ioannis Zonarae Epitome Historiarum",
+      "editor": "Ludwig Dindorf",
+      "publicationYear": 1868,
+      "source": {
+        "name": "Open Greek and Latin, First1KGreek (University of Leipzig)",
+        "url": "https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg3135/tlg001/tlg3135.tlg001.1st1K-grc1.xml",
+        "archives": [
+          {
+            "file": "Zonaras-Dindorf-First1KGreek.zip",
+            "sha256": "b8491b94a8b80b46e03f8f1b236f4752188aeee8631c25ce812d16b48daaf318"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1868–75) public domain; the digital edition is © University of Leipzig, available under CC BY-SA 4.0."
+      },
+      "importer": "perseus",
+      "pagePerDivision": true
+    }
+  ]
 }
