@@ -16,6 +16,7 @@ const SUETONIUS = "suetonius/de-vita-caesarum"
 const DIO = "cassius-dio/roman-history"
 const HA = "anonymous/historia-augusta"
 const ZOSIMUS = "zosimus/historia-nova"
+const SHAPUR = "shapur-i/res-gestae"
 const ZONARAS = "john-zonaras/epitome-historiarum"
 const ORACLES = "anonymous/oracula-sibyllina"
 const CEDRENUS = "george-cedrenus/compendium-historiarum"
@@ -36,6 +37,8 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       ...at(ZONARAS, "12.17", "12.18"),
       // "Betrayed by his comrade, he shall fall in the ranks."
       ...at(ORACLES, "13.13"),
+      // Shapur's own account: Gordian killed in battle at Misiche.
+      ...at(SHAPUR, "6", "7", "8"),
       // "Falling with his horse in battle and breaking his thigh, he died."
       ...at(CEDRENUS, "1.451"),
     ],
@@ -44,7 +47,6 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       "Epitome de Caesaribus 27.2",
       "Orosius 7.19.5",
       "Ammianus 23.5.7, 23.5.17",
-      "Shapur I, Res Gestae 3–4",
       "Festus 22",
     ],
   },
@@ -62,6 +64,7 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       ),
       ...at(ZOSIMUS, "1.36"),
       ...at(ZONARAS, "12.23"),
+      ...at(SHAPUR, "18", "22"),
     ],
   },
   {
