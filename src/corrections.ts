@@ -20,7 +20,7 @@ export type Correction =
   | { op: "merge"; locator: string; at?: string }
   /** Moves the quoted text and everything after it into Editorial matter; quoting its start moves the whole Passage. */
   | { op: "toEditorial"; locator: string; at: string; title: string }
-  /** Swaps quoted HTML for new; a blank line in `with` starts a new paragraph (text the transcription dropped). */
+  /** Swaps quoted HTML for new; a blank line in `with` starts a new paragraph (text the transcription dropped), and an empty `with` for a whole paragraph removes it. */
   | { op: "replace"; locator: string; find: string; with: string }
   /** `at` picks one of several Passages that share a Locator, by text it contains. */
   | { op: "renumber"; locator: string; newLocator: string; at?: string }
@@ -121,9 +121,12 @@ export function correctEdition(
         }
         passages[index] = withBlocks(
           passage,
-          passage.blocks.flatMap((b) =>
-            b.replace(correction.find, correction.with).split(/\n\s*\n/),
-          ),
+          passage.blocks
+            .flatMap((b) =>
+              b.replace(correction.find, correction.with).split(/\n\s*\n/),
+            )
+            // Replacing a whole paragraph with nothing removes it.
+            .filter((b) => b.trim()),
         )
         break
       }

@@ -18,6 +18,7 @@ const HA = "anonymous/historia-augusta"
 const ZOSIMUS = "zosimus/historia-nova"
 const ZONARAS = "john-zonaras/epitome-historiarum"
 const ORACLES = "anonymous/oracula-sibyllina"
+const CEDRENUS = "george-cedrenus/compendium-historiarum"
 
 const at = (work: string, ...locators: string[]) =>
   locators.map((locator) => ({ work, locator }))
@@ -34,6 +35,8 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       ...at(ZONARAS, "12.17", "12.18"),
       // "Betrayed by his comrade, he shall fall in the ranks."
       ...at(ORACLES, "13.13"),
+      // "Falling with his horse in battle and breaking his thigh, he died."
+      ...at(CEDRENUS, "1.451"),
     ],
     notYetInCorpus: [
       "Aurelius Victor 27.7–8",
