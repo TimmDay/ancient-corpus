@@ -16,6 +16,7 @@ const SUETONIUS = "suetonius/de-vita-caesarum"
 const DIO = "cassius-dio/roman-history"
 const HA = "anonymous/historia-augusta"
 const ZOSIMUS = "zosimus/historia-nova"
+const SHAPUR = "shapur-i/res-gestae"
 const ZONARAS = "john-zonaras/epitome-historiarum"
 
 const at = (work: string, ...locators: string[]) =>
@@ -32,13 +33,14 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       ...at(ZOSIMUS, "1.18", "1.19", "3.32"),
       // 12.17: thrown by his horse in battle with the Persians; 12.18: Philip's plot.
       ...at(ZONARAS, "12.17", "12.18"),
+      // Shapur's own account: Gordian killed in battle at Misiche.
+      ...at(SHAPUR, "6", "7", "8"),
     ],
     notYetInCorpus: [
       "Aurelius Victor 27.7–8",
       "Epitome de Caesaribus 27.2",
       "Orosius 7.19.5",
       "Ammianus 23.5.7, 23.5.17",
-      "Shapur I, Res Gestae 3–4",
       "Festus 22",
       "Sibylline Oracles 13.13–20",
       "Cedrenus I 450–451",
@@ -58,6 +60,7 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       ),
       ...at(ZOSIMUS, "1.36"),
       ...at(ZONARAS, "12.23"),
+      ...at(SHAPUR, "18", "22"),
     ],
   },
   {

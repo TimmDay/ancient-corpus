@@ -44,3 +44,8 @@ tmp/
 .idea/
 .vscode/
 
+
+# Editions not published yet (Edition.unpublished): their text stays on this
+# machine until permission is given. Rebuild it with pnpm ingest.
+/works/shapur-i/res-gestae/nabel/passages.jsonl
+/works/shapur-i/res-gestae/nabel/edition.json

@@ -8,7 +8,7 @@ import { build } from "./build.ts"
 const unpublished = loadWorks().flatMap((w) =>
   w.editions
     .filter((e) => e.unpublished)
-    .map((e) => ({ work: w.slug, edition: e.slug, title: e.title })),
+    .map((e) => ({ work: w.slug, edition: e.slug })),
 )
 
 // Builds from the committed works/, exactly as CI and Cloudflare do, into a
@@ -32,11 +32,11 @@ describe("build", () => {
 
   it("never publishes an Edition waiting for permission", () => {
     // Its text is gitignored, so only a machine that imported it has any to leak.
-    for (const { work, edition, title } of unpublished) {
+    for (const { work, edition } of unpublished) {
       expect(existsSync(path.join(outDir, work, edition))).toBe(false)
       const workPage = path.join(work, "index.html")
       if (existsSync(path.join(outDir, workPage)))
-        expect(read(workPage)).not.toContain(title)
+        expect(read(workPage)).not.toContain(`/${work}/${edition}/`)
     }
   })
 

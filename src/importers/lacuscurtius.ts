@@ -291,7 +291,9 @@ function clean(html: string): string {
 }
 
 /** Reads every page from one unchanged intake zip, refusing a zip whose checksum moved. */
-function readIntakePages(intake: IntakeArchive): Map<string, CheerioAPI> {
+export function readIntakePages(
+  intake: IntakeArchive,
+): Map<string, CheerioAPI> {
   const archive = readFileSync(path.join(INTAKE_DIR, intake.file))
   const sha256 = createHash("sha256").update(archive).digest("hex")
   if (sha256 !== intake.sha256) {
