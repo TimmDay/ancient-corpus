@@ -25,6 +25,7 @@ const passage = (
   url: `/anonymous/historia-augusta/#${encodeURIComponent(locator)}`,
   draft: false,
   text,
+  annotations: "",
 })
 
 const passages = [

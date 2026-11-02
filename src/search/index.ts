@@ -17,13 +17,19 @@ import {
   type Edition,
   type Work,
 } from "../corpus.ts"
+import {
+  annotationText,
+  annotationsByLocator,
+  readAnnotations,
+} from "../annotations.ts"
+import { locatorIndex } from "../site/render.ts"
 import { MODEL, type Embed } from "./ollama.ts"
 
 export const INDEX_FILE = path.join(REPO_ROOT, "indexes", "corpus.sqlite")
 export const CACHE_FILE = path.join(REPO_ROOT, "indexes", "embeddings.sqlite")
 
 /** Bump when the tables change, so an old index is rebuilt rather than misread. */
-const SCHEMA = 2
+const SCHEMA = 3
 
 /** Words in one embedded piece of a long Passage; pieces overlap so no sentence is only ever cut in half. */
 const PIECE_WORDS = 200
@@ -42,6 +48,8 @@ export type IndexedPassage = {
   /** The Edition still has unresolved Flags and is not published. */
   draft: boolean
   text: string
+  /** The Passage's Annotations as plain text, indexed beside it but never part of it. */
+  annotations: string
 }
 
 export function openIndex(file = INDEX_FILE): DatabaseSync {
@@ -60,10 +68,11 @@ export function openIndex(file = INDEX_FILE): DatabaseSync {
   db.exec(`
     create table if not exists passages (
       id integer primary key, work text, author text, title text, edition text,
-      language text, locator text, division text, url text, draft integer, text text
+      language text, locator text, division text, url text, draft integer, text text,
+      annotations text
     );
     create virtual table if not exists passages_fts using fts5(
-      place, text, tokenize = 'unicode61 remove_diacritics 2'
+      place, text, annotations, tokenize = 'unicode61 remove_diacritics 2'
     );
     create table if not exists pieces (passage integer, vector blob);
     create table if not exists meta (key text primary key, value text);
@@ -79,6 +88,10 @@ export function corpusPassages(works = loadWorks()): IndexedPassage[] {
       .flatMap((edition) => {
         const text = readEditionText(work, edition)
         const draft = unresolvedFlags(text).length > 0
+        const annotations = annotationsByLocator(
+          readAnnotations(work),
+          locatorIndex(work, text),
+        )
         return text.passages.map((p) => ({
           work: work.slug,
           author: work.author,
@@ -90,6 +103,9 @@ export function corpusPassages(works = loadWorks()): IndexedPassage[] {
           url: readerUrl(work, edition, p.locator),
           draft,
           text: p.text,
+          annotations: (annotations.get(p.locator) ?? [])
+            .map(annotationText)
+            .join(" "),
         }))
       }),
   )
@@ -142,10 +158,10 @@ export async function buildIndex(
     "delete from passages; delete from pieces; delete from meta; delete from passages_fts;",
   )
   const insert = db.prepare(
-    "insert into passages (work, author, title, edition, language, locator, division, url, draft, text) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+    "insert into passages (work, author, title, edition, language, locator, division, url, draft, text, annotations) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
   )
   const insertFts = db.prepare(
-    "insert into passages_fts (rowid, place, text) values (?, ?, ?)",
+    "insert into passages_fts (rowid, place, text, annotations) values (?, ?, ?, ?)",
   )
   const ids: number[] = []
   db.exec("begin")
@@ -161,16 +177,18 @@ export async function buildIndex(
       p.url,
       p.draft ? 1 : 0,
       p.text,
+      p.annotations,
     )
-    insertFts.run(lastInsertRowid, placeOf(p), p.text)
+    insertFts.run(lastInsertRowid, placeOf(p), p.text, p.annotations)
     ids.push(Number(lastInsertRowid))
   }
   db.exec("commit")
   if (!embed) return { passages: passages.length, pieces: 0, embedded: 0 }
 
   // Embed what the cache lacks, a batch at a time.
+  // An Annotation is one more piece of its Passage: close to a question, it brings the Passage.
   const pieces = passages.flatMap((p, i) =>
-    piecesOf(p.text)
+    [...piecesOf(p.text), ...(p.annotations ? [p.annotations] : [])]
       .map((piece) => `${placeOf(p)}: ${piece}`)
       .map((text) => ({
         passage: ids[i] ?? 0,

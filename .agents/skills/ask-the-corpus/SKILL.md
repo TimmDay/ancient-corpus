@@ -20,6 +20,8 @@ Each Passage's `text` is numbered Sentences, `[1] … [2] …`, and its `url` op
 3. **Answer with Findings.** A Finding is a kept Passage, or Sentences within it, as a link plus one line on why it is relevant. Link Sentences by adding `@N` or `@N-M` to its `url`, using its `[N]` numbers: `…/eutropius/breviarium/#9.2@5-6`. Group Findings by Work.
 4. **State what was searched.** Say how many candidates you dropped, and give the Coverage: the Works in the result's `coverage`. A Work missing from the Coverage is not in the corpus yet, so its silence says nothing about what it records. Pass on any `warning` from the result.
 
+A Passage may carry `annotations`: modern notes, not the source's words, often saying who a passage means when it does not name them (an oracle's "young Ares" is Gordian III). When a Finding rests on one, say so and cite its `sources`, or say it is "our unsupported amateur interpretation" when that is what `sources` says.
+
 Write a summary only when asked, citing only the Findings.
 
 If `ask` returns `"error": "The search index is empty…"`, run `pnpm index` (Ollama must be running for semantic search; see the README) and search again.

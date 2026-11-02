@@ -1,0 +1,32 @@
+[
+  {
+    "locator": "59.1-29",
+    "identifies": [
+      "Caligula"
+    ],
+    "note": "Dio calls the emperor by his own name, Gaius. \"Caligula\", \"little boot\", was a nickname from the soldiers he grew up among, and is the name later writers use.",
+    "sources": [
+      "Suetonius, *Caligula* 9 (in the corpus)"
+    ]
+  },
+  {
+    "locator": "78.1-24",
+    "identifies": [
+      "Caracalla"
+    ],
+    "note": "Dio calls Caracalla by his official name, Antoninus, and sometimes by a nickname, Tarautas. \"Caracalla\", from the long hooded cloak he wore and gave out, is the name later writers use. (Later in Book 79 \"Antoninus\" is Elagabalus, the \"False Antoninus\".)",
+    "sources": [
+      "*Historia Augusta*, *Caracalla* 9 and *Septimius Severus* 21 (in the corpus)"
+    ]
+  },
+  {
+    "locator": "79.1-10",
+    "identifies": [
+      "Caracalla"
+    ],
+    "note": "Until his death and its aftermath (to 79.10), Dio's \"Antoninus\" is Caracalla, also called Tarautas. From 79.11 the book is Macrinus's reign, and its \"Antoninus\" is Elagabalus, the \"False Antoninus\".",
+    "sources": [
+      "*Historia Augusta*, *Caracalla* 9 and *Septimius Severus* 21 (in the corpus)"
+    ]
+  }
+]

@@ -12,6 +12,12 @@ import {
   type Passage,
   type Work,
 } from "../corpus.ts"
+import {
+  UNSUPPORTED,
+  annotationsByLocator,
+  readAnnotations,
+  type Annotation,
+} from "../annotations.ts"
 import { resolveLocator, resolvedTargets } from "../locator.ts"
 import { periodOf } from "../period.ts"
 import { readerUrl } from "../search/index.ts"
@@ -34,27 +40,61 @@ export type Corpus = {
   /** The Works a slug, title, author or "author title" could mean, those with text first. */
   findWorks(written: string): Work[]
   text(work: Work, edition: Edition): EditionText | undefined
+  /** The Annotations on a Passage of an Edition, as the chat should cite them. */
+  annotations(work: Work, edition: Edition, locator: string): CitedAnnotation[]
+}
+
+export type CitedAnnotation = {
+  identifies: string[]
+  note: string
+  /** The sources it cites, or that it is our own unsupported reading. */
+  sources: string[] | typeof UNSUPPORTED
+}
+
+function cited(annotation: Annotation): CitedAnnotation {
+  return {
+    identifies: annotation.identifies,
+    note: annotation.note,
+    sources: annotation.sources?.length ? annotation.sources : UNSUPPORTED,
+  }
 }
 
 export function openCorpus(works = loadWorks()): Corpus {
   const texts = new Map<string, EditionText>()
+  const annotated = new Map<string, Map<string, Annotation[]>>()
+  const text = (work: Work, edition: Edition) => {
+    if (!hasEditionText(work, edition)) return undefined
+    const key = `${work.slug}/${edition.slug}`
+    const cached = texts.get(key)
+    if (cached) return cached
+    const read = readEditionText(work, edition)
+    texts.set(key, read)
+    return read
+  }
   return {
     works,
+    text,
+    annotations(work, edition, locator) {
+      const key = `${work.slug}/${edition.slug}`
+      let byLocator = annotated.get(key)
+      if (!byLocator) {
+        const read = text(work, edition)
+        byLocator = read
+          ? annotationsByLocator(
+              readAnnotations(work),
+              locatorIndex(work, read),
+            )
+          : new Map()
+        annotated.set(key, byLocator)
+      }
+      return (byLocator.get(locator) ?? []).map(cited)
+    },
     findWorks(written) {
       const found = findWorks(works, written)
       const withText = found.filter((w) =>
         w.editions.some((e) => hasEditionText(w, e)),
       )
       return withText.length ? withText : found
-    },
-    text(work, edition) {
-      if (!hasEditionText(work, edition)) return undefined
-      const key = `${work.slug}/${edition.slug}`
-      const cached = texts.get(key)
-      if (cached) return cached
-      const text = readEditionText(work, edition)
-      texts.set(key, text)
-      return text
     },
   }
 }
@@ -201,6 +241,7 @@ export function readPassage(
       notes: (byLocator.get(locator) ?? []).flatMap((p) =>
         p.notes.map((n) => ({ id: n.id, text: plain(n.html) })),
       ),
+      ...annotationsOf(corpus.annotations(work, edition, locator)),
     })),
     ...(locators.length > shown.length
       ? {
@@ -251,6 +292,7 @@ export async function searchCorpus(
           ...(c.draft ? { draft: true } : {}),
           matchedBy: c.matchedBy,
           text: numberedSentences(passageText(text, c.locator), c.language),
+          ...annotationsOf(corpus.annotations(work, edition, c.locator)),
           otherEditions: editionsWithText(corpus, work)
             .filter((e) => e !== edition)
             .map((e) => ({
@@ -289,6 +331,11 @@ export async function searchCorpus(
     ...(warnings.length ? { warning: warnings.join(" ") } : {}),
     candidates,
   }
+}
+
+/** Annotations only where there are some, so most results stay short. */
+function annotationsOf(annotations: CitedAnnotation[]) {
+  return annotations.length ? { annotations } : {}
 }
 
 function plain(html: string): string {

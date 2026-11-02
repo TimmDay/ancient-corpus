@@ -603,6 +603,41 @@ h2.division.hit {
   font-style: italic;
 }
 
+/* Annotations: modern notes, kept visibly apart from the source's text. */
+.annotations {
+  margin: -0.25rem 0 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.annotation {
+  border-left: 2px solid var(--accent);
+  padding: 0.1rem 0 0.1rem 0.75rem;
+  margin: 0.35rem 0;
+  color: var(--muted);
+}
+
+.annotation summary {
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.annotation-label {
+  font-size: 0.75em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-right: 0.35rem;
+}
+
+.annotation p {
+  margin: 0.4rem 0;
+}
+
+.annotation-sources {
+  font-size: 0.9em;
+}
+
 /* Notices */
 
 .draft-banner {
