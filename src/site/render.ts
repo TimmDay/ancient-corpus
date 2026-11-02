@@ -8,6 +8,12 @@ import type {
   Passage,
   Work,
 } from "../corpus.ts"
+import {
+  UNSUPPORTED,
+  annotationsByLocator,
+  readAnnotations,
+  type Annotation,
+} from "../annotations.ts"
 import { escapeHtml } from "../importers/gutenberg.ts"
 import {
   aliasKey,
@@ -151,6 +157,7 @@ export function workPages(
         }
       : undefined,
   )
+  const annotations = annotationsByLocator(readAnnotations(work), index)
   const author = work.author === "Unknown" ? "Anonymous" : work.author
   const otherTitles = work.otherTitles.length
     ? `<p class="other-titles">Also known as ${work.otherTitles.map((t) => `<i>${escapeHtml(t)}</i>`).join(", ")}</p>`
@@ -217,7 +224,7 @@ ${content}
 
   const article = (passages: Passage[]) =>
     `<article class="text" lang="${attr(edition.language)}" aria-label="Text">
-${passages.map((p) => passageHtml(p, ids.get(p) ?? "", text.divisions)).join("\n")}
+${passages.map((p) => passageHtml(p, ids.get(p) ?? "", text.divisions, p.resumes ? [] : (annotations.get(p.locator) ?? []))).join("\n")}
 </article>`
 
   if (!edition.pagePerDivision) {
@@ -439,6 +446,7 @@ function passageHtml(
   passage: Passage,
   id: string,
   divisions: Division[],
+  annotations: Annotation[] = [],
 ): string {
   // The bracketed name of a restarted run is in the heading above, so the margin shows just the number.
   const label =
@@ -459,7 +467,24 @@ function passageHtml(
 <a class="loc" href="#${attr(id)}" title="Copy a link to ${attr(passage.locator)}" aria-label="Copy a link to ${attr(passage.locator)}">${escapeHtml(label)}</a>
 ${passage.blocks.map((b) => `<p>${b}</p>`).join("\n")}
 ${notes}
+${annotations.length ? annotationsHtml(passage, annotations) : ""}
 </section>`
+}
+
+/** A Passage's Annotations: modern notes, collapsed, after the source's own text and notes. */
+function annotationsHtml(passage: Passage, annotations: Annotation[]): string {
+  const items = annotations.map(
+    (a) => `<details class="annotation">
+<summary><span class="annotation-label">Annotation</span> ${escapeHtml(a.identifies.join(", "))}</summary>
+<p>${escapeHtml(a.note).replace(/\*([^*]+)\*/g, "<i>$1</i>")}</p>
+${
+  a.sources?.length
+    ? `<p class="annotation-sources">Sources: ${a.sources.map((s) => escapeHtml(s).replace(/\*([^*]+)\*/g, "<i>$1</i>")).join("; ")}</p>`
+    : `<p class="annotation-sources">${UNSUPPORTED}.</p>`
+}
+</details>`,
+  )
+  return `<aside class="annotations" lang="en" aria-label="Annotations to ${attr(passage.locator)}">${items.join("\n")}</aside>`
 }
 
 function headingHtml(

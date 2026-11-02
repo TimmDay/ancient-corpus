@@ -40,6 +40,14 @@ describe("build", () => {
     }
   })
 
+  it("shows a Passage's Annotations collapsed, after its text", () => {
+    const page = read("anonymous/oracula-sibyllina/13/index.html")
+    const passage = page.slice(page.indexOf('id="13.13"'))
+    expect(passage.slice(0, passage.indexOf("</section>"))).toMatch(
+      /<\/p>\s*<aside class="annotations"[^>]*>\s*<details class="annotation">\s*<summary><span class="annotation-label">Annotation<\/span> Gordian III<\/summary>/,
+    )
+  })
+
   it("gives every Passage an anchor and the page its Locator index", () => {
     const page = read("eutropius/breviarium/index.html")
     expect(page).toContain('<section class="passage" id="9.9"')

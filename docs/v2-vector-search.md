@@ -17,6 +17,7 @@ Ask a question such as "what is all the information we have about the death of G
 - **A link can ask for a language.** Without one it lands in the preferred Edition, normally the original language; asking for a language the Work has no Edition in lands there too. Apps that want English ask for it.
 - **Sentences end where the Edition's punctuation says**, with a per-language list of abbreviations ("C.", "cos."). Numbering runs on through the parts of a Passage printed in parts. A wrong split is fixed by a Correction.
 - **Every Work records its Period covered**, with the years of each division where they are known, so a search can name relevant Works it could not search, and later narrow by date. Narrowing by date never drops a Work or division with no recorded years.
+- **Annotations bridge what a source does not say in words a question uses.** A modern note on a Passage or range, in `works/<author>/<title>/annotations.json`, says who or what it means (the Sibylline Oracle's "young Ares" is Gordian III; Dio's "Gaius" is Caligula). It is indexed beside the Passage (its own full-text column and its own embedded piece), never inside its text, and results carry it with its sources so the chat can say a Finding rests on it. Every Annotation cites a source or is marked as our unsupported amateur interpretation. On the reader page it is a collapsed aside.
 - **Everything runs offline** once set up: BGE-M3 through Ollama, the SQLite index and the search. Only the chat model may need a connection, unless it is a local one.
 
 ## Build order

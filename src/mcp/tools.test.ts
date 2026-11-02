@@ -100,6 +100,17 @@ describe("readPassage", () => {
     expect(found.more).toMatch(/^\d+ more Passages, from 1\.21 to 1\.\d+/)
   })
 
+  it("carries a Passage's Annotations, with their sources", () => {
+    const found = read({ work: "Oracula Sibyllina", locator: "13.13" })
+    expect(found.passages[0]?.annotations?.[0]).toMatchObject({
+      identifies: ["Gordian III"],
+      sources: [expect.stringMatching(/^D\. S\. Potter/)],
+    })
+    expect(
+      read({ work: "Oracula Sibyllina", locator: "13.1" }).passages[0],
+    ).not.toHaveProperty("annotations")
+  })
+
   it("says what went wrong", () => {
     expect(
       readPassage(corpus, SITE, { work: "Livy", locator: "1" }),

@@ -40,6 +40,10 @@ _Avoid_: Date, era, timeframe
 Content of an Edition that is not the Work's own text (a translator's introduction, a commentary, a vocabulary). It has no Locator, so no link lands on it.
 _Avoid_: Front matter, apparatus, extras
 
+**Annotation**:
+A modern note on a Passage or range of a Work, ours rather than the source's: most often it says who or what a Passage means when it does not name them (the Sibylline Oracle's "young Ares" is Gordian III). Every Annotation cites its sources or is marked as our unsupported amateur interpretation. It belongs to the Work, so it shows beside the Passage in every Edition, and search finds the Passage through it, but it is never part of the Passage's text.
+_Avoid_: Comment, gloss, commentary, note (a Note is the Edition's own footnote)
+
 **Flag**:
 A suspicion, raised when an Edition is imported, that a Passage does not match the printed source (it swallowed its neighbour, or ran on into Editorial matter). It is settled by checking the source, never by choosing a Locator. An Edition with unresolved Flags is not published.
 _Avoid_: Warning, error, issue

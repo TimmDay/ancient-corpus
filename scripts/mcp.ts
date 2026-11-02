@@ -22,7 +22,8 @@ To answer a question from the sources:
 1. Call search with the question. It returns a wide list of candidate Passages, on purpose: read every one and keep only those that bear on the question.
 2. Answer with a list of Findings. A Finding is a Passage, or Sentences within it, with one line on why it is relevant. Link each to its url; to point at Sentences, add @N or @N-M to the url (url#9.2@3-4), using the [N] numbers in its text.
 3. Say how many candidates you dropped, and state the Coverage: the Works searched. A Work missing from the Coverage is not in the corpus yet, so its silence means nothing.
-4. Write a summary only when asked, and cite only the Findings in it.
+4. A Passage may carry annotations: modern notes, not the source's words, often saying who a passage means when it does not name them (an oracle's "young Ares" is Gordian III). When a Finding rests on one, say so and cite its sources, or say it is "our unsupported amateur interpretation" where that is its source.
+5. Write a summary only when asked, and cite only the Findings in it.
 
 Use read_passage for the Passages around a Finding, or another Edition of it, and list_works to see what the corpus holds.`
 
