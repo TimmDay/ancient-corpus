@@ -32,6 +32,10 @@ _Avoid_: Hit, match, result (for this), chunk
 The Works that have an Edition in the corpus, and so can be searched. An answer states its Coverage, so a Work not yet in the corpus is not mistaken for silence in the sources.
 _Avoid_: Scope, index (for this)
 
+**Catalogue**:
+The list of ancient sources for the coin cabinet's period (Creation to 457), each with where it stands in the corpus: in it with English, in it in the original only, listed with no text yet, or not here. It includes sources the corpus does not have, so a gap is visible.
+_Avoid_: Inventory, bibliography, source list
+
 **Period covered**:
 The span of years whose events a Work narrates, as distinct from when it was written; each of its divisions can have its own (Dio's Book 79 covers 217 to 218).
 _Avoid_: Date, era, timeframe

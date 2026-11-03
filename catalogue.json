@@ -1,0 +1,878 @@
+{
+  "checkedAgainstCatalogues": "not yet",
+  "sections": [
+    {
+      "heading": "The Hebrew Bible and Jewish history",
+      "entries": [
+        {
+          "author": "Hebrew Bible",
+          "title": "Genesis to Kings, Chronicles, Ezra, Nehemiah",
+          "language": "hbo",
+          "covers": "Creation to c. 430 BC",
+          "freeEnglish": "Jewish Publication Society (1917); King James Version (1611)"
+        },
+        {
+          "author": "Anonymous",
+          "title": "1 Maccabees",
+          "language": "grc",
+          "written": "c. 100 BC",
+          "covers": "175 to 134 BC",
+          "freeEnglish": "King James Version Apocrypha (1611)",
+          "note": "Written in Hebrew; survives in Greek"
+        },
+        {
+          "author": "Anonymous",
+          "title": "2 Maccabees",
+          "language": "grc",
+          "written": "2nd century BC",
+          "covers": "c. 180 to 161 BC",
+          "freeEnglish": "King James Version Apocrypha (1611)"
+        },
+        {
+          "author": "Philo of Alexandria",
+          "title": "Against Flaccus; Embassy to Gaius",
+          "language": "grc",
+          "written": "c. 40",
+          "covers": "38 to 41",
+          "freeEnglish": "C. D. Yonge (1854–55)"
+        },
+        {
+          "author": "Flavius Josephus",
+          "title": "Jewish War",
+          "language": "grc",
+          "written": "c. 75 to 79",
+          "covers": "c. 175 BC to 73",
+          "freeEnglish": "William Whiston (1737)"
+        },
+        {
+          "author": "Flavius Josephus",
+          "title": "Jewish Antiquities",
+          "language": "grc",
+          "written": "93 to 94",
+          "covers": "Creation to 66",
+          "freeEnglish": "William Whiston (1737)"
+        },
+        {
+          "author": "Flavius Josephus",
+          "title": "Life; Against Apion",
+          "language": "grc",
+          "written": "c. 94 to 100",
+          "freeEnglish": "William Whiston (1737)"
+        },
+        {
+          "work": "anonymous/oracula-sibyllina",
+          "written": "2nd century BC to 3rd century",
+          "covers": "Creation to the 3rd century, as prophecy"
+        }
+      ]
+    },
+    {
+      "heading": "The Near East, Persia and the Greeks",
+      "entries": [
+        {
+          "author": "Darius I",
+          "title": "Behistun inscription",
+          "language": "peo",
+          "written": "c. 520 BC",
+          "covers": "522 to 519 BC",
+          "freeEnglish": "L. W. King and R. C. Thompson (1907)",
+          "note": "Also in Elamite and Akkadian"
+        },
+        {
+          "author": "Cyrus II",
+          "title": "Cyrus Cylinder",
+          "language": "akk",
+          "written": "539 BC",
+          "covers": "539 BC"
+        },
+        {
+          "author": "Herodotus",
+          "title": "Histories",
+          "language": "grc",
+          "written": "c. 430 BC",
+          "covers": "c. 550 to 479 BC, with earlier background",
+          "freeEnglish": "G. C. Macaulay (1890)"
+        },
+        {
+          "author": "Thucydides",
+          "title": "History of the Peloponnesian War",
+          "language": "grc",
+          "written": "after 404 BC",
+          "covers": "431 to 411 BC",
+          "freeEnglish": "Richard Crawley (1874)"
+        },
+        {
+          "author": "Xenophon",
+          "title": "Hellenica",
+          "language": "grc",
+          "written": "4th century BC",
+          "covers": "411 to 362 BC",
+          "freeEnglish": "H. G. Dakyns (1890–97)"
+        },
+        {
+          "author": "Xenophon",
+          "title": "Anabasis",
+          "language": "grc",
+          "written": "4th century BC",
+          "covers": "401 to 399 BC",
+          "freeEnglish": "H. G. Dakyns (1890–97)"
+        },
+        {
+          "author": "Ctesias",
+          "title": "Persica (fragments)",
+          "language": "grc",
+          "written": "c. 390 BC",
+          "covers": "Assyria and Persia to 398 BC"
+        },
+        {
+          "author": "Berossus",
+          "title": "Babyloniaca (fragments)",
+          "language": "grc",
+          "written": "c. 280 BC",
+          "covers": "Creation to Alexander"
+        },
+        {
+          "author": "Manetho",
+          "title": "Aegyptiaca (fragments)",
+          "language": "grc",
+          "written": "3rd century BC",
+          "covers": "Egypt's kings to 343 BC"
+        }
+      ]
+    },
+    {
+      "heading": "Alexander and the Hellenistic kingdoms",
+      "entries": [
+        {
+          "author": "Diodorus Siculus",
+          "title": "Library of History",
+          "language": "grc",
+          "written": "c. 60 to 30 BC",
+          "covers": "Mythical times to 60 BC; books 1–5 and 11–20 survive whole",
+          "freeEnglish": "George Booth (1700)"
+        },
+        {
+          "author": "Arrian",
+          "title": "Anabasis of Alexander",
+          "language": "grc",
+          "written": "2nd century",
+          "covers": "336 to 323 BC",
+          "freeEnglish": "E. J. Chinnock (1884)"
+        },
+        {
+          "author": "Quintus Curtius Rufus",
+          "title": "Histories of Alexander the Great",
+          "language": "la",
+          "written": "1st century",
+          "covers": "333 to 323 BC; books 1–2 lost"
+        },
+        {
+          "author": "Justin",
+          "title": "Epitome of Pompeius Trogus",
+          "language": "la",
+          "written": "2nd to 4th century",
+          "covers": "Ninus to 20 BC",
+          "freeEnglish": "J. S. Watson (1853)"
+        },
+        {
+          "author": "Polyaenus",
+          "title": "Stratagems",
+          "language": "grc",
+          "written": "c. 163",
+          "freeEnglish": "R. Shepherd (1793)"
+        }
+      ]
+    },
+    {
+      "heading": "Rome: the kings and the Republic",
+      "entries": [
+        {
+          "author": "Polybius",
+          "title": "Histories",
+          "language": "grc",
+          "written": "2nd century BC",
+          "covers": "264 to 146 BC; books 1–5 survive whole",
+          "freeEnglish": "E. S. Shuckburgh (1889)"
+        },
+        {
+          "author": "Livy",
+          "title": "Ab Urbe Condita",
+          "language": "la",
+          "written": "c. 27 BC to 17",
+          "covers": "753 to 9 BC; books 1–10 and 21–45 survive (to 167 BC), the rest in summaries",
+          "freeEnglish": "W. M. Roberts (1905)"
+        },
+        {
+          "author": "Dionysius of Halicarnassus",
+          "title": "Roman Antiquities",
+          "language": "grc",
+          "written": "c. 7 BC",
+          "covers": "Earliest times to 264 BC; books 1–10 survive whole"
+        },
+        {
+          "author": "Cornelius Nepos",
+          "title": "Lives of Eminent Commanders",
+          "language": "la",
+          "written": "1st century BC",
+          "freeEnglish": "J. S. Watson (1853)"
+        },
+        {
+          "author": "Sallust",
+          "title": "Catiline; Jugurtha",
+          "language": "la",
+          "written": "c. 42 to 40 BC",
+          "covers": "111 to 105 BC; 63 BC",
+          "freeEnglish": "J. C. Rolfe (Loeb, 1921)"
+        },
+        {
+          "author": "Julius Caesar",
+          "title": "Gallic War; Civil War",
+          "language": "la",
+          "written": "50s and 40s BC",
+          "covers": "58 to 48 BC",
+          "freeEnglish": "W. A. McDevitte and W. S. Bohn (1869)"
+        },
+        {
+          "author": "Cicero",
+          "title": "Letters",
+          "language": "la",
+          "written": "68 to 43 BC",
+          "covers": "68 to 43 BC",
+          "freeEnglish": "E. S. Shuckburgh (1899–1900)"
+        },
+        {
+          "author": "Appian",
+          "title": "Roman History",
+          "language": "grc",
+          "written": "c. 150 to 165",
+          "covers": "The kings to 35 BC; the Civil Wars books survive whole",
+          "freeEnglish": "Horace White (1899)"
+        },
+        {
+          "author": "Plutarch",
+          "title": "Parallel Lives",
+          "language": "grc",
+          "written": "c. 100 to 120",
+          "covers": "Theseus to Antony (30 BC); Galba and Otho (69)",
+          "freeEnglish": "Bernadotte Perrin (Loeb, 1914–26)"
+        },
+        {
+          "author": "Florus",
+          "title": "Epitome of Roman History",
+          "language": "la",
+          "written": "2nd century",
+          "covers": "753 BC to Augustus",
+          "freeEnglish": "E. S. Forster (Loeb, 1929)"
+        },
+        {
+          "author": "Julius Obsequens",
+          "title": "Book of Prodigies",
+          "language": "la",
+          "written": "4th century?",
+          "covers": "190 to 11 BC"
+        },
+        {
+          "work": "anonymous/consularia-constantinopolitana"
+        },
+        {
+          "work": "anonymous/fasti-praenestini",
+          "written": "c. 6 to 9",
+          "note": "A calendar, with Augustan festivals"
+        },
+        {
+          "work": "ovid/fasti",
+          "written": "c. 8",
+          "freeEnglish": "H. T. Riley (1851)"
+        }
+      ]
+    },
+    {
+      "heading": "The early Empire, to 192",
+      "entries": [
+        {
+          "work": "augustus/res-gestae",
+          "written": "14",
+          "freeEnglish": "F. W. Shipley (Loeb, 1924)"
+        },
+        {
+          "author": "Nicolaus of Damascus",
+          "title": "Life of Augustus (fragments)",
+          "language": "grc",
+          "written": "c. 20 BC",
+          "covers": "63 to 44 BC",
+          "freeEnglish": "C. M. Hall (1923)"
+        },
+        {
+          "author": "Strabo",
+          "title": "Geography",
+          "language": "grc",
+          "written": "c. 7 BC to 23",
+          "freeEnglish": "H. C. Hamilton and W. Falconer (1854–57)"
+        },
+        {
+          "author": "Velleius Paterculus",
+          "title": "Roman History",
+          "language": "la",
+          "written": "c. 30",
+          "covers": "Mythical times to 29",
+          "freeEnglish": "F. W. Shipley (Loeb, 1924)"
+        },
+        {
+          "author": "Valerius Maximus",
+          "title": "Memorable Deeds and Sayings",
+          "language": "la",
+          "written": "c. 31"
+        },
+        {
+          "author": "Seneca",
+          "title": "Apocolocyntosis",
+          "language": "la",
+          "written": "54",
+          "covers": "54",
+          "freeEnglish": "W. H. D. Rouse (Loeb, 1913)"
+        },
+        {
+          "work": "pliny-the-elder/natural-history",
+          "written": "77",
+          "freeEnglish": "John Bostock and H. T. Riley (1855)"
+        },
+        {
+          "work": "quintilian/institutio-oratoria",
+          "written": "c. 95",
+          "freeEnglish": "H. E. Butler (Loeb, 1920–22)"
+        },
+        {
+          "author": "Tacitus",
+          "title": "Annals",
+          "language": "la",
+          "written": "c. 116",
+          "covers": "14 to 68, with gaps",
+          "freeEnglish": "A. J. Church and W. J. Brodribb (1876)"
+        },
+        {
+          "author": "Tacitus",
+          "title": "Histories",
+          "language": "la",
+          "written": "c. 105",
+          "covers": "69 to 70 survive",
+          "freeEnglish": "A. J. Church and W. J. Brodribb (1864)"
+        },
+        {
+          "author": "Tacitus",
+          "title": "Agricola; Germania",
+          "language": "la",
+          "written": "98",
+          "freeEnglish": "A. J. Church and W. J. Brodribb (1868)"
+        },
+        {
+          "author": "Pliny the Younger",
+          "title": "Letters; Panegyricus",
+          "language": "la",
+          "written": "c. 97 to 113",
+          "covers": "c. 97 to 113",
+          "freeEnglish": "William Melmoth (1746)"
+        },
+        {
+          "author": "Frontinus",
+          "title": "Stratagems",
+          "language": "la",
+          "written": "c. 84 to 96",
+          "freeEnglish": "C. E. Bennett (Loeb, 1925)"
+        },
+        {
+          "work": "suetonius/de-vita-caesarum",
+          "written": "c. 121"
+        },
+        {
+          "author": "Fronto",
+          "title": "Correspondence",
+          "language": "la",
+          "written": "c. 139 to 166",
+          "freeEnglish": "C. R. Haines (Loeb, 1919–20)"
+        },
+        {
+          "work": "pausanias/description-of-greece",
+          "written": "c. 160 to 180",
+          "freeEnglish": "W. H. S. Jones (Loeb, 1918–35)"
+        },
+        {
+          "work": "cassius-dio/roman-history",
+          "written": "c. 200 to 229"
+        },
+        {
+          "work": "herodian/history",
+          "written": "c. 240"
+        }
+      ]
+    },
+    {
+      "heading": "The third century",
+      "entries": [
+        {
+          "work": "anonymous/historia-augusta",
+          "written": "late 4th century"
+        },
+        {
+          "work": "dexippus/scythica",
+          "written": "after 270",
+          "covers": "238 to c. 270"
+        },
+        {
+          "work": "cyprian/epistulae",
+          "written": "c. 249 to 258",
+          "covers": "c. 249 to 258",
+          "freeEnglish": "R. E. Wallis (Ante-Nicene Fathers, 1868)"
+        },
+        {
+          "work": "cyprian/de-mortalitate",
+          "written": "c. 252",
+          "covers": "c. 252",
+          "freeEnglish": "R. E. Wallis (Ante-Nicene Fathers, 1868)"
+        },
+        {
+          "work": "shapur-i/res-gestae"
+        },
+        {
+          "author": "Kartir",
+          "title": "Inscriptions (Ka'ba-ye Zartosht, Naqsh-e Rajab and others)",
+          "language": "pal",
+          "written": "late 3rd century",
+          "covers": "c. 240 to 293"
+        },
+        {
+          "author": "Narseh",
+          "title": "Paikuli inscription",
+          "language": "pal",
+          "written": "c. 293",
+          "covers": "293",
+          "note": "Also in Parthian"
+        },
+        {
+          "author": "Diocletian",
+          "title": "Edict on Maximum Prices",
+          "language": "la",
+          "written": "301",
+          "note": "Inscriptions in Latin and Greek"
+        },
+        {
+          "author": "Anonymous",
+          "title": "Panegyrici Latini",
+          "language": "la",
+          "written": "289 to 389",
+          "covers": "289 to 389"
+        },
+        {
+          "work": "lactantius/de-mortibus-persecutorum",
+          "written": "c. 315",
+          "freeEnglish": "William Fletcher (Ante-Nicene Fathers, 1871)"
+        }
+      ]
+    },
+    {
+      "heading": "The fourth and fifth centuries",
+      "entries": [
+        {
+          "work": "anonymous/origo-constantini",
+          "written": "4th century"
+        },
+        {
+          "author": "Julian",
+          "title": "Orations; The Caesars; Misopogon; Letters",
+          "language": "grc",
+          "written": "355 to 363",
+          "freeEnglish": "W. C. Wright (Loeb, 1913–23)"
+        },
+        {
+          "work": "aurelius-victor/de-caesaribus",
+          "written": "c. 361"
+        },
+        {
+          "work": "eutropius/breviarium",
+          "freeEnglish": "J. S. Watson (1853)"
+        },
+        {
+          "work": "festus/breviarium"
+        },
+        {
+          "work": "ammianus-marcellinus/res-gestae",
+          "written": "c. 390",
+          "freeEnglish": "C. D. Yonge (1862)",
+          "note": "Books 1–13, to 353, are lost"
+        },
+        {
+          "work": "pacatus/panegyric",
+          "written": "389",
+          "covers": "383 to 389",
+          "note": "One of the Panegyrici Latini"
+        },
+        {
+          "author": "Libanius",
+          "title": "Orations; Letters",
+          "language": "grc",
+          "written": "c. 350 to 393"
+        },
+        {
+          "author": "Themistius",
+          "title": "Orations",
+          "language": "grc",
+          "written": "c. 350 to 385"
+        },
+        {
+          "author": "Eunapius",
+          "title": "Lives of the Sophists",
+          "language": "grc",
+          "written": "c. 399",
+          "freeEnglish": "W. C. Wright (Loeb, 1921)"
+        },
+        {
+          "author": "Eunapius",
+          "title": "History (fragments)",
+          "language": "grc",
+          "written": "c. 400",
+          "covers": "270 to 404"
+        },
+        {
+          "author": "Ausonius",
+          "title": "Works",
+          "language": "la",
+          "written": "c. 360 to 394",
+          "freeEnglish": "H. G. Evelyn White (Loeb, 1919–21)"
+        },
+        {
+          "work": "pseudo-aurelius-victor/epitome-de-caesaribus",
+          "written": "c. 395 to 408"
+        },
+        {
+          "work": "claudian/de-tertio-consulatu-honorii",
+          "written": "396",
+          "covers": "396",
+          "freeEnglish": "Maurice Platnauer (Loeb, 1922)"
+        },
+        {
+          "author": "Claudian",
+          "title": "Other poems",
+          "language": "la",
+          "written": "395 to 404",
+          "covers": "395 to 404",
+          "freeEnglish": "Maurice Platnauer (Loeb, 1922)"
+        },
+        {
+          "author": "Synesius",
+          "title": "Letters; On Kingship",
+          "language": "grc",
+          "written": "c. 399 to 413",
+          "freeEnglish": "Augustine FitzGerald (1926)"
+        },
+        {
+          "author": "Olympiodorus of Thebes",
+          "title": "History (fragments)",
+          "language": "grc",
+          "written": "after 425",
+          "covers": "407 to 425"
+        },
+        {
+          "work": "zosimus/historia-nova",
+          "written": "c. 500"
+        },
+        {
+          "author": "Rutilius Namatianus",
+          "title": "De Reditu Suo",
+          "language": "la",
+          "written": "c. 417",
+          "covers": "417"
+        },
+        {
+          "author": "Anonymous",
+          "title": "Codex Theodosianus",
+          "language": "la",
+          "written": "438",
+          "covers": "312 to 437"
+        },
+        {
+          "author": "Anonymous",
+          "title": "Notitia Dignitatum",
+          "language": "la",
+          "written": "c. 395 to 420"
+        },
+        {
+          "author": "Priscus",
+          "title": "History (fragments)",
+          "language": "grc",
+          "written": "after 472",
+          "covers": "c. 433 to 472"
+        },
+        {
+          "author": "Sidonius Apollinaris",
+          "title": "Letters; Poems",
+          "language": "la",
+          "written": "c. 455 to 480",
+          "covers": "c. 455 to 480",
+          "freeEnglish": "O. M. Dalton (1915)"
+        }
+      ]
+    },
+    {
+      "heading": "Church histories and Christian writers",
+      "entries": [
+        {
+          "work": "eusebius/historia-ecclesiastica",
+          "written": "c. 313 to 325",
+          "freeEnglish": "A. C. McGiffert (Nicene and Post-Nicene Fathers, 1890)"
+        },
+        {
+          "work": "eusebius/vita-constantini",
+          "written": "c. 337 to 339",
+          "freeEnglish": "E. C. Richardson (Nicene and Post-Nicene Fathers, 1890)"
+        },
+        {
+          "author": "Athanasius",
+          "title": "History of the Arians; Apologies",
+          "language": "grc",
+          "written": "c. 350 to 358",
+          "covers": "c. 325 to 358",
+          "freeEnglish": "Nicene and Post-Nicene Fathers, series 2, vol. 4 (1892)"
+        },
+        {
+          "work": "ambrose/epistulae",
+          "written": "c. 379 to 397",
+          "covers": "c. 379 to 397",
+          "freeEnglish": "H. de Romestin (Nicene and Post-Nicene Fathers, 1896), a selection"
+        },
+        {
+          "work": "sulpicius-severus/chronica",
+          "written": "c. 403",
+          "freeEnglish": "Alexander Roberts (Nicene and Post-Nicene Fathers, 1894)"
+        },
+        {
+          "work": "sulpicius-severus/vita-martini",
+          "written": "c. 397",
+          "covers": "c. 316 to 397",
+          "freeEnglish": "Alexander Roberts (Nicene and Post-Nicene Fathers, 1894)"
+        },
+        {
+          "author": "Rufinus",
+          "title": "Ecclesiastical History, books 10–11",
+          "language": "la",
+          "written": "c. 402",
+          "covers": "324 to 395"
+        },
+        {
+          "work": "orosius/historiae",
+          "written": "c. 417"
+        },
+        {
+          "author": "Augustine",
+          "title": "City of God",
+          "language": "la",
+          "written": "413 to 426",
+          "freeEnglish": "Marcus Dods (1871)"
+        },
+        {
+          "work": "philostorgius/historia-ecclesiastica",
+          "written": "c. 425 to 433",
+          "covers": "c. 300 to 425",
+          "freeEnglish": "Edward Walford (1855)",
+          "note": "Survives in Photius' summary"
+        },
+        {
+          "work": "socrates-scholasticus/historia-ecclesiastica",
+          "written": "c. 439 to 443",
+          "freeEnglish": "A. C. Zenos (Nicene and Post-Nicene Fathers, 1890)"
+        },
+        {
+          "author": "Sozomen",
+          "title": "Ecclesiastical History",
+          "language": "grc",
+          "written": "c. 443",
+          "covers": "324 to 425",
+          "freeEnglish": "C. D. Hartranft (Nicene and Post-Nicene Fathers, 1890)"
+        },
+        {
+          "work": "theodoret/historia-ecclesiastica",
+          "written": "c. 449",
+          "freeEnglish": "Blomfield Jackson (Nicene and Post-Nicene Fathers, 1892)"
+        },
+        {
+          "author": "Evagrius Scholasticus",
+          "title": "Ecclesiastical History",
+          "language": "grc",
+          "written": "c. 593",
+          "covers": "431 to 594",
+          "freeEnglish": "Edward Walford (1846)"
+        }
+      ]
+    },
+    {
+      "heading": "Chronicles and later compilations",
+      "entries": [
+        {
+          "author": "Jerome",
+          "title": "Chronicle",
+          "language": "la",
+          "written": "c. 380",
+          "covers": "Abraham to 378",
+          "note": "A Latin translation and continuation of Eusebius' Chronicle"
+        },
+        {
+          "work": "hydatius/chronicon",
+          "written": "c. 469"
+        },
+        {
+          "work": "prosper/epitoma-chronicon",
+          "written": "433 to 455"
+        },
+        {
+          "author": "Anonymous",
+          "title": "Gallic Chronicle of 452",
+          "language": "la",
+          "written": "452",
+          "covers": "379 to 452"
+        },
+        {
+          "work": "polemius-silvius/laterculus",
+          "language": "la",
+          "written": "449"
+        },
+        {
+          "work": "marcellinus-comes/chronicon",
+          "written": "518 to 534"
+        },
+        {
+          "work": "anonymous/chronica-theodericiana",
+          "written": "6th century"
+        },
+        {
+          "work": "jordanes/getica",
+          "written": "551",
+          "freeEnglish": "C. C. Mierow (1915)"
+        },
+        {
+          "author": "Jordanes",
+          "title": "Romana",
+          "language": "la",
+          "written": "551",
+          "covers": "Creation to 551"
+        },
+        {
+          "work": "procopius/history-of-the-wars",
+          "written": "c. 545 to 553",
+          "freeEnglish": "H. B. Dewing (Loeb, 1914–28)"
+        },
+        {
+          "author": "John Malalas",
+          "title": "Chronographia",
+          "language": "grc",
+          "written": "6th century",
+          "covers": "Creation to 563"
+        },
+        {
+          "author": "Anonymous",
+          "title": "Chronicon Paschale",
+          "language": "grc",
+          "written": "c. 630",
+          "covers": "Creation to 628"
+        },
+        {
+          "author": "John of Antioch",
+          "title": "History (fragments)",
+          "language": "grc",
+          "written": "7th century",
+          "covers": "Creation to 610"
+        },
+        {
+          "author": "Peter the Patrician",
+          "title": "History (fragments)",
+          "language": "grc",
+          "written": "6th century",
+          "covers": "44 BC to 361"
+        },
+        {
+          "work": "george-syncellus/ekloge-chronographias",
+          "language": "grc"
+        },
+        {
+          "author": "Theophanes the Confessor",
+          "title": "Chronographia",
+          "language": "grc",
+          "written": "c. 810 to 814",
+          "covers": "284 to 813"
+        },
+        {
+          "author": "George the Monk",
+          "title": "Chronicon",
+          "language": "grc",
+          "written": "9th century",
+          "covers": "Creation to 842"
+        },
+        {
+          "work": "george-cedrenus/compendium-historiarum",
+          "written": "c. 1057"
+        },
+        {
+          "work": "john-zonaras/epitome-historiarum",
+          "written": "after 1118"
+        }
+      ]
+    },
+    {
+      "heading": "Armenian, Syriac and Arabic",
+      "entries": [
+        {
+          "author": "Agathangelos",
+          "title": "History of the Armenians",
+          "language": "hy",
+          "written": "5th century",
+          "covers": "Tiridates III and the conversion of Armenia, c. 300"
+        },
+        {
+          "author": "Faustus of Byzantium",
+          "title": "Epic Histories (Buzandaran)",
+          "language": "hy",
+          "written": "5th century",
+          "covers": "c. 330 to 387"
+        },
+        {
+          "author": "Moses of Khoren",
+          "title": "History of the Armenians",
+          "language": "hy",
+          "written": "5th to 8th century, disputed",
+          "covers": "Creation to 428"
+        },
+        {
+          "author": "Anonymous",
+          "title": "Chronicle of Edessa",
+          "language": "syc",
+          "written": "6th century",
+          "covers": "133 BC to 540"
+        },
+        {
+          "author": "al-Tabari",
+          "title": "History of the Prophets and Kings",
+          "language": "ar",
+          "written": "c. 915",
+          "covers": "Creation to 915; the Sasanian kings from 224"
+        }
+      ]
+    },
+    {
+      "heading": "Other Works in the corpus",
+      "entries": [
+        {
+          "work": "varro/de-lingua-latina",
+          "written": "c. 45 to 43 BC"
+        },
+        {
+          "work": "ovid/metamorphoses",
+          "written": "c. 8",
+          "covers": "Creation to Julius Caesar, as myth",
+          "freeEnglish": "H. T. Riley (1851)"
+        },
+        {
+          "work": "anonymous/the-mabinogion",
+          "freeEnglish": "Lady Charlotte Guest (1838–49)",
+          "note": "Medieval Welsh tales; outside the period"
+        }
+      ]
+    }
+  ]
+}
