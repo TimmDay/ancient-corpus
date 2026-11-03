@@ -51,14 +51,20 @@ const fakeEmbed: Embed = async (texts) =>
 
 describe("names", () => {
   it("widens any form of a name to all of them", () => {
-    expect(variantsOf("Shapur")).toEqual(["shapur", "sapor", "sabuhr", "σαπωρ"])
+    expect(variantsOf("Shapur")).toEqual([
+      "shapur",
+      "sapor",
+      "saper",
+      "sabuhr",
+      "σαπωρ",
+    ])
     expect(variantsOf("Σαπώρης")).toContain("sapor")
     expect(variantsOf("Zenobia")).toEqual(["zenobia"])
   })
 
   it("builds a prefix query that drops common words", () => {
     expect(keywordQuery("What did Shapur do?")).toBe(
-      '"shapur"* OR "sapor"* OR "sabuhr"* OR "σαπωρ"*',
+      '"shapur"* OR "sapor"* OR "saper"* OR "sabuhr"* OR "σαπωρ"*',
     )
   })
 })

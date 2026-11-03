@@ -20,6 +20,7 @@ const SHAPUR = "shapur-i/res-gestae"
 const ZONARAS = "john-zonaras/epitome-historiarum"
 const ORACLES = "anonymous/oracula-sibyllina"
 const CEDRENUS = "george-cedrenus/compendium-historiarum"
+const VICTOR = "aurelius-victor/de-caesaribus"
 
 const at = (work: string, ...locators: string[]) =>
   locators.map((locator) => ({ work, locator }))
@@ -41,9 +42,10 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       ...at(SHAPUR, "6", "7", "8"),
       // "Falling with his horse in battle and breaking his thigh, he died."
       ...at(CEDRENUS, "1.451"),
+      // "He perished by the plots of Marcus Philippus, the praetorian prefect."
+      ...at(VICTOR, "27"),
     ],
     notYetInCorpus: [
-      "Aurelius Victor 27.7–8",
       "Epitome de Caesaribus 27.2",
       "Orosius 7.19.5",
       "Ammianus 23.5.7, 23.5.17",
@@ -65,6 +67,8 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       ...at(ZOSIMUS, "1.36"),
       ...at(ZONARAS, "12.23"),
       ...at(SHAPUR, "18", "22"),
+      // "Trapped by the treachery of the king of the Persians, he died foully mangled."
+      ...at(VICTOR, "32"),
     ],
   },
   {
@@ -112,6 +116,8 @@ export const TEST_QUESTIONS: TestQuestion[] = [
       ...at(SUETONIUS, "Augustus 99", "Augustus 100"),
       ...at(DIO, "56.30"),
       ...at(EUTROPIUS, "7.8"),
+      // "He died of illness at Nola."
+      ...at(VICTOR, "1"),
     ],
   },
   {

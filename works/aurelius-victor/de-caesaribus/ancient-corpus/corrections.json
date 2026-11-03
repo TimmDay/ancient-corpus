@@ -1,0 +1,20 @@
+[
+  {
+    "op": "accept",
+    "locator": "20",
+    "flag": "long",
+    "reason": "Victor's chapter on Severus is this long in the Latin too"
+  },
+  {
+    "op": "accept",
+    "locator": "33",
+    "flag": "long",
+    "reason": "Victor's chapter on Gallienus is this long in the Latin too"
+  },
+  {
+    "op": "accept",
+    "locator": "39",
+    "flag": "long",
+    "reason": "Victor's chapter on Diocletian is this long in the Latin too"
+  }
+]

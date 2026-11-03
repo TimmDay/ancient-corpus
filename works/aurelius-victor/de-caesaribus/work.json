@@ -1,18 +1,50 @@
 {
   "author": "Aurelius Victor",
   "title": "De Caesaribus",
-  "otherTitles": [
-    "Liber de Caesaribus"
-  ],
+  "otherTitles": ["Liber de Caesaribus"],
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
   "coversYearEarliest": -31,
   "coversYearLatest": 360,
   "locatorFormat": "chapter.section, e.g. 39.2",
-  "slugAliases": [
-    "aurelius-victor/liber-de-caesaribus"
-  ],
+  "slugAliases": ["aurelius-victor/liber-de-caesaribus"],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "latin-library",
+      "preferred": true,
+      "language": "la",
+      "title": "Liber de Caesaribus",
+      "source": {
+        "name": "The Latin Library",
+        "url": "https://www.thelatinlibrary.com/victor/victor.caes.html",
+        "archives": [
+          {
+            "file": "AureliusVictor-DeCaesaribus-LatinLibrary.zip",
+            "sha256": "51027eacaf8d45d6a7b87c5d3f3ded7f32649ab345393ec4c287a30e1d5551d2",
+            "url": "https://www.thelatinlibrary.com/victor/victor.caes.html"
+          }
+        ],
+        "rights": "The Latin text is public domain; The Latin Library names no edition and claims no rights in it"
+      },
+      "importer": "latinlibrary"
+    },
+    {
+      "slug": "ancient-corpus",
+      "preferred": false,
+      "language": "en",
+      "title": "English translation",
+      "translator": "Ancient Corpus (machine translation)",
+      "publicationYear": 2026,
+      "source": {
+        "name": "This project",
+        "url": "https://github.com/TimmDay/ancient-corpus",
+        "archives": [],
+        "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "importer": "translation",
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 3 November 2026, from the Latin text on The Latin Library. It is not a translator's work: check it against the Latin, and report errors. Public domain (CC0): reuse it freely."
+    }
+  ]
 }

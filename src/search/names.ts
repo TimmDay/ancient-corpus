@@ -6,7 +6,7 @@
 export type NameGroup = { name: string; forms: string[] }
 
 export const NAMES: NameGroup[] = [
-  { name: "Shapur I", forms: ["shapur", "sapor", "sabuhr", "σαπωρ"] },
+  { name: "Shapur I", forms: ["shapur", "sapor", "saper", "sabuhr", "σαπωρ"] },
   { name: "Gordian", forms: ["gordian", "γορδιαν"] },
   { name: "Philip the Arab", forms: ["philip", "philipp", "φιλιππ"] },
   { name: "Timesitheus", forms: ["timesithe", "misithe", "τιμησιθε"] },

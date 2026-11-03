@@ -17,6 +17,7 @@ import { importBonn } from "./importers/bonn.ts"
 import { importDio } from "./importers/dio.ts"
 import { importEutropius } from "./importers/eutropius.ts"
 import { importLacusCurtius } from "./importers/lacuscurtius.ts"
+import { importLatinLibrary } from "./importers/latinlibrary.ts"
 import { importParthianSources } from "./importers/parthiansources.ts"
 import { importPerseus, importPerseusLines } from "./importers/perseus.ts"
 import { importTertullian } from "./importers/tertullian.ts"
@@ -34,6 +35,7 @@ const IMPORTERS: Record<
   eutropius: importEutropius,
   lacuscurtius: (source, work, edition) =>
     importLacusCurtius(source, work.title, edition.language),
+  latinlibrary: (source) => importLatinLibrary(source),
   parthiansources: (source, _work, edition) =>
     importParthianSources(source, edition),
   perseus: importPerseus,
