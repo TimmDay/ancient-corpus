@@ -1,6 +1,6 @@
 # Where no public-domain English exists, we translate the original ourselves
 
-Some Works the corpus needs have no English translation in the public domain: Zonaras, Festus, Aurelius Victor, the *Epitome de Caesaribus* and Shapur I's inscription all have modern translations still in copyright. For these we import the original-language Edition, which is public domain, and make our own English Edition from it with an AI model. It is an ordinary Edition with its own Locators taken from the original, so links and search treat it like any other, but it says on every page that it is a machine translation made by this project and names the Edition it was made from.
+Some Works the corpus needs have no English translation in the public domain: Zonaras, Festus, Aurelius Victor, the _Epitome de Caesaribus_ and Shapur I's inscription all have modern translations still in copyright. For these we import the original-language Edition, which is public domain, and make our own English Edition from it with an AI model. It is an ordinary Edition with its own Locators taken from the original, so links and search treat it like any other, but it says on every page that it is a machine translation made by this project and names the Edition it was made from.
 
 ## Considered Options
 
@@ -13,3 +13,4 @@ Some Works the corpus needs have no English translation in the public domain: Zo
 - Its errors are ours. A reader who finds one can check the original side by side, and a fix is a Correction like any other.
 - A public-domain human translation found later is imported as another Edition; the AI one can stay or be retired without breaking a Locator.
 - Our translations are dedicated to the public domain (CC0 1.0), not licensed with conditions. Machine-generated text with no human creative contribution is generally not protected by copyright, so a licence requiring attribution might not be enforceable, and the corpus is not run for money. CC0 says plainly that anyone may reuse them. The Edition's notice still names the model, the date and the original, so readers know what they are reading.
+- This holds when the original reached us through a digital edition under a licence with conditions, such as Zonaras from First1KGreek (CC BY-SA). We translate the public-domain words of the printed text, not the digital edition's encoding, so the translation is CC0 like the rest.
