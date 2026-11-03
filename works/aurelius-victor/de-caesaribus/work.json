@@ -1,18 +1,34 @@
 {
   "author": "Aurelius Victor",
   "title": "De Caesaribus",
-  "otherTitles": [
-    "Liber de Caesaribus"
-  ],
+  "otherTitles": ["Liber de Caesaribus"],
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
   "coversYearEarliest": -31,
   "coversYearLatest": 360,
   "locatorFormat": "chapter.section, e.g. 39.2",
-  "slugAliases": [
-    "aurelius-victor/liber-de-caesaribus"
-  ],
+  "slugAliases": ["aurelius-victor/liber-de-caesaribus"],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "latin-library",
+      "preferred": true,
+      "language": "la",
+      "title": "Liber de Caesaribus",
+      "source": {
+        "name": "The Latin Library",
+        "url": "https://www.thelatinlibrary.com/victor/victor.caes.html",
+        "archives": [
+          {
+            "file": "AureliusVictor-DeCaesaribus-LatinLibrary.zip",
+            "sha256": "51027eacaf8d45d6a7b87c5d3f3ded7f32649ab345393ec4c287a30e1d5551d2",
+            "url": "https://www.thelatinlibrary.com/victor/victor.caes.html"
+          }
+        ],
+        "rights": "The Latin text is public domain; The Latin Library names no edition and claims no rights in it"
+      },
+      "importer": "latinlibrary"
+    }
+  ]
 }
