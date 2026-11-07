@@ -27,7 +27,7 @@ import {
   type IntakeArchive,
   type Passage,
 } from "../corpus.ts"
-import { notesFor } from "./eutropius.ts"
+import { notesFor } from "./gutenberg.ts"
 import { inlineHtml, onlyArchive, plainText } from "./gutenberg.ts"
 
 type Draft = Omit<Passage, "flags">

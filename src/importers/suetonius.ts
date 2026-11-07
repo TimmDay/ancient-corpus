@@ -16,7 +16,7 @@ import type {
   ImportedEdition,
   Passage,
 } from "../corpus.ts"
-import { notesFor } from "./eutropius.ts"
+import { notesFor } from "./gutenberg.ts"
 import {
   blockHtml,
   onlyArchive,

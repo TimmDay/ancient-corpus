@@ -1,0 +1,26 @@
+[
+  {
+    "op": "accept",
+    "locator": "7.1",
+    "flag": "gap",
+    "reason": "Foster leaves out 7.2–7.5 (Romulus to Numa); our own translation has them"
+  },
+  {
+    "op": "accept",
+    "locator": "7.11",
+    "flag": "gap",
+    "reason": "Foster leaves out 7.12; our own translation has it"
+  },
+  {
+    "op": "accept",
+    "locator": "7.20",
+    "flag": "gap",
+    "reason": "Foster leaves out 7.21–7.23; our own translation has them"
+  },
+  {
+    "op": "accept",
+    "locator": "9.12",
+    "flag": "gap",
+    "reason": "Foster prints no number for 9.13 and runs it into 9.12"
+  }
+]

@@ -22,6 +22,7 @@ import { importPerseus, importPerseusLines } from "./importers/perseus.ts"
 import { importTertullian } from "./importers/tertullian.ts"
 import { importToposText, importToposTextLines } from "./importers/topostext.ts"
 import { importTranslation } from "./importers/translation.ts"
+import { importZonarasFoster } from "./importers/zonaras-foster.ts"
 import { importSuetonius } from "./importers/suetonius.ts"
 import { nameNotes } from "./note-ids.ts"
 
@@ -43,6 +44,7 @@ const IMPORTERS: Record<
   topostext: importToposText,
   "topostext-lines": importToposTextLines,
   translation: (_source, work, edition) => importTranslation(work, edition),
+  "zonaras-foster": importZonarasFoster,
 }
 
 export function correctionsFile(work: Work, edition: Edition): string {
