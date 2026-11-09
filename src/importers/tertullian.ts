@@ -21,7 +21,7 @@ import {
   type ImportedEdition,
   type Passage,
 } from "../corpus.ts"
-import { notesFor } from "./eutropius.ts"
+import { notesFor } from "./gutenberg.ts"
 import { inlineHtml, onlyArchive, plainText } from "./gutenberg.ts"
 
 const BOOKS: Record<string, string[]> = {

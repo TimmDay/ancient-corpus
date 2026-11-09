@@ -33,6 +33,28 @@
       "pagePerDivision": true
     },
     {
+      "slug": "foster",
+      "preferred": false,
+      "language": "en",
+      "title": "Dio's Rome, vol. 1: the epitome of the lost books 1–21",
+      "translator": "Herbert Baldwin Foster",
+      "publicationYear": 1905,
+      "source": {
+        "name": "Project Gutenberg",
+        "url": "https://www.gutenberg.org/ebooks/18047",
+        "archives": [
+          {
+            "file": "Dio-Rome-vol1.zip",
+            "sha256": "5b7facb9caaae69c8456774c1ebaee9484d3b5ea5fa72340f5a11d5cd8ae2d4c",
+            "url": "https://www.gutenberg.org/ebooks/18047"
+          }
+        ],
+        "rights": "Public domain in the USA."
+      },
+      "importer": "zonaras-foster",
+      "notice": "Books 7 to 9 only, which Foster translated as the epitome of Dio's lost books 1 to 21. He leaves out 7.2 to 7.5, 7.12 and 7.21 to 7.23 (our own translation has them), and runs 9.13 into 9.12."
+    },
+    {
       "slug": "ancient-corpus",
       "preferred": false,
       "language": "en",
@@ -46,7 +68,7 @@
         "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
       },
       "importer": "translation",
-      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 2 and 3 November 2026, from Dindorf's Greek (1868–75). Books 12 and 13 so far. It is not a translator's work: check it against the Greek, and report errors. Public domain (CC0): reuse it freely."
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) from 2 to 8 November 2026, from Dindorf's Greek (1868–75). The Preface, Books 1 to 6, the chapters of Book 7 that Foster leaves out, and Books 10 to 13 so far. It is not a translator's work: check it against the Greek, and report errors. Public domain (CC0): reuse it freely."
     }
   ]
 }

@@ -6,7 +6,6 @@
 // references collected under FOOTNOTES. Preface, notes, vocabulary and the
 // grammar index are Editorial matter.
 
-import type { CheerioAPI } from "cheerio"
 import type { Element } from "domhandler"
 import type {
   Division,
@@ -14,14 +13,16 @@ import type {
   EditorialSection,
   Heading,
   ImportedEdition,
-  Note,
   Passage,
 } from "../corpus.ts"
 import {
   blockHtml,
+  footnoteId,
+  notesFor,
   onlyArchive,
   inlineHtml,
   plainText,
+  readFootnotes,
   readIntakeHtml,
   romanToInt,
 } from "./gutenberg.ts"
@@ -132,50 +133,4 @@ export function importEutropius(source: EditionSource): ImportedEdition {
     section.notes = notesFor(section.html, footnotes)
 
   return { divisions, passages, editorial }
-}
-
-function footnoteId(el: Element): string | undefined {
-  const href = el.attribs.href ?? ""
-  if (el.name === "a" && href.startsWith("#Footnote_"))
-    return href.replace("#Footnote_", "")
-  if (el.name === "a" && (el.attribs.id ?? "").startsWith("FNanchor_"))
-    return ""
-  return undefined
-}
-
-function readFootnotes($: CheerioAPI): Map<string, string> {
-  const notes = new Map<string, string>()
-  for (const p of $("div.footnote p").toArray()) {
-    const id = $(p)
-      .find("a[id^=Footnote_]")
-      .attr("id")
-      ?.replace("Footnote_", "")
-    if (!id) continue
-    const body = $(p)
-      .contents()
-      .filter(
-        (_, node) =>
-          !(
-            node.type === "tag" &&
-            (node.attribs.href ?? "").startsWith("#FNanchor_")
-          ),
-      )
-      .filter(
-        (_, node) =>
-          !(
-            node.type === "tag" &&
-            (node.attribs.id ?? "").startsWith("Footnote_")
-          ),
-      )
-    notes.set(id, inlineHtml($, body).trim())
-  }
-  return notes
-}
-
-/** The notes whose references appear in `html`, in reference order. */
-export function notesFor(html: string, notes: Map<string, string>): Note[] {
-  return [...html.matchAll(/id="r-([^"]+)"/g)].flatMap(([, id = ""]) => {
-    const note = notes.get(id)
-    return note === undefined ? [] : [{ id, html: note }]
-  })
 }
