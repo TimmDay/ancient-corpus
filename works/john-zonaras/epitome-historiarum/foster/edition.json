@@ -1,0 +1,17 @@
+{
+  "divisions": [
+    {
+      "locator": "7",
+      "label": "Book 7"
+    },
+    {
+      "locator": "8",
+      "label": "Book 8"
+    },
+    {
+      "locator": "9",
+      "label": "Book 9"
+    }
+  ],
+  "editorial": []
+}
