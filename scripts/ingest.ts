@@ -1,10 +1,12 @@
 // pnpm ingest <author/title> [edition]: re-imports Editions from data/intake/.
 // With no arguments, re-imports every Edition whose intake archive is present.
+// Either way it then rewrites CATALOGUE.md from catalogue.json and works/.
 
 import { existsSync } from "node:fs"
 import path from "node:path"
 import { INTAKE_DIR, loadWorks, unresolvedFlags } from "../src/corpus.ts"
 import { importEdition } from "../src/importing.ts"
+import { writeCatalogue } from "../src/catalogue.ts"
 
 const [workSlug, editionSlug] = process.argv.slice(2)
 const works = loadWorks().filter((w) => !workSlug || w.slug === workSlug)
@@ -32,3 +34,5 @@ for (const work of works) {
       console.log(`  ${flag.code.padEnd(4)} ${locator}: ${flag.detail}`)
   }
 }
+
+await writeCatalogue(loadWorks())

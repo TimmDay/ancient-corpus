@@ -62,11 +62,11 @@ Imported for study on this machine only: the text is gitignored and the site lea
 
 Where a Work has no public-domain English, we import the original and make our own English Edition with an AI model (ADR 0003). Each one is labelled as a machine translation made by this project, names the original Edition it was made from, and is dedicated to the public domain ([CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)).
 
-| Work                                  | From             | Issue                                                                                                                 |
-| ------------------------------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Aurelius Victor, _De Caesaribus_      | Latin            | [#28](https://github.com/TimmDay/ancient-corpus/issues/28)                                                            |
-| _Epitome de Caesaribus_               | Latin            | [#29](https://github.com/TimmDay/ancient-corpus/issues/29)                                                            |
-| Orosius, _Historiae adversus Paganos_ | Latin            | [#30](https://github.com/TimmDay/ancient-corpus/issues/30)                                                            |
-| Zonaras, _Epitome Historiarum_        | Greek            | [#31](https://github.com/TimmDay/ancient-corpus/issues/31): Preface, Books 1 and 12–13 done, Edition `ancient-corpus` |
-| Shapur I, _Res Gestae Divi Saporis_   | Parthian (Huyse) | [#32](https://github.com/TimmDay/ancient-corpus/issues/32): done, Edition `ancient-corpus`                            |
-| Festus, _Breviarium_                  | Latin            | [#33](https://github.com/TimmDay/ancient-corpus/issues/33)                                                            |
+| Work                                  | From             | Issue                                                                                                                                                                              |
+| ------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Aurelius Victor, _De Caesaribus_      | Latin            | [#28](https://github.com/TimmDay/ancient-corpus/issues/28)                                                                                                                         |
+| _Epitome de Caesaribus_               | Latin            | [#29](https://github.com/TimmDay/ancient-corpus/issues/29)                                                                                                                         |
+| Orosius, _Historiae adversus Paganos_ | Latin            | [#30](https://github.com/TimmDay/ancient-corpus/issues/30)                                                                                                                         |
+| Zonaras, _Epitome Historiarum_        | Greek            | [#31](https://github.com/TimmDay/ancient-corpus/issues/31): Preface, Books 1–6 and 10–13 and Foster's gaps in Book 7 done, Edition `ancient-corpus`; Books 7–9 in Edition `foster` |
+| Shapur I, _Res Gestae Divi Saporis_   | Parthian (Huyse) | [#32](https://github.com/TimmDay/ancient-corpus/issues/32): done, Edition `ancient-corpus`                                                                                         |
+| Festus, _Breviarium_                  | Latin            | [#33](https://github.com/TimmDay/ancient-corpus/issues/33)                                                                                                                         |
