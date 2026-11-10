@@ -23,7 +23,10 @@ import type { WorkListing } from "../src/works-index.ts"
 
 const DIST = path.join(REPO_ROOT, "dist")
 
-/** `drafts` also renders Editions with unresolved Flags, bannered, for local review only. */
+/**
+ * Editions with unresolved Flags are published, each flagged Passage marked.
+ * `drafts` also renders unpublished Editions, bannered, for local use only.
+ */
 export function build({ drafts = false, outDir = DIST } = {}): {
   published: number
   skipped: string[]
@@ -36,7 +39,7 @@ export function build({ drafts = false, outDir = DIST } = {}): {
     writeFileSync(file, content)
   }
 
-  const published: { work: Work; edition: Edition }[] = []
+  const published: { work: Work; edition: Edition; flagged: number }[] = []
   const listings: WorkListing[] = []
   const redirects: string[] = []
   const skipped: string[] = []
@@ -48,32 +51,27 @@ export function build({ drafts = false, outDir = DIST } = {}): {
         skipped.push(`${work.slug}/${edition.slug} (${edition.unpublished})`)
         return drafts
       }
-      const flags = unresolvedFlags(readEditionText(work, edition))
-      if (flags.length)
-        skipped.push(
-          `${work.slug}/${edition.slug} (${flags.length} unresolved Flags)`,
-        )
-      return drafts || flags.length === 0
+      return true
     })
     const preferred = editions.find((e) => e.preferred) ?? editions[0]
     if (!preferred) continue
 
     for (const edition of editions) {
       const text = readEditionText(work, edition)
-      const pages = workPages(
-        work,
-        edition,
-        text,
-        editions,
-        unresolvedFlags(text).length,
-      )
+      const pages = workPages(work, edition, text, editions)
       for (const [page, html] of pages) {
         write(path.join(work.slug, edition.slug, page, "index.html"), html)
         if (edition === preferred)
           write(path.join(work.slug, page, "index.html"), html)
       }
     }
-    published.push({ work, edition: preferred })
+    published.push({
+      work,
+      edition: preferred,
+      flagged: new Set(
+        unresolvedFlags(readEditionText(work, preferred)).map((f) => f.locator),
+      ).size,
+    })
     listings.push({
       slug: work.slug,
       author: work.author,
@@ -116,6 +114,5 @@ export function build({ drafts = false, outDir = DIST } = {}): {
 if (import.meta.main) {
   const { published, skipped } = build()
   console.log(`Built ${published} Works into dist/`)
-  for (const s of skipped)
-    console.warn(`NOT PUBLISHED: ${s}. Review them with pnpm review.`)
+  for (const s of skipped) console.warn(`NOT PUBLISHED: ${s}`)
 }
