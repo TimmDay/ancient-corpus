@@ -9,7 +9,7 @@ Last updated: 2026-10-27
 - [x] Static reader, `/cite` lookup, home catalogue, slug redirects
 - [x] Eutropius, *Breviarium* (Hazzard 1898, Latin): published
 - [ ] Suetonius, *De Vita Caesarum* (Thomson/Forester): review its 8 long Flags in `pnpm review` (seven are translator's essays at the end of a Life; Augustus 94 may be Suetonius's own long chapter); published meanwhile with each one marked
-- [ ] Connect Cloudflare Pages: build command `pnpm build`, output directory `dist`, Node 24
+- [ ] Connect the Cloudflare Worker: build command `pnpm build`, deploy command `npx wrangler deploy` (config in `wrangler.jsonc`), `NODE_VERSION` 24
 - [ ] Choose a custom domain before any app stores links, then set somnus `work_editions.url` for Eutropius and Suetonius
 - [ ] Footer with related projects and donations ([#1](https://github.com/TimmDay/ancient-corpus/issues/1))
 

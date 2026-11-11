@@ -22,7 +22,7 @@ works/<author>/<title>/     committed source of truth
    <edition>/corrections.json
    │  pnpm build            only reads works/, so CI and Cloudflare can run it
    ▼
-dist/                       static site for Cloudflare Pages
+dist/                       static site, deployed as a Cloudflare Worker (wrangler.jsonc)
 ```
 
 An Edition with unresolved Flags is published with each flagged Passage marked, and a link to one opens a warning first. Work through them with `pnpm review`.
