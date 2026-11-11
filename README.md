@@ -25,7 +25,7 @@ works/<author>/<title>/     committed source of truth
 dist/                       static site for Cloudflare Pages
 ```
 
-An Edition with unresolved Flags is not published. Work through them with `pnpm review`.
+An Edition with unresolved Flags is published with each flagged Passage marked, and a link to one opens a warning first. Work through them with `pnpm review`.
 
 ## Commands
 

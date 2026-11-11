@@ -49,7 +49,7 @@ A modern note on a Passage or range of a Work, ours rather than the source's: mo
 _Avoid_: Comment, gloss, commentary, note (a Note is the Edition's own footnote)
 
 **Flag**:
-A suspicion, raised when an Edition is imported, that a Passage does not match the printed source (it swallowed its neighbour, or ran on into Editorial matter). It is settled by checking the source, never by choosing a Locator. An Edition with unresolved Flags is not published.
+A suspicion, raised when an Edition is imported, that a Passage does not match the printed source (it swallowed its neighbour, or ran on into Editorial matter). It is settled by checking the source, never by choosing a Locator. Until then the flagged Passage is published with a warning.
 _Avoid_: Warning, error, issue
 
 **Correction**:

@@ -1,5 +1,6 @@
-// The reader page: lands a link on its Passage, explains any fallback, copies
-// passage links, and keeps the contents in step with the scroll position.
+// The reader page: lands a link on its Passage, explains any fallback, warns
+// when the Passage is flagged, copies passage links, and keeps the contents in
+// step with the scroll position.
 
 import {
   resolveLocator,
@@ -16,6 +17,11 @@ const index = JSON.parse(
 ) as LocatorIndex
 const notice = document.getElementById("notice")
 const chooser = document.getElementById("chooser")
+const flagDialog = document.getElementById(
+  "flag-dialog",
+) as HTMLDialogElement | null
+/** A hash set by copying a Passage's link, which needs no flag warning. */
+let copiedHash: string | undefined
 /** Remembers, across a page load, which of several passages a reader picked. */
 const CHOSEN_KEY = "chosen-locator"
 const reduceMotion = window.matchMedia(
@@ -89,12 +95,48 @@ function land(initial = false): void {
   }
   first.setAttribute("tabindex", "-1")
   first.focus({ preventScroll: true })
+  // After focus, so closing the warning returns the reader to the Passage.
+  if (location.hash !== copiedHash) warnIfFlagged(elements)
+  copiedHash = undefined
   const target = ranges?.[0] ?? first
   if (initial) {
     pinWhileLoading(target)
   } else {
     scrollToTop(target, reduceMotion ? "auto" : "smooth")
   }
+}
+
+/** A link to flagged text opens a warning saying why, before the reader relies on it. */
+function warnIfFlagged(elements: HTMLElement[]): void {
+  const flagged = [
+    ...new Set(
+      elements.flatMap(
+        (el) => el.closest<HTMLElement>(".passage.flagged") ?? [],
+      ),
+    ),
+  ]
+  if (!flagDialog || !flagged.length || flagDialog.open) return
+  const title = flagDialog.querySelector("#flag-dialog-title span")
+  const body = flagDialog.querySelector(".flag-dialog-body")
+  if (!title || !body) return
+  const locators = flagged.map((el) => el.getAttribute("aria-label") ?? "")
+  title.textContent =
+    locators.length === 1
+      ? `${locators[0]} is flagged`
+      : `This link includes ${locators.length} flagged Passages`
+  body.replaceChildren(
+    ...flagged.flatMap((el, i) =>
+      [...el.querySelectorAll(".flag-why")].map((why) => {
+        const line = document.createElement("p")
+        line.textContent =
+          locators.length === 1
+            ? (why.textContent ?? "")
+            : `${locators[i]}: ${why.textContent ?? ""}`
+        return line
+      }),
+    ),
+  )
+  flagDialog.showModal()
 }
 
 /** Lines of the Passage left showing above a Sentence a link lands on. */
@@ -259,6 +301,7 @@ function decode(hash: string): string {
 document.addEventListener("click", (event) => {
   const link = (event.target as Element).closest<HTMLAnchorElement>("a.loc")
   if (!link) return
+  copiedHash = link.hash
   const url = `${location.origin}${location.pathname}${link.hash}`
   navigator.clipboard?.writeText(url).then(
     () =>

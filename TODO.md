@@ -8,7 +8,7 @@ Last updated: 2026-10-27
 - [x] Corrections and Flags pipeline; `pnpm review` for working through Flags
 - [x] Static reader, `/cite` lookup, home catalogue, slug redirects
 - [x] Eutropius, *Breviarium* (Hazzard 1898, Latin): published
-- [ ] Suetonius, *De Vita Caesarum* (Thomson/Forester): review its 8 long Flags in `pnpm review` (seven are translator's essays at the end of a Life; Augustus 94 may be Suetonius's own long chapter), then commit
+- [ ] Suetonius, *De Vita Caesarum* (Thomson/Forester): review its 8 long Flags in `pnpm review` (seven are translator's essays at the end of a Life; Augustus 94 may be Suetonius's own long chapter); published meanwhile with each one marked
 - [ ] Connect Cloudflare Pages: build command `pnpm build`, output directory `dist`, Node 24
 - [ ] Choose a custom domain before any app stores links, then set somnus `work_editions.url` for Eutropius and Suetonius
 - [ ] Footer with related projects and donations ([#1](https://github.com/TimmDay/ancient-corpus/issues/1))
@@ -20,7 +20,7 @@ Last updated: 2026-10-27
 
 Next, the sources for the death of Gordian III, one PR each: [#19](https://github.com/TimmDay/ancient-corpus/issues/19) to [#26](https://github.com/TimmDay/ancient-corpus/issues/26); English Eutropius [#27](https://github.com/TimmDay/ancient-corpus/issues/27). Sources and rights are in [SOURCES.md](SOURCES.md).
 
-- [ ] Cassius Dio, *Roman History* (Foster): books 36–80 imported from volumes 2–6 (1,608 Passages and parts, 10 Flags, visible with `pnpm dev:drafts`), read a book at a time
+- [ ] Cassius Dio, *Roman History* (Foster): books 36–80 imported from volumes 2–6 (1,608 Passages and parts, 10 Flags, published with each one marked), read a book at a time
   - [x] Boissevain's book numbers are canonical; Book 80's restarted run for Alexander is `80.1(Alexander)` and so on
   - [x] One page per book (`/cassius-dio/roman-history/44/`); `/cassius-dio/roman-history#44.19` still works and forwards to the book
   - [x] Epitome versions that repeat chapter numbers are `60.32(epitome)` and so on (60.32–33, 78.19–20, 80.11–12)

@@ -18,16 +18,39 @@ describe("build", () => {
   const result = build({ outDir })
   const read = (file: string) => readFileSync(path.join(outDir, file), "utf8")
 
-  it("publishes Editions with no unresolved Flags and holds back the rest", () => {
+  it("holds back only Editions waiting for permission", () => {
     expect(result.published).toBeGreaterThanOrEqual(1)
     expect(
-      result.skipped
-        .filter(
-          (s) =>
-            !unpublished.some((u) => s.startsWith(`${u.work}/${u.edition}`)),
-        )
-        .every((s) => s.includes("unresolved Flags")),
+      result.skipped.every((s) =>
+        unpublished.some((u) => s.startsWith(`${u.work}/${u.edition}`)),
+      ),
     ).toBe(true)
+  })
+
+  it("publishes flagged Passages, each marked and listed above the text", () => {
+    const page = read("cassius-dio/roman-history/42/index.html")
+    const passage = page.slice(page.indexOf('id="42.24"'))
+    expect(passage.slice(0, passage.indexOf("</section>"))).toMatch(
+      /^id="42\.24"[^>]*>\s*<div class="flag-note" role="note" lang="en">[\s\S]*The numbering jumps from 42\.24 to 26\. Chapter 25 may be inside this Passage/,
+    )
+    expect(page).toContain('<section class="passage flagged" id="42.24"')
+    expect(page).toContain('<a href="#42.24">42.24</a>')
+    expect(page).toContain('<dialog class="flag-dialog" id="flag-dialog"')
+    // The contents page links each flagged Passage to the book it is read on.
+    expect(read("cassius-dio/roman-history/index.html")).toContain(
+      '<a href="/cassius-dio/roman-history/42/#42.24">42.24</a>',
+    )
+    expect(read("index.html")).toMatch(
+      /De Vita Caesarum<\/i><\/a> <span class="flag-tag"[^>]*>.*8 flagged<\/span>/,
+    )
+  })
+
+  it("leaves Passages unflagged once their Flags are accepted", () => {
+    // De Caesaribus 20 was flagged long, and accepted: the print has it so.
+    const page = read("aurelius-victor/de-caesaribus/ancient-corpus/index.html")
+    expect(page).toContain('<section class="passage" id="20"')
+    expect(page).not.toContain("passage flagged")
+    expect(page).not.toContain("flag-banner")
   })
 
   it("never publishes an Edition waiting for permission", () => {
@@ -56,18 +79,14 @@ describe("build", () => {
   })
 
   it("reads a long Edition a book at a time, from one link", () => {
-    const draftsDir = mkdtempSync(path.join(tmpdir(), "corpus-drafts-"))
-    build({ drafts: true, outDir: draftsDir })
-    const readDraft = (file: string) =>
-      readFileSync(path.join(draftsDir, file), "utf8")
-    const book = readDraft("cassius-dio/roman-history/44/index.html")
+    const book = read("cassius-dio/roman-history/44/index.html")
     expect(book).toContain('<section class="passage" id="44.19"')
     expect(book).not.toContain('id="45.1"')
     // The Work's own page knows which book holds every Locator.
-    expect(readDraft("cassius-dio/roman-history/index.html")).toContain(
+    expect(read("cassius-dio/roman-history/index.html")).toContain(
       '"locator":"44.19","id":"44.19","page":"/cassius-dio/roman-history/44/"',
     )
-    expect(readDraft("cassius-dio/roman-history/80/index.html")).toContain(
+    expect(read("cassius-dio/roman-history/80/index.html")).toContain(
       'id="80.1(Alexander)"',
     )
   })

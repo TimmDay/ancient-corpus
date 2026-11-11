@@ -238,7 +238,7 @@ export function writeEditionText(
   )
 }
 
-/** Flags no Correction has accepted. An Edition with any of these is not published. */
+/** Flags no Correction has accepted. The site marks the Passages that have any. */
 export function unresolvedFlags(
   text: EditionText,
 ): { locator: string; flag: Flag }[] {

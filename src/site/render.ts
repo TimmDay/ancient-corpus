@@ -4,6 +4,7 @@ import type {
   Division,
   Edition,
   EditionText,
+  Flag,
   Heading,
   Passage,
   Work,
@@ -14,6 +15,7 @@ import {
   readAnnotations,
   type Annotation,
 } from "../annotations.ts"
+import { flagExplanation } from "../flags.ts"
 import { escapeHtml } from "../importers/gutenberg.ts"
 import {
   aliasKey,
@@ -134,8 +136,6 @@ export function workPages(
   edition: Edition,
   text: EditionText,
   editions: Edition[],
-  /** Unresolved Flags, when rendering an unpublished draft for review. */
-  draftFlags = 0,
 ): Map<string, string> {
   const pages = readerPages(edition, text)
   const base = workUrl(work, edition)
@@ -147,6 +147,11 @@ export function workPages(
     pages.flatMap((page) => page.divisions.map((d) => [d.locator, page])),
   )
   const ids = passageIds(text.passages)
+  /** The page a division is read on, for an Edition split by division. */
+  const bookUrl = (division: string) => {
+    const page = pageOf.get(division)
+    return edition.pagePerDivision && page ? pageUrl(page) : ""
+  }
   const index = locatorIndex(
     work,
     text,
@@ -176,6 +181,8 @@ export function workPages(
     page: ReaderPage | undefined,
     content: string,
     toc: string,
+    /** The Passages this page is about: its own, or the whole Edition's on a contents page. */
+    passages: Passage[],
   ) => {
     const isBook = Boolean(page?.slug)
     const body = `
@@ -200,7 +207,16 @@ ${switcher}
 </header>
 ${edition.notice ? `<p class="rights-notice">${escapeHtml(edition.notice)}</p>` : ""}
 ${edition.unpublished ? `<p class="draft-banner">Not published: ${escapeHtml(edition.unpublished)}</p>` : ""}
-${draftFlags ? `<p class="draft-banner">Draft: ${draftFlags} unresolved Flags. Not published until they are reviewed with <code>pnpm review</code>.</p>` : ""}
+${flagBanner(
+  passages
+    .filter((p) => openFlags(p).length)
+    .map((p) => ({
+      locator: p.locator,
+      // A contents page holds no text, so its links go to the book's page.
+      href: `${page ? "" : bookUrl(p.division)}#${ids.get(p) ?? ""}`,
+    })),
+  edition.pagePerDivision && !page ? "in this Edition" : "on this page",
+)}
 <div class="notice" id="notice" role="status" hidden></div>
 <section class="chooser" id="chooser" aria-labelledby="chooser-title" hidden></section>
 ${content}
@@ -210,6 +226,7 @@ ${content}
 </footer>
 </main>
 </div>
+${flagDialog(edition)}
 <script type="application/json" id="locator-index">${jsonForScript(index)}</script>`
     return layout({
       title: page?.slug
@@ -232,7 +249,12 @@ ${passages.map((p) => passageHtml(p, ids.get(p) ?? "", text.divisions, p.resumes
     return new Map([
       [
         "",
-        render(undefined, article(text.passages) + editorialHtml(text), toc),
+        render(
+          undefined,
+          article(text.passages) + editorialHtml(text),
+          toc,
+          text.passages,
+        ),
       ],
     ])
   }
@@ -247,9 +269,10 @@ ${passages.map((p) => passageHtml(p, ids.get(p) ?? "", text.divisions, p.resumes
     .join("")}</ol>
 </section>${editorialHtml(text)}`
   // The book list is the contents here, so there is no sidebar to repeat it.
-  result.set("", render(undefined, contents, ""))
+  result.set("", render(undefined, contents, "", text.passages))
   pages.forEach((page, i) => {
     const onPage = new Set(page.divisions.map((d) => d.locator))
+    const passages = text.passages.filter((p) => onPage.has(p.division))
     const [prev, next] = [pages[i - 1], pages[i + 1]]
     const label = (p: ReaderPage | undefined) =>
       escapeHtml(p ? pageLabel(p) : "")
@@ -260,7 +283,7 @@ ${passages.map((p) => passageHtml(p, ids.get(p) ?? "", text.divisions, p.resumes
       page.slug,
       render(
         page,
-        `${article(text.passages.filter((p) => onPage.has(p.division)))}
+        `${article(passages)}
 <nav class="pager" aria-label="Books">${pager}</nav>`,
         tableOfContents(
           text,
@@ -270,6 +293,7 @@ ${passages.map((p) => passageHtml(p, ids.get(p) ?? "", text.divisions, p.resumes
             onPage.has(d.locator) ? "" : pageUrl(pageOf.get(d.locator) ?? page),
           `${base}#editorial`,
         ),
+        passages,
       ),
     )
   })
@@ -454,6 +478,7 @@ function passageHtml(
       .replace(/\(.*\)$/, "")
       .split(/[\s.]/)
       .at(-1) ?? passage.locator
+  const flags = openFlags(passage)
   const notes = passage.notes.length
     ? `<aside class="notes" aria-label="Notes to ${attr(passage.locator)}" lang="en"><ol>${passage.notes
         .map(
@@ -463,12 +488,52 @@ function passageHtml(
         .join("")}</ol></aside>`
     : ""
   return `${passage.headings.map((h) => headingHtml(h, passage, divisions)).join("\n")}
-<section class="passage" id="${attr(id)}" aria-label="${attr(passage.locator)}">
+<section class="passage${flags.length ? " flagged" : ""}" id="${attr(id)}" aria-label="${attr(passage.locator)}">
+${flags.length ? flagNote(passage, flags) : ""}
 <a class="loc" href="#${attr(id)}" title="Copy a link to ${attr(passage.locator)}" aria-label="Copy a link to ${attr(passage.locator)}">${escapeHtml(label)}</a>
 ${passage.blocks.map((b) => `<p>${b}</p>`).join("\n")}
 ${notes}
 ${annotations.length ? annotationsHtml(passage, annotations) : ""}
 </section>`
+}
+
+/** Flags no Correction has accepted. Accepted ones match the print, so they go unmarked. */
+function openFlags(passage: Passage): Flag[] {
+  return passage.flags.filter((f) => !f.accepted)
+}
+
+const FLAG_ICON = `<svg class="flag-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>`
+
+/** The warning at the head of a flagged Passage, shown before its text. */
+function flagNote(passage: Passage, flags: Flag[]): string {
+  return `<div class="flag-note" role="note" lang="en">
+<p class="flag-title">${FLAG_ICON}Flagged: may not match the printed source</p>
+${flags.map((f) => `<p class="flag-why">${escapeHtml(flagExplanation(passage.locator, f))}</p>`).join("\n")}
+</div>`
+}
+
+/** Above the text: how many Passages here are flagged, each linked. */
+function flagBanner(
+  flagged: { locator: string; href: string }[],
+  where: string,
+): string {
+  if (!flagged.length) return ""
+  const one = flagged.length === 1
+  return `<aside class="flag-banner" aria-label="Flagged Passages" lang="en">
+<p class="flag-title">${FLAG_ICON}${one ? "One Passage" : `${flagged.length} Passages`} ${where} ${one ? "is" : "are"} flagged</p>
+<p>When the text was imported, a check found something that may not match the printed source: a missing or repeated chapter number, or a chapter far longer than the rest. No one has yet compared ${one ? "it" : "them"} with the print, so read ${one ? "it" : "them"} with care.</p>
+<p class="flag-links">${flagged.map((f) => `<a href="${attr(f.href)}">${escapeHtml(f.locator)}</a>`).join(", ")}</p>
+</aside>`
+}
+
+/** Opened by reader.js when a link lands on a flagged Passage. */
+function flagDialog(edition: Edition): string {
+  return `<dialog class="flag-dialog" id="flag-dialog" aria-labelledby="flag-dialog-title" lang="en">
+<p class="flag-title" id="flag-dialog-title">${FLAG_ICON}<span></span></p>
+<div class="flag-dialog-body"></div>
+<p class="flag-dialog-source">A check found this when the text was imported, and no one has yet compared it with the print. You can check it yourself in ${sourceLinks(edition)}.</p>
+<form method="dialog"><button type="submit" autofocus>Read the passage</button></form>
+</dialog>`
 }
 
 /** A Passage's Annotations: modern notes, collapsed, after the source's own text and notes. */
@@ -527,7 +592,10 @@ ${text.editorial
 }
 
 /** The home page: every readable Work, grouped by author. */
-export function homePage(works: { work: Work; edition: Edition }[]): string {
+export function homePage(
+  /** `flagged`: how many of the Edition's Passages have unresolved Flags. */
+  works: { work: Work; edition: Edition; flagged?: number }[],
+): string {
   const byAuthor = Map.groupBy(works, ({ work }) =>
     work.author === "Unknown" ? "Anonymous" : work.author,
   )
@@ -548,8 +616,12 @@ ${authors
 <h2>${escapeHtml(author)}</h2>
 <ul>${(byAuthor.get(author) ?? [])
       .map(
-        ({ work, edition }) => `<li data-search="${attr(searchText(work))}">
-<a href="${workUrl(work)}"><i>${escapeHtml(work.title)}</i></a>
+        ({
+          work,
+          edition,
+          flagged,
+        }) => `<li data-search="${attr(searchText(work))}">
+<a href="${workUrl(work)}"><i>${escapeHtml(work.title)}</i></a>${flagged ? ` <span class="flag-tag" title="Passages that may not match the printed source">${FLAG_ICON}${flagged} flagged</span>` : ""}
 <span class="meta">${escapeHtml([work.otherTitles[0], years(work), `${languageName(edition.language)}, ${editionLine(edition)}`].filter(Boolean).join(" · "))}</span>
 </li>`,
       )

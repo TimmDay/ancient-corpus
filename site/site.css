@@ -10,6 +10,8 @@
   --hit: #f5e6c4;
   --hit-edge: #c08a2d;
   --focus: #1d5fa8;
+  --flag: #a8380f;
+  --flag-bg: #fbe8dd;
   --measure: 38rem;
   --header-height: 3.5rem;
   --font-text:
@@ -30,6 +32,8 @@
     --hit: #3b3020;
     --hit-edge: #d6a54e;
     --focus: #8cbcf2;
+    --flag: #f2a079;
+    --flag-bg: #36211a;
     color-scheme: dark;
   }
 }
@@ -44,6 +48,8 @@
   --hit: #3b3020;
   --hit-edge: #d6a54e;
   --focus: #8cbcf2;
+  --flag: #f2a079;
+  --flag-bg: #36211a;
   color-scheme: dark;
 }
 
@@ -645,6 +651,129 @@ h2.division.hit {
   padding: 0.6rem 1rem;
   font-size: 1rem;
   color: var(--muted);
+}
+
+/* Flags: text that may not match the printed source, marked wherever it shows. */
+
+.flag-icon {
+  width: 1.05em;
+  height: 1.05em;
+  flex: none;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.flag-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.35rem;
+  color: var(--flag);
+  font-weight: 600;
+}
+
+.flag-banner,
+.flag-note {
+  background: var(--flag-bg);
+  border-left: 4px solid var(--flag);
+  border-radius: 2px;
+}
+
+.flag-banner {
+  padding: 0.75rem 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.flag-banner p {
+  margin: 0 0 0.5rem;
+}
+
+.flag-banner p:last-child {
+  margin-bottom: 0;
+}
+
+.flag-links a {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.passage.flagged {
+  border-left-color: var(--flag);
+}
+
+.flag-note {
+  margin: 0.4rem 0 0.9rem;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.95rem;
+}
+
+.passage .flag-note p {
+  margin: 0;
+}
+
+.passage .flag-note .flag-title {
+  margin-bottom: 0.2rem;
+}
+
+.flag-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: 0.35rem;
+  padding: 0 0.45rem;
+  border-radius: 999px;
+  background: var(--flag-bg);
+  color: var(--flag);
+  font-size: 0.85rem;
+  font-weight: 600;
+  vertical-align: 0.1em;
+}
+
+.flag-dialog {
+  width: min(32rem, calc(100vw - 2rem));
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--flag);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  box-shadow: 0 8px 32px rgb(0 0 0 / 0.25);
+}
+
+.flag-dialog::backdrop {
+  background: rgb(0 0 0 / 0.45);
+}
+
+.flag-dialog .flag-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.flag-dialog p {
+  margin: 0 0 0.75rem;
+}
+
+.flag-dialog-source {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.flag-dialog form {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.flag-dialog button {
+  font: inherit;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--flag);
+  border-radius: 6px;
+  background: var(--flag);
+  color: var(--bg);
+  cursor: pointer;
 }
 
 .rights-notice {

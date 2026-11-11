@@ -17,7 +17,7 @@ const TYPES: Record<string, string> = {
   ".svg": "image/svg+xml",
 }
 
-// --drafts also shows Editions that still have Flags, with a banner.
+// --drafts also shows unpublished Editions, with a banner.
 const drafts = process.argv.includes("--drafts")
 const { published, skipped } = build({ drafts })
 for (const s of skipped)
