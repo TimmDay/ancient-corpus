@@ -1,4 +1,4 @@
-// pnpm build: renders the committed corpus into dist/ for Cloudflare Pages.
+// pnpm build: renders the committed corpus into dist/ for Cloudflare.
 // Reads only files in Git (works/), never data/intake/, so CI can run it.
 
 import { cpSync, mkdirSync, rmSync, writeFileSync } from "node:fs"

@@ -1,4 +1,4 @@
-// pnpm dev: builds the site and serves dist/ the way Cloudflare Pages does,
+// pnpm dev: builds the site and serves dist/ the way Cloudflare does,
 // including _redirects and directory indexes, at http://localhost:4321.
 
 import { existsSync, readFileSync, statSync } from "node:fs"

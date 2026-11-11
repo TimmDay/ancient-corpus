@@ -1,0 +1,11 @@
+// Deploys dist/ as a static-assets Worker. `pnpm build` runs first; there is no Worker script.
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "ancient-corpus",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    // dist/404.html, with a 404 status, for any path without a page.
+    "not_found_handling": "404-page",
+  },
+}
