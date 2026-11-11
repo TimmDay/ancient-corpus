@@ -163,7 +163,8 @@ function scrollToTop(
 
 /**
  * `?lang=en`: opens this Work's Edition in that language, if it has one and
- * this page is another. Returns true when it is leaving the page.
+ * this page is another. Of several in the language, it opens one that has the
+ * linked Passage. Returns true when it is leaving the page.
  */
 function openAskedLanguage(): boolean {
   const wanted = new URLSearchParams(location.search).get("lang")
@@ -174,11 +175,47 @@ function openAskedLanguage(): boolean {
     ),
   ]
   const current = editions.find((a) => a.hasAttribute("aria-current"))
-  if (!current || current.dataset.lang === wanted) return false
-  const match = editions.find((a) => a.dataset.lang === wanted)
-  if (!match) return false
-  location.replace(`${match.pathname}${location.search}${location.hash}`)
+  const candidates = editions.filter((a) => a.dataset.lang === wanted)
+  if (!current || !candidates.length) return false
+  const match = editionWithPassage(candidates, current) ?? current
+  const chosen = match.dataset.lang === wanted ? match : candidates[0]
+  if (!chosen || chosen === current) return false
+  location.replace(`${chosen.pathname}${location.search}${location.hash}`)
   return true
+}
+
+/**
+ * Of Editions in one language, the first that has the linked Locator as
+ * written, else the first that has a place holding it (its book). With no
+ * Locator, the one with the most Passages.
+ */
+function editionWithPassage(
+  candidates: HTMLAnchorElement[],
+  current: HTMLAnchorElement,
+): HTMLAnchorElement | undefined {
+  const written = splitSentenceRef(decode(location.hash.slice(1))).locator
+  const locators = JSON.parse(
+    document.getElementById("edition-locators")?.textContent ?? "null",
+  ) as Record<string, string[]> | null
+  if (!locators || candidates.length < 2) return undefined
+  const size = (a: HTMLAnchorElement) =>
+    locators[a.dataset.edition ?? ""]?.length ?? 0
+  if (!written) return candidates.toSorted((a, b) => size(b) - size(a))[0]
+  const resolve = (a: HTMLAnchorElement) =>
+    a === current
+      ? resolveLocator(written, index)
+      : resolveLocator(written, {
+          targets: (locators[a.dataset.edition ?? ""] ?? []).map((locator) => ({
+            locator,
+            id: locator,
+          })),
+          aliases: index.aliases,
+        })
+  const found = candidates.map((a) => [a, resolve(a)] as const)
+  return (
+    found.find(([, r]) => r.kind === "found" && r.exact)?.[0] ??
+    found.find(([, r]) => r.kind === "found")?.[0]
+  )
 }
 
 /**

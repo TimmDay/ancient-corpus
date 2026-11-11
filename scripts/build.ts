@@ -56,9 +56,18 @@ export function build({ drafts = false, outDir = DIST } = {}): {
     const preferred = editions.find((e) => e.preferred) ?? editions[0]
     if (!preferred) continue
 
+    const texts = new Map(
+      editions.map((e) => [e.slug, readEditionText(work, e)]),
+    )
+    const locatorsOf = new Map(
+      [...texts].map(([slug, text]) => [
+        slug,
+        [...new Set(text.passages.map((p) => p.locator))],
+      ]),
+    )
     for (const edition of editions) {
-      const text = readEditionText(work, edition)
-      const pages = workPages(work, edition, text, editions)
+      const text = texts.get(edition.slug) ?? readEditionText(work, edition)
+      const pages = workPages(work, edition, text, editions, locatorsOf)
       for (const [page, html] of pages) {
         write(path.join(work.slug, edition.slug, page, "index.html"), html)
         if (edition === preferred)
