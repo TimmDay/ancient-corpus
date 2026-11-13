@@ -14,5 +14,51 @@
     "festus/breviarium-rerum-gestarum-populi-romani"
   ],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "latin-library",
+      "preferred": true,
+      "language": "la",
+      "title": "Festi Breviarium rerum gestarum populi Romani",
+      "source": {
+        "name": "The Latin Library",
+        "url": "https://www.thelatinlibrary.com/festus.shtml",
+        "archives": [
+          {
+            "file": "Festus-Breviarium-LatinLibrary.zip",
+            "sha256": "2f131275db186741b38360168b807e30ce8c646fa42885c8316503ef3014bc0b",
+            "url": "https://www.thelatinlibrary.com/festus.shtml"
+          }
+        ],
+        "rights": "The Latin text is public domain; The Latin Library names no edition and claims no rights in it"
+      },
+      "importer": "latinlibrary"
+    },
+    {
+      "slug": "banchich-meka",
+      "preferred": false,
+      "language": "en",
+      "title": "Breviarium of the Accomplishments of the Roman People",
+      "translator": "Thomas M. Banchich and Jennifer A. Meka",
+      "publicationYear": 2001,
+      "source": {
+        "name": "De Imperatoribus Romanis",
+        "url": "http://www.roman-emperors.org/festus.htm",
+        "archives": [
+          {
+            "file": "Festus-Breviarium-BanchichMeka-DIR.zip",
+            "sha256": "87a30b91c1ea55a7d6fc7aeb6a6c6848ecfa165c55a698e28763d81dbe5af61a",
+            "url": "https://web.archive.org/web/20170330233037/http://www.roman-emperors.org/festus.htm"
+          }
+        ],
+        "rights": "Copyright (C) 2001, Thomas Banchich. Published on the condition in his notice: the entire contents, with the header and copyright notice, intact, on one page. The page as the site printed it in 2017, from the Internet Archive; the site has since moved."
+      },
+      "importer": "dir",
+      "notice": "BREVIARIUM OF THE ACCOMPLISHMENTS OF THE ROMAN PEOPLE, Translated by Thomas M. Banchich and Jennifer A. Meka, Canisius College Translated Texts, Number 2, Canisius College, Buffalo, New York, 2001. http://www.roman-emperors.org/festus.htm Copyright (C) 2001, Thomas Banchich. This file may be copied on the condition that the entire contents, including the header and this copyright notice, remain intact.",
+      "humanTranslation": {
+        "citation": "Thomas M. Banchich and Jennifer A. Meka, Canisius College Translated Texts 2 (2001), at De Imperatoribus Romanis",
+        "url": "http://www.roman-emperors.org/festus.htm"
+      }
+    }
+  ]
 }

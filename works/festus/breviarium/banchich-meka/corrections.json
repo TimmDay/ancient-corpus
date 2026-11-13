@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "locator": "24",
+    "find": "husbandís death",
+    "with": "husband’s death"
+  }
+]
