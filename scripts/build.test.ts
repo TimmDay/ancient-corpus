@@ -138,6 +138,18 @@ describe("build", () => {
     )
   })
 
+  it("reads Dexippus on Aurelian's embassies, in Müller's Greek and our English", () => {
+    const greek = read("dexippus/scythica/index.html")
+    expect(greek).toMatch(
+      /id="24"[^>]*>[\s\S]*?Ὅτε Αὐρηλιανὸς κατὰ κράτος νικήσας τοὺς Ἰουθούγγους Σκύθας/,
+    )
+    // Müller's markers for his notes are dropped; his notes stay.
+    expect(greek).not.toContain("Ἰουθούγγους (*)")
+    expect(read("dexippus/scythica/ancient-corpus/index.html")).toContain(
+      "When Aurelian had defeated the Juthungian Scythians outright",
+    )
+  })
+
   it("redirects long slugs, keeping the rest of the path", () => {
     expect(read("_redirects")).toContain(
       "/eutropius/breviarium-historiae-romanae/* /eutropius/breviarium/:splat 301",
