@@ -50,7 +50,12 @@
         "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
       },
       "importer": "translation",
-      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 30 October 2026, from Huyse's transcription of the Parthian. It is not a translator's work: check it against the Parthian, and report errors. Public domain (CC0): reuse it freely."
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 30 October 2026, from Huyse's transcription of the Parthian. It is not a translator's work: check it against the Parthian, and report errors. Public domain (CC0): reuse it freely.",
+      "humanTranslation": {
+        "citation": "Jake Nabel, Parthian Sources Online",
+        "url": "https://parthiansources.com/texts/skz/",
+        "access": "Free to read there. All rights reserved, so it is not published here."
+      }
     },
     {
       "slug": "nabel",
@@ -71,7 +76,11 @@
       },
       "importer": "parthiansources",
       "notice": "Translation: Jake Nabel, Parthian Sources Online (https://parthiansources.com/texts/skz/). All rights reserved.",
-      "unpublished": "waiting for Jake Nabel's permission to publish his translation."
+      "unpublished": "waiting for Jake Nabel's permission to publish his translation.",
+      "humanTranslation": {
+        "citation": "Jake Nabel, Parthian Sources Online",
+        "url": "https://parthiansources.com/texts/skz/"
+      }
     }
   ]
 }

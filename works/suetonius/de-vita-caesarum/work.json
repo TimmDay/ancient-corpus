@@ -65,7 +65,11 @@
         ],
         "rights": "Public domain in the USA."
       },
-      "importer": "suetonius"
+      "importer": "suetonius",
+      "humanTranslation": {
+        "citation": "Alexander Thomson, revised by T. Forester, The Lives of the Twelve Caesars, from Project Gutenberg",
+        "url": "https://www.gutenberg.org/ebooks/6400"
+      }
     }
   ]
 }

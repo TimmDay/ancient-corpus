@@ -56,7 +56,11 @@
         "rights": "Public domain (Bonn: Weber, 1838–39). Volume 1 scanned by Google (archive.org georgiuscedrenu01scylgoog), volume 2 from archive.org GeorgiusCedrenusCompendiumHistoriarumTomusAlterGRLT; OCR by archive.org, uncorrected."
       },
       "importer": "bonn",
-      "pagePerDivision": true
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "Wilhelm Xylander, printed beside the Greek in Immanuel Bekker's edition (Bonn, 1838–1839)",
+        "url": "https://archive.org/details/georgiuscedrenu01scylgoog"
+      }
     }
   ]
 }

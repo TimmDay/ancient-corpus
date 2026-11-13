@@ -111,7 +111,11 @@
         "rights": "Public domain in the USA."
       },
       "importer": "dio",
-      "pagePerDivision": true
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "Herbert Baldwin Foster, Dio's Rome, 6 vols. (1905–1906), from Project Gutenberg",
+        "url": "https://www.gutenberg.org/ebooks/11607"
+      }
     }
   ]
 }

@@ -71,10 +71,26 @@ export type Edition = {
    */
   notice?: string
   /**
+   * The human translation to read and thank, linked at the top of every page.
+   * Every translation has one: a translator's Edition names its own printed
+   * translation; our machine translation names the best human one there is,
+   * or where to ask for it.
+   */
+  humanTranslation?: HumanTranslation
+  /**
    * Why the Edition is not published yet (permission not given). Its text is
    * kept out of git and the site; `pnpm dev:drafts` shows it locally.
    */
   unpublished?: string
+}
+
+export type HumanTranslation = {
+  /** Who translated it and where it was printed: "H. W. Bird, Liber de Caesaribus of Sextus Aurelius Victor (Liverpool University Press, 1994)". */
+  citation: string
+  /** Where to read, buy, borrow or ask for it. */
+  url: string
+  /** How to get it when it is not free to read: "In copyright: buy it, or borrow it from a library." */
+  access?: string
 }
 
 export type EditionSource = {

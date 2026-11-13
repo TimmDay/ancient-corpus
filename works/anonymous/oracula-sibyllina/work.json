@@ -65,7 +65,11 @@
         "rights": "Public domain (New York: Eaton & Mains, 1899). Digitized by Roger Pearse at sacred-texts.com; from ToposText."
       },
       "importer": "topostext-lines",
-      "pagePerDivision": true
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "Milton S. Terry, The Sibylline Oracles (New York: Eaton & Mains, 1899), digitized by Roger Pearse",
+        "url": "https://topostext.org/work/485"
+      }
     }
   ]
 }
