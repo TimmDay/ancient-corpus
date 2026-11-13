@@ -46,7 +46,12 @@
         "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
       },
       "importer": "translation",
-      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 13 November 2026, from Karl Müller's text of the fragments (Fragmenta Historicorum Graecorum III, 1849). Most of these fragments are other writers reporting Dexippus; where Müller gives a Latin writer, the English is translated from that Latin. It is not a translator's work: check it against the Greek, and report errors. Public domain (CC0): reuse it freely."
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 13 November 2026, from Karl Müller's text of the fragments (Fragmenta Historicorum Graecorum III, 1849). Most of these fragments are other writers reporting Dexippus; where Müller gives a Latin writer, the English is translated from that Latin. It is not a translator's work: check it against the Greek, and report errors. Public domain (CC0): reuse it freely.",
+      "humanTranslation": {
+        "citation": "J. McInerney, Dexippos (100), Brill's New Jacoby, with an English translation of every fragment",
+        "url": "https://scholarlyeditions.brill.com/bnjo/",
+        "access": "By subscription: read it through a library."
+      }
     }
   ]
 }
