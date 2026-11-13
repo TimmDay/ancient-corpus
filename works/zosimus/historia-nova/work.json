@@ -54,7 +54,11 @@
         "rights": "Public domain. Anonymous translation (London: Green and Chaplin, 1814); transcribed by Roger Pearse, 2002: \"All material on this page is in the public domain - copy freely.\""
       },
       "importer": "tertullian",
-      "pagePerDivision": true
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "The History of Count Zosimus (London: Green and Chaplin, 1814), translator unnamed, transcribed by Roger Pearse",
+        "url": "https://www.tertullian.org/fathers/zosimus00_intro.htm"
+      }
     }
   ]
 }

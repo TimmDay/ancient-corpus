@@ -50,7 +50,11 @@
         ],
         "rights": "Public domain (Ante-Nicene Fathers, 1886); CCEL marks its text public domain"
       },
-      "importer": "ccel"
+      "importer": "ccel",
+      "humanTranslation": {
+        "citation": "William Fletcher, Of the Manner in Which the Persecutors Died, Ante-Nicene Fathers, vol. 7 (1886), from the Christian Classics Ethereal Library",
+        "url": "https://www.ccel.org/ccel/schaff/anf07.iii.v.html"
+      }
     }
   ]
 }

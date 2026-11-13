@@ -32,7 +32,11 @@
         "rights": "Copyright (C) 2009, Thomas Banchich. Published on the condition in his notice: the entire contents, with the header and copyright notice, intact, on one page."
       },
       "importer": "topostext",
-      "notice": "A BOOKLET ABOUT THE STYLE OF LIFE AND THE MANNERS OF THE IMPERATORES (Epitome De Caesaribus) Sometimes Attributed to Sextus Aurelius Victor, Translated by Thomas M. Banchich, Canisius College Translated Texts, Number 1, Canisius College. Buffalo, New York 2009 -2nd edition- http://www.roman-emperors.org/epitome.htm Copyright (C) 2009, Thomas Banchich. This file may be copied on the condition that the entire contents, including the header and this copyright notice, remain intact."
+      "notice": "A BOOKLET ABOUT THE STYLE OF LIFE AND THE MANNERS OF THE IMPERATORES (Epitome De Caesaribus) Sometimes Attributed to Sextus Aurelius Victor, Translated by Thomas M. Banchich, Canisius College Translated Texts, Number 1, Canisius College. Buffalo, New York 2009 -2nd edition- http://www.roman-emperors.org/epitome.htm Copyright (C) 2009, Thomas Banchich. This file may be copied on the condition that the entire contents, including the header and this copyright notice, remain intact.",
+      "humanTranslation": {
+        "citation": "Thomas M. Banchich, Canisius College Translated Texts 1 (2nd edition, 2009)",
+        "url": "https://topostext.org/work/745"
+      }
     }
   ]
 }

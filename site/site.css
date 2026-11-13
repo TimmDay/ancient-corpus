@@ -776,6 +776,10 @@ h2.division.hit {
   cursor: pointer;
 }
 
+.human-translation {
+  font-size: 0.95rem;
+}
+
 .rights-notice {
   border-left: 3px solid var(--rule);
   padding: 0.4rem 0 0.4rem 1rem;

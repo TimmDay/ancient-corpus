@@ -126,7 +126,11 @@
         "rights": "Public domain. Loeb Classical Library, vols. I (1921), II (1924) and III (1932); LacusCurtius: \"Both text and translation are in the public domain\"."
       },
       "importer": "lacuscurtius",
-      "pagePerDivision": true
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "David Magie, The Scriptores Historiae Augustae, Loeb Classical Library, 3 vols. (1921–1932), transcribed by Bill Thayer at LacusCurtius",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/home.html"
+      }
     }
   ]
 }

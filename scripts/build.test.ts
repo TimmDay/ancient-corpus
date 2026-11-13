@@ -150,6 +150,23 @@ describe("build", () => {
     )
   })
 
+  it("links every translation to its human translator, to read or to thank", () => {
+    expect(
+      read("aurelius-victor/de-caesaribus/ancient-corpus/index.html"),
+    ).toContain(
+      '<p class="human-translation">Read a human translation: <a href="https://search.worldcat.org/search?q=bn:0853232180">H. W. Bird',
+    )
+    expect(read("anonymous/historia-augusta/magie/index.html")).toContain(
+      '<p class="human-translation">Translated by <a href="https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/home.html">David Magie',
+    )
+    const unthanked = loadWorks().flatMap((w) =>
+      w.editions
+        .filter((e) => e.language !== w.originalLanguage && !e.humanTranslation)
+        .map((e) => `${w.slug}/${e.slug}`),
+    )
+    expect(unthanked).toEqual([])
+  })
+
   it("redirects long slugs, keeping the rest of the path", () => {
     expect(read("_redirects")).toContain(
       "/eutropius/breviarium-historiae-romanae/* /eutropius/breviarium/:splat 301",

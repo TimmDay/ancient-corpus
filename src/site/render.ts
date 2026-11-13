@@ -212,6 +212,7 @@ ${isBook ? "" : otherTitles}
 <p class="edition-line">${escapeHtml(editionLine(edition))}. ${escapeHtml(languageName(edition.language))}.</p>
 ${switcher}
 </header>
+${humanTranslationLine(edition)}
 ${edition.notice ? `<p class="rights-notice">${escapeHtml(edition.notice)}</p>` : ""}
 ${edition.unpublished ? `<p class="draft-banner">Not published: ${escapeHtml(edition.unpublished)}</p>` : ""}
 ${flagBanner(
@@ -306,6 +307,21 @@ ${passages.map((p) => passageHtml(p, ids.get(p) ?? "", text.divisions, p.resumes
     )
   })
   return result
+}
+
+/**
+ * The human translation, at the top of the page: our machine translation
+ * points readers to it, and a translator's Edition thanks its translator.
+ */
+function humanTranslationLine(edition: Edition): string {
+  const human = edition.humanTranslation
+  if (!human) return ""
+  const label =
+    edition.importer === "translation"
+      ? "Read a human translation:"
+      : "Translated by"
+  const access = human.access ? ` ${escapeHtml(human.access)}` : ""
+  return `<p class="human-translation">${label} <a href="${attr(human.url)}">${escapeHtml(human.citation)}</a>.${access}</p>`
 }
 
 /** One link for a single source; one per volume when the Edition spans several. */

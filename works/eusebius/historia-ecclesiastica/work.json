@@ -53,7 +53,11 @@
         ],
         "rights": "Public domain (Nicene and Post-Nicene Fathers, 1890); CCEL marks its text public domain"
       },
-      "importer": "ccel"
+      "importer": "ccel",
+      "humanTranslation": {
+        "citation": "Arthur Cushman McGiffert, The Church History of Eusebius, Nicene and Post-Nicene Fathers, Second Series, vol. 1 (1890), from the Christian Classics Ethereal Library",
+        "url": "https://www.ccel.org/ccel/schaff/npnf201.html"
+      }
     }
   ]
 }
