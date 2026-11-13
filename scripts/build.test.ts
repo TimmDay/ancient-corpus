@@ -167,6 +167,18 @@ describe("build", () => {
     expect(unthanked).toEqual([])
   })
 
+  it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
+    expect(read("festus/breviarium/index.html")).toMatch(
+      /id="24"[^>]*>[\s\S]*?Zenobia/,
+    )
+    const english = read("festus/breviarium/banchich-meka/index.html")
+    expect(english).toContain("Copyright (C) 2001, Thomas Banchich")
+    expect(english).toMatch(
+      /id="24"[^>]*>[\s\S]*?Aurelian defeated her, relying on many thousands of armored horsemen/,
+    )
+    expect(english).toContain("Index of Names of Individuals")
+  })
+
   it("redirects long slugs, keeping the rest of the path", () => {
     expect(read("_redirects")).toContain(
       "/eutropius/breviarium-historiae-romanae/* /eutropius/breviarium/:splat 301",

@@ -18,6 +18,7 @@ import { importCcel } from "./importers/ccel.ts"
 import { importDfhg } from "./importers/dfhg.ts"
 import { importDio } from "./importers/dio.ts"
 import { importEutropius } from "./importers/eutropius.ts"
+import { importDir } from "./importers/dir.ts"
 import { importLacusCurtius } from "./importers/lacuscurtius.ts"
 import { importLatinLibrary } from "./importers/latinlibrary.ts"
 import { importParthianSources } from "./importers/parthiansources.ts"
@@ -37,6 +38,7 @@ const IMPORTERS: Record<
   ccel: (source, work) => importCcel(source, work.title),
   dfhg: (source, work) => importDfhg(source, work.title),
   dio: importDio,
+  dir: importDir,
   eutropius: importEutropius,
   lacuscurtius: (source, work, edition) =>
     importLacusCurtius(source, work.title, edition.language),

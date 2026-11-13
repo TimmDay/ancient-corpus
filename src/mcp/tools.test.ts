@@ -51,10 +51,10 @@ describe("findWorks", () => {
   })
 
   it("prefers the Work with text when a title is shared", () => {
-    // Festus's Breviarium is planned but has no text yet.
-    expect(corpus.findWorks("Breviarium").map((w) => w.slug)).toEqual([
-      "eutropius/breviarium",
-    ])
+    // Socrates', Theodoret's and Philostorgius' are planned but have no text yet.
+    expect(
+      corpus.findWorks("Historia Ecclesiastica").map((w) => w.slug),
+    ).toEqual(["eusebius/historia-ecclesiastica"])
   })
 })
 
@@ -134,7 +134,7 @@ describe("listWorks", () => {
       (w) => w.work === "zosimus/historia-nova",
     )
     expect(zosimus?.editions.map((e) => e.language)).toEqual(["grc", "en"])
-    expect(listWorks(corpus).some((w) => w.work === "festus/breviarium")).toBe(
+    expect(listWorks(corpus).some((w) => w.work === "orosius/historiae")).toBe(
       false,
     )
   })
