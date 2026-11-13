@@ -1,0 +1,45 @@
+{
+  "divisions": [
+    {
+      "locator": "1",
+      "label": "Book 1"
+    },
+    {
+      "locator": "2",
+      "label": "Book 2"
+    },
+    {
+      "locator": "3",
+      "label": "Book 3"
+    },
+    {
+      "locator": "4",
+      "label": "Book 4"
+    },
+    {
+      "locator": "5",
+      "label": "Book 5"
+    },
+    {
+      "locator": "6",
+      "label": "Book 6"
+    },
+    {
+      "locator": "7",
+      "label": "Book 7"
+    },
+    {
+      "locator": "8",
+      "label": "Book 8"
+    },
+    {
+      "locator": "9",
+      "label": "Book 9"
+    },
+    {
+      "locator": "10",
+      "label": "Book 10"
+    }
+  ],
+  "editorial": []
+}

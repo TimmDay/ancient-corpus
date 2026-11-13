@@ -14,6 +14,7 @@ import {
 } from "./corpus.ts"
 import { correctEdition, type Correction } from "./corrections.ts"
 import { importBonn } from "./importers/bonn.ts"
+import { importCcel } from "./importers/ccel.ts"
 import { importDio } from "./importers/dio.ts"
 import { importEutropius } from "./importers/eutropius.ts"
 import { importLacusCurtius } from "./importers/lacuscurtius.ts"
@@ -32,6 +33,7 @@ const IMPORTERS: Record<
   (source: EditionSource, work: Work, edition: Edition) => ImportedEdition
 > = {
   bonn: (source, _work, edition) => importBonn(source, edition),
+  ccel: (source, work) => importCcel(source, work.title),
   dio: importDio,
   eutropius: importEutropius,
   lacuscurtius: (source, work, edition) =>

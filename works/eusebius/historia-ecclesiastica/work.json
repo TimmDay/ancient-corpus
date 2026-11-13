@@ -1,18 +1,59 @@
 {
   "author": "Eusebius",
   "title": "Historia Ecclesiastica",
-  "otherTitles": [
-    "Church History"
-  ],
+  "otherTitles": ["Church History"],
   "originalLanguage": "grc",
-  "writtenYearEarliest": null,
-  "writtenYearLatest": null,
+  "writtenYearEarliest": 313,
+  "writtenYearLatest": 325,
   "coversYearEarliest": null,
   "coversYearLatest": 324,
   "locatorFormat": "book.chapter, e.g. 7.10",
-  "slugAliases": [
-    "eusebius/church-history"
-  ],
+  "slugAliases": ["eusebius/church-history"],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "dindorf",
+      "preferred": true,
+      "language": "grc",
+      "title": "Eusebii Caesariensis Opera, vol. 4: Historia Ecclesiastica",
+      "editor": "Ludwig Dindorf",
+      "publicationYear": 1871,
+      "pagePerDivision": true,
+      "source": {
+        "name": "Open Greek and Latin, First1KGreek (University of Leipzig)",
+        "url": "https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg2018/tlg002/tlg2018.tlg002.1st1K-grc2.xml",
+        "archives": [
+          {
+            "file": "Eusebius-Dindorf-First1KGreek.zip",
+            "sha256": "c08ba73684349f61686d392d5c5ac57e81d1cf95d5a54e4109cbd65185ca8e05"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1871) public domain; the digital edition is © University of Leipzig, available under CC BY-SA 4.0."
+      },
+      "importer": "perseus"
+    },
+    {
+      "slug": "mcgiffert",
+      "preferred": false,
+      "language": "en",
+      "title": "The Church History of Eusebius",
+      "translator": "Arthur Cushman McGiffert",
+      "editor": "Philip Schaff and Henry Wace",
+      "publicationYear": 1890,
+      "pagePerDivision": true,
+      "source": {
+        "name": "Christian Classics Ethereal Library, Nicene and Post-Nicene Fathers, Second Series, vol. 1",
+        "url": "https://www.ccel.org/ccel/schaff/npnf201.html",
+        "archives": [
+          {
+            "file": "Eusebius-McGiffert-CCEL-npnf201.zip",
+            "sha256": "47b4790fc6d194f13f4d5184025fcedde36c43fdbb53aef11675fa5adcc92dd5",
+            "url": "https://www.ccel.org/ccel/s/schaff/npnf201.xml"
+          }
+        ],
+        "rights": "Public domain (Nicene and Post-Nicene Fathers, 1890); CCEL marks its text public domain"
+      },
+      "importer": "ccel"
+    }
+  ]
 }
