@@ -136,6 +136,8 @@ export function workPages(
   edition: Edition,
   text: EditionText,
   editions: Edition[],
+  /** Every Edition's Locators, keyed by its slug, so `?lang=` can pick one that has the Passage. */
+  locatorsOf: Map<string, string[]> = new Map(),
 ): Map<string, string> {
   const pages = readerPages(edition, text)
   const base = workUrl(work, edition)
@@ -172,10 +174,15 @@ export function workPages(
       ? `<nav class="editions" aria-label="Editions"><ul>${editions
           .map(
             (e) =>
-              `<li><a href="${workUrl(work, e)}" data-lang="${attr(e.language)}" data-keep-hash${e.slug === edition.slug ? ' aria-current="page"' : ""}><span class="lang">${escapeHtml(languageName(e.language))}</span> ${escapeHtml(editionLine(e))}</a></li>`,
+              `<li><a href="${workUrl(work, e)}" data-lang="${attr(e.language)}" data-edition="${attr(e.slug)}" data-keep-hash${e.slug === edition.slug ? ' aria-current="page"' : ""}><span class="lang">${escapeHtml(languageName(e.language))}</span> ${escapeHtml(editionLine(e))}</a></li>`,
           )
           .join("")}</ul></nav>`
       : ""
+
+  // Where two Editions share a language, `?lang=` needs to know which has a Locator.
+  const sameLanguage = editions.filter(
+    (e) => editions.filter((o) => o.language === e.language).length > 1,
+  )
 
   const render = (
     page: ReaderPage | undefined,
@@ -227,6 +234,7 @@ ${content}
 </main>
 </div>
 ${flagDialog(edition)}
+${sameLanguage.length ? `<script type="application/json" id="edition-locators">${jsonForScript(Object.fromEntries(sameLanguage.map((e) => [e.slug, locatorsOf.get(e.slug) ?? []])))}</script>` : ""}
 <script type="application/json" id="locator-index">${jsonForScript(index)}</script>`
     return layout({
       title: page?.slug

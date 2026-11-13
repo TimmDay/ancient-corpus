@@ -91,6 +91,23 @@ describe("build", () => {
     )
   })
 
+  it("lists the Locators of Editions that share a language, for ?lang=", () => {
+    const page = read("john-zonaras/epitome-historiarum/12/index.html")
+    const locators = JSON.parse(
+      /<script type="application\/json" id="edition-locators">(.*?)<\/script>/.exec(
+        page,
+      )?.[1] ?? "{}",
+    ) as Record<string, string[]>
+    expect(Object.keys(locators).sort()).toEqual(["ancient-corpus", "foster"])
+    expect(locators.foster).toContain("8.1")
+    expect(locators.foster).not.toContain("12.1")
+    expect(locators["ancient-corpus"]).toContain("12.1")
+    // A Work with one Edition per language needs no list.
+    expect(read("zosimus/historia-nova/index.html")).not.toContain(
+      "edition-locators",
+    )
+  })
+
   it("redirects long slugs, keeping the rest of the path", () => {
     expect(read("_redirects")).toContain(
       "/eutropius/breviarium-historiae-romanae/* /eutropius/breviarium/:splat 301",
