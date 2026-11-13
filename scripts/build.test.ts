@@ -108,6 +108,36 @@ describe("build", () => {
     )
   })
 
+  it("reads Eusebius and Lactantius on Aurelian, in the original and in English", () => {
+    const greek = read("eusebius/historia-ecclesiastica/7/index.html")
+    expect(greek).toContain('<section class="passage" id="7.praef"')
+    expect(greek).toContain('<section class="passage" id="7.30"')
+    // Dindorf's margin references to Nicephorus are not Eusebius's text.
+    expect(greek).not.toContain("Nic. H. E.")
+    const english = read(
+      "eusebius/historia-ecclesiastica/mcgiffert/7/index.html",
+    )
+    expect(english).toContain("the Emperor Aurelian was petitioned")
+    expect(english).toContain(
+      "Chapter XXX.—<i>The Epistle of the Bishops against Paul.</i>",
+    )
+    // Only the appendix the Greek numbers apart is a Passage of its own.
+    expect(
+      read("eusebius/historia-ecclesiastica/mcgiffert/8/index.html"),
+    ).toContain('id="8.appendix"')
+    expect(
+      read("eusebius/historia-ecclesiastica/mcgiffert/10/index.html"),
+    ).not.toContain('id="10.appendix"')
+    expect(read("lactantius/de-mortibus-persecutorum/index.html")).toMatch(
+      /id="6"[^>]*>[\s\S]*?Aurelianus, qui esset natura vesanus/,
+    )
+    expect(
+      read("lactantius/de-mortibus-persecutorum/fletcher/index.html"),
+    ).toContain(
+      "Aurelian might have recollected the fate of the captived emperor",
+    )
+  })
+
   it("redirects long slugs, keeping the rest of the path", () => {
     expect(read("_redirects")).toContain(
       "/eutropius/breviarium-historiae-romanae/* /eutropius/breviarium/:splat 301",

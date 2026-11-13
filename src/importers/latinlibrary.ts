@@ -1,6 +1,7 @@
 // Texts from The Latin Library (thelatinlibrary.com), one saved page in an
-// intake zip. A chapter opens a <p> with <a name="N"></a><b>N</b>; its
-// sections are <font size="-1"><sup>M</sup></font>. Passages are chapters: a
+// intake zip. A chapter opens a <p> with <a name="N"></a><b>N</b>, or with
+// "[N]" (Lactantius); its sections are <font size="-1"><sup>M</sup></font>, or
+// <span style="font-size: 80%;">M</span>. Passages are chapters: a
 // section Locator such as `27.7` lands on its chapter. Section numbers are
 // dropped from the text, as in the other Latin Editions.
 
@@ -18,7 +19,9 @@ export function importLatinLibrary(source: EditionSource): ImportedEdition {
   const passages: Omit<Passage, "flags">[] = []
   let current: Omit<Passage, "flags"> | undefined
   for (const p of $("p").toArray() as Element[]) {
-    const anchor = $(p).children("a[name]").first().attr("name")
+    const anchor =
+      $(p).children("a[name]").first().attr("name") ??
+      /^\s*\[(\d+)\]/.exec($(p).text())?.[1]
     if (anchor && /^\d+$/.test(anchor)) {
       current = {
         locator: anchor,
@@ -34,11 +37,12 @@ export function importLatinLibrary(source: EditionSource): ImportedEdition {
       current = undefined
     }
     if (!current) continue
-    $(p).find("a[name], b, sup, font").remove()
+    $(p).find("a[name], b, sup, font, span[style*='font-size']").remove()
     const text = $(p)
       .text()
       .replace(/\s+/g, " ")
       .trim()
+      .replace(/^\[\d+\] /, "")
       // A paragraph inside a chapter opens with a broken tag, "17</sup></font>",
       // which leaves its section number as text.
       .replace(/^\d+ /, "")

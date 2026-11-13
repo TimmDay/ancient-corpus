@@ -54,6 +54,23 @@ describe("Flags", () => {
     expect(text.passages.flatMap((p) => p.flags)).toEqual([])
   })
 
+  it("leaves a book's preface and appendix outside its numbering", () => {
+    const inBook = (locator: string) => ({
+      ...passage(locator, "x"),
+      division: "8",
+    })
+    const text = correctEdition(
+      edition(
+        inBook("8.praef"),
+        inBook("8.1"),
+        inBook("8.2"),
+        inBook("8.appendix"),
+      ),
+      [],
+    )
+    expect(text.passages.flatMap((p) => p.flags)).toEqual([])
+  })
+
   it("reads a lettered chapter as part of the run, not a gap", () => {
     const text = correctEdition(
       edition(

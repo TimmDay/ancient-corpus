@@ -418,6 +418,14 @@
           "covers": "238 to c. 270"
         },
         {
+          "author": "Anonymous",
+          "title": "Continuation of Dio (fragments)",
+          "language": "grc",
+          "written": "uncertain",
+          "covers": "3rd century to Constantine",
+          "note": "The Anonymus post Dionem; identity and date disputed, sometimes taken to be Peter the Patrician"
+        },
+        {
           "work": "cyprian/epistulae",
           "written": "c. 249 to 258",
           "covers": "c. 249 to 258",
@@ -463,7 +471,6 @@
         },
         {
           "work": "lactantius/de-mortibus-persecutorum",
-          "written": "c. 315",
           "freeEnglish": "William Fletcher (Ante-Nicene Fathers, 1871)"
         }
       ]
@@ -616,7 +623,6 @@
       "entries": [
         {
           "work": "eusebius/historia-ecclesiastica",
-          "written": "c. 313 to 325",
           "freeEnglish": "A. C. McGiffert (Nicene and Post-Nicene Fathers, 1890)"
         },
         {
@@ -705,6 +711,14 @@
     {
       "heading": "Chronicles and later compilations",
       "entries": [
+        {
+          "author": "Furius Dionysius Filocalus",
+          "title": "Chronography of 354",
+          "language": "la",
+          "written": "354",
+          "covers": "Romulus to 324, in its Chronicle of the City of Rome",
+          "note": "An illustrated almanac; its Chronicle gives a short notice of each reign"
+        },
         {
           "author": "Jerome",
           "title": "Chronicle",

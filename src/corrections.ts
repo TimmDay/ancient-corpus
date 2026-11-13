@@ -200,8 +200,10 @@ export function raiseFlags(
     const group = division.filter(
       (p) => qualifierOf(p.locator) === own && !p.resumes,
     )
-    const numbers = group.map((p) => lastNumber(p.locator))
-    group.forEach((passage, i) => {
+    // A preface or appendix (`7.praef`, `8.appendix`) is outside the numbering too.
+    const numbered = group.filter((p) => Number.isFinite(lastNumber(p.locator)))
+    const numbers = numbered.map((p) => lastNumber(p.locator))
+    numbered.forEach((passage, i) => {
       if (passage.flags.some((f) => f.code === "duplicate")) return
       const current = numbers[i] ?? NaN
       if (lines) {

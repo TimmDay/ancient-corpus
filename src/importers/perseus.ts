@@ -8,7 +8,9 @@
 // An unnumbered <lb/> starts a verse line (an oracle quoted in Zosimus); a
 // numbered one only counts the printed page's lines (Zonaras), so it is a
 // space, and a word hyphenated across it is joined again. The editor's
-// footnotes become the chapter's notes; marginal sigla are dropped.
+// footnotes become the chapter's notes; marginal sigla are dropped, and so
+// are Dindorf's marginal references to Nicephorus's Church History, which the
+// Eusebius transcription puts in the text: "[Nic. H. E. V, 29—31]".
 
 import { createHash } from "node:crypto"
 import { readFileSync } from "node:fs"
@@ -179,6 +181,7 @@ function lines(nodes: AnyNode[]): string {
 function clean(html: string): string {
   return html
     .normalize("NFC")
+    .replace(/(?:\[\s*|^)I?[NΝ][iι]c[\s.,·][^\]]*\]/g, "")
     .replace(/\s+/g, " ")
     .replace(/(\p{L})- (?=\p{Ll})/gu, "$1")
     .trim()
@@ -214,7 +217,7 @@ function inline($: CheerioAPI, nodes: AnyNode[]): string {
 }
 
 /** The one TEI file in an unchanged intake zip, refusing a zip whose checksum moved. */
-function readTei(intake: { file: string; sha256: string }): CheerioAPI {
+export function readTei(intake: { file: string; sha256: string }): CheerioAPI {
   const archive = readFileSync(path.join(INTAKE_DIR, intake.file))
   const sha256 = createHash("sha256").update(archive).digest("hex")
   if (sha256 !== intake.sha256)

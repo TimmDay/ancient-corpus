@@ -1,0 +1,74 @@
+[
+  {
+    "op": "accept",
+    "locator": "2.17",
+    "flag": "long",
+    "reason": "Eusebius’s chapter is this long: McGiffert’s English, divided into chapters independently, has the same bounds"
+  },
+  {
+    "op": "accept",
+    "locator": "2.23",
+    "flag": "long",
+    "reason": "Eusebius’s chapter is this long: McGiffert’s English, divided into chapters independently, has the same bounds"
+  },
+  {
+    "op": "accept",
+    "locator": "3.6",
+    "flag": "long",
+    "reason": "Eusebius’s chapter is this long: McGiffert’s English, divided into chapters independently, has the same bounds"
+  },
+  {
+    "op": "accept",
+    "locator": "4.15",
+    "flag": "long",
+    "reason": "Eusebius’s chapter is this long: McGiffert’s English, divided into chapters independently, has the same bounds"
+  },
+  {
+    "op": "accept",
+    "locator": "5.1",
+    "flag": "long",
+    "reason": "Eusebius’s chapter is this long: McGiffert’s English, divided into chapters independently, has the same bounds"
+  },
+  {
+    "op": "accept",
+    "locator": "5.16",
+    "flag": "long",
+    "reason": "Eusebius’s chapter is this long: McGiffert’s English, divided into chapters independently, has the same bounds"
+  },
+  {
+    "op": "accept",
+    "locator": "6.43",
+    "flag": "long",
+    "reason": "Eusebius’s chapter is this long: McGiffert’s English, divided into chapters independently, has the same bounds"
+  },
+  {
+    "op": "accept",
+    "locator": "7.11",
+    "flag": "long",
+    "reason": "Eusebius’s chapter is this long: McGiffert’s English, divided into chapters independently, has the same bounds"
+  },
+  {
+    "op": "accept",
+    "locator": "7.25",
+    "flag": "long",
+    "reason": "Eusebius’s chapter is this long: McGiffert’s English, divided into chapters independently, has the same bounds"
+  },
+  {
+    "op": "accept",
+    "locator": "7.30",
+    "flag": "long",
+    "reason": "Eusebius’s chapter is this long: McGiffert’s English, divided into chapters independently, has the same bounds"
+  },
+  {
+    "op": "accept",
+    "locator": "7.32",
+    "flag": "long",
+    "reason": "Eusebius’s chapter is this long: McGiffert’s English, divided into chapters independently, has the same bounds"
+  },
+  {
+    "op": "accept",
+    "locator": "10.4",
+    "flag": "long",
+    "reason": "Eusebius’s chapter is this long: McGiffert’s English, divided into chapters independently, has the same bounds"
+  }
+]

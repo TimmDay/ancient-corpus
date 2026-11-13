@@ -1,18 +1,56 @@
 {
   "author": "Lactantius",
   "title": "De Mortibus Persecutorum",
-  "otherTitles": [
-    "On the Deaths of the Persecutors"
-  ],
+  "otherTitles": ["On the Deaths of the Persecutors"],
   "originalLanguage": "la",
-  "writtenYearEarliest": null,
-  "writtenYearLatest": null,
+  "writtenYearEarliest": 313,
+  "writtenYearLatest": 316,
   "coversYearEarliest": 64,
   "coversYearLatest": 313,
-  "locatorFormat": "chapter.section, e.g. 44.5",
-  "slugAliases": [
-    "lactantius/on-the-deaths-of-the-persecutors"
-  ],
+  "locatorFormat": "chapter.section, e.g. 6.2",
+  "slugAliases": ["lactantius/on-the-deaths-of-the-persecutors"],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "latin-library",
+      "preferred": true,
+      "language": "la",
+      "title": "Liber ad Donatum confessorem de mortibus persecutorum",
+      "source": {
+        "name": "The Latin Library",
+        "url": "https://www.thelatinlibrary.com/lactantius/demort.shtml",
+        "archives": [
+          {
+            "file": "Lactantius-DeMortibus-LatinLibrary.zip",
+            "sha256": "e7e650856db3d1307aa227c096acbf80d17ef9b3c33b62b985633ce5c72a6250",
+            "url": "https://www.thelatinlibrary.com/lactantius/demort.shtml"
+          }
+        ],
+        "rights": "The Latin text is public domain; The Latin Library names no edition and claims no rights in it"
+      },
+      "importer": "latinlibrary"
+    },
+    {
+      "slug": "fletcher",
+      "preferred": false,
+      "language": "en",
+      "title": "Of the Manner in Which the Persecutors Died",
+      "translator": "William Fletcher",
+      "editor": "Alexander Roberts, James Donaldson and A. Cleveland Coxe",
+      "publicationYear": 1886,
+      "source": {
+        "name": "Christian Classics Ethereal Library, Ante-Nicene Fathers vol. 7",
+        "url": "https://www.ccel.org/ccel/schaff/anf07.iii.v.html",
+        "archives": [
+          {
+            "file": "Lactantius-Fletcher-CCEL-anf07.zip",
+            "sha256": "7e0c1ffb4e9130924071b2ef90551ae18c9b42784c604f30890a81fb78619a21",
+            "url": "https://www.ccel.org/ccel/s/schaff/anf07.xml"
+          }
+        ],
+        "rights": "Public domain (Ante-Nicene Fathers, 1886); CCEL marks its text public domain"
+      },
+      "importer": "ccel"
+    }
+  ]
 }
