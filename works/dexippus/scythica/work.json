@@ -5,8 +5,53 @@
   "originalLanguage": "grc",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
-  "locatorFormat": "fragment, e.g. 7",
+  "locatorFormat": "fragment, as numbered in Müller's FHG III, e.g. 24",
   "slugAliases": [],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "muller",
+      "preferred": true,
+      "language": "grc",
+      "title": "Dexippi Atheniensis fragmenta: Σκυθικά (FHG III, pp. 674–686)",
+      "editor": "Karl Müller",
+      "publicationYear": 1849,
+      "source": {
+        "name": "Digital Fragmenta Historicorum Graecorum (DFHG), Monica Berti, University of Leipzig",
+        "url": "https://www.dfhg-project.org/DFHG/index.php?volume=Volumen%20tertium&author=DEXIPPUS",
+        "archives": [
+          {
+            "file": "Dexippus-Muller-DFHG.zip",
+            "sha256": "b6bc0da6897e8f7baa66455a987e399669aadaffdf5291bceafbce7a26404de8",
+            "url": "https://www.dfhg-project.org/DFHG/api.php?author=DEXIPPUS%20ATHENIENSIS"
+          }
+        ],
+        "rights": "Müller's text (Paris: Didot, 1849) is public domain; the digital edition is © DFHG Project under CC BY-SA 4.0 (its page footer; the page's metadata says CC BY-NC-SA 4.0)."
+      },
+      "importer": "dfhg"
+    },
+    {
+      "slug": "ancient-corpus",
+      "preferred": false,
+      "language": "en",
+      "title": "English translation",
+      "translator": "Ancient Corpus (machine translation)",
+      "publicationYear": 2026,
+      "source": {
+        "name": "This project",
+        "url": "https://github.com/TimmDay/ancient-corpus",
+        "archives": [],
+        "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "importer": "translation",
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 13 November 2026, from Karl Müller's text of the fragments (Fragmenta Historicorum Graecorum III, 1849). Where Müller gives a Latin writer citing Dexippus, the English is translated from that Latin. It is not a translator's work: check it against the Greek, and report errors. Public domain (CC0): reuse it freely.",
+      "humanTranslation": {
+        "citation": "J. McInerney, Dexippos (100), Brill's New Jacoby, with an English translation of every fragment",
+        "url": "https://scholarlyeditions.brill.com/bnjo/",
+        "access": "By subscription: read it through a library."
+      }
+    }
+  ],
+  "coversYearEarliest": 238,
+  "coversYearLatest": 271
 }

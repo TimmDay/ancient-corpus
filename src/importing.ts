@@ -15,6 +15,7 @@ import {
 import { correctEdition, type Correction } from "./corrections.ts"
 import { importBonn } from "./importers/bonn.ts"
 import { importCcel } from "./importers/ccel.ts"
+import { importDfhg } from "./importers/dfhg.ts"
 import { importDio } from "./importers/dio.ts"
 import { importEutropius } from "./importers/eutropius.ts"
 import { importLacusCurtius } from "./importers/lacuscurtius.ts"
@@ -34,6 +35,7 @@ const IMPORTERS: Record<
 > = {
   bonn: (source, _work, edition) => importBonn(source, edition),
   ccel: (source, work) => importCcel(source, work.title),
+  dfhg: (source, work) => importDfhg(source, work.title),
   dio: importDio,
   eutropius: importEutropius,
   lacuscurtius: (source, work, edition) =>

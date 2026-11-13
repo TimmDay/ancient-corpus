@@ -1,0 +1,14 @@
+[
+  {
+    "op": "accept",
+    "locator": "17",
+    "flag": "gap",
+    "reason": "Müller numbers Dexippus's fragments straight through his works: 1–2 are the History after Alexander, 3–16a the Chronica, so the Scythica starts at 17"
+  },
+  {
+    "op": "accept",
+    "locator": "24",
+    "flag": "long",
+    "reason": "One long excerpt in the Excerpta de legationibus, holding both embassies to Aurelian, the Juthungi's and the Vandals'"
+  }
+]
