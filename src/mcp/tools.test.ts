@@ -134,7 +134,7 @@ describe("listWorks", () => {
       (w) => w.work === "zosimus/historia-nova",
     )
     expect(zosimus?.editions.map((e) => e.language)).toEqual(["grc", "en"])
-    expect(listWorks(corpus).some((w) => w.work === "orosius/historiae")).toBe(
+    expect(listWorks(corpus).some((w) => w.work === "jordanes/getica")).toBe(
       false,
     )
   })

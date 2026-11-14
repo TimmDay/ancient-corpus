@@ -15,5 +15,77 @@
     "orosius/seven-books-of-history-against-the-pagans"
   ],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "latin-library",
+      "preferred": true,
+      "language": "la",
+      "title": "Historiarum adversum paganos libri VII",
+      "pagePerDivision": true,
+      "source": {
+        "name": "The Latin Library",
+        "url": "https://www.thelatinlibrary.com/orosius.html",
+        "archives": [
+          {
+            "file": "Orosius-Historiae-1-LatinLibrary.zip",
+            "sha256": "890f9080474bd0b9ef0bff2b2c48c552c6804a5b2d70d5efd1d2ccb7cbdf451f",
+            "url": "https://www.thelatinlibrary.com/orosius/orosius1.shtml"
+          },
+          {
+            "file": "Orosius-Historiae-2-LatinLibrary.zip",
+            "sha256": "09e1dd3372fcf7f4f1be46a47f41ba8760f0016927a41dd7dc664c5d49e74527",
+            "url": "https://www.thelatinlibrary.com/orosius/orosius2.shtml"
+          },
+          {
+            "file": "Orosius-Historiae-3-LatinLibrary.zip",
+            "sha256": "863808b0f2ccd6b2d3d5264c39ddab0239bd5a568edfea478525cf3766bf9ff5",
+            "url": "https://www.thelatinlibrary.com/orosius/orosius3.shtml"
+          },
+          {
+            "file": "Orosius-Historiae-4-LatinLibrary.zip",
+            "sha256": "4e23a8f25d804fd945ebff777316e429e8e295b5f1845828e5655323ca147f5d",
+            "url": "https://www.thelatinlibrary.com/orosius/orosius4.shtml"
+          },
+          {
+            "file": "Orosius-Historiae-5-LatinLibrary.zip",
+            "sha256": "cd166839aedbec7398ba398749960bd15b77aa3dcd70fcf261ee3e9af621f05d",
+            "url": "https://www.thelatinlibrary.com/orosius/orosius5.shtml"
+          },
+          {
+            "file": "Orosius-Historiae-6-LatinLibrary.zip",
+            "sha256": "c0235a448633c31b7046a3ffd6db95bb27d5ed2b89d7dba44ca8e49580901c5a",
+            "url": "https://www.thelatinlibrary.com/orosius/orosius6.shtml"
+          },
+          {
+            "file": "Orosius-Historiae-7-LatinLibrary.zip",
+            "sha256": "c980639ce012d16394b7986868af149a24f4da40a9b1ea4f15a4b3bf19477dcb",
+            "url": "https://www.thelatinlibrary.com/orosius/orosius7.shtml"
+          }
+        ],
+        "rights": "The Latin text is public domain; The Latin Library names no edition and claims no rights in it"
+      },
+      "importer": "latinlibrary"
+    },
+    {
+      "slug": "ancient-corpus",
+      "preferred": false,
+      "language": "en",
+      "title": "English translation",
+      "translator": "Ancient Corpus (machine translation)",
+      "publicationYear": 2026,
+      "source": {
+        "name": "This project",
+        "url": "https://github.com/TimmDay/ancient-corpus",
+        "archives": [],
+        "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "importer": "translation",
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 14 November 2026, from the Latin text on The Latin Library. Books 1 to 4, and Book 7, chapters 17 to 25 (Septimius Severus to Diocletian), so far. It is not a translator's work: check it against the Latin, and report errors. Public domain (CC0): reuse it freely.",
+      "humanTranslation": {
+        "citation": "A. T. Fear, Orosius: Seven Books of History against the Pagans, Translated Texts for Historians 54 (Liverpool University Press, 2010)",
+        "url": "https://search.worldcat.org/search?q=bn:9781846312397",
+        "access": "In copyright: buy it, or borrow it from a library."
+      }
+    }
+  ]
 }

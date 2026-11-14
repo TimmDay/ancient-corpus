@@ -179,6 +179,25 @@ describe("build", () => {
     expect(english).toContain("Index of Names of Individuals")
   })
 
+  it("reads Orosius a book at a time, with our English for the third century", () => {
+    expect(read("orosius/historiae/7/index.html")).toMatch(
+      /id="7\.23"[^>]*>[\s\S]*?Aurelianus uicesimus nonus imperium adeptus/,
+    )
+    // Orosius bolds the names of places; they stay in the text.
+    expect(read("orosius/historiae/1/index.html")).toContain(
+      "Asiam Europam et Africam",
+    )
+    expect(read("orosius/historiae/1/index.html")).toContain('id="1.praef"')
+    const english = read("orosius/historiae/ancient-corpus/index.html")
+    expect(english).toContain("he routed the Goths in great battles")
+    expect(english).toMatch(
+      /id="1\.praef"[^>]*>[\s\S]*?most blessed father Augustine/,
+    )
+    expect(english).toMatch(
+      /id="4\.23"[^>]*>[\s\S]*?Carthage was destroyed, with every stone of its walls ground to dust/,
+    )
+  })
+
   it("redirects long slugs, keeping the rest of the path", () => {
     expect(read("_redirects")).toContain(
       "/eutropius/breviarium-historiae-romanae/* /eutropius/breviarium/:splat 301",

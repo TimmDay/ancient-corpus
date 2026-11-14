@@ -1,0 +1,14 @@
+[
+  {
+    "op": "accept",
+    "locator": "1.2",
+    "flag": "long",
+    "reason": "Orosius's survey of the world, one chapter of 106 sections; The Latin Library's section numbers run 2 to 106 without a gap"
+  },
+  {
+    "op": "accept",
+    "locator": "3.23",
+    "flag": "long",
+    "reason": "The wars of Alexander's successors, one chapter of 68 sections; The Latin Library's section numbers run 2 to 68 without a gap"
+  }
+]
