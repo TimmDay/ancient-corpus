@@ -193,6 +193,9 @@ describe("build", () => {
     expect(english).toMatch(
       /id="1\.praef"[^>]*>[\s\S]*?most blessed father Augustine/,
     )
+    expect(english).toMatch(
+      /id="4\.23"[^>]*>[\s\S]*?Carthage was destroyed, with every stone of its walls ground to dust/,
+    )
   })
 
   it("redirects long slugs, keeping the rest of the path", () => {
