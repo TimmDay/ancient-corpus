@@ -188,8 +188,10 @@ describe("build", () => {
       "Asiam Europam et Africam",
     )
     expect(read("orosius/historiae/1/index.html")).toContain('id="1.praef"')
-    expect(read("orosius/historiae/ancient-corpus/index.html")).toContain(
-      "he routed the Goths in great battles",
+    const english = read("orosius/historiae/ancient-corpus/index.html")
+    expect(english).toContain("he routed the Goths in great battles")
+    expect(english).toMatch(
+      /id="1\.praef"[^>]*>[\s\S]*?most blessed father Augustine/,
     )
   })
 

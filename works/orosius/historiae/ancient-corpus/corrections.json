@@ -1,8 +1,8 @@
 [
   {
     "op": "accept",
-    "locator": "7.17",
-    "flag": "gap",
-    "reason": "Our translation so far covers Book 7, chapters 17 to 25 only; the rest of the Latin is not yet translated"
+    "locator": "1.2",
+    "flag": "long",
+    "reason": "Orosius's survey of the world is one chapter of 106 sections, long in the Latin too"
   }
 ]
