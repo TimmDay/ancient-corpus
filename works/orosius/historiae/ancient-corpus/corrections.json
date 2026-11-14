@@ -10,11 +10,5 @@
     "locator": "3.23",
     "flag": "long",
     "reason": "The wars of Alexander's successors are one chapter of 68 sections, long in the Latin too"
-  },
-  {
-    "op": "accept",
-    "locator": "4.6",
-    "flag": "long",
-    "reason": "Carthage's history before the Punic wars is one chapter of 42 sections; The Latin Library's section numbers run 2 to 42 without a gap"
   }
 ]
