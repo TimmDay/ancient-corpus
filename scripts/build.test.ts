@@ -71,7 +71,7 @@ describe("build", () => {
     expect(orosius).toContain('data-label="Licence">CC0 (public domain)</td>')
     // Waiting for permission: listed, unlinked, with a note on who to ask.
     expect(html).toMatch(
-      /Res Gestae Divi Saporis<\/i> <span class="none">\(not published\)[\s\S]*?popovertarget="permission-shapur-i-res-gestae-nabel">Permission needed/,
+      /Res Gestae Divi Saporis <span class="none">\(not published\)[\s\S]*?popovertarget="permission-shapur-i-res-gestae-nabel">Permission needed/,
     )
     for (const work of loadWorks())
       for (const edition of work.editions) {

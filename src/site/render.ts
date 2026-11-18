@@ -724,8 +724,8 @@ export function howToUsePage(): string {
 const INDEX_COLUMNS: [key: string, label: string][] = [
   ["author", "Author"],
   ["work", "Work"],
-  ["covers", "Covers"],
   ["written", "Written"],
+  ["covers", "Covers"],
   ["language", "Language"],
   ["translator", "Translator or editor"],
   ["licence", "Licence"],
@@ -800,11 +800,11 @@ ${sorted
     const cells: Record<string, string> = {
       author: escapeHtml(author),
       work: edition.unpublished
-        ? `<i>${escapeHtml(work.title)}</i> <span class="none">(not published)</span>`
-        : `<a href="${workUrl(work, edition)}"><i>${escapeHtml(work.title)}</i></a>`,
+        ? `${escapeHtml(work.title)} <span class="none">(not published)</span>`
+        : `<a href="${workUrl(work, edition)}">${escapeHtml(work.title)}</a>`,
       covers: escapeHtml(dates.covers),
       written: escapeHtml(dates.written),
-      language: escapeHtml(language),
+      language: `<span class="lang-chip">${escapeHtml(language)}</span>`,
       translator: person
         ? escapeHtml(person)
         : '<span class="none">not named</span>',
@@ -915,7 +915,7 @@ function indexCard(
     cells.published,
     permission ? permissionButton(permission) : escapeHtml(licence ?? ""),
   ].filter(Boolean)
-  return `<td class="index-card"><p class="card-head"><span class="card-title">${head}</span><span class="card-lang">${cells.language}</span></p>${when.length ? `<p>${escapeHtml(when.join(", "))}</p>` : ""}<p>${made.join(", ")}</p></td>`
+  return `<td class="index-card"><p class="card-head"><span class="card-title">${head}</span><span class="card-lang">${(cells.language ?? "").replace(/<[^>]+>/g, "")}</span></p>${when.length ? `<p>${escapeHtml(when.join(", "))}</p>` : ""}<p>${made.join(", ")}</p></td>`
 }
 
 /** A year to sort by, from words like "c. 361", "after 270", "late 4th century", "2nd century BC". */
