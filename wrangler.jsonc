@@ -8,4 +8,7 @@
     // dist/404.html, with a 404 status, for any path without a page.
     "not_found_handling": "404-page",
   },
+  // Required by `wrangler preview`, the deploy command Workers Builds runs for
+  // PR branches. Empty: previews inherit the assets and settings above.
+  "previews": {},
 }
