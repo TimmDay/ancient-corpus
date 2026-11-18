@@ -1,0 +1,60 @@
+{
+  "author": "Unknown",
+  "title": "Continuation of Dio",
+  "otherTitles": ["Anonymus post Dionem", "Τὰ μετὰ Δίωνα"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": 253,
+  "coversYearLatest": 337,
+  "locatorFormat": "fragment, as numbered in Müller's FHG IV, e.g. 10",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "muller",
+      "preferred": true,
+      "language": "grc",
+      "title": "Anonymi, qui Dionis Cassii historias continuavit, fragmenta (FHG IV, pp. 191–199)",
+      "editor": "Karl Müller",
+      "publicationYear": 1851,
+      "source": {
+        "name": "Digital Fragmenta Historicorum Graecorum (DFHG), Monica Berti, University of Leipzig",
+        "url": "https://www.dfhg-project.org/DFHG/index.php?volume=Volumen%20quartum",
+        "archives": [
+          {
+            "file": "Anonymus-post-Dionem-Muller-DFHG.zip",
+            "sha256": "2668b93e4754eacb9ed098f799b753f7d5d133d3fde35a45e95cb7173e6e0a07",
+            "url": "https://www.dfhg-project.org/DFHG/get_results.php (POST getresult=ANONYMUS, QUI DIONIS CASSII HISTORIAS CONTINUAVIT, volume=Volumen quartum)"
+          }
+        ],
+        "rights": "Müller's text (Paris: Didot, 1851) is public domain; the digital edition is © DFHG Project under CC BY-SA 4.0 (its page footer; the page's metadata says CC BY-NC-SA 4.0)."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "dfhg"
+    },
+    {
+      "slug": "ancient-corpus",
+      "preferred": false,
+      "language": "en",
+      "title": "English translation",
+      "translator": "Ancient Corpus (machine translation)",
+      "publicationYear": 2026,
+      "source": {
+        "name": "This project",
+        "url": "https://github.com/TimmDay/ancient-corpus",
+        "archives": [],
+        "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "licence": "cc0",
+      "model": "Claude Opus 5.5",
+      "importer": "translation",
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 18 November 2026, from Karl Müller's text of the fragments (Fragmenta Historicorum Graecorum IV, 1851). The fragments survive in the Excerpta de sententiis after Dio's; some scholars give them to Peter the Patrician. It is not a translator's work: check it against the Greek, and report errors. Public domain (CC0): reuse it freely.",
+      "humanTranslation": {
+        "citation": "Thomas M. Banchich, The Lost History of Peter the Patrician: An Account of Rome's Imperial Past from the Age of Justinian (Routledge, 2015), with these fragments in English",
+        "url": "https://search.worldcat.org/search?q=The+Lost+History+of+Peter+the+Patrician",
+        "access": "In copyright: buy it, or borrow it from a library."
+      }
+    }
+  ]
+}

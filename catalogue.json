@@ -421,11 +421,8 @@
           "written": "after 270"
         },
         {
-          "author": "Anonymous",
-          "title": "Continuation of Dio (fragments)",
-          "language": "grc",
+          "work": "anonymous/continuation-of-dio",
           "written": "uncertain",
-          "covers": "3rd century to Constantine",
           "note": "The Anonymus post Dionem; identity and date disputed, sometimes taken to be Peter the Patrician"
         },
         {
@@ -800,11 +797,8 @@
           "covers": "Creation to 610"
         },
         {
-          "author": "Peter the Patrician",
-          "title": "History (fragments)",
-          "language": "grc",
-          "written": "6th century",
-          "covers": "44 BC to 361"
+          "work": "peter-the-patrician/historiae",
+          "written": "6th century"
         },
         {
           "work": "george-syncellus/ekloge-chronographias",
