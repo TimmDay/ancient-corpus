@@ -250,6 +250,20 @@ describe("build", () => {
     )
   })
 
+  it("reads Jerome's Chronicle by Helm's page and letter, in Latin and English", () => {
+    expect(read("jerome/chronicon/2/index.html")).toMatch(
+      /id="305a"[^>]*>[\s\S]*?Aurelianus templum Soli aedificat/,
+    )
+    const english = read("jerome/chronicon/pearse/2/index.html")
+    expect(english).toMatch(
+      /id="305a"[^>]*>[\s\S]*?Aurelian builds a temple to the Sun/,
+    )
+    // A letter missing from Pearse's page, restored by a split Correction.
+    expect(read("jerome/chronicon/pearse/2/index.html")).toMatch(
+      /id="193l"[^>]*>[\s\S]*?Cratinus and Plato/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
