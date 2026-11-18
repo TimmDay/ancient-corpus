@@ -25,6 +25,7 @@ import { importLatinLibrary } from "./importers/latinlibrary.ts"
 import { importParthianSources } from "./importers/parthiansources.ts"
 import { importPerseus, importPerseusLines } from "./importers/perseus.ts"
 import { importAmmianus, importAmmianusLatin } from "./importers/ammianus.ts"
+import { importEpitomeLatin } from "./importers/epitome.ts"
 import { importJerome } from "./importers/jerome.ts"
 import { importTertullian } from "./importers/tertullian.ts"
 import { importToposText, importToposTextLines } from "./importers/topostext.ts"
@@ -54,6 +55,7 @@ const IMPORTERS: Record<
   suetonius: importSuetonius,
   ammianus: (source) => importAmmianus(source),
   "ammianus-latin": (source) => importAmmianusLatin(source),
+  "epitome-latin": (source) => importEpitomeLatin(source),
   jerome: (source) => importJerome(source),
   tertullian: (source, work) => importTertullian(source, work.title),
   topostext: importToposText,

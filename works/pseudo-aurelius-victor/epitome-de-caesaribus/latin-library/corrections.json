@@ -1,0 +1,15 @@
+[
+  {
+    "op": "renumber",
+    "locator": "1.3",
+    "at": "Regionem Aegypti",
+    "newLocator": "1.4"
+  },
+  {
+    "op": "renumber",
+    "locator": "18.6",
+    "at": "Numquam iniuria",
+    "newLocator": "18.5"
+  },
+  { "op": "merge", "locator": "29.4", "at": "Filius vero eius" }
+]
