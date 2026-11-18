@@ -728,7 +728,6 @@ const INDEX_COLUMNS: [key: string, label: string][] = [
   ["written", "Written"],
   ["language", "Language"],
   ["translator", "Translator or editor"],
-  ["machine", "Machine translated"],
   ["licence", "Licence"],
   ["published", "Published"],
 ]
@@ -760,7 +759,6 @@ export function editionsPage(
   const body = `
 <main id="main" class="index-page" tabindex="-1">
 <h1>Index</h1>
-<p class="lede">Every edition in the corpus, original and translation, one row each, with the terms it is shared on.</p>
 <form class="index-filters" role="search" onsubmit="return false">
 <div class="field field-text"><label for="index-q">Search</label>
 <input id="index-q" name="q" type="search" autocomplete="off" placeholder="Author, work, translator"></div>
@@ -773,13 +771,14 @@ export function editionsPage(
 <select id="index-lang" name="lang"><option value="">All languages</option>${languages
     .map((l) => `<option>${escapeHtml(l)}</option>`)
     .join("")}</select></div>
+<div class="field field-made"><label for="index-made">Translated by</label>
+<select id="index-made" name="made"><option value="">Human or AI</option><option value="human">Human</option><option value="ai">AI</option></select></div>
 <div class="field field-sort"><label for="index-sort">Sort by</label>
 <select id="index-sort" name="sort">${INDEX_COLUMNS.map(
     ([key, label]) => `<option value="${key}">${label}</option>`,
   ).join("")}</select></div>
 <button type="reset" class="index-reset">Clear</button>
 </form>
-<p class="index-help">Years match a work's coverage or an edition's publication date. Write BC dates as <code>44 BC</code> or <code>-44</code>.</p>
 <p class="index-count" id="index-count" role="status">${sorted.length} editions</p>
 <table class="index-table">
 <thead><tr>${INDEX_COLUMNS.map(
@@ -809,7 +808,6 @@ ${sorted
       translator: person
         ? escapeHtml(person)
         : '<span class="none">not named</span>',
-      machine: machine ? "Yes" : "No",
       licence:
         edition.licence === "permission-needed"
           ? permissionPopover(work, edition, person)
@@ -822,6 +820,7 @@ ${sorted
       language,
       translator: person,
       machine: machine ? "Yes" : "No",
+      translation: edition.language === work.originalLanguage ? "No" : "Yes",
       licence,
       // A Work known only to end at a year ("to 417") is open at the start.
       coversFrom: work.coversYearEarliest,

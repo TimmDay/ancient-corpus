@@ -253,12 +253,6 @@ code {
   color: var(--accent);
 }
 
-.site-nav a[aria-current="page"] {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.45em;
-}
-
 .nav-toggle,
 .nav-close {
   display: grid;
@@ -1448,6 +1442,17 @@ th[aria-sort="descending"] .sort-mark::after {
   opacity: 1;
 }
 
+/* Short values sit in the middle of their column. */
+.index-table th[data-key="language"] button,
+.index-table th[data-key="published"] button {
+  justify-content: center;
+}
+
+.index-table td[data-label="Language"],
+.index-table td[data-label="Published"] {
+  text-align: center;
+}
+
 .index-table td {
   padding: 0.55rem 0.6rem;
   border-bottom: 1px solid var(--rule);
@@ -1532,6 +1537,12 @@ th[aria-sort="descending"] .sort-mark::after {
 
   .index-table tr[hidden] {
     display: none;
+  }
+
+  .index-table td,
+  .index-table td[data-label="Language"],
+  .index-table td[data-label="Published"] {
+    text-align: left;
   }
 
   .index-table td {

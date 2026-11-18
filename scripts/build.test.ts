@@ -64,7 +64,10 @@ describe("build", () => {
     expect(orosius).toContain(
       'data-label="Translator or editor">Claude Opus 5.5</td>',
     )
-    expect(orosius).toContain('data-label="Machine translated">Yes</td>')
+    // Filterable, but not a column: data-machine marks it, for Human or AI.
+    expect(orosius).toContain('data-machine="Yes"')
+    expect(html).not.toContain("Machine translated")
+    expect(html).toContain('<option value="ai">AI</option>')
     expect(orosius).toContain('data-label="Licence">CC0 (public domain)</td>')
     // Waiting for permission: listed, unlinked, with a note on who to ask.
     expect(html).toMatch(
