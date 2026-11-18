@@ -2,7 +2,7 @@ import { existsSync, mkdtempSync, readFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import path from "node:path"
 import { describe, expect, it } from "vitest"
-import { loadWorks } from "../src/corpus.ts"
+import { hasEditionText, loadWorks } from "../src/corpus.ts"
 import { build } from "./build.ts"
 
 const unpublished = loadWorks().flatMap((w) =>
@@ -17,6 +17,43 @@ describe("build", () => {
   const outDir = mkdtempSync(path.join(tmpdir(), "corpus-build-"))
   const result = build({ outDir })
   const read = (file: string) => readFileSync(path.join(outDir, file), "utf8")
+
+  it("puts the site menu in every header, marking the page it is on", () => {
+    for (const [page, current] of [
+      ["index.html", "Works"],
+      ["editions/index.html", "Index"],
+      ["how-to-use/index.html", "How to Use"],
+    ] as const) {
+      const html = read(page)
+      expect(html).toContain('<nav class="site-nav" aria-label="Site">')
+      expect(html).toContain(`aria-current="page">${current}</a>`)
+    }
+    expect(read("eutropius/breviarium/index.html")).toContain(
+      'href="/editions/">Index</a>',
+    )
+  })
+
+  it("moves linking help from the home page to How to Use", () => {
+    expect(read("index.html")).not.toContain("Linking to a passage")
+    expect(read("how-to-use/index.html")).toMatch(
+      /Linking to a passage[\s\S]*?\/cite\?author=Eutropius/,
+    )
+  })
+
+  it("lists every published Edition in the Index, one row each, with the catalogue's dates", () => {
+    const html = read("editions/index.html")
+    const rows = html.match(/<tr data-author=/g) ?? []
+    expect(rows.length).toBe(
+      loadWorks().flatMap((w) =>
+        w.editions.filter((e) => hasEditionText(w, e) && !e.unpublished),
+      ).length,
+    )
+    // Magie's Latin and English are two rows; the Historia Augusta's date
+    // comes from the catalogue, since its work.json has none.
+    expect(html.match(/>Historia Augusta</g)).toHaveLength(2)
+    expect(html).toContain('data-label="Written">late 4th century</td>')
+    expect(html).toContain("<option>English</option>")
+  })
 
   it("holds back only Editions waiting for permission", () => {
     expect(result.published).toBeGreaterThanOrEqual(1)

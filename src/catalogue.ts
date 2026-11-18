@@ -59,6 +59,34 @@ export function readCatalogue(): Catalogue {
   return JSON.parse(readFileSync(CATALOGUE_JSON, "utf8")) as Catalogue
 }
 
+/** The catalogue entry for each Work in the corpus, by slug. */
+export function catalogueEntries(
+  catalogue = readCatalogue(),
+): Map<string, CatalogueEntry> {
+  return new Map(
+    catalogue.sections.flatMap((s) =>
+      s.entries.flatMap((e) => (e.work ? [[e.work, e] as const] : [])),
+    ),
+  )
+}
+
+/** When a Work was written and what it covers, as the catalogue prints them: work.json's years, else the entry's words. */
+export function workDates(
+  work: Work,
+  entry: CatalogueEntry | undefined,
+): { written: string; covers: string } {
+  return {
+    written:
+      span(work.writtenYearEarliest, work.writtenYearLatest) ||
+      entry?.written ||
+      "",
+    covers:
+      span(work.coversYearEarliest, work.coversYearLatest) ||
+      entry?.covers ||
+      "",
+  }
+}
+
 /** Fields an entry sets that its Work's work.json already records, which would be a second source of truth. */
 export function duplicatedFields(entry: CatalogueEntry, work: Work): string[] {
   return [
@@ -78,7 +106,7 @@ export function duplicatedFields(entry: CatalogueEntry, work: Work): string[] {
 
 const year = (y: number) => (y < 0 ? `${-y} BC` : `${y}`)
 
-function span(from?: number | null, to?: number | null): string {
+export function span(from?: number | null, to?: number | null): string {
   if (from == null) return to == null ? "" : `to ${year(to)}`
   if (to == null || to === from) return year(from)
   return `${year(from)} to ${year(to)}`
@@ -154,12 +182,8 @@ function row(entry: CatalogueEntry, works: Map<string, Work>): string {
       ? `${work.author}, _${work.title}_ (\`${work.slug}\`)`
       : `${entry.author}, _${entry.title}_`,
     LANGUAGES[language] ?? language,
-    span(work?.writtenYearEarliest, work?.writtenYearLatest) ||
-      entry.written ||
-      "",
-    span(work?.coversYearEarliest, work?.coversYearLatest) ||
-      entry.covers ||
-      "",
+    work ? workDates(work, entry).written : (entry.written ?? ""),
+    work ? workDates(work, entry).covers : (entry.covers ?? ""),
     status(work),
     work ? originalCell(work) : "",
     work ? englishCell(work) : "",

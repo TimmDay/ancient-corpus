@@ -15,6 +15,7 @@ import {
   readAnnotations,
   type Annotation,
 } from "../annotations.ts"
+import { workDates, type CatalogueEntry } from "../catalogue.ts"
 import { flagExplanation } from "../flags.ts"
 import { escapeHtml } from "../importers/gutenberg.ts"
 import {
@@ -45,8 +46,36 @@ export function workUrl(work: Work, edition?: Edition): string {
     : `/${work.slug}/`
 }
 
-// Applies a remembered theme before first paint, so a dark page never flashes light.
-export const THEME_SCRIPT = `<script>try{const t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch{}</script>`
+// Applies a remembered theme before first paint, so a dark page never flashes
+// light, and marks the page as scripted, so the menu folds away only when its
+// button can open it.
+export const THEME_SCRIPT = `<script>document.documentElement.classList.add("js");try{const t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch{}</script>`
+
+const NAV_LINKS: [href: string, label: string][] = [
+  ["/", "Works"],
+  ["/editions/", "Index"],
+  ["/how-to-use/", "How to Use"],
+]
+
+// Links in the header on wide screens; behind a menu button on narrow ones,
+// where site.js slides the panel in.
+function siteNav(canonical: string): string {
+  return `<nav class="site-nav" aria-label="Site">
+<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu" hidden>
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+</button>
+<div class="nav-panel" id="site-menu">
+<button type="button" class="nav-close" aria-label="Close menu" hidden>
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+</button>
+<ul>${NAV_LINKS.map(
+    ([href, label]) =>
+      `<li><a href="${href}"${href === canonical ? ' aria-current="page"' : ""}>${label}</a></li>`,
+  ).join("")}</ul>
+</div>
+<div class="nav-scrim" hidden></div>
+</nav>`
+}
 
 // Hidden until site.js runs, since it does nothing without it.
 export const THEME_TOGGLE = `<button type="button" class="theme-toggle" aria-label="Switch theme" hidden>
@@ -94,7 +123,7 @@ ${[...scripts, "/assets/site.js"].map((src) => `<script src="${attr(src)}" defer
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header"><div class="site-header-inner"><a class="brand" href="/">${SITE_NAME}</a>${THEME_TOGGLE}</div></header>
+<header class="site-header"><div class="site-header-inner"><a class="brand" href="/">${SITE_NAME}</a>${siteNav(canonical)}${THEME_TOGGLE}</div></header>
 ${body}
 ${TO_TOP}
 <div class="toast" role="status" aria-live="polite" id="toast"></div>
@@ -655,6 +684,23 @@ ${authors
   .join("\n")}
 </div>
 <p class="empty" id="empty" hidden>No work matches.</p>
+</main>`
+  return layout({
+    title: SITE_NAME,
+    description:
+      "The full text of ancient works, linkable down to the passage.",
+    canonical: "/",
+    body,
+    scripts: ["/assets/home.js"],
+  })
+}
+
+/** How to use the site: for now, how to link to a passage. */
+export function howToUsePage(): string {
+  const body = `
+<main id="main" class="home" tabindex="-1">
+<h1>How to Use</h1>
+<p class="lede">Every passage has an address you can link to, cite or share.</p>
 <section class="howto" aria-labelledby="howto">
 <h2 id="howto">Linking to a passage</h2>
 <ul class="howto-list">
@@ -667,13 +713,149 @@ ${authors
 </section>
 </main>`
   return layout({
-    title: SITE_NAME,
-    description:
-      "The full text of ancient works, linkable down to the passage.",
-    canonical: "/",
+    title: `How to Use · ${SITE_NAME}`,
+    description: "How to link to a work, a passage or a sentence.",
+    canonical: "/how-to-use/",
     body,
-    scripts: ["/assets/home.js"],
   })
+}
+
+const INDEX_COLUMNS: [key: string, label: string][] = [
+  ["author", "Author"],
+  ["work", "Work"],
+  ["covers", "Covers"],
+  ["written", "Written"],
+  ["language", "Language"],
+  ["translator", "Translator or editor"],
+  ["published", "Published"],
+]
+
+/**
+ * Every published Edition, one row each, sorted by author. index.js sorts by
+ * any column and filters by text, years and language; on a phone each row
+ * becomes a card.
+ */
+export function editionsPage(
+  rows: { work: Work; edition: Edition; entry?: CatalogueEntry }[],
+): string {
+  const sorted = rows
+    .map(({ work, edition, entry }) => ({
+      work,
+      edition,
+      dates: workDates(work, entry),
+      author: work.author === "Unknown" ? "Anonymous" : work.author,
+    }))
+    .sort(
+      (a, b) =>
+        a.author.localeCompare(b.author) ||
+        a.work.title.localeCompare(b.work.title) ||
+        Number(b.edition.preferred) - Number(a.edition.preferred),
+    )
+  const languages = [
+    ...new Set(sorted.map(({ edition }) => languageName(edition.language))),
+  ].sort((a, b) => a.localeCompare(b))
+  const body = `
+<main id="main" class="index-page" tabindex="-1">
+<h1>Index</h1>
+<p class="lede">Every edition in the corpus, original and translation, one row each.</p>
+<form class="index-filters" role="search" onsubmit="return false">
+<div class="field field-text"><label for="index-q">Search</label>
+<input id="index-q" name="q" type="search" autocomplete="off" placeholder="Author, work, translator"></div>
+<div class="field field-years" role="group" aria-labelledby="index-years"><span class="field-label" id="index-years">Years</span><div class="year-inputs">
+<label class="visually-hidden" for="index-from">From</label><input id="index-from" name="from" type="text" inputmode="text" autocomplete="off" placeholder="from, e.g. 44 BC">
+<span aria-hidden="true">to</span>
+<label class="visually-hidden" for="index-to">To</label><input id="index-to" name="to" type="text" inputmode="text" autocomplete="off" placeholder="to, e.g. AD 476"></div>
+</div>
+<div class="field field-language"><label for="index-lang">Language</label>
+<select id="index-lang" name="lang"><option value="">All languages</option>${languages
+    .map((l) => `<option>${escapeHtml(l)}</option>`)
+    .join("")}</select></div>
+<div class="field field-sort"><label for="index-sort">Sort by</label>
+<select id="index-sort" name="sort">${INDEX_COLUMNS.map(
+    ([key, label]) => `<option value="${key}">${label}</option>`,
+  ).join("")}</select></div>
+<button type="reset" class="index-reset">Clear</button>
+</form>
+<p class="index-help">Years match a work's coverage or an edition's publication date. Write BC dates as <code>44 BC</code> or <code>-44</code>.</p>
+<p class="index-count" id="index-count" role="status">${sorted.length} editions</p>
+<table class="index-table">
+<thead><tr>${INDEX_COLUMNS.map(
+    ([key, label]) =>
+      `<th scope="col" data-key="${key}"${key === "author" ? ' aria-sort="ascending"' : ""}><button type="button">${label}<span class="sort-mark" aria-hidden="true"></span></button></th>`,
+  ).join("")}</tr></thead>
+<tbody>
+${sorted
+  .map(({ work, edition, author, dates }) => {
+    const language = languageName(edition.language)
+    const person = edition.translator ?? edition.editor ?? ""
+    const cells: Record<string, string> = {
+      author: escapeHtml(author),
+      work: `<a href="${workUrl(work, edition)}"><i>${escapeHtml(work.title)}</i></a>`,
+      covers: escapeHtml(dates.covers),
+      written: escapeHtml(dates.written),
+      language: escapeHtml(language),
+      translator: person
+        ? escapeHtml(person)
+        : '<span class="none">not named</span>',
+      published: edition.publicationYear ? String(edition.publicationYear) : "",
+    }
+    const data = {
+      author,
+      work: work.title,
+      language,
+      translator: person,
+      // A Work known only to end at a year ("to 417") is open at the start.
+      coversFrom: work.coversYearEarliest,
+      coversTo: work.coversYearLatest ?? work.coversYearEarliest,
+      written:
+        work.writtenYearEarliest ??
+        work.writtenYearLatest ??
+        looseYear(dates.written),
+      published: edition.publicationYear,
+      search: [author, work.title, ...work.otherTitles, language, person]
+        .filter(Boolean)
+        .join(" "),
+    }
+    return `<tr${Object.entries(data)
+      .filter(([, v]) => v !== undefined && v !== null && v !== "")
+      .map(
+        ([k, v]) =>
+          ` data-${k.replace(/[A-Z]/g, (c) => `-${c.toLowerCase()}`)}="${attr(String(v))}"`,
+      )
+      .join("")}>${INDEX_COLUMNS.map(
+      ([key, label]) =>
+        `<td data-label="${label}"${cells[key] ? "" : ' class="empty-cell"'}>${cells[key]}</td>`,
+    ).join("")}</tr>`
+  })
+  .join("\n")}
+</tbody>
+</table>
+<p class="empty" id="index-empty" hidden>No edition matches.</p>
+</main>`
+  return layout({
+    title: `Index · ${SITE_NAME}`,
+    description:
+      "Every edition in the corpus: author, work, dates, language and translator, sortable and filterable.",
+    canonical: "/editions/",
+    body,
+    scripts: ["/assets/editions.js"],
+  })
+}
+
+/** A year to sort by, from words like "c. 361", "after 270", "late 4th century", "2nd century BC". */
+function looseYear(text: string): number | undefined {
+  const century =
+    /(early|mid|late)?[ -]*(\d+)(?:st|nd|rd|th) century( BC)?/i.exec(text)
+  if (century?.[2]) {
+    const part = { early: 10, mid: 50, late: 80 }[
+      (century[1]?.toLowerCase() ?? "mid") as "early" | "mid" | "late"
+    ]
+    const year = (Number(century[2]) - 1) * 100 + part
+    return century[3] ? -year : year
+  }
+  const plain = /(\d+)( BC)?/.exec(text)
+  if (!plain?.[1]) return undefined
+  return plain[2] ? -Number(plain[1]) : Number(plain[1])
 }
 
 export function citePage(): string {
