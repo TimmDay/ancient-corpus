@@ -179,7 +179,7 @@ describe("build", () => {
     expect(english).toContain("Index of Names of Individuals")
   })
 
-  it("reads Orosius a book at a time, with our English for the third century", () => {
+  it("reads Orosius a book at a time, with our English for all seven", () => {
     expect(read("orosius/historiae/7/index.html")).toMatch(
       /id="7\.23"[^>]*>[\s\S]*?Aurelianus uicesimus nonus imperium adeptus/,
     )
@@ -198,6 +198,9 @@ describe("build", () => {
     )
     expect(english).toMatch(
       /id="6\.22"[^>]*>[\s\S]*?entered in the Roman census as soon as He was born/,
+    )
+    expect(english).toMatch(
+      /id="7\.43"[^>]*>[\s\S]*?what had been Romania should be Gothia/,
     )
   })
 
