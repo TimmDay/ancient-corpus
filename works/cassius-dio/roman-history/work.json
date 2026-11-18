@@ -1,9 +1,7 @@
 {
   "author": "Cassius Dio",
   "title": "Roman History",
-  "otherTitles": [
-    "Historia Romana"
-  ],
+  "otherTitles": ["Historia Romana"],
   "originalLanguage": "grc",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
@@ -58,9 +56,7 @@
     ["80(Alexander)", [222, 229]]
   ],
   "locatorFormat": "book.chapter.section, with Boissevain's book numbers, e.g. 79.4.2; a restarted run is named in brackets, e.g. 80.1(Alexander)",
-  "slugAliases": [
-    "cassius-dio/historia-romana"
-  ],
+  "slugAliases": ["cassius-dio/historia-romana"],
   "locatorAliases": {},
   "locatorQualifiers": {
     "Alexander": "From the reign of Severus Alexander, where Boissevain’s Book 80 starts its chapter numbers again",
@@ -117,6 +113,28 @@
         "citation": "Herbert Baldwin Foster, Dio's Rome, 6 vols. (1905–1906), from Project Gutenberg",
         "url": "https://www.gutenberg.org/ebooks/11607"
       }
+    },
+    {
+      "slug": "cary",
+      "preferred": false,
+      "language": "grc",
+      "title": "Ῥωμαϊκὴ Ἱστορία, Books 36–55 (Loeb, vols. 3–6)",
+      "editor": "Earnest Cary",
+      "publicationYear": 1914,
+      "pagePerDivision": true,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0385/tlg001/tlg0385.tlg001.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Dio-Cary-Perseus.zip",
+            "sha256": "736c193bc405974fb8fe42ef95c7cb95f0c7614a5386de65cc00ed2e2313ab1a"
+          }
+        ],
+        "rights": "Greek text (Loeb, 1914–17) public domain in the USA; the digital edition is © Perseus Digital Library, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus"
     }
   ]
 }
