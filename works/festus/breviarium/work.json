@@ -32,6 +32,7 @@
         ],
         "rights": "The Latin text is public domain; The Latin Library names no edition and claims no rights in it"
       },
+      "licence": "public-domain",
       "importer": "latinlibrary"
     },
     {
@@ -53,6 +54,7 @@
         ],
         "rights": "Copyright (C) 2001, Thomas Banchich. Published on the condition in his notice: the entire contents, with the header and copyright notice, intact, on one page. The page as the site printed it in 2017, from the Internet Archive; the site has since moved."
       },
+      "licence": "copyright-conditions",
       "importer": "dir",
       "notice": "BREVIARIUM OF THE ACCOMPLISHMENTS OF THE ROMAN PEOPLE, Translated by Thomas M. Banchich and Jennifer A. Meka, Canisius College Translated Texts, Number 2, Canisius College, Buffalo, New York, 2001. http://www.roman-emperors.org/festus.htm Copyright (C) 2001, Thomas Banchich. This file may be copied on the condition that the entire contents, including the header and this copyright notice, remain intact.",
       "humanTranslation": {

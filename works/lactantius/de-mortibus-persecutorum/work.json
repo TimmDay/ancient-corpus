@@ -28,6 +28,7 @@
         ],
         "rights": "The Latin text is public domain; The Latin Library names no edition and claims no rights in it"
       },
+      "licence": "public-domain",
       "importer": "latinlibrary"
     },
     {
@@ -50,6 +51,7 @@
         ],
         "rights": "Public domain (Ante-Nicene Fathers, 1886); CCEL marks its text public domain"
       },
+      "licence": "public-domain",
       "importer": "ccel",
       "humanTranslation": {
         "citation": "William Fletcher, Of the Manner in Which the Persecutors Died, Ante-Nicene Fathers, vol. 7 (1886), from the Christian Classics Ethereal Library",

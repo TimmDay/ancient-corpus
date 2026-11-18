@@ -43,6 +43,7 @@
         ],
         "rights": "Greek text (Geffcken, 1902) public domain; the digital edition is © University of Leipzig, available under CC BY-SA 4.0."
       },
+      "licence": "cc-by-sa-4.0",
       "importer": "perseus-lines",
       "pagePerDivision": true
     },
@@ -64,6 +65,7 @@
         ],
         "rights": "Public domain (New York: Eaton & Mains, 1899). Digitized by Roger Pearse at sacred-texts.com; from ToposText."
       },
+      "licence": "public-domain",
       "importer": "topostext-lines",
       "pagePerDivision": true,
       "humanTranslation": {

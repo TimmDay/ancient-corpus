@@ -30,6 +30,7 @@
         ],
         "rights": "Greek text (Teubner, 1871) public domain; the digital edition is © University of Leipzig, available under CC BY-SA 4.0."
       },
+      "licence": "cc-by-sa-4.0",
       "importer": "perseus"
     },
     {
@@ -53,6 +54,7 @@
         ],
         "rights": "Public domain (Nicene and Post-Nicene Fathers, 1890); CCEL marks its text public domain"
       },
+      "licence": "public-domain",
       "importer": "ccel",
       "humanTranslation": {
         "citation": "Arthur Cushman McGiffert, The Church History of Eusebius, Nicene and Post-Nicene Fathers, Second Series, vol. 1 (1890), from the Christian Classics Ethereal Library",

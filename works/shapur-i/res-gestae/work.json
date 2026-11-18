@@ -34,6 +34,7 @@
         ],
         "rights": "Huyse's edition (Corpus Inscriptionum Iranicarum, 1999), as given on Parthian Sources Online. A transcription of the ancient inscription, which is in the public domain."
       },
+      "licence": "public-domain",
       "importer": "parthiansources"
     },
     {
@@ -49,6 +50,8 @@
         "archives": [],
         "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
       },
+      "licence": "cc0",
+      "model": "Claude Opus 5.5",
       "importer": "translation",
       "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 30 October 2026, from Huyse's transcription of the Parthian. It is not a translator's work: check it against the Parthian, and report errors. Public domain (CC0): reuse it freely.",
       "humanTranslation": {
@@ -74,6 +77,7 @@
         ],
         "rights": "© Jake Nabel, Parthian Sources Online. All rights reserved. Used here for local study only, pending his permission."
       },
+      "licence": "permission-needed",
       "importer": "parthiansources",
       "notice": "Translation: Jake Nabel, Parthian Sources Online (https://parthiansources.com/texts/skz/). All rights reserved.",
       "unpublished": "waiting for Jake Nabel's permission to publish his translation.",

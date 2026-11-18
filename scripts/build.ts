@@ -58,6 +58,11 @@ export function build({ drafts = false, outDir = DIST } = {}): {
       }
       return true
     })
+    // The Index lists Editions waiting for permission too, from work.json
+    // alone, since their text is never committed.
+    for (const edition of work.editions)
+      if (edition.unpublished || editions.includes(edition))
+        indexRows.push({ work, edition, entry: entries.get(work.slug) })
     const preferred = editions.find((e) => e.preferred) ?? editions[0]
     if (!preferred) continue
 
@@ -71,7 +76,6 @@ export function build({ drafts = false, outDir = DIST } = {}): {
       ]),
     )
     for (const edition of editions) {
-      indexRows.push({ work, edition, entry: entries.get(work.slug) })
       const text = texts.get(edition.slug) ?? readEditionText(work, edition)
       const pages = workPages(work, edition, text, editions, locatorsOf)
       for (const [page, html] of pages) {

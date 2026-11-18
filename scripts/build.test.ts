@@ -45,7 +45,7 @@ describe("build", () => {
     const rows = html.match(/<tr data-author=/g) ?? []
     expect(rows.length).toBe(
       loadWorks().flatMap((w) =>
-        w.editions.filter((e) => hasEditionText(w, e) && !e.unpublished),
+        w.editions.filter((e) => e.unpublished ?? hasEditionText(w, e)),
       ).length,
     )
     // Magie's Latin and English are two rows; the Historia Augusta's date
@@ -53,6 +53,30 @@ describe("build", () => {
     expect(html.match(/>Historia Augusta</g)).toHaveLength(2)
     expect(html).toContain('data-label="Written">late 4th century</td>')
     expect(html).toContain("<option>English</option>")
+  })
+
+  it("credits machine translations to their model, and gives every Edition's licence", () => {
+    const html = read("editions/index.html")
+    const orosius =
+      html.match(
+        /<tr[^>]*data-work="Historiae adversus Paganos"[^>]*data-language="English"[\s\S]*?<\/tr>/,
+      )?.[0] ?? ""
+    expect(orosius).toContain(
+      'data-label="Translator or editor">Claude Opus 5.5</td>',
+    )
+    expect(orosius).toContain('data-label="Machine translated">Yes</td>')
+    expect(orosius).toContain('data-label="Licence">CC0 (public domain)</td>')
+    // Waiting for permission: listed, unlinked, with a note on who to ask.
+    expect(html).toMatch(
+      /Res Gestae Divi Saporis<\/i> <span class="none">\(not published\)[\s\S]*?popovertarget="permission-shapur-i-res-gestae-nabel">Permission needed/,
+    )
+    for (const work of loadWorks())
+      for (const edition of work.editions) {
+        expect(edition.licence, `${work.slug}/${edition.slug}`).toBeDefined()
+        expect(edition.licence === "permission-needed").toBe(
+          Boolean(edition.unpublished),
+        )
+      }
   })
 
   it("holds back only Editions waiting for permission", () => {

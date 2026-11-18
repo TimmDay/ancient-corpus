@@ -33,6 +33,7 @@
         ],
         "rights": "Greek text (Teubner, 1887) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
       },
+      "licence": "cc-by-sa-4.0",
       "importer": "perseus",
       "pagePerDivision": true
     },
@@ -53,6 +54,7 @@
         ],
         "rights": "Public domain. Anonymous translation (London: Green and Chaplin, 1814); transcribed by Roger Pearse, 2002: \"All material on this page is in the public domain - copy freely.\""
       },
+      "licence": "public-domain",
       "importer": "tertullian",
       "pagePerDivision": true,
       "humanTranslation": {
