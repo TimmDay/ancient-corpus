@@ -1,0 +1,77 @@
+{
+  "divisions": [
+    {
+      "locator": "14",
+      "label": "Book 14"
+    },
+    {
+      "locator": "15",
+      "label": "Book 15"
+    },
+    {
+      "locator": "16",
+      "label": "Book 16"
+    },
+    {
+      "locator": "17",
+      "label": "Book 17"
+    },
+    {
+      "locator": "18",
+      "label": "Book 18"
+    },
+    {
+      "locator": "19",
+      "label": "Book 19"
+    },
+    {
+      "locator": "20",
+      "label": "Book 20"
+    },
+    {
+      "locator": "21",
+      "label": "Book 21"
+    },
+    {
+      "locator": "22",
+      "label": "Book 22"
+    },
+    {
+      "locator": "23",
+      "label": "Book 23"
+    },
+    {
+      "locator": "24",
+      "label": "Book 24"
+    },
+    {
+      "locator": "25",
+      "label": "Book 25"
+    },
+    {
+      "locator": "26",
+      "label": "Book 26"
+    },
+    {
+      "locator": "27",
+      "label": "Book 27"
+    },
+    {
+      "locator": "28",
+      "label": "Book 28"
+    },
+    {
+      "locator": "29",
+      "label": "Book 29"
+    },
+    {
+      "locator": "30",
+      "label": "Book 30"
+    },
+    {
+      "locator": "31",
+      "label": "Book 31"
+    }
+  ],
+  "editorial": []
+}

@@ -1,0 +1,61 @@
+[
+  {
+    "op": "merge",
+    "locator": "16.9.3",
+    "at": "In extremis regni limitibus"
+  },
+  {
+    "op": "renumber",
+    "locator": "16.10.10",
+    "at": "Quae licet adfectabat",
+    "newLocator": "16.10.11"
+  },
+  {
+    "op": "renumber",
+    "locator": "25.7.4",
+    "at": "foederata itaque pace",
+    "newLocator": "25.7.14"
+  },
+  {
+    "op": "renumber",
+    "locator": "28.4.3",
+    "at": "poscuntur etiam in conviviis",
+    "newLocator": "28.4.13"
+  },
+  {
+    "op": "renumber",
+    "locator": "28.5.3",
+    "at": "quod ubi negari per ambages",
+    "newLocator": "28.5.13"
+  },
+  {
+    "op": "renumber",
+    "locator": "30.2.2",
+    "at": "quibus ille cognitis",
+    "newLocator": "30.2.12"
+  },
+  {
+    "op": "renumber",
+    "locator": "31.15.5",
+    "at": "et quia nullo ordine iam",
+    "newLocator": "31.15.15"
+  },
+  {
+    "op": "accept",
+    "locator": "23.6.58",
+    "flag": "gap",
+    "reason": "The Latin Library has no section 59 here"
+  },
+  {
+    "op": "renumber",
+    "locator": "22.9.10",
+    "at": "Et ille hac occasione hominem",
+    "newLocator": "22.9.17"
+  },
+  {
+    "op": "accept",
+    "locator": "21.12.22",
+    "flag": "gap",
+    "reason": "The Latin Library prints no marker for section 23; its text runs on inside 22"
+  }
+]
