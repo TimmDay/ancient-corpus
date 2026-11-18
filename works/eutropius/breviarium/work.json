@@ -46,6 +46,31 @@
         "rights": "Public domain in the USA."
       },
       "importer": "eutropius"
+    },
+    {
+      "slug": "watson",
+      "preferred": false,
+      "language": "en",
+      "title": "Abridgment of Roman History",
+      "translator": "John Selby Watson",
+      "publicationYear": 1853,
+      "source": {
+        "name": "tertullian.org (Roger Pearse)",
+        "url": "https://www.tertullian.org/fathers/eutropius_breviarium_2_text.htm",
+        "archives": [
+          {
+            "file": "Eutropius-Watson-tertullian.zip",
+            "sha256": "420cf6af619d993ae780a71268192d291572b80562c718c0be827265942e4515"
+          }
+        ],
+        "rights": "Public domain. J. S. Watson, Justin, Cornelius Nepos, and Eutropius (Bohn's Classical Library, 1853; London: George Bell, 1886 reprint); transcribed by Roger Pearse, 2003, who writes \"Sylla\" as \"Sulla\" and \"Adrian\" as \"Hadrian\": \"All material on this page is in the public domain - copy freely.\""
+      },
+      "importer": "tertullian",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "John Selby Watson, Justin, Cornelius Nepos, and Eutropius, literally translated (Bohn's Classical Library, 1853), transcribed by Roger Pearse",
+        "url": "https://www.tertullian.org/fathers/eutropius_breviarium_0_eintro.htm"
+      }
     }
   ]
 }
