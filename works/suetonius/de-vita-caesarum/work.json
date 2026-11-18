@@ -48,8 +48,27 @@
   },
   "editions": [
     {
-      "slug": "thomson-forester",
+      "slug": "latin-library",
       "preferred": true,
+      "language": "la",
+      "title": "De Vita Caesarum",
+      "source": {
+        "name": "The Latin Library",
+        "url": "https://www.thelatinlibrary.com/suet.html",
+        "archives": [
+          {
+            "file": "Suetonius-LatinLibrary.zip",
+            "sha256": "571ba3f8732c14df5c345a7c2c59a5d23866116bfe5601fbd9546ce3680be2ac"
+          }
+        ],
+        "rights": "The Latin text is public domain; The Latin Library names no edition and claims no rights in it"
+      },
+      "licence": "public-domain",
+      "importer": "suetonius-latin"
+    },
+    {
+      "slug": "thomson-forester",
+      "preferred": false,
       "language": "en",
       "title": "The Lives of the Twelve Caesars",
       "translator": "Alexander Thomson",

@@ -144,7 +144,7 @@ export function importAmmianusLatin(source: EditionSource): ImportedEdition {
     .sort((a, b) => a - b)
   for (const n of books) {
     const bytes = files[`ammianus/${n}.shtml`] ?? new Uint8Array()
-    const html = decode(bytes)
+    const html = decodeLatinLibrary(bytes)
     const book = String(n)
     divisions.push({ locator: book, label: `Book ${book}` })
     const add = (chapter: string, section: string, raw: string) => {
@@ -220,7 +220,7 @@ const plainOf = (raw: string) =>
   load(`<p>${raw}</p>`).text().replace(/\s+/g, " ").trim()
 
 /** The Latin Library saves these pages as UTF-16, UTF-8 or Windows-1252. */
-function decode(bytes: Uint8Array): string {
+export function decodeLatinLibrary(bytes: Uint8Array): string {
   // With or without its byte-order mark (FF FE).
   if (bytes[1] === 0 || (bytes[0] === 0xff && bytes[1] === 0xfe))
     return new TextDecoder("utf-16le").decode(bytes)
