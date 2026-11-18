@@ -723,11 +723,7 @@
           "note": "An illustrated almanac; its Chronicle gives a short notice of each reign"
         },
         {
-          "author": "Jerome",
-          "title": "Chronicle",
-          "language": "la",
-          "written": "c. 380",
-          "covers": "Abraham to 378",
+          "work": "jerome/chronicon",
           "note": "A Latin translation and continuation of Eusebius' Chronicle"
         },
         {

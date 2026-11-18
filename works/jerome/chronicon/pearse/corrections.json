@@ -1,0 +1,530 @@
+[
+  {
+    "op": "split",
+    "locator": "193k",
+    "at": "Cratinus and Plato",
+    "newLocator": "193l"
+  },
+  {
+    "op": "split",
+    "locator": "248h",
+    "at": "Colonies at Beirut",
+    "newLocator": "248i"
+  },
+  {
+    "op": "accept",
+    "locator": "16a",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "16g",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "20d",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "22c",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "24e",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "26d",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "28e",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "30e",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "32e",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "34d",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "36f",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "38h",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "40f",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "42e",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "44e",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "46d",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "48d",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "50b",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "52b",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "54d",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "56l",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "58i",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "60f",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "62n",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "64f",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "66b",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "68i",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "70l",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "72h",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "74l",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "76f",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "78a",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "80h",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "82i",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "84e",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "86l",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "88f",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "90h",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "92e",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "94n",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "96h",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "100h",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "102g",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "104f",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "106b",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "108d",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "110e",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "112b",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "114f",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "116a",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "118c",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "120d",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "122b",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "124d",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "126a",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "128b",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "130c",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "132d",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "134d",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "136b",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "138c",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "140b",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "142e",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "144b",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "146b",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "148l",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "150k",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "152l",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "154i",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "156i",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "158i",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "160b",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "162a",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "164i",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "166g",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "168n",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "170l",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "172h",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "174g",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "176f",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "178k",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "180i",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "182p",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "184k",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "188a",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  },
+  {
+    "op": "accept",
+    "locator": "256a",
+    "flag": "gap",
+    "reason": "Helm's page numbers: the pages between hold only columns of regnal years, with no lettered entries"
+  }
+]
