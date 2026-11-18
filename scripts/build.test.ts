@@ -179,6 +179,18 @@ describe("build", () => {
     expect(english).toContain("Index of Names of Individuals")
   })
 
+  it("reads Eutropius on Aurelian in Watson's English, a book at a time, chapter for chapter with the Latin", () => {
+    const english = read("eutropius/breviarium/watson/9/index.html")
+    expect(english).toMatch(
+      /id="9\.14"[^>]*>[\s\S]*?He was indeed cruel and sanguinary/,
+    )
+    expect(english).toContain("Chalons sur Marne")
+    // Nero, whose numeral the transcription lacks, at the Latin's 7.14.
+    expect(read("eutropius/breviarium/watson/7/index.html")).toMatch(
+      /id="7\.14"[^>]*>[\s\S]*?To him succeeded NERO/,
+    )
+  })
+
   it("reads Orosius a book at a time, with our English for all seven", () => {
     expect(read("orosius/historiae/7/index.html")).toMatch(
       /id="7\.23"[^>]*>[\s\S]*?Aurelianus uicesimus nonus imperium adeptus/,

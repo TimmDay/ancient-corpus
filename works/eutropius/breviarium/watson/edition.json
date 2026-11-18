@@ -1,0 +1,128 @@
+{
+  "divisions": [
+    {
+      "locator": "1",
+      "label": "Book 1"
+    },
+    {
+      "locator": "2",
+      "label": "Book 2"
+    },
+    {
+      "locator": "3",
+      "label": "Book 3"
+    },
+    {
+      "locator": "4",
+      "label": "Book 4"
+    },
+    {
+      "locator": "5",
+      "label": "Book 5"
+    },
+    {
+      "locator": "6",
+      "label": "Book 6"
+    },
+    {
+      "locator": "7",
+      "label": "Book 7"
+    },
+    {
+      "locator": "8",
+      "label": "Book 8"
+    },
+    {
+      "locator": "9",
+      "label": "Book 9"
+    },
+    {
+      "locator": "10",
+      "label": "Book 10"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ed-0",
+      "title": "Dedication to Valens",
+      "html": "<p>TO THE EMPEROR VALENS, MAXIMUS, PERPETUUS, AUGUSTUS.<sup class=\"nref\"><a href=\"#n-watson-ed-0-1\" id=\"r-watson-ed-0-1\">1</a></sup></p><p>ACCORDING to the pleasure of your Clemency,<sup class=\"nref\"><a href=\"#n-watson-ed-0-2\" id=\"r-watson-ed-0-2\">2</a></sup> I have arranged in a brief narrative, in the order of time, such particulars in the history of Rome as seemed most worthy of notice, in transactions either of war or peace, from the foundation of the city to our own days; adding concisely, also, such matters as were remarkable in the lives of the emperors; that your Serenity's divine mind may rejoice to learn that it has followed the actions of illustrious men in governing the empire, before it became acquainted with them by reading.<sup class=\"nref\"><a href=\"#n-watson-ed-0-3\" id=\"r-watson-ed-0-3\">3</a></sup></p>",
+      "notes": [
+        {
+          "id": "watson-ed-0-1",
+          "html": "The title stands thus: DOMINO VALENTI MAXIMO PERPETUO AUGUSTO. On the last two words Tzschucke has this note: \"For <i>Perpetuo Augusto </i>Sextus Rufus\" (who wrote a <i>Breviarum de Victoriis et Provinciis Populi Romani, </i>dedicated to Valens), \"has in his dedication <i>Semper Augusto. </i>The Germans would say <i>Allzeit Mehrer des Reichs. </i>See Pütman <i>De Titulo </i>Semper Augustus, p. 60.\" Tzschucke, apparently, took <i>perpetua </i>as an adverb, equivalent to <i>semper. </i>But Cellarius and others consider it as an adjective. Cellarius cites, in comparison with it, from Gruter, Inscript. p. 285, n. 8, <i>D. N. Valentiniano Perpetuo ac Felici Semper Augusto, </i>and p 279, n. 4, <i>Aeterno Imperatori Nostro Maxima Optimoque Principi Aurelio Valeriano Diocletiano; </i>adding, also, that Theodosius is called <i>perennis princeps </i>in Reines. Class. Inscr. iii. 62. I have accordingly given <i>Perpetua </i>as an adjective. Sextus Rufus's dedication, too, as edited by Cellarius, Verheyk, and others, has <i>Perpetuo Semper Augusto.</i>",
+          "label": "1"
+        },
+        {
+          "id": "watson-ed-0-2",
+          "html": "<i>Mansuetudinis tuae</i>]<i> </i>Similarly, a few lines below, he says <i>Tranquillitatis tuœ mens divina</i>, \"your Serenity's divine mind.\" The use of such titles gradually became common in the lower age of Roman literature, commencing soon after the reign of Tiberius. They were the parents of our highness, majesty, excellency, &amp;c,",
+          "label": "2"
+        },
+        {
+          "id": "watson-ed-0-3",
+          "html": "However Eutropius meant to flatter Valens, he could not assuredly have shown him better, than by addressing him thus, to be such as he is described by Ammianus Marcellinus, lib. xxix., <i>subrusticus homo, </i>and xxxi. 41, <i>Subagrestis ingenu, nec liberalibus studiis eruditus.---- Vinetus. </i>Some have doubted the genuineness of this dedication to Valens, because the Greek translator has not included it in his version; but the authority of manuscripts, and the resemblance of its style to that of Eutropius, have induced Cellarius, Verheyk, Tzschucke, and most other commentators, to believe it genuine.",
+          "label": "3"
+        }
+      ]
+    },
+    {
+      "id": "ed-1",
+      "title": "Watson's contents of Book 1",
+      "html": "<p>Origin of Rome, I.----Characters and acts of the seven kings of Rome, II.----VIII.----Appointment of consuls on the expulsion of Tarquin the Proud, IX.----War raised by Tarquin; he is supported by Porsena, X. XI.----First dictator, XII.---- Sedition of the people, and origin of the tribunitial power, XIII.----A victory over the Volsci, XIV. ---- Coriolanus, being banished, makes war on his country with the aid of the Volsci; is softened by the entreaties of his wife and mother. XV.----War of the Fabii with the Vejentes; the census, XVI.----Dictatorship of Cincinnatus, XVII. The Decemviri, XVIII.----War with the Fidenates, Vejeutes, and Volsci, XIX. ----Destruction of Rome by the Gauls, XX.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-2",
+      "title": "Watson's contents of Book 2",
+      "html": "<p>Military tribunes created instead of consuls; Camillus overcomes the Volsci, Aequi, and Sutrini, Cincinnatus the Praenestini, I, II ----Consular government restored, III.----Death and eulogy of Camillus, IV.----Flight of the Gauls, V ----The census, VI.----Combat of Valerius Corvus with a Gaul, VII.----The Latin war, VIII.----Various defeats of the Samnites, IX.----The Gauls, Etrurians, and Samnites defeated, X.----The war with Pyrrhus, XI.-XIV.----Ptolemy, king of Egypt, sends ambassadors to Rome, XV.----The Picenians and Sallentines subdued, XVI. XVII.----Another census: the first Punic war, XVIII.----XXVIII.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-3",
+      "title": "Watson's contents of Book 3",
+      "html": "<p>Ptolemy, king of Egypt, declines the aid offered him by the Romans against Antiochus; Hiero, king of Sicily, comes to see the games at Rome, I.----War with the Ligurians; the Carthaginians think of resuming hostilities, but are pacified, II.----Peace throughout the dominions of Rome, III.----The Illyrian war, IV.----Disasters of the Gauls that invaded Italy, V. VI.----The second Punic war, VII.-XXIII.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-4",
+      "title": "Watson's contents of Book 4",
+      "html": "<p>War with Philip, king of Macedonia, I. II.----War with Antiochus, king of Syria, III. IV.----Triumph of Fulvius over the Aetolians; death of Hannibal, V.----War with Perseus, king of Macedonia, and with Gentius, king of Illyria, VI.----VIII.----Successes of Mummius in Spain, IX.----Third Punic war, and destruction of Carthage, X. ----XII.----War in Macedonia with Pseudo Philip, XIII.----The Achaean war, and destruction of Corinth, XIV.----War in Macedonia with Pseudo Perseus, XV.----War in Spain with Viriatus, XVI.----Numantine war ended by Scipio, XVII.----Attains bequeaths his kingdom to the Roman people, XVIII.----Triumphs of Junius Brutus and Scipio, XIX.----War in Asia with Aristonicus, XX.----Carthage becomes a Roman colony, XXI.----War with the Transalpine Gauls, and Bituitus, king of the Arverni, XXII.----A colony settled at Narbonne; a triumph over Dalmatia, XXIII.----Unsuccessful war with the Scordisci, XXIV.----Triumphs over Sardinia and Thrace, XXV.----War with Jugurtha, XXVI. XXVII.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-5",
+      "title": "Watson's contents of Book 5",
+      "html": "<p>The war with the Cimbri, Teutones, and their allies, I. II.----The Social war, III.----The Civil war between Marius and Sulla, IV.----The Mithridatic war; the Thracian; continuation and conclusion of the Civil war, V.----IX.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-6",
+      "title": "Watson's contents of Book 6",
+      "html": "<p>War with Sertorius in Spain; wars in Macedonia, Pamphylia, Cilicia, and Dalmatia, I.----IV-----Nicomedes, king of Bithynia, makes the Romans his heirs; continuation of the war with Mithridates; wars with the slaves, pirates, and Macedonians, V.----XII.---- Acts of Pompey against Tigranes, and in other parts of Asia, XIII. XIV.----Conspiracy of Catiline, XV.----Triumphs of Pompey and Metellus, XVI.----Wars of Caesar in Gaul, XVII. ---- Proceedings of Crassus in Parthia, XVIII.----Civil war between Caesar and Pompey, XIX.----XXV.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-7",
+      "title": "Watson's contents of Book 7",
+      "html": "<p>Wars that followed on the death of Julius Caesar, I.----Antony flees to Lepidus, and is reconciled to Octavianus; their triumvirate, II.----Proceedings and deaths of Brutus and Cassius; division of the empire between Antony and Octavianus, III.----War with Sextus Pompey, IV.----Successes of Agrippa in Aquitania; Ventidius Bassus conquers the Parthians, V.----Death of Sextus Pompey; marriage of Antony and Cleopatra; unsuccessful expedition of Antony into Parthia, VI.----War between Octavianus and Antony; deaths of Antony and Cleopatra; Egypt added to the Roman empire, VII.----Octavianus becomes sole ruler under the name of Augustus, VIII.----His wars and victories, IX. X.----Character and acts of Tiberius, XI.----Of Caligula, XII.----Of Claudius, who subjugates Britain, XIII.----Of Nero, under whom two new provinces are made, Pontus Polemoniacus and Alpes Cottiae, XIV. XV.----Of Galba, XVI.----Of Otho, XVII. ---- Of Vitellius, XVIII. ---- Of Vespasian, under whom Judaea was added to the Roman dominions, with the provinces Achaia, Lycia, Rhodes, Samos, Thracia, Cilicia, Comagena, XIX. XX. ----- Of Titus, XXI. XXII.----Of Domitian, XXIII.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-8",
+      "title": "Watson's contents of Book 8",
+      "html": "<p>Justice and mildness of Nerva, I.----Merits of Trajan; he extends the limits of the Roman empire, II.-V.----Hadrian, envying the glory of Trajan, contracts the bounds of the empire, and promotes the arts and occupations of peace, VI. VII.----Virtues of Antoninus Pius, VIII.----After his reign the commonwealth had two emperors with equal power, Marcus and Lucius Antoninus Verus; the studies and character of Marcus; his wars in Parthia, Germany, and with the Marcomanni, which he conducted alone or in conjunction with Lucius, IX.-XIV.----Antoninus Commodus, who resembles his father only in fighting successfully against the Germans, XV.----Helvius Pertinax, XVI.----Salvius Julianus, XVII.----Septimius Severus, an African, overthrows his rivals for the throne, and conquers the Parthians, Arabians, and Adiabeni, XVIII.----His learning; his<i> </i>war and death in Britain, XIX.----Antoninus Caracalla, XX.----Opilius Macrinus and Diadumenus, XXI.----Heliogabalus, XXII.----Alexander Severus; his victory over the Persians; his enforcement of military discipline; in his reign lived Ulpian, XXIII.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-9",
+      "title": "Watson's contents of Book 9",
+      "html": "<p>Maximin successful in his wars in Germany, I.----Three emperors at once, Pupienus, Balbinus, and Gordian; Gordian becomes sole emperor, and goes to war with Persia, II.----The two Philips, father and son; the thousandth year of Rome, III.----Decius suppresses an insurrection in Gaul, IV.----Gallus Hostilianus and his son Volusianus, V.----Short reign of Aemilianus, VI.----Disadvantageous reign of Valerian and Gallienus; several aspirants assume the purple, VII.-X.----Claudius defeats the Goths;<i> </i>his honours, XI.----Quintillus, XII.----Aurelian defeats the Goths, Tetricus, Zenobia; suppresses a rebellion at Rome; his character, XIII.-XV.----Tacitus, Florianus, XVI.----Probus; his acts in Gaul and Pannonia, XVIII.----Carus; his successes in Persia; death of him and Numerianus, XVIII. XIX.----Diocletian made emperor; overthrows Carinus; suppresses an insurrection in Gaul, XX.----Makes Herculius emperor, and Constantius and Maximian Caesars; proceedings in Britain, Egypt, Africa, and among the Alemanni, XXI.-XXIII. ---- Varied fortune of Maximian in Persia; subjugation of the Carpi, Bastarnae, and Sarmatians, XXIV. XXV.----Character of Diocletian and Maximian; their abdication of the imperial power, XXVI.-XXVIII.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-10",
+      "title": "Watson's contents of Book 10",
+      "html": "<p>Division of the empire between Constantius and Galerius, Maximin and Severus being Caesars, I.----Constantine made emperor in Britain, and Maxentius, son of Maximian, at Rome; Maximian attempts to regain the throne; failure of Severus against Maxentius, II. ---- Subsequent efforts of Maximian; his death and character, III.----Four emperors at once, Constantine, Maxentius, Licinius, and Maximin, Maxentius overthrown by Constantine; death of Maximin, IV.-----Licinius defeated by Constantine, who becomes sole emperor, and makes three Caesars, V. VI.----Character and death of Constantine, VII. VIII.----He is succeeded by three sons and a nephew, Constantine, Constantine, Constans, and Dalmatius; Constantius survives them all, and becomes sole emperor, suppressing Veteranio and Nepotian, IX.-XI.----Overthrow and death of Magnentius; Gallus made Caesar, XII. ----Deaths of Gallus and Sylvanus, XIII.----Julian sent to Gaul by Constantius with the authority of Caesar; his successes, XIV.----Julian made emperor; death and character of Constantius, XV.----Julian's expedition to the east; his death and character, XVI.----Jovian made emperor in the east; his ill-fortune; he cedes a portion of the Roman territory to Sapor; his death, and the supposed causes of it, XVII. XVIII.</p>",
+      "notes": []
+    }
+  ]
+}

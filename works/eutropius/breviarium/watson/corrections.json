@@ -1,0 +1,14 @@
+[
+  {
+    "op": "split",
+    "locator": "7.13",
+    "at": "To him succeeded NERO",
+    "newLocator": "7.14"
+  },
+  {
+    "op": "split",
+    "locator": "7.20",
+    "at": "To him succeeded his son TITUS",
+    "newLocator": "7.21"
+  }
+]
