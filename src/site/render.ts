@@ -905,7 +905,7 @@ function indexCard(
   { author, written, covers, licence }: Record<string, string>,
   permission: string | undefined,
 ): string {
-  const head = `${cells.work}, ${escapeHtml(author ?? "")}${written ? ` (${escapeHtml(written)})` : ""}`
+  const head = `${cells.work}, ${escapeHtml(author ?? "")}${written ? ` <span class="card-written">(${escapeHtml(written)})</span>` : ""}`
   const span = covers?.startsWith("to ") ? `up ${covers}` : covers
   const made = [
     cells.translator?.includes('class="none"') ? "" : cells.translator,
