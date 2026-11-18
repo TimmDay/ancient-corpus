@@ -897,22 +897,25 @@ const permissionButton = (id: string) =>
   `<button type="button" class="permission" popovertarget="${id}">Permission needed</button>`
 
 /**
- * A row as a card, for a phone: "Title, Author (written)" with the language
- * as a tag, then what it covers, then who made it, when, and on what terms.
+ * A row as a card, for a phone: "Title, Author" with the language as a tag;
+ * then when it was written and what it covers; then who made it, when, and
+ * on what terms.
  */
 function indexCard(
   cells: Record<string, string>,
   { author, written, covers, licence }: Record<string, string>,
   permission: string | undefined,
 ): string {
-  const head = `${cells.work}, ${escapeHtml(author ?? "")}${written ? ` <span class="card-written">(${escapeHtml(written)})</span>` : ""}`
+  // Upright here: in a short heading the italic title crowds the author.
+  const head = `${(cells.work ?? "").replace(/<\/?i>/g, "")}, ${escapeHtml(author ?? "")}`
   const span = covers?.startsWith("to ") ? `up ${covers}` : covers
+  const when = [written, span && `covering ${span}`].filter(Boolean)
   const made = [
     cells.translator?.includes('class="none"') ? "" : cells.translator,
     cells.published,
     permission ? permissionButton(permission) : escapeHtml(licence ?? ""),
   ].filter(Boolean)
-  return `<td class="index-card"><p class="card-head"><span class="card-title">${head}</span><span class="card-lang">${cells.language}</span></p>${span ? `<p>covering ${escapeHtml(span)}</p>` : ""}<p>${made.join(", ")}</p></td>`
+  return `<td class="index-card"><p class="card-head"><span class="card-title">${head}</span><span class="card-lang">${cells.language}</span></p>${when.length ? `<p>${escapeHtml(when.join(", "))}</p>` : ""}<p>${made.join(", ")}</p></td>`
 }
 
 /** A year to sort by, from words like "c. 361", "after 270", "late 4th century", "2nd century BC". */
