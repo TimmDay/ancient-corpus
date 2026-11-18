@@ -1456,7 +1456,19 @@ th[aria-sort="descending"] .sort-mark::after {
 .index-table td {
   padding: 0.55rem 0.6rem;
   border-bottom: 1px solid var(--rule);
-  vertical-align: top;
+  vertical-align: middle;
+}
+
+/* The work's title in capitals, in the display face, like the headings. */
+.index-table td[data-label="Work"] a {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.index-table .lang-chip {
+  vertical-align: middle;
 }
 
 .index-table td a {
