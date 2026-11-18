@@ -12,8 +12,28 @@
   "locatorAliases": {},
   "editions": [
     {
-      "slug": "yonge",
+      "slug": "latin-library",
       "preferred": true,
+      "language": "la",
+      "title": "Rerum Gestarum libri qui supersunt",
+      "source": {
+        "name": "The Latin Library",
+        "url": "https://www.thelatinlibrary.com/ammianus.html",
+        "archives": [
+          {
+            "file": "Ammianus-LatinLibrary.zip",
+            "sha256": "4ec9730d49cc81af02ca112dedf587064708f448fa05877cd3f23247aa470dc0"
+          }
+        ],
+        "rights": "The Latin text is public domain; The Latin Library names no edition and claims no rights in it"
+      },
+      "licence": "public-domain",
+      "importer": "ammianus-latin",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "yonge",
+      "preferred": false,
       "language": "en",
       "title": "The Roman History of Ammianus Marcellinus",
       "translator": "C. D. Yonge",

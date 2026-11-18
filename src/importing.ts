@@ -24,7 +24,7 @@ import { importLacusCurtius } from "./importers/lacuscurtius.ts"
 import { importLatinLibrary } from "./importers/latinlibrary.ts"
 import { importParthianSources } from "./importers/parthiansources.ts"
 import { importPerseus, importPerseusLines } from "./importers/perseus.ts"
-import { importAmmianus } from "./importers/ammianus.ts"
+import { importAmmianus, importAmmianusLatin } from "./importers/ammianus.ts"
 import { importJerome } from "./importers/jerome.ts"
 import { importTertullian } from "./importers/tertullian.ts"
 import { importToposText, importToposTextLines } from "./importers/topostext.ts"
@@ -53,6 +53,7 @@ const IMPORTERS: Record<
   "perseus-lines": importPerseusLines,
   suetonius: importSuetonius,
   ammianus: (source) => importAmmianus(source),
+  "ammianus-latin": (source) => importAmmianusLatin(source),
   jerome: (source) => importJerome(source),
   tertullian: (source, work) => importTertullian(source, work.title),
   topostext: importToposText,

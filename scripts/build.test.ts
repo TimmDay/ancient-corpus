@@ -173,11 +173,15 @@ describe("build", () => {
   })
 
   it("reads Ammianus a book at a time, by book, chapter and section", () => {
+    // The Latin, preferred, at the same Locator as Yonge's English.
     expect(read("ammianus-marcellinus/res-gestae/31/index.html")).toMatch(
+      /id="31\.5\.17"[^>]*>[\s\S]*?per Aurelianum, acrem virum/,
+    )
+    expect(read("ammianus-marcellinus/res-gestae/yonge/31/index.html")).toMatch(
       /id="31\.5\.17"[^>]*>[\s\S]*?routed by Aurelian, an untiring leader/,
     )
     // Gutenberg's second "XII." in Book 22 is chapter 13.
-    expect(read("ammianus-marcellinus/res-gestae/22/index.html")).toMatch(
+    expect(read("ammianus-marcellinus/res-gestae/yonge/22/index.html")).toMatch(
       /id="22\.13\.1"[^>]*>[\s\S]*?temple of Apollo, at Daphne/,
     )
   })
