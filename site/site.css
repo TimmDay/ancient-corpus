@@ -223,6 +223,180 @@ code {
   color: var(--accent);
 }
 
+/* Site menu: links in the header on wide screens; on narrow ones, with
+   scripting, a panel that slides in from the right behind a menu button. */
+
+.site-nav {
+  margin-left: auto;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.5rem 0;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+.site-nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.45em;
+}
+
+.nav-toggle,
+.nav-close {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.nav-toggle:hover,
+.nav-close:hover {
+  color: var(--accent);
+  background: var(--surface);
+}
+
+.nav-toggle svg,
+.nav-close svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+}
+
+@media (min-width: 48rem) {
+  .nav-toggle,
+  .nav-close,
+  .nav-scrim {
+    display: none !important;
+  }
+}
+
+/* Without scripting the links stay in the header, smaller, at every width. */
+@media (max-width: 47.99rem) {
+  :root:not(.js) .site-nav ul {
+    gap: 0.75rem;
+  }
+
+  :root:not(.js) .site-nav a {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+  }
+
+  .js .site-nav {
+    order: 1;
+    margin: -0.5rem -0.5rem -0.5rem 0;
+  }
+
+  .js .site-header-inner > .theme-toggle {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .js .nav-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    width: min(18rem, 85vw);
+    height: 100vh;
+    height: 100dvh;
+    padding: 0.5rem max(1rem, env(safe-area-inset-right)) 2rem 1.5rem;
+    background: var(--bg);
+    border-left: 1px solid var(--rule);
+    box-shadow: -0.5rem 0 2rem rgb(0 0 0 / 0.15);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition:
+      transform 0.25s ease,
+      visibility 0s linear 0.25s;
+  }
+
+  .js .nav-panel[data-open="true"] {
+    transform: none;
+    visibility: visible;
+    transition: transform 0.25s ease;
+  }
+
+  .js .nav-close {
+    align-self: flex-end;
+    margin-bottom: 1rem;
+  }
+
+  .js .site-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .js .site-nav li {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .js .site-nav a {
+    display: block;
+    font-size: 0.95rem;
+    padding: 0.9rem 0;
+  }
+
+  .nav-scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 15;
+    background: rgb(0 0 0 / 0.35);
+  }
+
+  .menu-open,
+  .menu-open body {
+    overflow: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .nav-panel,
+  .js .nav-panel[data-open="true"] {
+    transition: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Reader layout: contents beside the text on wide screens, above it on narrow ones */
 
 .reader {
@@ -1127,4 +1301,242 @@ h2.division.hit {
 
 [hidden] {
   display: none !important;
+}
+
+/* Index: every Edition, a table on wide screens and cards on narrow ones */
+
+.index-page {
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.index-page h1 {
+  margin-bottom: 0.25rem;
+}
+
+.index-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem 1.25rem;
+  margin: 2rem 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.index-filters .field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.field-text {
+  flex: 1 1 16rem;
+}
+
+.field-years {
+  flex: 0 1 auto;
+}
+
+.index-filters label,
+.index-filters .field-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+  padding: 0;
+}
+
+.year-inputs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.index-filters input,
+.index-filters select,
+.index-reset {
+  font: inherit;
+  color: var(--ink);
+  background: var(--bg);
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+}
+
+.field-years input {
+  width: 9.5rem;
+}
+
+.index-filters input[aria-invalid] {
+  border-color: var(--flag);
+  outline-color: var(--flag);
+}
+
+.index-reset {
+  cursor: pointer;
+  background: var(--surface);
+  border-color: var(--rule);
+}
+
+.index-reset:hover {
+  color: var(--accent);
+}
+
+.index-help,
+.index-count {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+}
+
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.index-table th {
+  text-align: left;
+  border-bottom: 2px solid var(--rule);
+  padding: 0;
+  vertical-align: bottom;
+}
+
+.index-table th button {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border: 0;
+  background: none;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.index-table th button:hover,
+.index-table th[aria-sort] button {
+  color: var(--accent);
+}
+
+.sort-mark::after {
+  content: "↕";
+  opacity: 0.35;
+  font-family: var(--font-text);
+}
+
+th[aria-sort="ascending"] .sort-mark::after {
+  content: "↑";
+  opacity: 1;
+}
+
+th[aria-sort="descending"] .sort-mark::after {
+  content: "↓";
+  opacity: 1;
+}
+
+.index-table td {
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+.index-table td a {
+  text-decoration: none;
+}
+
+.index-table .none {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* The sort menu stands in for the column headings when there are none. */
+.field-sort {
+  display: none !important;
+}
+
+@media (max-width: 47.99rem) {
+  .field-sort {
+    display: flex !important;
+  }
+
+  .field-years input {
+    width: 8.5rem;
+  }
+
+  .index-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .index-table,
+  .index-table tbody,
+  .index-table tr,
+  .index-table td {
+    display: block;
+  }
+
+  .index-table tr {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .index-table tr[hidden] {
+    display: none;
+  }
+
+  .index-table td {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 0.75rem;
+    padding: 0.15rem 0;
+    border: 0;
+  }
+
+  .index-table td::before {
+    content: attr(data-label);
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 0.25rem;
+  }
+
+  /* The work leads each card, without a label. */
+  .index-table td[data-label="Work"] {
+    order: -1;
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .index-table td[data-label="Work"]::before {
+    content: none;
+  }
+
+  .index-table tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .index-table .empty-cell {
+    display: none;
+  }
 }

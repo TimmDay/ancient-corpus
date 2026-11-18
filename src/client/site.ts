@@ -1,4 +1,60 @@
-// Controls on every page: the theme toggle and the back-to-top button.
+// Controls on every page: the menu, the theme toggle and the back-to-top button.
+
+// On narrow screens the site links slide in from the side behind a menu
+// button. While closed the panel is inert, so keyboard focus skips it; while
+// open, Escape, the scrim or a link closes it, and focus stays inside.
+
+const menuButton = document.querySelector<HTMLButtonElement>(".nav-toggle")
+const closeButton = document.querySelector<HTMLButtonElement>(".nav-close")
+const panel = document.querySelector<HTMLElement>(".nav-panel")
+const scrim = document.querySelector<HTMLElement>(".nav-scrim")
+const narrow = window.matchMedia("(max-width: 47.99rem)")
+
+function setMenu(open: boolean, returnFocus = true): void {
+  if (!menuButton || !panel || !scrim) return
+  const wasOpen = menuButton.getAttribute("aria-expanded") === "true"
+  menuButton.setAttribute("aria-expanded", String(open))
+  menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu")
+  panel.dataset.open = String(open)
+  panel.inert = narrow.matches && !open
+  scrim.hidden = !open
+  document.documentElement.classList.toggle("menu-open", open)
+  if (open) panel.querySelector<HTMLElement>("a")?.focus()
+  else if (wasOpen && returnFocus) menuButton.focus()
+}
+
+if (menuButton && closeButton && panel && scrim) {
+  menuButton.hidden = false
+  closeButton.hidden = false
+  menuButton.addEventListener("click", () =>
+    setMenu(menuButton.getAttribute("aria-expanded") !== "true"),
+  )
+  closeButton.addEventListener("click", () => setMenu(false))
+  scrim.addEventListener("click", () => setMenu(false))
+  panel.addEventListener("click", (event) => {
+    if ((event.target as Element).closest("a")) setMenu(false, false)
+  })
+  document.addEventListener("keydown", (event) => {
+    if (panel.dataset.open !== "true") return
+    if (event.key === "Escape") setMenu(false)
+    if (event.key !== "Tab") return
+    const focusable = [
+      ...panel.querySelectorAll<HTMLElement>("a, button:not([hidden])"),
+    ]
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault()
+      last?.focus()
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault()
+      first?.focus()
+    }
+  })
+  // Widening the window turns the panel back into header links.
+  narrow.addEventListener("change", () => setMenu(false, false))
+  setMenu(false, false)
+}
 
 // The theme follows the system until the reader picks one, which is then
 // remembered. A script in the page head applies the choice before paint, so

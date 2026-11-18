@@ -15,10 +15,13 @@ import {
 } from "../src/corpus.ts"
 import {
   citePage,
+  editionsPage,
   homePage,
+  howToUsePage,
   notFoundPage,
   workPages,
 } from "../src/site/render.ts"
+import { catalogueEntries } from "../src/catalogue.ts"
 import type { WorkListing } from "../src/works-index.ts"
 
 const DIST = path.join(REPO_ROOT, "dist")
@@ -40,6 +43,8 @@ export function build({ drafts = false, outDir = DIST } = {}): {
   }
 
   const published: { work: Work; edition: Edition; flagged: number }[] = []
+  const indexRows: Parameters<typeof editionsPage>[0] = []
+  const entries = catalogueEntries()
   const listings: WorkListing[] = []
   const redirects: string[] = []
   const skipped: string[] = []
@@ -66,6 +71,7 @@ export function build({ drafts = false, outDir = DIST } = {}): {
       ]),
     )
     for (const edition of editions) {
+      indexRows.push({ work, edition, entry: entries.get(work.slug) })
       const text = texts.get(edition.slug) ?? readEditionText(work, edition)
       const pages = workPages(work, edition, text, editions, locatorsOf)
       for (const [page, html] of pages) {
@@ -99,6 +105,8 @@ export function build({ drafts = false, outDir = DIST } = {}): {
 
   write("index.html", homePage(published))
   write("cite/index.html", citePage())
+  write("how-to-use/index.html", howToUsePage())
+  write("editions/index.html", editionsPage(indexRows))
   write("404.html", notFoundPage())
   write("works.json", JSON.stringify(listings))
   write("_redirects", redirects.join("\n") + "\n")
@@ -106,7 +114,7 @@ export function build({ drafts = false, outDir = DIST } = {}): {
     recursive: true,
   })
   buildSync({
-    entryPoints: ["reader", "cite", "home", "site"].map((name) =>
+    entryPoints: ["reader", "cite", "home", "editions", "site"].map((name) =>
       path.join(REPO_ROOT, "src", "client", `${name}.ts`),
     ),
     outdir: path.join(outDir, "assets"),
