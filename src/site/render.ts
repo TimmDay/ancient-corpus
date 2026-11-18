@@ -728,7 +728,6 @@ const INDEX_COLUMNS: [key: string, label: string][] = [
   ["written", "Written"],
   ["language", "Language"],
   ["translator", "Translator or editor"],
-  ["machine", "Machine translated"],
   ["licence", "Licence"],
   ["published", "Published"],
 ]
@@ -760,7 +759,6 @@ export function editionsPage(
   const body = `
 <main id="main" class="index-page" tabindex="-1">
 <h1>Index</h1>
-<p class="lede">Every edition in the corpus, original and translation, one row each, with the terms it is shared on.</p>
 <form class="index-filters" role="search" onsubmit="return false">
 <div class="field field-text"><label for="index-q">Search</label>
 <input id="index-q" name="q" type="search" autocomplete="off" placeholder="Author, work, translator"></div>
@@ -773,13 +771,14 @@ export function editionsPage(
 <select id="index-lang" name="lang"><option value="">All languages</option>${languages
     .map((l) => `<option>${escapeHtml(l)}</option>`)
     .join("")}</select></div>
+<div class="field field-made"><label for="index-made">Translated by</label>
+<select id="index-made" name="made"><option value="">Human or AI</option><option value="human">Human</option><option value="ai">AI</option></select></div>
 <div class="field field-sort"><label for="index-sort">Sort by</label>
 <select id="index-sort" name="sort">${INDEX_COLUMNS.map(
     ([key, label]) => `<option value="${key}">${label}</option>`,
   ).join("")}</select></div>
 <button type="reset" class="index-reset">Clear</button>
 </form>
-<p class="index-help">Years match a work's coverage or an edition's publication date. Write BC dates as <code>44 BC</code> or <code>-44</code>.</p>
 <p class="index-count" id="index-count" role="status">${sorted.length} editions</p>
 <table class="index-table">
 <thead><tr>${INDEX_COLUMNS.map(
@@ -809,7 +808,6 @@ ${sorted
       translator: person
         ? escapeHtml(person)
         : '<span class="none">not named</span>',
-      machine: machine ? "Yes" : "No",
       licence:
         edition.licence === "permission-needed"
           ? permissionPopover(work, edition, person)
@@ -851,7 +849,13 @@ ${sorted
       .join("")}>${INDEX_COLUMNS.map(
       ([key, label]) =>
         `<td data-label="${label}"${cells[key] ? "" : ' class="empty-cell"'}>${cells[key]}</td>`,
-    ).join("")}</tr>`
+    ).join("")}${indexCard(
+      cells,
+      { author, written: dates.written, covers: dates.covers, licence },
+      edition.licence === "permission-needed"
+        ? permissionId(work, edition)
+        : undefined,
+    )}</tr>`
   })
   .join("\n")}
 </tbody>
@@ -877,12 +881,38 @@ function permissionPopover(
   edition: Edition,
   person: string,
 ): string {
-  const id = `permission-${work.slug.replace(/\//g, "-")}-${edition.slug}`
+  const id = permissionId(work, edition)
   const who = escapeHtml(person || "the translator")
   const ask = edition.permissionContact
     ? `Write to ${who} at <a href="mailto:${attr(edition.permissionContact)}">${escapeHtml(edition.permissionContact)}</a>.`
     : `Contact ${who} through <a href="${attr(edition.source.url)}">${escapeHtml(edition.source.name)}</a>.`
-  return `<button type="button" class="permission" popovertarget="${id}">Permission needed</button><div class="permission-note" id="${id}" popover><p>This translation is in copyright. We use it for study only, and will publish it here once ${who} gives permission. To use it yourself, ask too.</p><p>${ask}</p></div>`
+  return `${permissionButton(id)}<div class="permission-note" id="${id}" popover><p>This translation is in copyright. We use it for study only, and will publish it here once ${who} gives permission. To use it yourself, ask too.</p><p>${ask}</p></div>`
+}
+
+const permissionId = (work: Work, edition: Edition) =>
+  `permission-${work.slug.replace(/\//g, "-")}-${edition.slug}`
+
+/** Opens the note on who to ask; a card reuses the table cell's note. */
+const permissionButton = (id: string) =>
+  `<button type="button" class="permission" popovertarget="${id}">Permission needed</button>`
+
+/**
+ * A row as a card, for a phone: "Title, Author (written)" with the language
+ * as a tag, then what it covers, then who made it, when, and on what terms.
+ */
+function indexCard(
+  cells: Record<string, string>,
+  { author, written, covers, licence }: Record<string, string>,
+  permission: string | undefined,
+): string {
+  const head = `${cells.work}, ${escapeHtml(author ?? "")}${written ? ` (${escapeHtml(written)})` : ""}`
+  const span = covers?.startsWith("to ") ? `up ${covers}` : covers
+  const made = [
+    cells.translator?.includes('class="none"') ? "" : cells.translator,
+    cells.published,
+    permission ? permissionButton(permission) : escapeHtml(licence ?? ""),
+  ].filter(Boolean)
+  return `<td class="index-card"><p class="card-head"><span class="card-title">${head}</span><span class="card-lang">${cells.language}</span></p>${span ? `<p>covering ${escapeHtml(span)}</p>` : ""}<p>${made.join(", ")}</p></td>`
 }
 
 /** A year to sort by, from words like "c. 361", "after 270", "late 4th century", "2nd century BC". */

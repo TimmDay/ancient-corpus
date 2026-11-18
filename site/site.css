@@ -253,12 +253,6 @@ code {
   color: var(--accent);
 }
 
-.site-nav a[aria-current="page"] {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.45em;
-}
-
 .nav-toggle,
 .nav-close {
   display: grid;
@@ -1448,6 +1442,17 @@ th[aria-sort="descending"] .sort-mark::after {
   opacity: 1;
 }
 
+/* Short values sit in the middle of their column. */
+.index-table th[data-key="language"] button,
+.index-table th[data-key="published"] button {
+  justify-content: center;
+}
+
+.index-table td[data-label="Language"],
+.index-table td[data-label="Published"] {
+  text-align: center;
+}
+
 .index-table td {
   padding: 0.55rem 0.6rem;
   border-bottom: 1px solid var(--rule);
@@ -1496,6 +1501,11 @@ th[aria-sort="descending"] .sort-mark::after {
   margin: 0.4rem 0;
 }
 
+/* Each row's card, shown on a phone in place of its cells. */
+.index-card {
+  display: none;
+}
+
 /* The sort menu stands in for the column headings when there are none. */
 .field-sort {
   display: none !important;
@@ -1526,7 +1536,7 @@ th[aria-sort="descending"] .sort-mark::after {
   }
 
   .index-table tr {
-    padding: 0.75rem 0;
+    padding: 0.85rem 0;
     border-bottom: 1px solid var(--rule);
   }
 
@@ -1534,42 +1544,49 @@ th[aria-sort="descending"] .sort-mark::after {
     display: none;
   }
 
+  /* The cells give way to the row's card. */
   .index-table td {
-    display: grid;
-    grid-template-columns: 7.5rem 1fr;
-    gap: 0.75rem;
-    padding: 0.15rem 0;
-    border: 0;
+    display: none;
   }
 
-  .index-table td::before {
-    content: attr(data-label);
+  .index-table td.index-card {
+    display: block;
+    padding: 0;
+    border: 0;
+    text-align: left;
+    line-height: 1.45;
+  }
+
+  .index-card p {
+    margin: 0.2rem 0 0;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+
+  .index-card .card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin: 0 0 0.3rem;
+    color: var(--ink);
+    font-size: 1.15rem;
+  }
+
+  .card-title a {
+    text-decoration: none;
+  }
+
+  .card-lang {
+    flex: none;
+    margin-top: 0.25rem;
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--muted);
     font-family: var(--font-display);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--muted);
-    padding-top: 0.25rem;
-  }
-
-  /* The work leads each card, without a label. */
-  .index-table td[data-label="Work"] {
-    order: -1;
-    display: block;
-    font-size: 1.2rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .index-table td[data-label="Work"]::before {
-    content: none;
-  }
-
-  .index-table tr {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .index-table .empty-cell {
-    display: none;
   }
 }

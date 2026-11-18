@@ -11,7 +11,6 @@ type Key =
   | "written"
   | "language"
   | "translator"
-  | "machine"
   | "licence"
   | "published"
 
@@ -38,6 +37,7 @@ if (form && tbody) {
   const from = field<HTMLInputElement>("from")
   const to = field<HTMLInputElement>("to")
   const lang = field<HTMLSelectElement>("lang")
+  const made = field<HTMLSelectElement>("made")
   const sortSelect = field<HTMLSelectElement>("sort")
   let sort: { key: Key; descending: boolean } = {
     key: "author",
@@ -49,6 +49,7 @@ if (form && tbody) {
   from.value = params.get("from") ?? ""
   to.value = params.get("to") ?? ""
   lang.value = params.get("lang") ?? ""
+  made.value = params.get("made") ?? ""
   const sortParam = params.get("sort")
   if (sortParam) {
     const key = sortParam.replace(/^-/, "") as Key
@@ -90,7 +91,9 @@ if (form && tbody) {
       const haystack = normalizeName(d.search ?? "")
       let match =
         terms.every((t) => haystack.includes(t)) &&
-        (!lang.value || d.language === lang.value)
+        (!lang.value || d.language === lang.value) &&
+        // Human covers everything not machine-translated, originals too.
+        (!made.value || (d.machine === "Yes") === (made.value === "ai"))
       if (match && filteringYears) {
         const coversFrom = Number(coverStart(d) ?? NaN)
         const coversTo = d.coversTo === undefined ? NaN : Number(d.coversTo)
@@ -131,6 +134,7 @@ if (form && tbody) {
     if (from.value) next.set("from", from.value)
     if (to.value) next.set("to", to.value)
     if (lang.value) next.set("lang", lang.value)
+    if (made.value) next.set("made", made.value)
     if (sort.key !== "author" || sort.descending)
       next.set("sort", `${sort.descending ? "-" : ""}${sort.key}`)
     const search = next.toString()
