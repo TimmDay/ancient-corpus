@@ -92,11 +92,8 @@ if (form && tbody) {
       let match =
         terms.every((t) => haystack.includes(t)) &&
         (!lang.value || d.language === lang.value) &&
-        // Translations only: an original-language Edition is neither.
-        (!made.value ||
-          (d.machine === "Yes"
-            ? made.value === "ai"
-            : made.value === "human" && d.translation === "Yes"))
+        // Human covers everything not machine-translated, originals too.
+        (!made.value || (d.machine === "Yes") === (made.value === "ai"))
       if (match && filteringYears) {
         const coversFrom = Number(coverStart(d) ?? NaN)
         const coversTo = d.coversTo === undefined ? NaN : Number(d.coversTo)

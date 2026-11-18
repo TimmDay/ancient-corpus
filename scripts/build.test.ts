@@ -50,7 +50,7 @@ describe("build", () => {
     )
     // Magie's Latin and English are two rows; the Historia Augusta's date
     // comes from the catalogue, since its work.json has none.
-    expect(html.match(/>Historia Augusta</g)).toHaveLength(2)
+    expect(html.match(/<tr[^>]*data-work="Historia Augusta"/g)).toHaveLength(2)
     expect(html).toContain('data-label="Written">late 4th century</td>')
     expect(html).toContain("<option>English</option>")
   })
