@@ -228,6 +228,20 @@ describe("build", () => {
     )
   })
 
+  it("reads Julian's Caesars on Aurelian, in Wright's Greek and English, by Spanheim section", () => {
+    expect(read("julian/caesares/index.html")).toMatch(
+      /id="313d"[^>]*>[\s\S]*?τούτοις ἐπεισέδραμεν Αὐρηλιανὸς/,
+    )
+    const english = read("julian/caesares/wright/index.html")
+    expect(english).toMatch(
+      /id="313d"[^>]*>[\s\S]*?many charges of unjustifiable murders were brought against him/,
+    )
+    // Wright's paragraph on Probus starts inside 314a, after the oracle.
+    expect(english).toMatch(
+      /If his punishment match his crime[\s\S]*?id="314a"[^>]*>[\s\S]*?With Aurelian entered Probus/,
+    )
+  })
+
   it("reads Orosius a book at a time, with our English for all seven", () => {
     expect(read("orosius/historiae/7/index.html")).toMatch(
       /id="7\.23"[^>]*>[\s\S]*?Aurelianus uicesimus nonus imperium adeptus/,

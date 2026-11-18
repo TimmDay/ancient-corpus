@@ -486,8 +486,11 @@
           "written": "4th century"
         },
         {
+          "work": "julian/caesares"
+        },
+        {
           "author": "Julian",
-          "title": "Orations; The Caesars; Misopogon; Letters",
+          "title": "Orations; Misopogon; Letters",
           "language": "grc",
           "written": "355 to 363",
           "freeEnglish": "W. C. Wright (Loeb, 1913–23)"

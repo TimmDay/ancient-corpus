@@ -19,6 +19,7 @@ import { importDfhg } from "./importers/dfhg.ts"
 import { importDio } from "./importers/dio.ts"
 import { importEutropius } from "./importers/eutropius.ts"
 import { importDir } from "./importers/dir.ts"
+import { importJulianCaesars } from "./importers/julian.ts"
 import { importLacusCurtius } from "./importers/lacuscurtius.ts"
 import { importLatinLibrary } from "./importers/latinlibrary.ts"
 import { importParthianSources } from "./importers/parthiansources.ts"
@@ -40,6 +41,7 @@ const IMPORTERS: Record<
   dio: importDio,
   dir: importDir,
   eutropius: importEutropius,
+  "julian-caesars": importJulianCaesars,
   lacuscurtius: (source, work, edition) =>
     importLacusCurtius(source, work.title, edition.language),
   latinlibrary: (source) => importLatinLibrary(source),

@@ -1,0 +1,22 @@
+{
+  "divisions": [],
+  "editorial": [
+    {
+      "id": "ed-1",
+      "title": "Introduction",
+      "html": "<p>The Caesars, otherwise entitled in the MSS. Symposium or Kronia (Latin Saturnalia) was written at Constantinople in 361 and was probably addressed to Sallust, to whom Julian had sent his lost work the Kronia.<sup class=\"nref\"><a href=\"#n-wright-ed-1-539\" id=\"r-wright-ed-1-539\">539</a></sup> The interlocutor in the proœmium<sup class=\"nref\"><a href=\"#n-wright-ed-1-540\" id=\"r-wright-ed-1-540\">540</a></sup> is almost certainly Sallust.</p><p>“Caesar” was in Julian's time a Roman Emperor's most splendid title, and was regularly used by the barbarians when they referred to the Emperor. The idea and the working out of the satire is Lucianic and there are echoes here and there of Lucian's <i>Dialogues of the Dead</i>, but Julian is neither so witty nor so frivolous as Lucian. In speaking of the gods he allows himself a licence which is appropriate to the festival, but would otherwise seem inconsistent with the admonitions addressed to priests in the <i>Fragment of a Letter</i>. His conception of the State and of the ideal ruler is Greek rather than Roman.</p>",
+      "notes": [
+        {
+          "id": "wright-ed-1-539",
+          "html": "cf. <i>Oration</i> 4. 157 <span class=\"sc\">c</span>.",
+          "label": "539"
+        },
+        {
+          "id": "wright-ed-1-540",
+          "html": "306 <span class=\"sc\">a</span>.",
+          "label": "540"
+        }
+      ]
+    }
+  ]
+}
