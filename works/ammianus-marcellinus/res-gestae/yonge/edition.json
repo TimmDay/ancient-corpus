@@ -1,0 +1,192 @@
+{
+  "divisions": [
+    {
+      "locator": "14",
+      "label": "Book 14"
+    },
+    {
+      "locator": "15",
+      "label": "Book 15"
+    },
+    {
+      "locator": "16",
+      "label": "Book 16"
+    },
+    {
+      "locator": "17",
+      "label": "Book 17"
+    },
+    {
+      "locator": "18",
+      "label": "Book 18"
+    },
+    {
+      "locator": "19",
+      "label": "Book 19"
+    },
+    {
+      "locator": "20",
+      "label": "Book 20"
+    },
+    {
+      "locator": "21",
+      "label": "Book 21"
+    },
+    {
+      "locator": "22",
+      "label": "Book 22"
+    },
+    {
+      "locator": "23",
+      "label": "Book 23"
+    },
+    {
+      "locator": "24",
+      "label": "Book 24"
+    },
+    {
+      "locator": "25",
+      "label": "Book 25"
+    },
+    {
+      "locator": "26",
+      "label": "Book 26"
+    },
+    {
+      "locator": "27",
+      "label": "Book 27"
+    },
+    {
+      "locator": "28",
+      "label": "Book 28"
+    },
+    {
+      "locator": "29",
+      "label": "Book 29"
+    },
+    {
+      "locator": "30",
+      "label": "Book 30"
+    },
+    {
+      "locator": "31",
+      "label": "Book 31"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ed-1",
+      "title": "Argument of Book 14",
+      "html": "<p>I. The cruelty of the Cæsar Gallus.—II. The incursions of the Isaurians.—III. The unsuccessful plans of the Persians.—IV. The invasion of the Saracens, and the manners of that people.—V. The punishment of the adherents of Magnentius.—VI. The vices of the senate and people of Rome.—VII. The ferocity and inhumanity of the Cæsar Gallus.—VIII. A description of the provinces of the East.—IX. About the Cæsar Constantius Gallus.—X. The Emperor Constantius grants the Allemanni peace at their request.—XI. The Cæsar Constantius Gallus is sent for by the Emperor Constantius, and beheaded.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-2",
+      "title": "Argument of Book 15",
+      "html": "<p>I. The death of the Cæsar Gallus is announced to the emperor.—II. Ursicinus, the commander of the cavalry in the East; Julian, the brother of the Cæsar Gallus; and Gorgonius, the high chamberlain, are accused of treason.—III. The adherents and servants of the Cæsar Gallus are punished.—IV. The Allemanni of the district of Lintz are defeated by the Emperor Constantius with great loss.—V. Silvanus, a Frank, the commander of the infantry in Gaul, is saluted as emperor at Cologne; and on the twenty-eighth day of his reign is destroyed by stratagem.—VI. The friends and adherents of Silvanus are put to death.—VII. Seditions of the Roman people are repressed by Leontius, the prefect of the city; Liberius, the bishop, is driven from his see.—VIII. Julian, the brother of Gallus, is created Cæsar by the Emperor Constantius, his uncle; and is appointed to command.—IX. On the origin of the Gauls, and from whence they derive the names of Celts and Gauls; and of their treaties.—X. Of the Gallic Alps, and of the various passes over them.—XI. A brief description of Gaul, and of the course of the River Rhone.—XII. Of the manners of the Gauls.—XIII. Of Musonianus, prefect of the Prætorium in the East.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-3",
+      "title": "Argument of Book 16",
+      "html": "<p>I. A panegyric of Julian the Cæsar.—II. Julian attacks and defeats the Allemanni.—III. He recovers Cologne, which had been taken by the Franks, and concludes a peace with the king of the Franks.—IV. He is besieged in the city of Sens by the Allemanni.—V. His virtues—VI. The prosecution and acquittal of Arbetio.—VII. The Cæsar Julian is defended before the emperor by his chamberlain Eutherius against the accusations of Marcellus.—VIII. Calumnies are rife in the camp of the Emperor Constantius, and the courtiers are rapacious.—IX. The question of peace with the Persians.—X.—The triumphal entry of Constantius into Rome.—XI. Julian attacks the Allemanni in the islands of the Rhine in which they had taken refuge, and repairs the fort of Saverne.—XII. He attacks the kings of the Allemanni on the borders of Gaul, and defeats them at Strasburg.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-4",
+      "title": "Argument of Book 17",
+      "html": "<p>I. Julian crosses the Rhine and plunders and burns the towns of the Allemanni, repairs the fortress of Trajan, and grants the barbarians a truce for ten months.—II. He hems in six hundred Franks who are devastating the second Germania, and starves them into surrender.—III. He endeavours to relieve the Gauls from some of the tribute which weighs them down.—IV. By order of the Emperor Constantius an obelisk is erected at Rome in the Circus Maximus;—some observations on obelisks and on hieroglyphics.—V. Constantius and Sapor, king of the Persians, by means of ambassadors and letters, enter into a vain negotiation for peace.—VI. The Nethargi, an Allemanni tribe, are defeated in the Tyrol, which they were laying waste.—VII. Nicomedia is destroyed by an earthquake; some observations on earthquakes—VIII. Julian receives the surrender of the Salii, a Frankish tribe. He defeats one body of the Chamavi, takes another body prisoners, and grants peace to the rest.—IX. He repairs three forts on the Meuse that had been destroyed by the barbarians. His soldiers suffer from want, and become discontented and reproachful.—X. Surmarius and Hortarius, kings of the Allemanni, surrender their prisoners and obtain peace from Julian.—XI. Julian, after his successes in Gaul, is disparaged at the court of Constantius by enviers of his fame, and is spoken of as inactive and cowardly.—XII. The Emperor Constantius compels the Sarmatians to give hostage, and to restore their prisoners; and imposes a king on the Sarmatian exiles, whom he restores to their country and to freedom.—XIII. He compels the Limigantes, after defeating them with great slaughter, to emigrate, and harangues his own soldiers.—XIV. The Roman ambassadors, who had been sent to treat for peace, return from Persia; and Sapor returns into Armenia and Mesopotamia.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-5",
+      "title": "Argument of Book 18",
+      "html": "<p>I. The Cæsar Julian consults the welfare of the Gauls, and provides for the general observance of justice.—II. He repairs the walls of the castles on the Rhine which he had recovered; crosses the Rhine, and having conquered those of the Alemanni who remained hostile, he compels their kings to sue for peace, and to restore their prisoners.—III. Why Barbatio, the commander of the infantry, and his wife, were beheaded by command of Constantius.—IV. Sapor, king of Persia, prepares to attack the Romans with all his power.—V. Antoninus, the protector, deserts to Sapor, with all his men; and increases his eagerness to engage in war with the Romans.—VI. Ursicinus, the commander of the legions, being summoned from the East, when he had reached Thrace was sent back to Mesopotamia, and having arrived there he hears from Marcellinus of Sapor's approach.—VII. Sapor, with the kings of the Chionitæ and Albani, invades Mesopotamia—The Romans of their own accord lay waste their lands with fire; compelled the countrymen to come into the towns, and fortify the western bank of the Euphrates with castles and garrisons.—VIII. Seven hundred Illyrian cavalry are surprised by the Persians, and put to flight—Ursicinus escapes in one direction, and Marcellinus in another.—IX. A description of Amida; and how many legions and squadrons were there in garrison.—X. Sapor receives the surrender of two Roman fortresses.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-6",
+      "title": "Argument of Book 19",
+      "html": "<p>I. Sapor, while exhorting the citizens of Amida to surrender, is assailed with arrows and javelins by the garrison—And when king Grumbates makes a similar attempt, his son is slain.—II. Amida is blockaded, and within two days is twice assaulted by the Persians.—III. Ursicinus makes a vain proposal to sally out by night, and surprise the besiegers, being resisted by Sabinianus, the commander of the forces.—IV. A pestilence, which breaks out in Amida, is checked within ten days by a little rain—A discussion of the causes, and different kinds of pestilences.—V. Amida, betrayed by a deserter, is assailed both by assaults on the walls and by underground mines.—VI. A sally of the Gallic legions does great harm to the Persians.—VII. Towers and other engines are brought close to the walls of the city, but they are burnt by the Romans.—VIII. Attempts are made to raise lofty mounds close to the walls of Amida, and by these means it is entered—After the fall of the city, Marcellinus escapes by night, and flees to Antioch.—IX. Of the Roman generals at Amida, some are put to death, and others are kept as prisoners—Craugasius of Nisibis deserts to the Persians from love of his wife, who is their prisoner.—X. The people of Rome, fearing a scarcity, become seditious.—XI. The Limigantes of Sarmatia, under pretence of suing for peace, attack Constantius, who is deceived by their trick; but are driven back with heavy loss.—XII. Many are prosecuted for treason, and condemned.—XIII. Lauricius, of the Isaurians checks the hordes of banditti.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-7",
+      "title": "Argument of Book 20",
+      "html": "<p>I. Lupicinus is sent as commander-in-chief into Britain with an army to check the incursions of the Picts and Scots.—II. Ursicinus, commander of the infantry, is attacked by calumnies, and dismissed.—III. An eclipse of the sun—A discussion on the two suns, and on the causes of solar and lunar eclipses, and the various changes and shapes of the moon.—IV. The Cæsar Julian, against his will, is saluted as emperor at Paris, where he was wintering, by his Gallican soldiers, whom Constantius had ordered to be taken from him, and sent to the East to act against the Persians.—V. He harangues his soldiers.—VI. Singara is besieged and taken by Sapor: the citizens, with the auxiliary cavalry and two legions in garrison, are carried off to Persia—The town is razed to the ground.—VII. Sapor storms the town of Bezabde, which is defended by three legions; repairs it, and places in it a garrison and magazines; he also attacks the fortress of Victa, without success.—VIII. Julian writes to Constantius to inform him of what had taken place at Paris.—IX. Constantius desires Julian to be content with the title of Cæsar; but the Gallican legions unanimously refuse to allow him to be so.—X. The Emperor Julian unexpectedly attacks a Frank tribe, known as the Attuarii, on the other side of the Rhine; slays some, takes others prisoners, and grants peace to the rest, on their petition.—XI. Constantius attacks Bezabde with his whole force, but fails—A discussion on the rainbow.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-8",
+      "title": "Argument of Book 21",
+      "html": "<p>I. The Emperor Julian at Vienne learns that Constantius is about to die—How he knew it—An essay on the different arts of learning the future.—II. Julian at Vienne feigns to be a Christian in order to conciliate the multitude, and on a day of festival worships God among the Christians.—III. Vadomarius, king of the Allemanni, breaking his treaty, lays waste our frontier, and slays Count Libino, with a few of his men.—IV. Julian having intercepted letters of Vadomarius to the Emperor Constantius, contrives to have him seized at a banquet; and having slain some of the Allemanni, and compelled others to surrender, grants the rest peace at their entreaty.—Julian harangues his soldiers, and makes them all promise obedience to him, intending to make war upon the Emperor Constantius.—VI. Constantius marries Faustina—Increases his army by fresh levies; gains over the kings of Armenia and Hiberia by gifts.—VII. Constantius, at that time at Antioch, retains Africa in his power by means of his secretary Gaudentius; crosses the Euphrates, and moves with his army upon Edessa.—VIII. After settling the affairs of Gaul, Julian marches to the Danube, sending on before a part of his army through Italy and the Tyrol.—IX. Taurus and Florentius, consuls, and prefects of the prætorium, fly at the approach of Julian, the one through Illyricum, the other through Italy—Lucillianus, the commander of the cavalry, who was preparing to resist Julian, is crushed by him.—X. Julian receives the allegiance of Sirmium, the capital of Western Illyricum, and of its garrison—Occupies the country of the Sacci, and writes to the senate letters of complaint against Constantius.—XI. Two of the legions of Constantius which at Sirmium had passed over to Julian are sent by him into Gaul, and occupy Aquileia, with the consent of the citizens, who, however, shut their gates against the troops of Julian.—XII. Aquileia takes the part of Constantius, and is besieged, but presently, when news of his death arrives, surrenders to Julian.—XIII. Sapor leads back his army home, because the auspices forbid war—Constantius, intending to march against Julian, harangues his soldiers.—XIV. Omens of the death of Constantius.—XV. Constantius dies at Mopsucrenæ in Cilicia.—XVI. His virtues and vices.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-9",
+      "title": "Argument of Book 22",
+      "html": "<p>I. From fear of Constantius Julian halts in Dacia, and secretly consults the augurs and soothsayers.—II. When he hears of Constantius's death he passes through Thrace, and enters Constantinople, which he finds quiet; and without a battle becomes sole master of the Roman empire.—III. Some of the adherents of Constantius are condemned, some deservedly, some wrongfully.—IV. Julian expels from the palace all the eunuchs, barbers, and cooks—A statement of the vices of the eunuchs about the palace, and the corrupt state of military discipline.—V. Julian openly professes his adherence to the pagan worship, which he had hitherto concealed; and lets the Christian bishops dispute with one another.—VI. How he compelled some Egyptian litigants, who modestly sought his intervention, to return home.—VII. At Constantinople he often administers justice in the senate-house; he arranges the affairs of Thrace, and receives anxious embassies from foreign nations.—VIII. A description of Thrace, and of the Sea of Marmora, and of the regions and nations contiguous to the Black Sea.—IX. Having enlarged and beautified Constantinople, Julian goes to Antioch; on his road he joins the citizens of Nicomedia moving to restore their city; and at Ancyra presides in the court of justice.—X. He winters at Antioch, and presides in the court of justice; and oppresses no one on account of his religion.—XI. George, bishop of Alexandria, with two others, is dragged through the streets by the Gentiles of Alexandria, and torn to pieces and burnt, without any one being punished for this action.—XII. Julian prepares an expedition against the Persians, and, in order to know beforehand the result of the war, he consults the oracles; and sacrifices innumerable victims, devoting himself wholly to soothsaying and augury.—XIII. He unjustly attributes the burning of the temple of Apollo at Daphne to the Christians, and orders the great church at Antioch to be shut up.—XIV. He sacrifices to Jupiter on Mount Casius—Why he writes the Misopogon in his anger against the citizens of Antioch.—XV. A description of Egypt; mention of the Nile, the crocodile, the ibis, and the pyramids.—XVI. Description of the five provinces of Egypt, and of their famous cities.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-10",
+      "title": "Argument of Book 23",
+      "html": "<p>I. Julian in vain attempts to restore the temple at Jerusalem, which had been destroyed long before.—II. He orders Arsaces, king of Armenia, to prepare for the war with Persia, and with an army and auxiliary troops of the Scythians crosses the Euphrates.—III. As he marches through Mesopotamia, the princes of the Saracenic tribes of their own accord offer him a golden crown and auxiliary troops—A Roman fleet of eleven hundred ships arrives, and bridges over the Euphrates.—IV. A description of several engines, balistæ, scorpions, or wild-asses, battering-rams, helepoles, and fire-machines.—V. Julian, with all his army, crosses the river Aboras by a bridge of boats at Circesium—He harangues his soldiers.—VI. A description of the eighteen principal provinces of Persia, their cities, and the customs of their inhabitants.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-11",
+      "title": "Argument of Book 24",
+      "html": "<p>I. Julian invades Assyria with his army; receives the surrender of Anatha, a fort on the Euphrates, and burns it.—II. Having made attempts on other fortresses and towns, he burns some which were deserted, and receives the surrender of Pirisabora, and burns it.—III. On account of his successes, he promises his soldiers one hundred denarii a man; and as they disdain so small a donation, he in a modest oration recalls them to a proper feeling.—IV. The town of Maogamalcha is stormed by the Romans, and rased to the ground.—V. The Romans storm a fort of great strength, both in its situation and fortifications, and burn it.—VI. Julian defeats the Persians, slays two thousand five hundred of them, with the loss of hardly seventy of his own men; and in a public assembly presents many of his soldiers with crowns.—VII. Being deterred from laying siege to Ctesiphon, he rashly orders all his boats to be burnt, and retreats from the river.—VIII. As he was neither able to make bridges, nor to be joined by a portion of his forces, he determines to return by Corduena.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-12",
+      "title": "Argument of Book 25",
+      "html": "<p>I. The Persians attack the Romans on their march, but are gallantly repelled.—II. The army is distressed by want of corn and forage; Julian is alarmed by prodigies.—III. The emperor, while, in order to repulse the Persians, who pressed him on all quarters, he rashly rushes into battle without his breastplate, is wounded by a spear, and is borne back to his tent, where he addresses those around him, and, after drinking some cold water, dies.—IV. His virtues and vices; his personal appearance.—V. Jovian, the captain<sup class=\"nref\"><a href=\"#n-yonge-ed-12-151-151\" id=\"r-yonge-ed-12-151-151\">151_151</a></sup> of the imperial guards, is tumultuously elected emperor.—VI. The Romans hasten to retreat from Persia, and on their march are continually attacked by the Persians and Saracens, whom, however, they repulse with great loss.—VII. The emperor Jovian, being influenced by the scarcity and distress with which his army is oppressed, makes a necessary but disgraceful peace with Sapor; abandoning five provinces, with the cities of Nisibis and Singara.—VIII. The Romans having crossed the Tigris, after a very long and terrible scarcity of provisions, which they endured with great courage, at length reach Mesopotamia—Jovian arranges the affairs of Illyricum and Gaul to the best of his power.—IX. Bineses, a noble Persian, acting for Sapor, receives from Jovian the impregnable city of Nisibis; the citizens are unwilling to quit their country, but are compelled to migrate to Amida—Five provinces, with the city of Singara, and sixteen fortresses, are, according to the terms of the treaty, handed over to the Persian nobles.—X. Jovian, fearing a revolution, marches with great speed through Syria, Cilicia, Cappadocia, and Galatia, and at Ancyra enters on the consulship, with his infant son Varronianus, and soon afterwards dies suddenly at Dadastana.</p>",
+      "notes": [
+        {
+          "id": "yonge-ed-12-151-151",
+          "html": "Primicerius: he was the third officer of the guard; the first being the lower; the second, the tribune—answering, as one might say, to our major.",
+          "label": "151_151"
+        }
+      ]
+    },
+    {
+      "id": "ed-13",
+      "title": "Argument of Book 26",
+      "html": "<p>I. Valentinian, the tribune of the second school of the Scutarii, by the unanimous consent of both the civil and military officers, is elected emperor at Nicæa, in his absence—A dissertation on leap-year.—II. Valentinian, being summoned from Ancyra, comes with speed to Nicæa, and is again unanimously elected emperor, and having been clothed in the purple, and saluted as Augustus, harangues the army.—III. Concerning the prefecture of Rome, as administered by Apronianus.—IV. Valentinian at Nicomedia makes Valens, his brother, who was master of the horse, his colleague in the empire, and repeats his appointment at Constantinople, with the consent of the army.—V. The two emperors divide the counts and the army between them, and soon afterwards enter on their first consulship, the one at Milan, the other at Constantinople—The Allemanni lay waste Gaul—Procopius attempts a revolt in the East.—VI. The country, family, habits, and rank of Procopius; his obscurity in the time of Jovian, and how he came to be saluted emperor at Constantinople.—VII. Procopius, without bloodshed, reduces Thrace to acknowledge his authority; and by promises prevails on the cavalry and infantry, who were marching through that country, to take the oath of fidelity to him; he also by a speech wins over the Jovian and Victorian legions, which were sent against him by Valens.—VIII. Nicæa and Chalcedon being delivered from their blockades, Bithynia acknowledges the sovereignty of Procopius; as presently, after Cyzicus is stormed, the Hellespont does likewise.—IX. Procopius is deserted by his troops in Bithynia, Lycia, and Phrygia, is delivered alive to Valens, and beheaded.—X. Marcellus, a captain of the guard, his kinsman, and many of his partisans are put to death.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-14",
+      "title": "Argument of Book 27",
+      "html": "<p>I. The Allemanni having defeated the Romans, put the counts Charietto and Severianus to death.—II. Jovinus, the commander of the cavalry in Gaul, surprises and routs two divisions of the Allemanni; defeats a third army in the country of the Catalauni, the enemy losing six thousand killed and four thousand wounded.—III. About the three prefects of the city, Symmachus, Lampadius, and Juventius—The quarrels of Damasus and Ursinus about the bishopric of Rome.—IV. The people and the six provinces of Thrace are described, and the chief cities in each province.—V. The emperor Valens attacks the Goths, who had sent Procopius' auxiliary troops to be employed against him, and after three years makes peace with them.—VI. Valentinian, with the consent of the army, makes his son Gratian emperor; and, after investing the boy with the purple, exhorts him to behave bravely, and recommends him to the soldiers.—VII. The passionate temper, ferocity, and cruelty of the emperor Valentinian.—VIII. Count Theodosius defeats the Picts, Attacotti, and Scots, who were ravaging Britain with impunity, after having slain the duke and count of that province, and makes them restore their plunder.—IX. The Moorish tribes ravage Africa—Valens checks the predatory incursions of the Isaurians—Concerning the office of city prefect.—X. The emperor Valentinian crosses the Rhine, and in a battle, attended with heavy loss to both sides, defeats and routs the Allemanni, who had taken refuge in their highest mountains.—XI. On the high family, wealth, dignity, and character of Probus.—XII. The Romans and Persians quarrel about the possession of Armenia and Iberia.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-15",
+      "title": "Argument of Book 28",
+      "html": "<p>I. Many persons, even senators and women of senatorial family are accused at Rome of poisonings, adultery, and debauchery, and are punished.—II. The Emperor Valentinian fortifies the whole Gallic bank of the Rhine with forts, castles, and towers; the Allemanni slay the Romans who are constructing a fortification on the other side of the Rhine.—The Maratocupreni, who are ravaging Syria, are, by the command of Valens, destroyed with their children and their town.—III. Theodosius restores the cities of Britain which had been laid waste by the barbarians, repairs the fortresses, and recovers the province of the island which is called Valentia.—IV. Concerning the administration of Olybrius and Ampelius as prefects of the city: and concerning the vices of the Roman senate and people.—V. The Saxons, after a time, are circumvented in Gaul by the manœuvres of the Romans. Valentinian having promised to unite his forces with them, sends the Burgundians to invade Germany; but they, finding themselves tricked and deceived, put all their prisoners to the sword, and return home.—VI. The ravages inflicted in the province of Tripoli, and on the people of Leptis and Œa, by the Asturians, are concealed from Valentinian by the bad faith of the Roman count; and so are not properly avenged.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-16",
+      "title": "Argument of Book 29",
+      "html": "<p>I. Theodorus, the secretary, aims at the imperial authority, and being accused of treason before Valens at Antioch, and convicted, is executed, with many of his accomplices.—II. In the East many persons are informed against as guilty of poisoning and other crimes; and being condemned (some rightly, some wrongfully), are executed.—III. In the West many instances occur of the ferocity and insane cruelty of the emperor Valentinian.—IV. Valentinian crosses the Rhine on a bridge of boats, but, through the fault of a soldier, fails in an attempt to surprise Macrianus, the king of the Allemanni.—V. Theodosius, the commander of the cavalry in Gaul, in several battles defeats Formus Maorus, the son of Nubelis Regulus, who had revolted from Valentinian; and, after having driven him to kill himself, restores peace to Africa.—VI. The Quadi, being provoked by the wicked murder of their king Galerius, in conjunction with the Sarmatians, lay waste both the Pannonias and Valeria with fire and sword, and destroy almost the whole of two legions—A dissertation on the city prefecture of Claudius.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-17",
+      "title": "Argument of Book 30",
+      "html": "<p>I. Para, king of Armenia, being summoned by Valens to Tarsus, and being detained there under pretence of doing him honour, escapes with three hundred of his countrymen; and having baffled the sentinels on the roads, he regains his kingdom on horseback; but not long afterwards he is slain by Duke Trajan at an entertainment.—II. The embassies of the Emperor Valens and Sapor, king of Persia, who are at variance about the kingdoms of Armenia and Hiberia.—III. Valentinian, after having ravaged several districts of the Allemanni, has a conference with their king Macrianus, and makes peace with him.—IV. Modestus, the prefect of the prætorium, diverts Valens from his purpose of sitting as a judge—A statement of the condition of the bar, of counsel learned in the law, and the different classes of advocates.—V. Valentinian, intending to wage war against the Sarmatians and the Quadi, who had been devastating Pannonia, marches into Illyricum, and having crossed the Danube, he ravages the territories of the Quadi, burns their villages, and slaughters the inhabitants, without regard to age.—VI. Valentinian, while giving answer, in a great passion, to the ambassadors of the Quadi, who are trying to excuse their countrymen, bursts a blood-vessel, and dies.—VII. Who his father was, and what was his conduct as emperor.—VIII. His cruelty, avarice, envy, and cowardice.—IX. His virtues.—X. Valentinian the younger, the son of Valentinian, is saluted as emperor in the camp at Bregetio.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-18",
+      "title": "Argument of Book 31",
+      "html": "<p>I. Omens announcing the death of the Emperor Valens, and a disaster to be inflicted by the Gauls.—II. A description of the abodes and customs of the Huns, the Alani, and other tribes, natives of Asiatic Scythia.—III. The Huns, either by arms or by treaties, unite the Alani on the Don to themselves; invade the Goths, and drive them from their country.—IV. The chief division of the Goths, surnamed the Thuringians, having been expelled from their homes, by permission of Valens are conducted by the Romans into Thrace, on condition of promising obedience and a supply of auxiliary troops. The Gruthungi also, who form the other division of the Goths, secretly cross the Danube by a bridge of boats.—V. The Thuringians being in great distress from hunger and the want of supplies, under the command of their generals Alavivus and Fritigern, revolt from Valens, and defeat Lupicinus and his army.—VI. Why Sueridus and Colias, nobles of the Gothic nation, after having been received in a friendly manner, revolted; and after slaying the people of Hadrianopolis, united themselves to Fritigern, and then turned to ravage Thrace.—VII. Profuturus, Trajan, and Richomeres fought a drawn battle against the Goths.—VIII. The Goths being hemmed in among the defiles at the bottom of the Balkan, after the Romans by returning had let them escape, invaded Thrace, plundering, massacring, ravishing, and burning, and slay Barzimeres, the tribune of the Scutarii.—IX. Frigeridus, Gratian's general, routs Farnobius at the head of a large body of Goths and Taifalæ; sparing the rest, and giving them some lands around the Po.—X. The Lentiensian Alemanni are defeated in battle by the generals of the emperor Gratian, and their king Priamis is slain. Afterwards, having yielded and furnished Gratian with a body of recruits, they are allowed to return to their own country.—XI. Sebastian surprises the Goths at Beræa as they are returning home loaded with plunder, and defeats them with great slaughter; a few saved themselves by flight. Gratian hastens to his uncle Valens, to carry him aid against the Goths.—XII. Valens, before the arrival of Gratian resolves to fight the Goths.—XIII. All the Goths unite together, that is to say, the Thuringians, under their king Fritigern. The Gruthungi, under their dukes Alatheus and Salaces, encounter the Romans in a pitched battle, rout their cavalry, and then falling on the infantry when deprived of the support of their horse, and huddled together in a dense body, they defeat them with enormous loss, and put them to flight. Valens is slain, but his body cannot be found.—XIV. The virtues and vices of Valens.—XV. The victorious Goths besiege Hadrianopolis, where Valens had left his treasures and his insignia of imperial rank, with the prefect and the members of his council; but after trying every means to take the city, without success, they at last retire.—XVI. The Goths, having by bribes won over the forces of the Huns and of the Alani to join them, make an attack upon Constantinople without success. The device by which Julius, the commander of the forces beyond Mount Taurus, delivered the eastern provinces from the Goths.</p>",
+      "notes": []
+    }
+  ]
+}

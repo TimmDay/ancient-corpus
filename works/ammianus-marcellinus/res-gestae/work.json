@@ -10,5 +10,32 @@
   "locatorFormat": "book.chapter.section, e.g. 31.13.12",
   "slugAliases": [],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "yonge",
+      "preferred": true,
+      "language": "en",
+      "title": "The Roman History of Ammianus Marcellinus",
+      "translator": "C. D. Yonge",
+      "publicationYear": 1862,
+      "source": {
+        "name": "Project Gutenberg #28587",
+        "url": "https://www.gutenberg.org/ebooks/28587",
+        "archives": [
+          {
+            "file": "Marcellinus-RomanHistory.zip",
+            "sha256": "e40e9e2a55ff267c2f91a05a5afc210bc2b89459450ca10956d67375d92cd8ce"
+          }
+        ],
+        "rights": "Public domain in the USA."
+      },
+      "licence": "public-domain-us",
+      "importer": "ammianus",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "C. D. Yonge, The Roman History of Ammianus Marcellinus (Bohn's Classical Library, 1862), on Project Gutenberg",
+        "url": "https://www.gutenberg.org/ebooks/28587"
+      }
+    }
+  ]
 }
