@@ -571,12 +571,17 @@ h1 {
   padding: 0.3rem 0.7rem;
   border: 1px solid var(--rule);
   border-radius: 999px;
+  color: var(--ink);
   text-decoration: none;
 }
 
+.editions a:hover {
+  border-color: var(--muted);
+}
+
+/* The Edition being read is marked by its border, the text unchanged. */
 .editions a[aria-current] {
-  background: var(--surface);
-  color: var(--ink);
+  border-color: var(--accent);
 }
 
 /* The Edition's language, so a reader can tell the original from a translation at a glance. */
@@ -591,10 +596,6 @@ h1 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   vertical-align: 0.12em;
-}
-
-.editions a[aria-current] .lang {
-  background: var(--bg);
 }
 
 /* The text */
@@ -1615,4 +1616,53 @@ th[aria-sort="descending"] .sort-mark::after {
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
+}
+
+/* Language chips that stay under the header once the Edition list is gone. */
+.edition-chips {
+  position: fixed;
+  top: calc(var(--header-height) + 0.5rem);
+  left: 50%;
+  z-index: 4;
+  transform: translateX(-50%);
+  max-width: calc(100vw - 2rem);
+}
+
+.edition-chips ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.edition-chips a {
+  display: block;
+  padding: 0.2rem 0.75rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--bg);
+  box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 0.12);
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.edition-chips a:hover {
+  border-color: var(--muted);
+}
+
+.edition-chips a[aria-current="page"] {
+  border-color: var(--accent);
+}
+
+.edition-chips .maker {
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--font-text);
 }

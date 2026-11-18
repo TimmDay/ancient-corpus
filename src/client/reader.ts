@@ -225,8 +225,17 @@ function editionWithPassage(
  */
 function pinWhileLoading(target: HTMLElement | Range): void {
   let pinned = true
+  const offset = target instanceof HTMLElement ? keptOffset(target) : undefined
+  try {
+    sessionStorage.removeItem(PLACE_KEY)
+  } catch {
+    // Nothing kept.
+  }
   const pin = () => {
-    if (pinned) scrollToTop(target, "auto")
+    if (!pinned) return
+    if (offset !== undefined && target instanceof HTMLElement)
+      window.scrollBy({ top: target.getBoundingClientRect().top - offset })
+    else scrollToTop(target, "auto")
   }
   const release = () => {
     pinned = false
@@ -349,14 +358,56 @@ document.addEventListener("click", (event) => {
   )
 })
 
-// Switching Edition keeps the reader at the same Locator.
+// Switching Edition keeps the reader in the same place: the Passage at the
+// top of the screen, at the same height, on whichever page holds it there.
+const PLACE_KEY = "keep-place"
+
 document.addEventListener("click", (event) => {
   const link = (event.target as Element).closest<HTMLAnchorElement>(
     "a[data-keep-hash]",
   )
-  // A Sentence is counted in one Edition only, so the switch keeps just the Passage.
-  if (link && location.hash) link.hash = location.hash.replace(/@[^#]*$/, "")
+  if (!link) return
+  const top = passageAtTop()
+  if (top) {
+    const locator = top.getAttribute("aria-label") ?? ""
+    link.hash = locator
+    try {
+      sessionStorage.setItem(
+        PLACE_KEY,
+        JSON.stringify({ locator, offset: top.getBoundingClientRect().top }),
+      )
+    } catch {
+      // Without storage the switch still lands on the Passage, at the top.
+    }
+  } else if (location.hash) {
+    // A Sentence is counted in one Edition only, so the switch keeps just the Passage.
+    link.hash = location.hash.replace(/@[^#]*$/, "")
+  }
 })
+
+/** The first Passage still showing below the header. */
+function passageAtTop(): HTMLElement | undefined {
+  const header =
+    document.querySelector(".site-header")?.getBoundingClientRect().bottom ?? 0
+  return [
+    ...document.querySelectorAll<HTMLElement>("section.passage[aria-label]"),
+  ].find((s) => s.getBoundingClientRect().bottom > header + 8)
+}
+
+/** The height a switch of Edition left this Passage at, used once. */
+function keptOffset(target: HTMLElement): number | undefined {
+  try {
+    const kept = JSON.parse(sessionStorage.getItem(PLACE_KEY) ?? "null") as {
+      locator: string
+      offset: number
+    } | null
+    return kept?.locator === target.getAttribute("aria-label")
+      ? kept.offset
+      : undefined
+  } catch {
+    return undefined
+  }
+}
 
 function followContents(): void {
   const links = new Map(
@@ -431,3 +482,13 @@ if (window.matchMedia("(max-width: 63.99rem)").matches) {
 window.addEventListener("hashchange", () => land())
 land(true)
 followContents()
+
+// Once the Edition list scrolls away, a row of language chips stays under
+// the header, so the language can be switched from anywhere on the page.
+const editionList = document.querySelector<HTMLElement>("nav.editions")
+const chips = document.querySelector<HTMLElement>("nav.edition-chips")
+if (editionList && chips) {
+  new IntersectionObserver(([entry]) => {
+    chips.hidden = Boolean(entry?.isIntersecting)
+  }).observe(editionList)
+}
