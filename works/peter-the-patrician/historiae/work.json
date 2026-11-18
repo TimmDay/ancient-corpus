@@ -1,0 +1,60 @@
+{
+  "author": "Peter the Patrician",
+  "title": "Historiae",
+  "otherTitles": ["History", "Ἱστορίαι"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": -44,
+  "coversYearLatest": 361,
+  "locatorFormat": "fragment, as numbered in Müller's FHG IV, e.g. 12",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "muller",
+      "preferred": true,
+      "language": "grc",
+      "title": "Petri Patricii fragmenta (FHG IV, pp. 181–191)",
+      "editor": "Karl Müller",
+      "publicationYear": 1851,
+      "source": {
+        "name": "Digital Fragmenta Historicorum Graecorum (DFHG), Monica Berti, University of Leipzig",
+        "url": "https://www.dfhg-project.org/DFHG/index.php?volume=Volumen%20quartum",
+        "archives": [
+          {
+            "file": "PetrusPatricius-Muller-DFHG.zip",
+            "sha256": "e5aff16e98baa0dd68dae154d4e2b1f035f6108fd594afa43a7a6214cf699e1f",
+            "url": "https://www.dfhg-project.org/DFHG/api.php?author=PETRUS%20PATRICIUS"
+          }
+        ],
+        "rights": "Müller's text (Paris: Didot, 1851) is public domain; the digital edition is © DFHG Project under CC BY-SA 4.0 (its page footer; the page's metadata says CC BY-NC-SA 4.0)."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "dfhg"
+    },
+    {
+      "slug": "ancient-corpus",
+      "preferred": false,
+      "language": "en",
+      "title": "English translation",
+      "translator": "Ancient Corpus (machine translation)",
+      "publicationYear": 2026,
+      "source": {
+        "name": "This project",
+        "url": "https://github.com/TimmDay/ancient-corpus",
+        "archives": [],
+        "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "licence": "cc0",
+      "model": "Claude Opus 5.5",
+      "importer": "translation",
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 18 November 2026, from Karl Müller's text of the fragments (Fragmenta Historicorum Graecorum IV, 1851). Where Müller quotes a parallel passage from Dio or Zosimus, it is translated too. It is not a translator's work: check it against the Greek, and report errors. Public domain (CC0): reuse it freely.",
+      "humanTranslation": {
+        "citation": "Thomas M. Banchich, The Lost History of Peter the Patrician: An Account of Rome's Imperial Past from the Age of Justinian (Routledge, 2015), with these fragments in English",
+        "url": "https://search.worldcat.org/search?q=The+Lost+History+of+Peter+the+Patrician",
+        "access": "In copyright: buy it, or borrow it from a library."
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "op": "replace",
+    "locator": "4",
+    "find": "μετὸ",
+    "with": "μετὰ"
+  },
+  {
+    "op": "replace",
+    "locator": "11",
+    "find": "αὐτοὺς αὐτοὺς",
+    "with": "αὐτοὺς"
+  },
+  {
+    "op": "replace",
+    "locator": "13",
+    "find": "Ῥωμαπϊκὴ καὶ Περσικὴ καὶ Περσικὴ",
+    "with": "Ῥωμαϊκὴ καὶ Περσικὴ"
+  },
+  {
+    "op": "replace",
+    "locator": "14",
+    "find": "Ἰβηρίανς",
+    "with": "Ἰβηρίας"
+  },
+  {
+    "op": "replace",
+    "locator": "14",
+    "find": "Ῥωμίοις",
+    "with": "Ῥωμαίοις"
+  },
+  {
+    "op": "replace",
+    "locator": "14",
+    "find": "οἱα",
+    "with": "οἷα"
+  },
+  {
+    "op": "replace",
+    "locator": "16",
+    "find": "προοιμιίῳ",
+    "with": "προοιμίῳ"
+  }
+]

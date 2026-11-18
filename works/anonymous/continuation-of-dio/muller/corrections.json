@@ -1,0 +1,56 @@
+[
+  {
+    "op": "replace",
+    "locator": "4",
+    "find": "Ἡσθεὶς Ἡσθεὶς",
+    "with": "Ἡσθεὶς"
+  },
+  {
+    "op": "replace",
+    "locator": "5",
+    "find": "ἔδιον",
+    "with": "ἴδιον"
+  },
+  {
+    "op": "replace",
+    "locator": "6",
+    "find": "ἐροῦντας αὐτῷ ἐροῦντας αὐτῷ",
+    "with": "ἐροῦντας αὐτῷ"
+  },
+  {
+    "op": "replace",
+    "locator": "6",
+    "find": "ἀπόλωντια",
+    "with": "ἀπόλωνται"
+  },
+  {
+    "op": "replace",
+    "locator": "8",
+    "find": "βσρβάρῳ",
+    "with": "βαρβάρῳ"
+  },
+  {
+    "op": "replace",
+    "locator": "10",
+    "find": "ὁμᾶς",
+    "with": "ὑμᾶς"
+  },
+  {
+    "op": "replace",
+    "locator": "13",
+    "find": "εἰ γὴ",
+    "with": "εἰ μὴ"
+  },
+  {
+    "op": "replace",
+    "locator": "13",
+    "find": "τῇς",
+    "with": "τῆς"
+  },
+  {
+    "op": "replace",
+    "locator": "14",
+    "find": "τῆν",
+    "with": "τὴν"
+  }
+]

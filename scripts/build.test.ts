@@ -231,6 +231,25 @@ describe("build", () => {
     expect(unthanked).toEqual([])
   })
 
+  it("reads the Continuation of Dio and Peter the Patrician on Aurelian, in Müller's Greek and our English", () => {
+    // Aurelian's answer to the mutiny: the god who gave the purple sets the reign.
+    expect(read("anonymous/continuation-of-dio/index.html")).toMatch(
+      /id="10"[^>]*>[\s\S]*?τὸν θεὸν δωρησάμενον τὴν πορφύραν/,
+    )
+    expect(
+      read("anonymous/continuation-of-dio/ancient-corpus/index.html"),
+    ).toMatch(/id="10"[^>]*>[\s\S]*?the god who had given him the purple/)
+    // DFHG's doubled word, corrected.
+    expect(read("anonymous/continuation-of-dio/index.html")).not.toContain(
+      "Ἡσθεὶς Ἡσθεὶς",
+    )
+    expect(
+      read("peter-the-patrician/historiae/ancient-corpus/index.html"),
+    ).toMatch(
+      /id="12"[^>]*>[\s\S]*?The Vandals, defeated, sent an embassy to Aurelian/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
