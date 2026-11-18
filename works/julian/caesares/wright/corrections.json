@@ -1,0 +1,44 @@
+[
+  {
+    "op": "accept",
+    "locator": "306a",
+    "flag": "gap",
+    "reason": "Locators are Spanheim's pages, and The Caesars starts on his page 306; Wright does not print 306a, only the [B] and [C] after it"
+  },
+  {
+    "op": "accept",
+    "locator": "317a",
+    "flag": "gap",
+    "reason": "Wright's paragraphs here run on through Spanheim's page 318, marked only inside them in the Greek, so no Passage starts there"
+  },
+  {
+    "op": "accept",
+    "locator": "319d",
+    "flag": "gap",
+    "reason": "Wright's paragraphs here run on through Spanheim's pages 320 and 321, marked only inside them in the Greek, so no Passage starts there"
+  },
+  {
+    "op": "accept",
+    "locator": "323d",
+    "flag": "gap",
+    "reason": "Wright's paragraphs here run on through Spanheim's page 324, marked only inside them in the Greek, so no Passage starts there"
+  },
+  {
+    "op": "accept",
+    "locator": "325c",
+    "flag": "gap",
+    "reason": "Wright's paragraphs here run on through Spanheim's page 326, marked only inside them in the Greek, so no Passage starts there"
+  },
+  {
+    "op": "accept",
+    "locator": "329d",
+    "flag": "gap",
+    "reason": "Wright's paragraphs here run on through Spanheim's page 330, marked only inside them in the Greek, so no Passage starts there"
+  },
+  {
+    "op": "accept",
+    "locator": "333a",
+    "flag": "gap",
+    "reason": "Wright's paragraphs here run on through Spanheim's page 334, marked only inside them in the Greek, so no Passage starts there"
+  }
+]

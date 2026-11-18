@@ -1,0 +1,65 @@
+{
+  "author": "Julian",
+  "title": "Caesares",
+  "otherTitles": [
+    "The Caesars",
+    "Symposium",
+    "Kronia"
+  ],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": 361,
+  "writtenYearLatest": 362,
+  "coversYearEarliest": -49,
+  "coversYearLatest": 337,
+  "locatorFormat": "Spanheim page and section, e.g. 313d; a Passage is named by the section it starts in",
+  "slugAliases": [
+    "julian/the-caesars"
+  ],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "wright-greek",
+      "preferred": true,
+      "language": "grc",
+      "title": "ΣΥΜΠΟΣΙΟΝ Η ΚΡΟΝΙΑ",
+      "editor": "Wilmer Cave Wright",
+      "publicationYear": 1913,
+      "source": {
+        "name": "Project Gutenberg #48768",
+        "url": "https://www.gutenberg.org/ebooks/48768",
+        "archives": [
+          {
+            "file": "Julian-WorksOfTheEmperor-vol2.zip",
+            "sha256": "508eb90e96b16b488f78739e8e7832c9c7bb8bdc0df67930d882ff5df79dad97"
+          }
+        ],
+        "rights": "Public domain in the USA. The Works of the Emperor Julian, vol. 2, Loeb Classical Library (1913): Hertlein's Greek with Wright's emendations."
+      },
+      "importer": "julian-caesars"
+    },
+    {
+      "slug": "wright",
+      "preferred": false,
+      "language": "en",
+      "title": "The Caesars",
+      "translator": "Wilmer Cave Wright",
+      "publicationYear": 1913,
+      "source": {
+        "name": "Project Gutenberg #48768",
+        "url": "https://www.gutenberg.org/ebooks/48768",
+        "archives": [
+          {
+            "file": "Julian-WorksOfTheEmperor-vol2.zip",
+            "sha256": "508eb90e96b16b488f78739e8e7832c9c7bb8bdc0df67930d882ff5df79dad97"
+          }
+        ],
+        "rights": "Public domain in the USA. The Works of the Emperor Julian, vol. 2, Loeb Classical Library (1913)."
+      },
+      "importer": "julian-caesars",
+      "humanTranslation": {
+        "citation": "Wilmer Cave Wright, The Works of the Emperor Julian, vol. 2, Loeb Classical Library (1913), from Project Gutenberg",
+        "url": "https://www.gutenberg.org/ebooks/48768"
+      }
+    }
+  ]
+}
