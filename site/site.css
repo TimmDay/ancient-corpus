@@ -1577,12 +1577,6 @@ th[aria-sort="descending"] .sort-mark::after {
     text-decoration: none;
   }
 
-  /* When it was written: quieter than the title, like the language tag. */
-  .card-written {
-    color: var(--muted);
-    font-size: 0.85em;
-  }
-
   .card-lang {
     flex: none;
     margin-top: 0.25rem;
