@@ -1,0 +1,63 @@
+{
+  "author": "Jerome",
+  "title": "Chronicon",
+  "otherTitles": ["Chronicle", "The Chronicle of Eusebius"],
+  "originalLanguage": "la",
+  "writtenYearEarliest": 380,
+  "writtenYearLatest": 381,
+  "coversYearEarliest": -2016,
+  "coversYearLatest": 378,
+  "locatorFormat": "Helm's page and letter, e.g. 305a; the prefaces by paragraph, praef.1 (Jerome) and eus.1 (Eusebius)",
+  "slugAliases": ["jerome/chronicle"],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "fotheringham",
+      "preferred": true,
+      "language": "la",
+      "title": "Hieronymi Chronicon (Oxford, 1923), laid out page for page as Helm prints it",
+      "editor": "J. K. Fotheringham",
+      "publicationYear": 1923,
+      "source": {
+        "name": "tertullian.org (Roger Pearse)",
+        "url": "https://www.tertullian.org/fathers/jerome_chronicle_04_latin_prefaces.htm",
+        "archives": [
+          {
+            "file": "Jerome-Chronicle-Latin-tertullian.zip",
+            "sha256": "b9ee3b915957571ca1f270aeed2305f9f0f70cdd5747ae7455f3b8a62076e1e9"
+          }
+        ],
+        "rights": "Fotheringham's text (Oxford, 1923) is public domain in the USA; transcribed into Pearse's layout by JMB, 2005: \"All material on this page is in the public domain - copy freely.\""
+      },
+      "licence": "public-domain-us",
+      "importer": "jerome",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "pearse",
+      "preferred": false,
+      "language": "en",
+      "title": "St. Jerome, Chronicle (2005)",
+      "translator": "Roger Pearse and friends",
+      "publicationYear": 2005,
+      "source": {
+        "name": "tertullian.org (Roger Pearse)",
+        "url": "https://www.tertullian.org/fathers/jerome_chronicle_00_eintro.htm",
+        "archives": [
+          {
+            "file": "Jerome-Chronicle-Pearse-tertullian.zip",
+            "sha256": "4eaece5b7d94bf7cacef9664288c1dea433bd30e1615624673a831a5e09b0a2c"
+          }
+        ],
+        "rights": "Public domain: translated and edited by Roger Pearse and friends, 2005, from Fotheringham's text: \"All material on this page is in the public domain - copy freely.\""
+      },
+      "licence": "public-domain",
+      "importer": "jerome",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "St. Jerome, Chronicle, translated by Roger Pearse and friends (2005), on tertullian.org",
+        "url": "https://www.tertullian.org/fathers/jerome_chronicle_00_eintro.htm"
+      }
+    }
+  ]
+}

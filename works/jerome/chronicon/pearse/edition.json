@@ -1,0 +1,17 @@
+{
+  "divisions": [
+    {
+      "locator": "praef",
+      "label": "Prefaces"
+    },
+    {
+      "locator": "1",
+      "label": "Pages 16–186"
+    },
+    {
+      "locator": "2",
+      "label": "Pages 188–331"
+    }
+  ],
+  "editorial": []
+}
