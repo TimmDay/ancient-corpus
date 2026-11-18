@@ -63,3 +63,29 @@ _Avoid_: Auto-fix, guess
 **Locator alias**:
 Another way of writing a Locator that resolves to the same Passage (e.g. `Life of Augustus 3` for `Augustus 3`).
 _Avoid_: Synonym, redirect
+
+### Geography
+
+**Place**:
+A location with one identity, named by its Pleiades ID, or by our own record where Pleiades has none (marked as ours). A Place may have no known location.
+_Avoid_: Location, site, toponym (for the identity)
+
+**Place reference**:
+A span of a Passage's text that names or points to a Place ("Amida", "the city"). It asserts nothing by itself.
+_Avoid_: Toponym, place name, mention
+
+**Geographic claim**:
+A statement in a Passage about where Places lie relative to each other (a distance, a travel time, a direction, a border, one Place within another, a river's course), so it can be drawn on a map and checked against one. It is asserted when the narrator states it, reported when the narrator attributes it to others ("they say", "as Eratosthenes says"). A reported Claim still counts as the narrator's, since they chose to repeat it, and is also attributed to the named source where there is one.
+_Avoid_: Fact, assertion, geographic statement
+
+**Place description**:
+A statement in a Passage about what one Place is like (marshy, walled, rich in grain), not where it lies. It is kept but not checked against a map.
+_Avoid_: Geographic claim (for this), attribute
+
+**Description tag**:
+A term from a curated list (fortified, port, marsh) that classifies a Place description so like ones can be found together. The list grows when no existing tag fits.
+_Avoid_: Label, category, keyword
+
+**Unlocated place**:
+A Place whose position modern scholarship does not know, investigated through the Geographic claims that mention it.
+_Avoid_: Unknown place, lost city
