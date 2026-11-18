@@ -1501,6 +1501,20 @@ th[aria-sort="descending"] .sort-mark::after {
   margin: 0.4rem 0;
 }
 
+/* The language as a chip, like the reader's edition tags. */
+.lang-chip {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
 /* Each row's card, shown on a phone in place of its cells. */
 .index-card {
   display: none;
