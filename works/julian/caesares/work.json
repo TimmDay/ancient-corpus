@@ -35,6 +35,7 @@
         ],
         "rights": "Public domain in the USA. The Works of the Emperor Julian, vol. 2, Loeb Classical Library (1913): Hertlein's Greek with Wright's emendations."
       },
+      "licence": "public-domain-us",
       "importer": "julian-caesars"
     },
     {
@@ -55,6 +56,7 @@
         ],
         "rights": "Public domain in the USA. The Works of the Emperor Julian, vol. 2, Loeb Classical Library (1913)."
       },
+      "licence": "public-domain-us",
       "importer": "julian-caesars",
       "humanTranslation": {
         "citation": "Wilmer Cave Wright, The Works of the Emperor Julian, vol. 2, Loeb Classical Library (1913), from Project Gutenberg",

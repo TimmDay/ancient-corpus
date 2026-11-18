@@ -82,7 +82,24 @@ export type Edition = {
    * kept out of git and the site; `pnpm dev:drafts` shows it locally.
    */
   unpublished?: string
+  /** The terms the text is shared on, in short; `source.rights` says them in full. Unknown when absent. */
+  licence?: Licence
+  /** For our machine translations (importer `translation`): the model that made it. */
+  model?: string
+  /** Who to ask for permission, for an Edition `unpublished` until it is given: an email address. */
+  permissionContact?: string
 }
+
+export const LICENCES = {
+  "public-domain": "Public domain",
+  "public-domain-us": "Public domain in the USA",
+  cc0: "CC0 (public domain)",
+  "cc-by-sa-4.0": "CC BY-SA 4.0",
+  "copyright-conditions": "Copyright, shared on its stated conditions",
+  "permission-needed": "Permission needed",
+} as const
+
+export type Licence = keyof typeof LICENCES
 
 export type HumanTranslation = {
   /** Who translated it and where it was printed: "H. W. Bird, Liber de Caesaribus of Sextus Aurelius Victor (Liverpool University Press, 1994)". */

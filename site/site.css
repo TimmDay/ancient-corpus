@@ -1463,6 +1463,39 @@ th[aria-sort="descending"] .sort-mark::after {
   font-style: italic;
 }
 
+/* "Permission needed" opens a note on who to ask (a native popover). */
+.permission {
+  font: inherit;
+  color: var(--accent);
+  background: none;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: underline dotted;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.permission-note {
+  max-width: min(26rem, calc(100vw - 2rem));
+  margin: auto;
+  padding: 1rem 1.25rem;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  box-shadow: 0 0.5rem 2rem rgb(0 0 0 / 0.2);
+  font-size: 1.05rem;
+}
+
+.permission-note::backdrop {
+  background: rgb(0 0 0 / 0.25);
+}
+
+.permission-note p {
+  margin: 0.4rem 0;
+}
+
 /* The sort menu stands in for the column headings when there are none. */
 .field-sort {
   display: none !important;

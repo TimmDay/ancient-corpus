@@ -45,6 +45,7 @@
         ],
         "rights": "Public domain in the USA."
       },
+      "licence": "public-domain-us",
       "importer": "eutropius"
     },
     {
@@ -65,6 +66,7 @@
         ],
         "rights": "Public domain. J. S. Watson, Justin, Cornelius Nepos, and Eutropius (Bohn's Classical Library, 1853; London: George Bell, 1886 reprint); transcribed by Roger Pearse, 2003, who writes \"Sylla\" as \"Sulla\" and \"Adrian\" as \"Hadrian\": \"All material on this page is in the public domain - copy freely.\""
       },
+      "licence": "public-domain",
       "importer": "tertullian",
       "pagePerDivision": true,
       "humanTranslation": {

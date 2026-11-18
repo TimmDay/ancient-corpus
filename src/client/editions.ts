@@ -11,6 +11,8 @@ type Key =
   | "written"
   | "language"
   | "translator"
+  | "machine"
+  | "licence"
   | "published"
 
 const NUMERIC: Partial<Record<Key, string>> = {

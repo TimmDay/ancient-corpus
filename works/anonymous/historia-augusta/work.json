@@ -104,6 +104,7 @@
         ],
         "rights": "Public domain. Loeb Classical Library, vols. I (1921), II (1924) and III (1932); LacusCurtius: \"Both text and translation are in the public domain\"."
       },
+      "licence": "public-domain",
       "importer": "lacuscurtius",
       "pagePerDivision": true
     },
@@ -125,6 +126,7 @@
         ],
         "rights": "Public domain. Loeb Classical Library, vols. I (1921), II (1924) and III (1932); LacusCurtius: \"Both text and translation are in the public domain\"."
       },
+      "licence": "public-domain",
       "importer": "lacuscurtius",
       "pagePerDivision": true,
       "humanTranslation": {

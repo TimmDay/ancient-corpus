@@ -1,13 +1,14 @@
 // HTML for every page the site serves. Pure functions of the corpus files.
 
-import type {
-  Division,
-  Edition,
-  EditionText,
-  Flag,
-  Heading,
-  Passage,
-  Work,
+import {
+  LICENCES,
+  type Division,
+  type Edition,
+  type EditionText,
+  type Flag,
+  type Heading,
+  type Passage,
+  type Work,
 } from "../corpus.ts"
 import {
   UNSUPPORTED,
@@ -727,13 +728,15 @@ const INDEX_COLUMNS: [key: string, label: string][] = [
   ["written", "Written"],
   ["language", "Language"],
   ["translator", "Translator or editor"],
+  ["machine", "Machine translated"],
+  ["licence", "Licence"],
   ["published", "Published"],
 ]
 
 /**
- * Every published Edition, one row each, sorted by author. index.js sorts by
- * any column and filters by text, years and language; on a phone each row
- * becomes a card.
+ * Every published Edition, one row each, sorted by author, and those waiting
+ * for permission, unlinked. editions.js sorts by any column and filters by
+ * text, years and language; on a phone each row becomes a card.
  */
 export function editionsPage(
   rows: { work: Work; edition: Edition; entry?: CatalogueEntry }[],
@@ -757,7 +760,7 @@ export function editionsPage(
   const body = `
 <main id="main" class="index-page" tabindex="-1">
 <h1>Index</h1>
-<p class="lede">Every edition in the corpus, original and translation, one row each.</p>
+<p class="lede">Every edition in the corpus, original and translation, one row each, with the terms it is shared on.</p>
 <form class="index-filters" role="search" onsubmit="return false">
 <div class="field field-text"><label for="index-q">Search</label>
 <input id="index-q" name="q" type="search" autocomplete="off" placeholder="Author, work, translator"></div>
@@ -787,16 +790,30 @@ export function editionsPage(
 ${sorted
   .map(({ work, edition, author, dates }) => {
     const language = languageName(edition.language)
-    const person = edition.translator ?? edition.editor ?? ""
+    const machine = edition.importer === "translation"
+    // A machine translation is credited to the model that made it.
+    const person =
+      (machine ? edition.model : undefined) ??
+      edition.translator ??
+      edition.editor ??
+      ""
+    const licence = edition.licence ? LICENCES[edition.licence] : "Unknown"
     const cells: Record<string, string> = {
       author: escapeHtml(author),
-      work: `<a href="${workUrl(work, edition)}"><i>${escapeHtml(work.title)}</i></a>`,
+      work: edition.unpublished
+        ? `<i>${escapeHtml(work.title)}</i> <span class="none">(not published)</span>`
+        : `<a href="${workUrl(work, edition)}"><i>${escapeHtml(work.title)}</i></a>`,
       covers: escapeHtml(dates.covers),
       written: escapeHtml(dates.written),
       language: escapeHtml(language),
       translator: person
         ? escapeHtml(person)
         : '<span class="none">not named</span>',
+      machine: machine ? "Yes" : "No",
+      licence:
+        edition.licence === "permission-needed"
+          ? permissionPopover(work, edition, person)
+          : escapeHtml(licence),
       published: edition.publicationYear ? String(edition.publicationYear) : "",
     }
     const data = {
@@ -804,6 +821,8 @@ ${sorted
       work: work.title,
       language,
       translator: person,
+      machine: machine ? "Yes" : "No",
+      licence,
       // A Work known only to end at a year ("to 417") is open at the start.
       coversFrom: work.coversYearEarliest,
       coversTo: work.coversYearLatest ?? work.coversYearEarliest,
@@ -812,7 +831,14 @@ ${sorted
         work.writtenYearLatest ??
         looseYear(dates.written),
       published: edition.publicationYear,
-      search: [author, work.title, ...work.otherTitles, language, person]
+      search: [
+        author,
+        work.title,
+        ...work.otherTitles,
+        language,
+        person,
+        licence,
+      ]
         .filter(Boolean)
         .join(" "),
     }
@@ -840,6 +866,23 @@ ${sorted
     body,
     scripts: ["/assets/editions.js"],
   })
+}
+
+/**
+ * "Permission needed", opening a note on who to ask. Without an address on
+ * file it points to where the translator published the work.
+ */
+function permissionPopover(
+  work: Work,
+  edition: Edition,
+  person: string,
+): string {
+  const id = `permission-${work.slug.replace(/\//g, "-")}-${edition.slug}`
+  const who = escapeHtml(person || "the translator")
+  const ask = edition.permissionContact
+    ? `Write to ${who} at <a href="mailto:${attr(edition.permissionContact)}">${escapeHtml(edition.permissionContact)}</a>.`
+    : `Contact ${who} through <a href="${attr(edition.source.url)}">${escapeHtml(edition.source.name)}</a>.`
+  return `<button type="button" class="permission" popovertarget="${id}">Permission needed</button><div class="permission-note" id="${id}" popover><p>This translation is in copyright. We use it for study only, and will publish it here once ${who} gives permission. To use it yourself, ask too.</p><p>${ask}</p></div>`
 }
 
 /** A year to sort by, from words like "c. 361", "after 270", "late 4th century", "2nd century BC". */
