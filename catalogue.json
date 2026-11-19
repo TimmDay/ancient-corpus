@@ -760,11 +760,7 @@
           "freeEnglish": "C. C. Mierow (1915)"
         },
         {
-          "author": "Jordanes",
-          "title": "Romana",
-          "language": "la",
-          "written": "551",
-          "covers": "Creation to 551"
+          "work": "jordanes/romana"
         },
         {
           "work": "procopius/history-of-the-wars",
