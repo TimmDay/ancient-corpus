@@ -278,6 +278,16 @@ describe("build", () => {
     )
   })
 
+  it("reads the Epitome de Caesaribus in Latin, section for section with Banchich", () => {
+    expect(
+      read("pseudo-aurelius-victor/epitome-de-caesaribus/index.html"),
+    ).toMatch(/id="35\.1"[^>]*>[\s\S]*?Aurelianus, genitus patre mediocri/)
+    // The page prints Otho as a second chapter 6; he is chapter 7.
+    expect(
+      read("pseudo-aurelius-victor/epitome-de-caesaribus/index.html"),
+    ).toMatch(/id="7\.1"[^>]*>[\s\S]*?Salvius Otho/)
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

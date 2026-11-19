@@ -1,9 +1,7 @@
 {
   "author": "Pseudo-Aurelius Victor",
   "title": "Epitome de Caesaribus",
-  "otherTitles": [
-    "Libellus de vita et moribus imperatorum"
-  ],
+  "otherTitles": ["Libellus de vita et moribus imperatorum"],
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
@@ -14,8 +12,27 @@
   "locatorAliases": {},
   "editions": [
     {
-      "slug": "banchich",
+      "slug": "latin-library",
       "preferred": true,
+      "language": "la",
+      "title": "Epitome de Caesaribus",
+      "source": {
+        "name": "The Latin Library",
+        "url": "https://www.thelatinlibrary.com/victor/victor.caes2.html",
+        "archives": [
+          {
+            "file": "Epitome-LatinLibrary.zip",
+            "sha256": "84296575d61cba402eb26ea2a1a9fe214973639f97a6378a41feb4f8da5dbdf8"
+          }
+        ],
+        "rights": "The Latin text is public domain; The Latin Library names no edition and claims no rights in it"
+      },
+      "licence": "public-domain",
+      "importer": "epitome-latin"
+    },
+    {
+      "slug": "banchich",
+      "preferred": false,
       "language": "en",
       "title": "A Booklet about the Style of Life and the Manners of the Imperatores",
       "translator": "Thomas M. Banchich",
