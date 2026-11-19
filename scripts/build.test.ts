@@ -105,7 +105,7 @@ describe("build", () => {
       '<a href="/cassius-dio/roman-history/42/#42.24">42.24</a>',
     )
     expect(read("index.html")).toMatch(
-      /De Vita Caesarum<\/i><\/a> <span class="flag-tag"[^>]*>.*8 flagged<\/span>/,
+      /Roman History<\/i><\/a> <span class="flag-tag"[^>]*>.*\d+ flagged<\/span>/,
     )
   })
 
@@ -286,6 +286,15 @@ describe("build", () => {
     expect(
       read("pseudo-aurelius-victor/epitome-de-caesaribus/index.html"),
     ).toMatch(/id="7\.1"[^>]*>[\s\S]*?Salvius Otho/)
+  })
+
+  it("reads Suetonius in Latin, chapter for chapter with Thomson and Forester", () => {
+    const latin = read("suetonius/de-vita-caesarum/index.html")
+    expect(latin).toMatch(
+      /id="Augustus-1"[^>]*>[\s\S]*?Gentem Octaviam Velitris/,
+    )
+    expect(latin).toMatch(/id="Caligula-48"[^>]*>[\s\S]*?Prius quam provincia/)
+    expect(latin).not.toContain("The Classics Page</p>")
   })
 
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {

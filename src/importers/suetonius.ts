@@ -7,18 +7,25 @@
 // Translator's essays appended to some Lives arrive inside their last
 // chapter; the length Flag catches them for review.
 
-import type { CheerioAPI } from "cheerio"
+import { createHash } from "node:crypto"
+import { readFileSync } from "node:fs"
+import path from "node:path"
+import { load, type CheerioAPI } from "cheerio"
 import type { Element } from "domhandler"
-import type {
-  Division,
-  EditionSource,
-  EditorialSection,
-  ImportedEdition,
-  Passage,
+import { unzipSync } from "fflate"
+import {
+  INTAKE_DIR,
+  type Division,
+  type EditionSource,
+  type EditorialSection,
+  type ImportedEdition,
+  type Passage,
 } from "../corpus.ts"
+import { decodeLatinLibrary } from "./ammianus.ts"
 import { notesFor } from "./gutenberg.ts"
 import {
   blockHtml,
+  escapeHtml,
   onlyArchive,
   inlineHtml,
   plainText,
@@ -141,4 +148,67 @@ function readNotes($: CheerioAPI): Map<string, string> {
     notes.set(id, html)
   }
   return notes
+}
+
+/** The Latin Library's page for each Life, in order, by the division it fills. */
+const LATIN_PAGES: [division: string, page: string][] = [
+  ["Julius", "caesar"],
+  ["Augustus", "aug"],
+  ["Tiberius", "tib"],
+  ["Caligula", "cal"],
+  ["Claudius", "claudius"],
+  ["Nero", "nero"],
+  ["Galba", "galba"],
+  ["Otho", "otho"],
+  ["Vitellius", "vit"],
+  ["Vespasian", "vesp"],
+  ["Titus", "titus"],
+  ["Domitian", "dom"],
+]
+
+/**
+ * The Latin from The Latin Library, a page per Life (suet.galba.html): each
+ * chapter opens at `<a name="1"></a>I.`, so a Passage is a chapter, "Galba 1",
+ * as in Thomson and Forester's English.
+ */
+export function importSuetoniusLatin(source: EditionSource): ImportedEdition {
+  const archive = readFileSync(path.join(INTAKE_DIR, onlyArchive(source).file))
+  const sha256 = createHash("sha256").update(archive).digest("hex")
+  if (sha256 !== onlyArchive(source).sha256)
+    throw new Error(`${onlyArchive(source).file}: checksum moved`)
+  const files = unzipSync(new Uint8Array(archive))
+  const divisions: Division[] = []
+  const passages: Omit<Passage, "flags">[] = []
+  for (const [life, page] of LATIN_PAGES) {
+    const bytes = files[`suetonius/suet.${page}.html`]
+    if (!bytes)
+      throw new Error(`suet.${page}.html is not in the intake archive`)
+    const html = decodeLatinLibrary(bytes)
+    divisions.push({ locator: life, label: life })
+    // `<a name="1">I</a>`, `[<a name="1">1</a>]`, an empty anchor, or Caligula's `name=48""`.
+    const anchor = /\[?<a name="?(\d+)"*>[^<]*<\/a>\]?/i
+    const body = html.slice(html.search(anchor))
+    const chapters = body.split(new RegExp(anchor.source, "gi"))
+    for (let i = 1; i < chapters.length; i += 2) {
+      const text = load(`<div>${chapters[i + 1] ?? ""}</div>`)
+        .text()
+        .replace(/\s+/g, " ")
+        .replace(/^\s*(?:[IVXLC]+\.|\.)?\s*/, "")
+        // The page's footer, after the last chapter.
+        .replace(/\s*Suetonius\s+The Latin Library\s+The Classics Page\s*$/, "")
+        .trim()
+      if (!text) continue
+      passages.push({
+        locator: `${life} ${chapters[i]}`,
+        headings: passages.some((p) => p.division === life)
+          ? []
+          : [{ kind: "division", html: life, editorial: false }],
+        division: life,
+        blocks: [escapeHtml(text)],
+        notes: [],
+        text,
+      })
+    }
+  }
+  return { divisions, passages, editorial: [] }
 }

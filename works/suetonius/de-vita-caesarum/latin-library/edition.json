@@ -1,0 +1,53 @@
+{
+  "divisions": [
+    {
+      "locator": "Julius",
+      "label": "Julius"
+    },
+    {
+      "locator": "Augustus",
+      "label": "Augustus"
+    },
+    {
+      "locator": "Tiberius",
+      "label": "Tiberius"
+    },
+    {
+      "locator": "Caligula",
+      "label": "Caligula"
+    },
+    {
+      "locator": "Claudius",
+      "label": "Claudius"
+    },
+    {
+      "locator": "Nero",
+      "label": "Nero"
+    },
+    {
+      "locator": "Galba",
+      "label": "Galba"
+    },
+    {
+      "locator": "Otho",
+      "label": "Otho"
+    },
+    {
+      "locator": "Vitellius",
+      "label": "Vitellius"
+    },
+    {
+      "locator": "Vespasian",
+      "label": "Vespasian"
+    },
+    {
+      "locator": "Titus",
+      "label": "Titus"
+    },
+    {
+      "locator": "Domitian",
+      "label": "Domitian"
+    }
+  ],
+  "editorial": []
+}

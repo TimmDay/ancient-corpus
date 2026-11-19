@@ -31,7 +31,7 @@ import { importTertullian } from "./importers/tertullian.ts"
 import { importToposText, importToposTextLines } from "./importers/topostext.ts"
 import { importTranslation } from "./importers/translation.ts"
 import { importZonarasFoster } from "./importers/zonaras-foster.ts"
-import { importSuetonius } from "./importers/suetonius.ts"
+import { importSuetonius, importSuetoniusLatin } from "./importers/suetonius.ts"
 import { nameNotes } from "./note-ids.ts"
 
 const IMPORTERS: Record<
@@ -53,6 +53,7 @@ const IMPORTERS: Record<
   perseus: importPerseus,
   "perseus-lines": importPerseusLines,
   suetonius: importSuetonius,
+  "suetonius-latin": (source) => importSuetoniusLatin(source),
   ammianus: (source) => importAmmianus(source),
   "ammianus-latin": (source) => importAmmianusLatin(source),
   "epitome-latin": (source) => importEpitomeLatin(source),
