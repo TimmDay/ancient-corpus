@@ -375,4 +375,47 @@ describe("build", () => {
       "/eutropius/breviarium-historiae-romanae/* /eutropius/breviarium/:splat 301",
     )
   })
+
+  it("marks Place references, serves their Places, and loads the map only on demand", () => {
+    const book1 = read("zosimus/historia-nova/green-chaplin/1/index.html")
+    expect(book1).toContain(
+      '<button type="button" class="place-ref" data-place="pleiades:893976">Ctesiphon</button>',
+    )
+    expect(book1).toContain('id="place-popover" popover="manual"')
+    expect(book1).toMatch(
+      /Pleiades<\/a>, <a[^>]*>CC BY 3\.0<\/a>, as of \d{4}-\d{2}-\d{2}/,
+    )
+    // MapLibre is imported by the reader script when a popover opens, never linked.
+    expect(book1).not.toContain("maplibre")
+    expect(read("how-to-use/index.html")).toMatch(
+      /Place data comes from <a[^>]*>Pleiades<\/a>[\s\S]*CC BY 3\.0/,
+    )
+    // A book with no Place references carries no popover.
+    expect(
+      read("zosimus/historia-nova/green-chaplin/2/index.html"),
+    ).not.toContain("place-popover")
+    expect(read("zosimus/historia-nova/mendelssohn/1/index.html")).toContain(
+      'data-place="pleiades:893976">Κτησιφῶντα</button>',
+    )
+
+    const place = JSON.parse(read("places/pleiades/893976.json")) as {
+      title: string
+      point: number[]
+      uri: string
+    }
+    expect(place).toMatchObject({
+      title: "Ctesiphon",
+      uri: "https://pleiades.stoa.org/places/893976",
+    })
+    expect(place.point[0]).toBeCloseTo(44.58, 1)
+    // Only referenced Places are served, never the whole gazetteer.
+    expect(
+      existsSync(path.join(outDir, "places", "pleiades", "981534.json")),
+    ).toBe(false)
+    expect(
+      existsSync(
+        path.join(outDir, "assets", "maplibre", "maplibre-gl-worker.mjs"),
+      ),
+    ).toBe(true)
+  })
 })
