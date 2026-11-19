@@ -28,10 +28,14 @@ const reduceMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches
 
-function land(initial = false): void {
+function clearHighlight(): void {
   for (const el of document.querySelectorAll(".hit, .hit-context"))
     el.classList.remove("hit", "hit-context")
   CSS.highlights?.delete("sentence")
+}
+
+function land(initial = false): void {
+  clearHighlight()
   hideNotice()
   if (chooser) chooser.hidden = true
   if (initial && openAskedLanguage()) return
@@ -346,6 +350,19 @@ function decode(hash: string): string {
     return hash
   }
 }
+
+// The highlight marks where a link landed; once reading, a click in the text
+// puts it away. Not a click on a link or control, nor the end of selecting
+// text. The Locator leaves the address too, so following it again lights it.
+document.addEventListener("click", (event) => {
+  const target = event.target as Element
+  if (!target.closest(".text")) return
+  if (target.closest("a, button, summary, input, [popover]")) return
+  if (!window.getSelection()?.isCollapsed) return
+  if (!document.querySelector(".hit, .hit-context")) return
+  clearHighlight()
+  history.replaceState(history.state, "", location.pathname + location.search)
+})
 
 // A Locator in the margin both goes to its Passage and copies a link to it.
 document.addEventListener("click", (event) => {
