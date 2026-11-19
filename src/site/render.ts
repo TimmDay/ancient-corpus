@@ -50,7 +50,9 @@ export function workUrl(work: Work, edition?: Edition): string {
 // Applies a remembered theme before first paint, so a dark page never flashes
 // light, and marks the page as scripted, so the menu folds away only when its
 // button can open it.
-export const THEME_SCRIPT = `<script>document.documentElement.classList.add("js");try{const t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch{}</script>`
+// The page's background, painted before the stylesheet loads, so a new page in
+// dark mode never shows the browser's white canvas first.
+export const THEME_SCRIPT = `<style>html{background:#fbf9f4}@media(prefers-color-scheme:dark){html:not([data-theme=light]){background:#151412;color-scheme:dark}}html[data-theme=dark]{background:#151412;color-scheme:dark}</style><script>document.documentElement.classList.add("js");try{const t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch{}</script>`
 
 const NAV_LINKS: [href: string, label: string][] = [
   ["/", "Works"],
@@ -110,6 +112,7 @@ function layout({
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+${THEME_SCRIPT}
 <title>${escapeHtml(title)}</title>
 <meta name="description" content="${attr(description)}">
 <link rel="canonical" href="${attr(canonical)}">
@@ -118,7 +121,6 @@ function layout({
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
-${THEME_SCRIPT}
 ${head}
 ${[...scripts, "/assets/site.js"].map((src) => `<script src="${attr(src)}" defer></script>`).join("\n")}
 </head>
