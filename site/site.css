@@ -901,6 +901,26 @@ h2.division.hit {
   display: none;
 }
 
+/* MapLibre's controls, on parchment to match the map. */
+.place-map .maplibregl-ctrl-group,
+.place-map .maplibregl-ctrl-attrib.maplibregl-compact {
+  background: var(--pin-cream-warm);
+  box-shadow: 0 0 0 1px var(--map-border);
+}
+
+.place-map .maplibregl-ctrl-group button + button {
+  border-top-color: var(--map-label-halo);
+}
+
+.place-map .maplibregl-ctrl-group button:not(:disabled):hover,
+.place-map .maplibregl-ctrl-attrib-button:hover {
+  background-color: var(--map-label-halo);
+}
+
+.place-map .maplibregl-ctrl-group button:focus-visible {
+  box-shadow: 0 0 0 2px var(--focus);
+}
+
 .place-credit {
   color: var(--muted);
   font-size: 0.8rem;
