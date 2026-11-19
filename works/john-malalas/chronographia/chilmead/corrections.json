@@ -1,0 +1,110 @@
+[
+  {
+    "op": "accept",
+    "locator": "3",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "23",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "57",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "68",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "91",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "150",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "171",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "192",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "214",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "227",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "269",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "283",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "316",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "351",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "377",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "392",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "410",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  },
+  {
+    "op": "accept",
+    "locator": "425",
+    "flag": "gap",
+    "reason": "A Passage is a page of Dindorf's edition, so each book starts at its page, not 1"
+  }
+]

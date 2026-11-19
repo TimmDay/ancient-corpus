@@ -1,0 +1,77 @@
+{
+  "divisions": [
+    {
+      "locator": "I",
+      "label": "Book 1"
+    },
+    {
+      "locator": "II",
+      "label": "Book 2"
+    },
+    {
+      "locator": "III",
+      "label": "Book 3"
+    },
+    {
+      "locator": "IV",
+      "label": "Book 4"
+    },
+    {
+      "locator": "V",
+      "label": "Book 5"
+    },
+    {
+      "locator": "VI",
+      "label": "Book 6"
+    },
+    {
+      "locator": "VII",
+      "label": "Book 7"
+    },
+    {
+      "locator": "VIII",
+      "label": "Book 8"
+    },
+    {
+      "locator": "IX",
+      "label": "Book 9"
+    },
+    {
+      "locator": "X",
+      "label": "Book 10"
+    },
+    {
+      "locator": "XI",
+      "label": "Book 11"
+    },
+    {
+      "locator": "XII",
+      "label": "Book 12"
+    },
+    {
+      "locator": "XIII",
+      "label": "Book 13"
+    },
+    {
+      "locator": "XIV",
+      "label": "Book 14"
+    },
+    {
+      "locator": "XV",
+      "label": "Book 15"
+    },
+    {
+      "locator": "XVI",
+      "label": "Book 16"
+    },
+    {
+      "locator": "XVII",
+      "label": "Book 17"
+    },
+    {
+      "locator": "XVIII",
+      "label": "Book 18"
+    }
+  ],
+  "editorial": []
+}

@@ -4,14 +4,17 @@
 // per line), where each scanned leaf starts in it (hocr_pageindex.json), and
 // archive.org's reading of each leaf's printed page number (page_numbers.json).
 //
-// A Passage is a printed page, cited by volume and page (Cedrenus `1.451`).
+// A Passage is a printed page, cited by volume and page (Cedrenus `1.451`),
+// or by page alone in a one-volume Work (Malalas `299`), whose Divisions are
+// then its books, from the page each starts on.
 // A leaf gets its page from archive.org's confident reading, or by counting
 // on from the nearest such leaf when the leaves between agree; a leaf neither
 // gives (a plate, a blank, a misread number) is left out, and the gap Flag
 // says where. The Greek Edition takes a page's Greek blocks, the Latin one
 // its Latin blocks. The running heads, the printed line numbers and the
-// margin's letters and Paris page numbers are dropped. The OCR is otherwise
-// uncorrected.
+// margin's letters and Paris (or Oxford) page numbers are dropped, and so is
+// the apparatus under the Greek where a Work's layout says how to spot it.
+// The OCR is otherwise uncorrected.
 
 import { readFileSync } from "node:fs"
 import path from "node:path"
@@ -25,10 +28,64 @@ import {
   type ImportedEdition,
   type Passage,
 } from "../corpus.ts"
-import { escapeHtml, onlyArchive, plainText } from "./gutenberg.ts"
+import { escapeHtml, onlyArchive, plainText, romanToInt } from "./gutenberg.ts"
 
 type PageNumbers = {
   pages: { leafNum: number; pageNumber: string; confidence: number }[]
+}
+
+/** What differs between the Bonn volumes this importer reads. */
+export type BonnLayout = {
+  /** A running head, "450 GEORGII CEDRENI": its words, without the number. */
+  head: RegExp
+  /** A line to drop wherever it falls: a gathering's signature. */
+  drop?: RegExp
+  /** Where the apparatus starts, when the OCR runs it on from the page's Greek: cut there. */
+  apparatus?: RegExp
+  /** More in the outer margin to drop from the Greek, such as another edition's pages. */
+  margin?: RegExp
+  /** A one-volume Work cited by page: the page each book starts on, and the text's last page. */
+  books?: { starts: Record<string, number>; last: number }
+}
+
+export const CEDRENUS: BonnLayout = {
+  head: /CEDRENI|COMPENDIUM/i,
+  drop: /^\s*Georg\.?\s*Cedrenus\s*\(?t?om/i,
+}
+
+export const MALALAS: BonnLayout = {
+  head: /MALALAE|CHRONOGRAPH/i,
+  // The apparatus: a line number, "10. ", then readings that cite the earlier
+  // editions, Chilmead (Ch.) and Oxford (Ox.), or the Chronicon Paschale.
+  apparatus: /(?:^|\s)\d{1,2}\.\s(?=.*\b(?:Ch|Ox|Chron)[.,])[\s\S]*$/,
+  // The Oxford and Venice editions' pages, "O 397", "V 199", and the accents
+  // of the line above read as a run of stray marks: "- € ^ *."
+  margin: /(^|\s)(?:[OV]\s?\d{1,3}|[-–€^*,.:;'"|!?()\\/]+)(?=\s|$)/g,
+  // From the books' headings. Book 1's opening is lost: Dindorf prints in
+  // its place an anonymous chronicle (pages 1 to 22, "Anonymi chronologica").
+  books: {
+    starts: {
+      I: 1,
+      II: 23,
+      III: 57,
+      IV: 68,
+      V: 91,
+      VI: 150,
+      VII: 171,
+      VIII: 192,
+      IX: 214,
+      X: 227,
+      XI: 269,
+      XII: 283,
+      XIII: 316,
+      XIV: 351,
+      XV: 377,
+      XVI: 392,
+      XVII: 410,
+      XVIII: 425,
+    },
+    last: 496,
+  },
 }
 
 /** archive.org's page-number reading counts only at or above this confidence. */
@@ -37,6 +94,7 @@ const CONFIDENT = 50
 export function importBonn(
   source: EditionSource,
   edition: Edition,
+  layout: BonnLayout,
 ): ImportedEdition {
   const files = readArchive(onlyArchive(source))
   const volumes = [
@@ -54,32 +112,41 @@ export function importBonn(
     const index = JSON.parse(read("hocr_pageindex.json")) as number[][]
     const text = read("hocr_searchtext.txt")
     const n = volume.replace(/^vol/, "")
-    divisions.push({ locator: n, label: `Volume ${n}` })
+    if (!layout.books) divisions.push({ locator: n, label: `Volume ${n}` })
     const leafText = (leaf: number) => {
       const [start = 0, end = 0] = index[leaf - 1] ?? []
       return text.slice(start, end).split("\n")
     }
     const pages = pagesOfLeaves(numbers)
-    const shift = runningHeadShift(pages, (leaf) => leafText(leaf)[0] ?? "")
+    const firstBlock = (leaf: number) => leafText(leaf)[0] ?? ""
+    const shift = runningHeadShift(pages, firstBlock, layout.head)
     for (const [leaf, numbered] of pages) {
       const page = numbered + shift
       // A leaf before the text proper, once shifted.
       if (page < 1) continue
+      const book = layout.books && bookOf(page, layout.books)
+      if (layout.books && !book) continue
       const blocks = leafText(leaf)
-        .filter((block, i) => !(i === 0 && isRunningHead(block)))
-        // The printer's signature line at a gathering's foot: "Georg. Cedrenus tom. 1. 29".
-        .filter((block) => !/^\s*Georg\.?\s*Cedrenus\s*\(?t?om/i.test(block))
+        .filter((block, i) => !(i === 0 && isRunningHead(block, layout.head)))
+        .filter((block) => !layout.drop?.test(block))
+        .map((block) =>
+          layout.apparatus ? block.replace(layout.apparatus, "") : block,
+        )
         .flatMap(splitScripts)
         .filter((block) => scriptOf(block) === edition.language)
-        .map((block) => clean(block, edition.language))
+        .map((block) => clean(block, edition.language, layout.margin))
         .filter((block) => (block.match(/\p{L}/gu) ?? []).length >= 4)
       if (!blocks.length) continue
+      const division = book ?? n
+      const label = book ? `Book ${romanToInt(book)}` : `Volume ${n}`
+      if (book && !divisions.some((d) => d.locator === book))
+        divisions.push({ locator: book, label })
       passages.push({
-        locator: `${n}.${page}`,
-        headings: passages.some((p) => p.division === n)
+        locator: book ? String(page) : `${n}.${page}`,
+        headings: passages.some((p) => p.division === division)
           ? []
-          : [{ kind: "division", html: `Volume ${n}`, editorial: false }],
-        division: n,
+          : [{ kind: "division", html: label, editorial: false }],
+        division,
         blocks,
         notes: [],
         text: plainText(blocks.join(" ")),
@@ -115,14 +182,14 @@ export function pagesOfLeaves(numbers: PageNumbers): Map<number, number> {
 }
 
 /** "450 GEORGII CEDRENI" or "HISTORIARUM COMPENDIUM. 451", however the OCR spells the rest. */
-function isRunningHead(block: string): boolean {
-  return block.length < 45 && /CEDRENI|COMPENDIUM/i.test(block)
+function isRunningHead(block: string, head: RegExp): boolean {
+  return block.length < 45 && head.test(block)
 }
 
-/** The page number a running head prints, if legible. */
-function headNumber(block: string): number | undefined {
-  if (!isRunningHead(block)) return undefined
-  const match = /^\s*(\d{1,3})\s|COMPENDIUM\.?\s*(\d{1,3})\s*$/i.exec(block)
+/** The page number a running head prints, at either end, if legible. */
+function headNumber(block: string, head: RegExp): number | undefined {
+  if (!isRunningHead(block, head)) return undefined
+  const match = /^\s*(\d{1,3})\s|\D(\d{1,3})\s*$/.exec(block)
   const n = Number(match?.[1] ?? match?.[2])
   return Number.isInteger(n) ? n : undefined
 }
@@ -135,18 +202,30 @@ function headNumber(block: string): number | undefined {
 function runningHeadShift(
   pages: Map<number, number>,
   firstBlock: (leaf: number) => string,
+  head: RegExp,
 ): number {
   const differences = new Map<number, number>()
   let legible = 0
   for (const [leaf, page] of pages) {
-    const head = headNumber(firstBlock(leaf))
-    if (head === undefined) continue
+    const printed = headNumber(firstBlock(leaf), head)
+    if (printed === undefined) continue
     legible++
-    differences.set(head - page, (differences.get(head - page) ?? 0) + 1)
+    differences.set(printed - page, (differences.get(printed - page) ?? 0) + 1)
   }
   const [shift = 0, count = 0] =
     [...differences].sort(([, a], [, b]) => b - a)[0] ?? []
   return count > legible / 2 ? shift : 0
+}
+
+/** The book a page is in: the last to start on or before it, a page with a book's heading taking the new book. */
+function bookOf(
+  page: number,
+  books: { starts: Record<string, number>; last: number },
+): string | undefined {
+  if (page > books.last) return undefined
+  return Object.entries(books.starts)
+    .filter(([, start]) => start <= page)
+    .sort(([, a], [, b]) => b - a)[0]?.[0]
 }
 
 /**
@@ -185,8 +264,9 @@ function scriptOf(block: string): string {
   return greek > latin ? "grc" : "la"
 }
 
-function clean(block: string, language: string): string {
+function clean(block: string, language: string, margin?: RegExp): string {
   let text = block.normalize("NFC")
+  if (margin && language === "grc") text = text.replace(margin, "$1")
   if (language === "grc")
     text = text
       // Line numbers in the inner margin, every fifth line.

@@ -316,6 +316,18 @@ describe("build", () => {
     ).toMatch(/id="508"[^>]*>[\s\S]*?began to renew the walls of Rome/)
   })
 
+  it("reads Malalas by Bonn page and book, Greek, Latin and our English", () => {
+    expect(read("john-malalas/chronographia/XII/index.html")).toMatch(
+      /id="300"[^>]*>[\s\S]*?Ζηνοβίας/,
+    )
+    expect(read("john-malalas/chronographia/chilmead/XII/index.html")).toMatch(
+      /id="301"[^>]*>[\s\S]*?Castrum[\s\S]*?Novum/,
+    )
+    expect(
+      read("john-malalas/chronographia/ancient-corpus/index.html"),
+    ).toMatch(/id="300"[^>]*>[\s\S]*?seated her on a dromedary camel/)
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
