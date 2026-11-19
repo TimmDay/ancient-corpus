@@ -14,7 +14,7 @@ import {
 } from "./corpus.ts"
 import { correctEdition, type Correction } from "./corrections.ts"
 import { importBonnTei } from "./importers/bonn-tei.ts"
-import { CEDRENUS, MALALAS, importBonn } from "./importers/bonn.ts"
+import { CEDRENUS, MALALAS, SYNCELLUS, importBonn } from "./importers/bonn.ts"
 import { importCcel } from "./importers/ccel.ts"
 import { importDfhg } from "./importers/dfhg.ts"
 import { importDio } from "./importers/dio.ts"
@@ -44,6 +44,8 @@ const IMPORTERS: Record<
   bonn: (source, _work, edition) => importBonn(source, edition, CEDRENUS),
   "bonn-malalas": (source, _work, edition) =>
     importBonn(source, edition, MALALAS),
+  "bonn-syncellus": (source, _work, edition) =>
+    importBonn(source, edition, SYNCELLUS),
   ccel: (source, work) => importCcel(source, work.title),
   dfhg: (source, work) => importDfhg(source, work.title),
   dio: importDio,

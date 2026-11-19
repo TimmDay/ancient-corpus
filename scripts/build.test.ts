@@ -328,6 +328,18 @@ describe("build", () => {
     ).toMatch(/id="300"[^>]*>[\s\S]*?seated her on a dromedary camel/)
   })
 
+  it("reads Syncellus by Bonn page, numbered from the running heads", () => {
+    const greek = read(
+      "george-syncellus/ekloge-chronographias/chronographia/index.html",
+    )
+    expect(greek).toMatch(/id="721"[^>]*>[\s\S]*?Ζηνοβία/)
+    // archive.org numbers this run of leaves 8xx; the heads say 3xx.
+    expect(greek).toMatch(/id="320"/)
+    expect(
+      read("george-syncellus/ekloge-chronographias/ancient-corpus/index.html"),
+    ).toMatch(/id="721"[^>]*>[\s\S]*?a place called Immae/)
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

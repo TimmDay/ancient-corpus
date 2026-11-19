@@ -1,0 +1,44 @@
+[
+  {
+    "op": "accept",
+    "locator": "55",
+    "flag": "gap",
+    "reason": "The scan skips a leaf here, two pages of the book"
+  },
+  {
+    "op": "accept",
+    "locator": "256",
+    "flag": "gap",
+    "reason": "The scan skips a leaf here, two pages of the book"
+  },
+  {
+    "op": "accept",
+    "locator": "315",
+    "flag": "gap",
+    "reason": "The scan skips a leaf here, two pages of the book"
+  },
+  {
+    "op": "accept",
+    "locator": "328",
+    "flag": "gap",
+    "reason": "The scan skips a leaf here, two pages of the book"
+  },
+  {
+    "op": "accept",
+    "locator": "541",
+    "flag": "gap",
+    "reason": "The scan skips a leaf here, two pages of the book"
+  },
+  {
+    "op": "accept",
+    "locator": "627",
+    "flag": "gap",
+    "reason": "The scan skips a leaf here, two pages of the book"
+  },
+  {
+    "op": "accept",
+    "locator": "717",
+    "flag": "gap",
+    "reason": "The scan skips a leaf here, two pages of the book"
+  }
+]
