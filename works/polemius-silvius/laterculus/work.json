@@ -1,12 +1,55 @@
 {
   "author": "Polemius Silvius",
   "title": "Laterculus",
-  "otherTitles": [],
-  "originalLanguage": null,
-  "writtenYearEarliest": null,
-  "writtenYearLatest": null,
-  "locatorFormat": null,
+  "otherTitles": ["Nomina omnium principum Romanorum"],
+  "originalLanguage": "la",
+  "writtenYearEarliest": 449,
+  "writtenYearLatest": 449,
+  "locatorFormat": "entry of the list of emperors, as Mommsen numbers it, e.g. 49",
   "slugAliases": [],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "mommsen",
+      "preferred": true,
+      "language": "la",
+      "title": "Polemii Silvii Laterculus, I: Nomina omnium principum Romanorum (Chronica Minora 1, pp. 520–523)",
+      "editor": "Theodor Mommsen",
+      "publicationYear": 1892,
+      "source": {
+        "name": "Typed by this project from Internet Archive's scan of MGH AA 9",
+        "url": "https://archive.org/details/chronicaminorasa09momm",
+        "archives": [],
+        "rights": "Mommsen's text (Berlin: Weidmann, 1892) is public domain; our typing of it adds nothing protectable."
+      },
+      "licence": "public-domain",
+      "importer": "transcription",
+      "notice": "Typed by this project from the page images, as no clean digital text was found; report any slip. The list of emperors only, part I of the Laterculus."
+    },
+    {
+      "slug": "ancient-corpus",
+      "preferred": false,
+      "language": "en",
+      "title": "English translation",
+      "translator": "Ancient Corpus (machine translation)",
+      "publicationYear": 2026,
+      "source": {
+        "name": "This project",
+        "url": "https://github.com/TimmDay/ancient-corpus",
+        "archives": [],
+        "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "licence": "cc0",
+      "model": "Claude Opus 5.5",
+      "importer": "translation",
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 19 November 2026, from Mommsen's Latin. It is not a translator's work: check it against the Latin, and report errors. Public domain (CC0): reuse it freely.",
+      "humanTranslation": {
+        "citation": "No published English translation of the Laterculus was found",
+        "url": "https://archive.org/details/chronicaminorasa09momm",
+        "access": "Mommsen's Latin, free to read at the Internet Archive."
+      }
+    }
+  ],
+  "coversYearEarliest": -44,
+  "coversYearLatest": 449
 }
