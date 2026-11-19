@@ -62,13 +62,19 @@ function loadMap(container: HTMLElement): Promise<MapLibre.Map> {
       zoom: 3,
       minZoom: 2,
       maxZoom: 12,
-      scrollZoom: false,
+      // The wheel zooms the map while the pointer is over it.
+      scrollZoom: true,
       dragRotate: false,
       pitchWithRotate: false,
       attributionControl: { compact: true },
     })
     await new Promise<void>((resolve) => map.once("load", () => resolve()))
     applyOldPaperTheme(map)
+    // + and − buttons too, for a trackpad, a keyboard, or anyone who doesn't think to scroll.
+    map.addControl(
+      new maplibre.NavigationControl({ showCompass: false }),
+      "top-right",
+    )
     // The compact attribution opens expanded, covering a map this small;
     // start it folded to its (i) button.
     container
