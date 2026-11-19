@@ -18,6 +18,12 @@ import {
 } from "../annotations.ts"
 import { workDates, type CatalogueEntry } from "../catalogue.ts"
 import { flagExplanation } from "../flags.ts"
+import {
+  isMarked,
+  markPlaceReferences,
+  readPlaceReferences,
+} from "../place-references.ts"
+import { readPlaces, readSnapshotSource } from "../places.ts"
 import { escapeHtml } from "../importers/gutenberg.ts"
 import {
   aliasKey,
@@ -197,6 +203,15 @@ export function workPages(
       : undefined,
   )
   const annotations = annotationsByLocator(readAnnotations(work), index)
+  const placeReferences = readPlaceReferences(work, edition, () => readPlaces())
+  const marked = markPlaceReferences(
+    text.passages,
+    placeReferences,
+    `${work.slug}/${edition.slug}`,
+  )
+  const markedAt = new Set(
+    placeReferences.filter(isMarked).map((r) => r.locator),
+  )
   const author = work.author === "Unknown" ? "Anonymous" : work.author
   const otherTitles = work.otherTitles.length
     ? `<p class="other-titles">Also known as ${work.otherTitles.map((t) => `<i>${escapeHtml(t)}</i>`).join(", ")}</p>`
@@ -280,6 +295,7 @@ ${content}
 </main>
 </div>
 ${flagDialog(edition)}
+${passages.some((p) => markedAt.has(p.locator)) ? placePopover() : ""}
 ${sameLanguage.length ? `<script type="application/json" id="edition-locators">${jsonForScript(Object.fromEntries(sameLanguage.map((e) => [e.slug, locatorsOf.get(e.slug) ?? []])))}</script>` : ""}
 <script type="application/json" id="locator-index">${jsonForScript(index)}</script>`
     return layout({
@@ -295,7 +311,7 @@ ${sameLanguage.length ? `<script type="application/json" id="edition-locators">$
 
   const article = (passages: Passage[]) =>
     `<article class="text" lang="${attr(edition.language)}" aria-label="Text">
-${passages.map((p) => passageHtml(p, ids.get(p) ?? "", text.divisions, p.resumes ? [] : (annotations.get(p.locator) ?? []))).join("\n")}
+${passages.map((p) => passageHtml(p, ids.get(p) ?? "", text.divisions, p.resumes ? [] : (annotations.get(p.locator) ?? []), marked.get(p))).join("\n")}
 </article>`
 
   if (!edition.pagePerDivision) {
@@ -540,6 +556,8 @@ function passageHtml(
   id: string,
   divisions: Division[],
   annotations: Annotation[] = [],
+  /** The Passage's blocks with its Place references marked. */
+  blocks: string[] = passage.blocks,
 ): string {
   // The bracketed name of a restarted run is in the heading above, so the margin shows just the number.
   const label =
@@ -560,10 +578,25 @@ function passageHtml(
 <section class="passage${flags.length ? " flagged" : ""}" id="${attr(id)}" aria-label="${attr(passage.locator)}">
 ${flags.length ? flagNote(passage, flags) : ""}
 <a class="loc" href="#${attr(id)}" title="Copy a link to ${attr(passage.locator)}" aria-label="Copy a link to ${attr(passage.locator)}">${escapeHtml(label)}</a>
-${passage.blocks.map((b) => `<p>${b}</p>`).join("\n")}
+${blocks.map((b) => `<p>${b}</p>`).join("\n")}
 ${notes}
 ${annotations.length ? annotationsHtml(passage, annotations) : ""}
 </section>`
+}
+
+/**
+ * The one popover every Place reference on a page opens, filled by the reader
+ * script from the Place's data. Pleiades is credited where its data is shown.
+ */
+function placePopover(): string {
+  const snapshot = readSnapshotSource()
+  return `<div class="place-popover" id="place-popover" popover="manual" lang="en" role="dialog" aria-labelledby="place-popover-title">
+<p class="place-title" id="place-popover-title"></p>
+<p class="place-written" hidden></p>
+<div class="place-map" aria-hidden="true"></div>
+<p class="place-links"><a class="place-pleiades" href="">Pleiades</a></p>
+<p class="place-credit">Place data: <a href="https://pleiades.stoa.org/">Pleiades</a>, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>${snapshot ? `, as of ${escapeHtml(snapshot.date)}` : ""}.</p>
+</div>`
 }
 
 /** Flags no Correction has accepted. Accepted ones match the print, so they go unmarked. */
@@ -727,6 +760,7 @@ export function howToUsePage(): string {
 <li><b>By author and title:</b> if you don't know a work's address, use <code>/cite?author=Eutropius&amp;title=Breviarium historiae Romanae&amp;loc=9.9</code>.</li>
 </ul>
 </section>
+${placesSection()}
 </main>`
   return layout({
     title: `How to Use · ${SITE_NAME}`,
@@ -734,6 +768,15 @@ export function howToUsePage(): string {
     canonical: "/how-to-use/",
     body,
   })
+}
+
+/** Where the Places come from, credited site-wide as CC BY asks. */
+function placesSection(): string {
+  const snapshot = readSnapshotSource()
+  return `<section class="howto" aria-labelledby="places">
+<h2 id="places">Places</h2>
+<p>A place name with a dotted underline opens a small map of where it is. Place data comes from <a href="https://pleiades.stoa.org/">Pleiades</a>, the gazetteer of the ancient world, under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>${snapshot ? `, as published on ${escapeHtml(snapshot.date)}` : ""}. Maps by <a href="https://openfreemap.org/">OpenFreeMap</a>, from <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> data.</p>
+</section>`
 }
 
 const INDEX_COLUMNS: [key: string, label: string][] = [

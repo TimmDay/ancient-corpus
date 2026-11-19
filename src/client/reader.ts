@@ -11,6 +11,7 @@ import {
 import { splitSentenceRef } from "../sentences.ts"
 import { sentenceRanges } from "./sentences.ts"
 import { showToast } from "./toast.ts"
+import "./places.ts"
 
 const index = JSON.parse(
   document.getElementById("locator-index")?.textContent ?? "{}",

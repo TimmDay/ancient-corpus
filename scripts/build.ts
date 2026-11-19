@@ -22,6 +22,13 @@ import {
   workPages,
 } from "../src/site/render.ts"
 import { catalogueEntries } from "../src/catalogue.ts"
+import { readPlaceReferences } from "../src/place-references.ts"
+import {
+  placePath,
+  pleiadesUrl,
+  readPlaces,
+  type PlaceId,
+} from "../src/places.ts"
 import type { WorkListing } from "../src/works-index.ts"
 
 const DIST = path.join(REPO_ROOT, "dist")
@@ -48,6 +55,7 @@ export function build({ drafts = false, outDir = DIST } = {}): {
   const listings: WorkListing[] = []
   const redirects: string[] = []
   const skipped: string[] = []
+  const referenced = new Set<PlaceId>()
 
   for (const work of loadWorks()) {
     const editions = work.editions.filter((edition) => {
@@ -76,6 +84,11 @@ export function build({ drafts = false, outDir = DIST } = {}): {
       ]),
     )
     for (const edition of editions) {
+      for (const reference of readPlaceReferences(work, edition, () =>
+        readPlaces(),
+      ))
+        for (const id of [reference.place, ...(reference.candidates ?? [])])
+          if (id) referenced.add(id)
       const text = texts.get(edition.slug) ?? readEditionText(work, edition)
       const pages = workPages(work, edition, text, editions, locatorsOf)
       for (const [page, html] of pages) {
@@ -107,6 +120,27 @@ export function build({ drafts = false, outDir = DIST } = {}): {
     }
   }
 
+  // One small file per Place a published Edition refers to, fetched when its
+  // popover opens; never the whole snapshot.
+  for (const id of referenced) {
+    const place = readPlaces().get(id)
+    if (!place) continue
+    const { title, types, precision, point, bbox, extent } = place
+    write(
+      `places/${placePath(id)}.json`,
+      JSON.stringify({
+        id,
+        title,
+        types,
+        precision,
+        point,
+        bbox,
+        extent,
+        uri: pleiadesUrl(id),
+      }),
+    )
+  }
+
   write("index.html", homePage(published))
   write("cite/index.html", citePage())
   write("how-to-use/index.html", howToUsePage())
@@ -117,6 +151,20 @@ export function build({ drafts = false, outDir = DIST } = {}): {
   cpSync(path.join(REPO_ROOT, "site"), path.join(outDir, "assets"), {
     recursive: true,
   })
+  // MapLibre finds its worker beside itself through import.meta.url, which a
+  // bundle would rewrite, so its ES modules are served as published and
+  // imported only when a Place popover first opens.
+  const maplibre = path.join(REPO_ROOT, "node_modules", "maplibre-gl", "dist")
+  for (const file of [
+    "maplibre-gl.mjs",
+    "maplibre-gl-shared.mjs",
+    "maplibre-gl-worker.mjs",
+    "maplibre-gl.css",
+  ])
+    cpSync(
+      path.join(maplibre, file),
+      path.join(outDir, "assets", "maplibre", file),
+    )
   buildSync({
     entryPoints: ["reader", "cite", "home", "editions", "site"].map((name) =>
       path.join(REPO_ROOT, "src", "client", `${name}.ts`),

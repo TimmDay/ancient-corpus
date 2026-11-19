@@ -19,6 +19,24 @@
     serif;
   --font-display: "Cinzel", "Trajan Pro", "EB Garamond", Georgia, serif;
   color-scheme: light;
+
+  /* The map's old-paper palette, from coin-cabinet; one palette in both
+     themes, since the map is a picture of parchment. Read by map-theme.ts. */
+  --map-land: #948060;
+  --map-woods: #887555;
+  --map-town: #8d7a5a;
+  --map-ice: #a39578;
+  --map-water: #43343a;
+  --map-waterway: #3a2d31;
+  --map-water-label: #d9c4cc;
+  --map-water-label-halo: #352a2e;
+  --map-border: #a8604a;
+  --map-ink: #2e1b12;
+  --map-label-halo: #b5a27c;
+  --map-province-fill: #c4622d;
+  --map-province-line: #8c3b2a;
+  --pin-rose: #b0486b;
+  --pin-cream-warm: #f3dca8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -817,6 +835,95 @@ h2.division.hit {
 
 .annotation-sources {
   font-size: 0.9em;
+}
+
+/* Place references: a name in the text that opens its Place's popover. It
+   reads as the text it is, with a dotted rule to say it can be opened. */
+
+.place-ref {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: underline dotted var(--muted);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.place-ref:hover,
+.place-ref[aria-expanded="true"] {
+  text-decoration-color: var(--accent);
+  text-decoration-style: solid;
+}
+
+.place-popover {
+  position: absolute;
+  inset: auto;
+  margin: 0;
+  width: 20rem;
+  max-width: calc(100vw - 2rem);
+  padding: 0.75rem 0.9rem;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  box-shadow: 0 0.5rem 2rem rgb(0 0 0 / 0.2);
+  font-size: 1rem;
+}
+
+.place-popover p {
+  margin: 0.25rem 0;
+}
+
+.place-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.place-written {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.place-map {
+  height: 11rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--map-land);
+}
+
+.place-map[hidden] {
+  display: none;
+}
+
+/* MapLibre's controls, on parchment to match the map. */
+.place-map .maplibregl-ctrl-group,
+.place-map .maplibregl-ctrl-attrib.maplibregl-compact {
+  background: var(--pin-cream-warm);
+  box-shadow: 0 0 0 1px var(--map-border);
+}
+
+.place-map .maplibregl-ctrl-group button + button {
+  border-top-color: var(--map-label-halo);
+}
+
+.place-map .maplibregl-ctrl-group button:not(:disabled):hover,
+.place-map .maplibregl-ctrl-attrib-button:hover {
+  background-color: var(--map-label-halo);
+}
+
+.place-map .maplibregl-ctrl-group button:focus-visible {
+  box-shadow: 0 0 0 2px var(--focus);
+}
+
+.place-credit {
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
 /* Notices */

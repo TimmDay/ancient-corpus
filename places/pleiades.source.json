@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-18",
+  "files": [
+    {
+      "url": "https://atlantides.org/downloads/pleiades/dumps/pleiades-places-20261118.csv.gz",
+      "sha256": "696891128d3d56579e8db95895b2aa5e7e45f481fa76c48b3df27dec6234d75a"
+    },
+    {
+      "url": "https://atlantides.org/downloads/pleiades/dumps/pleiades-names-20261118.csv.gz",
+      "sha256": "d60ac00ff56200f180dea7b4d738e6820128138664b3ae4c986d94a2d46b39aa"
+    }
+  ],
+  "licence": "Pleiades, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/): Copyright © The Contributors and Creators"
+}

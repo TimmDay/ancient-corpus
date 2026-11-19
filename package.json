@@ -27,7 +27,8 @@
     "ask:check": "node scripts/ask-check.ts",
     "dev:drafts": "node scripts/dev.ts --drafts",
     "read": "node scripts/read.ts",
-    "works": "node scripts/works.ts"
+    "works": "node scripts/works.ts",
+    "pleiades": "node scripts/pleiades.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -40,6 +41,7 @@
     "fflate": "^0.8.3",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
+    "maplibre-gl": "6.12.0",
     "playwright": "^1.64.1",
     "prettier": "^3.9.10",
     "typescript": "^6.0.3",
