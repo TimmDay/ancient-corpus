@@ -1,0 +1,61 @@
+{
+  "author": "John of Antioch",
+  "title": "Historia Chronike",
+  "otherTitles": ["Ἱστορία χρονική", "History (fragments)"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": null,
+  "coversYearLatest": 610,
+  "locatorFormat": "fragment, as numbered in Müller's FHG IV, e.g. 155",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "muller",
+      "preferred": true,
+      "language": "grc",
+      "title": "Ioannis Antiocheni fragmenta (FHG IV, pp. 535–622)",
+      "editor": "Karl Müller",
+      "publicationYear": 1851,
+      "source": {
+        "name": "Digital Fragmenta Historicorum Graecorum (DFHG), Monica Berti, University of Leipzig",
+        "url": "https://www.dfhg-project.org/DFHG/index.php?volume=Volumen%20quartum",
+        "archives": [
+          {
+            "file": "JohnOfAntioch-Muller-DFHG.zip",
+            "sha256": "84a3affa4b256eb967ca02dc2a42a8dd534e2f8b1e770640889747aba7074b93",
+            "url": "https://www.dfhg-project.org/DFHG/api.php?author=JOANNES%20ANTIOCHENUS"
+          }
+        ],
+        "rights": "Müller's text (Paris: Didot, 1851) is public domain; the digital edition is © DFHG Project under CC BY-SA 4.0 (its page footer; the page's metadata says CC BY-NC-SA 4.0)."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "dfhg",
+      "notice": "The fragments Müller printed in FHG IV. Those he added in FHG V, and the fuller collections of Roberto (2005) and Mariev (2008), are not here."
+    },
+    {
+      "slug": "ancient-corpus",
+      "preferred": false,
+      "language": "en",
+      "title": "English translation",
+      "translator": "Ancient Corpus (machine translation)",
+      "publicationYear": 2026,
+      "source": {
+        "name": "This project",
+        "url": "https://github.com/TimmDay/ancient-corpus",
+        "archives": [],
+        "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "licence": "cc0",
+      "model": "Claude Opus 5.5",
+      "importer": "translation",
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 19 November 2026, from Karl Müller's text of the fragments (Fragmenta Historicorum Graecorum IV, 1851). Fragments 147 to 160 only, Gordian III to Probus. It is not a translator's work: check it against the Greek, and report errors. Public domain (CC0): reuse it freely.",
+      "humanTranslation": {
+        "citation": "Sergei Mariev, Ioannis Antiocheni fragmenta quae supersunt omnia (De Gruyter, CFHB 47, 2008), Greek with a German translation; no English of these fragments is in print",
+        "url": "https://search.worldcat.org/search?q=Ioannis+Antiocheni+fragmenta+quae+supersunt+omnia+Mariev",
+        "access": "In copyright: buy it, or borrow it from a library."
+      }
+    }
+  ]
+}

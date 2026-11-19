@@ -47,6 +47,8 @@ const WORKS: Record<string, string> = {
   Chronica: "XPONIKA",
   // Peter the Patrician.
   Historiae: "ΙΣΤΟΡΙΑΙ",
+  // John of Antioch, FHG IV; his further fragments in FHG V are a work apart.
+  "Historia Chronike": "ΙΣΤΟΡΙΑ ΧΡΟΝΙΚΗ",
   // The Anonymus post Dionem, from the results page.
   "Continuation of Dio": "ΑΝΩΝΥΜΟΥ ΤΑ ΜΕΤΑ ΔΙΩΝΑ",
 }

@@ -1,0 +1,65 @@
+# John of Antioch, Historia Chronike: our English translation
+
+Translated from Karl Müller's text of the fragments (Fragmenta Historicorum Graecorum IV, 1851), one section per fragment, with his numbers. Made with Claude Opus 5.5 on 19 November 2026 (docs/adr/0003). Only fragments 147 to 160 so far, from Gordian III to Probus, Aurelian in 154 to 156 and 159. Most come from Constantine VII's excerpts, which open each with "that"; the English leaves it out. Müller's numbered parts of a fragment ("2.") are kept.
+
+## 147
+
+When Gordian too was about to meet the common end of life, the governor of Syria wrote that the king of the Persians had crossed his own borders and was overrunning the land of the Romans, and that the war needed his presence. Gordian the Younger, learning this, was very downcast, yet he announced the expedition against the Persians, and opening the gates of Janus, which were opened for the greatest wars, he went off to the East. And when he came to the Euphrates and the mouths of the Tigris, he engaged the barbarians and conducted the war most successfully, overthrowing the Parthian forces in great battles. Returning from there after its end, in the sixth year of his rule, already at the very borders of his own realm, he was treacherously killed by Philip, who succeeded him on the throne, and who at that time was training the young men among the soldiers; and Philip was proclaimed emperor.
+
+## 148
+
+Philip, having become emperor and defeated the Scythians, marched on Byzantium. And when he came to Perinthus, as it was reported to him that civil strife had broken out at Rome, which Decius, a former consul and prefect of the city, had caused, he sent men able to check what was happening and to forestall Decius's rising, and announced that he himself would follow with his sons. But when those whom Philip had sent reached Rome, won over by the gifts and flatteries of the people and the senate, they renounced Philip and, with the Romans, hailed Decius emperor. When this was reported to Philip, as he fled toward Beroea *** and they killed him with daggers hidden in their clothes, in the fifth year of his rule. And at Rome the soldiers of the city killed his son. Such was the end these men had.
+
+## 149
+
+Decius, emperor of the Romans, Philip's successor, by an imperial decree put to death those who held to the Christians' faith, and compelled those who would not to worship the gods.
+
+## 150
+
+Under Gallus and Volusianus, Aemilianus, governor of Moesia, set about revolution, contending that the throne belonged to him by his ancestry, and making the gravest accusations against the Roman senate. Against him those who headed the Romans' power marched with a very great host, and were plotted against and killed by their own men, not yet having completed their third year at the head of affairs, nor having achieved anything brilliant or worthy of an emperor, coming only to be remembered among the emperors. As for Aemilianus, he leapt at the rule in the land of the Scythians and was eager to come to Rome, but was killed first, in the fourth month of his tyranny, and vanished from among men.
+
+## 151
+
+When Gallus was emperor, a plague prevailed for 15 years (months?), starting from Ethiopia and reaching to the West; it was passed on by clothing and by mere sight. And the Scythians crossed the Ister and took 500 cities. They say that women who wish to become pregnant drink from the river Strymon and conceive.
+
+## 152
+
+Gallienus was done away with by his own soldiers, who had flared up in anger because, after his victory, he did not let them plunder the city of Moguntiacum, which had sided with Laelianus, whom Postumus had put down when he rebelled. After him Marius, a cheap man who had worked in the manual trades, put on the purple and was killed on the second day of his reign. On this Victorinus received power over the Gauls: excellent in wars, but a slave to the pleasures of the body, outraging other men's marriages and carrying off maidens. For this he was killed by a soldier at Agrippina, a Gallic city, in the second year of his rule. And he was succeeded in the rule by Tetricus, one of the senate, who had earlier governed Aquitania and was chosen emperor by the soldiers in his absence; and putting on the purple at Burdigala, a city of Gaul, he fell into the greatest troubles.
+
+2. Odenathus was done away with by Gallienus's plotting; and Zenobia took charge of affairs there: she was Odenathus's wife, but had a man's spirit, and avenged her husband's death through those who had been with him.
+
+3. Gallienus, with his brother Valerian, after the death of their father, who had reigned six years, was killed near the city of Mediolanum by the cavalry commander of the Dalmatians. This was Heraclianus, who, acting with Claudius, had Gallienus slaughtered at dinner by one of the most daring men.
+
+## 153
+
+Under the emperor Claudius, Aureolus, who had for a long time set himself outside Gallienus's power, at once sent heralds to Claudius, and surrendering himself was killed by the soldiers around the emperor, who were angry at him for his revolt.
+
+## 154
+
+Quintillus, brother of Claudius, who reigned over the Romans, as soon as he learned that the throne had been handed to Aurelian, is said to have given up the rule willingly, and when one of the doctors had cut a vein for him he let the blood flow until he was drained.
+
+## 155
+
+The emperor Aurelian was terribly well practised in war, but unrestrained in his temper, and much inclined to cruelty. He punished with death many of the notable men of the cities who had been exposed by Zenobia, being a harsh and murderous man, and more a necessary general than a chosen emperor; at every moment difficult and unapproachable, so that he did not even stay clean of the blood of his own kin, for he did away with his son's wife, who was blameless. But of the order of the soldiers, and of their faded and dissolute habits, he was on the whole a noble restorer.
+
+## 156
+
+Aurelian was killed in the sixth year of his rule, one of his servants who were his shorthand writers having contrived his death. This man, imitating his master's hand, brought to some tribunes, who were friends of Aurelian himself, a little tablet bearing the names of these men marked down, falsely claiming that Aurelian had written them. And they, made to believe it by the emperor's harshness and sharpness of temper in every strange and severe act, resolved to act first before they suffered; and they killed him in the middle of his march, as he was going from Byzantium to Heraclea, near the place called Caenophrurium. Yet he did not die unavenged. For his murderers paid the penalty, and he himself was voted among the deified emperors.
+
+## 157
+
+When Tacitus had taken up the throne of Rome, the Scythians crossed by Lake Maeotis; and having defeated them he set out for Europe. There he fell into a plot and was done away with, for this reason. He had handed the rule of Syria to Maximinus, a kinsman. This man, treating those in office most harshly, brought the emperor into envy and fear at once. These bred hatred, and what remained ended in a plot; and making partners of it the men who had done away with Aurelian, they fell on Maximinus himself and slaughtered him; and pursuing Tacitus as he was marching back to Europe they did away with him, after he had reigned six months in all.
+
+## 158
+
+Probus and Florian, the two, reigned together. And Probus, not by his own choice, did away with Florian, after he had enjoyed power 2 months and 20 days.
+
+2. When Probus was emperor of the Romans, Saturninus, a Moor by race, who was very dear to the emperor, and for this reason had been entrusted with the rule of Syria, broke faith with the emperor and came to think of rebellion. When Probus heard this and was thinking of going after the attempt, the soldiers in the East forestalled him, putting out the man together with his tyranny. He also stopped another rebellion in Britain, planned through Victorinus, a Moor by race. It was on his advice that Probus had appointed the governor of Britain who rebelled. Calling Victorinus to him and blaming him for his advice, he sent him to set the mistake right. And Victorinus, setting out at once for Britain, did away with the tyrant by a shrewd stratagem.
+
+## 159
+
+When Probus began to rule, there was a rain that brought down grain, which they gathered and made into great heaps. Under Aurelian drops of silver came down.
+
+## 160
+
+When Probus had done much, and had managed the rule well and justly, a rebellion was reported from the West, the forces in Raetia and Noricum having put the purple on Carus. When he sent a force to oppose him, those sent went over to Carus; and they themselves, with Probus bereft of help on every side and no one hindering, did away with him after he had reigned six years and 4 months.
