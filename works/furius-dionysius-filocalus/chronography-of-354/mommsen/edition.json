@@ -1,0 +1,25 @@
+{
+  "divisions": [
+    {
+      "locator": "origo",
+      "label": "The origin of the Roman people"
+    },
+    {
+      "locator": "alba",
+      "label": "Kings of Alba"
+    },
+    {
+      "locator": "reges",
+      "label": "Kings of the Romans"
+    },
+    {
+      "locator": "dictatores",
+      "label": "The dictators"
+    },
+    {
+      "locator": "caesares",
+      "label": "The rule of the Caesars"
+    }
+  ],
+  "editorial": []
+}

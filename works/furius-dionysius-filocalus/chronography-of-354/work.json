@@ -1,0 +1,64 @@
+{
+  "author": "Furius Dionysius Filocalus",
+  "title": "Chronography of 354",
+  "otherTitles": ["Chronica urbis Romae"],
+  "originalLanguage": "la",
+  "writtenYearEarliest": 354,
+  "writtenYearLatest": 354,
+  "coversYearEarliest": null,
+  "coversYearLatest": 324,
+  "locatorFormat": "the Chronicle of the City of Rome's list and ruler, e.g. caesares.aurelianus",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "mommsen",
+      "preferred": true,
+      "language": "la",
+      "title": "Chronica urbis Romae (Chronica Minora 1)",
+      "editor": "Theodor Mommsen",
+      "publicationYear": 1892,
+      "source": {
+        "name": "tertullian.org (Roger Pearse)",
+        "url": "https://www.tertullian.org/fathers/chronography_of_354_16_chronicle_of_the_city_of_rome.htm",
+        "archives": [
+          {
+            "file": "Chronography354-Pearse-tertullian.zip",
+            "sha256": "f688a1b463593f4199a982aadf22c3aae5541eac5b4a782f5708cce9e0df1b31",
+            "url": "https://www.tertullian.org/fathers/chronography_of_354_16_chronicle_of_the_city_of_rome.htm"
+          }
+        ],
+        "rights": "Mommsen's Latin (1892) is public domain; Pearse's page says \"All material on this page is in the public domain - copy freely.\""
+      },
+      "licence": "public-domain",
+      "importer": "chronography-354",
+      "notice": "The Chronicle of the City of Rome only, part 16 of the Chronography, as Roger Pearse transcribed Mommsen's text."
+    },
+    {
+      "slug": "pearse",
+      "preferred": false,
+      "language": "en",
+      "title": "The Chronography of AD 354, part 16: the Chronicle of the City of Rome",
+      "translator": "Roger Pearse",
+      "publicationYear": 2006,
+      "source": {
+        "name": "tertullian.org (Roger Pearse)",
+        "url": "https://www.tertullian.org/fathers/chronography_of_354_16_chronicle_of_the_city_of_rome.htm",
+        "archives": [
+          {
+            "file": "Chronography354-Pearse-tertullian.zip",
+            "sha256": "f688a1b463593f4199a982aadf22c3aae5541eac5b4a782f5708cce9e0df1b31",
+            "url": "https://www.tertullian.org/fathers/chronography_of_354_16_chronicle_of_the_city_of_rome.htm"
+          }
+        ],
+        "rights": "Mommsen's Latin (1892) is public domain; Pearse's page says \"All material on this page is in the public domain - copy freely.\""
+      },
+      "licence": "public-domain",
+      "importer": "chronography-354",
+      "humanTranslation": {
+        "citation": "Roger Pearse's English (2006), on tertullian.org, beside Mommsen's Latin",
+        "url": "https://www.tertullian.org/fathers/chronography_of_354_16_chronicle_of_the_city_of_rome.htm"
+      }
+    }
+  ]
+}
