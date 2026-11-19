@@ -14,6 +14,7 @@ import {
 } from "./corpus.ts"
 import { correctEdition, type Correction } from "./corrections.ts"
 import { importBonn } from "./importers/bonn.ts"
+import { importBonnTei } from "./importers/bonn-tei.ts"
 import { importCcel } from "./importers/ccel.ts"
 import { importDfhg } from "./importers/dfhg.ts"
 import { importDio } from "./importers/dio.ts"
@@ -39,6 +40,8 @@ const IMPORTERS: Record<
   (source: EditionSource, work: Work, edition: Edition) => ImportedEdition
 > = {
   bonn: (source, _work, edition) => importBonn(source, edition),
+  "chronicon-paschale": (source, _work, edition) =>
+    importBonnTei(source, edition, { "1": "On Easter", "2": "Chronicle" }),
   ccel: (source, work) => importCcel(source, work.title),
   dfhg: (source, work) => importDfhg(source, work.title),
   dio: importDio,
