@@ -206,6 +206,19 @@ export function workPages(
             (e) =>
               `<li><a href="${workUrl(work, e)}" data-lang="${attr(e.language)}" data-edition="${attr(e.slug)}" data-keep-hash${e.slug === edition.slug ? ' aria-current="page"' : ""}><span class="lang">${escapeHtml(languageName(e.language))}</span> ${escapeHtml(editionLine(e))}</a></li>`,
           )
+          .join("")}</ul></nav>
+<nav class="edition-chips" aria-label="Switch language" hidden><ul>${editions
+          .map((e) => {
+            // Two Editions in one language are told apart by their maker.
+            const twin = editions.some(
+              (o) => o !== e && o.language === e.language,
+            )
+            const maker = (e.translator ?? e.editor ?? e.slug)
+              .split(/\s+(?:and|&)\s+/)[0]
+              ?.split(" ")
+              .at(-1)
+            return `<li><a href="${workUrl(work, e)}" data-keep-hash${e.slug === edition.slug ? ' aria-current="page"' : ""}>${escapeHtml(languageName(e.language))}${twin ? ` <span class="maker">${escapeHtml(maker ?? "")}</span>` : ""}</a></li>`
+          })
           .join("")}</ul></nav>`
       : ""
 
