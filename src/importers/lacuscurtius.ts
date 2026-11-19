@@ -79,10 +79,22 @@ const HISTORIA_AUGUSTA: Part[] = [
   { locator: "Carus", pages: ["Carus_et_al"] },
 ]
 
-const WORKS: Record<string, { folder: string; parts: Part[] }> = {
+/**
+ * Where a Work is cited by section alone (the Origo Constantini, 1 to 35),
+ * a Passage is a section, <a class="sec">, its Locator the bare number; a
+ * section Rolfe splits ("2a", "2b") is one Passage.
+ */
+type Layout = { folder: string; parts: Part[]; bySection?: boolean }
+
+const WORKS: Record<string, Layout> = {
   "Historia Augusta": {
     folder: "Roman/Texts/Historia_Augusta",
     parts: HISTORIA_AUGUSTA,
+  },
+  "Origo Constantini Imperatoris": {
+    folder: "Roman/Texts/Excerpta_Valesiana",
+    parts: [{ locator: "Origo", pages: ["1*"] }],
+    bySection: true,
   },
 }
 
@@ -108,7 +120,13 @@ export function importLacusCurtius(
       const file = `pages/${prefix}/${config.folder}/${page}.html`
       const $ = pages.get(file)
       if (!$) throw new Error(`${file} is not in the intake archive`)
-      const read = readPage($, part.locator, nextNoteId, before)
+      const read = readPage(
+        $,
+        part.locator,
+        nextNoteId,
+        before,
+        config.bySection,
+      )
       nextNoteId += read.notes.size
       for (const passage of read.passages) {
         passage.notes = notesFor(passage.blocks.join(" "), read.notes).map(
@@ -143,6 +161,7 @@ export function readPage(
   firstNoteId: number,
   /** Notes on earlier pages of the same Life, counted on and updated. */
   before = { numbered: 0, lettered: 0 },
+  bySection = false,
 ): {
   passages: Draft[]
   notes: Map<string, string>
@@ -191,11 +210,17 @@ export function readPage(
     // A chapter can open part way through a paragraph: the paragraph is cut there.
     const runs: { chapter?: string; nodes: AnyNode[] }[] = [{ nodes: [] }]
     for (const node of $(el).contents().toArray()) {
+      const unit = bySection ? "sec" : "chapter"
       const anchor =
-        node.type === "tag" && /\bchapter\b/.test(node.attribs.class ?? "")
+        node.type === "tag" &&
+        new RegExp(`\\b${unit}\\b`).test(node.attribs.class ?? "")
           ? node
-          : $(node).find("a.chapter").get(0)
-      const chapter = anchor && chapterNumber($, anchor)
+          : $(node).find(`a.${unit}`).get(0)
+      const chapter =
+        anchor &&
+        (bySection
+          ? /^\d+/.exec(anchor.attribs.name ?? "")?.[0]
+          : chapterNumber($, anchor))
       if (chapter) runs.push({ chapter, nodes: [] })
       runs.at(-1)?.nodes.push(node)
     }
@@ -203,7 +228,7 @@ export function readPage(
       const html = clean(inlineHtml($, $(run.nodes), options))
       if (run.chapter) {
         passages.push({
-          locator: `${division} ${run.chapter}`,
+          locator: bySection ? run.chapter : `${division} ${run.chapter}`,
           headings: pending,
           division,
           blocks: [],

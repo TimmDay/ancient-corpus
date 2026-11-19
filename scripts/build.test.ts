@@ -380,6 +380,15 @@ describe("build", () => {
     ).toMatch(/id="48"[^>]*>[\s\S]*?Aurelian killed/)
   })
 
+  it("reads the Origo Constantini by section, in Rolfe's Latin and English", () => {
+    expect(read("anonymous/origo-constantini/index.html")).toMatch(
+      /id="2"[^>]*>[\s\S]*?divi Claudii optimi principis nepos/,
+    )
+    expect(read("anonymous/origo-constantini/rolfe/index.html")).toMatch(
+      /id="2"[^>]*>[\s\S]*?grandson of the brother of that best of emperors Claudius/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
