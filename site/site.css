@@ -70,6 +70,11 @@ html {
   }
 }
 
+/* Switching Edition swaps the page in place, without a flash of its top. */
+@view-transition {
+  navigation: auto;
+}
+
 body {
   margin: 0;
   background: var(--bg);

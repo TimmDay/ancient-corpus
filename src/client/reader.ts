@@ -234,8 +234,12 @@ function pinWhileLoading(target: HTMLElement | Range): void {
   const pin = () => {
     if (!pinned) return
     if (offset !== undefined && target instanceof HTMLElement)
-      window.scrollBy({ top: target.getBoundingClientRect().top - offset })
-    else scrollToTop(target, "auto")
+      // "instant": "auto" would follow the stylesheet's smooth scrolling.
+      window.scrollBy({
+        top: target.getBoundingClientRect().top - offset,
+        behavior: "instant",
+      })
+    else scrollToTop(target, "instant")
   }
   const release = () => {
     pinned = false
