@@ -69,14 +69,20 @@ describe("annotationsByLocator", () => {
 })
 
 describe("the corpus's Annotations", () => {
-  it("each cite a source or are marked ours, and land on a Passage in every Edition", () => {
+  it("each cite a source or are marked ours, and land on a Passage in every Edition that has its book", () => {
     for (const work of loadWorks()) {
       const annotations = readAnnotations(work)
       for (const edition of work.editions.filter(
         (e) => hasEditionText(work, e) && !e.unpublished,
       )) {
-        const index = locatorIndex(work, readEditionText(work, edition))
-        for (const a of annotations)
+        const text = readEditionText(work, edition)
+        const index = locatorIndex(work, text)
+        // An Edition of part of a Work (Dio's Greek, Books 36–55) is held to
+        // the Annotations on the books it has.
+        const books = new Set(text.divisions.map((d) => d.locator))
+        for (const a of annotations.filter(
+          (a) => !books.size || books.has(a.locator.split(/[ .]/)[0] ?? ""),
+        ))
           expect(
             resolveLocator(a.locator, index),
             `${work.slug}/${edition.slug}: ${a.locator}`,

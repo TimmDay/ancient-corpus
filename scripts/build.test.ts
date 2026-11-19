@@ -297,6 +297,12 @@ describe("build", () => {
     expect(latin).not.toContain("The Classics Page</p>")
   })
 
+  it("reads Dio's Greek beside Foster's English, Books 36 to 55", () => {
+    expect(read("cassius-dio/roman-history/cary/44/index.html")).toMatch(
+      /id="44\.19"[^>]*>[\s\S]*?Καῖσαρ/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
