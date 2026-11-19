@@ -132,7 +132,7 @@ async function showOnMap(container: HTMLElement, place: ShownPlace) {
   } else if (place.point) {
     map.jumpTo({
       center: place.point,
-      zoom: place.precision === "precise" ? 6 : 5,
+      zoom: place.precision === "precise" ? 5 : 4,
     })
   }
 }
