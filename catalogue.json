@@ -125,12 +125,8 @@
           "written": "4th century BC"
         },
         {
-          "author": "Xenophon",
-          "title": "Anabasis",
-          "language": "grc",
-          "written": "4th century BC",
-          "covers": "401 to 399 BC",
-          "freeEnglish": "H. G. Dakyns (1890–97)"
+          "work": "xenophon/anabasis",
+          "written": "4th century BC"
         },
         {
           "author": "Ctesias",

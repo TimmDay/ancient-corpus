@@ -1,0 +1,63 @@
+{
+  "author": "Xenophon",
+  "title": "Anabasis",
+  "otherTitles": ["Ἀνάβασις", "The Persian Expedition", "The March Up Country"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": -401,
+  "coversYearLatest": -399,
+  "locatorFormat": "book.chapter, e.g. 4.7; a section, e.g. 4.7.24, lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "marchant",
+      "preferred": true,
+      "language": "grc",
+      "title": "Xenophontis Expeditio Cyri",
+      "editor": "E. C. Marchant",
+      "publicationYear": 1904,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0032/tlg006/tlg0032.tlg006.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Xenophon-tlg0032.tlg006.perseus-grc2-Perseus.zip",
+            "sha256": "138484c40e0d18002bb0d868312ad805c1d0a3f56d2554d54b6f49f47199c2f0"
+          }
+        ],
+        "rights": "Greek text (Oxford, 1904) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "brownson",
+      "preferred": false,
+      "language": "en",
+      "title": "Anabasis",
+      "translator": "Carleton L. Brownson",
+      "publicationYear": 1922,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0032/tlg006/tlg0032.tlg006.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Xenophon-tlg0032.tlg006.perseus-eng2-Perseus.zip",
+            "sha256": "6b929df40f12f5284a1d447af78b758f4146aba2411c0faada1b2714f7f4b8d7"
+          }
+        ],
+        "rights": "Translation (Loeb Classical Library, 1921–22) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "Carleton L. Brownson, Anabasis (1922), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0032/tlg006/tlg0032.tlg006.perseus-eng2.xml"
+      }
+    }
+  ]
+}
