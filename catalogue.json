@@ -486,11 +486,14 @@
           "work": "julian/caesares"
         },
         {
-          "author": "Julian",
-          "title": "Orations; Misopogon; Letters",
-          "language": "grc",
-          "written": "355 to 363",
-          "freeEnglish": "W. C. Wright (Loeb, 1913–23)"
+          "work": "julian/orations"
+        },
+        {
+          "work": "julian/misopogon"
+        },
+        {
+          "work": "julian/letters",
+          "note": "The letters in Wright's second volume; her third, with the rest, is not on Gutenberg"
         },
         {
           "work": "aurelius-victor/de-caesaribus",

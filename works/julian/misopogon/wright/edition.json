@@ -1,0 +1,17 @@
+{
+  "divisions": [],
+  "editorial": [
+    {
+      "id": "ed-1",
+      "title": "Introduction",
+      "html": "<p>Julian came to Antioch on his way to Persia in the autumn of 361 and stayed there till March, 362. The city was rich and important commercially, but in Julian's eyes her glory depended on two things, the famous shrine of Apollo and the school of rhetoric; and both of these had been neglected by the citizens during the reign of Constantius. A Christian church had been built in Apollo's grove in the suburb of Daphne, and Libanius, Antioch's most distinguished rhetorician, was more highly honoured at Nicomedia.<sup class=\"nref\"><a href=\"#n-wright-ed-1-678\" id=\"r-wright-ed-1-678\">678</a></sup> Julian's behaviour at Antioch and his failure to ingratiate himself with the citizens illustrates one of the causes of the failure of his Pagan restoration. His mistake was that he did not attempt to make Paganism popular, whereas Christianity had always been democratic. He is always reminding the common people that the true knowledge of the gods is reserved for philosophers; and even the old conservative Pagans did not share his zeal for philosophy. Antioch moreover was a frivolous city. The Emperor Hadrian three centuries earlier had been much offended by the levity of her citizens, and the homilies of Saint Chrysostom exhibit the same picture as Julian's satire. His austere personality and mode of life repelled the Syrian populace and the corrupt officials of Antioch. They satirised him in anapaestic verses, and either stayed away from the temples that he restored or, when they did attend in response to his summons, showed by their untimely applause of the Emperor that they had not come to worship his gods. Julian's answer was this satire on himself which he addresses directly to the people of Antioch. But he could not resist scolding them, and the satire on his own habits is not consistently maintained. After he had left the city the citizens repented and sent a deputation to make their peace with him, but in spite of the intercession of Libanius, who had accompanied him to Antioch, he could not forgive the insults to himself or the irreverence that had been displayed to the gods.</p>",
+      "notes": [
+        {
+          "id": "wright-ed-1-678",
+          "html": "cf. Libanius, <i>Oration</i> 29. 220, where he warns the people of Antioch that Caesarea had already robbed them of one sophist by the offer of a higher salary, and exhorts them not to neglect rhetoric, the cause of their greatness.",
+          "label": "678"
+        }
+      ]
+    }
+  ]
+}

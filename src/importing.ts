@@ -21,7 +21,13 @@ import { importDfhg } from "./importers/dfhg.ts"
 import { importDio } from "./importers/dio.ts"
 import { importEutropius } from "./importers/eutropius.ts"
 import { importDir } from "./importers/dir.ts"
-import { importJulianCaesars } from "./importers/julian.ts"
+import {
+  LETTERS,
+  MISOPOGON,
+  ORATIONS,
+  importJulian,
+  importJulianCaesars,
+} from "./importers/julian.ts"
 import { importLacusCurtius } from "./importers/lacuscurtius.ts"
 import {
   importLatinLibrary,
@@ -61,6 +67,12 @@ const IMPORTERS: Record<
   dir: importDir,
   eutropius: importEutropius,
   "julian-caesars": importJulianCaesars,
+  "julian-orations": (source, _work, edition) =>
+    importJulian(source, edition, ORATIONS),
+  "julian-misopogon": (source, _work, edition) =>
+    importJulian(source, edition, MISOPOGON),
+  "julian-letters": (source, _work, edition) =>
+    importJulian(source, edition, LETTERS),
   lacuscurtius: (source, work, edition) =>
     importLacusCurtius(source, work.title, edition.language),
   latinlibrary: (source) => importLatinLibrary(source),

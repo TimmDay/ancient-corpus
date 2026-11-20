@@ -1,20 +1,14 @@
 {
   "author": "Julian",
   "title": "Caesares",
-  "otherTitles": [
-    "The Caesars",
-    "Symposium",
-    "Kronia"
-  ],
+  "otherTitles": ["The Caesars", "Symposium", "Kronia"],
   "originalLanguage": "grc",
   "writtenYearEarliest": 361,
   "writtenYearLatest": 362,
   "coversYearEarliest": -49,
   "coversYearLatest": 337,
   "locatorFormat": "Spanheim page and section, e.g. 313d; a Passage is named by the section it starts in",
-  "slugAliases": [
-    "julian/the-caesars"
-  ],
+  "slugAliases": ["julian/the-caesars"],
   "locatorAliases": {},
   "editions": [
     {

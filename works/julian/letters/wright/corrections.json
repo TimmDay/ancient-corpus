@@ -1,0 +1,68 @@
+[
+  {
+    "op": "accept",
+    "locator": "253a",
+    "flag": "gap",
+    "reason": "Locators are Spanheim's pages, which run on from one piece to the next; this piece starts on his page 253"
+  },
+  {
+    "op": "accept",
+    "locator": "254c",
+    "flag": "gap",
+    "reason": "Wright's paragraphs here run on through Spanheim's pages 255 and 256, marked only inside them in the Greek, so no Passage starts there"
+  },
+  {
+    "op": "accept",
+    "locator": "257d",
+    "flag": "gap",
+    "reason": "Wright's paragraphs here run on through Spanheim's page 258, marked only inside them in the Greek, so no Passage starts there"
+  },
+  {
+    "op": "accept",
+    "locator": "260c",
+    "flag": "gap",
+    "reason": "Wright's paragraphs here run on through Spanheim's page 261, marked only inside them in the Greek, so no Passage starts there"
+  },
+  {
+    "op": "accept",
+    "locator": "268",
+    "flag": "gap",
+    "reason": "Locators are Spanheim's pages, which run on from one piece to the next; this piece starts on his page 268"
+  },
+  {
+    "op": "accept",
+    "locator": "271d",
+    "flag": "gap",
+    "reason": "Wright's paragraphs here run on through Spanheim's page 272, marked only inside them in the Greek, so no Passage starts there"
+  },
+  {
+    "op": "accept",
+    "locator": "275b",
+    "flag": "gap",
+    "reason": "Wright's paragraphs here run on through Spanheim's page 276, marked only inside them in the Greek, so no Passage starts there"
+  },
+  {
+    "op": "accept",
+    "locator": "282d",
+    "flag": "gap",
+    "reason": "Wright's paragraphs here run on through Spanheim's page 283, marked only inside them in the Greek, so no Passage starts there"
+  },
+  {
+    "op": "accept",
+    "locator": "288",
+    "flag": "gap",
+    "reason": "Locators are Spanheim's pages, which run on from one piece to the next; this piece starts on his page 288"
+  },
+  {
+    "op": "accept",
+    "locator": "292d",
+    "flag": "gap",
+    "reason": "Wright's paragraphs here run on through Spanheim's page 293, marked only inside them in the Greek, so no Passage starts there"
+  },
+  {
+    "op": "accept",
+    "locator": "297d",
+    "flag": "gap",
+    "reason": "Wright's paragraphs here run on through Spanheim's page 298, marked only inside them in the Greek, so no Passage starts there; the transcription leaves out the marker for page 298, and the importer infers it from the section letters"
+  }
+]

@@ -389,6 +389,23 @@ describe("build", () => {
     )
   })
 
+  it("reads Julian's Orations by oration and Spanheim section, in Greek and Wright's English", () => {
+    expect(read("julian/orations/1/index.html")).toMatch(
+      /id="1\.17c"[^>]*>[\s\S]*?Πέρσαι τῆς Ἀσίας ἁπάσης/,
+    )
+    expect(read("julian/orations/wright/1/index.html")).toMatch(
+      /id="1\.17c"[^>]*>[\s\S]*?The Persians in the past conquered the whole of Asia/,
+    )
+    // Wright's notes are numbered through each volume: Oration VI's are in vol. 2.
+    expect(read("julian/orations/wright/6/index.html")).toMatch(/id="6\.181/)
+    expect(read("julian/misopogon/wright/index.html")).toMatch(
+      /id="340a"[^>]*>[\s\S]*?worthlessness of my disposition/,
+    )
+    expect(read("julian/letters/index.html")).toMatch(
+      /id="268"[^>]*>[\s\S]*?Πολλῶν εἰργασμένων τοῖς προγόνοις ὑμῶν/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
