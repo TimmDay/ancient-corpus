@@ -1,0 +1,68 @@
+{
+  "author": "Flavius Josephus",
+  "title": "Jewish War",
+  "otherTitles": [
+    "Bellum Judaicum",
+    "The Wars of the Jews",
+    "Ἰουδαϊκοῦ πολέμου πρὸς Ῥωμαίους"
+  ],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": -175,
+  "coversYearLatest": 73,
+  "locatorFormat": "book.section (Niese), e.g. 2.169; a Passage is one of Whiston's paragraphs, named by the section it starts in, and a section inside it lands on it",
+  "numberedLines": true,
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "niese",
+      "preferred": true,
+      "language": "grc",
+      "title": "Ἰουδαϊκοῦ πολέμου πρὸς Ῥωμαίους",
+      "editor": "Benedikt Niese",
+      "publicationYear": 1895,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0526/tlg004/tlg0526.tlg004.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Josephus-tlg0526.tlg004.perseus-grc2-Perseus.zip",
+            "sha256": "023c96d32c692939c76f14905efa561c3aee597ac9c6061b6f115a13974a5f61"
+          }
+        ],
+        "rights": "Greek text (Weidmann, 1895) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "whiston",
+      "preferred": false,
+      "language": "en",
+      "title": "The Wars of the Jews",
+      "translator": "William Whiston",
+      "publicationYear": 1737,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0526/tlg004/tlg0526.tlg004.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Josephus-tlg0526.tlg004.perseus-eng2-Perseus.zip",
+            "sha256": "d810b8388dcd267a9a572ea854909e751628703a3ee3b53ef8d813e1a838bf40"
+          }
+        ],
+        "rights": "Translation (1737; this printing Alden and Beardsley, 1856) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "William Whiston, The Wars of the Jews (1737), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0526/tlg004/tlg0526.tlg004.perseus-eng2.xml"
+      }
+    }
+  ]
+}

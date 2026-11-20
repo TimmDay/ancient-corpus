@@ -508,6 +508,15 @@ describe("build", () => {
     )
   })
 
+  it("reads Josephus' Jewish War in Whiston's paragraphs, the Greek grouped to match", () => {
+    expect(read("flavius-josephus/jewish-war/1/index.html")).toMatch(
+      /id="1\.1"[^>]*>[\s\S]*?Ἐπειδὴ τὸν Ἰουδαίων πρὸς Ῥωμαίους πόλεμον/,
+    )
+    expect(read("flavius-josephus/jewish-war/whiston/7/index.html")).toMatch(
+      /id="7\.337"[^>]*>[\s\S]*?This was Eleazar's speech to them/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

@@ -22,6 +22,7 @@ import {
   INTAKE_DIR,
   type Division,
   type EditionSource,
+  type Heading,
   type ImportedEdition,
   type Passage,
 } from "../corpus.ts"
@@ -67,6 +68,100 @@ export function importPerseus(source: EditionSource): ImportedEdition {
         })
       })
   }
+  return { divisions, passages, editorial: [] }
+}
+
+/**
+ * Prose cited by book and section that a translation reads in paragraphs
+ * (Josephus: Niese's sections, Whiston's paragraphs). Books hold sections,
+ * <div subtype="section" n="169">, and each of Whiston's paragraphs begins
+ * at a <milestone unit="Whiston_section">, in the Greek as in the English,
+ * which numbers its own divisions by the section a paragraph starts in. A
+ * Passage is a paragraph, named by book and section, `2.169`; a milestone
+ * inside a section starts the Passage at that section, and a Work without
+ * books (the Life) names it by section alone. Each section is a paragraph
+ * of the Passage; the notes in it are the Passage's notes, and a book's
+ * <head> heads its first Passage.
+ */
+export function importPerseusParagraphs(
+  source: EditionSource,
+): ImportedEdition {
+  const $ = readTei(onlyArchive(source))
+  const divisions: Division[] = []
+  const passages: Omit<Passage, "flags">[] = []
+  const books = $('div[subtype="book"]').toArray()
+  const containers = books.length
+    ? books
+    : $('div[type="edition"], div[type="translation"]').toArray()
+  for (const container of containers) {
+    const book = books.length ? ($(container).attr("n") ?? "") : ""
+    const prefix = book ? `${book}.` : ""
+    if (book) divisions.push({ locator: book, label: `Book ${book}` })
+    let pending = true
+    let headings: Heading[] = book
+      ? [{ kind: "division", html: `Book ${book}`, editorial: false }]
+      : []
+    const open = (section: string) => {
+      passages.push({
+        locator: `${prefix}${section}`,
+        headings,
+        division: book,
+        blocks: [],
+        notes: [],
+        text: "",
+      })
+      headings = []
+      pending = false
+    }
+    const walk = (el: AnyNode, section: string | undefined) => {
+      if (el.type !== "tag") return
+      for (const child of el.children) {
+        if (child.type !== "tag") continue
+        const subtype = child.attribs.subtype
+        if (child.name === "div" && subtype === "section") {
+          const n = child.attribs.n ?? ""
+          // A milestone inside the section, before its text, also opens it here.
+          const opens =
+            pending ||
+            $(child).find('milestone[unit="Whiston_section"]').length > 0
+          if (opens && passages.at(-1)?.locator !== `${prefix}${n}`) open(n)
+          const current = passages.at(-1)
+          if (!current) continue
+          const html = clean(
+            $(child)
+              .find("p")
+              .toArray()
+              .map((p) => inline($, p.children))
+              .join(" "),
+          )
+          if (html) current.blocks.push(html)
+          for (const note of $(child).find("note").toArray()) {
+            const text = clean(inline($, note.children))
+            if (text)
+              current.notes.push({
+                id: `${current.locator}-${current.notes.length + 1}`,
+                label: `${current.locator}.${current.notes.length + 1}`,
+                html: text,
+              })
+          }
+          continue
+        }
+        if (child.name === "milestone") {
+          if (child.attribs.unit === "Whiston_section" && !section)
+            pending = true
+          continue
+        }
+        if (child.name === "head" && !section) {
+          const html = clean(inline($, child.children))
+          if (html) headings.push({ kind: "section", html, editorial: false })
+          continue
+        }
+        walk(child, section)
+      }
+    }
+    walk(container, undefined)
+  }
+  for (const p of passages) p.text = plainText(p.blocks.join(" "))
   return { divisions, passages, editorial: [] }
 }
 
