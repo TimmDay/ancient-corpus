@@ -47,9 +47,15 @@ export function importPerseus(source: EditionSource): ImportedEdition {
     $(book)
       .children('div[subtype="chapter"]')
       .each((_, chapter) => {
-        const locator = n
-          ? `${n}.${$(chapter).attr("n") ?? ""}`
-          : ($(chapter).attr("n") ?? "")
+        // Tacitus' Annals print the end of Book 5 inside Book 6, as `5_6`.
+        const [, own, ownChapter] =
+          /^(\d+)_(\d+)$/.exec($(chapter).attr("n") ?? "") ?? []
+        const book = own ?? n
+        const locator = own
+          ? `${own}.${ownChapter}`
+          : n
+            ? `${n}.${$(chapter).attr("n") ?? ""}`
+            : ($(chapter).attr("n") ?? "")
         // A paragraph per section, as the edition's sections fall.
         const blocks = $(chapter)
           .find("p")
@@ -69,10 +75,10 @@ export function importPerseus(source: EditionSource): ImportedEdition {
         passages.push({
           locator,
           headings:
-            !n || passages.some((p) => p.division === n)
+            !n || passages.some((p) => p.division === book)
               ? []
               : [{ kind: "division", html: label, editorial: false }],
-          division: n,
+          division: book,
           blocks,
           notes,
           text: plainText(blocks.join(" ")),

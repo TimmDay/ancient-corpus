@@ -645,12 +645,9 @@
           "freeEnglish": "H. E. Butler (Loeb, 1920–22)"
         },
         {
-          "author": "Tacitus",
-          "title": "Annals",
-          "language": "la",
+          "work": "tacitus/annals",
           "written": "c. 116",
-          "covers": "14 to 68, with gaps",
-          "freeEnglish": "A. J. Church and W. J. Brodribb (1876)"
+          "note": "Books 7–10 and parts of 5, 6, 11 and 16 are lost"
         },
         {
           "author": "Tacitus",

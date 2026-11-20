@@ -634,6 +634,13 @@ describe("build", () => {
     )
   })
 
+  it("reads Tacitus' Annals by book and chapter, the end of Book 5 as 5.6 to 5.11", () => {
+    expect(read("tacitus/annals/church-brodribb/15/index.html")).toMatch(
+      /id="15\.44"[^>]*>[\s\S]*?Such indeed were the precautions of human wisdom/,
+    )
+    expect(read("tacitus/annals/5/index.html")).toMatch(/id="5\.6"/)
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
