@@ -654,11 +654,12 @@
           "written": "c. 105"
         },
         {
-          "author": "Tacitus",
-          "title": "Agricola; Germania",
-          "language": "la",
-          "written": "98",
-          "freeEnglish": "A. J. Church and W. J. Brodribb (1868)"
+          "work": "tacitus/agricola",
+          "written": "98"
+        },
+        {
+          "work": "tacitus/germania",
+          "written": "98"
         },
         {
           "author": "Pliny the Younger",
