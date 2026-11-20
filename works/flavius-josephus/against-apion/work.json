@@ -1,0 +1,60 @@
+{
+  "author": "Flavius Josephus",
+  "title": "Against Apion",
+  "otherTitles": ["Contra Apionem", "περὶ ἀρχαιότητος Ἰουδαίων"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "book.section (Niese), e.g. 2.109; a Passage is one of Whiston's paragraphs, named by the section it starts in, and a section inside it lands on it; 2.51 to 2.113 survive only in the Latin translation, as Niese prints them",
+  "numberedLines": true,
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "niese",
+      "preferred": true,
+      "language": "grc",
+      "title": "περὶ ἀρχαιότητος Ἰουδαίων",
+      "editor": "Benedikt Niese",
+      "publicationYear": 1889,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0526/tlg003/tlg0526.tlg003.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Josephus-tlg0526.tlg003.perseus-grc2-Perseus.zip",
+            "sha256": "56ef7c1586ebecaa62b5589f690b4b9d1a0de7cb986850bfb0330f7f8e39d39b"
+          }
+        ],
+        "rights": "Greek text (Weidmann, 1889) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "whiston",
+      "preferred": false,
+      "language": "en",
+      "title": "Against Apion",
+      "translator": "William Whiston",
+      "publicationYear": 1737,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0526/tlg003/tlg0526.tlg003.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Josephus-tlg0526.tlg003.perseus-eng2-Perseus.zip",
+            "sha256": "229bc5274e385a18f16736858d4cd0643c2417ae59f4d17e4cc74720eabe47b3"
+          }
+        ],
+        "rights": "Translation (1737; this printing Alden and Beardsley, 1856) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "William Whiston, Against Apion (1737), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0526/tlg003/tlg0526.tlg003.perseus-eng2.xml"
+      }
+    }
+  ]
+}

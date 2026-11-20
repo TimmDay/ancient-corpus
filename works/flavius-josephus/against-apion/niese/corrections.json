@@ -1,0 +1,14 @@
+[
+  {
+    "op": "split",
+    "locator": "2.89",
+    "at": "talia namque etiam ad altare offerre prohibitum est",
+    "newLocator": "2.109"
+  },
+  {
+    "op": "accept",
+    "locator": "1.161",
+    "flag": "long",
+    "reason": "Josephus' account of the Greek writers who mention the Jews, which Whiston prints as one paragraph; the Greek is grouped by his paragraphs"
+  }
+]

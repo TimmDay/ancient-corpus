@@ -528,6 +528,16 @@ describe("build", () => {
     )
   })
 
+  it("reads Josephus' Life by section alone, and Against Apion by book and section", () => {
+    expect(read("flavius-josephus/life/index.html")).toMatch(
+      /id="1"[^>]*>[\s\S]*?Ἐμοὶ δὲ γένος ἐστὶν οὐκ ἄσημον/,
+    )
+    // Where the Greek is lost, Niese prints the Latin translation.
+    expect(read("flavius-josephus/against-apion/index.html")).toMatch(
+      /id="2\.109"[^>]*>[\s\S]*?talia namque etiam ad altare/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

@@ -45,11 +45,12 @@
           "written": "93 to 94"
         },
         {
-          "author": "Flavius Josephus",
-          "title": "Life; Against Apion",
-          "language": "grc",
-          "written": "c. 94 to 100",
-          "freeEnglish": "William Whiston (1737)"
+          "work": "flavius-josephus/life",
+          "written": "c. 94 to 100"
+        },
+        {
+          "work": "flavius-josephus/against-apion",
+          "written": "c. 94 to 100"
         },
         {
           "work": "anonymous/oracula-sibyllina",
