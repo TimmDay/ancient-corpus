@@ -16,6 +16,7 @@ import { correctEdition, type Correction } from "./corrections.ts"
 import { importBonnTei } from "./importers/bonn-tei.ts"
 import { CEDRENUS, MALALAS, SYNCELLUS, importBonn } from "./importers/bonn.ts"
 import { importChronography354 } from "./importers/chronography354.ts"
+import { importClaudian } from "./importers/claudian.ts"
 import { importCcel } from "./importers/ccel.ts"
 import { importDfhg } from "./importers/dfhg.ts"
 import { importDio } from "./importers/dio.ts"
@@ -62,6 +63,8 @@ const IMPORTERS: Record<
   "chronography-354": (source, _work, edition) =>
     importChronography354(source, edition),
   ccel: (source, work) => importCcel(source, work.title),
+  claudian: (source, work, edition) =>
+    importClaudian(source, work.title, edition.language),
   dfhg: (source, work) => importDfhg(source, work.title),
   dio: importDio,
   dir: importDir,

@@ -161,7 +161,8 @@ export function readPage(
   firstNoteId: number,
   /** Notes on earlier pages of the same Life, counted on and updated. */
   before = { numbered: 0, lettered: 0 },
-  bySection = false,
+  /** Cut at `a.sec` anchors, named by their number (`2a` → `2`), or by their whole name. */
+  bySection: boolean | "named" = false,
 ): {
   passages: Draft[]
   notes: Map<string, string>
@@ -218,9 +219,11 @@ export function readPage(
           : $(node).find(`a.${unit}`).get(0)
       const chapter =
         anchor &&
-        (bySection
-          ? /^\d+/.exec(anchor.attribs.name ?? "")?.[0]
-          : chapterNumber($, anchor))
+        (bySection === "named"
+          ? anchor.attribs.name
+          : bySection
+            ? /^\d+/.exec(anchor.attribs.name ?? "")?.[0]
+            : chapterNumber($, anchor))
       if (chapter) runs.push({ chapter, nodes: [] })
       runs.at(-1)?.nodes.push(node)
     }
