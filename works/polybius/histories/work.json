@@ -1,0 +1,63 @@
+{
+  "author": "Polybius",
+  "title": "Histories",
+  "otherTitles": ["Ἱστορίαι", "The Histories"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": -264,
+  "coversYearLatest": -146,
+  "locatorFormat": "book.chapter, e.g. 6.11; a section, e.g. 6.11.11, lands on its chapter. The fragmentary books (7 to 40) follow each Edition's own arrangement",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "buttner-wobst",
+      "preferred": true,
+      "language": "grc",
+      "title": "Polybii Historiae",
+      "editor": "Theodor Büttner-Wobst",
+      "publicationYear": 1893,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0543/tlg001/tlg0543.tlg001.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Polybius-tlg0543.tlg001.perseus-grc2-Perseus.zip",
+            "sha256": "34fb7cf104f5bae6fe2e04779cf8b67a45d7bb51dcef298a60dad15b9d19c7a1"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1889–1905) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "shuckburgh",
+      "preferred": false,
+      "language": "en",
+      "title": "The Histories of Polybius",
+      "translator": "Evelyn S. Shuckburgh",
+      "publicationYear": 1889,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0543/tlg001/tlg0543.tlg001.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Polybius-tlg0543.tlg001.perseus-eng2-Perseus.zip",
+            "sha256": "8732101800731c7bc807c1d7e72b132c7295db6867a93ec228c674575600d6b0"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1889) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "Evelyn S. Shuckburgh, The Histories of Polybius (1889), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0543/tlg001/tlg0543.tlg001.perseus-eng2.xml"
+      }
+    }
+  ]
+}

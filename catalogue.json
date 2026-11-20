@@ -194,12 +194,9 @@
       "heading": "Rome: the kings and the Republic",
       "entries": [
         {
-          "author": "Polybius",
-          "title": "Histories",
-          "language": "grc",
+          "work": "polybius/histories",
           "written": "2nd century BC",
-          "covers": "264 to 146 BC; books 1–5 survive whole",
-          "freeEnglish": "E. S. Shuckburgh (1889)"
+          "note": "Books 1–5 survive whole; the rest in fragments"
         },
         {
           "author": "Livy",

@@ -1,0 +1,50 @@
+[
+  {
+    "op": "accept",
+    "locator": "15.25",
+    "flag": "long",
+    "reason": "Polybius' account of the fall of Agathocles and the rising at Alexandria, which the edition prints as one chapter"
+  },
+  {
+    "op": "accept",
+    "locator": "4.53",
+    "flag": "gap",
+    "reason": "Shuckburgh numbers the fragments as he arranges them, and has no chapter between these here"
+  },
+  {
+    "op": "accept",
+    "locator": "6.35",
+    "flag": "gap",
+    "reason": "Shuckburgh numbers the fragments as he arranges them, and has no chapter between these here"
+  },
+  {
+    "op": "accept",
+    "locator": "19.0",
+    "flag": "gap",
+    "reason": "Shuckburgh numbers the fragments as he arranges them, and has no chapter between these here"
+  },
+  {
+    "op": "accept",
+    "locator": "21.41",
+    "flag": "gap",
+    "reason": "Shuckburgh numbers the fragments as he arranges them, and has no chapter between these here"
+  },
+  {
+    "op": "accept",
+    "locator": "22.3",
+    "flag": "gap",
+    "reason": "Shuckburgh numbers the fragments as he arranges them, and has no chapter between these here"
+  },
+  {
+    "op": "accept",
+    "locator": "33.1",
+    "flag": "gap",
+    "reason": "Shuckburgh numbers the fragments as he arranges them, and has no chapter between these here"
+  },
+  {
+    "op": "accept",
+    "locator": "39.5",
+    "flag": "gap",
+    "reason": "Shuckburgh numbers the fragments as he arranges them, and has no chapter between these here"
+  }
+]

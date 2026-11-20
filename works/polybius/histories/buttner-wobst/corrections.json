@@ -1,0 +1,14 @@
+[
+  {
+    "op": "accept",
+    "locator": "15.25",
+    "flag": "long",
+    "reason": "Polybius' account of the fall of Agathocles and the rising at Alexandria, which the edition prints as one chapter"
+  },
+  {
+    "op": "accept",
+    "locator": "33.1",
+    "flag": "gap",
+    "reason": "Büttner-Wobst prints no chapter 2 of Book 33: the excerpts give none"
+  }
+]
