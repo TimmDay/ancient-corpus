@@ -558,6 +558,12 @@ describe("build", () => {
     )
   })
 
+  it("reads 2 Maccabees by chapter, in Brenton's Greek and English", () => {
+    expect(read("anonymous/2-maccabees/brenton/index.html")).toMatch(
+      /id="1"[^>]*>[\s\S]*?The brethren, the Jews that be at Jerusalem/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

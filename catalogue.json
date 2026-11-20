@@ -17,12 +17,8 @@
           "note": "Written in Hebrew; survives in Greek"
         },
         {
-          "author": "Anonymous",
-          "title": "2 Maccabees",
-          "language": "grc",
-          "written": "2nd century BC",
-          "covers": "c. 180 to 161 BC",
-          "freeEnglish": "King James Version Apocrypha (1611)"
+          "work": "anonymous/2-maccabees",
+          "written": "2nd century BC"
         },
         {
           "work": "philo-of-alexandria/in-flaccum",

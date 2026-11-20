@@ -1,0 +1,63 @@
+{
+  "author": "Anonymous",
+  "title": "2 Maccabees",
+  "otherTitles": ["Μακκαβαίων Βʹ", "Second Book of Maccabees"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": -180,
+  "coversYearLatest": -161,
+  "locatorFormat": "chapter, e.g. 4; a verse, e.g. 4.52, lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "brenton-greek",
+      "preferred": true,
+      "language": "grc",
+      "title": "ΜΑΚΚΑΒΑΙΩΝ Βʹ",
+      "editor": "Lancelot C. L. Brenton",
+      "publicationYear": 1851,
+      "source": {
+        "name": "eBible.org",
+        "url": "https://ebible.org/Scriptures/details.php?id=grcbrent",
+        "archives": [
+          {
+            "file": "Brenton-Greek-eBible-usfm.zip",
+            "sha256": "9de434f4922f85a475276e4754f6d114dee0f3bf5323d90dcd559a1f8286e9a4",
+            "url": "https://ebible.org/Scriptures/grcbrent_usfm.zip"
+          }
+        ],
+        "rights": "Public domain: eBible.org marks the text public domain (Brenton, The Septuagint Version of the Old Testament and Apocrypha, Bagster, 1851)."
+      },
+      "licence": "public-domain",
+      "importer": "usfm"
+    },
+    {
+      "slug": "brenton",
+      "preferred": false,
+      "language": "en",
+      "title": "Maccabees II",
+      "translator": "Lancelot C. L. Brenton",
+      "publicationYear": 1851,
+      "source": {
+        "name": "eBible.org",
+        "url": "https://ebible.org/Scriptures/details.php?id=eng-Brenton",
+        "archives": [
+          {
+            "file": "Brenton-English-eBible-usfm.zip",
+            "sha256": "40115b0d0bdbfd26d8810aa6753e9d70fdddc248358800af4aea26a140d5b63f",
+            "url": "https://ebible.org/Scriptures/eng-Brenton_usfm.zip"
+          }
+        ],
+        "rights": "Public domain: eBible.org marks the text public domain (Brenton, The Septuagint Version of the Old Testament and Apocrypha, Bagster, 1851)."
+      },
+      "licence": "public-domain",
+      "importer": "usfm",
+      "humanTranslation": {
+        "citation": "Lancelot C. L. Brenton, The Septuagint Version of the Old Testament and Apocrypha (Bagster, 1851), from eBible.org",
+        "url": "https://ebible.org/Scriptures/details.php?id=eng-Brenton"
+      }
+    }
+  ]
+}
