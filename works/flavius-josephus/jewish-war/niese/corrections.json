@@ -1,0 +1,20 @@
+[
+  {
+    "op": "accept",
+    "locator": "2.345",
+    "flag": "long",
+    "reason": "Agrippa's speech against the war, which Whiston prints as one paragraph; the Greek is grouped by his paragraphs"
+  },
+  {
+    "op": "accept",
+    "locator": "5.375",
+    "flag": "long",
+    "reason": "Josephus' speech to the defenders from below the wall, one paragraph in Whiston; the Greek is grouped by his paragraphs"
+  },
+  {
+    "op": "accept",
+    "locator": "7.337",
+    "flag": "long",
+    "reason": "Eleazar's second speech at Masada, one paragraph in Whiston; the Greek is grouped by his paragraphs"
+  }
+]

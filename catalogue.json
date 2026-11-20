@@ -37,12 +37,8 @@
           "freeEnglish": "C. D. Yonge (1854–55)"
         },
         {
-          "author": "Flavius Josephus",
-          "title": "Jewish War",
-          "language": "grc",
-          "written": "c. 75 to 79",
-          "covers": "c. 175 BC to 73",
-          "freeEnglish": "William Whiston (1737)"
+          "work": "flavius-josephus/jewish-war",
+          "written": "c. 75 to 79"
         },
         {
           "author": "Flavius Josephus",
