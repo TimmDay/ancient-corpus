@@ -1,14 +1,86 @@
 {
   "author": "George Syncellus",
   "title": "Ekloge Chronographias",
-  "otherTitles": [],
-  "originalLanguage": null,
+  "otherTitles": ["Ἐκλογὴ χρονογραφίας"],
+  "originalLanguage": "grc",
   "writtenYearEarliest": null,
   "writtenYearLatest": 810,
   "coversYearEarliest": null,
   "coversYearLatest": 284,
-  "locatorFormat": null,
+  "locatorFormat": "page of Dindorf's Bonn edition, volume 1, e.g. 721",
   "slugAliases": [],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "dindorf",
+      "preferred": true,
+      "language": "grc",
+      "title": "Georgius Syncellus et Nicephorus Cp., vol. 1",
+      "editor": "Wilhelm Dindorf",
+      "publicationYear": 1829,
+      "source": {
+        "name": "Internet Archive: Google's scan of the Bonn edition, with archive.org's OCR",
+        "url": "https://archive.org/details/georgiussyncell00syngoog",
+        "archives": [
+          {
+            "file": "Syncellus-Dindorf-archiveorg.zip",
+            "sha256": "77ec0030be27de68f7a3e2d15bc1f0476b5da11a71a07c0741f3ec721da758d1"
+          }
+        ],
+        "rights": "Public domain (Bonn: Weber, 1829). Volume 1 scanned by Google (archive.org georgiussyncell00syngoog); OCR by archive.org, uncorrected."
+      },
+      "licence": "public-domain",
+      "importer": "bonn-syncellus",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "goar",
+      "preferred": false,
+      "language": "la",
+      "title": "Latin translation, printed beside the Greek in Dindorf's edition",
+      "translator": "Jacques Goar",
+      "publicationYear": 1829,
+      "source": {
+        "name": "Internet Archive: Google's scan of the Bonn edition, with archive.org's OCR",
+        "url": "https://archive.org/details/georgiussyncell00syngoog",
+        "archives": [
+          {
+            "file": "Syncellus-Dindorf-archiveorg.zip",
+            "sha256": "77ec0030be27de68f7a3e2d15bc1f0476b5da11a71a07c0741f3ec721da758d1"
+          }
+        ],
+        "rights": "Public domain (Bonn: Weber, 1829). Volume 1 scanned by Google (archive.org georgiussyncell00syngoog); OCR by archive.org, uncorrected."
+      },
+      "licence": "public-domain",
+      "importer": "bonn-syncellus",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "Jacques Goar's Latin (Paris, 1652), printed beside the Greek in Wilhelm Dindorf's edition (Bonn, 1829)",
+        "url": "https://archive.org/details/georgiussyncell00syngoog"
+      }
+    },
+    {
+      "slug": "ancient-corpus",
+      "preferred": false,
+      "language": "en",
+      "title": "English translation",
+      "translator": "Ancient Corpus (machine translation)",
+      "publicationYear": 2026,
+      "source": {
+        "name": "This project",
+        "url": "https://github.com/TimmDay/ancient-corpus",
+        "archives": [],
+        "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "licence": "cc0",
+      "model": "Claude Opus 5.5",
+      "importer": "translation",
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 19 November 2026, from Wilhelm Dindorf's Greek (Bonn, 1829), read with Goar's Latin where the OCR fails. Pages 715 to 723 only, Valerian to Numerian; pages 718 and 719 are missing from the scan. It is not a translator's work: check it against the Greek, and report errors. Public domain (CC0): reuse it freely.",
+      "humanTranslation": {
+        "citation": "William Adler and Paul Tuffin, The Chronography of George Synkellos (Oxford University Press, 2002)",
+        "url": "https://search.worldcat.org/search?q=The+Chronography+of+George+Synkellos+Adler+Tuffin",
+        "access": "In copyright: buy it, or borrow it from a library."
+      }
+    }
+  ]
 }

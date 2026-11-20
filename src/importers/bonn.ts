@@ -46,6 +46,14 @@ export type BonnLayout = {
   margin?: RegExp
   /** A one-volume Work cited by page: the page each book starts on, and the text's last page. */
   books?: { starts: Record<string, number>; last: number }
+  /**
+   * Number the leaves from their running heads, not archive.org's reading,
+   * which goes astray in some scans: the head's page number, captured, and
+   * cut from the leaf's first line.
+   */
+  pageHead?: RegExp
+  /** A book's label, where it is not "Book" and its numeral. */
+  label?: (book: string) => string
 }
 
 export const CEDRENUS: BonnLayout = {
@@ -88,6 +96,22 @@ export const MALALAS: BonnLayout = {
   },
 }
 
+export const SYNCELLUS: BonnLayout = {
+  head: /SYNCELL|CHRON\w*G/i,
+  // The apparatus under the Greek, "6. εἶ addidit m. 15. μῆνας P cum
+  // Eusebio", "20. τῷ] τῶν A.": cut where it starts.
+  apparatus:
+    /(?:^|\s)\d{1,2}\.\s(?=.*(?:\]|\b(?:[Aa]ddidit?|[Vv]ulgo|Volgo|om\.|omisit|Eusebi\w*)\b|\s[APGm]\.(?:\s|$)))[\s\S]*$/,
+  // The Paris and Venice editions' pages, "P. 386", "V. 821", and stray marks.
+  margin: /(^|\s)(?:[PVv]\.?\s?\d{1,3}|[-–€^*,.:;'"|!?()\\/]+)(?=\s|$)/g,
+  // The chronography runs to page 734; Nicephorus's short chronicle follows.
+  books: { starts: { chronographia: 1 }, last: 734 },
+  // "722 GEORGII SYNCELLI" or "CHRONOGRAPHIA. 723", however the OCR spells them.
+  pageHead:
+    /^[^\p{L}\d]*(?:(\S{1,4})\s*[^\p{L}\d]*G\w{3,6}\s+S\w{3,8}|C\w{0,3}RON\w*[^\p{L}\d]*(\S{1,4}))[^\p{L}\d]*/u,
+  label: () => "Chronography",
+}
+
 /** archive.org's page-number reading counts only at or above this confidence. */
 const CONFIDENT = 50
 
@@ -117,9 +141,22 @@ export function importBonn(
       const [start = 0, end = 0] = index[leaf - 1] ?? []
       return text.slice(start, end).split("\n")
     }
-    const pages = pagesOfLeaves(numbers)
     const firstBlock = (leaf: number) => leafText(leaf)[0] ?? ""
-    const shift = runningHeadShift(pages, firstBlock, layout.head)
+    const pageHead = layout.pageHead
+    const pages = pageHead
+      ? pagesByHeads(index.length, layout.books?.last ?? Infinity, (leaf) => {
+          const lines = leafText(leaf).filter((line) => line.trim())
+          const match = pageHead.exec(lines[0] ?? "")
+          // "$22": a 3 read as a dollar sign.
+          const digits = (match?.[1] ?? match?.[2] ?? "")
+            .replace(/\$/g, "3")
+            .replace(/\D/g, "")
+          return { printed: digits || undefined, text: lines.join("").length }
+        })
+      : pagesOfLeaves(numbers)
+    const shift = pageHead
+      ? 0
+      : runningHeadShift(pages, firstBlock, layout.head)
     for (const [leaf, numbered] of pages) {
       const page = numbered + shift
       // A leaf before the text proper, once shifted.
@@ -127,18 +164,28 @@ export function importBonn(
       const book = layout.books && bookOf(page, layout.books)
       if (layout.books && !book) continue
       const blocks = leafText(leaf)
+        .filter((block) => !pageHead || block.trim())
+        .map((block, i) =>
+          i === 0 && pageHead ? block.replace(pageHead, "") : block,
+        )
         .filter((block, i) => !(i === 0 && isRunningHead(block, layout.head)))
         .filter((block) => !layout.drop?.test(block))
-        .map((block) =>
-          layout.apparatus ? block.replace(layout.apparatus, "") : block,
-        )
+        .flatMap((block) => withoutApparatus(block, layout.apparatus))
         .flatMap(splitScripts)
         .filter((block) => scriptOf(block) === edition.language)
+        // The apparatus runs on from the Greek; the Latin is left whole.
+        .map((block) =>
+          layout.apparatus && edition.language === "grc"
+            ? block.replace(layout.apparatus, "")
+            : block,
+        )
         .map((block) => clean(block, edition.language, layout.margin))
         .filter((block) => (block.match(/\p{L}/gu) ?? []).length >= 4)
       if (!blocks.length) continue
       const division = book ?? n
-      const label = book ? `Book ${romanToInt(book)}` : `Volume ${n}`
+      const label = !book
+        ? `Volume ${n}`
+        : (layout.label?.(book) ?? `Book ${romanToInt(book)}`)
       if (book && !divisions.some((d) => d.locator === book))
         divisions.push({ locator: book, label })
       passages.push({
@@ -179,6 +226,104 @@ export function pagesOfLeaves(numbers: PageNumbers): Map<number, number> {
       .sort(([a], [b]) => a - b)
       .filter(([, page]) => !seen.has(page) && seen.add(page)),
   )
+}
+
+/**
+ * Each leaf's page from the running heads. The OCR confuses 3, 5, 8 and 9
+ * ("807" for 307, "90" for 30), so a head also counts, more weakly, for the
+ * pages those misreadings would give, up to the text's last page. The offset
+ * from leaf to page holds for long runs and changes only a little, at a
+ * plate or a missing leaf: the run of offsets the heads support best, each
+ * change costing as much as a few heads (a Viterbi path). A page twice found keeps the leaf
+ * with more text, so a plate or blank gives way to the page it hides.
+ */
+export function pagesByHeads(
+  leaves: number,
+  last: number,
+  read: (leaf: number) => { printed: string | undefined; text: number },
+): Map<number, number> {
+  const CHANGE = 7
+  const info = Array.from({ length: leaves }, (_, i) => read(i + 1))
+  const support = info.map((r, i) => {
+    const votes = new Map<number, number>()
+    if (!r.printed) return votes
+    for (const variant of misreadings(r.printed))
+      if (Number(variant) <= last)
+        votes.set(Number(variant) - (i + 1), variant === r.printed ? 3 : 1)
+    return votes
+  })
+  const candidates = [...new Set(support.flatMap((v) => [...v.keys()]))].sort(
+    (a, b) => a - b,
+  )
+  if (!candidates.length) return new Map()
+  // A plate adds a leaf and a missing leaf skips pages, so the offset moves
+  // only a few pages at a time; a jump of fifty is a misread run of heads.
+  const near = candidates.map((o) =>
+    candidates.flatMap((p, j) => (p !== o && Math.abs(p - o) <= 4 ? [j] : [])),
+  )
+  // score[k]: the best path's support ending on offset k; from[i][k]: its previous offset.
+  let score = candidates.map((o) => support[0]?.get(o) ?? 0)
+  const from: Int32Array[] = []
+  for (let i = 1; i < leaves; i++) {
+    const back = new Int32Array(candidates.length)
+    const previous = score
+    score = candidates.map((o, k) => {
+      let best = previous[k] ?? 0
+      back[k] = k
+      for (const j of near[k] ?? []) {
+        const jump = (previous[j] ?? 0) - CHANGE
+        if (jump > best) {
+          best = jump
+          back[k] = j
+        }
+      }
+      return best + (support[i]?.get(o) ?? 0)
+    })
+    from.push(back)
+  }
+  const offsets = new Array<number>(leaves)
+  let k = score.indexOf(Math.max(...score))
+  for (let i = leaves - 1; i >= 0; i--) {
+    offsets[i] = candidates[k] ?? 0
+    if (i > 0) k = from[i - 1]?.[k] ?? k
+  }
+  const pages = new Map<number, { leaf: number; text: number }>()
+  offsets.forEach((o, i) => {
+    const page = i + 1 + o
+    const text = info[i]?.text ?? 0
+    const held = pages.get(page)
+    if (page >= 1 && page <= last && (!held || text > held.text))
+      pages.set(page, { leaf: i + 1, text })
+  })
+  return new Map(
+    [...pages]
+      .map(([page, { leaf }]) => [leaf, page] as [number, number])
+      .sort(([a], [b]) => a - b),
+  )
+}
+
+/**
+ * A block with the apparatus taken out where the OCR runs it on from the
+ * Greek: the Greek before it, and whatever Latin follows it.
+ */
+function withoutApparatus(block: string, apparatus?: RegExp): string[] {
+  const match = apparatus?.exec(block)
+  if (!match) return [block]
+  const after = block.slice(match.index)
+  return [
+    block.slice(0, match.index),
+    ...splitScripts(after).filter((part) => scriptOf(part) !== "grc"),
+  ].filter((part) => part.trim())
+}
+
+/** A page number as printed, and as it reads with any 3, 5, 8 or 9 taken for another. */
+function misreadings(digits: string): Set<string> {
+  let out = [""]
+  for (const d of digits)
+    out = out.flatMap((prefix) =>
+      "3589".includes(d) ? [..."3589"].map((x) => prefix + x) : [prefix + d],
+    )
+  return new Set(out)
 }
 
 /** "450 GEORGII CEDRENI" or "HISTORIARUM COMPENDIUM. 451", however the OCR spells the rest. */

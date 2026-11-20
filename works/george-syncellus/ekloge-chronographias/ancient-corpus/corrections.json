@@ -1,0 +1,14 @@
+[
+  {
+    "op": "accept",
+    "locator": "715",
+    "flag": "gap",
+    "reason": "Our translation starts at page 715, Valerian"
+  },
+  {
+    "op": "accept",
+    "locator": "717",
+    "flag": "gap",
+    "reason": "The scan skips the leaf with pages 718 and 719"
+  }
+]
