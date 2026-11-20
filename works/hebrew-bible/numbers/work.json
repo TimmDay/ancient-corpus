@@ -1,0 +1,87 @@
+{
+  "author": "Hebrew Bible",
+  "title": "Numbers",
+  "otherTitles": ["בְּמִדְבַּר"],
+  "originalLanguage": "hbo",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "chapter, e.g. 12; a verse, e.g. 12.3, lands on its chapter. The Hebrew's chapters differ from the English translations' in a few places, such as 1 Kings 4 and 5 and Numbers 16 and 17",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "wlc",
+      "preferred": true,
+      "language": "hbo",
+      "title": "בְּמִדְבַּר",
+      "editor": "Westminster Hebrew Institute",
+      "publicationYear": 2025,
+      "source": {
+        "name": "eBible.org",
+        "url": "https://ebible.org/Scriptures/details.php?id=hebwlc",
+        "archives": [
+          {
+            "file": "WLC-eBible-usfm.zip",
+            "sha256": "7c28c57832c0a1ed3a5c35604c7a99c3fb76b99294466cff3ac3ef0a08838fd3",
+            "url": "https://ebible.org/Scriptures/hebwlc_usfm.zip"
+          }
+        ],
+        "rights": "Public domain: the Westminster Leningrad Codex, from the Westminster Hebrew Institute, which eBible.org marks public domain."
+      },
+      "licence": "public-domain",
+      "importer": "usfm"
+    },
+    {
+      "slug": "jps",
+      "preferred": false,
+      "language": "en",
+      "title": "Numbers",
+      "translator": "Jewish Publication Society",
+      "publicationYear": 1917,
+      "source": {
+        "name": "eBible.org",
+        "url": "https://ebible.org/Scriptures/details.php?id=engjps",
+        "archives": [
+          {
+            "file": "JPS1917-eBible-usfm.zip",
+            "sha256": "b4034f7ed8ade5c256431d286bb03d651d8a3690040c30c5fb011dd1f8ada807",
+            "url": "https://ebible.org/Scriptures/engjps_usfm.zip"
+          }
+        ],
+        "rights": "Public domain: The Holy Scriptures according to the Masoretic Text (Jewish Publication Society, 1917), which eBible.org marks public domain."
+      },
+      "licence": "public-domain",
+      "importer": "usfm",
+      "humanTranslation": {
+        "citation": "The Holy Scriptures according to the Masoretic Text (Jewish Publication Society, 1917), from eBible.org",
+        "url": "https://ebible.org/Scriptures/details.php?id=engjps"
+      }
+    },
+    {
+      "slug": "kjv",
+      "preferred": false,
+      "language": "en",
+      "title": "Numbers",
+      "translator": "King James Version (1611), Cambridge Paragraph Bible text (F. H. A. Scrivener, 1873)",
+      "publicationYear": 1873,
+      "source": {
+        "name": "eBible.org",
+        "url": "https://ebible.org/Scriptures/details.php?id=engkjvcpb",
+        "archives": [
+          {
+            "file": "KJV-CambridgeParagraph-eBible-usfm.zip",
+            "sha256": "62a1ee0f996a20523663c37e3c7afbc1bb01443488049f32a8178393ac52831b",
+            "url": "https://ebible.org/Scriptures/engkjvcpb_usfm.zip"
+          }
+        ],
+        "rights": "Public domain outside the United Kingdom, as eBible.org marks it; in the UK the Crown's letters patent restrict printing."
+      },
+      "licence": "public-domain",
+      "importer": "usfm",
+      "humanTranslation": {
+        "citation": "The King James Version (1611), in the Cambridge Paragraph Bible text (1873), from eBible.org",
+        "url": "https://ebible.org/Scriptures/details.php?id=engkjvcpb"
+      }
+    }
+  ]
+}

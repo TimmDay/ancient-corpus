@@ -564,6 +564,19 @@ describe("build", () => {
     )
   })
 
+  it("reads the Hebrew Bible by chapter, the Leningrad Codex beside JPS 1917 and the King James", () => {
+    // Pointed Hebrew: compare in one normal form, whatever order the marks came in.
+    expect(read("hebrew-bible/genesis/index.html").normalize("NFC")).toContain(
+      "בְּרֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים".normalize("NFC"),
+    )
+    expect(read("hebrew-bible/genesis/jps/index.html")).toMatch(
+      /id="1"[^>]*>[\s\S]*?IN THE beginning God created the heaven and the earth/,
+    )
+    expect(read("hebrew-bible/genesis/kjv/index.html")).toMatch(
+      /id="1"[^>]*>[\s\S]*?In the beginning God created the heaven and the earth/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
