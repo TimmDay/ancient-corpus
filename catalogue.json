@@ -772,11 +772,8 @@
           "freeEnglish": "H. B. Dewing (Loeb, 1914–28)"
         },
         {
-          "author": "John Malalas",
-          "title": "Chronographia",
-          "language": "grc",
-          "written": "6th century",
-          "covers": "Creation to 563"
+          "work": "john-malalas/chronographia",
+          "written": "6th century"
         },
         {
           "work": "anonymous/chronicon-paschale"

@@ -1,0 +1,87 @@
+{
+  "author": "John Malalas",
+  "title": "Chronographia",
+  "otherTitles": ["Χρονογραφία"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": null,
+  "coversYearLatest": 563,
+  "locatorFormat": "page of Dindorf's Bonn edition, e.g. 299",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "dindorf",
+      "preferred": true,
+      "language": "grc",
+      "title": "Ioannis Malalae Chronographia",
+      "editor": "Ludwig Dindorf",
+      "publicationYear": 1831,
+      "source": {
+        "name": "Internet Archive: Google's scan of the Bonn edition, with archive.org's OCR",
+        "url": "https://archive.org/details/bub_gb_Wudk4vxN6rAC",
+        "archives": [
+          {
+            "file": "Malalas-Dindorf-archiveorg.zip",
+            "sha256": "0af1abcbb23b0fd9ae04c39266016fbfc8ba4c15d0e53acb5d54408c72afbec4"
+          }
+        ],
+        "rights": "Public domain (Bonn: Weber, 1831). Scanned by Google (archive.org bub_gb_Wudk4vxN6rAC); OCR by archive.org, uncorrected."
+      },
+      "licence": "public-domain",
+      "importer": "bonn-malalas",
+      "pagePerDivision": true,
+      "notice": "Book 1's opening is lost; Dindorf prints in its place an anonymous chronicle (pages 1 to 22), kept here as Book 1. The OCR is uncorrected."
+    },
+    {
+      "slug": "chilmead",
+      "preferred": false,
+      "language": "la",
+      "title": "Latin translation, printed beside the Greek in Dindorf's edition",
+      "translator": "Edmund Chilmead",
+      "publicationYear": 1831,
+      "source": {
+        "name": "Internet Archive: Google's scan of the Bonn edition, with archive.org's OCR",
+        "url": "https://archive.org/details/bub_gb_Wudk4vxN6rAC",
+        "archives": [
+          {
+            "file": "Malalas-Dindorf-archiveorg.zip",
+            "sha256": "0af1abcbb23b0fd9ae04c39266016fbfc8ba4c15d0e53acb5d54408c72afbec4"
+          }
+        ],
+        "rights": "Public domain (Bonn: Weber, 1831). Scanned by Google (archive.org bub_gb_Wudk4vxN6rAC); OCR by archive.org, uncorrected."
+      },
+      "licence": "public-domain",
+      "importer": "bonn-malalas",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "Edmund Chilmead's Latin (Oxford, 1691), printed beside the Greek in Ludwig Dindorf's edition (Bonn, 1831)",
+        "url": "https://archive.org/details/bub_gb_Wudk4vxN6rAC"
+      }
+    },
+    {
+      "slug": "ancient-corpus",
+      "preferred": false,
+      "language": "en",
+      "title": "English translation",
+      "translator": "Ancient Corpus (machine translation)",
+      "publicationYear": 2026,
+      "source": {
+        "name": "This project",
+        "url": "https://github.com/TimmDay/ancient-corpus",
+        "archives": [],
+        "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "licence": "cc0",
+      "model": "Claude Opus 5.5",
+      "importer": "translation",
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 19 November 2026, from Ludwig Dindorf's Greek (Bonn, 1831), read with Chilmead's Latin where the OCR fails. Pages 295 to 303 of Book 12 only, from Septimius Severus to Numerian. It is not a translator's work: check it against the Greek, and report errors. Public domain (CC0): reuse it freely.",
+      "humanTranslation": {
+        "citation": "Elizabeth Jeffreys, Michael Jeffreys and Roger Scott, The Chronicle of John Malalas (Australian Association for Byzantine Studies, Byzantina Australiensia 4, 1986)",
+        "url": "https://search.worldcat.org/search?q=The+Chronicle+of+John+Malalas+Jeffreys",
+        "access": "In copyright: buy it, or borrow it from a library."
+      }
+    }
+  ]
+}
