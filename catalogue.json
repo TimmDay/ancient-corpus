@@ -121,12 +121,8 @@
           "written": "after 404 BC"
         },
         {
-          "author": "Xenophon",
-          "title": "Hellenica",
-          "language": "grc",
-          "written": "4th century BC",
-          "covers": "411 to 362 BC",
-          "freeEnglish": "H. G. Dakyns (1890–97)"
+          "work": "xenophon/hellenica",
+          "written": "4th century BC"
         },
         {
           "author": "Xenophon",
