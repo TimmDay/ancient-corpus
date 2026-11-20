@@ -592,6 +592,12 @@ describe("build", () => {
     )
   })
 
+  it("reads Xenophon's Anabasis by book and chapter, in Marchant's Greek and Brownson's English", () => {
+    expect(read("xenophon/anabasis/4/index.html")).toMatch(
+      /id="4\.7"[^>]*>[\s\S]*?θάλαττα θάλαττα/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
