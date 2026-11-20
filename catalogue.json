@@ -5,11 +5,49 @@
       "heading": "The Hebrew Bible and Jewish history",
       "entries": [
         {
-          "author": "Hebrew Bible",
-          "title": "Genesis to Kings, Chronicles, Ezra, Nehemiah",
-          "language": "hbo",
-          "covers": "Creation to c. 430 BC",
-          "freeEnglish": "Jewish Publication Society (1917); King James Version (1611)"
+          "work": "hebrew-bible/genesis"
+        },
+        {
+          "work": "hebrew-bible/exodus"
+        },
+        {
+          "work": "hebrew-bible/leviticus"
+        },
+        {
+          "work": "hebrew-bible/numbers"
+        },
+        {
+          "work": "hebrew-bible/deuteronomy"
+        },
+        {
+          "work": "hebrew-bible/joshua"
+        },
+        {
+          "work": "hebrew-bible/judges"
+        },
+        {
+          "work": "hebrew-bible/1-samuel"
+        },
+        {
+          "work": "hebrew-bible/2-samuel"
+        },
+        {
+          "work": "hebrew-bible/1-kings"
+        },
+        {
+          "work": "hebrew-bible/2-kings"
+        },
+        {
+          "work": "hebrew-bible/1-chronicles"
+        },
+        {
+          "work": "hebrew-bible/2-chronicles"
+        },
+        {
+          "work": "hebrew-bible/ezra"
+        },
+        {
+          "work": "hebrew-bible/nehemiah"
         },
         {
           "work": "anonymous/1-maccabees",

@@ -23,6 +23,21 @@ import { escapeHtml, onlyArchive, plainText } from "./gutenberg.ts"
 const BOOKS: Record<string, string> = {
   "1 Maccabees": "1MA",
   "2 Maccabees": "2MA",
+  Genesis: "GEN",
+  Exodus: "EXO",
+  Leviticus: "LEV",
+  Numbers: "NUM",
+  Deuteronomy: "DEU",
+  Joshua: "JOS",
+  Judges: "JDG",
+  "1 Samuel": "1SA",
+  "2 Samuel": "2SA",
+  "1 Kings": "1KI",
+  "2 Kings": "2KI",
+  "1 Chronicles": "1CH",
+  "2 Chronicles": "2CH",
+  Ezra: "EZR",
+  Nehemiah: "NEH",
 }
 
 export function importUsfm(
@@ -86,13 +101,15 @@ export function importUsfm(
 
 /** A line's text: added words in italics; notes, cross-references and other markers dropped. */
 function inline(text: string): string {
-  return escapeHtml(
-    text.replace(/\\f\s.*?\\f\*/g, "").replace(/\\x\s.*?\\x\*/g, ""),
+  return (
+    escapeHtml(text.replace(/\\f\s.*?\\f\*/g, "").replace(/\\x\s.*?\\x\*/g, ""))
+      .replace(/\\add\s*(.*?)\\add\*/g, "<i>$1</i>")
+      // A word tagged with its lexicon number: \w beginning|strong="H7225"\w*
+      .replace(/\\w\s*([^|\\]*)(?:\|[^\\]*)?\\w\*/g, "$1")
+      .replace(/\\\+?\w+\*?/g, "")
+      .replace(/\s+/g, " ")
+      .trim()
   )
-    .replace(/\\add\s*(.*?)\\add\*/g, "<i>$1</i>")
-    .replace(/\\\+?\w+\*?/g, "")
-    .replace(/\s+/g, " ")
-    .trim()
 }
 
 function readBook(
