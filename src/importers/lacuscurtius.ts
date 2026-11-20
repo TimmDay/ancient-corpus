@@ -33,7 +33,7 @@ import { inlineHtml, onlyArchive, plainText } from "./gutenberg.ts"
 type Draft = Omit<Passage, "flags">
 
 /** A division of a Work and the pages that hold it, by path under the Work's folder. */
-type Part = { locator: string; pages: string[] }
+type Part = { locator: string; pages: string[]; label?: string }
 
 /** The Lives of the Historia Augusta in Magie's order, by canonical Locator name. */
 const HISTORIA_AUGUSTA: Part[] = [
@@ -84,7 +84,13 @@ const HISTORIA_AUGUSTA: Part[] = [
  * a Passage is a section, <a class="sec">, its Locator the bare number; a
  * section Rolfe splits ("2a", "2b") is one Passage.
  */
-type Layout = { folder: string; parts: Part[]; bySection?: boolean }
+type Layout = {
+  folder: string
+  parts: Part[]
+  bySection?: boolean
+  /** Between division and chapter in a Locator: `Hadrian 3`, or `2.89` with ".". */
+  separator?: string
+}
 
 const WORKS: Record<string, Layout> = {
   "Historia Augusta": {
@@ -95,6 +101,14 @@ const WORKS: Record<string, Layout> = {
     folder: "Roman/Texts/Excerpta_Valesiana",
     parts: [{ locator: "Origo", pages: ["1*"] }],
     bySection: true,
+  },
+  "Historiae Romanae": {
+    folder: "Roman/Texts/Velleius_Paterculus",
+    parts: [
+      { locator: "1", label: "Book I", pages: ["1*"] },
+      { locator: "2", label: "Book II", pages: ["2A*", "2B*", "2C*", "2D*"] },
+    ],
+    separator: ".",
   },
 }
 
@@ -112,7 +126,7 @@ export function importLacusCurtius(
   let nextNoteId = 1
 
   for (const part of config.parts) {
-    divisions.push({ locator: part.locator, label: part.locator })
+    divisions.push({ locator: part.locator, label: part.label ?? part.locator })
     let opened = false
     // Notes restart on each web page; through a Life of several pages they go on.
     const before = { numbered: 0, lettered: 0 }
@@ -126,6 +140,7 @@ export function importLacusCurtius(
         nextNoteId,
         before,
         config.bySection,
+        config.separator,
       )
       nextNoteId += read.notes.size
       for (const passage of read.passages) {
@@ -144,7 +159,7 @@ export function importLacusCurtius(
         if (!opened)
           passage.headings.unshift({
             kind: "division",
-            html: part.locator,
+            html: part.label ?? part.locator,
             editorial: false,
           })
         opened = true
@@ -163,6 +178,7 @@ export function readPage(
   before = { numbered: 0, lettered: 0 },
   /** Cut at `a.sec` anchors, named by their number (`2a` → `2`), or by their whole name. */
   bySection: boolean | "named" = false,
+  separator = " ",
 ): {
   passages: Draft[]
   notes: Map<string, string>
@@ -231,7 +247,9 @@ export function readPage(
       const html = clean(inlineHtml($, $(run.nodes), options))
       if (run.chapter) {
         passages.push({
-          locator: bySection ? run.chapter : `${division} ${run.chapter}`,
+          locator: bySection
+            ? run.chapter
+            : `${division}${separator}${run.chapter}`,
           headings: pending,
           division,
           blocks: [],

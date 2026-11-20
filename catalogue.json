@@ -309,12 +309,8 @@
           "freeEnglish": "H. C. Hamilton and W. Falconer (1854–57)"
         },
         {
-          "author": "Velleius Paterculus",
-          "title": "Roman History",
-          "language": "la",
-          "written": "c. 30",
-          "covers": "Mythical times to 29",
-          "freeEnglish": "F. W. Shipley (Loeb, 1924)"
+          "work": "velleius-paterculus/historiae-romanae",
+          "written": "c. 30"
         },
         {
           "author": "Valerius Maximus",

@@ -467,6 +467,15 @@ describe("build", () => {
     )
   })
 
+  it("reads Velleius by book and chapter, in Shipley's Latin and English", () => {
+    expect(read("velleius-paterculus/historiae-romanae/index.html")).toMatch(
+      /id="2\.89"[^>]*>[\s\S]*?Caesar autem reversus in Italiam atque urbem/,
+    )
+    expect(
+      read("velleius-paterculus/historiae-romanae/shipley/index.html"),
+    ).toMatch(/id="2\.89"[^>]*>[\s\S]*?As for Caesar's return to Italy/)
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

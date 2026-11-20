@@ -1,0 +1,61 @@
+{
+  "author": "Velleius Paterculus",
+  "title": "Historiae Romanae",
+  "otherTitles": ["Roman History", "Compendium of Roman History"],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": null,
+  "coversYearLatest": 29,
+  "locatorFormat": "book.chapter, e.g. 2.89; a section, e.g. 2.89.3, lands on its chapter",
+  "slugAliases": ["velleius-paterculus/roman-history"],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "shipley-latin",
+      "preferred": true,
+      "language": "la",
+      "title": "Historiae Romanae",
+      "editor": "Frederick W. Shipley",
+      "publicationYear": 1924,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/L/Roman/Texts/Velleius_Paterculus/1*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-Velleius.zip",
+            "sha256": "b16cee614483c550fc56a208f8de74adca9084f1895e39b6cc6b7c9f82ccc2af"
+          }
+        ],
+        "rights": "Public domain. Frederick W. Shipley, Velleius Paterculus and Res Gestae Divi Augusti, Loeb Classical Library (1924); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "lacuscurtius"
+    },
+    {
+      "slug": "shipley",
+      "preferred": false,
+      "language": "en",
+      "title": "Compendium of Roman History",
+      "translator": "Frederick W. Shipley",
+      "publicationYear": 1924,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Velleius_Paterculus/home.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-Velleius.zip",
+            "sha256": "b16cee614483c550fc56a208f8de74adca9084f1895e39b6cc6b7c9f82ccc2af"
+          }
+        ],
+        "rights": "Public domain. Frederick W. Shipley, Velleius Paterculus and Res Gestae Divi Augusti, Loeb Classical Library (1924); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "lacuscurtius",
+      "humanTranslation": {
+        "citation": "Frederick W. Shipley, Velleius Paterculus (Loeb, 1924), on LacusCurtius",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Velleius_Paterculus/home.html"
+      }
+    }
+  ]
+}
