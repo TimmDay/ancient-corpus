@@ -21,6 +21,18 @@ export function importTranslation(
   return readTranslation(readFileSync(file, "utf8"))
 }
 
+/**
+ * An original we typed from a printed page where no usable digital text
+ * exists, in the same form: transcription.md, a "## <Locator>" per Passage.
+ */
+export function importTranscription(
+  work: Work,
+  edition: Edition,
+): ImportedEdition {
+  const file = path.join(editionDir(work, edition), "transcription.md")
+  return readTranslation(readFileSync(file, "utf8"))
+}
+
 export function readTranslation(markdown: string): ImportedEdition {
   const passages: Omit<Passage, "flags">[] = []
   for (const section of markdown.split(/^## /m).slice(1)) {

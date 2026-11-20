@@ -34,7 +34,10 @@ import { importEpitomeLatin } from "./importers/epitome.ts"
 import { importJerome } from "./importers/jerome.ts"
 import { importTertullian } from "./importers/tertullian.ts"
 import { importToposText, importToposTextLines } from "./importers/topostext.ts"
-import { importTranslation } from "./importers/translation.ts"
+import {
+  importTranscription,
+  importTranslation,
+} from "./importers/translation.ts"
 import { importZonarasFoster } from "./importers/zonaras-foster.ts"
 import { importSuetonius, importSuetoniusLatin } from "./importers/suetonius.ts"
 import { nameNotes } from "./note-ids.ts"
@@ -75,6 +78,7 @@ const IMPORTERS: Record<
   tertullian: (source, work) => importTertullian(source, work.title),
   topostext: importToposText,
   "topostext-lines": importToposTextLines,
+  transcription: (_source, work, edition) => importTranscription(work, edition),
   translation: (_source, work, edition) => importTranslation(work, edition),
   "zonaras-foster": importZonarasFoster,
 }

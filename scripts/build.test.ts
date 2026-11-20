@@ -371,6 +371,15 @@ describe("build", () => {
     )
   })
 
+  it("reads Polemius Silvius's list of emperors, typed from Mommsen", () => {
+    expect(read("polemius-silvius/laterculus/index.html")).toMatch(
+      /id="49"[^>]*>[\s\S]*?Vabalathus et mater eius Zenobia/,
+    )
+    expect(
+      read("polemius-silvius/laterculus/ancient-corpus/index.html"),
+    ).toMatch(/id="48"[^>]*>[\s\S]*?Aurelian killed/)
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
