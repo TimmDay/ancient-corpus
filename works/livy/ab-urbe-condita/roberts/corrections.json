@@ -1,0 +1,49 @@
+[
+  {
+    "op": "renumber",
+    "locator": "1.0",
+    "newLocator": "1.pr"
+  },
+  {
+    "op": "accept",
+    "locator": "4.10",
+    "flag": "gap",
+    "reason": "Perseus marks no chapter 11 and 12 of Book 4 in Roberts' English: its text runs on in this chapter"
+  },
+  {
+    "op": "accept",
+    "locator": "4.49",
+    "flag": "gap",
+    "reason": "Perseus marks no chapter 50 of Book 4 in Roberts' English: its text runs on in this chapter"
+  },
+  {
+    "op": "accept",
+    "locator": "5.2",
+    "flag": "gap",
+    "reason": "Perseus marks no chapter 3 of Book 5 in Roberts' English: its text runs on in this chapter"
+  },
+  {
+    "op": "accept",
+    "locator": "6.15",
+    "flag": "gap",
+    "reason": "Perseus marks no chapter 16 of Book 6 in Roberts' English: its text runs on in this chapter"
+  },
+  {
+    "op": "accept",
+    "locator": "8.5",
+    "flag": "gap",
+    "reason": "Perseus marks no chapter 6 of Book 8 in Roberts' English: its text runs on in this chapter"
+  },
+  {
+    "op": "accept",
+    "locator": "8.20",
+    "flag": "gap",
+    "reason": "Perseus marks no chapter 21 of Book 8 in Roberts' English: its text runs on in this chapter"
+  },
+  {
+    "op": "accept",
+    "locator": "32.21",
+    "flag": "long",
+    "reason": "Aristaenus' speech to the Achaean council, one chapter in Livy"
+  }
+]

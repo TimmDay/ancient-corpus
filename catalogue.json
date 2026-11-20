@@ -199,12 +199,9 @@
           "note": "Books 1–5 survive whole; the rest in fragments"
         },
         {
-          "author": "Livy",
-          "title": "Ab Urbe Condita",
-          "language": "la",
+          "work": "livy/ab-urbe-condita",
           "written": "c. 27 BC to 17",
-          "covers": "753 to 9 BC; books 1–10 and 21–45 survive (to 167 BC), the rest in summaries",
-          "freeEnglish": "W. M. Roberts (1905)"
+          "note": "Books 1–10 and 21–45 survive; the rest only in summaries"
         },
         {
           "author": "Dionysius of Halicarnassus",

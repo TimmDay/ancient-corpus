@@ -656,6 +656,15 @@ describe("build", () => {
     )
   })
 
+  it("reads Livy by book and chapter, in Weissenborn and Müller's Latin and Roberts' English", () => {
+    expect(read("livy/ab-urbe-condita/roberts/21/index.html")).toMatch(
+      /id="21\.38"[^>]*>[\s\S]*?Such, in the main, was the way in which they reached Italy/,
+    )
+    expect(read("livy/ab-urbe-condita/roberts/1/index.html")).toMatch(
+      /id="1\.pr"[^>]*>[\s\S]*?Whether the task I have undertaken/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
