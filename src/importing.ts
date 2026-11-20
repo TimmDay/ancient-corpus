@@ -36,6 +36,7 @@ import {
 } from "./importers/latinlibrary.ts"
 import { importParthianSources } from "./importers/parthiansources.ts"
 import { importPerseus, importPerseusLines } from "./importers/perseus.ts"
+import { importResGestae } from "./importers/res-gestae.ts"
 import { importAmmianus, importAmmianusLatin } from "./importers/ammianus.ts"
 import { importEpitomeLatin } from "./importers/epitome.ts"
 import { importJerome } from "./importers/jerome.ts"
@@ -83,6 +84,8 @@ const IMPORTERS: Record<
   parthiansources: (source, _work, edition) =>
     importParthianSources(source, edition),
   perseus: importPerseus,
+  "res-gestae": (source, _work, edition) =>
+    importResGestae(source, edition.language),
   "perseus-lines": importPerseusLines,
   suetonius: importSuetonius,
   "suetonius-latin": (source) => importSuetoniusLatin(source),

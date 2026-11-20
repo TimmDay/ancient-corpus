@@ -1,16 +1,90 @@
 {
   "author": "Augustus",
   "title": "Res Gestae Divi Augusti",
-  "otherTitles": [],
+  "otherTitles": [
+    "Monumentum Ancyranum",
+    "Πράξεις τε καὶ δωρεαὶ Σεβαστοῦ θεοῦ"
+  ],
   "originalLanguage": "la",
-  "writtenYearEarliest": null,
-  "writtenYearLatest": null,
+  "writtenYearEarliest": 14,
+  "writtenYearLatest": 14,
   "coversYearEarliest": -44,
   "coversYearLatest": 14,
-  "locatorFormat": "chapter, e.g. 12",
-  "slugAliases": [
-    "augustus/res-gestae-divi-augusti"
-  ],
+  "locatorFormat": "chapter, e.g. 12; a section, e.g. 12.2, lands on its chapter; the summary appended to the inscription is S1 to S4",
+  "slugAliases": ["augustus/res-gestae-divi-augusti"],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "shipley-latin",
+      "preferred": true,
+      "language": "la",
+      "title": "Res Gestae Divi Augusti",
+      "editor": "Frederick W. Shipley",
+      "publicationYear": 1924,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/home.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-ResGestae.zip",
+            "sha256": "7f94cbf3c5e38772d4b2f2b3dbb0d91c593fdc548c60c490a4654dc0be122028"
+          }
+        ],
+        "rights": "Public domain. Frederick W. Shipley, Velleius Paterculus and Res Gestae Divi Augusti, Loeb Classical Library (1924); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "res-gestae"
+    },
+    {
+      "slug": "shipley-greek",
+      "preferred": false,
+      "language": "grc",
+      "title": "Πράξεις τε καὶ δωρεαὶ Σεβαστοῦ θεοῦ",
+      "editor": "Frederick W. Shipley",
+      "publicationYear": 1924,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/home.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-ResGestae.zip",
+            "sha256": "7f94cbf3c5e38772d4b2f2b3dbb0d91c593fdc548c60c490a4654dc0be122028"
+          }
+        ],
+        "rights": "Public domain. Frederick W. Shipley, Velleius Paterculus and Res Gestae Divi Augusti, Loeb Classical Library (1924); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "res-gestae",
+      "notice": "The Greek version inscribed beside the Latin at Ancyra, as Shipley prints it.",
+      "humanTranslation": {
+        "citation": "The Greek version inscribed beside the Latin at Ancyra, made in the first century by an unknown translator; Shipley's text (Loeb, 1924), on LacusCurtius",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/home.html"
+      }
+    },
+    {
+      "slug": "shipley",
+      "preferred": false,
+      "language": "en",
+      "title": "The Res Gestae of Augustus",
+      "translator": "Frederick W. Shipley",
+      "publicationYear": 1924,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/home.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-ResGestae.zip",
+            "sha256": "7f94cbf3c5e38772d4b2f2b3dbb0d91c593fdc548c60c490a4654dc0be122028"
+          }
+        ],
+        "rights": "Public domain. Frederick W. Shipley, Velleius Paterculus and Res Gestae Divi Augusti, Loeb Classical Library (1924); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "res-gestae",
+      "humanTranslation": {
+        "citation": "Frederick W. Shipley, Res Gestae Divi Augusti (Loeb, 1924), on LacusCurtius",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/home.html"
+      }
+    }
+  ]
 }

@@ -455,6 +455,18 @@ describe("build", () => {
     )
   })
 
+  it("reads the Res Gestae by chapter in Latin, Greek and Shipley's English", () => {
+    expect(read("augustus/res-gestae/index.html")).toMatch(
+      /id="34"[^>]*>[\s\S]*?Ín consulátú sexto et septimo/,
+    )
+    expect(read("augustus/res-gestae/shipley-greek/index.html")).toMatch(
+      /id="34"[^>]*>[\s\S]*?Σεβαστὸς/,
+    )
+    expect(read("augustus/res-gestae/shipley/index.html")).toMatch(
+      /id="34"[^>]*>[\s\S]*?I was given the title of Augustus/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
