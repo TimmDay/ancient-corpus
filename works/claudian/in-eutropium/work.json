@@ -1,0 +1,62 @@
+{
+  "author": "Claudian",
+  "title": "In Eutropium",
+  "otherTitles": ["Against Eutropius"],
+  "originalLanguage": "la",
+  "writtenYearEarliest": 399,
+  "writtenYearLatest": 399,
+  "coversYearEarliest": 395,
+  "coversYearLatest": 399,
+  "locatorFormat": "book and line, e.g. 2.54; a Passage is one of Platnauer's paragraphs, named by its first line; a preface is `1.praef`",
+  "numberedLines": true,
+  "slugAliases": ["claudian/against-eutropius"],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "platnauer-latin",
+      "preferred": true,
+      "language": "la",
+      "title": "In Eutropium",
+      "editor": "Maurice Platnauer",
+      "publicationYear": 1922,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/L/Roman/Texts/Claudian/In_Eutropium/1*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-Claudian.zip",
+            "sha256": "bf29ce49b5ca66ff05ba0bad66f773bb6bd66b9af0f5d2830804abd370df04dc"
+          }
+        ],
+        "rights": "Public domain. Maurice Platnauer, Claudian, Loeb Classical Library (1922); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "claudian"
+    },
+    {
+      "slug": "platnauer",
+      "preferred": false,
+      "language": "en",
+      "title": "Against Eutropius",
+      "translator": "Maurice Platnauer",
+      "publicationYear": 1922,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Claudian/In_Eutropium/1*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-Claudian.zip",
+            "sha256": "bf29ce49b5ca66ff05ba0bad66f773bb6bd66b9af0f5d2830804abd370df04dc"
+          }
+        ],
+        "rights": "Public domain. Maurice Platnauer, Claudian, Loeb Classical Library (1922); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "claudian",
+      "humanTranslation": {
+        "citation": "Maurice Platnauer, Claudian (Loeb, 1922), on LacusCurtius",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Claudian/In_Eutropium/1*.html"
+      }
+    }
+  ]
+}

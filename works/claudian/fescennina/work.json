@@ -1,0 +1,65 @@
+{
+  "author": "Claudian",
+  "title": "Fescennina de Nuptiis Honorii Augusti",
+  "otherTitles": [
+    "Fescennine Verses in Honour of the Marriage of the Emperor Honorius"
+  ],
+  "originalLanguage": "la",
+  "writtenYearEarliest": 398,
+  "writtenYearLatest": 398,
+  "coversYearEarliest": 398,
+  "coversYearLatest": 398,
+  "locatorFormat": "poem, e.g. 2",
+  "slugAliases": [
+    "claudian/fescennine-verses-in-honour-of-the-marriage-of-the-emperor-honorius"
+  ],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "platnauer-latin",
+      "preferred": true,
+      "language": "la",
+      "title": "Fescennina de Nuptiis Honorii Augusti",
+      "editor": "Maurice Platnauer",
+      "publicationYear": 1922,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/L/Roman/Texts/Claudian/Fescennina*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-Claudian.zip",
+            "sha256": "bf29ce49b5ca66ff05ba0bad66f773bb6bd66b9af0f5d2830804abd370df04dc"
+          }
+        ],
+        "rights": "Public domain. Maurice Platnauer, Claudian, Loeb Classical Library (1922); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "claudian"
+    },
+    {
+      "slug": "platnauer",
+      "preferred": false,
+      "language": "en",
+      "title": "Fescennine Verses in Honour of the Marriage of the Emperor Honorius",
+      "translator": "Maurice Platnauer",
+      "publicationYear": 1922,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Claudian/Fescennina*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-Claudian.zip",
+            "sha256": "bf29ce49b5ca66ff05ba0bad66f773bb6bd66b9af0f5d2830804abd370df04dc"
+          }
+        ],
+        "rights": "Public domain. Maurice Platnauer, Claudian, Loeb Classical Library (1922); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "claudian",
+      "humanTranslation": {
+        "citation": "Maurice Platnauer, Claudian (Loeb, 1922), on LacusCurtius",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Claudian/Fescennina*.html"
+      }
+    }
+  ]
+}

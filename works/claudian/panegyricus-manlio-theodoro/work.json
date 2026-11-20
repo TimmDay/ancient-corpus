@@ -1,0 +1,64 @@
+{
+  "author": "Claudian",
+  "title": "Panegyricus dictus Manlio Theodoro consuli",
+  "otherTitles": ["Panegyric on the Consulship of Flavius Manlius Theodorus"],
+  "originalLanguage": "la",
+  "writtenYearEarliest": 399,
+  "writtenYearLatest": 399,
+  "coversYearEarliest": 399,
+  "coversYearLatest": 399,
+  "locatorFormat": "line, e.g. 39; a Passage is one of Platnauer's paragraphs, named by its first line; the preface is `praef`",
+  "numberedLines": true,
+  "slugAliases": [
+    "claudian/panegyric-on-the-consulship-of-flavius-manlius-theodorus"
+  ],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "platnauer-latin",
+      "preferred": true,
+      "language": "la",
+      "title": "Panegyricus dictus Manlio Theodoro consuli",
+      "editor": "Maurice Platnauer",
+      "publicationYear": 1922,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/L/Roman/Texts/Claudian/Manlio_Theodoro*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-Claudian.zip",
+            "sha256": "bf29ce49b5ca66ff05ba0bad66f773bb6bd66b9af0f5d2830804abd370df04dc"
+          }
+        ],
+        "rights": "Public domain. Maurice Platnauer, Claudian, Loeb Classical Library (1922); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "claudian"
+    },
+    {
+      "slug": "platnauer",
+      "preferred": false,
+      "language": "en",
+      "title": "Panegyric on the Consulship of Flavius Manlius Theodorus",
+      "translator": "Maurice Platnauer",
+      "publicationYear": 1922,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Claudian/Manlio_Theodoro*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-Claudian.zip",
+            "sha256": "bf29ce49b5ca66ff05ba0bad66f773bb6bd66b9af0f5d2830804abd370df04dc"
+          }
+        ],
+        "rights": "Public domain. Maurice Platnauer, Claudian, Loeb Classical Library (1922); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "claudian",
+      "humanTranslation": {
+        "citation": "Maurice Platnauer, Claudian (Loeb, 1922), on LacusCurtius",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Claudian/Manlio_Theodoro*.html"
+      }
+    }
+  ]
+}

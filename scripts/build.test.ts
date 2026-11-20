@@ -406,6 +406,19 @@ describe("build", () => {
     )
   })
 
+  it("reads Claudian by Platnauer's paragraphs, the Latin verses beside each", () => {
+    expect(read("claudian/de-tertio-consulatu-honorii/index.html")).toMatch(
+      /id="39"[^>]*>[\s\S]*?Mox ubi firmasti recto vestigia gressu/,
+    )
+    expect(
+      read("claudian/de-tertio-consulatu-honorii/platnauer/index.html"),
+    ).toMatch(/id="39"[^>]*>[\s\S]*?Soon when thou couldst stand upright/)
+    // The Gothic War's preface is headed only by its number, XXV.
+    expect(read("claudian/de-bello-gothico/index.html")).toMatch(
+      /id="praef"[^>]*>[\s\S]*?Post resides annos longo velut excita somno/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

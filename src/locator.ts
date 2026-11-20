@@ -238,7 +238,8 @@ function lineWithin(
   let best: { target: LocatorTarget; first: number } | undefined
   for (const target of index.targets) {
     const own = locatorTokens(target.locator)
-    const first = Number(own.at(-1))
+    // A Passage that starts part way through a line (`87A`) holds that line on.
+    const first = Number(/^(\d+)a?$/.exec(own.at(-1) ?? "")?.[1] ?? NaN)
     if (
       own.length === tokens.length &&
       keyOf(own.slice(0, -1)) === prefix &&

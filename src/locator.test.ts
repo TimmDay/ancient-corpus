@@ -221,6 +221,29 @@ describe("resolveLocator", () => {
       })
     })
 
+    it("counts a Passage that starts mid-line as starting at that line", () => {
+      // Platnauer's Claudian: a paragraph starts part way through line 87.
+      const claudian: LocatorIndex = {
+        ...indexOf(["praef", "1", "39", "73", "87A", "102"]),
+        lines: true,
+      }
+      expect(landsOn("90", claudian)).toEqual({
+        start: "87A",
+        end: undefined,
+        exact: false,
+      })
+      expect(landsOn("80", claudian)).toEqual({
+        start: "73",
+        end: undefined,
+        exact: false,
+      })
+      expect(landsOn("praef", claudian)).toEqual({
+        start: "praef",
+        end: undefined,
+        exact: true,
+      })
+    })
+
     it("ends a range on the Passage holding its last line", () => {
       expect(landsOn("13.13-20", oracles)).toEqual({
         start: "13.13",
