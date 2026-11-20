@@ -50,6 +50,7 @@ import {
   importTranscription,
   importTranslation,
 } from "./importers/translation.ts"
+import { importUsfm } from "./importers/usfm.ts"
 import { importZonarasFoster } from "./importers/zonaras-foster.ts"
 import { importSuetonius, importSuetoniusLatin } from "./importers/suetonius.ts"
 import { nameNotes } from "./note-ids.ts"
@@ -99,6 +100,7 @@ const IMPORTERS: Record<
   "epitome-latin": (source) => importEpitomeLatin(source),
   jerome: (source) => importJerome(source),
   tertullian: (source, work) => importTertullian(source, work.title),
+  usfm: (source, work) => importUsfm(source, work.title),
   topostext: importToposText,
   "topostext-lines": importToposTextLines,
   transcription: (_source, work, edition) => importTranscription(work, edition),

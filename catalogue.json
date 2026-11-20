@@ -12,12 +12,8 @@
           "freeEnglish": "Jewish Publication Society (1917); King James Version (1611)"
         },
         {
-          "author": "Anonymous",
-          "title": "1 Maccabees",
-          "language": "grc",
+          "work": "anonymous/1-maccabees",
           "written": "c. 100 BC",
-          "covers": "175 to 134 BC",
-          "freeEnglish": "King James Version Apocrypha (1611)",
           "note": "Written in Hebrew; survives in Greek"
         },
         {

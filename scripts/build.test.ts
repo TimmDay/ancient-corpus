@@ -549,6 +549,15 @@ describe("build", () => {
     )
   })
 
+  it("reads 1 Maccabees by chapter, in Brenton's Greek and English", () => {
+    expect(read("anonymous/1-maccabees/index.html")).toMatch(
+      /id="1"[^>]*>[\s\S]*?ΚΑΙ ἐγένετο μετὰ τὸ πατάξαι Ἀλέξανδρον/,
+    )
+    expect(read("anonymous/1-maccabees/brenton/index.html")).toMatch(
+      /id="1"[^>]*>[\s\S]*?Alexander <i>son<\/i> of Philip, the Macedonian/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
