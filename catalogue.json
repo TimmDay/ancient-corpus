@@ -245,12 +245,60 @@
           "freeEnglish": "E. S. Shuckburgh (1899–1900)"
         },
         {
-          "author": "Appian",
-          "title": "Roman History",
-          "language": "grc",
-          "written": "c. 150 to 165",
-          "covers": "The kings to 35 BC; the Civil Wars books survive whole",
-          "freeEnglish": "Horace White (1899)"
+          "work": "appian/kings",
+          "written": "c. 150 to 165"
+        },
+        {
+          "work": "appian/italy",
+          "written": "c. 150 to 165"
+        },
+        {
+          "work": "appian/samnite-history",
+          "written": "c. 150 to 165"
+        },
+        {
+          "work": "appian/gallic-history",
+          "written": "c. 150 to 165"
+        },
+        {
+          "work": "appian/sicily",
+          "written": "c. 150 to 165"
+        },
+        {
+          "work": "appian/spanish-wars",
+          "written": "c. 150 to 165"
+        },
+        {
+          "work": "appian/hannibalic-war",
+          "written": "c. 150 to 165"
+        },
+        {
+          "work": "appian/punic-wars",
+          "written": "c. 150 to 165"
+        },
+        {
+          "work": "appian/numidian-affairs",
+          "written": "c. 150 to 165"
+        },
+        {
+          "work": "appian/macedonian-affairs",
+          "written": "c. 150 to 165"
+        },
+        {
+          "work": "appian/illyrian-wars",
+          "written": "c. 150 to 165"
+        },
+        {
+          "work": "appian/syrian-wars",
+          "written": "c. 150 to 165"
+        },
+        {
+          "work": "appian/mithridatic-wars",
+          "written": "c. 150 to 165"
+        },
+        {
+          "work": "appian/civil-wars",
+          "written": "c. 150 to 165"
         },
         {
           "author": "Plutarch",

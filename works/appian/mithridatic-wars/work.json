@@ -1,0 +1,59 @@
+{
+  "author": "Appian",
+  "title": "Mithridatic Wars",
+  "otherTitles": ["Mithridateios", "The Mithridatic Wars"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "section, e.g. 112; a Passage is a section as Mendelssohn numbers it",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "mendelssohn",
+      "preferred": true,
+      "language": "grc",
+      "title": "Mithridateios",
+      "editor": "Ludwig Mendelssohn",
+      "publicationYear": 1879,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg014/tlg0551.tlg014.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg014.perseus-grc2-Perseus.zip",
+            "sha256": "ace6eefd9b01daf73a42f46af9c9c7bdef57be722d14ddf15b84cd2e754a43b3"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1879–1905) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "white",
+      "preferred": false,
+      "language": "en",
+      "title": "The Mithridatic Wars",
+      "translator": "Horace White",
+      "publicationYear": 1899,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg014/tlg0551.tlg014.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg014.perseus-eng2-Perseus.zip",
+            "sha256": "455815ee3aba00b3c72aa2e20fafc51d3c17977ca962e576be87cca70fcc3efb"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1899) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "Horace White, The Mithridatic Wars (1899), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg014/tlg0551.tlg014.perseus-eng2.xml"
+      }
+    }
+  ]
+}

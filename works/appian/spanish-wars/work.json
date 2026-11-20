@@ -1,0 +1,59 @@
+{
+  "author": "Appian",
+  "title": "Spanish Wars",
+  "otherTitles": ["Iberike", "The Wars in Spain"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "section, e.g. 84; a Passage is a section as Mendelssohn numbers it",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "mendelssohn",
+      "preferred": true,
+      "language": "grc",
+      "title": "Iberike",
+      "editor": "Ludwig Mendelssohn",
+      "publicationYear": 1879,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg007/tlg0551.tlg007.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg007.perseus-grc2-Perseus.zip",
+            "sha256": "408f3e5b1ade927fbee67ef92c934e41ed912ea661f01448b3bad6deb3653479"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1879–1905) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "white",
+      "preferred": false,
+      "language": "en",
+      "title": "The Wars in Spain",
+      "translator": "Horace White",
+      "publicationYear": 1899,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg007/tlg0551.tlg007.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg007.perseus-eng2-Perseus.zip",
+            "sha256": "86fb4a8c0daf032d842927857df81ff03f300496b11a41c288f7610aba1b5cb6"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1899) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "Horace White, The Wars in Spain (1899), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg007/tlg0551.tlg007.perseus-eng2.xml"
+      }
+    }
+  ]
+}

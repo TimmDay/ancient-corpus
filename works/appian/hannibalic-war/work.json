@@ -1,0 +1,59 @@
+{
+  "author": "Appian",
+  "title": "Hannibalic War",
+  "otherTitles": ["Annibaike", "The Hannibalic War"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "section, e.g. 26; a Passage is a section as Mendelssohn numbers it",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "mendelssohn",
+      "preferred": true,
+      "language": "grc",
+      "title": "Annibaike",
+      "editor": "Ludwig Mendelssohn",
+      "publicationYear": 1879,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg008/tlg0551.tlg008.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg008.perseus-grc2-Perseus.zip",
+            "sha256": "f5a8db722633e5e76ee20a9c461edf4160a0a233ab476333469ec0117922baef"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1879–1905) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "white",
+      "preferred": false,
+      "language": "en",
+      "title": "The Hannibalic War",
+      "translator": "Horace White",
+      "publicationYear": 1899,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg008/tlg0551.tlg008.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg008.perseus-eng2-Perseus.zip",
+            "sha256": "2ba6170e84e0bc2c8e4b6b7f63bb472e8072118eba795eb520adddc96a30fced"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1899) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "Horace White, The Hannibalic War (1899), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg008/tlg0551.tlg008.perseus-eng2.xml"
+      }
+    }
+  ]
+}

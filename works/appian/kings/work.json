@@ -1,0 +1,59 @@
+{
+  "author": "Appian",
+  "title": "The Kings",
+  "otherTitles": ["Basilike", "Concerning the Kings"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "section or fragment, e.g. 5; a Passage is a section as Mendelssohn numbers it",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "mendelssohn",
+      "preferred": true,
+      "language": "grc",
+      "title": "Basilike",
+      "editor": "Ludwig Mendelssohn",
+      "publicationYear": 1879,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg002/tlg0551.tlg002.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg002.perseus-grc2-Perseus.zip",
+            "sha256": "c2e7b869713d70685031d5dca26ae7a0a2366087483dcda0a6449b04c0f330ce"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1879–1905) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "white",
+      "preferred": false,
+      "language": "en",
+      "title": "Concerning the Kings",
+      "translator": "Horace White",
+      "publicationYear": 1899,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg002/tlg0551.tlg002.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg002.perseus-eng2-Perseus.zip",
+            "sha256": "6e110a4953193e360d343bd140db671a52a206f7697b6495eaaa367c233c8bb3"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1899) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "Horace White, Concerning the Kings (1899), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg002/tlg0551.tlg002.perseus-eng2.xml"
+      }
+    }
+  ]
+}

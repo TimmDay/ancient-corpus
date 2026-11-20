@@ -1,0 +1,59 @@
+{
+  "author": "Appian",
+  "title": "Illyrian Wars",
+  "otherTitles": ["Illyrike", "The Illyrian Wars"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "section, e.g. 15; a Passage is a section as Mendelssohn numbers it",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "mendelssohn",
+      "preferred": true,
+      "language": "grc",
+      "title": "Illyrike",
+      "editor": "Ludwig Mendelssohn",
+      "publicationYear": 1879,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg012/tlg0551.tlg012.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg012.perseus-grc2-Perseus.zip",
+            "sha256": "476f00785907d631930a4f479c3de76acbc43c4518a1a7cc0b03ffb6b314833a"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1879–1905) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "white",
+      "preferred": false,
+      "language": "en",
+      "title": "The Illyrian Wars",
+      "translator": "Horace White",
+      "publicationYear": 1899,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg012/tlg0551.tlg012.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg012.perseus-eng2-Perseus.zip",
+            "sha256": "7c6bfc64a3e19a809102ad6b33721450623692c253e917d551694a219437e505"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1899) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "Horace White, The Illyrian Wars (1899), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg012/tlg0551.tlg012.perseus-eng2.xml"
+      }
+    }
+  ]
+}

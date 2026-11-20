@@ -614,6 +614,15 @@ describe("build", () => {
     )
   })
 
+  it("reads Appian by section, in Mendelssohn's Greek and White's English", () => {
+    expect(read("appian/civil-wars/white/1/index.html")).toMatch(/id="1\.7"/)
+    expect(read("appian/mithridatic-wars/index.html")).toMatch(/id="112"/)
+    // White's unnumbered appendices are not Appian.
+    expect(read("appian/punic-wars/white/index.html")).not.toMatch(
+      /James Bryce/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
