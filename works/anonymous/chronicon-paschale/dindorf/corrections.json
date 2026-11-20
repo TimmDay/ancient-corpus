@@ -1,0 +1,32 @@
+[
+  {
+    "op": "accept",
+    "locator": "3",
+    "flag": "gap",
+    "reason": "Dindorf's pages begin at 3 for the treatise on Easter and at 32 for the chronicle"
+  },
+  {
+    "op": "accept",
+    "locator": "32",
+    "flag": "gap",
+    "reason": "Dindorf's pages begin at 3 for the treatise on Easter and at 32 for the chronicle"
+  },
+  {
+    "op": "accept",
+    "locator": "62",
+    "flag": "gap",
+    "reason": "the next page's Greek and Latin share one paragraph in the transcription, which is read as Latin"
+  },
+  {
+    "op": "accept",
+    "locator": "189",
+    "flag": "gap",
+    "reason": "the next page's Greek and Latin share one paragraph in the transcription, which is read as Latin"
+  },
+  {
+    "op": "accept",
+    "locator": "575",
+    "flag": "gap",
+    "reason": "pages 576 and 577 hold only du Cange's Latin; the Greek of that story is all on 575"
+  }
+]

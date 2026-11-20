@@ -1,0 +1,44 @@
+[
+  {
+    "op": "accept",
+    "locator": "4",
+    "flag": "gap",
+    "reason": "page 3 is all Greek"
+  },
+  {
+    "op": "accept",
+    "locator": "32",
+    "flag": "gap",
+    "reason": "Dindorf's pages begin at 3 for the treatise on Easter and at 32 for the chronicle"
+  },
+  {
+    "op": "accept",
+    "locator": "36",
+    "flag": "gap",
+    "reason": "the next page's Greek and Latin share one paragraph in the transcription, which is read as Greek"
+  },
+  {
+    "op": "accept",
+    "locator": "126",
+    "flag": "gap",
+    "reason": "the next page's Greek and Latin share one paragraph in the transcription, which is read as Greek"
+  },
+  {
+    "op": "accept",
+    "locator": "232",
+    "flag": "gap",
+    "reason": "the next page's Greek and Latin share one paragraph in the transcription, which is read as Greek"
+  },
+  {
+    "op": "accept",
+    "locator": "244",
+    "flag": "gap",
+    "reason": "the next page's Greek and Latin share one paragraph in the transcription, which is read as Greek"
+  },
+  {
+    "op": "accept",
+    "locator": "409",
+    "flag": "gap",
+    "reason": "the next page's Greek and Latin share one paragraph in the transcription, which is read as Greek"
+  }
+]

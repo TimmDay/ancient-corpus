@@ -1,0 +1,86 @@
+{
+  "author": "Unknown",
+  "title": "Chronicon Paschale",
+  "otherTitles": ["Easter Chronicle", "Ἐπιτομὴ χρόνων"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": 630,
+  "writtenYearLatest": 641,
+  "coversYearEarliest": null,
+  "coversYearLatest": 628,
+  "locatorFormat": "page of Dindorf's Bonn edition, e.g. 508",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "dindorf",
+      "preferred": true,
+      "language": "grc",
+      "title": "Chronicon Paschale",
+      "editor": "Ludwig Dindorf",
+      "publicationYear": 1832,
+      "source": {
+        "name": "Open Greek and Latin, First1KGreek (University of Leipzig)",
+        "url": "https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg2371/tlg001/tlg2371.tlg001.1st1K-grc1.xml",
+        "archives": [
+          {
+            "file": "ChroniconPaschale-Dindorf-First1KGreek.zip",
+            "sha256": "25cf85f46b53573844edf2d22d45e13e1546592c6dfa9c2a6d982480da36312a"
+          }
+        ],
+        "rights": "Greek text (Bonn: Weber, 1832) public domain; the digital edition is © University of Leipzig, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "chronicon-paschale",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "du-cange",
+      "preferred": false,
+      "language": "la",
+      "title": "Latin translation, printed beside the Greek in Dindorf's edition",
+      "translator": "Charles du Fresne du Cange",
+      "publicationYear": 1832,
+      "source": {
+        "name": "Open Greek and Latin, First1KGreek (University of Leipzig)",
+        "url": "https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg2371/tlg001/tlg2371.tlg001.1st1K-grc1.xml",
+        "archives": [
+          {
+            "file": "ChroniconPaschale-Dindorf-First1KGreek.zip",
+            "sha256": "25cf85f46b53573844edf2d22d45e13e1546592c6dfa9c2a6d982480da36312a"
+          }
+        ],
+        "rights": "Latin translation (du Cange, 1688, reprinted Bonn: Weber, 1832) public domain; the digital edition is © University of Leipzig, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "chronicon-paschale",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "Charles du Fresne du Cange's Latin, printed beside the Greek in Ludwig Dindorf's edition (Bonn, 1832)",
+        "url": "https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg2371/tlg001/tlg2371.tlg001.1st1K-grc1.xml"
+      }
+    },
+    {
+      "slug": "ancient-corpus",
+      "preferred": false,
+      "language": "en",
+      "title": "English translation",
+      "translator": "Ancient Corpus (machine translation)",
+      "publicationYear": 2026,
+      "source": {
+        "name": "This project",
+        "url": "https://github.com/TimmDay/ancient-corpus",
+        "archives": [],
+        "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "licence": "cc0",
+      "model": "Claude Opus 5.5",
+      "importer": "translation",
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 19 November 2026, from Ludwig Dindorf's Greek (Bonn, 1832). Pages 500 to 512 only, from the death of Severus Alexander (235) to the Tetrarchy. It is not a translator's work: check it against the Greek, and report errors. Public domain (CC0): reuse it freely.",
+      "humanTranslation": {
+        "citation": "Michael Whitby and Mary Whitby, Chronicon Paschale 284–628 AD (Liverpool University Press, Translated Texts for Historians 7, 1989), from page 510 on",
+        "url": "https://search.worldcat.org/search?q=Chronicon+Paschale+284-628+AD+Whitby",
+        "access": "In copyright: buy it, or borrow it from a library. It starts at 284, so it does not cover Aurelian."
+      }
+    }
+  ]
+}

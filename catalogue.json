@@ -779,11 +779,7 @@
           "covers": "Creation to 563"
         },
         {
-          "author": "Anonymous",
-          "title": "Chronicon Paschale",
-          "language": "grc",
-          "written": "c. 630",
-          "covers": "Creation to 628"
+          "work": "anonymous/chronicon-paschale"
         },
         {
           "author": "John of Antioch",

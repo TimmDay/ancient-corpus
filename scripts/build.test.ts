@@ -303,6 +303,19 @@ describe("build", () => {
     )
   })
 
+  it("reads the Chronicon Paschale by Bonn page, Greek, Latin and our English", () => {
+    const greek = read("anonymous/chronicon-paschale/2/index.html")
+    expect(greek).toMatch(/id="508"[^>]*>[\s\S]*?τείχη ῾Ρώμης ἀνανεοῦν/)
+    // An unclosed footnote on page 378 must not swallow the pages after it.
+    expect(greek).toMatch(/id="379"/)
+    expect(read("anonymous/chronicon-paschale/du-cange/2/index.html")).toMatch(
+      /id="508"[^>]*>[\s\S]*?instaurare moenia/,
+    )
+    expect(
+      read("anonymous/chronicon-paschale/ancient-corpus/index.html"),
+    ).toMatch(/id="508"[^>]*>[\s\S]*?began to renew the walls of Rome/)
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
