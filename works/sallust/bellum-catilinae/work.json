@@ -1,0 +1,61 @@
+{
+  "author": "Sallust",
+  "title": "Bellum Catilinae",
+  "otherTitles": ["The War with Catiline"],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": -63,
+  "coversYearLatest": -62,
+  "locatorFormat": "chapter, e.g. 12; a section, e.g. 12.3, lands on its chapter",
+  "slugAliases": ["sallust/the-war-with-catiline"],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "rolfe-latin",
+      "preferred": true,
+      "language": "la",
+      "title": "Bellum Catilinae",
+      "editor": "J. C. Rolfe",
+      "publicationYear": 1921,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/L/Roman/Texts/Sallust/Bellum_Catilinae*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-Sallust.zip",
+            "sha256": "b0f6fe45df02b9304d50cd2c89ad5f0482b8302b81883abd6e9268465c423da6"
+          }
+        ],
+        "rights": "Public domain. J. C. Rolfe, Sallust, Loeb Classical Library (1921; revised 1931); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "lacuscurtius"
+    },
+    {
+      "slug": "rolfe",
+      "preferred": false,
+      "language": "en",
+      "title": "The War with Catiline",
+      "translator": "J. C. Rolfe",
+      "publicationYear": 1921,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Sallust/Bellum_Catilinae*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-Sallust.zip",
+            "sha256": "b0f6fe45df02b9304d50cd2c89ad5f0482b8302b81883abd6e9268465c423da6"
+          }
+        ],
+        "rights": "Public domain. J. C. Rolfe, Sallust, Loeb Classical Library (1921; revised 1931); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "lacuscurtius",
+      "humanTranslation": {
+        "citation": "J. C. Rolfe, Sallust (Loeb, 1921), on LacusCurtius",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Sallust/Bellum_Catilinae*.html"
+      }
+    }
+  ]
+}

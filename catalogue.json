@@ -217,12 +217,12 @@
           "freeEnglish": "J. S. Watson (1853)"
         },
         {
-          "author": "Sallust",
-          "title": "Catiline; Jugurtha",
-          "language": "la",
-          "written": "c. 42 to 40 BC",
-          "covers": "111 to 105 BC; 63 BC",
-          "freeEnglish": "J. C. Rolfe (Loeb, 1921)"
+          "work": "sallust/bellum-catilinae",
+          "written": "c. 42 BC"
+        },
+        {
+          "work": "sallust/bellum-jugurthinum",
+          "written": "c. 41 to 40 BC"
         },
         {
           "author": "Julius Caesar",
