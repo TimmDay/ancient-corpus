@@ -1,0 +1,63 @@
+{
+  "author": "Xenophon",
+  "title": "Hellenica",
+  "otherTitles": ["Ἑλληνικά", "History of Greece"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": -411,
+  "coversYearLatest": -362,
+  "locatorFormat": "book.chapter, e.g. 2.3; a section, e.g. 2.3.56, lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "marchant",
+      "preferred": true,
+      "language": "grc",
+      "title": "Xenophontis Historia Graeca",
+      "editor": "E. C. Marchant",
+      "publicationYear": 1900,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0032/tlg001/tlg0032.tlg001.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Xenophon-tlg0032.tlg001.perseus-grc2-Perseus.zip",
+            "sha256": "6b7ed2c8a334db22d12378986fdc2f06b90d9665fd2b71b28b1f79fa90b175a5"
+          }
+        ],
+        "rights": "Greek text (Oxford, 1900) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "brownson",
+      "preferred": false,
+      "language": "en",
+      "title": "Hellenica",
+      "translator": "Carleton L. Brownson",
+      "publicationYear": 1918,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0032/tlg001/tlg0032.tlg001.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Xenophon-tlg0032.tlg001.perseus-eng2-Perseus.zip",
+            "sha256": "eb083c4f76c1f515a0c3fcfd0cfd5325442fae89e5e5c876cbfca16e0ddd1f09"
+          }
+        ],
+        "rights": "Translation (Loeb Classical Library, 1918–21) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "Carleton L. Brownson, Hellenica (1918), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0032/tlg001/tlg0032.tlg001.perseus-eng2.xml"
+      }
+    }
+  ]
+}
