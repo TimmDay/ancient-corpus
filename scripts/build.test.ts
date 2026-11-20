@@ -517,6 +517,17 @@ describe("build", () => {
     )
   })
 
+  it("reads Josephus' Antiquities by Whiston's paragraphs, with Niese's book summaries in the Greek", () => {
+    expect(read("flavius-josephus/jewish-antiquities/18/index.html")).toMatch(
+      /id="18\.arg"/,
+    )
+    expect(
+      read("flavius-josephus/jewish-antiquities/whiston/17/index.html"),
+    ).toMatch(
+      /id="17\.339"[^>]*>[\s\S]*?WHEN Archelaus was entered on his ethnarchy/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

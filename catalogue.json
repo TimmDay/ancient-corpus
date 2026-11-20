@@ -41,12 +41,8 @@
           "written": "c. 75 to 79"
         },
         {
-          "author": "Flavius Josephus",
-          "title": "Jewish Antiquities",
-          "language": "grc",
-          "written": "93 to 94",
-          "covers": "Creation to 66",
-          "freeEnglish": "William Whiston (1737)"
+          "work": "flavius-josephus/jewish-antiquities",
+          "written": "93 to 94"
         },
         {
           "author": "Flavius Josephus",

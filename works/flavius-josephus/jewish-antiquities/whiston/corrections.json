@@ -1,0 +1,37 @@
+[
+  {
+    "op": "renumber",
+    "locator": "17.13",
+    "newLocator": "17.339"
+  },
+  {
+    "op": "accept",
+    "locator": "2.136",
+    "flag": "long",
+    "reason": "Judah's plea to Joseph for Benjamin, which Whiston prints as one paragraph"
+  },
+  {
+    "op": "accept",
+    "locator": "4.177",
+    "flag": "long",
+    "reason": "Moses' farewell speech to the Hebrews, which Whiston prints as one paragraph"
+  },
+  {
+    "op": "accept",
+    "locator": "10.263",
+    "flag": "long",
+    "reason": "Daniel in the den of lions and Darius' decree, which Whiston prints as one paragraph"
+  },
+  {
+    "op": "accept",
+    "locator": "15.127",
+    "flag": "long",
+    "reason": "Herod's speech to his army before the war with the Arabs, which Whiston prints as one paragraph"
+  },
+  {
+    "op": "accept",
+    "locator": "16.31",
+    "flag": "long",
+    "reason": "Nicolaus of Damascus' speech for the Jews of Ionia before Agrippa, which Whiston prints as one paragraph"
+  }
+]
