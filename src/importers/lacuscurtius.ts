@@ -117,6 +117,23 @@ const WORKS: Record<string, Layout> = {
     })),
     bySection: "book",
   },
+  "Bellum Catilinae": {
+    folder: "Roman/Texts/Sallust",
+    parts: [{ locator: "", pages: ["Bellum_Catilinae*"] }],
+  },
+  "Bellum Jugurthinum": {
+    folder: "Roman/Texts/Sallust",
+    parts: [
+      {
+        locator: "",
+        pages: [
+          "Bellum_Jugurthinum/1*",
+          "Bellum_Jugurthinum/2*",
+          "Bellum_Jugurthinum/3*",
+        ],
+      },
+    ],
+  },
   "Historiae Romanae": {
     folder: "Roman/Texts/Velleius_Paterculus",
     parts: [
@@ -141,7 +158,12 @@ export function importLacusCurtius(
   let nextNoteId = 1
 
   for (const part of config.parts) {
-    divisions.push({ locator: part.locator, label: part.label ?? part.locator })
+    // A Work of one part, cited by chapter alone (`12`), has no divisions.
+    if (part.locator)
+      divisions.push({
+        locator: part.locator,
+        label: part.label ?? part.locator,
+      })
     let opened = false
     // Notes restart on each web page; through a Life of several pages they go on.
     const before = { numbered: 0, lettered: 0 }
@@ -172,7 +194,7 @@ export function importLacusCurtius(
           continue
         }
         passage.text = plainText(passage.blocks.join(" "))
-        if (!opened)
+        if (!opened && part.locator)
           passage.headings.unshift({
             kind: "division",
             html: part.label ?? part.locator,
@@ -230,7 +252,9 @@ export function readPage(
 
   const passages: Draft[] = []
   let pending: Heading[] = []
-  const body = $("h1").first().nextUntil("hr.endnotes").toArray()
+  // Some pages head the text with an h2, and have no h1.
+  const start = $("h1").length ? $("h1").first() : $("h2").first()
+  const body = start.nextUntil("hr.endnotes").toArray()
   for (const el of body) {
     if (el.type !== "tag") continue
     // A page with no notes has no rule before the site's footer.
@@ -268,7 +292,7 @@ export function readPage(
           locator:
             bySection === "book"
               ? `${division}${separator === " " ? "." : separator}${run.chapter}`
-              : bySection
+              : bySection || !division
                 ? run.chapter
                 : `${division}${separator}${run.chapter}`,
           headings: pending,

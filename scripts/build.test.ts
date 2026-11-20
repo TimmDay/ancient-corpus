@@ -487,6 +487,15 @@ describe("build", () => {
     expect(read("frontinus/strategemata/index.html")).not.toMatch(/asterisks/)
   })
 
+  it("reads Sallust by chapter, in Rolfe's Latin and English", () => {
+    expect(read("sallust/bellum-catilinae/index.html")).toMatch(
+      /id="1"[^>]*>[\s\S]*?Omnis homines qui sese student praestare ceteris animalibus/,
+    )
+    expect(read("sallust/bellum-jugurthinum/rolfe/index.html")).toMatch(
+      /id="85"[^>]*>[\s\S]*?I know, fellow citizens/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

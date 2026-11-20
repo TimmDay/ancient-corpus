@@ -1,0 +1,14 @@
+[
+  {
+    "op": "accept",
+    "locator": "14",
+    "flag": "long",
+    "reason": "Adherbal's speech to the senate, one chapter in Sallust"
+  },
+  {
+    "op": "accept",
+    "locator": "85",
+    "flag": "long",
+    "reason": "Marius' speech to the people, one chapter in Sallust"
+  }
+]

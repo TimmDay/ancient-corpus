@@ -1,0 +1,14 @@
+[
+  {
+    "op": "accept",
+    "locator": "51",
+    "flag": "long",
+    "reason": "Caesar's speech in the senate on the conspirators, one chapter in Sallust"
+  },
+  {
+    "op": "accept",
+    "locator": "52",
+    "flag": "long",
+    "reason": "Cato's speech in reply, one chapter in Sallust"
+  }
+]
