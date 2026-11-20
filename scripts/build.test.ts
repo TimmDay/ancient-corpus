@@ -647,6 +647,15 @@ describe("build", () => {
     )
   })
 
+  it("reads Tacitus' Agricola and Germania by chapter, in Furneaux's Latin and Church and Brodribb's English", () => {
+    expect(read("tacitus/agricola/church-brodribb/index.html")).toMatch(
+      /id="30"[^>]*>[\s\S]*?Whenever I consider the origin of this war/,
+    )
+    expect(read("tacitus/germania/church-brodribb/index.html")).toMatch(
+      /id="1"[^>]*>[\s\S]*?Germany is separated from the Galli/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

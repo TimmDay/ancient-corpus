@@ -1,0 +1,64 @@
+{
+  "author": "Tacitus",
+  "title": "Agricola",
+  "otherTitles": [
+    "De Vita Iulii Agricolae",
+    "The Life of Cnaeus Julius Agricola"
+  ],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": 40,
+  "coversYearLatest": 93,
+  "locatorFormat": "chapter, e.g. 30; a section, e.g. 30.5, lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "furneaux",
+      "preferred": true,
+      "language": "la",
+      "title": "De Vita Iulii Agricolae",
+      "editor": "Henry Furneaux",
+      "publicationYear": 1898,
+      "source": {
+        "name": "Perseus Digital Library (canonical-latinLit)",
+        "url": "https://github.com/PerseusDL/canonical-latinLit/blob/master/data/phi1351/phi001/phi1351.phi001.perseus-lat2.xml",
+        "archives": [
+          {
+            "file": "Tacitus-phi1351.phi001.perseus-lat2-Perseus.zip",
+            "sha256": "ac916dd21ece08639d6cb783481433b73072c8055b34c974fb4c65b4f6666b75"
+          }
+        ],
+        "rights": "Latin text (Oxford, 1898; 1900) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus"
+    },
+    {
+      "slug": "church-brodribb",
+      "preferred": false,
+      "language": "en",
+      "title": "The Life of Cnaeus Julius Agricola",
+      "translator": "Alfred John Church and William Jackson Brodribb",
+      "publicationYear": 1877,
+      "source": {
+        "name": "Perseus Digital Library (canonical-latinLit)",
+        "url": "https://github.com/PerseusDL/canonical-latinLit/blob/master/data/phi1351/phi001/phi1351.phi001.perseus-eng4.xml",
+        "archives": [
+          {
+            "file": "Tacitus-phi1351.phi001.perseus-eng4-Perseus.zip",
+            "sha256": "5110a99ce032489b3e51a70424ea72b3c640aa4165dccbf24b25600f7f0abf4c"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1877) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "humanTranslation": {
+        "citation": "Alfred John Church and William Jackson Brodribb, The Life of Cnaeus Julius Agricola (1877), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-latinLit/blob/master/data/phi1351/phi001/phi1351.phi001.perseus-eng4.xml"
+      }
+    }
+  ]
+}
