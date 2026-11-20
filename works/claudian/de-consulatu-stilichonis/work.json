@@ -31,7 +31,7 @@
         "rights": "Public domain. Maurice Platnauer, Claudian, Loeb Classical Library (1922); LacusCurtius marks the text and translation as public domain."
       },
       "licence": "public-domain",
-      "importer": "claudian"
+      "importer": "lacuscurtius-verse"
     },
     {
       "slug": "platnauer",
@@ -52,7 +52,7 @@
         "rights": "Public domain. Maurice Platnauer, Claudian, Loeb Classical Library (1922); LacusCurtius marks the text and translation as public domain."
       },
       "licence": "public-domain",
-      "importer": "claudian",
+      "importer": "lacuscurtius-verse",
       "humanTranslation": {
         "citation": "Maurice Platnauer, Claudian (Loeb, 1922), on LacusCurtius",
         "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Claudian/De_Consulatu_Stilichonis/1*.html"

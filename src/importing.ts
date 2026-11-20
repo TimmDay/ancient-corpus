@@ -16,7 +16,6 @@ import { correctEdition, type Correction } from "./corrections.ts"
 import { importBonnTei } from "./importers/bonn-tei.ts"
 import { CEDRENUS, MALALAS, SYNCELLUS, importBonn } from "./importers/bonn.ts"
 import { importChronography354 } from "./importers/chronography354.ts"
-import { importClaudian } from "./importers/claudian.ts"
 import { importCcel } from "./importers/ccel.ts"
 import { importDfhg } from "./importers/dfhg.ts"
 import { importDio } from "./importers/dio.ts"
@@ -30,6 +29,7 @@ import {
   importJulianCaesars,
 } from "./importers/julian.ts"
 import { importLacusCurtius } from "./importers/lacuscurtius.ts"
+import { importLacusCurtiusVerse } from "./importers/lacuscurtius-verse.ts"
 import {
   importLatinLibrary,
   importLatinLibrarySections,
@@ -63,8 +63,6 @@ const IMPORTERS: Record<
   "chronography-354": (source, _work, edition) =>
     importChronography354(source, edition),
   ccel: (source, work) => importCcel(source, work.title),
-  claudian: (source, work, edition) =>
-    importClaudian(source, work.title, edition.language),
   dfhg: (source, work) => importDfhg(source, work.title),
   dio: importDio,
   dir: importDir,
@@ -78,6 +76,8 @@ const IMPORTERS: Record<
     importJulian(source, edition, LETTERS),
   lacuscurtius: (source, work, edition) =>
     importLacusCurtius(source, work.title, edition.language),
+  "lacuscurtius-verse": (source, work, edition) =>
+    importLacusCurtiusVerse(source, work.title, edition.language),
   latinlibrary: (source) => importLatinLibrary(source),
   "latinlibrary-sections": (source) => importLatinLibrarySections(source),
   parthiansources: (source, _work, edition) =>
