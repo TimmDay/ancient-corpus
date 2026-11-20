@@ -40,7 +40,7 @@ export function importPerseus(source: EditionSource): ImportedEdition {
     divisions.push({ locator: n, label })
     $(book)
       .children('div[subtype="chapter"]')
-      .each((i, chapter) => {
+      .each((_, chapter) => {
         const locator = `${n}.${$(chapter).attr("n") ?? ""}`
         // A paragraph per section, as the edition's sections fall.
         const blocks = $(chapter)
@@ -48,6 +48,8 @@ export function importPerseus(source: EditionSource): ImportedEdition {
           .toArray()
           .map((p) => clean(inline($, p.children)))
           .filter(Boolean)
+        // A chapter the translation numbers but leaves empty (Polybius 8.4b).
+        if (!blocks.length) return
         const notes = $(chapter)
           .find('note[type="footnote"]')
           .toArray()
@@ -58,10 +60,9 @@ export function importPerseus(source: EditionSource): ImportedEdition {
           }))
         passages.push({
           locator,
-          headings:
-            i === 0
-              ? [{ kind: "division", html: label, editorial: false }]
-              : [],
+          headings: passages.some((p) => p.division === n)
+            ? []
+            : [{ kind: "division", html: label, editorial: false }],
           division: n,
           blocks,
           notes,

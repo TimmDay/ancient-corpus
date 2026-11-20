@@ -1,0 +1,161 @@
+{
+  "divisions": [
+    {
+      "locator": "1",
+      "label": "Book 1"
+    },
+    {
+      "locator": "2",
+      "label": "Book 2"
+    },
+    {
+      "locator": "3",
+      "label": "Book 3"
+    },
+    {
+      "locator": "4",
+      "label": "Book 4"
+    },
+    {
+      "locator": "5",
+      "label": "Book 5"
+    },
+    {
+      "locator": "6",
+      "label": "Book 6"
+    },
+    {
+      "locator": "7",
+      "label": "Book 7"
+    },
+    {
+      "locator": "8",
+      "label": "Book 8"
+    },
+    {
+      "locator": "9",
+      "label": "Book 9"
+    },
+    {
+      "locator": "10",
+      "label": "Book 10"
+    },
+    {
+      "locator": "11",
+      "label": "Book 11"
+    },
+    {
+      "locator": "12",
+      "label": "Book 12"
+    },
+    {
+      "locator": "13",
+      "label": "Book 13"
+    },
+    {
+      "locator": "14",
+      "label": "Book 14"
+    },
+    {
+      "locator": "15",
+      "label": "Book 15"
+    },
+    {
+      "locator": "16",
+      "label": "Book 16"
+    },
+    {
+      "locator": "17",
+      "label": "Book 17"
+    },
+    {
+      "locator": "18",
+      "label": "Book 18"
+    },
+    {
+      "locator": "19",
+      "label": "Book 19"
+    },
+    {
+      "locator": "20",
+      "label": "Book 20"
+    },
+    {
+      "locator": "21",
+      "label": "Book 21"
+    },
+    {
+      "locator": "22",
+      "label": "Book 22"
+    },
+    {
+      "locator": "23",
+      "label": "Book 23"
+    },
+    {
+      "locator": "24",
+      "label": "Book 24"
+    },
+    {
+      "locator": "25",
+      "label": "Book 25"
+    },
+    {
+      "locator": "26",
+      "label": "Book 26"
+    },
+    {
+      "locator": "27",
+      "label": "Book 27"
+    },
+    {
+      "locator": "28",
+      "label": "Book 28"
+    },
+    {
+      "locator": "29",
+      "label": "Book 29"
+    },
+    {
+      "locator": "30",
+      "label": "Book 30"
+    },
+    {
+      "locator": "31",
+      "label": "Book 31"
+    },
+    {
+      "locator": "32",
+      "label": "Book 32"
+    },
+    {
+      "locator": "33",
+      "label": "Book 33"
+    },
+    {
+      "locator": "34",
+      "label": "Book 34"
+    },
+    {
+      "locator": "35",
+      "label": "Book 35"
+    },
+    {
+      "locator": "36",
+      "label": "Book 36"
+    },
+    {
+      "locator": "37",
+      "label": "Book 37"
+    },
+    {
+      "locator": "38",
+      "label": "Book 38"
+    },
+    {
+      "locator": "39",
+      "label": "Book 39"
+    }
+  ],
+  "editorial": []
+}

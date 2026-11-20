@@ -608,6 +608,12 @@ describe("build", () => {
     )
   })
 
+  it("reads Polybius by book and chapter, in Büttner-Wobst's Greek and Shuckburgh's English", () => {
+    expect(read("polybius/histories/shuckburgh/1/index.html")).toMatch(
+      /id="1\.1"[^>]*>[\s\S]*?Had the praise of History/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
