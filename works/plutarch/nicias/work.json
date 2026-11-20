@@ -1,0 +1,59 @@
+{
+  "author": "Plutarch",
+  "title": "Nicias",
+  "otherTitles": [],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "chapter, e.g. 66; a section, e.g. 66.12, lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "perrin-greek",
+      "preferred": true,
+      "language": "grc",
+      "title": "Nicias",
+      "editor": "Bernadotte Perrin",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg038/tlg0007.tlg038.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Plutarch-tlg0007.tlg038.perseus-grc2-Perseus.zip",
+            "sha256": "be05bd1bb6eb147e50a827f677de74ff45453344e834dd22517eb1613c967d9d"
+          }
+        ],
+        "rights": "Greek text (Loeb Classical Library, 1914–26) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus"
+    },
+    {
+      "slug": "perrin",
+      "preferred": false,
+      "language": "en",
+      "title": "Nicias",
+      "translator": "Bernadotte Perrin",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg038/tlg0007.tlg038.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Plutarch-tlg0007.tlg038.perseus-eng2-Perseus.zip",
+            "sha256": "7ecf42db701703a2caad9e59caff4eb17ff2d4a2f7ae7bff8de474206dbae8f6"
+          }
+        ],
+        "rights": "Translation (Loeb Classical Library, 1914–26) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "humanTranslation": {
+        "citation": "Bernadotte Perrin, Plutarch's Lives (Loeb, 1914–26): Nicias, from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg038/tlg0007.tlg038.perseus-eng2.xml"
+      }
+    }
+  ]
+}

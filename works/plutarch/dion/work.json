@@ -1,0 +1,59 @@
+{
+  "author": "Plutarch",
+  "title": "Dion",
+  "otherTitles": [],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "chapter, e.g. 66; a section, e.g. 66.12, lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "perrin-greek",
+      "preferred": true,
+      "language": "grc",
+      "title": "Dion",
+      "editor": "Bernadotte Perrin",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg060/tlg0007.tlg060.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Plutarch-tlg0007.tlg060.perseus-grc2-Perseus.zip",
+            "sha256": "c927878305755d594d750f2b9c51b6699a59dc6f41eacf9fbda3ef363b0b1a28"
+          }
+        ],
+        "rights": "Greek text (Loeb Classical Library, 1914–26) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus"
+    },
+    {
+      "slug": "perrin",
+      "preferred": false,
+      "language": "en",
+      "title": "Dion",
+      "translator": "Bernadotte Perrin",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg060/tlg0007.tlg060.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Plutarch-tlg0007.tlg060.perseus-eng2-Perseus.zip",
+            "sha256": "75fc893b7547f77d9f2b0fe16a5afa55e80097db4cc943a5176995bdeddff136"
+          }
+        ],
+        "rights": "Translation (Loeb Classical Library, 1914–26) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "humanTranslation": {
+        "citation": "Bernadotte Perrin, Plutarch's Lives (Loeb, 1914–26): Dion, from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg060/tlg0007.tlg060.perseus-eng2.xml"
+      }
+    }
+  ]
+}

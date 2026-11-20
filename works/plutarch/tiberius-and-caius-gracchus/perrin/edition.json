@@ -1,0 +1,13 @@
+{
+  "divisions": [
+    {
+      "locator": "Tiberius",
+      "label": "Book Tiberius"
+    },
+    {
+      "locator": "Caius",
+      "label": "Book Caius"
+    }
+  ],
+  "editorial": []
+}

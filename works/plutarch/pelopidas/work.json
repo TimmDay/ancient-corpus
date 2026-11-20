@@ -1,0 +1,59 @@
+{
+  "author": "Plutarch",
+  "title": "Pelopidas",
+  "otherTitles": [],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "chapter, e.g. 66; a section, e.g. 66.12, lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "perrin-greek",
+      "preferred": true,
+      "language": "grc",
+      "title": "Pelopidas",
+      "editor": "Bernadotte Perrin",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg021/tlg0007.tlg021.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Plutarch-tlg0007.tlg021.perseus-grc2-Perseus.zip",
+            "sha256": "fe0e44c5f6e3b080584720af8783711ca56efdfd4abbb1c11cf79a01e0ae41b9"
+          }
+        ],
+        "rights": "Greek text (Loeb Classical Library, 1914–26) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus"
+    },
+    {
+      "slug": "perrin",
+      "preferred": false,
+      "language": "en",
+      "title": "Pelopidas",
+      "translator": "Bernadotte Perrin",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg021/tlg0007.tlg021.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Plutarch-tlg0007.tlg021.perseus-eng2-Perseus.zip",
+            "sha256": "c5c3d2e43741809a5f9d802baa70f3ad443799977c219e615c84850dcb3e1146"
+          }
+        ],
+        "rights": "Translation (Loeb Classical Library, 1914–26) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "humanTranslation": {
+        "citation": "Bernadotte Perrin, Plutarch's Lives (Loeb, 1914–26): Pelopidas, from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg021/tlg0007.tlg021.perseus-eng2.xml"
+      }
+    }
+  ]
+}

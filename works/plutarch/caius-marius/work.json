@@ -1,0 +1,59 @@
+{
+  "author": "Plutarch",
+  "title": "Caius Marius",
+  "otherTitles": [],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "chapter, e.g. 66; a section, e.g. 66.12, lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "perrin-greek",
+      "preferred": true,
+      "language": "grc",
+      "title": "Caius Marius",
+      "editor": "Bernadotte Perrin",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg031/tlg0007.tlg031.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Plutarch-tlg0007.tlg031.perseus-grc2-Perseus.zip",
+            "sha256": "e9cfd170ff4ebf7632e14e68ec8c09e6d3ab4670a8c323fbc20e493d87cd129b"
+          }
+        ],
+        "rights": "Greek text (Loeb Classical Library, 1914–26) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus"
+    },
+    {
+      "slug": "perrin",
+      "preferred": false,
+      "language": "en",
+      "title": "Caius Marius",
+      "translator": "Bernadotte Perrin",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg031/tlg0007.tlg031.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Plutarch-tlg0007.tlg031.perseus-eng2-Perseus.zip",
+            "sha256": "441787d9d5c66d5dc5d60b05aa9a895d8317ffb3d47e4ad5176af20920945770"
+          }
+        ],
+        "rights": "Translation (Loeb Classical Library, 1914–26) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "humanTranslation": {
+        "citation": "Bernadotte Perrin, Plutarch's Lives (Loeb, 1914–26): Caius Marius, from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg031/tlg0007.tlg031.perseus-eng2.xml"
+      }
+    }
+  ]
+}

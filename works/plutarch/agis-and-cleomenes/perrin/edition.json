@@ -1,0 +1,13 @@
+{
+  "divisions": [
+    {
+      "locator": "Agis",
+      "label": "Book Agis"
+    },
+    {
+      "locator": "Cleomenes",
+      "label": "Book Cleomenes"
+    }
+  ],
+  "editorial": []
+}

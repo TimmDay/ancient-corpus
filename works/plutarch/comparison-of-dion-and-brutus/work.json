@@ -1,0 +1,59 @@
+{
+  "author": "Plutarch",
+  "title": "Comparison of Dion and Brutus",
+  "otherTitles": [],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "chapter, e.g. 66; a section, e.g. 66.12, lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "perrin-greek",
+      "preferred": true,
+      "language": "grc",
+      "title": "Comparison of Dion and Brutus",
+      "editor": "Bernadotte Perrin",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg062/tlg0007.tlg062.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Plutarch-tlg0007.tlg062.perseus-grc2-Perseus.zip",
+            "sha256": "c833d57e9214ffa632c754afa7a045ddcd57df8ba7c3eb69e05cae66f9b41a68"
+          }
+        ],
+        "rights": "Greek text (Loeb Classical Library, 1914–26) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus"
+    },
+    {
+      "slug": "perrin",
+      "preferred": false,
+      "language": "en",
+      "title": "Comparison of Dion and Brutus",
+      "translator": "Bernadotte Perrin",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg062/tlg0007.tlg062.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Plutarch-tlg0007.tlg062.perseus-eng2-Perseus.zip",
+            "sha256": "10d2e60cf209e1b8c63432172f9c1ccc3e55b38c975f037ab0753d5c2c179a45"
+          }
+        ],
+        "rights": "Translation (Loeb Classical Library, 1914–26) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "humanTranslation": {
+        "citation": "Bernadotte Perrin, Plutarch's Lives (Loeb, 1914–26): Comparison of Dion and Brutus, from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg062/tlg0007.tlg062.perseus-eng2.xml"
+      }
+    }
+  ]
+}

@@ -623,6 +623,17 @@ describe("build", () => {
     )
   })
 
+  it("reads Plutarch's Lives by chapter, in Perrin's Greek and English", () => {
+    expect(read("plutarch/caesar/index.html")).toMatch(/id="66"/)
+    expect(read("plutarch/caesar/perrin/index.html")).toMatch(
+      /id="66"[^>]*>[\s\S]*?Cassius/,
+    )
+    // The double Lives name each Life before its chapter.
+    expect(read("plutarch/tiberius-and-caius-gracchus/index.html")).toMatch(
+      /id="Tiberius\.1"/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

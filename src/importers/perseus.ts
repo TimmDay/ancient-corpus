@@ -33,15 +33,23 @@ export function importPerseus(source: EditionSource): ImportedEdition {
   const divisions: Division[] = []
   const passages: Omit<Passage, "flags">[] = []
 
-  // Herodotus' English spells its books `subtype="Book"`.
-  for (const book of $('div[subtype="book" i]').toArray()) {
-    const n = $(book).attr("n") ?? ""
+  // Herodotus' English spells its books `subtype="Book"`. A work without
+  // books (a Life of Plutarch's) is read as one, its Passages named by
+  // chapter alone.
+  const books = $('div[subtype="book" i]').toArray()
+  const containers = books.length
+    ? books
+    : $('div[type="edition"], div[type="translation"]').toArray()
+  for (const book of containers) {
+    const n = books.length ? ($(book).attr("n") ?? "") : ""
     const label = n === "praef" ? "Preface" : `Book ${n}`
-    divisions.push({ locator: n, label })
+    if (n) divisions.push({ locator: n, label })
     $(book)
       .children('div[subtype="chapter"]')
       .each((_, chapter) => {
-        const locator = `${n}.${$(chapter).attr("n") ?? ""}`
+        const locator = n
+          ? `${n}.${$(chapter).attr("n") ?? ""}`
+          : ($(chapter).attr("n") ?? "")
         // A paragraph per section, as the edition's sections fall.
         const blocks = $(chapter)
           .find("p")
@@ -60,9 +68,10 @@ export function importPerseus(source: EditionSource): ImportedEdition {
           }))
         passages.push({
           locator,
-          headings: passages.some((p) => p.division === n)
-            ? []
-            : [{ kind: "division", html: label, editorial: false }],
+          headings:
+            !n || passages.some((p) => p.division === n)
+              ? []
+              : [{ kind: "division", html: label, editorial: false }],
           division: n,
           blocks,
           notes,

@@ -1,0 +1,8 @@
+[
+  {
+    "op": "accept",
+    "locator": "2",
+    "flag": "gap",
+    "reason": "Plutarch's preface to the pair, Aemilius 1 in other editions, is printed before Timoleon as Timoleon 0, so Aemilius begins at chapter 2"
+  }
+]
