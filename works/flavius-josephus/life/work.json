@@ -1,0 +1,60 @@
+{
+  "author": "Flavius Josephus",
+  "title": "Life",
+  "otherTitles": ["Vita", "The Life of Flavius Josephus", "Ἰωσήπου βίος"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "section (Niese), e.g. 414; a Passage is one of Whiston's paragraphs, named by the section it starts in, and a section inside it lands on it",
+  "numberedLines": true,
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "niese",
+      "preferred": true,
+      "language": "grc",
+      "title": "Ἰωσήπου βίος",
+      "editor": "Benedikt Niese",
+      "publicationYear": 1890,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0526/tlg002/tlg0526.tlg002.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Josephus-tlg0526.tlg002.perseus-grc2-Perseus.zip",
+            "sha256": "42f42366dc7402b9526dc99c9fa594fdb64486da5e649ae5b3fd27b72d469427"
+          }
+        ],
+        "rights": "Greek text (Weidmann, 1890) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "whiston",
+      "preferred": false,
+      "language": "en",
+      "title": "The Life of Flavius Josephus",
+      "translator": "William Whiston",
+      "publicationYear": 1737,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0526/tlg002/tlg0526.tlg002.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Josephus-tlg0526.tlg002.perseus-eng2-Perseus.zip",
+            "sha256": "b620976375b94e6128875d15e40fb9c5aaad1163f939560346637837f7f06ea7"
+          }
+        ],
+        "rights": "Translation (1737; this printing Alden and Beardsley, 1856) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "William Whiston, The Life of Flavius Josephus (1737), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0526/tlg002/tlg0526.tlg002.perseus-eng2.xml"
+      }
+    }
+  ]
+}
