@@ -1,0 +1,60 @@
+{
+  "author": "Jordanes",
+  "title": "Romana",
+  "otherTitles": ["De summa temporum vel origine actibusque gentis Romanorum"],
+  "originalLanguage": "la",
+  "writtenYearEarliest": 551,
+  "writtenYearLatest": 551,
+  "coversYearEarliest": null,
+  "coversYearLatest": 551,
+  "locatorFormat": "section, as numbered in Mommsen's edition, e.g. 290",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "mommsen",
+      "preferred": true,
+      "language": "la",
+      "title": "De summa temporum vel origine actibusque gentis Romanorum",
+      "editor": "Theodor Mommsen",
+      "publicationYear": 1882,
+      "source": {
+        "name": "The Latin Library",
+        "url": "https://www.thelatinlibrary.com/iordanes2.html",
+        "archives": [
+          {
+            "file": "Jordanes-Romana-LatinLibrary.zip",
+            "sha256": "6aa2c9f28054ff1a7ddb27d2217eb71b2c2ac4a1cb750f3bbfff6ada8166671e",
+            "url": "https://www.thelatinlibrary.com/iordanes2.html"
+          }
+        ],
+        "rights": "Mommsen's text (MGH Auctores Antiquissimi 5.1, 1882) is public domain; The Latin Library claims no rights in it"
+      },
+      "licence": "public-domain",
+      "importer": "latinlibrary-sections"
+    },
+    {
+      "slug": "ancient-corpus",
+      "preferred": false,
+      "language": "en",
+      "title": "English translation",
+      "translator": "Ancient Corpus (machine translation)",
+      "publicationYear": 2026,
+      "source": {
+        "name": "This project",
+        "url": "https://github.com/TimmDay/ancient-corpus",
+        "archives": [],
+        "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "licence": "cc0",
+      "model": "Claude Opus 5.5",
+      "importer": "translation",
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 19 November 2026, from Theodor Mommsen's Latin (1882). Sections 278 to 296 only, Macrinus to Diocletian. It is not a translator's work: check it against the Latin, and report errors. Public domain (CC0): reuse it freely.",
+      "humanTranslation": {
+        "citation": "Peter Van Nuffelen and Lieve Van Hoof, Jordanes: Romana and Getica (Liverpool University Press, Translated Texts for Historians 75, 2020)",
+        "url": "https://search.worldcat.org/search?q=Jordanes+Romana+and+Getica+Van+Nuffelen",
+        "access": "In copyright: buy it, or borrow it from a library."
+      }
+    }
+  ]
+}

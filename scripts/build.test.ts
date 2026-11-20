@@ -340,6 +340,15 @@ describe("build", () => {
     ).toMatch(/id="721"[^>]*>[\s\S]*?a place called Immae/)
   })
 
+  it("reads Jordanes's Romana by Mommsen's sections, and our English", () => {
+    expect(read("jordanes/romana/index.html")).toMatch(
+      /id="291"[^>]*>[\s\S]*?apud Hymmas vicino Antiochiae/,
+    )
+    expect(read("jordanes/romana/ancient-corpus/index.html")).toMatch(
+      /id="291"[^>]*>[\s\S]*?defeated her at Immae/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

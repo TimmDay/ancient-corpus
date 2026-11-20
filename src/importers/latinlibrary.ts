@@ -11,6 +11,7 @@
 // book's first chapter is its preface, `1.praef`, whether the site labels it
 // "[Prologus]", "[Praef.]" or not at all.
 
+import { load } from "cheerio"
 import type { Element } from "domhandler"
 import type {
   Division,
@@ -95,4 +96,44 @@ function chapters(
   for (const passage of passages)
     passage.text = plainText(passage.blocks.join(" "))
   return passages.filter((p) => p.blocks.length)
+}
+
+/**
+ * A Work numbered by section alone (Jordanes's Romana, in Mommsen's numbers):
+ * each section opens with <b>N</b>, anywhere in a paragraph, and runs on
+ * across paragraphs until the next. A Passage is a section.
+ */
+export function importLatinLibrarySections(
+  source: EditionSource,
+): ImportedEdition {
+  const archive = source.archives[0]
+  if (!archive || source.archives.length > 1)
+    throw new Error("Expected one saved page")
+  const $ = readIntakeHtml(archive)
+  const passages: Omit<Passage, "flags">[] = []
+  for (const p of $("p").toArray() as Element[]) {
+    // The rule before the site's footer ends the text (another heads it).
+    if (/border/.test($(p).attr("class") ?? "") && passages.length) break
+    const pieces = ($(p).html() ?? "").split(/<b>\s*(\d+)\s*<\/b>/i)
+    const lead = plainOf(pieces[0] ?? "")
+    if (lead) passages.at(-1)?.blocks.push(escapeHtml(lead))
+    for (let i = 1; i < pieces.length; i += 2) {
+      const text = plainOf(pieces[i + 1] ?? "")
+      passages.push({
+        locator: pieces[i] ?? "",
+        headings: [],
+        division: "",
+        blocks: text ? [escapeHtml(text)] : [],
+        notes: [],
+        text: "",
+      })
+    }
+  }
+  for (const passage of passages)
+    passage.text = plainText(passage.blocks.join(" "))
+  return { divisions: [], passages, editorial: [] }
+}
+
+function plainOf(html: string): string {
+  return load(`<p>${html}</p>`).text().replace(/\s+/g, " ").trim()
 }

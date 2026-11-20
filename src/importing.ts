@@ -22,7 +22,10 @@ import { importEutropius } from "./importers/eutropius.ts"
 import { importDir } from "./importers/dir.ts"
 import { importJulianCaesars } from "./importers/julian.ts"
 import { importLacusCurtius } from "./importers/lacuscurtius.ts"
-import { importLatinLibrary } from "./importers/latinlibrary.ts"
+import {
+  importLatinLibrary,
+  importLatinLibrarySections,
+} from "./importers/latinlibrary.ts"
 import { importParthianSources } from "./importers/parthiansources.ts"
 import { importPerseus, importPerseusLines } from "./importers/perseus.ts"
 import { importAmmianus, importAmmianusLatin } from "./importers/ammianus.ts"
@@ -55,6 +58,7 @@ const IMPORTERS: Record<
   lacuscurtius: (source, work, edition) =>
     importLacusCurtius(source, work.title, edition.language),
   latinlibrary: (source) => importLatinLibrary(source),
+  "latinlibrary-sections": (source) => importLatinLibrarySections(source),
   parthiansources: (source, _work, edition) =>
     importParthianSources(source, edition),
   perseus: importPerseus,
