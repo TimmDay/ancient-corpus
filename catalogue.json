@@ -225,12 +225,12 @@
           "written": "c. 41 to 40 BC"
         },
         {
-          "author": "Julius Caesar",
-          "title": "Gallic War; Civil War",
-          "language": "la",
-          "written": "50s and 40s BC",
-          "covers": "58 to 48 BC",
-          "freeEnglish": "W. A. McDevitte and W. S. Bohn (1869)"
+          "work": "julius-caesar/de-bello-gallico",
+          "written": "50s BC"
+        },
+        {
+          "work": "julius-caesar/de-bello-civili",
+          "written": "40s BC"
         },
         {
           "author": "Cicero",

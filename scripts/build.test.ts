@@ -496,6 +496,18 @@ describe("build", () => {
     )
   })
 
+  it("reads Caesar by book and chapter, the Latin and the English from Perseus", () => {
+    expect(read("julius-caesar/de-bello-gallico/1/index.html")).toMatch(
+      /id="1\.1"[^>]*>[\s\S]*?Gallia est omnis divisa in partes tres/,
+    )
+    expect(
+      read("julius-caesar/de-bello-gallico/mcdevitte-bohn/1/index.html"),
+    ).toMatch(/id="1\.1"[^>]*>[\s\S]*?All Gaul is divided into three parts/)
+    expect(read("julius-caesar/de-bello-civili/peskett/1/index.html")).toMatch(
+      /id="1\.1"[^>]*>[\s\S]*?When Caesar’s dispatch had been handed to the consuls/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

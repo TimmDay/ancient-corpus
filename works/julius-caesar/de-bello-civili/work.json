@@ -1,0 +1,63 @@
+{
+  "author": "Julius Caesar",
+  "title": "De Bello Civili",
+  "otherTitles": ["Civil War", "Commentarii de Bello Civili"],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": -49,
+  "coversYearLatest": -48,
+  "locatorFormat": "book.chapter, e.g. 3.99; a section, e.g. 3.99.1, lands on its chapter",
+  "slugAliases": ["julius-caesar/civil-war"],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "du-pontet",
+      "preferred": true,
+      "language": "la",
+      "title": "C. Iuli Caesaris Commentariorum pars posterior",
+      "editor": "Renatus du Pontet",
+      "publicationYear": 1901,
+      "source": {
+        "name": "Perseus Digital Library (canonical-latinLit)",
+        "url": "https://github.com/PerseusDL/canonical-latinLit/blob/master/data/phi0448/phi002/phi0448.phi002.perseus-lat2.xml",
+        "archives": [
+          {
+            "file": "Caesar-phi0448.phi002.perseus-lat2-Perseus.zip",
+            "sha256": "893f7b09c76c969e0e812206f87f8d80ea08c740be7a18686376accd83f627b0"
+          }
+        ],
+        "rights": "Latin text (Oxford, 1901) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "peskett",
+      "preferred": false,
+      "language": "en",
+      "title": "The Civil Wars",
+      "translator": "A. G. Peskett",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-latinLit)",
+        "url": "https://github.com/PerseusDL/canonical-latinLit/blob/master/data/phi0448/phi002/phi0448.phi002.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Caesar-phi0448.phi002.perseus-eng2-Perseus.zip",
+            "sha256": "400550b66414d9bd43948563ef72a51f8e7eae8bb83f09e760f6e94657612b6b"
+          }
+        ],
+        "rights": "Translation (Loeb Classical Library, 1914) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "A. G. Peskett, The Civil Wars (1914), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-latinLit/blob/master/data/phi0448/phi002/phi0448.phi002.perseus-eng2.xml"
+      }
+    }
+  ]
+}
