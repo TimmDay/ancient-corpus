@@ -432,6 +432,16 @@ describe("build", () => {
     )
   })
 
+  it("reads Rutilius by book and line, the Latin verses beside the Duffs' English", () => {
+    expect(read("rutilius-namatianus/de-reditu-suo/index.html")).toMatch(
+      /id="1\.47"[^>]*>[\s\S]*?"exaudi, regina tui pulcherrima mundi/,
+    )
+    // Thayer's map of Populonia, captioned in his Latin, is not Rutilius.
+    expect(read("rutilius-namatianus/de-reditu-suo/index.html")).not.toMatch(
+      /ruinas Romanas videre/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

@@ -607,11 +607,8 @@
           "written": "c. 500"
         },
         {
-          "author": "Rutilius Namatianus",
-          "title": "De Reditu Suo",
-          "language": "la",
-          "written": "c. 417",
-          "covers": "417"
+          "work": "rutilius-namatianus/de-reditu-suo",
+          "written": "c. 417"
         },
         {
           "author": "Anonymous",

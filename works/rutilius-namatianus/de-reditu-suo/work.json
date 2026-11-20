@@ -1,0 +1,62 @@
+{
+  "author": "Rutilius Namatianus",
+  "title": "De Reditu Suo",
+  "otherTitles": ["On His Return", "A Voyage Home to Gaul"],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": 417,
+  "coversYearLatest": 417,
+  "locatorFormat": "book and line, e.g. 1.47; a Passage is one of the Duffs' paragraphs, named by its first line",
+  "numberedLines": true,
+  "slugAliases": ["rutilius-namatianus/on-his-return"],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "duff-latin",
+      "preferred": true,
+      "language": "la",
+      "title": "De Reditu Suo",
+      "editor": "J. Wight Duff and Arnold M. Duff",
+      "publicationYear": 1934,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/L/Roman/Texts/Rutilius_Namatianus/text*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-Rutilius.zip",
+            "sha256": "fb77e855a8625d1e638c24e6eb6aa584129c2853b6470b4cc0a532d5a65a77c8"
+          }
+        ],
+        "rights": "Public domain. J. Wight Duff and Arnold M. Duff, Minor Latin Poets, Loeb Classical Library (1934); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "lacuscurtius-verse"
+    },
+    {
+      "slug": "duff",
+      "preferred": false,
+      "language": "en",
+      "title": "A Voyage Home to Gaul",
+      "translator": "J. Wight Duff and Arnold M. Duff",
+      "publicationYear": 1934,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Rutilius_Namatianus/text*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-Rutilius.zip",
+            "sha256": "fb77e855a8625d1e638c24e6eb6aa584129c2853b6470b4cc0a532d5a65a77c8"
+          }
+        ],
+        "rights": "Public domain. J. Wight Duff and Arnold M. Duff, Minor Latin Poets, Loeb Classical Library (1934); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "lacuscurtius-verse",
+      "humanTranslation": {
+        "citation": "J. Wight Duff and Arnold M. Duff, Minor Latin Poets (Loeb, 1934), on LacusCurtius",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Rutilius_Namatianus/text*.html"
+      }
+    }
+  ]
+}

@@ -1,15 +1,16 @@
-// Claudian's poems, ed. and tr. Maurice Platnauer (Loeb, 1922), transcribed
-// by Bill Thayer on LacusCurtius: an English page and a Latin page for each
-// poem or book, saved into one intake zip.
+// Latin verse with a Loeb prose translation, transcribed by Bill Thayer on
+// LacusCurtius: an English page and a Latin page for each poem or book, saved
+// into one intake zip. Claudian's poems (Platnauer, 1922) and Rutilius
+// Namatianus (Duff, 1934).
 //
 // Platnauer's English is prose, a paragraph for a run of verses; each
 // paragraph opens with a link to the Latin line it starts at (`<a name="39">`,
-// sometimes a line he numbers `87A`). A Passage is one paragraph, named by
+// sometimes a line he numbers `87A`, or with its book, `1.19`). A Passage is one paragraph, named by
 // that line; a preface, printed without links and numbered apart, is one
 // Passage, `praef`. A Work of several books puts the book first (`2.54`,
 // `2.praef`). The Latin page anchors every line by number (`name="39"` or
-// `id="P39"`), and the line numbers in its margin are `a.sec` links, which
-// are dropped; the Latin of a Passage is its lines from the paragraph's
+// `id="P39"`, `name="1.19"`), and the line numbers in its margin are `a.sec`
+// or `a.linenum` links, which are dropped; the Latin of a Passage is its lines from the paragraph's
 // line up to the next paragraph's.
 
 import type { CheerioAPI } from "cheerio"
@@ -25,16 +26,18 @@ import { readIntakePages, readPage } from "./lacuscurtius.ts"
 
 type Draft = Omit<Passage, "flags">
 
-/** A poem, or a book of one, and its page under `Roman/Texts/Claudian/`; by Work title. */
+/** A poem, or a book of one, and its page under `Roman/Texts/<folder>/`; by Work title. */
 type Book = {
   page: string
+  /** The author's folder on LacusCurtius; Claudian's unless given. */
+  folder?: string
   book?: string
   label?: string
   /** Each section is one Passage, numbered from 1: the Fescennine Verses' four poems. */
   whole?: boolean
 }
 
-export const CLAUDIAN: Record<string, Book[]> = {
+export const VERSE: Record<string, Book[]> = {
   "Panegyricus dictus Probino et Olybrio consulibus": [
     { page: "Probino_et_Olybrio*" },
   ],
@@ -70,20 +73,20 @@ export const CLAUDIAN: Record<string, Book[]> = {
     { page: "De_Raptu_Proserpinae/2*", book: "2", label: "Book II" },
     { page: "De_Raptu_Proserpinae/3*", book: "3", label: "Book III" },
   ],
+  // Rutilius' two books are on one page; its links already name the book.
+  "De Reditu Suo": [{ page: "text*", folder: "Rutilius_Namatianus" }],
 }
 
-const FOLDER = "pages/{side}/Roman/Texts/Claudian"
-
-export function importClaudian(
+export function importLacusCurtiusVerse(
   source: EditionSource,
   work: string,
   language: string,
 ): ImportedEdition {
-  const books = CLAUDIAN[work]
-  if (!books) throw new Error(`No Claudian layout for ${work}`)
+  const books = VERSE[work]
+  if (!books) throw new Error(`No LacusCurtius verse layout for ${work}`)
   const pages = readIntakePages(onlyArchive(source))
   const page = (side: "E" | "L", book: Book) => {
-    const file = `${FOLDER.replace("{side}", side)}/${book.page}.html`
+    const file = `pages/${side}/Roman/Texts/${book.folder ?? "Claudian"}/${book.page}.html`
     const $ = pages.get(file)
     if (!$) throw new Error(`${file} is not in the intake archive`)
     return $
@@ -122,7 +125,20 @@ export function importClaudian(
         editorial: false,
       })
     for (const p of own) {
-      p.division = division
+      // A page of several books names each line with its book (`2.17`).
+      const inner = book.book ? undefined : /^(\d+)\./.exec(p.locator)?.[1]
+      p.division = inner ?? division
+      if (inner && !divisions.some((d) => d.locator === inner)) {
+        divisions.push({
+          locator: inner,
+          label: `Book ${roman(Number(inner))}`,
+        })
+        p.headings.unshift({
+          kind: "division",
+          html: `Book ${roman(Number(inner))}`,
+          editorial: false,
+        })
+      }
       p.text = plainText(p.blocks.join(" "))
       passages.push(p)
     }
@@ -167,7 +183,7 @@ function markStarts($: CheerioAPI, prefix: string, whole_: boolean): Start[] {
       .find("a[name]")
       .toArray()
       .map((a) => MISNAMED[a.attribs.name ?? ""] ?? a.attribs.name ?? "")
-      .find((name) => /^\d+A?$/.test(name))
+      .find((name) => /^(\d+\.)?\d+A?$/.test(name))
     // A poem printed without a heading of its own starts at its first line.
     if (section < 0 && line !== undefined) section = 0
     if (section < 0) continue
@@ -269,7 +285,12 @@ function readLines($: CheerioAPI): {
   let current: { name: string; parts: string[] } | undefined
   const flush = () => {
     if (!current) return
-    const html = current.parts.join("").replace(/\s+/g, " ").trim()
+    // LacusCurtius' soft hyphens and word joiners go, as in `lacuscurtius.ts`.
+    const html = current.parts
+      .join("")
+      .replace(/[\u00ad\u2060]/g, "")
+      .replace(/\s+/g, " ")
+      .trim()
     if (section >= 0 && plainText(html))
       lines.push({ section, name: current.name, html })
     current = undefined
@@ -310,11 +331,28 @@ function readLines($: CheerioAPI): {
       ended = true
       return
     }
-    if (/\b(sec|pagenum)\b/.test(classes)) return
+    // The site's footer, where a page has no rule before it.
+    if (/\b(footer|r1|m1|W3C|UCFooter)\b/.test(classes)) {
+      flush()
+      ended = true
+      return
+    }
+    // Margin numbers, page numbers, and references to Platnauer's Latin
+    // notes, which are not kept.
+    if (/\b(sec|pagenum|ref)\b/.test(classes)) return
+    // Thayer's own maps and photographs, captioned in his Latin.
+    if (/\bbasicH\b/.test(classes) || el.name === "noscript") return
+    // A margin number names its line: its anchor stays, its figure goes.
+    if (/\b(linenum|versenum)\b/.test(classes)) {
+      flush()
+      current = { name: el.attribs.name ?? "", parts: [] }
+      if (section < 0) section = 0
+      return
+    }
     if (el.name === "br" || el.name === "td" || el.name === "p") flush()
     if (el.name === "a") {
       const name = (el.attribs.name ?? el.attribs.id ?? "").replace(/^P/, "")
-      if (/^(Praef\.)?\d+A?$/i.test(name)) {
+      if (/^(Praef\.)?(\d+\.)?\d+A?$/i.test(name)) {
         flush()
         if (section < 0) section = 0
         current = { name: name.replace(/^Praef\./i, ""), parts: [] }
@@ -333,4 +371,8 @@ function readLines($: CheerioAPI): {
 
 function escape(text: string): string {
   return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+}
+
+function roman(n: number): string {
+  return ["", "I", "II", "III", "IV", "V", "VI"][n] ?? String(n)
 }
