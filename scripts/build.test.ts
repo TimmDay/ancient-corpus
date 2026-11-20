@@ -349,6 +349,17 @@ describe("build", () => {
     )
   })
 
+  it("reads the Chronicle of 354 by ruler, in Latin and Pearse's English", () => {
+    expect(
+      read("furius-dionysius-filocalus/chronography-of-354/index.html"),
+    ).toMatch(/id="caesares\.aurelianus"[^>]*>[\s\S]*?hic muro urbem cinxit/)
+    expect(
+      read("furius-dionysius-filocalus/chronography-of-354/pearse/index.html"),
+    ).toMatch(
+      /id="caesares\.aurelianus"[^>]*>[\s\S]*?surrounded the city with a wall/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

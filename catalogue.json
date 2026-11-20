@@ -715,11 +715,7 @@
       "heading": "Chronicles and later compilations",
       "entries": [
         {
-          "author": "Furius Dionysius Filocalus",
-          "title": "Chronography of 354",
-          "language": "la",
-          "written": "354",
-          "covers": "Romulus to 324, in its Chronicle of the City of Rome",
+          "work": "furius-dionysius-filocalus/chronography-of-354",
           "note": "An illustrated almanac; its Chronicle gives a short notice of each reign"
         },
         {
