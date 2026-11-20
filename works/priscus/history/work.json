@@ -1,0 +1,38 @@
+{
+  "author": "Priscus",
+  "title": "Byzantine History (fragments)",
+  "otherTitles": ["Ἱστορία Βυζαντιακή", "History (fragments)"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": 433,
+  "coversYearLatest": 472,
+  "locatorFormat": "fragment, as numbered in Müller's FHG IV, e.g. 8",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "muller",
+      "preferred": true,
+      "language": "grc",
+      "title": "Prisci Panitae fragmenta (FHG IV)",
+      "editor": "Karl Müller",
+      "publicationYear": 1851,
+      "source": {
+        "name": "Digital Fragmenta Historicorum Graecorum (DFHG), Monica Berti, University of Leipzig",
+        "url": "https://www.dfhg-project.org/DFHG/index.php?volume=Volumen%20quartum",
+        "archives": [
+          {
+            "file": "Priscus-Muller-DFHG.zip",
+            "sha256": "f3f7d67f8bb9e9e0fba68b5b5206d8837ecccd2d21b5ccb791f114be8a1f1033",
+            "url": "https://www.dfhg-project.org/DFHG/api.php?author=PRISCUS%20PANITES"
+          }
+        ],
+        "rights": "Müller's text (Paris: Didot, 1851) is public domain; the digital edition is © DFHG Project under CC BY-SA 4.0 (its page footer; the page's metadata says CC BY-NC-SA 4.0)."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "dfhg",
+      "notice": "The fragments Müller printed in FHG IV, and not the testimonia before them. Blockley's numbering (1983) and Carolla's (2008) differ."
+    }
+  ]
+}

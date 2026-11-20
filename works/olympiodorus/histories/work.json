@@ -1,0 +1,61 @@
+{
+  "author": "Olympiodorus of Thebes",
+  "title": "Histories (fragments)",
+  "otherTitles": ["Ἱστορικοὶ λόγοι"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": 407,
+  "coversYearLatest": 425,
+  "locatorFormat": "fragment, as numbered in Müller's FHG IV; fragment 1, Photius' summary, by Müller's section, e.g. 1.17",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "muller",
+      "preferred": true,
+      "language": "grc",
+      "title": "Olympiodori Thebaei fragmenta (FHG IV)",
+      "editor": "Karl Müller",
+      "publicationYear": 1851,
+      "source": {
+        "name": "Digital Fragmenta Historicorum Graecorum (DFHG), Monica Berti, University of Leipzig",
+        "url": "https://www.dfhg-project.org/DFHG/index.php?volume=Volumen%20quartum",
+        "archives": [
+          {
+            "file": "Olympiodorus-Muller-DFHG.zip",
+            "sha256": "ad9b469be33398f612cbd7b75c745415b4c26caa972475de76985e0a9343355e",
+            "url": "https://www.dfhg-project.org/DFHG/api.php?author=OLYMPIODORUS%20THEBAEUS"
+          }
+        ],
+        "rights": "Müller's text (Paris: Didot, 1851) is public domain; the digital edition is © DFHG Project under CC BY-SA 4.0 (its page footer; the page's metadata says CC BY-NC-SA 4.0)."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "dfhg",
+      "notice": "The fragments Müller printed in FHG IV: Photius' summary (Bibliotheca, cod. 80), a Passage per section, and a passage of Zosimus. Blockley's numbering (1983) differs."
+    },
+    {
+      "slug": "ancient-corpus",
+      "preferred": false,
+      "language": "en",
+      "title": "English translation",
+      "translator": "Ancient Corpus (machine translation)",
+      "publicationYear": 2026,
+      "source": {
+        "name": "This project",
+        "url": "https://github.com/TimmDay/ancient-corpus",
+        "archives": [],
+        "rights": "Dedicated to the public domain (CC0 1.0): https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "licence": "cc0",
+      "model": "Claude Opus 5.5",
+      "importer": "translation",
+      "notice": "A machine translation made by this project with Claude Opus 5.5 (claude-opus-5-5) on 20 November 2026, from Karl Müller's text of the fragments (Fragmenta Historicorum Graecorum IV, 1851): all of them. It is not a translator's work: check it against the Greek, and report errors. Public domain (CC0): reuse it freely.",
+      "humanTranslation": {
+        "citation": "R. C. Blockley, The Fragmentary Classicising Historians of the Later Roman Empire, vol. 2 (Francis Cairns, 1983), the Greek with an English translation, in his own numbering",
+        "url": "https://search.worldcat.org/search?q=Fragmentary+Classicising+Historians+of+the+Later+Roman+Empire+Blockley",
+        "access": "In copyright: buy it, or borrow it from a library."
+      }
+    }
+  ]
+}
