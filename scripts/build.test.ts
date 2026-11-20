@@ -360,6 +360,17 @@ describe("build", () => {
     )
   })
 
+  it("reads John of Antioch on Aurelian's temper, in Greek and our English", () => {
+    expect(read("john-of-antioch/historia-chronike/index.html")).toMatch(
+      /id="155"[^>]*>[\s\S]*?πρὸς ὠμότητα ῥέπων/,
+    )
+    expect(
+      read("john-of-antioch/historia-chronike/ancient-corpus/index.html"),
+    ).toMatch(
+      /id="155"[^>]*>[\s\S]*?more a necessary general than a chosen emperor/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

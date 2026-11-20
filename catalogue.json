@@ -771,11 +771,8 @@
           "work": "anonymous/chronicon-paschale"
         },
         {
-          "author": "John of Antioch",
-          "title": "History (fragments)",
-          "language": "grc",
-          "written": "7th century",
-          "covers": "Creation to 610"
+          "work": "john-of-antioch/historia-chronike",
+          "written": "7th century"
         },
         {
           "work": "peter-the-patrician/historiae",

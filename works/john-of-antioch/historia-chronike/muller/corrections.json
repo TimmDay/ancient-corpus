@@ -1,0 +1,20 @@
+[
+  {
+    "op": "accept",
+    "locator": "6",
+    "flag": "long",
+    "reason": "Müller prints this fragment whole: a long excerpt, not an error"
+  },
+  {
+    "op": "accept",
+    "locator": "72",
+    "flag": "long",
+    "reason": "Müller prints this fragment whole: a long excerpt, not an error"
+  },
+  {
+    "op": "accept",
+    "locator": "146",
+    "flag": "long",
+    "reason": "Müller prints this fragment whole: a long excerpt, not an error"
+  }
+]
