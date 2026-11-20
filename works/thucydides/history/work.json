@@ -1,0 +1,63 @@
+{
+  "author": "Thucydides",
+  "title": "History of the Peloponnesian War",
+  "otherTitles": ["Ἱστορίαι", "Histories"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": -431,
+  "coversYearLatest": -411,
+  "locatorFormat": "book.chapter, e.g. 2.35; a section, e.g. 2.35.1, lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "jones",
+      "preferred": true,
+      "language": "grc",
+      "title": "Thucydidis Historiae",
+      "editor": "Henry Stuart Jones",
+      "publicationYear": 1900,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0003/tlg001/tlg0003.tlg001.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Thucydides-tlg0003.tlg001.perseus-grc2-Perseus.zip",
+            "sha256": "6f3a5ff507475f53d9ec326d3489770d44d0df70cdc9090cc5ff44d7e5faeefd"
+          }
+        ],
+        "rights": "Greek text (Oxford, 1900–1902; revised by J. E. Powell, 1942) as Perseus gives it; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "crawley",
+      "preferred": false,
+      "language": "en",
+      "title": "History of the Peloponnesian War",
+      "translator": "Richard Crawley",
+      "publicationYear": 1874,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0003/tlg001/tlg0003.tlg001.perseus-eng6.xml",
+        "archives": [
+          {
+            "file": "Thucydides-tlg0003.tlg001.perseus-eng6-Perseus.zip",
+            "sha256": "c26058185a1316214da7a9a56b037c32219e1204157c10869d537f0e39dc14ea"
+          }
+        ],
+        "rights": "Translation (Longmans, 1874; Dent, 1914) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "Richard Crawley, History of the Peloponnesian War (1874), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0003/tlg001/tlg0003.tlg001.perseus-eng6.xml"
+      }
+    }
+  ]
+}

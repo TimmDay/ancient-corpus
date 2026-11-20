@@ -577,6 +577,15 @@ describe("build", () => {
     )
   })
 
+  it("reads Thucydides by book and chapter, in Jones' Greek and Crawley's English", () => {
+    expect(read("thucydides/history/2/index.html")).toMatch(
+      /id="2\.35"[^>]*>[\s\S]*?οἱ μὲν πολλοὶ τῶν ἐνθάδε ἤδη εἰρηκότων/,
+    )
+    expect(read("thucydides/history/crawley/2/index.html")).toMatch(
+      /id="2\.35"[^>]*>[\s\S]*?Most of my predecessors in this place/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

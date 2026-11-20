@@ -117,12 +117,8 @@
           "freeEnglish": "G. C. Macaulay (1890)"
         },
         {
-          "author": "Thucydides",
-          "title": "History of the Peloponnesian War",
-          "language": "grc",
-          "written": "after 404 BC",
-          "covers": "431 to 411 BC",
-          "freeEnglish": "Richard Crawley (1874)"
+          "work": "thucydides/history",
+          "written": "after 404 BC"
         },
         {
           "author": "Xenophon",
