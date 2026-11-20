@@ -368,11 +368,8 @@
           "freeEnglish": "William Melmoth (1746)"
         },
         {
-          "author": "Frontinus",
-          "title": "Stratagems",
-          "language": "la",
-          "written": "c. 84 to 96",
-          "freeEnglish": "C. E. Bennett (Loeb, 1925)"
+          "work": "frontinus/strategemata",
+          "written": "c. 84 to 96"
         },
         {
           "work": "suetonius/de-vita-caesarum",
