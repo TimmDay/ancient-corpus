@@ -1,0 +1,61 @@
+{
+  "author": "Philo of Alexandria",
+  "title": "In Flaccum",
+  "otherTitles": ["Against Flaccus"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": 38,
+  "coversYearLatest": 39,
+  "locatorFormat": "section, e.g. 41",
+  "slugAliases": ["philo-of-alexandria/against-flaccus"],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "cohn-reiter",
+      "preferred": true,
+      "language": "grc",
+      "title": "In Flaccum",
+      "editor": "Leopold Cohn and Siegfried Reiter",
+      "publicationYear": 1915,
+      "source": {
+        "name": "Open Greek and Latin, First1KGreek",
+        "url": "https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg0018/tlg030/tlg0018.tlg030.1st1K-grc1.xml",
+        "archives": [
+          {
+            "file": "Philo-tlg0018.tlg030.1st1K-grc1.zip",
+            "sha256": "4ddb89ebc78fc24334ccb99310adbbf8965a00b6ca1e1e0e4dee6edb00a6ab50"
+          }
+        ],
+        "rights": "Greek text (Reimer, 1915) public domain; the digital edition is © University of Leipzig, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "yonge",
+      "preferred": false,
+      "language": "en",
+      "title": "Against Flaccus",
+      "translator": "C. D. Yonge",
+      "publicationYear": 1855,
+      "source": {
+        "name": "Open Greek and Latin, First1KGreek",
+        "url": "https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg0018/tlg030/tlg0018.tlg030.1st1K-eng1.xml",
+        "archives": [
+          {
+            "file": "Philo-tlg0018.tlg030.1st1K-eng1.zip",
+            "sha256": "678688d4608b0adcb2e2d5e199ed31abe4f38c7e15710d1970a21e48e97aaca3"
+          }
+        ],
+        "rights": "Translation (Bohn, 1855) public domain; the digital edition is © University of Leipzig, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "C. D. Yonge, The Works of Philo Judaeus, vol. 4 (Bohn, 1855), from First1KGreek",
+        "url": "https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg0018/tlg030/tlg0018.tlg030.1st1K-eng1.xml"
+      }
+    }
+  ]
+}

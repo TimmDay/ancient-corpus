@@ -538,6 +538,17 @@ describe("build", () => {
     )
   })
 
+  it("reads Philo by section, in Cohn and Reiter's Greek and Yonge's English", () => {
+    expect(read("philo-of-alexandria/in-flaccum/index.html")).toMatch(
+      /id="1"[^>]*>[\s\S]*?Δεύτερος μετὰ Σηιανὸν Φλάκκος Ἀουίλλιος/,
+    )
+    expect(
+      read("philo-of-alexandria/legatio-ad-gaium/yonge/index.html"),
+    ).toMatch(
+      /id="1"[^>]*>[\s\S]*?How long shall we, who are aged men, still be like children/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

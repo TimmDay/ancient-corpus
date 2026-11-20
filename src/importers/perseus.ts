@@ -89,6 +89,8 @@ export function importPerseusParagraphs(
   const $ = readTei(onlyArchive(source))
   const divisions: Division[] = []
   const passages: Omit<Passage, "flags">[] = []
+  // A file without Whiston's marks (Philo) makes every section a Passage.
+  const marked = $('milestone[unit="Whiston_section"]').length > 0
   const books = $('div[subtype="book"]').toArray()
   const containers = books.length
     ? books
@@ -122,6 +124,7 @@ export function importPerseusParagraphs(
           const n = child.attribs.n ?? ""
           // A milestone inside the section, before its text, also opens it here.
           const opens =
+            !marked ||
             pending ||
             $(child).find('milestone[unit="Whiston_section"]').length > 0
           if (opens && passages.at(-1)?.locator !== `${prefix}${n}`) open(n)
