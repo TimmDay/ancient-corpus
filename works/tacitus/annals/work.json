@@ -1,0 +1,63 @@
+{
+  "author": "Tacitus",
+  "title": "Annals",
+  "otherTitles": ["Annales", "Ab Excessu Divi Augusti"],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": 14,
+  "coversYearLatest": 66,
+  "locatorFormat": "book.chapter, e.g. 15.44; a section, e.g. 15.44.3, lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "fisher",
+      "preferred": true,
+      "language": "la",
+      "title": "Annales",
+      "editor": "C. D. Fisher",
+      "publicationYear": 1906,
+      "source": {
+        "name": "Perseus Digital Library (canonical-latinLit)",
+        "url": "https://github.com/PerseusDL/canonical-latinLit/blob/master/data/phi1351/phi005/phi1351.phi005.perseus-lat2.xml",
+        "archives": [
+          {
+            "file": "Tacitus-phi1351.phi005.perseus-lat2-Perseus.zip",
+            "sha256": "652b5c8f119572604b9a2a6ce520c30786c45848e2d7330aa0e0b29290e9587f"
+          }
+        ],
+        "rights": "Latin text (Oxford, 1906) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "church-brodribb",
+      "preferred": false,
+      "language": "en",
+      "title": "The Annals",
+      "translator": "Alfred John Church and William Jackson Brodribb",
+      "publicationYear": 1869,
+      "source": {
+        "name": "Perseus Digital Library (canonical-latinLit)",
+        "url": "https://github.com/PerseusDL/canonical-latinLit/blob/master/data/phi1351/phi005/phi1351.phi005.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Tacitus-phi1351.phi005.perseus-eng2-Perseus.zip",
+            "sha256": "724e4ce72dc562dc6047b55b88f631c09b8b81cf90853d49d220d2a23aef7501"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1869) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "Alfred John Church and William Jackson Brodribb, The Annals (1869), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-latinLit/blob/master/data/phi1351/phi005/phi1351.phi005.perseus-eng2.xml"
+      }
+    }
+  ]
+}
