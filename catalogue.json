@@ -538,11 +538,8 @@
           "freeEnglish": "W. C. Wright (Loeb, 1921)"
         },
         {
-          "author": "Eunapius",
-          "title": "History (fragments)",
-          "language": "grc",
-          "written": "c. 400",
-          "covers": "270 to 404"
+          "work": "eunapius/history",
+          "written": "c. 400"
         },
         {
           "author": "Ausonius",
@@ -602,11 +599,8 @@
           "freeEnglish": "Augustine FitzGerald (1926)"
         },
         {
-          "author": "Olympiodorus of Thebes",
-          "title": "History (fragments)",
-          "language": "grc",
-          "written": "after 425",
-          "covers": "407 to 425"
+          "work": "olympiodorus/histories",
+          "written": "after 425"
         },
         {
           "work": "zosimus/historia-nova",
@@ -633,11 +627,8 @@
           "written": "c. 395 to 420"
         },
         {
-          "author": "Priscus",
-          "title": "History (fragments)",
-          "language": "grc",
-          "written": "after 472",
-          "covers": "c. 433 to 472"
+          "work": "priscus/history",
+          "written": "after 472"
         },
         {
           "author": "Sidonius Apollinaris",

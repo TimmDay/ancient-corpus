@@ -1,0 +1,41 @@
+{
+  "author": "Eunapius",
+  "title": "History (fragments)",
+  "otherTitles": [
+    "Ἱστορία ἡ μετὰ Δέξιππον",
+    "Chronicle History after Dexippus"
+  ],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": 270,
+  "coversYearLatest": 404,
+  "locatorFormat": "fragment, as numbered in Müller's FHG IV, e.g. 14; 89 to 110 are those he could not place",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "muller",
+      "preferred": true,
+      "language": "grc",
+      "title": "Eunapii Sardiani fragmenta (FHG IV)",
+      "editor": "Karl Müller",
+      "publicationYear": 1851,
+      "source": {
+        "name": "Digital Fragmenta Historicorum Graecorum (DFHG), Monica Berti, University of Leipzig",
+        "url": "https://www.dfhg-project.org/DFHG/index.php?volume=Volumen%20quartum",
+        "archives": [
+          {
+            "file": "Eunapius-Muller-DFHG.zip",
+            "sha256": "1343ec41aaf51d5347c8da4c83bf7ad5493c1e43ab3d1a666be02ef5fb47f133",
+            "url": "https://www.dfhg-project.org/DFHG/api.php?author=EUNAPIUS%20SARDIANUS"
+          }
+        ],
+        "rights": "Müller's text (Paris: Didot, 1851) is public domain; the digital edition is © DFHG Project under CC BY-SA 4.0 (its page footer; the page's metadata says CC BY-NC-SA 4.0)."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "dfhg",
+      "notice": "The fragments Müller printed in FHG IV, 1 to 110, and not the testimonia before them. Blockley's numbering (1983) differs."
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+# Olympiodorus of Thebes, Histories: our English translation
+
+Translated from Karl Müller's text of the fragments (Fragmenta Historicorum Graecorum IV, 1851), one section per fragment, with his numbers. Fragment 1 is Photius' summary of the history (Bibliotheca, codex 80), in Müller's 46 sections; fragment 2 is a passage of Zosimus that names Olympiodorus. Made with Claude Opus 5.5 on 20 November 2026 (docs/adr/0003). Photius opens most sections with "that"; the English leaves it out. Müller's lacunae and the editors' conjectures he prints in brackets are kept as printed.
+
+## 1.1
+
+Read: the historical books of Olympiodorus, twenty-two of them. They begin from the seventh consulship of Honorius, emperor of Rome, and the second of Theodosius, and come down to the time when Valentinian, the son of Placidia and Constantius, was proclaimed to the imperial rule of Rome. The writer is a Theban, taking his descent from Thebes in Egypt; a poet by calling, as he says himself; a pagan in religion. Clear in his phrasing, but slack and loose, and sunk into the trodden ways of vulgar speech, so that his work does not deserve to be counted as history. He himself perhaps saw this, and he affirms that what he has put together is not a history but material provided for a history: so shapeless and formless did the character of his style appear even to him. For he adorns it with none of the forms of style, unless one were to force it into coming close, in some places, to simplicity; and falling short even of that through being very low and cheapened, he has sunk wholly into the speech of the common man. Yet though he calls these things material for a history, he divides them into books too, and tries to adorn them with prefaces. And he addresses the history to the emperor Theodosius, who was the nephew of Honorius and Placidia and the son of Arcadius.
+
+## 1.2
+
+He tells, then, of Stilicho: how great a power he held, appointed guardian of the sons, Arcadius and Honorius, by their own father Theodosius the Great; and how he married Serena by lawful marriage, Theodosius having betrothed her to him as well. And that after this Stilicho made the emperor Honorius his son-in-law, with his own daughter Thermantia. And how he rose still higher in power, and carried through many wars for the Romans against many of the nations. And that by the bloodthirsty and inhuman zeal of Olympius, whom he himself had brought close to the emperor, he suffered death by the sword.
+
+## 1.3
+
+Alaric, the chieftain of the Goths, whom Stilicho had called in to guard Illyricum for Honorius (for it had been assigned to Honorius' empire by his father Theodosius): this Alaric, because of the murder of Stilicho, and because he was not receiving what had been agreed with him, besieges and sacks Rome. From it he carried off boundless wealth, and he took captive Placidia, the sister of Honorius, who was living in Rome. And before the capture he proclaimed emperor one of the notables in Rome, Attalus by name, who then held the prefecture. He did these things for the reasons already given, and because the Romans had made a comrade of Sarus, himself a Goth, the leader of only a small following (his people stretched to two hundred or at most three hundred), but in other respects a heroic man and unbeaten in battle: because they had made him their ally, he being Alaric's enemy, they made Alaric an enemy beyond reconciling.
+
+## 1.4
+
+In the siege of Rome the inhabitants ate one another.
+
+## 1.5
+
+Alaric, while Stilicho was still alive, received forty centenaria as pay for his campaign.
+
+## 1.6
+
+After the death of Stilicho his wife Serena too is put to death by strangling, held to be the cause of Alaric's march on Rome. But before her, after Stilicho's killing, their son Eucherius is put to death.
+
+## 1.7
+
+The name bucellarius was used in the days of Honorius of soldiers, not only Romans but some Goths as well; and in the same way the name foederati was used of a varied and mixed body.
+
+## 1.8
+
+Olympius, who had plotted against Stilicho, became master of the offices; then he fell from the office; then he rose to it again; afterwards he fell. Then, having fallen, he was later put to death by Constantius, who married Placidia, beaten with clubs, his ears first cut off. And justice in the end did not leave the impious man unpunished.
+
+## 1.9
+
+Of the Goths who followed Radagaisus, the leaders were called optimates, numbering up to twelve thousand; Stilicho, having defeated Radagaisus, made them his allies.
+
+## 1.10
+
+When Alaric died of disease, Ataulf, his wife's brother, is appointed his successor.
+
+## 1.11
+
+The writer says that dry bread is called bucellatum; and he mocks the soldiers' name, since they were called Bucellarii from this.
+
+## 1.12
+
+Constantine, raised to usurpation, sends envoys to Honorius, pleading that he had taken power unwillingly and forced by the soldiers, asking pardon, and claiming a share in the rule. And the emperor, because of the difficulties then pressing, for the time accepts the sharing of the rule. Constantine had been proclaimed in the Britains, brought to this office by a rising of the soldiers there. For in these Britains, before Honorius held his seventh consulship, the soldiery there rushed into revolt and proclaimed a certain Marcus emperor. When he had been killed by them, Gratian is set up in his place. And when this man too, having become hateful to them, was slaughtered within four months, Constantine is then raised to the name of emperor. He put forward Justinus and Neobigastes as generals and, leaving the Britains, crosses with his men to Bononia, as the city is called, which lies on the sea and first within the borders of the Gauls. Staying there, and making the whole Gallic and Aquitanian soldiery his own, he masters all the parts of Gaul as far as the Alps between Italy and Gaul. He had two sons, Constans and Julian; Constans he appoints Caesar, and then later, in the same days, Julian nobilissimus.
+
+## 1.13
+
+Attalus, having become emperor, marches against Honorius on Ravenna, and there are sent to him, as from the emperor Honorius to an emperor, Jovius, prefect and patrician, and Valens, general of both forces, and Potamius the quaestor, and Julian, primicerius of the notaries; and they declared to Attalus that they had been sent by Honorius to share the rule with him. But he refused, and said Honorius might live on an island or in any other place he wished, and suffer no harm. Jovius answers with pleasure, promising even to maim the emperor Honorius in one limb. For this Attalus rebuked Jovius, since there was no custom of maiming an emperor who laid down his rule of his own will. But Jovius, after going on embassies many times and achieving nothing, stays with Attalus, named Attalus' patrician. At Ravenna the power passes to the praepositus Eusebius. After a good while, by the insolence and urging of Allobichus, he is beaten to death with rods in public and before the emperor's eyes. A good while went by, and Attalus, not obeying Alaric, and mostly through the zeal of Jovius, who had betrayed Honorius' embassy, is deposed from the rule; and he stays on, having chosen a private life with Alaric. Then after some time he is emperor again. Then he is deposed. And after this, later, having come to Ravenna, he has the fingers of his right hand cut off and is sent into exile.
+
+## 1.14
+
+Allobichus, a little later, paying the penalty for having killed the praepositus Eusebius, is put to death by the emperor's decision, before his face. And Constantine the usurper, learning of Allobichus' death as he was hastening to Ravenna to make a treaty with Honorius, turns back in fear.
+
+## 1.15
+
+Rhegium is the metropolis of Bruttium; from there, the historian says, Alaric, wishing to cross to Sicily, was held back. For a consecrated statue standing there, he says, prevented the crossing. It had been consecrated, as he tells the tale, by the ancients to avert the fire of Etna and to prevent the barbarians from passing by sea. For in one foot there was an unsleeping fire, and in the other water that never failed. When it was later destroyed, Sicily suffered harm both from the fire of Etna and from the barbarians. The statue was overthrown by Asclepius, who had been appointed steward of the estates of Constantius and Placidia in Sicily.
+
+## 1.16
+
+When Constantine the usurper and his son Constans, who had earlier been appointed Caesar and then emperor too, had been defeated and had fled, Gerontius the general, welcoming peace with the barbarians, proclaims emperor his own son Maximus, who served among the domestici; then, pursuing Constans, he brought about his death, and followed hard on the heels of his father Constantine too, pursuing him. While this was happening, Constantius and Ulfilas are sent by Honorius against Constantine. And reaching Arelate, where Constantine was living with his son Julian, they besiege it. And Constantine, taking refuge in a chapel, is then ordained a priest, oaths having been given him for his safety. And the gates of the city are thrown open to the besiegers; and Constantine is sent with his son to Honorius. But he, bearing them a grudge for his cousins, whom Constantine had killed, orders them, against the oaths, to be put to death thirty miles before Ravenna. Gerontius, when Ulfilas and Constantius arrived, flees; and being caught, because he ruled his own army strictly, he is plotted against by those very men. For they set fire to his house. He fought stoutly against those who rose against him, having one fellow fighter, an Alan by race, counted among his slaves. In the end he kills the Alan and his wife, who were eager for this, and slaughters himself on top of them. Maximus his son, learning of this, flees to the barbarians who were bound by treaty.
+
+## 1.17
+
+Jovinus was proclaimed usurper at Mundiacum (read Moguntiacum) in the second Germany, through the zeal of Goar the Alan and of Guntiarius, who was chieftain of the Burgundians. Attalus urges Ataulf to go over to him; and he goes over with his host. And Jovinus is vexed at Ataulf's arrival, and in riddles blames Attalus, who had urged the coming. Sarus too was about to go over to Jovinus. But Ataulf, learning of this, goes to meet him first, bringing ten thousand soldiers against Sarus, who had about eighteen or twenty men with him. After he had shown heroic deeds worth wondering at, they barely took him alive with sacks, and afterwards put him to death. Sarus had revolted from Honorius because, when Bellerides, who was his domesticus, had been killed, the emperor made no account of the killing and no punishment for the murder was exacted.
+
+## 1.18
+
+He tells of Donatus, and of the Huns, and of the most skilful archery of their kings, and how the historian went on an embassy to them and to Donatus. And he dramatises his wandering by sea and the danger, and how Donatus, deceived by an oath, is lawlessly slaughtered; and how Charaton, the first of the kings, flared into anger at the murder, and how he was soothed again by imperial gifts and kept quiet. Here ends the first decade of the history.
+
+## 1.19
+
+The second begins thus: Jovinus, against Ataulf's wishes, having appointed his own brother Sebastian emperor, became Ataulf's enemy. And Ataulf sends envoys to Honorius, promising both the heads of the usurpers and to keep the peace. When they had returned, and oaths had been exchanged, Sebastian's head is sent to the emperor; and Jovinus, besieged by Ataulf, gives himself up, and he too is sent to the emperor; Dardanus the prefect kills him with his own hand. And both heads are set up outside Carthage, where the heads of Constantine and Julian had been cut off before, and those of Maximus and Eugenius, who, having attempted usurpation under Theodosius the Great, came to this end.
+
+## 1.20
+
+Ataulf was asked to give up Placidia, chiefly through the zeal of Constantius, who later joined her to himself in marriage. But since the promises to Ataulf were not being carried out, above all the sending of grain, he would not give her back, and was planning to break off the peace for war.
+
+## 1.21
+
+Ataulf, asked for Placidia, demanded in return the grain that had been agreed. Those who had promised it were unable to give it, but nonetheless agreed to provide it if they received Placidia; and the barbarian answered in the same way, and coming to Massalia, as the city is called, he hoped to take it by guile. There he was wounded, struck by the most noble Boniface, and barely escaping death he withdrew to his own tents, leaving the city in good cheer and celebrating Boniface with praise and acclamation.
+
+## 1.22
+
+Ataulf, planning marriage with Placidia, when Constantius demanded her, put forward heavier demands, so that through the failure of his demands he might seem to have had good reason for keeping her.
+
+## 1.23
+
+Constantius, long since consul designate, enters on his consulship at Ravenna, while at Constantinople Constans is consul with him. And gold in due measure and enough for the cost of the consulship was found among the goods of Heraclian, who had been put to death while planning usurpation; but not as much was found as had been expected: for the gold found came to not even twenty centenaria, and his landed property too amounted to two thousand pounds. And Constantius received this whole estate from Honorius at a single request. Constantius in his public processions was downcast and sullen, with large eyes, a long neck and a broad head, bending all the way over the neck of the horse that carried him, and so casting his eye sideways this way and that; so that to all he seemed, in the saying, "a figure worthy of tyranny". But at dinners and drinking parties he was pleasant and sociable, so that he often vied with the mimes who played before the table.
+
+## 1.24
+
+Ataulf's marriage to Placidia is accomplished through the zeal and urging of Candidianus, in the month of January, in the city of Narbo, in the house of one Ingenius, a leading man in the city. There Placidia sat in front, in a chamber arranged in the Roman way and in imperial dress, and Ataulf sits beside her, wearing a cloak and the rest of the Roman dress. Among the other wedding gifts Ataulf gives her fifty handsome young men dressed in silk, each carrying in his hands two very large dishes, one full of gold and the other of precious, or rather priceless, stones, which had been plundered by the Goths at the capture of Rome. Then wedding songs are sung, Attalus first, then Rusticius and Phoebadius; and the marriage is accomplished, the barbarians and the Romans among them making merry and rejoicing together.
+
+## 1.25
+
+After the capture of Rome by the Goths, Albinus, prefect of Rome, when it was already being restored again, wrote that the share supplied was not enough for the people, since the city was already growing in numbers. For he wrote that in a single day a number of fourteen thousand had been counted.
+
+## 1.26
+
+Ataulf, when a son was born to him by Placidia, to whom he gave the name Theodosius, embraced friendship with the Romans still more; but since Constantius and those around Constantius worked against it, his and Placidia's purpose remained without effect. When the child died, they made great mourning over him, and buried him, laying him in a silver coffin, before Barcelona in a chapel. Then Ataulf too is killed, while spending time in the stable to look after his own horses, as was his custom. He is killed by one of his own Goths, Dubius by name, who had waited his chance for an old enmity: for long ago this man's master, the king of a part of the Goths, had been killed by Ataulf, after which Ataulf took Dubius and attached him to himself. And he, avenging his first master, did away with his second. As he died Ataulf ordered his own brother to give back Placidia and, if they could, to win the friendship of the Romans for themselves. But the brother of Sarus, Sigeric, becomes successor, by zeal and force rather than by succession and law. He killed the children Ataulf had had by his former wife, tearing them by force from the arms of the bishop Sigesarius, and he ordered the queen Placidia, to insult Ataulf, to walk on foot before his horse with the rest of the captives. And the length of that procession was from the city to the twelfth milestone. Having ruled seven days, he is killed; and Wallia is appointed leader of the Goths.
+
+## 1.27
+
+The historian says he heard from one Valerius, a man of note, about consecrated silver statues set up to keep the barbarians out. For in the days, he says, of the emperor Constantius, when Valerius was governor in Thrace, information was laid that a treasure had been found. Valerius, going to the place, learns from the people of the country that the place is sacred and that statues had been dedicated in it by an ancient rite. Then he reports this to the emperor, and receives a letter permitting him to take up what had been reported. When the place was dug up, three statues are found, made entirely of silver, lying in barbarian fashion, with both arms bent back, dressed in embroidered barbarian clothing, with long hair on their heads, turned toward the northern quarter, that is, against the barbarian land. When the statues had been taken up, immediately, within a few days, first the nation of the Goths overruns all Thrace; and a little later the nations of the Huns and of the Sarmatians were to overrun Illyricum and Thrace itself. For the objects of the rite lay midway between Thrace and Illyricum, and the number of three statues seemed to have been consecrated against every barbarian nation.
+
+## 1.28
+
+The historian, telling of his own voyage, says he suffered much and met with misfortune. He says too that he put in at Athens, and that by his zeal and care Leontius was brought up to the sophist's chair, though not yet willing. He speaks too of the scholar's cloak, how at Athens no one, and above all no stranger, might put it on unless the sophists' judgement allowed it and the rites under the sophists' laws confirmed the rank. The rites were of this kind. First all the newcomers, small or great, were brought down to the public bath. Among them were those already of an age fit for the cloak, whom the students bringing them down threw into the middle. Then, some running in front and blocking, others pushing and holding back, and all those blocking shouting, "Stop, stop, he does not bathe!", those pushing the other way were held to win the contest, in honour of the student brought down. After a long time of much struggle over the customary words already spoken, he is brought into the hot room and bathes. Then, dressed again, he received the right to the cloak, and straight from the bath, wearing the cloak, he went off escorted in an honoured and glorious procession, having paid out generous sums to the heads of the schools, those called Acromitae.
+
+## 1.29
+
+The Vandals call the Goths Truli, because when pressed by famine they bought a trula of grain from the Vandals for one gold coin. The trula holds not even a third of a sextarius.
+
+## 1.30
+
+When the Vandals overran the Spains and the Romans fled into the walled cities, so great a famine took hold of them that they were forced to eat one another. And a woman who had four children ate them all, pleading in each case the feeding and saving of the rest, until, having eaten them all, she was stoned to death by the people.
+
+## 1.31
+
+Euplutius the magistrianus is sent to Wallia, who was chieftain of the Goths, to make a treaty of peace and to receive back Placidia. He receives him readily, and when six hundred thousand measures of grain had been sent to him, Placidia is released, handed over to Euplutius to go to Honorius, her own brother.
+
+## 1.32
+
+When a question arose at Athens, among those who wished to learn it, about the measure of the glue in books glued together, Philtatius, the historian's companion, gifted in grammar, showed it. And winning fame, he is given a statue by the citizens.
+
+## 1.33
+
+The writer tells many marvels about the Oasis: about its good climate, and that those who have the sacred disease not only are not found there but, coming from elsewhere, are freed from the illness through the good temper of the air; and about that great sand, and about the wells that are dug, how, dug to two hundred and three hundred, and sometimes even to five hundred cubits, they gush up their stream, pouring out over the mouth itself; from which the farmers who have shared in the work draw in turn and water their own fields. And that the fruits are always on the trees; and that the wheat is better than any wheat and whiter than snow, and that barley is sometimes sown twice a year, and millet always three times. They water their plots every third day in summer and every sixth in winter, and from this comes their fruitfulness. And that there is never a cloudy sky. And about the sundials made there. He says that it was an island in ancient times and became dry land, and that Herodotus calls it the Isles of the Blest; and Herodorus, who wrote the history of Orpheus and Musaeus, calls it Phaeacis. He proves that it was an island, first from sea shells and oysters found stuck to the stones of the mountain that leads to the Oasis from the Thebaid; secondly because much sand is always poured over it and fills up the three Oases. For he says himself that there are three Oases, two large, one outer and one inner, lying opposite each other, with the distance between stretching to a hundred miles; and there is a third, small, separated by a great distance from the two. As proof that it had been an island he says too that birds are often seen carrying fish, and at other times the remains of fish, so that one may guess from this that the sea is not very far off. He says too that Homer drew his descent from the Thebaid next to it.
+
+## 1.34
+
+The emperor Honorius, entering his eleventh consulship, and with him Constantius his second, accomplish the marriage of Placidia; she had refused him many times, and so made Constantius angry with her attendants. In the end, on the day of the consulship, the emperor Honorius, her brother, took her by the hand against her will and gave her over into the hands of Constantius. And the marriage is celebrated with the greatest splendour. Then a daughter is born to them, whom they name Honoria, and again a son, to whom they gave the name Valentinian; while Honorius lived he became nobilissimus, Placidia forcing her brother to it; and after the emperor's death, and after the overthrow of the usurper John, he is declared emperor of Rome as well. Constantius reigns together with Honorius, who appointed him, but almost against his will. Placidia too is appointed Augusta, by her own brother and her own husband. Then the proclamation of Constantius' reign is sent to Theodosius, who, being Honorius' nephew, ruled the eastern parts, and it remains unaccepted. An illness comes upon Constantius, and he regretted his reign, because he was no longer free, as before, to go out and come back where and as he wished, and because as emperor he could not enjoy the amusements he was used to. In the end, having reigned seven months, as his dream had told him, "Six are already fulfilled, and seven are beginning", he dies of a pleurisy; and with him died the anger and the purpose against the East that he had been nursing because they had not accepted the proclamation of his reign.
+
+## 1.35
+
+When Wallia the chieftain died, Theoderic succeeds to the rule.
+
+## 1.36
+
+The writer, after suffering much at sea, barely comes through safe. Here he also tells a marvel about a star that weighed down on the ship's sail, so that they were about to sink (Niebuhr conjectures: one that was about to). He says the apparition was called Urania by the sailors. He tells too of a parrot with which he lived for twenty years, which left almost nothing that a man does unimitated: it danced, and sang, and called people by name, and did everything else.
+
+## 1.37
+
+The historian says that while he was staying around Thebes and Syene for the sake of inquiry, the chieftains and prophets of the barbarians around Talmis, that is, of the Blemmyes, desired to meet him, for his fame moved them to this. "And they took me," he says, "as far as Talmis itself, so that I explored those regions too, which are five days' journey from Philae, as far as the city called Prima, which in ancient times was the first city of the Thebaid coming from the barbarian country; for this reason it was named by the Romans, in the Roman tongue, Prima, that is, first; and it is still called so now, although it has long belonged to the barbarians, together with four other cities, Phoenicon, Chiris, Thapis and Talmis." He says he learned that near these regions there are also emerald mines, from which the kings of Egypt had emeralds in plenty. "And these," he says, "the prophets of the barbarians urged me to see; but this could not be done without an imperial order."
+
+## 1.38
+
+He tells a marvel of one Libanius, an Asian by birth, who came to Ravenna in the reign of Honorius and Constantius. He was a master of the occult rites. And he says he was able, and promised, to act against the barbarians without soldiers (Niebuhr conjectures: even without soldiers). Then, he says, when this man had given proof of his promise, and the report ran so far that even Placidia the empress learned of it, the sorcerer is put to death: for Placidia, he says, threatened Constantius with divorce if Libanius, a wizard and an unbeliever, were left among the living.
+
+## 1.39
+
+Constantius was an Illyrian by birth, from Naissus, a city of Dacia, and having gone through many campaigns from the times of Theodosius the Great, he later took on the imperial rule too, as has been said. He was praiseworthy in other things, and above money, before he was joined to Placidia; but once he had married her, he ran aground on love of money. After his death petitions against him from those wronged in their property flowed together to Ravenna from all sides. But the levity of Honorius, he says, and Placidia's closeness to him made their requests and the force of justice of no effect.
+
+## 1.40
+
+So great an affection for his own sister grew in Honorius from the time her husband Constantius died, that their immoderate love and their constant kisses on the mouth brought them into shameful suspicion with many. But then so great an enmity was born between them, through the zeal of Spadusa and of Elpidia (she was Placidia's nurse), to whom she paid much heed, with Leontius her steward working with them, that riots often broke out in Ravenna (for she too had about her a crowd of barbarians from her union with Ataulf and her marriage to Constantius), and blows came from both sides. In the end, from that enmity which had been kindled, and from hatred weighing against the friendship before, Placidia, her brother prevailing, is exiled to Byzantium with her children. And Boniface alone kept faith with her, sending her money from Africa, which he governed, as far as he could, and hastening to give her every other service; and later he contributed everything to her recovery of the rule.
+
+## 1.41
+
+Honorius, taken with dropsy, dies on the sixth day before the Kalends of September; and letters are sent to the East announcing the emperor's death. While they were being sent, one John seizes power and makes himself usurper; and when his proclamation was being made, there was said, as if brought out by some prophecy, "He falls, he does not stand"; and the crowd, as if undoing the saying, cry out in answer, "He stands, he does not fall."
+
+## 1.42
+
+Boniface was a heroic man and often distinguished himself against many barbarians, sometimes attacking with few, sometimes with more, and at times even in single combat; and to put it simply, in every way he freed Africa from many barbarians of various nations. He was also a lover of justice, and above money. Something of this kind too was done by him. A certain countryman, who had a wife in the bloom of her youth, was wronged by one of the allied barbarians, who was committing adultery with her; so he appeals to Boniface, lamenting the outrage. Boniface, learning the distance to the place and the name of the farm where the adultery was being done, sent the suppliant away for the moment, ordering him to come back to him the next day; and in the evening, unnoticed by all, he rode to the farm, seventy stades away, and finding the barbarian sleeping with the woman, he cuts off his head and returns with it by night. When the husband came the next day as ordered, he hands him the barbarian's head, asking whether he recognised it. The man, astounded and at a loss at what he saw, then recognising it and giving many thanks for the justice done, went away rejoicing.
+
+## 1.43
+
+Each of the great houses of Rome, as he says, had in itself everything that a city of fair size could have: a hippodrome, and forums, and temples, and fountains, and various baths. So the writer exclaimed: "One house is a town; the city hides ten thousand towns." There were also huge public baths. Those called the Antoninianae had, for the use of the bathers, sixteen hundred seats set out, made of polished marble; those of Diocletian nearly twice as many. And the wall of Rome, measured by Ammon the geometer at the time when the Goths made their first attack on it, was shown to have a length of twenty-one miles.
+
+## 1.44
+
+Many houses of the Romans received from their estates a yearly income of forty centenaria of gold each, besides the grain and the wine and all the other goods, which, if sold, came to a third of the gold brought in. The income of the houses of Rome second after the first was fifteen and ten centenaria. And Probus, the son of Olympius (Reinesius and Niebuhr conjecture: of Olybrius), when he gave his praetorship at the time of John's usurpation, spent twelve centenaria of gold. Symmachus the orator, a senator of middling wealth, before Rome was taken, spent twenty centenaria when his son Symmachus gave his praetorship. And Maximus, one of the rich, laid out forty centenaria for his son's praetorship. The praetors held their festivals for seven days.
+
+## 1.45
+
+The writer says that Odysseus' wandering took place not around Sicily but at the furthest bounds of Italy; and that the descent to Hades took place by the Ocean, where most of the wandering also was. He labours to prove this with many arguments. And we have read various others who agree with him on these points.
+
+## 1.46
+
+Placidia is sent from Constantinople by Theodosius, with her children, against the usurper; and she takes up again the rank of Augusta, and Valentinian that of nobilissimus. An army too is sent out with them, and as commander of both forces Ardabur with his son Aspar, and as third Candidianus. At Thessalonica Helion, master of the offices, sent by Theodosius, puts the dress of a Caesar on Valentinian, in Thessalonica itself, in the fifth year of his age. As they went on, Ardabur is captured by the usurper's men and sent up to him, and becomes friendly with him; while his son, with Placidia, was in despondency and grief. But Candidianus, taking many cities and winning brilliant fame, dispelled their grief and cheered them. Then the usurper John is slaughtered, and Placidia enters Ravenna with the Caesar her son. And Helion, master and patrician, reaching Rome, where everyone flocked together, puts the imperial dress on Valentinian, then seven years old. And here the history [ends].
+
+## 2
+
+At Ravenna (the metropolis of Flaminia, an ancient city, a colony of the Thessalians, called Rhene because it is surrounded by waters on every side, and not, as Olympiodorus the Theban says, because Remus, who was Romulus' brother, was the founder of this city ...) at this Ravenna, then, when Stilicho was ready to come upon the cities of the Illyrians with an army and, together with Alaric, to wrest them from Arcadius and win them for the empire of Honorius, two hindrances happened to fall in the way, and so on (an. 506).

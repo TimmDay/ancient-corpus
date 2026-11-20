@@ -40,8 +40,11 @@ type DfhgRecord = {
   commentary: string
 }
 
-/** Müller's heading for each Work, as the API spells it. */
-const WORKS: Record<string, string> = {
+/**
+ * Müller's heading for each Work, as the API spells it, or several headings
+ * whose fragments are numbered on from one another.
+ */
+const WORKS: Record<string, string | string[]> = {
   Scythica: "ΣΚΥΘΙΚΑ",
   // Müller's heading begins with a Latin X and P.
   Chronica: "XPONIKA",
@@ -51,17 +54,34 @@ const WORKS: Record<string, string> = {
   "Historia Chronike": "ΙΣΤΟΡΙΑ ΧΡΟΝΙΚΗ",
   // The Anonymus post Dionem, from the results page.
   "Continuation of Dio": "ΑΝΩΝΥΜΟΥ ΤΑ ΜΕΤΑ ΔΙΩΝΑ",
+  // Eunapius: the history, then the fragments Müller could not place (89–110).
+  "History (fragments)": [
+    "ΙΣΤΟΡΙΑ Η ΜΕΤΑ ΔΕΞΙΠΠΟΝ. ΝΕΑ ΕΚΔΟΣΙΣ",
+    "SEDIS INCERTAE",
+  ],
+  // Priscus.
+  "Byzantine History (fragments)": "ΙΣΤΟΡΙΑ ΒΥΖΑΝΤΙΑΚΗ. Ἱστορία Γοτθική",
+  // Olympiodorus: the API gives his fragments no heading.
+  "Histories (fragments)": "",
 }
+
+/**
+ * Works whose first fragment is Photius' summary, printed by Müller in
+ * numbered sections (§ 2 to § 46) that the API keeps as "2. " in the text:
+ * a Passage each, `1.2`.
+ */
+const SECTIONED = new Set(["Histories (fragments)"])
 
 export function importDfhg(
   source: EditionSource,
   work: string,
 ): ImportedEdition {
   const heading = WORKS[work]
-  if (!heading) throw new Error(`No DFHG work for ${work}`)
-  const records = readRecords(onlyArchive(source)).filter(
-    (r) => r.work === heading && r.fragment_number.trim(),
-  )
+  if (heading === undefined) throw new Error(`No DFHG work for ${work}`)
+  const headings = [heading].flat()
+  const records = readRecords(onlyArchive(source))
+    .filter((r) => headings.includes(r.work) && r.fragment_number.trim())
+    .flatMap((r) => (SECTIONED.has(work) ? sections(r) : [r]))
   const byFragment = Map.groupBy(
     records,
     (r) => `${r.fragment_number.trim()}${r.fragment_letter.trim()}`,
@@ -96,6 +116,38 @@ export function importDfhg(
     },
   )
   return { divisions: [], passages, editorial: [] }
+}
+
+/** A record cut at Müller's section numbers, which must run 2, 3, 4 … in order. */
+function sections(record: DfhgRecord): DfhgRecord[] {
+  const number = record.fragment_number.trim()
+  const parts: DfhgRecord[] = []
+  let next = 2
+  let from = 0
+  let current = "1"
+  for (const m of record.text.matchAll(/(?:^|\s)(\d{1,2})\.\s(?=\S)/g)) {
+    if (Number(m[1]) !== next) continue
+    parts.push({
+      ...record,
+      fragment_letter: "",
+      fragment_number: `${number}.${current}`,
+      text: record.text.slice(from, m.index),
+      commentary: parts.length ? "" : record.commentary,
+      witness: parts.length ? "" : record.witness,
+    })
+    from = m.index + m[0].length
+    current = String(next++)
+  }
+  if (next === 2) return [record]
+  parts.push({
+    ...record,
+    fragment_letter: "",
+    fragment_number: `${number}.${current}`,
+    text: record.text.slice(from),
+    commentary: "",
+    witness: "",
+  })
+  return parts
 }
 
 function clean(text: string): string {

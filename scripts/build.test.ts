@@ -419,6 +419,19 @@ describe("build", () => {
     )
   })
 
+  it("reads Olympiodorus by Photius' sections, in Müller's Greek and our English", () => {
+    expect(read("olympiodorus/histories/index.html")).toMatch(
+      /id="1\.24"[^>]*>[\s\S]*?ὁ πρὸς Πλακιδίαν συντελεῖται γάμος/,
+    )
+    expect(read("olympiodorus/histories/ancient-corpus/index.html")).toMatch(
+      /id="1\.24"[^>]*>[\s\S]*?Ataulf's marriage to Placidia/,
+    )
+    expect(read("eunapius/history/index.html")).toMatch(/id="110"/)
+    expect(read("priscus/history/index.html")).toMatch(
+      /id="8"[^>]*>[\s\S]*?Ἀττήλ/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,
