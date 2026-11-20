@@ -1,9 +1,7 @@
 {
   "author": "Unknown",
   "title": "Origo Constantini Imperatoris",
-  "otherTitles": [
-    "Anonymus Valesianus, Pars Prior"
-  ],
+  "otherTitles": ["Anonymus Valesianus, Pars Prior"],
   "originalLanguage": "la",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
@@ -17,5 +15,52 @@
     "unknown/origo-constantini-imperatoris"
   ],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "rolfe-latin",
+      "preferred": true,
+      "language": "la",
+      "title": "Excerpta Valesiana, Pars Prior: Origo Constantini Imperatoris",
+      "editor": "John C. Rolfe",
+      "publicationYear": 1939,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Excerpta_Valesiana/1*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-OrigoConstantini.zip",
+            "sha256": "19a07c4abc16582e8a64258851aa7d92f0babf0268a86e43613ba51345e5a489"
+          }
+        ],
+        "rights": "Public domain. Loeb Classical Library, Ammianus Marcellinus vol. III (1939), appendix; LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "lacuscurtius"
+    },
+    {
+      "slug": "rolfe",
+      "preferred": false,
+      "language": "en",
+      "title": "The Anonymus Valesianus, First Part: The Lineage of the Emperor Constantine",
+      "translator": "John C. Rolfe",
+      "publicationYear": 1939,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Excerpta_Valesiana/1*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-OrigoConstantini.zip",
+            "sha256": "19a07c4abc16582e8a64258851aa7d92f0babf0268a86e43613ba51345e5a489"
+          }
+        ],
+        "rights": "Public domain. Loeb Classical Library, Ammianus Marcellinus vol. III (1939), appendix; LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "lacuscurtius",
+      "humanTranslation": {
+        "citation": "John C. Rolfe, Ammianus Marcellinus vol. III (Loeb, 1939), on LacusCurtius",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Excerpta_Valesiana/1*.html"
+      }
+    }
+  ]
 }
