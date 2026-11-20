@@ -1,0 +1,63 @@
+{
+  "author": "Herodotus",
+  "title": "Histories",
+  "otherTitles": ["Ἱστορίαι", "The Histories"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": -560,
+  "coversYearLatest": -479,
+  "locatorFormat": "book.chapter, e.g. 7.228; a section, e.g. 7.228.2, lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "godley-greek",
+      "preferred": true,
+      "language": "grc",
+      "title": "Ἱστορίαι",
+      "editor": "A. D. Godley",
+      "publicationYear": 1920,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0016/tlg001/tlg0016.tlg001.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Herodotus-tlg0016.tlg001.perseus-grc2-Perseus.zip",
+            "sha256": "36473df2ceadcf34a5b8e9746130f84ac51bbe5d0186f85bb17adf64567b5916"
+          }
+        ],
+        "rights": "Greek text (Loeb Classical Library, 1920–25) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "godley",
+      "preferred": false,
+      "language": "en",
+      "title": "The Histories",
+      "translator": "A. D. Godley",
+      "publicationYear": 1920,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0016/tlg001/tlg0016.tlg001.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Herodotus-tlg0016.tlg001.perseus-eng2-Perseus.zip",
+            "sha256": "5885432188232d8c4c6f2e11cc466265f5c345a476a42f3cf4abcf56fb3439c1"
+          }
+        ],
+        "rights": "Translation (Loeb Classical Library, 1920–25) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "A. D. Godley, The Histories (1920), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0016/tlg001/tlg0016.tlg001.perseus-eng2.xml"
+      }
+    }
+  ]
+}
