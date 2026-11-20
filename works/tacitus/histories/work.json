@@ -1,0 +1,63 @@
+{
+  "author": "Tacitus",
+  "title": "Histories",
+  "otherTitles": ["Historiae"],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": 69,
+  "coversYearLatest": 70,
+  "locatorFormat": "book.chapter, e.g. 4.81; a section, e.g. 4.81.1, lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "fisher",
+      "preferred": true,
+      "language": "la",
+      "title": "Historiae",
+      "editor": "C. D. Fisher",
+      "publicationYear": 1911,
+      "source": {
+        "name": "Perseus Digital Library (canonical-latinLit)",
+        "url": "https://github.com/PerseusDL/canonical-latinLit/blob/master/data/phi1351/phi004/phi1351.phi004.perseus-lat2.xml",
+        "archives": [
+          {
+            "file": "Tacitus-phi1351.phi004.perseus-lat2-Perseus.zip",
+            "sha256": "abdabac1276ab8d69bd1a19983d32c8dd7164f090e8c33afc4aeb77e292717fd"
+          }
+        ],
+        "rights": "Latin text (Oxford, 1911) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "church-brodribb",
+      "preferred": false,
+      "language": "en",
+      "title": "The History",
+      "translator": "Alfred John Church and William Jackson Brodribb",
+      "publicationYear": 1864,
+      "source": {
+        "name": "Perseus Digital Library (canonical-latinLit)",
+        "url": "https://github.com/PerseusDL/canonical-latinLit/blob/master/data/phi1351/phi004/phi1351.phi004.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Tacitus-phi1351.phi004.perseus-eng2-Perseus.zip",
+            "sha256": "b5ced32a00d2257116656fce1c433dcf413ec179c6fccdf09e0bea54d12edc06"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1864) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "Alfred John Church and William Jackson Brodribb, The History (1864), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-latinLit/blob/master/data/phi1351/phi004/phi1351.phi004.perseus-eng2.xml"
+      }
+    }
+  ]
+}
