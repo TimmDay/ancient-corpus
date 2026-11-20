@@ -10,6 +10,13 @@
 // Eutropius, Breviarium, tr. J. S. Watson (Bohn, 1886 reprint): one page for
 // all ten books, each an <h3> "BOOK IX.", then Watson's contents in small
 // print, then chapters opening "XIII. ", as in the Latin.
+//
+// Herodian, History of the Roman Empire, tr. E. C. Echols (1961): one page
+// per book, each chapter opened by a paragraph "CHAPTER I." holding
+// <span class="chapterno"><a name="C1">, its sections numbered in the text
+// (<span class="verse"><a name="1_2">2.</span>), which are dropped. A
+// Passage is a chapter; Echols' notes follow the text, each a paragraph
+// opened by <a name="12"></a>12.
 
 import { createHash } from "node:crypto"
 import { readFileSync } from "node:fs"
@@ -22,6 +29,7 @@ import {
   type Division,
   type EditionSource,
   type EditorialSection,
+  type Heading,
   type ImportedEdition,
   type Passage,
 } from "../corpus.ts"
@@ -36,6 +44,20 @@ const BOOKS: Record<string, string[]> = {
     "zosimus04_book4",
     "zosimus05_book5",
     "zosimus06_book6",
+  ],
+}
+
+/** Works with a page per book and anchored chapters, by page. */
+const ANCHORED: Record<string, string[]> = {
+  "History of the Empire from the Death of Marcus": [
+    "herodian_01_book1",
+    "herodian_02_book2",
+    "herodian_03_book3",
+    "herodian_04_book4",
+    "herodian_05_book5",
+    "herodian_06_book6",
+    "herodian_07_book7",
+    "herodian_08_book8",
   ],
 }
 
@@ -60,6 +82,8 @@ export function importTertullian(
   const pages = readPages(onlyArchive(source))
   const chaptered = CHAPTERED[work]
   if (chaptered) return importChaptered(pageNamed(pages, chaptered))
+  const anchored = ANCHORED[work]
+  if (anchored) return importAnchored(anchored.map((p) => pageNamed(pages, p)))
   const books = BOOKS[work]
   if (!books) throw new Error(`No tertullian.org layout for ${work}`)
   const divisions: Division[] = []
@@ -219,6 +243,78 @@ function importChaptered($: CheerioAPI): ImportedEdition {
       notes: notesFor(dedication.join(" "), notes),
     })
   return { divisions, passages, editorial }
+}
+
+/** A page per book, its chapters opened by `span.chapterno a[name=C3]`. */
+function importAnchored(books: CheerioAPI[]): ImportedEdition {
+  const divisions: Division[] = []
+  const passages: Omit<Passage, "flags">[] = []
+  const anchoredOptions = {
+    ...options,
+    drop: (el: Element) => /\b(pb|verse)\b/.test(el.attribs.class ?? ""),
+  }
+  books.forEach(($, i) => {
+    const book = String(i + 1)
+    divisions.push({ locator: book, label: `Book ${book}` })
+    const notes = new Map<string, string>()
+    let pending: Heading[] = [
+      { kind: "division", html: `Book ${book}`, editorial: false },
+    ]
+    let chapter: Omit<Passage, "flags"> | undefined
+    for (const el of $("h3, p").toArray()) {
+      const $el = $(el)
+      const text = $el.text().replace(/\s+/g, " ").trim()
+      // Echols' notes: <a name="12"></a>12.&nbsp;<sup>12</sup> …
+      const note = $el.children("a[name]").first().attr("name")
+      if (el.name === "p" && note && /^\d+$/.test(note)) {
+        const html = inlineHtml($, $el.contents(), anchoredOptions)
+          .trim()
+          .replace(
+            new RegExp(`^${note}\\.\\s*(<sup>\\s*${note}\\s*</sup>)?\\s*`),
+            "",
+          )
+        notes.set(note, html)
+        continue
+      }
+      if (/^This text was transcribed/.test(text)) break
+      if (el.name === "h3") {
+        // "BOOK ONE" is the division's own heading.
+        if (text && !/^BOOK [A-Z]+$/.test(text))
+          pending.push({
+            kind: "section",
+            html: inlineHtml($, $el.contents(), anchoredOptions).trim(),
+            editorial: false,
+          })
+        continue
+      }
+      const opens = /^C(\d+)$/.exec(
+        $el.find("span.chapterno a[name]").attr("name") ?? "",
+      )?.[1]
+      if (opens) {
+        chapter = {
+          locator: `${book}.${opens}`,
+          headings: pending,
+          division: book,
+          blocks: [],
+          notes: [],
+          text: "",
+        }
+        pending = []
+        passages.push(chapter)
+        continue
+      }
+      if ($el.attr("align") === "center" || !chapter) continue
+      const html = inlineHtml($, $el.contents(), anchoredOptions)
+        .trim()
+        .replace(/^(&nbsp;|\s)+/, "")
+      if (plainText(html)) chapter.blocks.push(html)
+    }
+    for (const p of passages.filter((p) => p.division === book)) {
+      p.notes = notesFor(p.blocks.join(" "), notes)
+      p.text = plainText(p.blocks.join(" "))
+    }
+  })
+  return { divisions, passages, editorial: [] }
 }
 
 function pageNamed(pages: Map<string, CheerioAPI>, page: string): CheerioAPI {
