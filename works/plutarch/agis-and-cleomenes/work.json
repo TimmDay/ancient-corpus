@@ -1,0 +1,59 @@
+{
+  "author": "Plutarch",
+  "title": "Agis and Cleomenes",
+  "otherTitles": [],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "Life and chapter, e.g. Cleomenes.12; a section lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "perrin-greek",
+      "preferred": true,
+      "language": "grc",
+      "title": "Agis and Cleomenes",
+      "editor": "Bernadotte Perrin",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg051/tlg0007.tlg051.perseus-grc1.xml",
+        "archives": [
+          {
+            "file": "Plutarch-tlg0007.tlg051.perseus-grc1-Perseus.zip",
+            "sha256": "783aab3e00138df717749f466aa534436075ea259b079acf38b999ae8debf2e1"
+          }
+        ],
+        "rights": "Greek text (Loeb Classical Library, 1914–26) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus"
+    },
+    {
+      "slug": "perrin",
+      "preferred": false,
+      "language": "en",
+      "title": "Agis and Cleomenes",
+      "translator": "Bernadotte Perrin",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg051/tlg0007.tlg051.perseus-eng1.xml",
+        "archives": [
+          {
+            "file": "Plutarch-tlg0007.tlg051.perseus-eng1-Perseus.zip",
+            "sha256": "478516f1311a8f2d875dd8c6147d54facbc3427532336c23cfe3351e5e3f7040"
+          }
+        ],
+        "rights": "Translation (Loeb Classical Library, 1914–26) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "humanTranslation": {
+        "citation": "Bernadotte Perrin, Plutarch's Lives (Loeb, 1914–26): Agis and Cleomenes, from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg051/tlg0007.tlg051.perseus-eng1.xml"
+      }
+    }
+  ]
+}

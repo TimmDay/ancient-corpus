@@ -301,12 +301,268 @@
           "written": "c. 150 to 165"
         },
         {
-          "author": "Plutarch",
-          "title": "Parallel Lives",
-          "language": "grc",
-          "written": "c. 100 to 120",
-          "covers": "Theseus to Antony (30 BC); Galba and Otho (69)",
-          "freeEnglish": "Bernadotte Perrin (Loeb, 1914–26)"
+          "work": "plutarch/theseus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/romulus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-theseus-and-romulus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/lycurgus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/numa",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-lycurgus-and-numa",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/solon",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/publicola",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-solon-and-publicola",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/themistocles",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/camillus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/pericles",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/fabius-maximus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-pericles-and-fabius-maximus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/alcibiades",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/caius-marcius-coriolanus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-alcibiades-and-coriolanus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/timoleon",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/aemilius-paulus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-timoleon-and-aemilius",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/pelopidas",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/marcellus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-pelopidas-and-marcellus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/aristides",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/marcus-cato",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-aristides-and-marcus-cato",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/philopoemen",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/titus-flamininus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-philopoemen-and-titus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/pyrrhus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/caius-marius",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/lysander",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/sulla",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-lysander-and-sulla",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/cimon",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/lucullus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-lucullus-and-cimon",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/nicias",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/crassus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-nicias-and-crassus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/eumenes",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/sertorius",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-sertorius-and-eumenes",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/agesilaus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/pompey",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-agesilaus-and-pompey",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/alexander",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/caesar",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/phocion",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/cato-the-younger",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/agis-and-cleomenes",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/tiberius-and-caius-gracchus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-agis-and-cleomenes-and-the-gracchi",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/demosthenes",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/cicero",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-demosthenes-with-cicero",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/demetrius",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/antony",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-demetrius-and-antony",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/dion",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/brutus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/comparison-of-dion-and-brutus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/aratus",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/artaxerxes",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/galba",
+          "written": "c. 100 to 120"
+        },
+        {
+          "work": "plutarch/otho",
+          "written": "c. 100 to 120"
         },
         {
           "author": "Florus",

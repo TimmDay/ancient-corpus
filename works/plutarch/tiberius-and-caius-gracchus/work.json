@@ -1,0 +1,59 @@
+{
+  "author": "Plutarch",
+  "title": "Tiberius and Caius Gracchus",
+  "otherTitles": [],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "Life and chapter, e.g. Tiberius.12; a section lands on its chapter",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "perrin-greek",
+      "preferred": true,
+      "language": "grc",
+      "title": "Tiberius and Caius Gracchus",
+      "editor": "Bernadotte Perrin",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg052/tlg0007.tlg052.perseus-grc1.xml",
+        "archives": [
+          {
+            "file": "Plutarch-tlg0007.tlg052.perseus-grc1-Perseus.zip",
+            "sha256": "5d4b917ce3072d3ef08762427bbcd86576cbf276fc19c87c38724865a7cc63b2"
+          }
+        ],
+        "rights": "Greek text (Loeb Classical Library, 1914–26) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus"
+    },
+    {
+      "slug": "perrin",
+      "preferred": false,
+      "language": "en",
+      "title": "Tiberius and Caius Gracchus",
+      "translator": "Bernadotte Perrin",
+      "publicationYear": 1914,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg052/tlg0007.tlg052.perseus-eng1.xml",
+        "archives": [
+          {
+            "file": "Plutarch-tlg0007.tlg052.perseus-eng1-Perseus.zip",
+            "sha256": "5b16e82283edbd060c99b46f7f38030bc66d683a05f759b1a475dddf6c989d5d"
+          }
+        ],
+        "rights": "Translation (Loeb Classical Library, 1914–26) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "humanTranslation": {
+        "citation": "Bernadotte Perrin, Plutarch's Lives (Loeb, 1914–26): Tiberius and Caius Gracchus, from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0007/tlg052/tlg0007.tlg052.perseus-eng1.xml"
+      }
+    }
+  ]
+}
