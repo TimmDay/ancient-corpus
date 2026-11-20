@@ -1,0 +1,59 @@
+{
+  "author": "Frontinus",
+  "title": "Strategemata",
+  "otherTitles": ["Stratagems"],
+  "originalLanguage": "la",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "book.chapter.story, e.g. 1.1.1; a book's preface is 1.pr",
+  "slugAliases": ["frontinus/stratagems"],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "bennett-latin",
+      "preferred": true,
+      "language": "la",
+      "title": "Strategemata",
+      "editor": "Charles E. Bennett",
+      "publicationYear": 1925,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/L/Roman/Texts/Frontinus/Strategemata/1*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-Frontinus.zip",
+            "sha256": "6b1ecb0c8a80d95f062d02efb851880ede5677d3e6733809d1c6f0edaa0ce893"
+          }
+        ],
+        "rights": "Public domain. Charles E. Bennett, Frontinus: The Stratagems and the Aqueducts of Rome, Loeb Classical Library (1925); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "lacuscurtius"
+    },
+    {
+      "slug": "bennett",
+      "preferred": false,
+      "language": "en",
+      "title": "Stratagems",
+      "translator": "Charles E. Bennett",
+      "publicationYear": 1925,
+      "source": {
+        "name": "LacusCurtius (Bill Thayer)",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Frontinus/Strategemata/1*.html",
+        "archives": [
+          {
+            "file": "LacusCurtius-Frontinus.zip",
+            "sha256": "6b1ecb0c8a80d95f062d02efb851880ede5677d3e6733809d1c6f0edaa0ce893"
+          }
+        ],
+        "rights": "Public domain. Charles E. Bennett, Frontinus: The Stratagems and the Aqueducts of Rome, Loeb Classical Library (1925); LacusCurtius marks the text and translation as public domain."
+      },
+      "licence": "public-domain",
+      "importer": "lacuscurtius",
+      "humanTranslation": {
+        "citation": "Charles E. Bennett, Frontinus: The Stratagems (Loeb, 1925), on LacusCurtius",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Frontinus/Strategemata/home.html"
+      }
+    }
+  ]
+}

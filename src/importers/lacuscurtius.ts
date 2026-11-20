@@ -87,7 +87,13 @@ const HISTORIA_AUGUSTA: Part[] = [
 type Layout = {
   folder: string
   parts: Part[]
-  bySection?: boolean
+  /**
+   * Cut at sections rather than chapters: `true` names a Passage by the
+   * section's number alone (the Origo, `12`); "book" puts the division first
+   * (Frontinus, `1.1.1` for book 1, chapter 1, story 1), and the book's
+   * preface, before its first section, is `1.pr`.
+   */
+  bySection?: boolean | "book"
   /** Between division and chapter in a Locator: `Hadrian 3`, or `2.89` with ".". */
   separator?: string
 }
@@ -101,6 +107,15 @@ const WORKS: Record<string, Layout> = {
     folder: "Roman/Texts/Excerpta_Valesiana",
     parts: [{ locator: "Origo", pages: ["1*"] }],
     bySection: true,
+  },
+  Strategemata: {
+    folder: "Roman/Texts/Frontinus/Strategemata",
+    parts: ["1", "2", "3", "4"].map((book) => ({
+      locator: book,
+      label: `Book ${["I", "II", "III", "IV"][Number(book) - 1]}`,
+      pages: [`${book}*`],
+    })),
+    bySection: "book",
   },
   "Historiae Romanae": {
     folder: "Roman/Texts/Velleius_Paterculus",
@@ -134,6 +149,7 @@ export function importLacusCurtius(
       const file = `pages/${prefix}/${config.folder}/${page}.html`
       const $ = pages.get(file)
       if (!$) throw new Error(`${file} is not in the intake archive`)
+      if (config.bySection === "book") markPreface($)
       const read = readPage(
         $,
         part.locator,
@@ -177,7 +193,7 @@ export function readPage(
   /** Notes on earlier pages of the same Life, counted on and updated. */
   before = { numbered: 0, lettered: 0 },
   /** Cut at `a.sec` anchors, named by their number (`2a` → `2`), or by their whole name. */
-  bySection: boolean | "named" = false,
+  bySection: boolean | "named" | "book" = false,
   separator = " ",
 ): {
   passages: Draft[]
@@ -217,6 +233,8 @@ export function readPage(
   const body = $("h1").first().nextUntil("hr.endnotes").toArray()
   for (const el of body) {
     if (el.type !== "tag") continue
+    // A page with no notes has no rule before the site's footer.
+    if (/\b(footer|m1|r1|W3C|UCFooter)\b/.test(el.attribs.class ?? "")) break
     if (/^h[2-6]$/.test(el.name)) {
       const html = clean(inlineHtml($, $(el).contents(), options))
       if (plainText(html))
@@ -235,7 +253,7 @@ export function readPage(
           : $(node).find(`a.${unit}`).get(0)
       const chapter =
         anchor &&
-        (bySection === "named"
+        (bySection === "named" || bySection === "book"
           ? anchor.attribs.name
           : bySection
             ? /^\d+/.exec(anchor.attribs.name ?? "")?.[0]
@@ -247,9 +265,12 @@ export function readPage(
       const html = clean(inlineHtml($, $(run.nodes), options))
       if (run.chapter) {
         passages.push({
-          locator: bySection
-            ? run.chapter
-            : `${division}${separator}${run.chapter}`,
+          locator:
+            bySection === "book"
+              ? `${division}${separator === " " ? "." : separator}${run.chapter}`
+              : bySection
+                ? run.chapter
+                : `${division}${separator}${run.chapter}`,
           headings: pending,
           division,
           blocks: [],
@@ -308,6 +329,21 @@ export function readPage(
     if (/^\d+$/.test(label)) before.numbered++
     else before.lettered++
   return { passages, notes, labels }
+}
+
+/** Marks a book's preface, the paragraphs before its first section, as section `pr`. */
+function markPreface($: CheerioAPI): void {
+  const first = $("a.sec").first()
+  const opening = $("h1")
+    .first()
+    .nextAll("p")
+    .filter((_, p) => !$(p).find("a.sec").length && $(p).text().trim() !== "")
+    .first()
+  if (!first.length || !opening.length) return
+  // Only paragraphs that come before the first section.
+  const order = $("a.sec, p").toArray()
+  if (order.indexOf(opening.get(0)!) > order.indexOf(first.get(0)!)) return
+  opening.prepend('<a class="sec" name="pr"></a>')
 }
 
 /** The chapter an anchor opens: its name, or on some pages only its text ("(37)" where a page goes on with a chapter). */

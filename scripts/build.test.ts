@@ -476,6 +476,17 @@ describe("build", () => {
     ).toMatch(/id="2\.89"[^>]*>[\s\S]*?As for Caesar's return to Italy/)
   })
 
+  it("reads Frontinus story by story, in Bennett's Latin and English", () => {
+    expect(read("frontinus/strategemata/index.html")).toMatch(
+      /id="1\.1\.1"[^>]*>[\s\S]*?M. Porcius Cato devictas/,
+    )
+    expect(read("frontinus/strategemata/bennett/index.html")).toMatch(
+      /id="1\.pr"[^>]*>[\s\S]*?Since I alone of those interested in military science/,
+    )
+    // The Latin pages have no notes, so nothing ends the text before the site's footer.
+    expect(read("frontinus/strategemata/index.html")).not.toMatch(/asterisks/)
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

@@ -1,0 +1,8 @@
+[
+  {
+    "op": "renumber",
+    "locator": "1.4.19a",
+    "newLocator": "1.4.9a",
+    "reason": "LacusCurtius names this story's anchor 4.19a; it prints 9 a, follows 4.9, and the Latin's anchor is 4.9a"
+  }
+]
