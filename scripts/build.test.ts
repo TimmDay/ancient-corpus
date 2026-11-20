@@ -442,6 +442,19 @@ describe("build", () => {
     )
   })
 
+  it("reads Herodian by book and chapter, in Bekker's Greek and Echols' English", () => {
+    expect(read("herodian/history/1/index.html")).toMatch(
+      /id="1\.1"[^>]*>[\s\S]*?Οἱ πλεῖστοι τῶν περὶ συγκομιδὴν ἱστορίας/,
+    )
+    expect(read("herodian/history/echols/1/index.html")).toMatch(
+      /id="1\.1"[^>]*>[\s\S]*?THE majority of writers who have devoted themselves/,
+    )
+    // Echols' section numbers ("2.") are dropped from the English.
+    expect(read("herodian/history/echols/1/index.html")).not.toMatch(
+      /<span class="verse">/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

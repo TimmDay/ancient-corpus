@@ -1,19 +1,66 @@
 {
   "author": "Herodian",
   "title": "History of the Empire from the Death of Marcus",
-  "otherTitles": [
-    "Roman History"
-  ],
+  "otherTitles": ["Roman History"],
   "originalLanguage": "grc",
   "writtenYearEarliest": null,
   "writtenYearLatest": null,
   "coversYearEarliest": 180,
   "coversYearLatest": 238,
-  "locatorFormat": "book.chapter, e.g. 5.2",
+  "locatorFormat": "book.chapter, e.g. 5.2; a section, e.g. 1.5.2, lands on its chapter",
   "slugAliases": [
     "herodian/history-of-the-empire-from-the-death-of-marcus",
     "herodian/roman-history"
   ],
   "locatorAliases": {},
-  "editions": []
+  "editions": [
+    {
+      "slug": "bekker",
+      "preferred": true,
+      "language": "grc",
+      "title": "Herodiani Ab excessu divi Marci libri octo",
+      "editor": "Immanuel Bekker",
+      "publicationYear": 1855,
+      "source": {
+        "name": "Open Greek and Latin, First1KGreek (Perseus Digital Library)",
+        "url": "https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg0015/tlg001/tlg0015.tlg001.1st1K-grc1.xml",
+        "archives": [
+          {
+            "file": "Herodian-Bekker-First1KGreek.zip",
+            "sha256": "28c732d7bc1f228e379992eae5aeeb4754b1fe989153627e34d85d323e091be5"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1855) public domain; the digital edition is © Open Greek and Latin under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "echols",
+      "preferred": false,
+      "language": "en",
+      "title": "Herodian of Antioch's History of the Roman Empire",
+      "translator": "Edward C. Echols",
+      "publicationYear": 1961,
+      "source": {
+        "name": "tertullian.org (Roger Pearse)",
+        "url": "https://www.tertullian.org/fathers/herodian_00_intro.htm",
+        "archives": [
+          {
+            "file": "Herodian-Echols-tertullian.zip",
+            "sha256": "cee1685590a1bc2c76d21fcc6520579649ee0d71ba89df51047a989085022c84"
+          }
+        ],
+        "rights": "Public domain: Pearse's pages say \"All material on this page is in the public domain - copy freely.\""
+      },
+      "licence": "public-domain",
+      "importer": "tertullian",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "Edward C. Echols, Herodian of Antioch's History of the Roman Empire (University of California Press, 1961), transcribed by Roger Pearse on tertullian.org",
+        "url": "https://www.tertullian.org/fathers/herodian_00_intro.htm"
+      }
+    }
+  ]
 }
