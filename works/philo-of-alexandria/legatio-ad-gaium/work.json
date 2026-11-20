@@ -1,0 +1,61 @@
+{
+  "author": "Philo of Alexandria",
+  "title": "Legatio ad Gaium",
+  "otherTitles": ["Embassy to Gaius", "On the Embassy to Gaius"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "coversYearEarliest": 38,
+  "coversYearLatest": 41,
+  "locatorFormat": "section, e.g. 41",
+  "slugAliases": ["philo-of-alexandria/embassy-to-gaius"],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "cohn-reiter",
+      "preferred": true,
+      "language": "grc",
+      "title": "Legatio ad Gaium",
+      "editor": "Leopold Cohn and Siegfried Reiter",
+      "publicationYear": 1915,
+      "source": {
+        "name": "Open Greek and Latin, First1KGreek",
+        "url": "https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg0018/tlg031/tlg0018.tlg031.1st1K-grc1.xml",
+        "archives": [
+          {
+            "file": "Philo-tlg0018.tlg031.1st1K-grc1.zip",
+            "sha256": "ba5f3bed853ff024a267c17ffdd410b1759c89d3735b569bb1a43c12bc77b246"
+          }
+        ],
+        "rights": "Greek text (Reimer, 1915) public domain; the digital edition is © University of Leipzig, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "yonge",
+      "preferred": false,
+      "language": "en",
+      "title": "On the Virtues and on the Office of Ambassadors, Addressed to Caius",
+      "translator": "C. D. Yonge",
+      "publicationYear": 1855,
+      "source": {
+        "name": "Open Greek and Latin, First1KGreek",
+        "url": "https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg0018/tlg031/tlg0018.tlg031.1st1K-eng1.xml",
+        "archives": [
+          {
+            "file": "Philo-tlg0018.tlg031.1st1K-eng1.zip",
+            "sha256": "8bec23a9dd7ab4344791dc1064e3334194b50abda159fbfbdaf4e7291ced577a"
+          }
+        ],
+        "rights": "Translation (Bohn, 1855) public domain; the digital edition is © University of Leipzig, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "C. D. Yonge, The Works of Philo Judaeus, vol. 4 (Bohn, 1855), from First1KGreek",
+        "url": "https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg0018/tlg031/tlg0018.tlg031.1st1K-eng1.xml"
+      }
+    }
+  ]
+}

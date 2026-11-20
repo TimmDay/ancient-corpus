@@ -29,12 +29,12 @@
           "freeEnglish": "King James Version Apocrypha (1611)"
         },
         {
-          "author": "Philo of Alexandria",
-          "title": "Against Flaccus; Embassy to Gaius",
-          "language": "grc",
-          "written": "c. 40",
-          "covers": "38 to 41",
-          "freeEnglish": "C. D. Yonge (1854–55)"
+          "work": "philo-of-alexandria/in-flaccum",
+          "written": "c. 40"
+        },
+        {
+          "work": "philo-of-alexandria/legatio-ad-gaium",
+          "written": "c. 41"
         },
         {
           "work": "flavius-josephus/jewish-war",
