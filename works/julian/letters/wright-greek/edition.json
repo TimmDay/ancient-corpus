@@ -1,0 +1,17 @@
+{
+  "divisions": [
+    {
+      "locator": "themistius",
+      "label": "To Themistius"
+    },
+    {
+      "locator": "athenians",
+      "label": "To the Athenians"
+    },
+    {
+      "locator": "priest",
+      "label": "Fragment of a Letter to a Priest"
+    }
+  ],
+  "editorial": []
+}

@@ -1,0 +1,37 @@
+{
+  "divisions": [
+    {
+      "locator": "1",
+      "label": "Oration I"
+    },
+    {
+      "locator": "2",
+      "label": "Oration II"
+    },
+    {
+      "locator": "3",
+      "label": "Oration III"
+    },
+    {
+      "locator": "4",
+      "label": "Oration IV"
+    },
+    {
+      "locator": "5",
+      "label": "Oration V"
+    },
+    {
+      "locator": "6",
+      "label": "Oration VI"
+    },
+    {
+      "locator": "7",
+      "label": "Oration VII"
+    },
+    {
+      "locator": "8",
+      "label": "Oration VIII"
+    }
+  ],
+  "editorial": []
+}

@@ -1,0 +1,202 @@
+{
+  "divisions": [
+    {
+      "locator": "1",
+      "label": "Oration I"
+    },
+    {
+      "locator": "2",
+      "label": "Oration II"
+    },
+    {
+      "locator": "3",
+      "label": "Oration III"
+    },
+    {
+      "locator": "4",
+      "label": "Oration IV"
+    },
+    {
+      "locator": "5",
+      "label": "Oration V"
+    },
+    {
+      "locator": "6",
+      "label": "Oration VI"
+    },
+    {
+      "locator": "7",
+      "label": "Oration VII"
+    },
+    {
+      "locator": "8",
+      "label": "Oration VIII"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ed-1",
+      "title": "Introduction To Oration II",
+      "html": "<p>The Second Oration is a panegyric of the Emperor Constantius, written while Julian, after his elevation to the rank of Caesar, was campaigning in Gaul.<sup class=\"nref\"><a href=\"#n-wright-ed-1-216\" id=\"r-wright-ed-1-216\">216</a></sup> It closely resembles and often echoes the First, and was probably never delivered. In his detailed and forced analogies of the achievements of Constantius with those of the Homeric heroes, always to the advantage of the former, Julian follows a sophistic practice that he himself condemns,<sup class=\"nref\"><a href=\"#n-wright-ed-1-217\" id=\"r-wright-ed-1-217\">217</a></sup> and though he more than once contrasts himself with the “ingenious rhetoricians” he is careful to observe all their rules, even in his historical descriptions of the Emperor's campaigns. The long Platonic digression on Virtue and the ideal ruler is a regular feature of a panegyric of this type, though Julian neglects to make the direct application to Constantius. In the First Oration he quoted Homer only once, but while the Second contains the usual comparisons with the Persian monarchs and Alexander, its main object is to prove, by direct references to the Iliad, that Constantius surpassed Nestor in strategy, Odysseus in eloquence, and in courage Hector, Sarpedon and Achilles.</p>",
+      "notes": [
+        {
+          "id": "wright-ed-1-216",
+          "html": "56 <span class=\"sc\">b</span> and 101 <span class=\"sc\">d</span>.",
+          "label": "216"
+        },
+        {
+          "id": "wright-ed-1-217",
+          "html": "74 <span class=\"sc\">d</span>.",
+          "label": "217"
+        }
+      ]
+    },
+    {
+      "id": "ed-2",
+      "title": "Introduction To Oration III",
+      "html": "<p>The Third Oration is an expression of gratitude (χαριστήριος λόγος)<sup class=\"nref\"><a href=\"#n-wright-ed-2-485\" id=\"r-wright-ed-2-485\">485</a></sup> to the Empress Eusebia, the first wife of Constantius. After Julian's intractable step-brother Gallus Caesar had been murdered by the Emperor, he was summoned to the court at Milan, and there, awkward and ill at ease, cut off from his favourite studies and from the society of philosophers, surrounded by intriguing and unfriendly courtiers, and regarded with suspicion by the Emperor, Julian was protected, encouraged and advised by Eusebia. His praise and gratitude are, for once, sincere. The oration must have been composed either in Gaul or shortly before Julian set out thither after the dangerous dignity of the Caesarship had been thrust upon him. His sincerity has affected his style, which is simpler and more direct than that of the other two Panegyrics.</p>",
+      "notes": [
+        {
+          "id": "wright-ed-2-485",
+          "html": "cf. Quintilian 3. 7. 10. on the <i>Gratiarum actio</i>.",
+          "label": "485"
+        }
+      ]
+    },
+    {
+      "id": "ed-3",
+      "title": "Introduction To Oration IV",
+      "html": "<p>In the fourth century <span class=\"sc\">a.d.</span> poetry was practically extinct, and hymns to the gods were almost always written in prose. Julian's Fourth Oration is, according to the definition of the rhetorician Menander, a φυσικὸς ὕμνος, a hymn that describes the physical qualities of a god. Julian was an uncritical disciple of the later Neo-Platonic school, and apparently reproduces without any important modification the doctrines of its chief representative, the Syrian Iamblichus, with whom begins the decadence of Neo-Platonism as a philosophy. Oriental superstition took the place of the severe spiritualism of Plotinus and his followers, and a philosophy that had been from the first markedly religious, is now expounded by theurgists and the devotees of strange Oriental cults. It is Mithras the Persian sun-god, rather than Apollo, whom Julian identifies with his “intellectual god” Helios, and Apollo plays a minor part among his manifestations. Mithras worship, which Tertullian called “a Satanic plagiarism of Christianity,” because in certain of its rites it recalled the sacraments of the Christian church, first made its appearance among the Romans in the first century <span class=\"sc\">b.c.</span><sup class=\"nref\"><a href=\"#n-wright-ed-3-609\" id=\"r-wright-ed-3-609\">609</a></sup> Less hospitably received at first than the cults of Isis and Serapis and the Great Mother of Pessinus, it gradually overpowered them and finally dominated the whole Roman Empire, though it was never welcomed by the Hellenes. For the Romans it supplied the ideals of purity, devotion and self-control which the other cults had lacked. The worshippers of Mithras were taught to contend against the powers of evil, submitted themselves to a severe moral discipline, and their reward after death was to become as pure as the gods to whom they ascend. “If Christianity,” says Renan, “had been checked in its growth by some deadly disease, the world would have become Mithraic.” Julian, like the Emperor Commodus in the second century, had no doubt been initiated into the Mysteries of Mithras, and the severe discipline of the cult was profoundly attractive to one who had been estranged by early associations from the very similar teaching of the Christians.</p><p>Julian followed Plotinus and Iamblichus in making the supreme principle the One (ἓν) or the Good (τὸ ἀγαθὸν) which presides over the intelligible world (νοητὸς κόσμος), where rule Plato's Ideas, now called the intelligible gods (νοητοὶ θεοί). Iamblichus had imported into the Neo-Platonic system the intermediary world of intellectual gods (νοεροὶ θεοί). On them Helios-Mithras, their supreme god and centre, bestows the intelligence and creative and unifying forces that he has received from his transcendental counterpart among the intelligible gods. The third member of the triad is the world of sense-perception governed by the sun, the visible counterpart of Helios. What distinguishes Julian's triad<sup class=\"nref\"><a href=\"#n-wright-ed-3-610\" id=\"r-wright-ed-3-610\">610</a></sup> from other Neo-Platonic triads is this hierarchy of three suns in the three worlds: and further, the importance that he gives to the intermediary world, the abode of Helios-Mithras. He pays little attention to the remote intelligible world and devotes his exposition to Helios, the intellectual god, and the visible sun. Helios is the link that relates the three members of the triad. His “middleness” (μεσότης) is not only local: he is in every possible sense the mediator and unifier. μεσότης is the Aristotelian word for the “mean,” but there is no evidence that it was used with the active sense of mediation before Julian. A passage in Plutarch however seems to indicate that the “middleness” of the sun was a Persian doctrine: “The principle of good most nearly resembles light, and the principle of evil darkness, and between both is Mithras; therefore the Persians called Mithras the Mediator” (μεσίτης).<sup class=\"nref\"><a href=\"#n-wright-ed-3-611\" id=\"r-wright-ed-3-611\">611</a></sup> Naville has pointed out the resemblance between the sun as mediator and the Christian Logos, which Julian may have had in mind. Julian's system results in a practically monotheistic worship of Helios, and here he probably parts company with Iamblichus.</p><p>But though deeply influenced by Mithraism, Julian was attempting to revive the pagan gods, and if he could not, in the fourth century, restore the ancient faith in the gods of Homer he nevertheless could not omit from his creed the numerous deities whose temples and altars he had rebuilt. Here he took advantage of the identification of Greek, Roman, and Oriental deities which had been going on for centuries. The old names, endeared by the associations of literature, could be retained without endangering the supremacy of Helios. Julian identifies Zeus, Helios, Hades, Oceanus and the Egyptian Serapis. But the omnipotent Zeus of Greek mythology is now a creative force which works with Helios and has no separate existence. Tradition had made Athene the child of Zeus, but Julian regards her as the manifestation of the intelligent forethought of Helios. Dionysus is the vehicle of his fairest thoughts, and Aphrodite a principle that emanates from him. He contrives that all the more important gods of Greece, Egypt and Persia shall play their parts as manifestations of Helios. The lesser gods are mediating demons as well as forces. His aim was to provide the Hellenic counterpart of the positive revealed religion of Christianity. Hence his insistence on the inspiration of Homer, Hesiod, and Plato, and his statement<sup class=\"nref\"><a href=\"#n-wright-ed-3-612\" id=\"r-wright-ed-3-612\">612</a></sup> that the allegorical interpretations of the mysteries are not mere hypotheses, whereas the doctrines of the astronomers deserve no higher title.</p><p>The Oration is dedicated to his friend and comrade in arms Sallust who is probably identical with the Neo-Platonic philosopher, of the school of Iamblichus, who wrote about 360 the treatise <i>On the Gods and the World</i>. Cumont calls this “the official catechism of the Pagan empire,” and Wilamowitz regards it as the positive complement of Julian's pamphlet <i>Against the Christians</i>. Julian's Eighth Oration is a discourse of consolation, παραμυθητικὸς, for the departure of Sallust when Constantius recalled him from Gaul in 358.</p>",
+      "notes": [
+        {
+          "id": "wright-ed-3-609",
+          "html": "Plutarch, <i>Pompeius</i> 24. For a full description of the origin and spread of Mithraism see Cumont, <i>Textes et Monuments figurés relatifs aux mystères de Mithra</i>, 1896, 1899, <i>Les Mystères de Mithra</i>, 1902, and <i>Les religions orientales dans le paganisme romain</i>, 1909 (English translation by G. Showerman, 1911).",
+          "label": "609"
+        },
+        {
+          "id": "wright-ed-3-610",
+          "html": "On Julian's triad cf. Naville, <i>Julien l'Apostat et la philosophie du polythéisme</i>, Paris, 1877.",
+          "label": "610"
+        },
+        {
+          "id": "wright-ed-3-611",
+          "html": "<i>Concerning Isis and Osiris</i> 46.",
+          "label": "611"
+        },
+        {
+          "id": "wright-ed-3-612",
+          "html": "148 <span class=\"sc\">b</span>.",
+          "label": "612"
+        }
+      ]
+    },
+    {
+      "id": "ed-4",
+      "title": "Introduction To Oration V",
+      "html": "<p>The cult of Phrygian Cybele the Mother of the Gods, known to the Latin world as the Great Mother, Magna Mater, was the first Oriental religion adopted by the Romans. In the Fifth Oration, which is, like the Fourth, a hymn, Julian describes the entrance of the Goddess into Italy in the third century <span class=\"sc\">b.c.</span> In Greece she had been received long before, but the more civilised Hellenes had not welcomed, as did the Romans, the more barbarous features of the cult, the mutilated priests, the Galli, and the worship of Attis.<sup class=\"nref\"><a href=\"#n-wright-ed-4-783\" id=\"r-wright-ed-4-783\">783</a></sup> They preferred the less emotional cult of the Syrian Adonis. In Athens the Mother of the Gods was early identified with Gaia the Earth Mother, and the two became inextricably confused.<sup class=\"nref\"><a href=\"#n-wright-ed-4-784\" id=\"r-wright-ed-4-784\">784</a></sup> But Julian, in this more Roman than Greek, does not shrink from the Oriental conception of Cybele as the lover of Attis, attended by eunuch priests, or the frenzy of renunciation described by Catullus.<sup class=\"nref\"><a href=\"#n-wright-ed-4-785\" id=\"r-wright-ed-4-785\">785</a></sup> But he was first of all a Neo-Platonist, and the aim of this hymn as of the Fourth Oration is to adapt to his philosophy a popular cult and to give its Mysteries a philosophic interpretation.</p><p>The Mithraic religion, seeking to conciliate the other cults of the empire, had from the first associated with the sun-god the worship of the Magna Mater, and Attis had been endowed with the attributes of Mithras. Though Julian's hymn is in honour of Cybele he devotes more attention to Attis. Originally the myth of Cybele symbolises the succession of the seasons; the disappearance of Attis the sun-god is the coming of winter; his mutilation is the barrenness of nature when the sun has departed; his restoration to Cybele is the renewal of spring. In all this he is the counterpart of Persephone among the Greeks and of Adonis in Syria. Julian interprets the myth in connection with the three worlds described in the Fourth Oration. Cybele is a principle of the highest, the intelligible world, the source of the intellectual gods. Attis is not merely a sun-god: he is a principle of the second, the intellectual world, who descends to the visible world in order to give it order and fruitfulness. Julian expresses the Neo-Platonic dread and dislike of matter, of the variable, the plural and unlimited. Cybele the intelligible principle would fain have restrained Attis the embodiment of intelligence from association with matter. His recall and mutilation symbolise the triumph of unity over multiformity, of mind over matter. His restoration to Cybele symbolises the escape of our souls from the world of generation.</p><p>Julian follows Plotinus<sup class=\"nref\"><a href=\"#n-wright-ed-4-786\" id=\"r-wright-ed-4-786\">786</a></sup> in regarding the myths as allegories to be interpreted by the philosopher and the theosophist. They are riddles to be solved, and the paradoxical element in them is designed to turn our minds to the hidden truth. For laymen the myth is enough. Like all the Neo-Platonists he sometimes uses phrases which imply human weakness or chronological development for his divinities and then withdraws those phrases, explaining that they must be taken in another sense. His attitude to myths is further defined in the Sixth<sup class=\"nref\"><a href=\"#n-wright-ed-4-787\" id=\"r-wright-ed-4-787\">787</a></sup> and Seventh Orations. The Fifth Oration can hardly be understood apart from the Fourth, and both must present many difficulties to a reader who is unfamiliar with Plotinus, Porphyry, the treatise <i>On the Mysteries</i>, formerly attributed to Iamblichus, Sallust, <i>On the Gods and the World</i>, and the extant treatises and fragments of Iamblichus. Julian composed this treatise at Pessinus in Phrygia, when he was on his way to Persia, in 362 <span class=\"sc\">a.d.</span></p>",
+      "notes": [
+        {
+          "id": "wright-ed-4-783",
+          "html": "For the Attis cult see Frazer, <i>Attis, Adonis and Osiris</i>; for the introduction of the worship of Cybele into Italy, Cumont, <i>Les religions orientales dans le paganisme romain</i>.",
+          "label": "783"
+        },
+        {
+          "id": "wright-ed-4-784",
+          "html": "See Harrison, <i>Mythology and Monuments of Ancient Athens</i>.",
+          "label": "784"
+        },
+        {
+          "id": "wright-ed-4-785",
+          "html": "Catullus 63.",
+          "label": "785"
+        },
+        {
+          "id": "wright-ed-4-786",
+          "html": "5. 1. 7; 3. 6. 19; 1. 6. 8; cf. Plato, <i>Theaetetus</i> 152 <span class=\"sc\">c</span>; and Plutarch, <i>On Isis and Osiris</i>, ὁ μῦθος ... λόγου τινὸς ἔμφασίς ἐστιν ἀνακλῶντος ἐπ᾽ ἄλλα τὴν διάνοιαν.",
+          "label": "786"
+        },
+        {
+          "id": "wright-ed-4-787",
+          "html": "Cf. 206 <span class=\"sc\">d</span>. Myths are like toys which help children through teething.",
+          "label": "787"
+        }
+      ]
+    },
+    {
+      "id": "ed-5",
+      "title": "Introduction to Oration VI",
+      "html": "<p>The Sixth Oration is a sermon or rather a scolding addressed to the New Cynics, and especially to one of their number who had ventured to defame the memory of Diogenes. In the fourth Christian century the Cynic mode of life was adopted by many, but the vast majority were illiterate men who imitated the Cynic shamelessness of manners but not the genuine discipline, the self-sufficiency (αὐτάρκεια) which had ennobled the lives of Antisthenes, Diogenes and Crates. To the virtues of these great men Julian endeavours to recall the worthless Cynics of his day. In the two centuries that had elapsed since Lucian wrote, for the edification of degenerate Cynics,<sup class=\"nref\"><a href=\"#n-wright-ed-5-1\" id=\"r-wright-ed-5-1\">1</a></sup> the Life of the Cynic Demonax, the dignified and witty friend of Epictetus, the followers of that sect had still further deteriorated. The New Cynics may be compared with the worst type of mendicant friar of the Middle Ages; and Julian saw in their assumption of the outward signs of Cynicism, the coarse cloak, the staff and wallet, and long hair, the same hypocrisy and greed that characterised certain of the Christian monks of his day.<sup class=\"nref\"><a href=\"#n-wright-ed-5-2\" id=\"r-wright-ed-5-2\">2</a></sup> The resemblances between the Christians and the Cynics had already been pointed out by Aristides,<sup class=\"nref\"><a href=\"#n-wright-ed-5-3\" id=\"r-wright-ed-5-3\">3</a></sup> and while in Julian's eyes they were equally impious, he has an additional grievance against the Cynics in that they brought discredit on philosophy. Like the Christians they were unlettered, they were disrespectful to the gods whom Julian was trying to restore, they had flattered and fawned on Constantius, and far from practising the austerities of Diogenes they were no better than parasites on society.</p><p>In this as in the Seventh Oration Julian's aim is to reform the New Cynics, but still more to demonstrate the essential unity of philosophy. He sympathised profoundly with the tenets of Cynicism, and ranked Diogenes with Socrates as a moral teacher. He reminds the Cynics whom he satirises that the famous admonition of Diogenes to “countermark”<sup class=\"nref\"><a href=\"#n-wright-ed-5-4\" id=\"r-wright-ed-5-4\">4</a></sup> or “forge” a new coinage is not to be taken as an excuse for license and impudence, but like the Delphic precept “Know Thyself” warns all philosophers to accept no traditional authority, no convention that has not been examined and approved by the reason of the individual. His conviction that all philosophical tenets are in harmony if rightly understood, gives a peculiar earnestness to his Apologia for Diogenes. The reference in the first paragraph to the summer solstice seems to indicate that the Oration was written before Julian left Constantinople in order to prepare for the Persian campaign.</p><p>[Transcriber's Note: The original book had pages with Greek on the left page and the corresponding English translation on the facing right page. In this e-book, each Greek paragraph will be immediately followed by the English translation paragraph, surrounded in parentheses. The Greek text contains markings such as [3] and [B]; they are section and sub-section markings that in the original book were in the right margin. These are different from numbers within parentheses such as (10), which are used as footnote references in some e-book formats.]</p>",
+      "notes": [
+        {
+          "id": "wright-ed-5-1",
+          "html": "Cf. Bernays, <i>Lukian und die Kyniker</i>, Berlin, 1879.",
+          "label": "1"
+        },
+        {
+          "id": "wright-ed-5-2",
+          "html": "224 <span class=\"sc\">c</span>.",
+          "label": "2"
+        },
+        {
+          "id": "wright-ed-5-3",
+          "html": "Aristides, <i>Orations</i> 402 <span class=\"sc\">d</span>.",
+          "label": "3"
+        },
+        {
+          "id": "wright-ed-5-4",
+          "html": "The precise meaning of the phrase is uncertain; it has been suggested that it arose from the custom of altering or “countermarking” coins so as to adapt them for the regular currency; see 192 <span class=\"sc\">c</span>, <i>Oration</i> 7. 208 <span class=\"sc\">d</span>.",
+          "label": "4"
+        }
+      ]
+    },
+    {
+      "id": "ed-6",
+      "title": "Introduction to Oration VII",
+      "html": "<p>The Seventh Oration is directed against the Cynic Heracleios, who had ventured to recite before an audience when Julian was present a myth or allegory in which the gods were irreverently handled. Julian raises the question whether fables and myths are suitable for a Cynic discourse. He names the regular divisions of philosophy and decides that the use of myths may properly be allowed only to ethical philosophers and writers on theology: that myth is intended always as a means of religious teaching and should be addressed to children and those whose intellect does not allow them to envisage the truth without some such assistance. In Sallust's treatise <i>On the Gods and the World</i> he gives much the same account of the proper function of myths and divides them into five species, giving examples of each. “To wish to teach the whole truth about the gods to all produces contempt in the foolish, because they cannot understand, and lack of zeal in the good; whereas to conceal the truth by myths prevents the contempt of the foolish and compels the good to practise philosophy.”<sup class=\"nref\"><a href=\"#n-wright-ed-6-112\" id=\"r-wright-ed-6-112\">112</a></sup> This is precisely the opinion of Julian as expressed in the Fifth, Sixth and Seventh Orations. Though both Julian and Sallust explain the myths away they are never rationalistic, and never offer the least excuse for scepticism. Julian's explanation of the Semele myth,<sup class=\"nref\"><a href=\"#n-wright-ed-6-113\" id=\"r-wright-ed-6-113\">113</a></sup> which makes Semele an inspired prophetess and not the mother of Dionysus, tends to the greater glory of the god. The conclusion is that Heracleios should not have used myth at all, but in any case he used the wrong sort and wrote in the wrong spirit. He should have used such a myth as that composed by Prodicus the sophist on the Choice of Heracles at the Crossroads, an allegory which is more than once cited by Julian and was a favourite illustration in later Greek literature.<sup class=\"nref\"><a href=\"#n-wright-ed-6-114\" id=\"r-wright-ed-6-114\">114</a></sup></p><p>To show Heraclius what he might have written with propriety Julian adds a parable of his own modelled on that of Prodicus. In this he himself plays the part of a second Heracles, and takes the opportunity to vilify Constantius and point out his own mission of reformer and restorer of order and religion to the Empire. Throughout the parable there are striking resemblances with the First Oration of Dio Chrysostom, and Asmus<sup class=\"nref\"><a href=\"#n-wright-ed-6-115\" id=\"r-wright-ed-6-115\">115</a></sup> has made a detailed comparison of the two writers to prove that Julian wrote with Dio before him. In many of these parallels both Julian and Dio can be traced to a common classical source, usually Plato, but there is no doubt that Julian was thoroughly familiar with the work of Dio and often used the same illustrations. Themistius<sup class=\"nref\"><a href=\"#n-wright-ed-6-116\" id=\"r-wright-ed-6-116\">116</a></sup> however uses the Prodicus myth in much the same words as Dio, and it is imitated also by Maximus of Tyre.<sup class=\"nref\"><a href=\"#n-wright-ed-6-117\" id=\"r-wright-ed-6-117\">117</a></sup></p><p>In conclusion Julian praises the earlier Cynics and criticises the later, in much the same words as he had used in the Sixth Oration.</p>",
+      "notes": [
+        {
+          "id": "wright-ed-6-112",
+          "html": "Murray's translation of Sallust in <i>Four Stages of Greek Religion</i>, New York, 1912.",
+          "label": "112"
+        },
+        {
+          "id": "wright-ed-6-113",
+          "html": "<i>Oration</i> 7, 219.",
+          "label": "113"
+        },
+        {
+          "id": "wright-ed-6-114",
+          "html": "Cf. Vol. I, <i>Oration</i> 2. 56 <span class=\"sc\">d</span>.",
+          "label": "114"
+        },
+        {
+          "id": "wright-ed-6-115",
+          "html": "Asmus, <i>Julian und Dion Chrysostomus</i>, 1895; cf. Praechter, <i>Archiv für Geschichte der Philosophie</i> 5. <i>Dion Chrysostomus als Quelle Julians.</i> Julian only once mentions Dio by name, <i>Oration</i> 7, 212 <span class=\"sc\">c</span>.",
+          "label": "115"
+        },
+        {
+          "id": "wright-ed-6-116",
+          "html": "Themistius, 280 <span class=\"sc\">a</span>.",
+          "label": "116"
+        },
+        {
+          "id": "wright-ed-6-117",
+          "html": "Maximus of Tyre, <i>Dissertation</i> 20.",
+          "label": "117"
+        }
+      ]
+    },
+    {
+      "id": "ed-7",
+      "title": "Introduction to Oration VIII",
+      "html": "<p>The Eighth Oration is a “speech of consolation” (παραμυθητικὸς λόγος), a familiar type of Sophistic composition. In consequence of the attacks on Sallust by sycophants at court, and moreover jealous of his friendship with Julian, Constantius ordered him to leave Gaul. In this discourse, which was written before the open rupture with Constantius, Julian alludes only once and respectfully to his cousin. But Asmus thinks he can detect in it a general resemblance to the Thirteenth Oration of Dio Chrysostom, where Dio tries to comfort himself for his banishment by the tyrant Domitian, and that Sallust was expected to appreciate this and the veiled attack on Constantius. Julian addresses the discourse to himself, but it was no doubt sent to Sallust.</p><p>After Julian's accession Sallust was made prefect in 362 and consul in 363. He was the author of a manifesto of Neo-Platonism, the treatise <i>On the Gods and the World</i>, and to him was dedicated Julian's Fourth Oration.<sup class=\"nref\"><a href=\"#n-wright-ed-7-290\" id=\"r-wright-ed-7-290\">290</a></sup></p>",
+      "notes": [
+        {
+          "id": "wright-ed-7-290",
+          "html": "cf. vol. i. p. 351.",
+          "label": "290"
+        }
+      ]
+    }
+  ]
+}

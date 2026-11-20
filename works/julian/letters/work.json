@@ -1,0 +1,61 @@
+{
+  "author": "Julian",
+  "title": "Letters",
+  "otherTitles": ["Epistulae"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": 355,
+  "writtenYearLatest": 363,
+  "coversYearEarliest": 355,
+  "coversYearLatest": 363,
+  "locatorFormat": "Spanheim page and section, e.g. 270c; a Passage is named by the section it starts in",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "wright-greek",
+      "preferred": true,
+      "language": "grc",
+      "title": "ΕΠΙΣΤΟΛΑΙ",
+      "editor": "Wilmer Cave Wright",
+      "publicationYear": 1913,
+      "source": {
+        "name": "Project Gutenberg #48768",
+        "url": "https://www.gutenberg.org/ebooks/48768",
+        "archives": [
+          {
+            "file": "Julian-WorksOfTheEmperor-vol2.zip",
+            "sha256": "508eb90e96b16b488f78739e8e7832c9c7bb8bdc0df67930d882ff5df79dad97"
+          }
+        ],
+        "rights": "Public domain in the USA. The Works of the Emperor Julian, vol. 2, Loeb Classical Library (1913): Hertlein's Greek with Wright's emendations."
+      },
+      "licence": "public-domain-us",
+      "importer": "julian-letters"
+    },
+    {
+      "slug": "wright",
+      "preferred": false,
+      "language": "en",
+      "title": "Letters",
+      "translator": "Wilmer Cave Wright",
+      "publicationYear": 1913,
+      "source": {
+        "name": "Project Gutenberg #48768",
+        "url": "https://www.gutenberg.org/ebooks/48768",
+        "archives": [
+          {
+            "file": "Julian-WorksOfTheEmperor-vol2.zip",
+            "sha256": "508eb90e96b16b488f78739e8e7832c9c7bb8bdc0df67930d882ff5df79dad97"
+          }
+        ],
+        "rights": "Public domain in the USA. The Works of the Emperor Julian, vol. 2, Loeb Classical Library (1913)."
+      },
+      "licence": "public-domain-us",
+      "importer": "julian-letters",
+      "humanTranslation": {
+        "citation": "Wilmer Cave Wright, The Works of the Emperor Julian, vol. 2, Loeb Classical Library (1913), from Project Gutenberg",
+        "url": "https://www.gutenberg.org/ebooks/48768"
+      }
+    }
+  ]
+}

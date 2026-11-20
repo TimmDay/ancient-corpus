@@ -1,0 +1,68 @@
+{
+  "divisions": [
+    {
+      "locator": "themistius",
+      "label": "To Themistius"
+    },
+    {
+      "locator": "athenians",
+      "label": "To the Athenians"
+    },
+    {
+      "locator": "priest",
+      "label": "Fragment of a Letter to a Priest"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ed-1",
+      "title": "Introduction",
+      "html": "<p>On the strength of his Aristotelian “Paraphrases” Themistius may be called a scholar, though hardly a philosopher as he himself claimed. Technically he was a Sophist: that is to say he gave public lectures (ἐπιδείξεις), wrote exercises after the Sophistic pattern and went on embassies, which were entrusted to him solely on account of his persuasive charm. But he insisted that he was no Sophist, because he took no fees<sup class=\"nref\"><a href=\"#n-wright-ed-1-365\" id=\"r-wright-ed-1-365\">365</a></sup> and styled himself a practical philosopher.<sup class=\"nref\"><a href=\"#n-wright-ed-1-366\" id=\"r-wright-ed-1-366\">366</a></sup> He was indifferent to the Neo-Platonic philosophy,<sup class=\"nref\"><a href=\"#n-wright-ed-1-367\" id=\"r-wright-ed-1-367\">367</a></sup> and, since Constantius made him a Senator, he cannot have betrayed any zeal for the Pagan religion. From Julian's Pagan restoration he seems to have held aloof, and, though Julian had been his pupil, probably at Nicomedia, he did not appoint him to any office. Under the Christian Emperor Theodosius he held a prefecture. There is no evidence for a positive coolness, such as Zeller<sup class=\"nref\"><a href=\"#n-wright-ed-1-368\" id=\"r-wright-ed-1-368\">368</a></sup> assumes, between Themistius and Julian, and we know too little of their relations to assert with some critics that the respectful tone of this letter is ironical.<sup class=\"nref\"><a href=\"#n-wright-ed-1-369\" id=\"r-wright-ed-1-369\">369</a></sup> It was probably written after Julian had become Emperor, though there is nothing in it that would not suit an earlier date; it is sometimes assigned to 355 when Julian was still Caesar. The quotations from Aristotle are appropriately addressed to Themistius as an Aristotelian commentator.</p>",
+      "notes": [
+        {
+          "id": "wright-ed-1-365",
+          "html": "Themistius 260 <span class=\"sc\">c</span>, 345 <span class=\"sc\">c</span>.",
+          "label": "365"
+        },
+        {
+          "id": "wright-ed-1-366",
+          "html": "245 <span class=\"sc\">d</span>.",
+          "label": "366"
+        },
+        {
+          "id": "wright-ed-1-367",
+          "html": "33, 295 <span class=\"sc\">b</span>.",
+          "label": "367"
+        },
+        {
+          "id": "wright-ed-1-368",
+          "html": "Vol. 5, p. 742.",
+          "label": "368"
+        },
+        {
+          "id": "wright-ed-1-369",
+          "html": "Libanius <i>Epistle</i> 1061 mentions an Oration by Themistius in praise of Julian, but this is not extant.",
+          "label": "369"
+        }
+      ]
+    },
+    {
+      "id": "ed-2",
+      "title": "Introduction",
+      "html": "<p>Of the manifestoes addressed by Julian to Rome, Sparta, Corinth, and Athens, defending his acceptance of the title of Emperor and his open rupture with Constantius, the last alone survives. It was written in Illyricum in 361, when Julian was on the march against Constantius, and is the chief authority for the events that led to his elevation to the Imperial rank. Julian writes to the Athenians of the fourth Christian century as though they still possessed the influence and standards of their forefathers. He was well known at Athens, where he had studied before his elevation to the Caesarship and he was anxious to clear himself in the eyes of the citizens. For the first time he ventures to speak the truth about Constantius and to describe the latter's ruthless treatment of his family. His account of the revolution at Paris is supplemented by Ammianus 20, Zosimus 3. 9, and the <i>Epitaph on Julian</i> by Libanius.</p>",
+      "notes": []
+    },
+    {
+      "id": "ed-3",
+      "title": "Introduction",
+      "html": "<p>Julian was Supreme Pontiff, and as such felt responsible for the teachings and conduct of the priesthood. He saw that in order to offset the influence of the Christian priests which he thought was partly due to their moral teaching, partly to their charity towards the poor, the pagans must follow their example. Hitherto the preaching of morals had been left to the philosophers. Julian's admonitions as to the treatment of the poor and of those in prison, and the rules that he lays down for the private life of a priest are evidently borrowed from the Christians.</p><p>This Fragment occurs in the Vossianus MS., inserted in the Letter to Themistius,<sup class=\"nref\"><a href=\"#n-wright-ed-3-493\" id=\"r-wright-ed-3-493\">493</a></sup> and was identified and published separately by Petavius. It was probably written when Julian was at Antioch on the way to Persia.</p>",
+      "notes": [
+        {
+          "id": "wright-ed-3-493",
+          "html": "p. 256 <span class=\"sc\">c</span>, between τὸ δὴ λεγόμενον and καὶ πεποιήκασι.",
+          "label": "493"
+        }
+      ]
+    }
+  ]
+}

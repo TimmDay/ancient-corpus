@@ -1,0 +1,71 @@
+{
+  "author": "Julian",
+  "title": "Orations",
+  "otherTitles": ["Orationes"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": 355,
+  "writtenYearLatest": 362,
+  "coversYearEarliest": 337,
+  "coversYearLatest": 362,
+  "locatorFormat": "oration, then Spanheim page and section, e.g. 2.56b; a Passage is named by the section it starts in",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "wright-greek",
+      "preferred": true,
+      "language": "grc",
+      "title": "ΛΟΓΟΙ",
+      "editor": "Wilmer Cave Wright",
+      "publicationYear": 1913,
+      "source": {
+        "name": "Project Gutenberg #48664 and #48768",
+        "url": "https://www.gutenberg.org/ebooks/48664",
+        "archives": [
+          {
+            "file": "Julian-WorksOfTheEmperor-vol1.zip",
+            "sha256": "7b3ad30f7433e031cb69d8ef94820e91295e71783c9ed367acd04fa488c2f42f"
+          },
+          {
+            "file": "Julian-WorksOfTheEmperor-vol2.zip",
+            "sha256": "508eb90e96b16b488f78739e8e7832c9c7bb8bdc0df67930d882ff5df79dad97"
+          }
+        ],
+        "rights": "Public domain in the USA. The Works of the Emperor Julian, vol. 1 and vol. 2, Loeb Classical Library (1913): Hertlein's Greek with Wright's emendations."
+      },
+      "licence": "public-domain-us",
+      "importer": "julian-orations",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "wright",
+      "preferred": false,
+      "language": "en",
+      "title": "Orations",
+      "translator": "Wilmer Cave Wright",
+      "publicationYear": 1913,
+      "source": {
+        "name": "Project Gutenberg #48664 and #48768",
+        "url": "https://www.gutenberg.org/ebooks/48664",
+        "archives": [
+          {
+            "file": "Julian-WorksOfTheEmperor-vol1.zip",
+            "sha256": "7b3ad30f7433e031cb69d8ef94820e91295e71783c9ed367acd04fa488c2f42f"
+          },
+          {
+            "file": "Julian-WorksOfTheEmperor-vol2.zip",
+            "sha256": "508eb90e96b16b488f78739e8e7832c9c7bb8bdc0df67930d882ff5df79dad97"
+          }
+        ],
+        "rights": "Public domain in the USA. The Works of the Emperor Julian, vol. 1 and vol. 2, Loeb Classical Library (1913)."
+      },
+      "licence": "public-domain-us",
+      "importer": "julian-orations",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "Wilmer Cave Wright, The Works of the Emperor Julian, vol. 1 and vol. 2, Loeb Classical Library (1913), from Project Gutenberg",
+        "url": "https://www.gutenberg.org/ebooks/48664"
+      }
+    }
+  ]
+}
