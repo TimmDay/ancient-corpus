@@ -1,0 +1,713 @@
+{
+  "divisions": [
+    {
+      "locator": "1",
+      "label": "Book 1"
+    },
+    {
+      "locator": "1s",
+      "label": "Book 1s"
+    },
+    {
+      "locator": "2s",
+      "label": "Book 2s"
+    },
+    {
+      "locator": "2",
+      "label": "Book 2"
+    },
+    {
+      "locator": "3s",
+      "label": "Book 3s"
+    },
+    {
+      "locator": "3",
+      "label": "Book 3"
+    },
+    {
+      "locator": "4s",
+      "label": "Book 4s"
+    },
+    {
+      "locator": "4",
+      "label": "Book 4"
+    },
+    {
+      "locator": "5s",
+      "label": "Book 5s"
+    },
+    {
+      "locator": "5",
+      "label": "Book 5"
+    },
+    {
+      "locator": "6s",
+      "label": "Book 6s"
+    },
+    {
+      "locator": "6",
+      "label": "Book 6"
+    },
+    {
+      "locator": "7s",
+      "label": "Book 7s"
+    },
+    {
+      "locator": "7",
+      "label": "Book 7"
+    },
+    {
+      "locator": "8s",
+      "label": "Book 8s"
+    },
+    {
+      "locator": "8",
+      "label": "Book 8"
+    },
+    {
+      "locator": "9s",
+      "label": "Book 9s"
+    },
+    {
+      "locator": "9",
+      "label": "Book 9"
+    },
+    {
+      "locator": "10s",
+      "label": "Book 10s"
+    },
+    {
+      "locator": "10",
+      "label": "Book 10"
+    },
+    {
+      "locator": "11s",
+      "label": "Book 11s"
+    },
+    {
+      "locator": "12s",
+      "label": "Book 12s"
+    },
+    {
+      "locator": "13s",
+      "label": "Book 13s"
+    },
+    {
+      "locator": "14s",
+      "label": "Book 14s"
+    },
+    {
+      "locator": "15s",
+      "label": "Book 15s"
+    },
+    {
+      "locator": "16s",
+      "label": "Book 16s"
+    },
+    {
+      "locator": "17s",
+      "label": "Book 17s"
+    },
+    {
+      "locator": "18s",
+      "label": "Book 18s"
+    },
+    {
+      "locator": "19s",
+      "label": "Book 19s"
+    },
+    {
+      "locator": "20s",
+      "label": "Book 20s"
+    },
+    {
+      "locator": "21s",
+      "label": "Book 21s"
+    },
+    {
+      "locator": "21",
+      "label": "Book 21"
+    },
+    {
+      "locator": "22s",
+      "label": "Book 22s"
+    },
+    {
+      "locator": "22",
+      "label": "Book 22"
+    },
+    {
+      "locator": "23s",
+      "label": "Book 23s"
+    },
+    {
+      "locator": "23",
+      "label": "Book 23"
+    },
+    {
+      "locator": "24s",
+      "label": "Book 24s"
+    },
+    {
+      "locator": "24",
+      "label": "Book 24"
+    },
+    {
+      "locator": "25s",
+      "label": "Book 25s"
+    },
+    {
+      "locator": "25",
+      "label": "Book 25"
+    },
+    {
+      "locator": "26s",
+      "label": "Book 26s"
+    },
+    {
+      "locator": "26",
+      "label": "Book 26"
+    },
+    {
+      "locator": "27s",
+      "label": "Book 27s"
+    },
+    {
+      "locator": "27",
+      "label": "Book 27"
+    },
+    {
+      "locator": "28s",
+      "label": "Book 28s"
+    },
+    {
+      "locator": "28",
+      "label": "Book 28"
+    },
+    {
+      "locator": "29s",
+      "label": "Book 29s"
+    },
+    {
+      "locator": "29",
+      "label": "Book 29"
+    },
+    {
+      "locator": "30s",
+      "label": "Book 30s"
+    },
+    {
+      "locator": "30",
+      "label": "Book 30"
+    },
+    {
+      "locator": "31s",
+      "label": "Book 31s"
+    },
+    {
+      "locator": "31",
+      "label": "Book 31"
+    },
+    {
+      "locator": "32s",
+      "label": "Book 32s"
+    },
+    {
+      "locator": "32",
+      "label": "Book 32"
+    },
+    {
+      "locator": "33s",
+      "label": "Book 33s"
+    },
+    {
+      "locator": "33",
+      "label": "Book 33"
+    },
+    {
+      "locator": "34s",
+      "label": "Book 34s"
+    },
+    {
+      "locator": "34",
+      "label": "Book 34"
+    },
+    {
+      "locator": "35s",
+      "label": "Book 35s"
+    },
+    {
+      "locator": "35",
+      "label": "Book 35"
+    },
+    {
+      "locator": "36s",
+      "label": "Book 36s"
+    },
+    {
+      "locator": "36",
+      "label": "Book 36"
+    },
+    {
+      "locator": "37s",
+      "label": "Book 37s"
+    },
+    {
+      "locator": "37",
+      "label": "Book 37"
+    },
+    {
+      "locator": "38s",
+      "label": "Book 38s"
+    },
+    {
+      "locator": "38",
+      "label": "Book 38"
+    },
+    {
+      "locator": "39s",
+      "label": "Book 39s"
+    },
+    {
+      "locator": "39",
+      "label": "Book 39"
+    },
+    {
+      "locator": "40s",
+      "label": "Book 40s"
+    },
+    {
+      "locator": "40",
+      "label": "Book 40"
+    },
+    {
+      "locator": "41s",
+      "label": "Book 41s"
+    },
+    {
+      "locator": "41",
+      "label": "Book 41"
+    },
+    {
+      "locator": "42s",
+      "label": "Book 42s"
+    },
+    {
+      "locator": "42",
+      "label": "Book 42"
+    },
+    {
+      "locator": "43s",
+      "label": "Book 43s"
+    },
+    {
+      "locator": "43",
+      "label": "Book 43"
+    },
+    {
+      "locator": "44s",
+      "label": "Book 44s"
+    },
+    {
+      "locator": "44",
+      "label": "Book 44"
+    },
+    {
+      "locator": "45s",
+      "label": "Book 45s"
+    },
+    {
+      "locator": "45",
+      "label": "Book 45"
+    },
+    {
+      "locator": "46",
+      "label": "Book 46"
+    },
+    {
+      "locator": "47",
+      "label": "Book 47"
+    },
+    {
+      "locator": "48",
+      "label": "Book 48"
+    },
+    {
+      "locator": "49",
+      "label": "Book 49"
+    },
+    {
+      "locator": "50",
+      "label": "Book 50"
+    },
+    {
+      "locator": "51",
+      "label": "Book 51"
+    },
+    {
+      "locator": "52",
+      "label": "Book 52"
+    },
+    {
+      "locator": "53",
+      "label": "Book 53"
+    },
+    {
+      "locator": "54",
+      "label": "Book 54"
+    },
+    {
+      "locator": "55",
+      "label": "Book 55"
+    },
+    {
+      "locator": "56",
+      "label": "Book 56"
+    },
+    {
+      "locator": "57",
+      "label": "Book 57"
+    },
+    {
+      "locator": "58",
+      "label": "Book 58"
+    },
+    {
+      "locator": "59",
+      "label": "Book 59"
+    },
+    {
+      "locator": "60",
+      "label": "Book 60"
+    },
+    {
+      "locator": "61",
+      "label": "Book 61"
+    },
+    {
+      "locator": "62",
+      "label": "Book 62"
+    },
+    {
+      "locator": "63",
+      "label": "Book 63"
+    },
+    {
+      "locator": "64",
+      "label": "Book 64"
+    },
+    {
+      "locator": "65",
+      "label": "Book 65"
+    },
+    {
+      "locator": "66",
+      "label": "Book 66"
+    },
+    {
+      "locator": "67",
+      "label": "Book 67"
+    },
+    {
+      "locator": "68",
+      "label": "Book 68"
+    },
+    {
+      "locator": "69",
+      "label": "Book 69"
+    },
+    {
+      "locator": "70",
+      "label": "Book 70"
+    },
+    {
+      "locator": "71",
+      "label": "Book 71"
+    },
+    {
+      "locator": "72",
+      "label": "Book 72"
+    },
+    {
+      "locator": "73",
+      "label": "Book 73"
+    },
+    {
+      "locator": "74",
+      "label": "Book 74"
+    },
+    {
+      "locator": "75",
+      "label": "Book 75"
+    },
+    {
+      "locator": "76",
+      "label": "Book 76"
+    },
+    {
+      "locator": "77",
+      "label": "Book 77"
+    },
+    {
+      "locator": "78",
+      "label": "Book 78"
+    },
+    {
+      "locator": "79",
+      "label": "Book 79"
+    },
+    {
+      "locator": "80",
+      "label": "Book 80"
+    },
+    {
+      "locator": "81",
+      "label": "Book 81"
+    },
+    {
+      "locator": "82",
+      "label": "Book 82"
+    },
+    {
+      "locator": "83",
+      "label": "Book 83"
+    },
+    {
+      "locator": "84",
+      "label": "Book 84"
+    },
+    {
+      "locator": "85",
+      "label": "Book 85"
+    },
+    {
+      "locator": "86",
+      "label": "Book 86"
+    },
+    {
+      "locator": "87",
+      "label": "Book 87"
+    },
+    {
+      "locator": "88",
+      "label": "Book 88"
+    },
+    {
+      "locator": "89",
+      "label": "Book 89"
+    },
+    {
+      "locator": "90",
+      "label": "Book 90"
+    },
+    {
+      "locator": "91",
+      "label": "Book 91"
+    },
+    {
+      "locator": "92",
+      "label": "Book 92"
+    },
+    {
+      "locator": "93",
+      "label": "Book 93"
+    },
+    {
+      "locator": "94",
+      "label": "Book 94"
+    },
+    {
+      "locator": "95",
+      "label": "Book 95"
+    },
+    {
+      "locator": "96",
+      "label": "Book 96"
+    },
+    {
+      "locator": "97",
+      "label": "Book 97"
+    },
+    {
+      "locator": "98",
+      "label": "Book 98"
+    },
+    {
+      "locator": "99",
+      "label": "Book 99"
+    },
+    {
+      "locator": "100",
+      "label": "Book 100"
+    },
+    {
+      "locator": "101",
+      "label": "Book 101"
+    },
+    {
+      "locator": "102",
+      "label": "Book 102"
+    },
+    {
+      "locator": "103",
+      "label": "Book 103"
+    },
+    {
+      "locator": "104",
+      "label": "Book 104"
+    },
+    {
+      "locator": "105",
+      "label": "Book 105"
+    },
+    {
+      "locator": "106",
+      "label": "Book 106"
+    },
+    {
+      "locator": "107",
+      "label": "Book 107"
+    },
+    {
+      "locator": "108",
+      "label": "Book 108"
+    },
+    {
+      "locator": "109",
+      "label": "Book 109"
+    },
+    {
+      "locator": "110",
+      "label": "Book 110"
+    },
+    {
+      "locator": "111",
+      "label": "Book 111"
+    },
+    {
+      "locator": "112",
+      "label": "Book 112"
+    },
+    {
+      "locator": "113",
+      "label": "Book 113"
+    },
+    {
+      "locator": "114",
+      "label": "Book 114"
+    },
+    {
+      "locator": "115",
+      "label": "Book 115"
+    },
+    {
+      "locator": "116",
+      "label": "Book 116"
+    },
+    {
+      "locator": "117",
+      "label": "Book 117"
+    },
+    {
+      "locator": "118",
+      "label": "Book 118"
+    },
+    {
+      "locator": "119",
+      "label": "Book 119"
+    },
+    {
+      "locator": "120",
+      "label": "Book 120"
+    },
+    {
+      "locator": "121",
+      "label": "Book 121"
+    },
+    {
+      "locator": "122",
+      "label": "Book 122"
+    },
+    {
+      "locator": "123",
+      "label": "Book 123"
+    },
+    {
+      "locator": "124",
+      "label": "Book 124"
+    },
+    {
+      "locator": "125",
+      "label": "Book 125"
+    },
+    {
+      "locator": "126",
+      "label": "Book 126"
+    },
+    {
+      "locator": "127",
+      "label": "Book 127"
+    },
+    {
+      "locator": "128",
+      "label": "Book 128"
+    },
+    {
+      "locator": "129",
+      "label": "Book 129"
+    },
+    {
+      "locator": "130",
+      "label": "Book 130"
+    },
+    {
+      "locator": "131",
+      "label": "Book 131"
+    },
+    {
+      "locator": "132",
+      "label": "Book 132"
+    },
+    {
+      "locator": "133",
+      "label": "Book 133"
+    },
+    {
+      "locator": "134",
+      "label": "Book 134"
+    },
+    {
+      "locator": "135",
+      "label": "Book 135"
+    },
+    {
+      "locator": "136",
+      "label": "Book 136"
+    },
+    {
+      "locator": "137",
+      "label": "Book 137"
+    },
+    {
+      "locator": "138",
+      "label": "Book 138"
+    },
+    {
+      "locator": "139",
+      "label": "Book 139"
+    },
+    {
+      "locator": "140",
+      "label": "Book 140"
+    },
+    {
+      "locator": "141",
+      "label": "Book 141"
+    },
+    {
+      "locator": "142",
+      "label": "Book 142"
+    }
+  ],
+  "editorial": []
+}

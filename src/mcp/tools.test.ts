@@ -113,7 +113,7 @@ describe("readPassage", () => {
 
   it("says what went wrong", () => {
     expect(
-      readPassage(corpus, SITE, { work: "Livy", locator: "1" }),
+      readPassage(corpus, SITE, { work: "Asinius Pollio", locator: "1" }),
     ).toHaveProperty("error")
     expect(
       readPassage(corpus, SITE, { work: "Zosimus", locator: "99.1" }).error,
