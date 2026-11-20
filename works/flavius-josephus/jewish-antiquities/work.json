@@ -1,0 +1,68 @@
+{
+  "author": "Flavius Josephus",
+  "title": "Jewish Antiquities",
+  "otherTitles": [
+    "Antiquitates Judaicae",
+    "Antiquities of the Jews",
+    "Ἰουδαϊκὴ ἀρχαιολογία"
+  ],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "book.section (Niese), e.g. 18.63; a Passage is one of Whiston's paragraphs, named by the section it starts in, and a section inside it lands on it; Niese's summary before each book is 18.arg, in the Greek only",
+  "numberedLines": true,
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "niese",
+      "preferred": true,
+      "language": "grc",
+      "title": "Ἰουδαϊκὴ ἀρχαιολογία",
+      "editor": "Benedikt Niese",
+      "publicationYear": 1890,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0526/tlg001/tlg0526.tlg001.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Josephus-tlg0526.tlg001.perseus-grc2-Perseus.zip",
+            "sha256": "59160ed66e365ec7ef5a1b5e79a80b4569149cc06d1f4451b7acb4dd0192b444"
+          }
+        ],
+        "rights": "Greek text (Weidmann, 1890) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "whiston",
+      "preferred": false,
+      "language": "en",
+      "title": "Antiquities of the Jews",
+      "translator": "William Whiston",
+      "publicationYear": 1737,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0526/tlg001/tlg0526.tlg001.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Josephus-tlg0526.tlg001.perseus-eng2-Perseus.zip",
+            "sha256": "1c4133bbe8cd2ef29cdea3977df8724035f2fa7baa8bd53b530fe29d9f501132"
+          }
+        ],
+        "rights": "Translation (1737; this printing Alden and Beardsley, 1856) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "pagePerDivision": true,
+      "humanTranslation": {
+        "citation": "William Whiston, Antiquities of the Jews (1737), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0526/tlg001/tlg0526.tlg001.perseus-eng2.xml"
+      }
+    }
+  ],
+  "coversYearEarliest": null,
+  "coversYearLatest": 66
+}
