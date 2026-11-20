@@ -598,6 +598,16 @@ describe("build", () => {
     )
   })
 
+  it("reads Herodotus by book and chapter, in Godley's Greek and English", () => {
+    expect(read("herodotus/histories/godley/1/index.html")).toMatch(
+      /id="1\.1"[^>]*>[\s\S]*?inquiry of Herodotus of Halicarnassus/,
+    )
+    // Perseus tags places with a modern gazetteer name, which is not Godley's.
+    expect(read("herodotus/histories/godley/1/index.html")).not.toMatch(
+      /Bodrum/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

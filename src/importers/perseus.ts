@@ -33,7 +33,8 @@ export function importPerseus(source: EditionSource): ImportedEdition {
   const divisions: Division[] = []
   const passages: Omit<Passage, "flags">[] = []
 
-  for (const book of $('div[subtype="book"]').toArray()) {
+  // Herodotus' English spells its books `subtype="Book"`.
+  for (const book of $('div[subtype="book" i]').toArray()) {
     const n = $(book).attr("n") ?? ""
     const label = n === "praef" ? "Preface" : `Book ${n}`
     divisions.push({ locator: n, label })
@@ -298,8 +299,10 @@ function inline($: CheerioAPI, nodes: AnyNode[]): string {
           return node.attribs.n ? " " : "<br>"
         case "l":
           return `<br>${inner}`
+        // A gazetteer's modern name for a place (reg) sits beside the place as written.
         case "note":
         case "milestone":
+        case "reg":
           return ""
         case "gap":
           return " … "

@@ -109,12 +109,8 @@
           "covers": "539 BC"
         },
         {
-          "author": "Herodotus",
-          "title": "Histories",
-          "language": "grc",
-          "written": "c. 430 BC",
-          "covers": "c. 550 to 479 BC, with earlier background",
-          "freeEnglish": "G. C. Macaulay (1890)"
+          "work": "herodotus/histories",
+          "written": "c. 430 BC"
         },
         {
           "work": "thucydides/history",
