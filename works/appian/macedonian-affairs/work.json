@@ -1,0 +1,59 @@
+{
+  "author": "Appian",
+  "title": "Macedonian Affairs",
+  "otherTitles": ["Makedonike", "Macedonian Affairs"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "fragment, e.g. IX; a Passage is a section as Mendelssohn numbers it",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "mendelssohn",
+      "preferred": true,
+      "language": "grc",
+      "title": "Makedonike",
+      "editor": "Ludwig Mendelssohn",
+      "publicationYear": 1879,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg011/tlg0551.tlg011.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg011.perseus-grc2-Perseus.zip",
+            "sha256": "07e89b8d1b9dcb493afe9b6ce9bbd296ad05cd070113d9c0d683c594b2a27b97"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1879–1905) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "white",
+      "preferred": false,
+      "language": "en",
+      "title": "Macedonian Affairs",
+      "translator": "Horace White",
+      "publicationYear": 1899,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg011/tlg0551.tlg011.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg011.perseus-eng2-Perseus.zip",
+            "sha256": "bda6285e2d2e8b72a33edbb5ba4b3772b59ca9cd0d079c9f4104fb7df6f5a7e7"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1899) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "Horace White, Macedonian Affairs (1899), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg011/tlg0551.tlg011.perseus-eng2.xml"
+      }
+    }
+  ]
+}

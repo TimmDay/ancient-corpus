@@ -1,0 +1,61 @@
+{
+  "author": "Appian",
+  "title": "Civil Wars",
+  "otherTitles": ["Emphylia", "The Civil Wars"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "book.section, e.g. 1.7; a Passage is a section as Mendelssohn numbers it",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "mendelssohn",
+      "preferred": true,
+      "language": "grc",
+      "title": "Emphylia",
+      "editor": "Ludwig Mendelssohn",
+      "publicationYear": 1879,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg017/tlg0551.tlg017.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg017.perseus-grc2-Perseus.zip",
+            "sha256": "0c64218233c28823f6d72275f33a07d98afc0eb6664539ac77b8f9de0e746067"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1879–1905) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "pagePerDivision": true
+    },
+    {
+      "slug": "white",
+      "preferred": false,
+      "language": "en",
+      "title": "The Civil Wars",
+      "translator": "Horace White",
+      "publicationYear": 1899,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg017/tlg0551.tlg017.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg017.perseus-eng2-Perseus.zip",
+            "sha256": "b672fc3589e32ef50566369158a3e448570eb264313767a70d9aab795801474c"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1899) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "Horace White, The Civil Wars (1899), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg017/tlg0551.tlg017.perseus-eng2.xml"
+      },
+      "pagePerDivision": true
+    }
+  ]
+}

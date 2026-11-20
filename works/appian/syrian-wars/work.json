@@ -1,0 +1,59 @@
+{
+  "author": "Appian",
+  "title": "Syrian Wars",
+  "otherTitles": ["Syriake", "The Syrian Wars"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "section, e.g. 50; a Passage is a section as Mendelssohn numbers it",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "mendelssohn",
+      "preferred": true,
+      "language": "grc",
+      "title": "Syriake",
+      "editor": "Ludwig Mendelssohn",
+      "publicationYear": 1879,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg013/tlg0551.tlg013.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg013.perseus-grc2-Perseus.zip",
+            "sha256": "52875ac5ef14457433fefdcb3ad765021a4476e7ea0c66a7e2f5cb3143dd8c29"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1879–1905) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "white",
+      "preferred": false,
+      "language": "en",
+      "title": "The Syrian Wars",
+      "translator": "Horace White",
+      "publicationYear": 1899,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg013/tlg0551.tlg013.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg013.perseus-eng2-Perseus.zip",
+            "sha256": "7532cf7502dd5f65b4ff5c350de1e0ae7339f6a7f2904426ff42302f7a827852"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1899) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "Horace White, The Syrian Wars (1899), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg013/tlg0551.tlg013.perseus-eng2.xml"
+      }
+    }
+  ]
+}

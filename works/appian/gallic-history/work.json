@@ -1,0 +1,59 @@
+{
+  "author": "Appian",
+  "title": "Gallic History",
+  "otherTitles": ["Keltike", "The Gallic History"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "fragment, e.g. XV; a Passage is a section as Mendelssohn numbers it",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "mendelssohn",
+      "preferred": true,
+      "language": "grc",
+      "title": "Keltike",
+      "editor": "Ludwig Mendelssohn",
+      "publicationYear": 1879,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg005/tlg0551.tlg005.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg005.perseus-grc2-Perseus.zip",
+            "sha256": "36497a9152a90c0fcee9e55d7347abfe26815b2036727df1a0e7e5bad794df22"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1879–1905) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "white",
+      "preferred": false,
+      "language": "en",
+      "title": "The Gallic History",
+      "translator": "Horace White",
+      "publicationYear": 1899,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg005/tlg0551.tlg005.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg005.perseus-eng2-Perseus.zip",
+            "sha256": "057ccb117a5bf90bf1185519b7e6c13b0243cb69a84376749e8df2540cb9003e"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1899) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "Horace White, The Gallic History (1899), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg005/tlg0551.tlg005.perseus-eng2.xml"
+      }
+    }
+  ]
+}

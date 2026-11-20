@@ -1,0 +1,59 @@
+{
+  "author": "Appian",
+  "title": "Italy",
+  "otherTitles": ["Italike", "Concerning Italy"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "fragment, e.g. V; a Passage is a section as Mendelssohn numbers it",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "mendelssohn",
+      "preferred": true,
+      "language": "grc",
+      "title": "Italike",
+      "editor": "Ludwig Mendelssohn",
+      "publicationYear": 1879,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg003/tlg0551.tlg003.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg003.perseus-grc2-Perseus.zip",
+            "sha256": "470f8c191f592d7e0a2d39f839b7fc56c211d214740367513f49dfcd50ff0a3d"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1879–1905) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "white",
+      "preferred": false,
+      "language": "en",
+      "title": "Concerning Italy",
+      "translator": "Horace White",
+      "publicationYear": 1899,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg003/tlg0551.tlg003.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg003.perseus-eng2-Perseus.zip",
+            "sha256": "261dedff6f2f00b3238c5b033c5cd176bf1a2b8794e2b02247efce180fd99b0b"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1899) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "Horace White, Concerning Italy (1899), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg003/tlg0551.tlg003.perseus-eng2.xml"
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "author": "Appian",
+  "title": "Punic Wars",
+  "otherTitles": ["Libyke", "The Punic Wars"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "section, e.g. 132; a Passage is a section as Mendelssohn numbers it",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "mendelssohn",
+      "preferred": true,
+      "language": "grc",
+      "title": "Libyke",
+      "editor": "Ludwig Mendelssohn",
+      "publicationYear": 1879,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg009/tlg0551.tlg009.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg009.perseus-grc2-Perseus.zip",
+            "sha256": "597817b23f11b7a758600f0bb66bbbf278c2a72d0a514f577e0dd797412fccdd"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1879–1905) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "white",
+      "preferred": false,
+      "language": "en",
+      "title": "The Punic Wars",
+      "translator": "Horace White",
+      "publicationYear": 1899,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg009/tlg0551.tlg009.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg009.perseus-eng2-Perseus.zip",
+            "sha256": "5c172f32a7f007295fbf2f4c3612912a33b38dfd3382da7e458b4c506a4a7f44"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1899) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "Horace White, The Punic Wars (1899), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg009/tlg0551.tlg009.perseus-eng2.xml"
+      }
+    }
+  ]
+}

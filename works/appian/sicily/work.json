@@ -1,0 +1,59 @@
+{
+  "author": "Appian",
+  "title": "Sicily and the Islands",
+  "otherTitles": ["Sikelike kai Nesiotike", "Of Sicily and the Other Islands"],
+  "originalLanguage": "grc",
+  "writtenYearEarliest": null,
+  "writtenYearLatest": null,
+  "locatorFormat": "fragment, e.g. II; a Passage is a section as Mendelssohn numbers it",
+  "slugAliases": [],
+  "locatorAliases": {},
+  "editions": [
+    {
+      "slug": "mendelssohn",
+      "preferred": true,
+      "language": "grc",
+      "title": "Sikelike kai Nesiotike",
+      "editor": "Ludwig Mendelssohn",
+      "publicationYear": 1879,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg006/tlg0551.tlg006.perseus-grc2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg006.perseus-grc2-Perseus.zip",
+            "sha256": "d15af0a079345cb184c1016d6101ba04caa36c9eaf5c4d5ad2b8b44d54c51018"
+          }
+        ],
+        "rights": "Greek text (Teubner, 1879–1905) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs"
+    },
+    {
+      "slug": "white",
+      "preferred": false,
+      "language": "en",
+      "title": "Of Sicily and the Other Islands",
+      "translator": "Horace White",
+      "publicationYear": 1899,
+      "source": {
+        "name": "Perseus Digital Library (canonical-greekLit)",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg006/tlg0551.tlg006.perseus-eng2.xml",
+        "archives": [
+          {
+            "file": "Appian-tlg0551.tlg006.perseus-eng2-Perseus.zip",
+            "sha256": "d61411583a74bfe16825f9b9599d3f2dfcf4680d0d67688c137d155ad5c3c5c1"
+          }
+        ],
+        "rights": "Translation (Macmillan, 1899) public domain; the digital edition is © Trustees of Tufts University, available under CC BY-SA 4.0."
+      },
+      "licence": "cc-by-sa-4.0",
+      "importer": "perseus-paragraphs",
+      "humanTranslation": {
+        "citation": "Horace White, Of Sicily and the Other Islands (1899), from the Perseus Digital Library",
+        "url": "https://github.com/PerseusDL/canonical-greekLit/blob/master/data/tlg0551/tlg006/tlg0551.tlg006.perseus-eng2.xml"
+      }
+    }
+  ]
+}

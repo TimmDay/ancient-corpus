@@ -122,8 +122,16 @@ export function importPerseusParagraphs(
       for (const child of el.children) {
         if (child.type !== "tag") continue
         const subtype = child.attribs.subtype
-        if (child.name === "div" && subtype === "section") {
+        // Appian's fragments, and the Syrian Wars' English cards, are cited like sections.
+        if (
+          child.name === "div" &&
+          (subtype === "section" ||
+            subtype === "fragment" ||
+            subtype === "card")
+        ) {
           const n = child.attribs.n ?? ""
+          // An unnumbered section is the translator's appendix (White's Appian).
+          if (!n) continue
           // A milestone inside the section, before its text, also opens it here.
           const opens =
             !marked ||
@@ -167,7 +175,12 @@ export function importPerseusParagraphs(
     walk(container, undefined)
   }
   for (const p of passages) p.text = plainText(p.blocks.join(" "))
-  return { divisions, passages, editorial: [] }
+  // A section the translation numbers but leaves empty (Appian, Civil Wars 3.0).
+  return {
+    divisions,
+    passages: passages.filter((p) => p.text),
+    editorial: [],
+  }
 }
 
 /**
