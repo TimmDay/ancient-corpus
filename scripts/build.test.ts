@@ -641,6 +641,12 @@ describe("build", () => {
     expect(read("tacitus/annals/5/index.html")).toMatch(/id="5\.6"/)
   })
 
+  it("reads Tacitus' Histories by book and chapter, in Fisher's Latin and Church and Brodribb's English", () => {
+    expect(read("tacitus/histories/1/index.html")).toMatch(
+      /id="1\.1"[^>]*>[\s\S]*?Initium mihi operis/,
+    )
+  })
+
   it("reads Festus on Aurelian and Zenobia, in Latin and in Banchich and Meka's English", () => {
     expect(read("festus/breviarium/index.html")).toMatch(
       /id="24"[^>]*>[\s\S]*?Zenobia/,

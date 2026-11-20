@@ -650,12 +650,8 @@
           "note": "Books 7–10 and parts of 5, 6, 11 and 16 are lost"
         },
         {
-          "author": "Tacitus",
-          "title": "Histories",
-          "language": "la",
-          "written": "c. 105",
-          "covers": "69 to 70 survive",
-          "freeEnglish": "A. J. Church and W. J. Brodribb (1864)"
+          "work": "tacitus/histories",
+          "written": "c. 105"
         },
         {
           "author": "Tacitus",
